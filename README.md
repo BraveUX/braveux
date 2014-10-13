@@ -1,2 +1,5 @@
-website
-=======
+# BraveUX website
+
+### Run
+
+`$ gulp`

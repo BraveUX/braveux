@@ -4,13 +4,14 @@
 
 // bourbon.io
 
-@import "bower/bourbon/dist/bourbon";
+@import "../bower/bourbon/dist/bourbon";
+
 
 // box sizing
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   @include box-sizing(border-box);
   margin: 0;
 }
