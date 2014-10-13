@@ -2,6 +2,8 @@
 
 ### Run
 
+`$ npm i && bower i`
+
 `$ gulp`
 
 
