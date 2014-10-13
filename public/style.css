@@ -17,3 +17,36 @@ strong {
 
 em {
   font-style: italic; }
+
+html,
+body {
+  height: 100%; }
+
+.wrapper {
+  height: 100%;
+  width: 100%; }
+  .wrapper:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 50px; }
+
+.row {
+  max-width: 1200px; }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row .col:last-child {
+    float: right; }
+
+.col {
+  float: left;
+  padding: 0 10px; }
+
+.one-twelfth {
+  width: 8.33333%; }
