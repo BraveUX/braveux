@@ -8,7 +8,7 @@ var notify = require('gulp-notify');
 var handle = notify.onError("Error: <%= error.message %>");
 
 gulp.task('sass', function() {
-  gulp.src('./src/style/style.scss')
+  return gulp.src('./src/style/style.scss')
     .pipe(sass({'sourcemap=none': true, style: 'compressed'}))
     .on('error', handle)
     .pipe(gulp.dest('./public'))
