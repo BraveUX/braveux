@@ -1,0 +1,35 @@
+html,
+body {
+	height: 100%;
+}
+
+.wrapper {
+	@include clearfix;
+	@include size(100%);
+	// padding: 50px;
+}
+
+.container {
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 50px;
+}
+
+// grid settings
+$gutterWidth: 10px;
+
+.row {
+	@include clearfix;
+	max-width: 1200px;
+
+	.col:last-child {
+		float: right;
+	}
+}
+
+.col {
+	float: left;
+	padding: 0 $gutterWidth;
+}
+
+.one-twelfth { width: percentage(1/12); }

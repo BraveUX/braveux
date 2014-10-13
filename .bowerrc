@@ -1,7 +1,3 @@
 {
-<<<<<<< HEAD
   "directory":"./src/bower"
-=======
-  "directory": "bower"
->>>>>>> bf8a8abfc72def456dc4172ba53161dfb524415c
 }
