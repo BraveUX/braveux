@@ -1,12 +1,6 @@
-html,
-body {
-	height: 100%;
-}
-
 .wrapper {
 	@include clearfix;
-	@include size(100%);
-	// padding: 50px;
+	@include size(100% auto);
 }
 
 .container {
@@ -32,4 +26,20 @@ $gutterWidth: 10px;
 	padding: 0 $gutterWidth;
 }
 
-.one-twelfth { width: percentage(1/12); }
+// generate push/pull classes
+@for $i from 1 through 11 {
+	.push-#{$i} {
+		margin-left: percentage($i/12);
+	}
+
+	.pull-#{$i} {
+		margin-left: percentage(-$i/12);
+	}
+}
+
+// generate width classes
+@for $i from 1 through 12 {
+	.width-#{$i} {
+		width: percentage($i/12);
+	}
+}
