@@ -5,7 +5,6 @@ notifications:
   email: false
 env:
   global:
-  - secure: ZYk494R1yz+UEvcc+/pgB+LPbeTGgUv/ygwGOVEGhzuoZTYpDnIIbSAFdLrmJebduo6i2IwvOBT9ywUZwZwaVu72QUm614/r/xiTRMWxYW+2m24xfeNaB0AtImCEu00WSwZ8wKvUzLxX8VT7f3ff/g3D7+kWS9XwKayf6tkn+rw=
-  - secure: SzR4oz0mEeo7MFc8hrv0NSWzgMoLYZziczHvZcaim1RNPHj56YqpqbY1xlsTZbGwDkpRvfxdzAfmY8hQgNeqTBxQhLwFRYHSmGy5vo3Z2EDgXBCFijRqA8QvwZEPLDglGw23h7jzQfggzrHE1uNZKeB4EF38JkGyEnhnUel7U2o=
-# after_success: curl --ftp-create-dirs -T uploadfilename -u $FTP_USER:$FTP_PASSWORD ftp://braveux.com/dev
-after_success: echo $FTP_USER
+  - secure: Fqpk3NE1UCWnSeYrNAZSxxL9JBK7DtcV6pmjcut2lAGiLyXF67cd8Hmnw/HeK7u7ak/troYsfvKerl+p1TkUf1JZB4aA5V9FEbkLK7ZKQxIcCvwaoFGlRxaOHwcVO7ZuKOfZFV/tHDcWrweN+Vlcf/sShOd1l9DgyaTLZCBLf/8=
+  - secure: CbO0xtC3D0umg9Ii2EWjnVmZEgJ3rN/Y7Vbj06YdxAJuoT2+kCKzOmSgUWVU3iN0jjU3iUfeC4WXiTAIkCSwzNAdQhdoJ6gUEm26rwlfazolPu9uAYhHIg+RxUShtuHwqbz16e1IFyOmtZbWVyqs7XTxywmLi957tDFt798uIrs=
+after_success: "find public -exec curl --ftp-create-dirs -T {} -v ftp://$USER:$FTP_PASSWORD@braveux.com/public_html/dev/ \;"
