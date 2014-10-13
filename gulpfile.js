@@ -17,31 +17,27 @@ var onError = function(error) {
 // compile sass, without source map
 // shell used to be compatible with bourbon
 gulp.task('sass', function() {
-  return gulp.src('style/*.scss')
-    .pipe(plumber({
-      errorHandler: onError
-    }))
-    .pipe(shell(['sass style/style.scss style.css --sourcemap=none']))
+  return gulp.src('src/style/*.scss')
+    .pipe(plumber({ errorHandler: onError }))
+    .pipe(shell(['sass src/style/style.scss public/style.css --sourcemap=none']))
     .pipe(notify('SASS compiled.'));
 });
 
 // concatenate and uglify scripts
 gulp.task('scripts', function() {
-  return gulp.src('scripts/*.js')
-    .pipe(plumber({
-      errorHandler: onError
-    }))
+  return gulp.src('src/scripts/*.js')
+    .pipe(plumber({ errorHandler: onError }))
     .pipe(concat('scripts.js'))
     .pipe(rename('scripts.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('./public'))
     .pipe(notify('JS concatenated and uglified.'));
 });
 
 // watch style and scripts
 gulp.task('watch', function() {
-  gulp.watch('style/*.scss', ['sass']);
-  gulp.watch('scripts/*.js', ['scripts']);
+  gulp.watch('src/style/*.scss', ['sass']);
+  gulp.watch('src/scripts/*.js', ['scripts']);
 });
 
 // default task
