@@ -1,5 +1,5 @@
 {
-	"name": "",
+	"name": "BraveUX Website",
 	"dependencies": {
 		"normalize-css": "latest",
 		"bourbon": "latest"
