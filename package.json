@@ -1,0 +1,13 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-plumber": "latest",
+    "gulp-shell": "latest",
+    "gulp-concat": "latest",
+    "gulp-uglify": "latest",
+    "gulp-rename": "latest",
+    "gulp-notify": "latest"
+  }
+}
