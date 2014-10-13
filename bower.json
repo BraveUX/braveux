@@ -1,7 +1,7 @@
 {
-	"name": "BraveUX Website",
+	"name": "Braveux",
 	"dependencies": {
-		"normalize-css": "latest",
-		"bourbon": "latest"
+		"normalize-css": "*",
+		"bourbon": "*"
 	}
 }

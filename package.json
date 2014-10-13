@@ -1,13 +1,11 @@
 {
-  "name": "BraveUX Website",
+  "name": "BraveUX-Website",
   "version": "1.0.0",
   "devDependencies": {
-    "gulp": "latest",
-    "gulp-plumber": "latest",
-    "gulp-shell": "latest",
-    "gulp-concat": "latest",
-    "gulp-uglify": "latest",
-    "gulp-rename": "latest",
-    "gulp-notify": "latest"
+    "gulp": "^3.8.8",
+    "gulp-concat": "^2.4.1",
+    "gulp-notify": "^2.0.0",
+    "gulp-ruby-sass": "git://github.com/sindresorhus/gulp-ruby-sass.git",
+    "gulp-uglify": "^1.0.1"
   }
 }

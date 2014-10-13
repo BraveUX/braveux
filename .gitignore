@@ -1,6 +1,8 @@
-.DS_Store
-bower
 node_modules
-*.cache
-*.sass-cache
+src/bower
+.sass-cache
 *.map
+*.log
+*.swo
+*.swp
+.DS_Store
