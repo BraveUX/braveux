@@ -3,8 +3,6 @@ var sass = require('gulp-ruby-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var notify = require('gulp-notify');
-
-
 var handle = notify.onError("Error: <%= error.message %>");
 
 gulp.task('sass', function() {
@@ -26,6 +24,5 @@ gulp.task('watch', function() {
   gulp.watch('./src/style/*.scss', ['sass']);
   gulp.watch('./src/scripts/*.js', ['scripts']);
 });
-
 
 gulp.task('default', [ 'sass', 'scripts', 'watch']);
