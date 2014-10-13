@@ -1,5 +1,10 @@
+language: node_js
+node_js:
+  - 10.0
+
 env:
   global:
   - secure: ZYk494R1yz+UEvcc+/pgB+LPbeTGgUv/ygwGOVEGhzuoZTYpDnIIbSAFdLrmJebduo6i2IwvOBT9ywUZwZwaVu72QUm614/r/xiTRMWxYW+2m24xfeNaB0AtImCEu00WSwZ8wKvUzLxX8VT7f3ff/g3D7+kWS9XwKayf6tkn+rw=
   - secure: SzR4oz0mEeo7MFc8hrv0NSWzgMoLYZziczHvZcaim1RNPHj56YqpqbY1xlsTZbGwDkpRvfxdzAfmY8hQgNeqTBxQhLwFRYHSmGy5vo3Z2EDgXBCFijRqA8QvwZEPLDglGw23h7jzQfggzrHE1uNZKeB4EF38JkGyEnhnUel7U2o=
+
 after_success: curl --ftp-create-dirs -T uploadfilename -u $FTP_USER:$FTP_PASSWORD ftp://braveux.com/dev
