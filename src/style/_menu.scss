@@ -6,7 +6,7 @@ $menu-height: 50px;
   top: 0;
   right: 50%;
   @include size($menu-height);
-  margin: 0px 470px 0 0;
+  margin: 0 470px 0 0;
   background-image: url('images/flag.svg');
   background-color: $light-black;
   background-position: center center;
