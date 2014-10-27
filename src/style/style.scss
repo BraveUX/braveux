@@ -6,7 +6,6 @@
 
 @import "../bower/bourbon/dist/bourbon";
 
-
 // box sizing
 
 *,
@@ -19,9 +18,9 @@
 // globals
 
 body {
-  // font-family: ;
-  // font-weight: ;
-  // font-size: ;
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
+  font-size: 12px;
   line-height: 1.3;
 }
 
@@ -38,9 +37,5 @@ em {
 }
 
 // partials
-body {
-  margin: 0;
-  padding: 0;
-}
 
 @import "layout";
