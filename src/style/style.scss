@@ -38,5 +38,9 @@ em {
 }
 
 // partials
+body {
+  margin: 0;
+  padding: 0;
+}
 
 @import "layout";
