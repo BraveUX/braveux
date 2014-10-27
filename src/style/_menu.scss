@@ -1,15 +1,52 @@
-.logo {
+$menu-height: 50px;
 
+.logo {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  @include size($menu-height);
+  margin: 0px 0 0 -520px;
+  background: url('images/flag.svg') $light-black center center no-repeat;
+  @include hide-text;
 }
 
 .menu {
+  @include transition(margin 0.5s ease);
+  position: relative;
+  @include size(100% $menu-height);
+  background-color: $black;
 
+  // collapsed state
+  &.is-collapsed {
+    margin-top: -50px;
+  }
 }
 
 .menu-link {
+  float: left;
+  display: block;
+  @include size(auto $menu-height);
+  padding: 18px 40px 0 20px;
+  border-right: 2px solid $light-black;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #F3F3F3;
 
+  // make room for fixed logo
+  &:first-child {
+    margin-left: 50px;
+  }
 }
 
 .ux-toggle {
-
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: block;
+  @include size(20px);
+  background: url('images/ux-icon.svg') #808080 center center no-repeat;
+  border-radius: 50%;
+  @include hide-text;
 }
