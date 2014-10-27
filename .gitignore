@@ -1,6 +1,7 @@
 node_modules
-src/bower
+bower
 .sass-cache
+
 *.map
 *.log
 *.swo
