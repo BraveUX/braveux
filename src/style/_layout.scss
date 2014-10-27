@@ -2,3 +2,10 @@
 	@include clearfix;
 	@include size(100% auto);
 }
+
+.container {
+  @include clearfix;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
