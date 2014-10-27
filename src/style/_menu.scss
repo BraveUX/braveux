@@ -1,13 +1,23 @@
 $menu-height: 50px;
 
 .logo {
+  @include transition(all 0.5s ease);
   position: fixed;
   top: 0;
-  left: 50%;
+  right: 50%;
   @include size($menu-height);
-  margin: 0px 0 0 -520px;
-  background: url('images/flag.svg') $light-black center center no-repeat;
+  margin: 0px 470px 0 0;
+  background-image: url('images/flag.svg');
+  background-color: $light-black;
+  background-position: center center;
+  background-repeat: no-repeat;
   @include hide-text;
+
+  // hover state
+  &:hover {
+    width: 110px;
+    background-image: url('images/wordmark.svg');
+  }
 }
 
 .menu {
@@ -18,7 +28,7 @@ $menu-height: 50px;
 
   // collapsed state
   &.is-collapsed {
-    margin-top: -50px;
+    margin-top: -$menu-height;
   }
 }
 
