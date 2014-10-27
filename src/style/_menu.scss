@@ -46,7 +46,7 @@ $menu-height: 50px;
 
   // make room for fixed logo
   &:first-child {
-    margin-left: 50px;
+    margin-left: $menu-height;
   }
 }
 
