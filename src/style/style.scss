@@ -11,16 +11,6 @@ $light-black: #27303C;
 
 
 
-// box sizing
-
-*,
-*::before,
-*::after {
-  @include box-sizing(border-box);
-  margin: 0;
-}
-
-
 // globals
 
 body {
@@ -30,17 +20,6 @@ body {
   line-height: 1.3;
 }
 
-a {
-  text-decoration: none;
-}
-
-strong {
-  font-weight: bold;
-}
-
-em {
-  font-style: italic;
-}
 
 // partials
 

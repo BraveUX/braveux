@@ -425,3 +425,42 @@ td,
 th {
   padding: 0;
 }
+
+
+
+// User styles
+
+
+
+
+// box sizing
+
+*,
+*::before,
+*::after {
+  @include box-sizing(border-box);
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+
+
+
+
+
+
+
+
+
+
