@@ -11,7 +11,27 @@ $light-black: #27303C;
 
 
 
+
 // globals
+
+*,
+*::before,
+*::after {
+  @include box-sizing(border-box);
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
 
 body {
   font-family: 'Source Sans Pro';
@@ -19,6 +39,7 @@ body {
   font-size: 12px;
   line-height: 1.3;
 }
+
 
 
 // partials
