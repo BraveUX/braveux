@@ -2,18 +2,14 @@ $menu-height: 50px;
 
 .logo {
   @include transition(all 0.5s ease);
+  @include size($menu-height);
+  @include hide-text;
   position: fixed;
   top: 0;
   right: 50%;
-  @include size($menu-height);
   margin: 0 470px 0 0;
-  background-image: url('images/flag.svg');
-  background-color: $light-black;
-  background-position: center center;
-  background-repeat: no-repeat;
-  @include hide-text;
+  background: url('images/flag.svg') center center no-repeat $light-black;
 
-  // hover state
   &:hover {
     width: 110px;
     background-image: url('images/wordmark.svg');
@@ -22,20 +18,19 @@ $menu-height: 50px;
 
 .menu {
   @include transition(margin 0.5s ease);
-  position: relative;
   @include size(100% $menu-height);
+  position: relative;
   background-color: $black;
 
-  // collapsed state
   &.is-collapsed {
     margin-top: -$menu-height;
   }
 }
 
 .menu-link {
+  @include size(auto $menu-height);
   float: left;
   display: block;
-  @include size(auto $menu-height);
   padding: 18px 40px 0 20px;
   border-right: 2px solid $light-black;
   font-weight: 600;
@@ -44,19 +39,19 @@ $menu-height: 50px;
   letter-spacing: 1px;
   color: #F3F3F3;
 
-  // make room for fixed logo
   &:first-child {
     margin-left: $menu-height;
   }
 }
 
 .ux-toggle {
+  @include size(20px);
+  @include hide-text;
+  @include position(absolute, 15px 15px null null);
   position: absolute;
   top: 15px;
   right: 15px;
   display: block;
-  @include size(20px);
   background: url('images/ux-icon.svg') #808080 center center no-repeat;
   border-radius: 50%;
-  @include hide-text;
 }
