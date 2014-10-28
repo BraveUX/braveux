@@ -1,7 +1,6 @@
 {
-	"name": "BraveUX",
-	"dependencies": {
-		"normalize-css": "*",
-		"bourbon": "*"
-	}
+  "name": "BraveUX",
+  "dependencies": {
+    "bourbon": "*"
+  }
 }
