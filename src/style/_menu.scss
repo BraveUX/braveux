@@ -45,9 +45,9 @@ $menu-height: 50px;
 }
 
 .ux-toggle {
+  @include position(absolute, 15px 15px null null);
   @include size(20px);
   @include hide-text;
-  @include position(absolute, 15px 15px null null);
   position: absolute;
   top: 15px;
   right: 15px;
