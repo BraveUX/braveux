@@ -20,7 +20,7 @@ gulp.task('scripts', function() {
     .on('error', handle)
     .pipe(gulp.dest('public/'))
 });
-  
+
 gulp.task('watch', function() {
   gulp.watch('src/style/*.scss', ['sass']);
   gulp.watch('src/scripts/*.js', ['scripts']);

@@ -1,12 +1,10 @@
-# BraveUX website
+# Brave UX Website
 
 ### Run
 
-`$ npm i && bower i`
-
-`$ gulp`
-
-
-
+```bash
+$ npm i && bower i
+$ gulp
+```
 
 [![forthebadge](http://forthebadge.com/badges/built-with-love.svg)](http://forthebadge.com)

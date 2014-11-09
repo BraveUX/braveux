@@ -1,16 +1,11 @@
-// Vars
+// colors
 
 $black: #17202A;
 $light-black: #27303C;
 
+// bourbon.io
 
-// Dependencies
-
-@import "normalize";
 @import "../bower/bourbon/dist/bourbon";
-
-
-
 
 // globals
 
@@ -39,8 +34,6 @@ body {
   font-size: 12px;
   line-height: 1.3;
 }
-
-
 
 // partials
 
