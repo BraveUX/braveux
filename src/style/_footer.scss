@@ -1,0 +1,81 @@
+footer {
+  padding: 120px 0 60px 0;
+  background-color: $black;
+  font-size: 14px;
+}
+
+.footer-column {
+  float: left;
+
+  &:nth-child(1) {
+    width: 250px;
+  }
+
+  &:nth-child(2) {
+    width: 260px;
+  }
+
+  &:nth-child(3) {
+    width: 340px;
+  }
+
+  &:nth-child(4) {
+    width: 190px;
+
+    .footer-heading {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.footer-logo {
+  margin: 30px 0 0 50px;
+}
+
+.footer-heading {
+  margin-bottom: 35px;
+  font-family: 'Trade Gothic LT Std';
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #979797;
+}
+
+.footer-email-link {
+  font-size: 24px;
+  line-height: 1.5;
+  color: #979797;
+}
+
+.footer-social-link {
+  float: left;
+  display: block;
+  @include size(36px);
+  margin-right: 25px;
+  @include hide-text;
+
+  &.twitter { background: url('images/icons/icon-twitter.svg') center center no-repeat; }
+  &.facebook { background: url('images/icons/icon-facebook.svg') center center no-repeat; }
+  &.linkedin { background: url('images/icons/icon-linkedin.svg') center center no-repeat; }
+  &.dribbble { background: url('images/icons/icon-dribbble.svg') center center no-repeat; }
+  &.github { background: url('images/icons/icon-github.svg') center center no-repeat; }
+}
+
+.footer-product-link {
+  display: block;
+  font-size: 16px;
+  color: #979797;
+}
+
+.footer-copyright {
+  clear: both;
+  margin-top: 95px;
+  font-family: 'Sentinel';
+  text-align: center;
+  color: #666;
+}
+
+.footer-copyright-stars {
+  display: inline-block;
+  margin: 0 50px;
+}
