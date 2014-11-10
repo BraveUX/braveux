@@ -17,13 +17,15 @@ $menu-height: 50px;
 }
 
 .menu {
-  @include transition(margin 0.5s ease);
+  @include transition(top 0.5s ease);
   @include size(100% $menu-height);
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: $black;
 
   &.is-collapsed {
-    margin-top: -$menu-height;
+    top: -$menu-height;
   }
 }
 
