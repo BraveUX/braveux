@@ -1,0 +1,37 @@
+.contact {
+  background-color: #EDEDED;
+}
+
+.contact-info {
+  padding: 100px 0 120px 0;
+}
+
+.contact-email,
+.contact-phone,
+.contact-location,
+.contact-follow {
+  margin-bottom: 40px;
+}
+
+.contact-heading {
+  margin-bottom: 20px;
+  font-family: 'Trade Gothic LT Std';
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #4D4D4D;
+}
+
+.contact-email-link,
+.contact-phone-link,
+.contact-location-link {
+  font-family: 'Sentinel';
+  font-weight: 200;
+  font-size: 24px;
+  color: #808080;
+}
+
+.contact-email-link {
+  font-size: 40px;
+}
+
