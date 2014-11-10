@@ -1,0 +1,64 @@
+.approach-section {
+  @include clearfix;
+  @include size(100% 670px);
+  padding-top: 200px;
+
+  &:nth-child(even) {
+    text-align: right;
+
+    .approach-section-heading,
+    .approach-section-text,
+    .approach-section-next {
+      float: right;
+      clear: right;
+    }
+  }
+
+  &.white {
+    background-color: #F1F1F1;
+    color: #6F7F86;
+  }
+
+  &.black {
+    background-color: $black;
+    color: #F4F4F4;
+  }
+
+  &.gray {
+    background-color: #6B6B6B;
+    color: #E1E1E1;
+  }
+}
+
+.approach-section-heading {
+  max-width: 600px;
+  margin: 0 0 45px 0;
+  font-family: 'Trade Gothic LT Std';
+  font-weight: bold;
+  font-size: 28px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.approach-section-text {
+  max-width: 600px;
+  margin: 0 0 35px 0;
+  font-size: 18px;
+  line-height: 2;
+
+  strong {
+    font-weight: 600;
+    font-size: 24px;
+  }
+}
+
+.approach-section-next {
+  display: block;
+  @include size(25px);
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  .white & { background-image: url('images/approach-section-next-white.svg'); }
+  .black & { background-image: url('images/approach-section-next-black.svg'); }
+  .gray & { background-image: url('images/approach-section-next-gray.svg'); }
+}

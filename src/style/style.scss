@@ -1,6 +1,6 @@
 // colors
 
-$black: #17202A;
+$black: #262628;
 $light-black: #27303C;
 
 // bourbon.io
@@ -38,4 +38,7 @@ body {
 // partials
 
 @import "layout";
-@import "menu";@import "header";
+@import "menu";
+@import "header";
+
+@import "approach";
