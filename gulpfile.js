@@ -1,10 +1,9 @@
 var gulp = require("gulp");
 var plugin = require('gulp-load-plugins')();
 
-var handle = function(err) {
-  this.emit('end');
-  console.log(err);
-}
+var handle = function(err) {console.log(err); this.emit('end');}
+
+
 
 gulp.task('sass', function() {
   return gulp.src('src/style/style.scss')
@@ -21,9 +20,17 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('public/'))
 });
 
+gulp.task('server', function() {
+  return plugin.connect.server({
+    root: 'public',
+    port: 8000
+  });
+});
+
 gulp.task('watch', function() {
   gulp.watch('src/style/*.scss', ['sass']);
   gulp.watch('src/scripts/*.js', ['scripts']);
 });
 
-gulp.task('default', [ 'sass', 'scripts', 'watch']);
+
+gulp.task('default', [ 'server', 'sass', 'scripts', 'watch']);
