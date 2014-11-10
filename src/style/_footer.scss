@@ -47,20 +47,6 @@ footer {
   color: #979797;
 }
 
-.footer-social-link {
-  float: left;
-  display: block;
-  @include size(36px);
-  margin-right: 25px;
-  @include hide-text;
-
-  &.twitter { background: url('images/icons/icon-twitter.svg') center center no-repeat; }
-  &.facebook { background: url('images/icons/icon-facebook.svg') center center no-repeat; }
-  &.linkedin { background: url('images/icons/icon-linkedin.svg') center center no-repeat; }
-  &.dribbble { background: url('images/icons/icon-dribbble.svg') center center no-repeat; }
-  &.github { background: url('images/icons/icon-github.svg') center center no-repeat; }
-}
-
 .footer-product-link {
   display: block;
   font-size: 16px;
