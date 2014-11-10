@@ -1,7 +1,81 @@
 .approach-section {
   @include clearfix;
   @include size(100% 670px);
-  padding-top: 200px;
+
+  .container {
+    position: relative;
+    height: 100%;
+  }
+
+  &:nth-child(1) {
+    .container {
+      padding-top: 185px;
+      padding-left: 340px;
+    }
+
+    .approach-section-icon {
+      top: 0;
+      left: -150px;
+    }
+  }
+
+  &:nth-child(2) {
+    .container {
+      padding-top: 215px;
+      padding-right: 380px;
+    }
+
+    .approach-section-icon {
+      top: 155px;
+      right: -155px;
+    }
+  }
+
+  &:nth-child(3) {
+    .container {
+      padding-top: 200px;
+      padding-left: 340px;
+    }
+
+    .approach-section-icon {
+      top: 0;
+      left: -165px;
+    }
+  }
+
+  &:nth-child(4) {
+    .container {
+      padding-top: 235px;
+      padding-right: 330px;
+    }
+
+    .approach-section-icon {
+      top: 165px;
+      right: -155px;
+    }
+  }
+
+  &:nth-child(5) {
+    .container {
+      padding-top: 200px;
+      padding-left: 455px;
+    }
+
+    .approach-section-icon {
+
+    }
+  }
+
+  &:nth-child(6) {
+    .container {
+      padding-top: 175px;
+      padding-right: 380px;
+    }
+
+    .approach-section-icon {
+
+    }
+  }
 
   &:nth-child(even) {
     text-align: right;
@@ -30,6 +104,10 @@
   }
 }
 
+.approach-section-icon {
+  position: absolute;
+}
+
 .approach-section-heading {
   max-width: 600px;
   margin: 0 0 45px 0;
@@ -38,6 +116,10 @@
   font-size: 28px;
   letter-spacing: 2px;
   text-transform: uppercase;
+
+  &:first-child {
+    font-size: 40px;
+  }
 }
 
 .approach-section-text {
