@@ -1,0 +1,18 @@
+header {
+  @include size(100% 340px);
+  padding-top: 150px;
+}
+
+.page-heading {
+  margin: 0 0 15px 0;
+  font-weight: 200;
+  font-size: 52px;
+  color: #333;
+}
+
+.page-subheading {
+  font-family: 'Sentinel';
+  font-weight: 200;
+  font-size: 24px;
+  color: #AEAEAE;
+}
