@@ -23,6 +23,7 @@ gulp.task('ejs', function() {
   return gulp.src('src/views/*.ejs')
     .pipe(plugin.ejs())
     .on('error', handle)
+    .pipe(plugin.htmlmin({collapseWhitespace: true})) 
     .pipe(gulp.dest('./public'));
 });
 
