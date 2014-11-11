@@ -27,6 +27,6 @@
 }
 
 .contact-email-link {
-  font-size: 40px;
+  @include font(40px);
 }
 

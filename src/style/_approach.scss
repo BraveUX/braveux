@@ -117,19 +117,21 @@
   text-transform: uppercase;
 
   &:first-child {
-    font-size: 40px;
+    @include font(40px);
   }
 }
 
 .approach-section-text {
   max-width: 600px;
   margin: 0 0 35px 0;
+
+  @include font(18px);
   font-size: 18px;
   line-height: 2;
 
+
   strong {
-    font-weight: 600;
-    font-size: 24px;
+    @include font(24px, 600);
   }
 }
 
