@@ -34,11 +34,9 @@ footer {
 
 .footer-heading {
   margin-bottom: 35px;
-  
-  @include font(inherit, 600, #979797, 'Trade Gothic LT Std');
+  @include font(null, 600, #979797, 'Trade Gothic LT Std');
   letter-spacing: 2px;
   text-transform: uppercase;
-
 }
 
 .footer-email-link {

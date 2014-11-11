@@ -40,11 +40,8 @@
   opacity: 0;
   padding-top: 350px;
   background-color: $black;
-  font-family: 'Sentinel';
-  font-weight: 300;
-  font-size: 40px;
+  @include font(40px, 300, #EDEDED, 'Sentinel');
   text-align: center;
-  color: #EDEDED;
 
   &:hover {
     opacity: .8;
@@ -66,12 +63,9 @@
 
 .team-section-job {
   margin-bottom: 35px;
-  font-family: 'Trade Gothic LT Std';
-  font-weight: 600;
-  font-size: 16px;
+  @include font(16px, 600, #BCBCBC, 'Trade Gothic LT Std');
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #BCBCBC;
 }
 
 .team-section-heading {
@@ -85,8 +79,6 @@
 .team-section-longtext {
   max-width: 370px;
   margin-bottom: 40px;
-  font-family: 'Sentinel';
-  font-weight: 200;
-  font-size: 14px;
+  @include font(14px, 200, #616161, 'Sentinel');
   line-height: 2;
 }

@@ -4,20 +4,19 @@
  * @param $color  - font color, default: null
  * @param $family - font family, default: null
  *
- * 
  * @example
  * body {
  *   @include font(15px, 400, red);
  * }
  *
- * // output
+ * output
  * body {
  *   font-size: 12px;
  *   font-weight: 400;
  *   color: red;
  * }
  */
-@mixin font($size, $weight:null, $color:null, $family:null ) {
+@mixin font($size, $weight: null, $color: null, $family: null) {
   font-family: $family;
   font-size: $size;
   font-weight: $weight;

@@ -111,8 +111,7 @@
 .approach-section-heading {
   max-width: 600px;
   margin: 0 0 45px 0;
-  
-  @include font(28px, bold, null, 'Trade Gothic LT Std' );
+  @include font(28px, bold, null, 'Trade Gothic LT Std');
   letter-spacing: 2px;
   text-transform: uppercase;
 
@@ -124,11 +123,8 @@
 .approach-section-text {
   max-width: 600px;
   margin: 0 0 35px 0;
-
   @include font(18px);
-  font-size: 18px;
   line-height: 2;
-
 
   strong {
     @include font(24px, 600);
