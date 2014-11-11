@@ -1,42 +1,7 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <title>Brave UX</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!--[if lt IE 9]>
-      <script>
-        document.createElement('header');
-        document.createElement('nav');
-        document.createElement('section');
-        document.createElement('article');
-        document.createElement('aside');
-        document.createElement('footer');
-        document.createElement('hgroup');
-      </script>
-    <![endif]-->
-
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,600">
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-
+<% include partials/header %>
 
 <div class="wrapper">
-  <section class="menu">
-  <h1 class="logo">Brave UX</h1>
-
-  <div class="container">
-    <a class="menu-link" href="#">Work</a>
-    <a class="menu-link" href="#">Approach</a>
-    <a class="menu-link" href="#">Team</a>
-    <a class="menu-link" href="#">Contact</a>
-  </div>
-
-  <a class="ux-toggle" href="#">?</a>
-</section><!-- END menu -->
+  <% include partials/menu %>
 
   <header>
     <div class="container">
@@ -82,8 +47,4 @@
   </main><!-- END contact -->
 </div><!-- END wrapper -->
 
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="scripts.js"></script>
-  </body>
-</html>
+<% include partials/closing %>
