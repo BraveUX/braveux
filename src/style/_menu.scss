@@ -1,5 +1,24 @@
 $menu-height: 50px;
 
+.menu {
+  z-index: 1;
+  @include transition(all 0.5s ease);
+  @include size(100% $menu-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $black;
+
+  &.is-collapsed {
+    top: -$menu-height;
+  }
+
+  &.is-home {
+    margin-top: 20px;
+    background-color: transparent;
+  }
+}
+
 .logo {
   @include transition(all 0.5s ease);
   @include size($menu-height);
@@ -14,23 +33,15 @@ $menu-height: 50px;
     width: 110px;
     background-image: url('images/wordmark.svg');
   }
-}
 
-.menu {
-  z-index: 1;
-  @include transition(top 0.5s ease);
-  @include size(100% $menu-height);
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: $black;
-
-  &.is-collapsed {
-    top: -$menu-height;
+  .is-home & {
+    top: 20px;
+    background-color: transparent;
   }
 }
 
 .menu-link {
+  @include transition(all 0.5s ease);
   @include size(auto $menu-height);
   float: left;
   display: block;
@@ -45,16 +56,30 @@ $menu-height: 50px;
   &:first-child {
     margin-left: $menu-height;
   }
+
+  .is-home & {
+    border-right-color: transparent;
+
+    &:first-child {
+      margin-left: 75px;
+    }
+  }
 }
 
 .ux-toggle {
+  @include transition(all 0.5s ease);
   @include position(absolute, 15px 15px null null);
   @include size(20px);
   @include hide-text;
+  opacity: 1;
   position: absolute;
   top: 15px;
   right: 15px;
   display: block;
   background: url('images/ux-icon.svg') #808080 center center no-repeat;
   border-radius: 50%;
+
+  .is-home & {
+    opacity: 0;
+  }
 }

@@ -1,9 +1,17 @@
+// normalize
+
 @import "normalize";
+
+// mixin library
+
 @import "bourbon/bourbon";
 
-$black: #262628;
-$light-black: #27303C;
+// brand colors
 
+$black: #1C1C20;
+$light-black: #262628;
+
+// box sizing
 
 *,
 *::before,
@@ -11,6 +19,8 @@ $light-black: #27303C;
   @include box-sizing(border-box);
   margin: 0;
 }
+
+// globals
 
 a {
   text-decoration: none;
@@ -30,8 +40,6 @@ body {
   font-size: 12px;
   line-height: 1.3;
 }
-
-
 
 // partials
 
