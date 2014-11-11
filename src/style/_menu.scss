@@ -47,11 +47,9 @@ $menu-height: 50px;
   display: block;
   padding: 18px 40px 0 20px;
   border-right: 2px solid $light-black;
-  font-weight: 600;
+  @include font(9px, 600, #F3F3F3);
   text-transform: uppercase;
-  font-size: 9px;
   letter-spacing: 1px;
-  color: #F3F3F3;
 
   &:first-child {
     margin-left: $menu-height;

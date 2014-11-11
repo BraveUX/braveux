@@ -1,0 +1,25 @@
+/**
+ * @param $size   - font size, default: 12px
+ * @param $weight - font weight, default: normal (300)
+ * @param $color  - font color, default: white
+ * @param $family - font family, default: none
+ *
+ * 
+ * @example
+ * body {
+ *   @include font(15px, 400, red);
+ * }
+ *
+ * // output
+ * body {
+ *   font-size: 12px;
+ *   font-weight: 400;
+ *   color: red;
+ * }
+ */
+@mixin font($size:12px, $weight:300, $color: null, $family:null ) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}

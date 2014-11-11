@@ -2,10 +2,10 @@
 
 @import "normalize";
 
-// mixin library
+// mixins
 
 @import "bourbon/bourbon";
-
+@import "mixins";
 // brand colors
 
 $black: #1C1C20;
@@ -35,9 +35,7 @@ em {
 }
 
 body {
-  font-family: 'Source Sans Pro';
-  font-weight: 300;
-  font-size: 12px;
+  @include font(12px, 300, white, 'Source Sans Pro');
   line-height: 1.3;
 }
 

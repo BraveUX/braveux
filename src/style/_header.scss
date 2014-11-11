@@ -5,14 +5,9 @@ header {
 
 .page-heading {
   margin: 0 0 15px 0;
-  font-weight: 200;
-  font-size: 52px;
-  color: #333;
+  @include font(52px, 200, #333333);
 }
 
 .page-subheading {
-  font-family: 'Sentinel';
-  font-weight: 200;
-  font-size: 24px;
-  color: #AEAEAE;
+  @include font(24px, 200, #AEAEAE, 'Sentinel');
 }

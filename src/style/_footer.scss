@@ -34,31 +34,28 @@ footer {
 
 .footer-heading {
   margin-bottom: 35px;
-  font-family: 'Trade Gothic LT Std';
-  font-weight: 600;
+  
+  @include font(inherit, 600, #979797, 'Trade Gothic LT Std');
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #979797;
+
 }
 
 .footer-email-link {
-  font-size: 24px;
+  @include font(24px, null, #979797);
   line-height: 1.5;
-  color: #979797;
 }
 
 .footer-product-link {
   display: block;
-  font-size: 16px;
-  color: #979797;
+  @include font(16px, null, #979797);
 }
 
 .footer-copyright {
   clear: both;
   margin-top: 95px;
-  font-family: 'Sentinel';
+  @include font(null, null, #979797, 'Sentinel');
   text-align: center;
-  color: #666;
 }
 
 .footer-copyright-stars {

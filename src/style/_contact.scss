@@ -15,20 +15,15 @@
 
 .contact-heading {
   margin-bottom: 20px;
-  font-family: 'Trade Gothic LT Std';
-  font-weight: 600;
+  @include font(null, 600, #4D4D4D, 'Trade Gothic LT Std');
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #4D4D4D;
 }
 
 .contact-email-link,
 .contact-phone-link,
 .contact-location-link {
-  font-family: 'Sentinel';
-  font-weight: 200;
-  font-size: 24px;
-  color: #808080;
+  @include font(24px, 200, #808080, 'Sentinel');
 }
 
 .contact-email-link {

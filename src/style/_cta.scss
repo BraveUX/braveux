@@ -6,9 +6,7 @@
 .cta-link {
   display: inline-block;
   margin: 0 auto;
-  font-weight: 200;
-  font-size: 32px;
-  color: #414141;
+  @include font(32px, 200, #414141);
 }
 
 .cta-icon {

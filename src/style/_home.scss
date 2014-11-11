@@ -13,10 +13,7 @@
 
 .typewriter {
   margin-bottom: 40px;
-  font-family: 'Source Sans Pro';
-  font-weight: 200;
-  font-size: 54px;
-  color: #ECECEC;
+  @include font(54px, 200, #ECECEC);
 
   &:last-child {
     margin-bottom: 0;
