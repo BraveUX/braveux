@@ -1,19 +1,55 @@
 .team-section {
   @include clearfix;
+
+  .container {
+    position: relative;
+  }
 }
 
-.team-section-headshot {
+.team-section-profile {
+  @include clearfix;
+  float: left;
+  position: relative;
+  width: 50%;
+}
+
+.team-section-image {
+  position: absolute;
+  right: 0;
+  @include size(50% 100%);
+}
+
+.team-section-profile {
+  padding: 80px 0;
+
+  &:nth-child(even) {
+    padding-left: 150px;
+  }
+}
+
+.team-section-headshot,
+.team-section-quote {
+  position: absolute;
+  @include size(100%);
   display: block;
 }
 
 .team-section-quote {
+  @include transition(all 0.5s ease);
+  z-index: 0;
+  opacity: 0;
+  padding-top: 350px;
+  background-color: $black;
+  font-family: 'Sentinel';
+  font-weight: 300;
+  font-size: 40px;
+  text-align: center;
+  color: #EDEDED;
 
-}
-.team-section-profile,
-.team-section-image {
-  float: left;
-  position: relative;
-  @include size(50% 100%);
+  &:hover {
+    opacity: .8;
+    padding-top: 300px;
+  }
 }
 
 .team-section-name {
@@ -47,7 +83,7 @@
 }
 
 .team-section-longtext {
-  max-width: 360px;
+  max-width: 370px;
   margin-bottom: 40px;
   font-family: 'Sentinel';
   font-weight: 200;
