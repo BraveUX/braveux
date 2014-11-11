@@ -1,0 +1,56 @@
+.team-section {
+  @include clearfix;
+}
+
+.team-section-headshot {
+  display: block;
+}
+
+.team-section-quote {
+
+}
+.team-section-profile,
+.team-section-image {
+  float: left;
+  position: relative;
+  @include size(50% 100%);
+}
+
+.team-section-name {
+  margin-bottom: 10px;
+  font-family: 'Trade Gothic LT Std';
+  font-weight: 200;
+  font-size: 48px;
+  color: #414141;
+
+  &::first-letter {
+    margin-left: -4px;
+  }
+}
+
+.team-section-job {
+  margin-bottom: 35px;
+  font-family: 'Trade Gothic LT Std';
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #BCBCBC;
+}
+
+.team-section-heading {
+  margin-bottom: 20px;
+  font-family: 'Sentinel';
+  font-style: italic;
+  font-size: 20px;
+  color: #616161;
+}
+
+.team-section-longtext {
+  max-width: 360px;
+  margin-bottom: 40px;
+  font-family: 'Sentinel';
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 2;
+}
