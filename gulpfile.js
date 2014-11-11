@@ -23,7 +23,7 @@ gulp.task('ejs', function() {
   return gulp.src('src/views/*.ejs')
     .pipe(p.ejs())
     .on('error', handle)
-    .pipe(p.htmlmin({collapseWhitespace: true})) 
+    .pipe(p.htmlmin({collapseWhitespace: true,removeComments: true})) 
     .pipe(gulp.dest('public'));
 });
 
