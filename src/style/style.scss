@@ -41,12 +41,18 @@ body {
 
 // partials
 
+// site wide
+
 @import "layout";
 @import "menu";
 @import "header";
-@import "home";
-@import "approach";
-@import "contact";
 @import "cta";
 @import "social";
 @import "footer";
+
+// sections
+
+@import "home";
+@import "approach";
+@import "team";
+@import "contact";
