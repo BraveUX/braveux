@@ -7,87 +7,6 @@
     height: 100%;
   }
 
-  &:nth-child(1) {
-    .container {
-      padding-top: 185px;
-      padding-left: 340px;
-    }
-
-    .approach-section-icon {
-      top: 0;
-      left: -150px;
-    }
-  }
-
-  &:nth-child(2) {
-    .container {
-      padding-top: 215px;
-      padding-right: 380px;
-    }
-
-    .approach-section-icon {
-      top: 155px;
-      right: -155px;
-    }
-  }
-
-  &:nth-child(3) {
-    .container {
-      padding-top: 200px;
-      padding-left: 340px;
-    }
-
-    .approach-section-icon {
-      top: 0;
-      left: -165px;
-    }
-  }
-
-  &:nth-child(4) {
-    .container {
-      padding-top: 235px;
-      padding-right: 330px;
-    }
-
-    .approach-section-icon {
-      top: 165px;
-      right: -155px;
-    }
-  }
-
-  &:nth-child(5) {
-    .container {
-      padding-top: 200px;
-      padding-left: 455px;
-    }
-
-    .approach-section-icon {
-
-    }
-  }
-
-  &:nth-child(6) {
-    .container {
-      padding-top: 175px;
-      padding-right: 380px;
-    }
-
-    .approach-section-icon {
-
-    }
-  }
-
-  &:nth-child(even) {
-    text-align: right;
-
-    .approach-section-heading,
-    .approach-section-text,
-    .approach-section-next {
-      float: right;
-      clear: right;
-    }
-  }
-
   &.white {
     background-color: #F1F1F1;
     color: #6F7F86;
@@ -101,6 +20,89 @@
   &.gray {
     background-color: #6B6B6B;
     color: #E1E1E1;
+  }
+}
+
+.approach-research,
+.approach-design,
+.approach-test {
+  text-align: right;
+
+  .approach-section-heading,
+  .approach-section-text,
+  .approach-section-next {
+    float: right;
+    clear: right;
+  }
+}
+
+.approach-idea {
+  .container {
+    padding-top: 185px;
+    padding-left: 340px;
+  }
+
+  .approach-section-icon {
+    top: 0;
+    left: -150px;
+  }
+}
+
+.approach-research {
+  .container {
+    padding-top: 215px;
+    padding-right: 380px;
+  }
+
+  .approach-section-icon {
+    top: 155px;
+    right: -155px;
+  }
+}
+
+.approach-ia {
+  .container {
+    padding-top: 200px;
+    padding-left: 340px;
+  }
+
+  .approach-section-icon {
+    top: 0;
+    left: -165px;
+  }
+}
+
+.approach-design {
+  .container {
+    padding-top: 235px;
+    padding-right: 330px;
+  }
+
+  .approach-section-icon {
+    top: 165px;
+    right: -155px;
+  }
+}
+
+.approach-build {
+  .container {
+    padding-top: 200px;
+    padding-left: 455px;
+  }
+
+  .approach-section-icon {
+
+  }
+}
+
+.approach-test {
+  .container {
+    padding-top: 175px;
+    padding-right: 380px;
+  }
+
+  .approach-section-icon {
+
   }
 }
 
