@@ -2,6 +2,15 @@ footer {
   padding: 120px 0 60px 0;
   background-color: $black;
   @include font(14px);
+
+  &.is-short {
+    padding: 80px 0;
+
+    .footer-copyright {
+      margin-top: 0;
+      font-size: 20px;
+    }
+  }
 }
 
 .footer-column {
@@ -52,7 +61,7 @@ footer {
 .footer-copyright {
   clear: both;
   margin-top: 95px;
-  @include font(null, null, #979797, 'Sentinel');
+  @include font(null, null, #666, 'Sentinel');
   text-align: center;
 }
 
