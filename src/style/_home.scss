@@ -1,6 +1,7 @@
 .home {
   height: 100%;
-  background-color: #4D4D4D;
+  background: url('images/home-bg.png') #4D4D4D center center no-repeat;
+  background-size: cover;
 }
 
 .typewriter-wrapper {
