@@ -4,27 +4,34 @@
   .container {
     position: relative;
   }
+
+  &:nth-child(even) {
+    .team-section-profile {
+      margin-left: 50%;
+      padding-left: 150px;
+    }
+
+    .team-section-image {
+      left: 0;
+    }
+  }
+
+  &:nth-child(odd) {
+    .team-section-image {
+      right: 0;
+    }
+  }
 }
 
 .team-section-profile {
   @include clearfix;
-  float: left;
-  position: relative;
   width: 50%;
+  padding: 80px 0;
 }
 
 .team-section-image {
   position: absolute;
-  right: 0;
   @include size(50% 100%);
-}
-
-.team-section-profile {
-  padding: 80px 0;
-
-  &:nth-child(even) {
-    padding-left: 150px;
-  }
 }
 
 .team-section-headshot,
@@ -38,15 +45,22 @@
   @include transition(all 0.5s ease);
   z-index: 0;
   opacity: 0;
-  padding-top: 350px;
+  padding-top: 60%;
   background-color: $black;
   @include font(40px, 300, #EDEDED, 'Sentinel');
+  line-height: 1;
   text-align: center;
 
   &:hover {
     opacity: .8;
-    padding-top: 300px;
+    padding-top: 50%;
   }
+}
+
+.team-section-quote-cite {
+  @include font(14px, 600, #EDEDED, 'Trade Gothic LT Std');
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .team-section-name {
