@@ -139,7 +139,7 @@
   background-position: center center;
   background-repeat: no-repeat;
 
-  .white & { background-image: url('images/approach-section-next-white.svg'); }
-  .black & { background-image: url('images/approach-section-next-black.svg'); }
-  .gray & { background-image: url('images/approach-section-next-gray.svg'); }
+  .white & { @include bg-img("approach-section-next-white.svg"); }
+  .black & { @include bg-img("approach-section-next-black.svg"); }
+  .gray & { @include bg-img("approach-section-next-gray.svg"); }
 }

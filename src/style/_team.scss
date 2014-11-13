@@ -81,10 +81,8 @@
 
 .team-section-heading {
   margin-bottom: 20px;
-  font-family: 'Sentinel';
+  @include font(20px, null, #616161 ,'Sentinel');
   font-style: italic;
-  font-size: 20px;
-  color: #616161;
 }
 
 .team-section-longtext {

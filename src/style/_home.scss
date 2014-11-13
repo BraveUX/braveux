@@ -1,6 +1,6 @@
 .home {
   height: 100%;
-  background: url('images/home-bg.png') #4D4D4D center center no-repeat;
+  @include bg-img("home-bg.png", #4D4D4D center center no-repeat);
   background-size: cover;
 }
 

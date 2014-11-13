@@ -22,3 +22,10 @@
   font-weight: $weight;
   color: $color;
 }
+
+
+
+
+@mixin bg-img($url, $opts: null) {
+  background: url("images/"+$url) $opts;
+}
