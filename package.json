@@ -11,7 +11,6 @@
     "gulp-ejs": "^1.0.0",
     "gulp-htmlmin": "^0.2.0",
     "gulp-load-plugins": "^0.7.0",
-    "gulp-minify-html": "^0.1.6",
     "gulp-sass": "^1.2.0",
     "gulp-uglify": "^1.0.1"
   }
