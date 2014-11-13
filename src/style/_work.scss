@@ -1,0 +1,52 @@
+.work {
+
+}
+
+.work-landing {
+  height: 520px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &.felix { background-image: url('images/work-landing-felix.jpg'); }
+  &.character { background-image: url('images/work-landing-character.png'); }
+  &.fieldone { background-image: url('images/work-landing-fieldone.svg'); }
+  &.obesity { background-image: url('images/work-landing-obesity.svg'); }
+  &.dtd { background-image: url('images/work-landing-dtd.png'); }
+}
+
+.work-rollover {
+  opacity: 0;
+  @include transition(all 0.5s ease);
+  display: block;
+  @include size(100%);
+  padding-top: 235px;
+  background-color: $black;
+  text-align: center;
+  color: white;
+
+  &:hover {
+    opacity: .8;
+    padding-top: 185px;
+  }
+}
+
+.work-rollover-project-name {
+  margin-bottom: 5px;
+  @include font(24px, 600, null, 'Source Sans Pro');
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.work-rollover-client-name {
+  margin-bottom: 20px;
+  @include font(48px, 200, null, 'Source Sans Pro');
+}
+
+.work-rollover-cta {
+  @include font(24px, 600, null, 'Sentinel');
+}
+
+.work-rollover-cta-icon {
+  margin: 0 0 -3px 15px;
+}

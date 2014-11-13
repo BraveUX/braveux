@@ -31,4 +31,5 @@ body {
   @include clearfix;
 }
 
+.full { width: 100%; }
 .one-half { width: percentage(1/2); }
