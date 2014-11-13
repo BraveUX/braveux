@@ -26,7 +26,7 @@ $menu-height: 50px;
   @include position(fixed, 0 50% null null);
   display: block;
   margin: 0 470px 0 0;
-  @include bg-img("flag.svg", center center no-repeat $light-black);
+  background: url('images/flag.svg') $light-black center center no-repeat;
 
   &:hover {
     width: 110px;
@@ -70,7 +70,7 @@ $menu-height: 50px;
   @include hide-text;
   opacity: 1;
   display: block;
-  @include bg-img("ux-icon.svg", #808080 center center no-repeat);
+  background: url('images/ux-icon') #808080 center center no-repeat;
   border-radius: 50%;
 
   .is-home & {

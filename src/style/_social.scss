@@ -8,17 +8,14 @@
   background-repeat: no-repeat;
 }
 
+.light-twitter  { background-image: url('images/icons/icon-light-twitter.svg'); }
+.light-facebook { background-image: url('images/icons/icon-light-facebook.svg'); }
+.light-linkedin { background-image: url('images/icons/icon-light-linkedin.svg'); }
+.light-dribbble { background-image: url('images/icons/icon-light-dribbble.svg'); }
+.light-github   { background-image: url('images/icons/icon-light-github.svg'); }
 
-
-
-.light-twitter  { @include bg-img("/icons/icon-light-twitter.svg"); }
-.light-facebook { @include bg-img("/icons/icon-light-facebook.svg"); }
-.light-linkedin { @include bg-img("/icons/icon-light-linkedin.svg"); }
-.light-dribbble { @include bg-img("/icons/icon-light-dribbble.svg"); }
-.light-github   { @include bg-img("/icons/icon-light-github.svg"); }
-
-.dark-twitter  { @include bg-img("/icons/icon-dark-twitter.svg"); }
-.dark-facebook { @include bg-img("/icons/icon-dark-facebook.svg"); }
-.dark-linkedin { @include bg-img("/icons/icon-dark-linkedin.svg"); }
-.dark-dribbble { @include bg-img("/icons/icon-dark-dribbble.svg"); }
-.dark-github   { @include bg-img("/icons/icon-dark-github.svg"); }
+.dark-twitter  { background-image: url('images/icons/icon-dark-twitter.svg'); }
+.dark-facebook { background-image: url('images/icons/icon-dark-facebook.svg'); }
+.dark-linkedin { background-image: url('images/icons/icon-dark-linkedin.svg'); }
+.dark-dribbble { background-image: url('images/icons/icon-dark-dribbble.svg'); }
+.dark-github   { background-image: url('images/icons/icon-dark-github.svg'); }
