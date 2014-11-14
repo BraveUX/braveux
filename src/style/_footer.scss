@@ -1,6 +1,9 @@
 footer {
   padding: 120px 0 60px 0;
   background-color: $black;
+  background-image: none;
+  background-position: center bottom;
+  background-repeat: no-repeat;
   @include font(14px);
 
   &.is-short {
@@ -10,6 +13,11 @@ footer {
       margin-top: 0;
       font-size: 20px;
     }
+  }
+
+  &.is-egg {
+    padding-bottom: 200px;
+    background-image: url('images/footer-egg.svg');
   }
 }
 
@@ -67,5 +75,13 @@ footer {
 
 .footer-copyright-stars {
   display: inline-block;
+  @include size(40px 10px);
   margin: 0 50px;
+  background-image: url('images/icons/icon-stars.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  &:hover {
+    background-image: url('images/icons/icon-stars-light.svg');
+  }
 }
