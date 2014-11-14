@@ -1,15 +1,19 @@
 .cta {
   clear: both;
-  padding: 100px 0;
+  padding: 140px 0 120px 0;
   text-align: center;
 }
 
+.cta-text {
+  margin-bottom: 30px;
+  @include font(26px, 200, #ACACAC, 'Sentinel');
+}
+
 .cta-link {
-  display: inline-block;
-  margin: 0 auto;
-  @include font(32px, 200, #414141);
+  display: block;
+  @include font(22px, 200, #414141);
 }
 
 .cta-icon {
-  margin: 0 0 -3px 15px;
+  margin: 0 0 -6px 15px;
 }
