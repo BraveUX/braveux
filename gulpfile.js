@@ -15,9 +15,9 @@ gulp.task('ejs', function() {
     .pipe(p.ejs())
     .on('error', handle)
     .pipe(p.htmlmin({collapseWhitespace: true, removeComments: true}))
+    .on('error', handle)
     .pipe(gulp.dest('public'));
 });
-
 
 gulp.task('sass', function() {
   return gulp.src('src/style/style.scss')
@@ -33,9 +33,6 @@ gulp.task('scripts', function() {
     .on('error', handle)
     .pipe(gulp.dest('public'))
 });
-
-
-
 
 gulp.task('watch', function() {
   gulp.watch('src/views/**/*.ejs', ['ejs']);
