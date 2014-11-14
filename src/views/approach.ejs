@@ -1,9 +1,8 @@
 <% include partials/header %>
 
-<div class="wrapper">
+<% include partials/menu %>
 
-  <% include partials/menu %>
-
+<div class="wrapper approach">
   <header>
     <div class="container">
       <h1 class="page-heading">Approach</h1>
@@ -11,61 +10,78 @@
     </div>
   </header>
 
-  <main class="approach">
-    <section class="approach-section approach-idea white" id="approach-section-1">
-      <div class="container">
-        <img class="approach-section-icon" src="images/approach-section-1.svg">
-        <p class="approach-section-heading">Idea</p>
-        <p class="approach-section-text"><strong>Everyone has an idea. But is it good?</strong> You think so. You hope so. We work with you on the concept, the strategy, the core value proposition. Now we&rsquo;re all fired up.  This could change everything.</p>
-        <a class="approach-section-next" href="#"></a>
-      </div>
-    </section>
+  <section class="approach-section approach-idea white">
+    <div class="col one-half">
+      <img class="approach-section-icon" src="images/approach-section-1.svg">
+    </div>
 
-    <section class="approach-section approach-research black">
-      <div class="container">
-        <img class="approach-section-icon" src="images/approach-section-2.svg">
-        <p class="approach-section-heading">Research</p>
-        <p class="approach-section-text"><strong>We talk with potential users about the idea,</strong><br>the message, the functionality. We find what works and what needs work.</p>
-        <a class="approach-section-next" href="#"></a>
-      </div>
-    </section>
+    <div class="col one-half">
+      <p class="approach-section-heading">Idea</p>
+      <p class="approach-section-text"><strong>Everyone has an idea, but we make it happen.</strong> Let&rsquo;s talk concept, strategy, value proposition. So far, so good. But will users want it?</p>
+      <a class="approach-section-next" href="#"></a>
+    </div>
+  </section>
 
-    <section class="approach-section approach-ia gray">
-      <div class="container">
-        <img class="approach-section-icon" src="images/approach-section-3.svg">
-        <p class="approach-section-heading">Information Architecture</p>
-        <p class="approach-section-text"><strong>Everyone has an idea. But is it good?</strong> You think so. You hope so. We work with you on the concept, the strategy, the core value proposition. Now we&rsquo;re all fired up.  This could change everything.</p>
-        <a class="approach-section-next" href="#"></a>
-      </div>
-    </section>
+  <section class="approach-section approach-research black">
+    <div class="col one-half">
+      <p class="approach-section-heading">Research</p>
+      <p class="approach-section-text"><strong>Let&rsquo;s figure out what works and what needs work.</strong> User research on the product, usability, and messaging. But can it serve users and the business?</p>
+      <a class="approach-section-next" href="#"></a>
+    </div>
 
-    <section class="approach-section approach-design white">
-      <div class="container">
-        <img class="approach-section-icon" src="images/approach-section-4.svg">
-        <p class="approach-section-heading">Design</p>
-        <p class="approach-section-text"><strong>We talk with potential users about the idea,</strong><br>the message, the functionality. We find what works and what needs work.</p>
-        <a class="approach-section-next" href="#"></a>
-      </div>
-    </section>
+    <div class="col one-half">
+      <img class="approach-section-icon" src="images/approach-section-2.svg">
+    </div>
+  </section>
 
-    <section class="approach-section approach-build black">
-      <div class="container">
-        <img class="approach-section-icon" src="images/approach-section-5.svg">
-        <p class="approach-section-heading">Build</p>
-        <p class="approach-section-text"><strong>Everyone has an idea. But is it good?</strong> You think so. You hope so. We work with you on the concept, the strategy, the core value proposition. Now we&rsquo;re all fired up.  This could change everything.</p>
-        <a class="approach-section-next" href="#"></a>
-      </div>
-    </section>
+  <section class="approach-section approach-ia gray">
+    <div class="col one-half">
+      <img class="approach-section-icon" src="images/approach-section-3.svg">
+    </div>
 
-    <section class="approach-section approach-test gray">
-      <div class="container">
-        <img class="approach-section-icon" src="images/approach-section-6.svg">
-        <p class="approach-section-heading">Test</p>
-        <p class="approach-section-text"><strong>We talk with potential users about the idea,</strong><br>the message, the functionality. We find what works and what needs work.</p>
-        <a class="approach-section-next" href="#"></a>
-      </div>
-    </section>
-  </main><!-- END approach -->
+    <div class="col one-half">
+      <p class="approach-section-heading">Information Architecture</p>
+      <p class="approach-section-text"><strong>The goal: make it usable and make it convert.</strong> Our wireframes and flow diagrams lay out the structure so both happen easily. Want to see what it looks like?</p>
+      <a class="approach-section-next" href="#"></a>
+    </div>
+  </section>
+
+  <section class="approach-section approach-design white">
+    <div class="col one-half">
+      <p class="approach-section-heading">Design</p>
+      <p class="approach-section-text"><strong>Pixel perfect, unique, and more than just pretty.</strong> From branding to interface design, it needs to work. Can we swing that?</p>
+      <a class="approach-section-next" href="#"></a>
+    </div>
+
+    <div class="col one-half">
+      <img class="approach-section-icon" src="images/approach-section-4.svg">
+    </div>
+  </section>
+
+  <section class="approach-section approach-build black">
+    <div class="col one-half">
+      <img class="approach-section-icon" src="images/approach-section-5.svg">
+    </div>
+
+    <div class="col one-half">
+      <p class="approach-section-heading">Build</p>
+      <p class="approach-section-text"><strong>Heck yes.</strong> Every interface as functional as it is beautiful. Clean, bug-free code on launch. Is it time to break out the champagne?</p>
+      <a class="approach-section-next" href="#"></a>
+    </div>
+  </section>
+
+  <section class="approach-section approach-test gray">
+    <div class="col one-half">
+      <p class="approach-section-heading">Test</p>
+      <p class="approach-section-text"><strong>Not so fast, friend.</strong> Users will want your productto keep up with their ever-changing demands, so you&rsquo;ll need to test, test, and test.</p>
+      <a class="approach-section-next" href="#"></a>
+    </div>
+
+    <div class="col one-half">
+      <img class="approach-section-icon" src="images/approach-section-6.svg">
+    </div>
+  </section>
+
   <section class="cta">
     <div class="container">
       <p class="cta-text">Learn more about the doers doing things worth doing.</p>

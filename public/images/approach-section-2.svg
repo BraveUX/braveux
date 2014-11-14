@@ -2,11 +2,27 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="1360px" height="250.498px" viewBox="0 0 1360 250.498" enable-background="new 0 0 1360 250.498" xml:space="preserve">
-<path fill="none" stroke="#D0D1D1" stroke-width="5.4974" stroke-miterlimit="10" d="M0,2.749h1029.817
-	c67.708,0,122.596,54.845,122.596,122.5c0,67.654-54.888,122.5-122.596,122.5c-67.707,0-122.596-54.846-122.596-122.5
-	c0-32.698,12.823-62.403,33.718-84.372"/>
-<line fill="none" stroke="#D0D1D1" stroke-width="5.4974" stroke-miterlimit="10" x1="1152.413" y1="2.749" x2="1360" y2="2.749"/>
+	 width="494.619px" height="478.168px" viewBox="0 0 494.619 478.168" enable-background="new 0 0 494.619 478.168"
+	 xml:space="preserve">
+<g>
+	<path fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" d="M75.57,2.527l200.035,200.036
+		c62.231,62.23,62.23,163.126,0,225.357s-163.127,62.23-225.357,0s-62.23-163.127,0-225.357
+		c30.077-30.077,69.188-45.615,108.599-46.617"/>
+	<polygon fill="#798082" points="147.522,167.923 167.128,156.602 147.522,145.285 	"/>
+</g>
+<g>
+	<polyline fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" points="254.134,379.516 89.071,379.516 
+		89.071,231.215 	"/>
+	<path fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" d="M226.09,378.148v-99.592
+		c0-2.133-0.912-2.395-2.027-0.575l-30.084,49.006c-1.114,1.819-3.3,2.113-4.855,0.657l-14.55-13.62
+		c-1.555-1.456-3.795-1.194-4.972,0.584l-20.425,30.806c-1.178,1.777-3.432,2.057-5.009,0.621l-9.514-8.676
+		c-1.576-1.436-3.956-1.25-5.29,0.412l-29.954,37.352c-1.333,1.663-0.681,3.025,1.446,3.025"/>
+	
+		<line fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" x1="145.47" y1="346.035" x2="145.47" y2="379.516"/>
+	
+		<line fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" x1="193.979" y1="326.987" x2="193.979" y2="379.516"/>
+</g>
+<line fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" x1="322.279" y1="156.604" x2="494.619" y2="156.604"/>
 <g>
 </g>
 <g>

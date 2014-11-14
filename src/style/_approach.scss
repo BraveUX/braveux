@@ -2,11 +2,6 @@
   @include clearfix;
   @include size(100% 670px);
 
-  .container {
-    position: relative;
-    height: 100%;
-  }
-
   &.white {
     background-color: #F1F1F1;
     color: #6F7F86;
@@ -23,91 +18,8 @@
   }
 }
 
-.approach-research,
-.approach-design,
-.approach-test {
-  text-align: right;
-
-  .approach-section-heading,
-  .approach-section-text,
-  .approach-section-next {
-    float: right;
-    clear: right;
-  }
-}
-
-.approach-idea {
-  .container {
-    padding-top: 185px;
-    padding-left: 340px;
-  }
-
-  .approach-section-icon {
-    top: 0;
-    left: -150px;
-  }
-}
-
-.approach-research {
-  .container {
-    padding-top: 215px;
-    padding-right: 380px;
-  }
-
-  .approach-section-icon {
-    top: 155px;
-    right: -155px;
-  }
-}
-
-.approach-ia {
-  .container {
-    padding-top: 200px;
-    padding-left: 340px;
-  }
-
-  .approach-section-icon {
-    top: 0;
-    left: -165px;
-  }
-}
-
-.approach-design {
-  .container {
-    padding-top: 235px;
-    padding-right: 330px;
-  }
-
-  .approach-section-icon {
-    top: 165px;
-    right: -155px;
-  }
-}
-
-.approach-build {
-  .container {
-    padding-top: 200px;
-    padding-left: 455px;
-  }
-
-  .approach-section-icon {
-
-  }
-}
-
-.approach-test {
-  .container {
-    padding-top: 175px;
-    padding-right: 380px;
-  }
-
-  .approach-section-icon {
-
-  }
-}
-
 .approach-section-icon {
-  position: absolute;
+
 }
 
 .approach-section-heading {
@@ -123,7 +35,7 @@
 }
 
 .approach-section-text {
-  max-width: 600px;
+  max-width: 400px;
   margin: 0 0 35px 0;
   @include font(18px);
   line-height: 2;
