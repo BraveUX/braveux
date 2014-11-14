@@ -43,11 +43,15 @@ $menu-height: 50px;
   @include size(auto $menu-height);
   float: left;
   display: block;
-  padding: 18px 40px 0 20px;
+  padding: 21px 40px 0 20px;
   border-right: 2px solid $light-black;
-  @include font(9px, 600, #F3F3F3);
+  @include font(9px, 600, #F3F3F3, 'Trade Gothic LT Std');
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+
+  &:hover {
+    background-color: $light-black;
+  }
 
   &:first-child {
     margin-left: $menu-height;
