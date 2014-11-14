@@ -5,9 +5,9 @@
 }
 
 .typewriter-wrapper {
+  @include position(absolute, 50% null null null);
   @include size(100% 180px);
-  @include position(absolute, 50% null null 20px);
-  margin-top: -90px;
+  margin-top: -130px;
 }
 
 .typewriter {

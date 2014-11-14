@@ -3,10 +3,8 @@ $menu-height: 50px;
 .menu {
   z-index: 10;
   @include transition(all 0.5s ease);
+  // @include position(fixed, 0 0 null null);
   @include size(100% $menu-height);
-  position: fixed;
-  top: 0;
-  left: 0;
   background-color: $black;
 
   &.is-collapsed {
@@ -20,16 +18,17 @@ $menu-height: 50px;
 }
 
 .logo {
+  z-index: 10;
   @include transition(all 0.5s ease);
+  @include position(fixed, null null null 5%);
+  display: block;
   @include size($menu-height);
   @include hide-text;
-  @include position(fixed, 0 50% null null);
-  display: block;
-  margin: 0 470px 0 0;
   background: url('images/flag.svg') $light-black center center no-repeat;
 
   &:hover {
     width: 110px;
+    margin-left: -60px;
     background-image: url('images/wordmark.svg');
   }
 
@@ -65,11 +64,11 @@ $menu-height: 50px;
 
 .ux-toggle {
   @include transition(all 0.5s ease);
+  opacity: 1;
   @include position(absolute, 15px 15px null null);
+  display: block;
   @include size(20px);
   @include hide-text;
-  opacity: 1;
-  display: block;
   background: url('images/ux-icon.svg') #808080 center center no-repeat;
   border-radius: 50%;
 
