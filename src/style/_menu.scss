@@ -70,7 +70,7 @@ $menu-height: 50px;
   @include hide-text;
   opacity: 1;
   display: block;
-  background: url('images/ux-icon') #808080 center center no-repeat;
+  background: url('images/ux-icon.svg') #808080 center center no-repeat;
   border-radius: 50%;
 
   .is-home & {
