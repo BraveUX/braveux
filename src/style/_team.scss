@@ -1,14 +1,11 @@
 .team-section {
+  overflow: hidden;
+  position: relative;
   @include clearfix;
 
-  .container {
-    position: relative;
-  }
-
-  &:nth-child(even) {
+  &:nth-child(odd) {
     .team-section-profile {
       margin-left: 50%;
-      padding-left: 150px;
     }
 
     .team-section-image {
@@ -16,7 +13,7 @@
     }
   }
 
-  &:nth-child(odd) {
+  &:nth-child(even) {
     .team-section-image {
       right: 0;
     }
@@ -25,8 +22,8 @@
 
 .team-section-profile {
   @include clearfix;
-  width: 50%;
-  padding: 80px 0;
+  @include size(50% auto);
+  padding: 80px 0 80px 5%;
 }
 
 .team-section-image {
@@ -37,15 +34,19 @@
 .team-section-headshot,
 .team-section-quote {
   position: absolute;
-  @include size(100%);
   display: block;
+}
+
+.team-section-headshot {
+  @include size(100% auto);
 }
 
 .team-section-quote {
   @include transition(all 0.5s ease);
   z-index: 0;
   opacity: 0;
-  padding: 60% 50px 0 50px;
+  @include size(100%);
+  padding: 300px 50px 0 50px;
   background-color: $black;
   @include font(26px, 300, #EDEDED, 'Sentinel');
   line-height: 1.3;
@@ -53,7 +54,7 @@
 
   &:hover {
     opacity: .8;
-    padding-top: 50%;
+    padding-top: 250px;
   }
 }
 
