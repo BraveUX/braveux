@@ -4,6 +4,7 @@ $menu-height: 50px;
   z-index: 10;
   @include transition(all 0.5s ease);
   // @include position(fixed, 0 0 null null);
+  position: fixed;
   @include size(100% $menu-height);
   background-color: $black;
 

@@ -1,0 +1,44 @@
+// CLIENT COLORS
+
+$graphite: #778F9B;
+$blue: #34B2FF;
+
+// HEADER
+
+.case-header {
+  @include size(100%);
+
+  .fieldone & { background: url('images/fieldone/fieldone-header.svg') #EBEEF0 right center/auto 100% no-repeat; }
+}
+
+.case-header-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  @include size(100% 210px);
+  margin-top: -105px;
+
+  .fieldone & { margin-top: -80px; }
+}
+
+.case-header-client-name {
+  margin-bottom: 15px;
+  @include font(24px, 600, null, 'Trade Gothic LT Std');
+  text-transform: uppercase;
+  letter-spacing: 3px;
+
+  .fieldone & { color: $graphite; }
+}
+
+.case-header-tagline {
+  margin-bottom: 15px;
+  @include font(48px, 200, null, 'Trade Gothic LT Std');
+
+  .fieldone & { color: $blue; }
+}
+
+.case-header-type {
+  @include font(18px, 600, null, 'Sentinel');
+
+  .fieldone & { color: $graphite; }
+}
