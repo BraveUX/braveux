@@ -80,6 +80,7 @@ footer {
   background-image: url('images/icons/icon-stars.svg');
   background-position: center center;
   background-repeat: no-repeat;
+  cursor: pointer;
 
   &:hover {
     background-image: url('images/icons/icon-stars-light.svg');
