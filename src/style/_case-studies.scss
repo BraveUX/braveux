@@ -6,6 +6,7 @@ $blue: #34B2FF;
 // HEADER
 
 .case-header {
+  position: relative;
   @include size(100%);
 
   .fieldone & { background: url('images/fieldone/fieldone-header.svg') #EBEEF0 right center/auto 100% no-repeat; }
@@ -15,7 +16,7 @@ $blue: #34B2FF;
   position: absolute;
   top: 50%;
   left: 0;
-  @include size(100% 210px);
+  @include size(auto 210px);
   margin-top: -105px;
 
   .fieldone & { margin-top: -80px; }
@@ -33,6 +34,7 @@ $blue: #34B2FF;
 .case-header-tagline {
   margin-bottom: 15px;
   @include font(48px, 200, null, 'Trade Gothic LT Std');
+  line-height: 1.15;
 
   .fieldone & { color: $blue; }
 }
