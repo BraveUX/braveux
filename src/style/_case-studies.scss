@@ -2,6 +2,7 @@
 
 $graphite: #778F9B;
 $blue: #34B2FF;
+$darkblue: #2E3D5A;
 
 // HEADER
 
@@ -43,4 +44,47 @@ $blue: #34B2FF;
   @include font(18px, 600, null, 'Sentinel');
 
   .fieldone & { color: $graphite; }
+}
+
+// EXECUTIVE SUMMARY
+
+.case-exec-summary {
+  padding: 75px 0;
+}
+
+.case-exec-summary-text {
+  @include font(24px, 200, #616161, 'Sentinel');
+}
+
+// BREAKDOWN
+
+.case-breakdown {
+  padding: 100px 0 140px 0;
+  background-color: $darkblue;
+  color: #EBEEF0;
+}
+
+.case-breakdown-heading {
+  margin-bottom: 20px;
+  @include font(13px, 600, null, 'Trade Gothic LT Std');
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.case-breakdown-summary {
+  margin-bottom: 15px;
+  @include font(28px, 200, null, 'Trade Gothic LT Std');
+}
+
+.case-breakdown-detail,
+.case-breakdown-scope-list {
+  max-width: 260px;
+  @include font(13px, 200, null, 'Sentinel');
+  line-height: 1.9;
+}
+
+.case-breakdown-scope-list {
+  padding-left: 0;
+  list-style: none;
+  @include font(13px, 200, null, 'Sentinel');
 }
