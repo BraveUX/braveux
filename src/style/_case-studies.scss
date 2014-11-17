@@ -94,6 +94,7 @@ $darkblue: #2E3D5A;
 .case-block {
   position: relative;
   @include clearfix;
+  @include size(100% auto);
   clear: both;
 }
 
@@ -147,4 +148,14 @@ $darkblue: #2E3D5A;
 .case-block-image {
   display: block;
   @include size(100% auto);
+
+  &.centered {
+    @include size(80% auto);
+    padding: 150px 0;
+    margin: 0 auto;
+  }
+}
+
+.fieldone-devices {
+  background-color: $blue;
 }
