@@ -10,6 +10,7 @@ $darkblue: #2E3D5A;
   position: relative;
   @include size(100%);
 
+  .felix & { background: url('images/felix/header.jpg') center center/cover no-repeat; }
   .fieldone & { background: url('images/fieldone/header.svg') #EBEEF0 right center/auto 100% no-repeat; }
 }
 
@@ -18,9 +19,7 @@ $darkblue: #2E3D5A;
   top: 50%;
   left: 0;
   @include size(auto 210px);
-  margin-top: -105px;
-
-  .fieldone & { margin-top: -80px; }
+  margin-top: -80px;
 }
 
 .case-header-client-name {
@@ -37,6 +36,7 @@ $darkblue: #2E3D5A;
   @include font(48px, 200, null, 'Trade Gothic LT Std');
   line-height: 1.15;
 
+  .felix & { color: #F2F2F0; }
   .fieldone & { color: $blue; }
 }
 
@@ -60,8 +60,16 @@ $darkblue: #2E3D5A;
 
 .case-breakdown {
   padding: 100px 0 140px 0;
-  background-color: $darkblue;
-  color: #EBEEF0;
+
+  .felix & {
+    background-color: #F9F9F9;
+    color: #414141;
+  }
+
+  .fieldone & {
+    background-color: $darkblue;
+    color: #EBEEF0;
+  }
 }
 
 .case-breakdown-heading {
@@ -74,6 +82,8 @@ $darkblue: #2E3D5A;
 .case-breakdown-summary {
   margin-bottom: 15px;
   @include font(28px, 200, null, 'Trade Gothic LT Std');
+
+  .felix & { color: #536D79; }
 }
 
 .case-breakdown-detail,
