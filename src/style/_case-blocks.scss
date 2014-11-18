@@ -26,9 +26,10 @@
 
   // SIZE MODIFIERS
 
-  &.half      { width: 50%; }
-  &.one-third { width: 30%; }
-  &.two-third { width: 60%; }
+  &.half        { width: 50%; }
+  &.one-third   { width: 30%; }
+  &.two-third   { width: 60%; }
+  &.full-height { height: 100%; }
 
   // PADDING MODIFIERS
 
@@ -53,6 +54,24 @@
     top: 50%;
     @include transform(translateY(-50%));
   }
+}
+
+// PARTIAL BLOCK
+
+.partial-block {
+  position: absolute;
+
+  // SIZE MODIFIERS
+
+  &.quarter { @include size(50%); }
+  &.half    { @include size(100% 50%); }
+
+  // POSITION MODIFIERS
+
+  &.top    { top: 0; }
+  &.bottom { bottom: 0; }
+  &.left   { left: 0; }
+  &.right  { right: 0; }
 }
 
 // IMAGE STYLE
