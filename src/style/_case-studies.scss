@@ -10,7 +10,7 @@ $darkblue: #2E3D5A;
   position: relative;
   @include size(100%);
 
-  .fieldone & { background: url('images/fieldone/fieldone-header.svg') #EBEEF0 right center/auto 100% no-repeat; }
+  .fieldone & { background: url('images/fieldone/header.svg') #EBEEF0 right center/auto 100% no-repeat; }
 }
 
 .case-header-container {
@@ -87,75 +87,4 @@ $darkblue: #2E3D5A;
   padding-left: 0;
   list-style: none;
   @include font(13px, 200, null, 'Sentinel');
-}
-
-// CASE BLOCKS
-
-.case-block {
-  position: relative;
-  @include clearfix;
-  @include size(100% auto);
-  clear: both;
-}
-
-.case-half-block {
-  @include clearfix;
-  @include size(50% 100%);
-
-  .container {
-    margin: 0 10%;
-  }
-
-  &.full-height {
-    position: absolute;
-    top: 0;
-    left: 0;
-    @include size(50% 100%);
-
-    // use transform to center content
-    padding-top: 15%;
-  }
-
-  &.float-left { float: left; }
-  &.float-right { float: right; }
-}
-
-// TEXT BLOCKS
-
-.case-text-block {
-
-}
-
-.case-text-block-heading {
-  max-width: 300px;
-  margin-bottom: 15px;
-  @include font(31px, 200, #445963, 'Trade Gothic LT Std');
-  line-height: 1.2;
-}
-
-.case-text-block-subtext {
-  max-width: 300px;
-  @include font(13px, 200, #414141, 'Sentinel');
-  line-height: 1.9;
-}
-
-// IMAGE BLOCKS
-
-.case-image-block {
-
-}
-
-.case-block-image {
-  display: block;
-  @include size(100% auto);
-
-  &.centered {
-    @include size(80% auto);
-    padding: 150px 0;
-    margin: 0 auto;
-  }
-}
-
-.fieldone-devices {
-  background-color: $blue;
 }

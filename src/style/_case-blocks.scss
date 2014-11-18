@@ -1,0 +1,130 @@
+// CASE BLOCK
+
+.case-block {
+  overflow: hidden;
+  position: relative;
+  @include clearfix;
+  @include size(100% auto);
+
+  // BLOCK SIZES
+
+  &.half      { width: 50%; }
+  &.one-third { width: 30%; }
+  &.two-third { width: 60%; }
+
+  // BLOCK PADDING
+
+  &.top-bot-padded { padding: 120px 0; }
+  &.left-padded    { padding-left: 10%; }
+
+  // BLOCK ALIGNMENT
+
+  &.float-left  { float: left; }
+  &.float-right { float: right; }
+
+  &.absolute-left {
+    position: absolute;
+    left: 0;
+  }
+
+  &.absolute-right {
+    position: absolute;
+    right: 0;
+  }
+
+  &.vertical-center {
+    top: 50%;
+    @include transform(translateY(-50%));
+  }
+
+  // CONTAINER
+
+  .container {
+    position: relative;
+    margin: 0 12.5%;
+  }
+}
+
+// IMAGE STYLE
+
+.case-block-image {
+  display: block;
+  @include size(100% auto);
+
+  // IMAGE SPACING
+
+  &.text-below { margin-bottom: 80px; }
+}
+
+// CASE TEXT
+
+.case-block-text-heading,
+.case-block-text-subtext,
+.case-block-text-quote,
+.case-block-text-citation {
+  font-weight: 200;
+
+  // TEXT LENGTHS
+
+  &.short-length  { max-width: 300px; }
+  &.medium-length { max-width: 550px; }
+  &.full-length   { max-width: none; }
+
+  // TEXT ALIGNMENTS
+
+  &.align-center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
+// TEXT STYLES
+
+.case-block-text-heading {
+  margin-bottom: 15px;
+  @include font(32px, null, null, 'Trade Gothic LT Std');
+  line-height: 1.2;
+}
+
+.case-block-text-subtext {
+  @include font(14px, null, null, 'Sentinel');
+  line-height: 1.9;
+}
+
+.case-block-text-quote {
+  @include font(35px, null, null, 'Trade Gothic LT Std');
+  line-height: 1.3;
+}
+
+.case-block-text-citation {
+  @include font(18px, null, null, 'Sentinel');
+  font-style: italic;
+}
+
+// COLOR SCHEMES
+
+.fo-bg-dark-blue {
+  background-color: #2E3D5A;
+
+  .case-block-text-heading { color: #EBEEF0; }
+  .case-block-text-subtext { color: #EBEEF0; }
+  .case-block-text-quote { color: #CED7DB; }
+  .case-block-text-citation { color: #8FA3AD; }
+}
+
+.fo-bg-light-blue {
+  background-color: #34B2FF;
+}
+
+.fo-bg-white {
+  background-color: white;
+
+  .case-block-text-heading { color: #445963; }
+  .case-block-text-subtext { color: #414141; }
+}
+
+.fo-bg-off-white {
+  background-color: #EBEEF0;
+  color: #536D79;
+}
