@@ -18,9 +18,13 @@ function initEasterEggs() {
 function initScrollSpy() {
   window.sr = new scrollReveal({
     move: '0px',
-    over: '0.5s',
+    over: '0.75s',
     wait: '0s',
     easing: 'ease',
+    scale: {
+      direction: 'up',
+      power: '0%'
+    },
     mobile: true,
     delay: 'once',
 
