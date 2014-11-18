@@ -1,0 +1,26 @@
+// FIELD ONE
+
+.fo-bg-dark-blue {
+  background-color: #2E3D5A;
+
+  .case-block-text-heading { color: #EBEEF0; }
+  .case-block-text-subtext { color: #EBEEF0; }
+  .case-block-text-quote { color: #CED7DB; }
+  .case-block-text-citation { color: #8FA3AD; }
+}
+
+.fo-bg-light-blue {
+  background-color: #34B2FF;
+}
+
+.fo-bg-white {
+  background-color: white;
+
+  .case-block-text-heading { color: #445963; }
+  .case-block-text-subtext { color: #414141; }
+}
+
+.fo-bg-off-white {
+  background-color: #EBEEF0;
+  color: #536D79;
+}
