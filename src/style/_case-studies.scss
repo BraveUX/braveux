@@ -12,12 +12,11 @@ $darkblue: #2E3D5A;
 
   .felix & { background: url('images/felix/header.jpg') center center/cover no-repeat; }
   .fieldone & { background: url('images/fieldone/header.svg') #EBEEF0 right center/auto 100% no-repeat; }
+  .character & { background: url('images/character/header.jpg') center center/cover no-repeat; }
 }
 
 .case-header-container {
-  position: absolute;
-  top: 50%;
-  left: 0;
+  @include position(absolute, 50% null null 0);
   @include size(auto 210px);
   margin-top: -80px;
 }
@@ -68,6 +67,11 @@ $darkblue: #2E3D5A;
 
   .fieldone & {
     background-color: $darkblue;
+    color: #EBEEF0;
+  }
+
+  .character & {
+    background-color: #AA243B;
     color: #EBEEF0;
   }
 }
