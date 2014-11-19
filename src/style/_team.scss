@@ -20,6 +20,11 @@
   }
 }
 
+.team-photo {
+  display: block;
+  @include size(100% auto);
+}
+
 .team-section-profile {
   @include clearfix;
   @include size(50% auto);
