@@ -1,0 +1,8 @@
+.overlay {
+  z-index: 9;
+  @include position(fixed, 0 0 null null);
+  @include size(100%);
+  display: none;
+  opacity: .8;
+  background-color: $light-black;
+}

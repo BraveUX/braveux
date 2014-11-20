@@ -92,5 +92,11 @@ function typewriter(selector) {
 function initToggle() {
   $('.ux-toggle-frame').click(function() {
     $('.ux-toggle-frame').toggleClass('is-active');
-  })
+
+    // show/hide overlay
+    if($('.ux-toggle-frame').hasClass('is-active'))
+      $('.overlay').velocity({ opacity: [.8, 0] }, { display: 'block', duration: 500, easing: 'ease' });
+    else
+      $('.overlay').velocity({ opacity: [0, .8] }, { display: 'none', duration: 500, easing: 'ease' });
+  });
 }
