@@ -3,6 +3,7 @@ $(document).ready(function() {
 
   typewriter('.typewriter');
 
+  initToggle();
   initScrollSpy();
   initEasterEggs();
 });
@@ -86,4 +87,10 @@ function typewriter(selector) {
       doTimeout(letterIndex, wordIndex);
     }
   }
+}
+
+function initToggle() {
+  $('.ux-toggle-frame').click(function() {
+    $('.ux-toggle-frame').toggleClass('is-active');
+  })
 }

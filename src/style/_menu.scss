@@ -67,17 +67,35 @@ $menu-height: 50px;
   }
 }
 
+.ux-toggle-frame {
+  @include transition(all 0.5s ease);
+  @include position(absolute, 15px 15px null null);
+  @include size(42px 22px);
+  // border-width: 1px;
+  // border-style: solid;
+  border: 1px solid $black;
+  border-radius: 11px;
+
+  &.is-active {
+    border-color: #778F9B;
+  }
+
+  .is-home & {
+    opacity: 0;
+  }
+}
+
 .ux-toggle {
   @include transition(all 0.5s ease);
-  opacity: 1;
-  @include position(absolute, 15px 15px null null);
+  @include position(absolute, 2px 2px null null);
   display: block;
-  @include size(20px);
+  @include size(16px);
   @include hide-text;
   background: url('images/ux-icon.svg') #808080 center center no-repeat;
   border-radius: 50%;
 
-  .is-home & {
-    opacity: 0;
+  .is-active & {
+    right: 22px;
+    background-color: #F3F3F3;
   }
 }
