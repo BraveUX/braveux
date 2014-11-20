@@ -65,13 +65,18 @@ function typewriter(selector) {
   // timeout function
   function doTimeout(letterIndex, wordIndex) {
     setTimeout(function() {
-      // clear word if necessary
+      // first letter
       if(letterIndex == 0) {
         rotating.text('');
       }
 
       // add letter by letter
       rotating.append(letterArray[wordIndex][letterIndex]);
+
+      // last letter
+      if(letterIndex == letterArray[wordIndex].length - 1) {
+        console.log('last letter');
+      }
     }, (letterIndex * betweenLetters) + (wordIndex * betweenWords) + (timeArray[wordIndex - 1] || 0));
   }
 
