@@ -75,6 +75,7 @@ $menu-height: 50px;
   // border-style: solid;
   border: 1px solid $black;
   border-radius: 11px;
+  cursor: pointer;
 
   &.is-active {
     border-color: #778F9B;
@@ -96,6 +97,7 @@ $menu-height: 50px;
 
   .is-active & {
     right: 22px;
+    background-image: url('images/ux-icon-toggled.svg');
     background-color: #F3F3F3;
   }
 }
