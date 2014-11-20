@@ -1,6 +1,8 @@
 $(document).ready(function() {
   console.log('Looking for this? https://github.com/BraveUX/website');
 
+  typewriter('.typewriter');
+
   initScrollSpy();
   initEasterEggs();
 });
@@ -30,4 +32,53 @@ function initScrollSpy() {
 
     vFactor: 0.30     // 70% of element onscreen to trigger reveal
   });
+}
+
+function typewriter(selector) {
+  // cache vars
+  var object   = $(selector);
+  var rotating = $(selector + '-rotating');
+
+  // time between letter
+  var betweenLetters = 120;    // ms
+  var betweenWords   = 5000;  // ms
+  var letterArray = [];
+  var timeArray = [];
+
+  // phrases
+  var phrases = [
+    'abcdefghij',
+    'klmnopqr',
+    'uvwxyz'
+  ];
+
+  // loop through phrases
+  for(var i = 0; i < phrases.length; i++) {
+    // add cumulative type time (this word and all previous) to timeArray
+    timeArray[i] = (timeArray[i - 1] || 0) + phrases[i].length * betweenLetters;
+
+    // add letters to letterArray
+    letterArray[i] = [];
+    letterArray[i].push.apply(letterArray[i], phrases[i].split(''));
+  }
+
+  // timeout function
+  function doTimeout(letterIndex, wordIndex) {
+    setTimeout(function() {
+      // clear word if necessary
+      if(letterIndex == 0) {
+        rotating.text('');
+      }
+
+      // add letter by letter
+      rotating.append(letterArray[wordIndex][letterIndex]);
+    }, (letterIndex * betweenLetters) + (wordIndex * betweenWords) + (timeArray[wordIndex - 1] || 0));
+  }
+
+  // loop through letterArray
+  for(var wordIndex = 0; wordIndex < letterArray.length; wordIndex++) {
+    for(var letterIndex = 0; letterIndex < letterArray[wordIndex].length; letterIndex++) {
+      doTimeout(letterIndex, wordIndex);
+    }
+  }
 }
