@@ -1,7 +1,7 @@
 $menu-height: 50px;
 
 .menu {
-  z-index: 10;
+  z-index: 15;
   @include transition(all 0.5s ease);
   // @include position(fixed, 0 0 null null);
   position: fixed;
