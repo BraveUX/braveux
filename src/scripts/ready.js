@@ -1,5 +1,7 @@
 $(document).ready(function() {
   typewriter('.typewriter');
+
+  initToggle();
   initScrollSpy();
   initEasterEggs();
   console.log('Looking for this? https://github.com/BraveUX/website');
@@ -84,4 +86,21 @@ function typewriter(selector) {
       doTimeout(letterIndex, wordIndex);
     }
   }
+}
+
+function initToggle() {
+  $('.ux-toggle-frame').click(function(e) {
+    e.preventDefault();
+    $('.ux-toggle-frame').toggleClass('is-active');
+
+    // show/hide overlay
+    if($('.ux-toggle-frame').hasClass('is-active'))
+      $('.overlay').velocity({ opacity: [.8, 0] }, { display: 'block', duration: 500, easing: 'ease', begin: function() {
+        $('.wrapper').toggleClass('is-overlayed');
+      } });
+    else
+      $('.overlay').velocity({ opacity: [0, .8] }, { display: 'none', duration: 500, easing: 'ease', begin: function() {
+        $('.wrapper').toggleClass('is-overlayed');
+      } });
+  });
 }

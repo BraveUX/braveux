@@ -1,0 +1,15 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="128.5px" height="84.383px" viewBox="0 0 128.5 84.383" enable-background="new 0 0 128.5 84.383" xml:space="preserve">
+<g>
+	<polygon fill="#42A5F5" points="106.923,81.83 81.216,81.83 81.216,42.467 106.923,5.204 	"/>
+	<g>
+		<polyline fill="none" stroke="#D0D0D0" stroke-width="3" stroke-miterlimit="10" points="128.5,82.883 1.5,82.883 1.5,0 		"/>
+		<path fill="none" stroke="#D0D0D0" stroke-width="3" stroke-miterlimit="10" d="M106.923,81.83V5.204
+			c0-1.641-0.702-1.842-1.56-0.442L82.217,42.467c-0.857,1.399-2.539,1.626-3.736,0.506L67.286,32.493
+			c-1.196-1.12-2.92-0.919-3.825,0.449L47.746,56.645c-0.906,1.367-2.641,1.582-3.854,0.478l-7.32-6.675
+			c-1.213-1.104-3.044-0.962-4.07,0.317L9.455,79.503c-1.025,1.279-0.523,2.327,1.113,2.327"/>
+		<line fill="none" stroke="#D0D0D0" stroke-width="3" stroke-miterlimit="10" x1="45.895" y1="57.122" x2="45.895" y2="82.883"/>
+		<line fill="none" stroke="#D0D0D0" stroke-width="3" stroke-miterlimit="10" x1="81.216" y1="42.467" x2="81.216" y2="82.883"/>
+	</g>
+</g>
+</svg>

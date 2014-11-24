@@ -1,0 +1,59 @@
+.overlay {
+  z-index: 9;
+  @include position(fixed, 0 0 null null);
+  @include size(100%);
+  display: none;
+  opacity: .8;
+  background-color: $light-black;
+}
+
+.overlay-component {
+  position: relative;
+
+  .is-overlayed & {
+    z-index: 10;
+    display: inline-block;
+    padding: 20px 20px 10px 20px;
+    margin: -20px 0 30px -20px;
+    background-color: white;
+    border-radius: 5px;
+  }
+}
+
+.overlay-note {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  @include size(450px auto);
+  margin-left: 50px;
+
+  .is-overlayed & {
+    display: block;
+  }
+}
+
+.overlay-image {
+  display: block;
+  margin-bottom: 40px;
+}
+
+.overlay-heading {
+  margin-bottom: 30px;
+  font-family: 'Trade Gothic LT Std';
+  font-size: 30px;
+}
+
+.overlay-text {
+  margin-bottom: 20px;
+  font-family: 'Sentinel';
+  font-weight: 100;
+  font-size: 14px;
+}
+
+.overlay-footnote {
+  font-family: 'Trade Gothic LT Std';
+  font-weight: normal;
+  font-size: 12px;
+  color: #C6C6C6;
+}
