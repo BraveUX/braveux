@@ -5,31 +5,49 @@
 	 width="518.749px" height="453.921px" viewBox="0 0 518.749 453.921" enable-background="new 0 0 518.749 453.921"
 	 xml:space="preserve">
 <g>
-	<polygon fill="none" stroke="#708085" stroke-width="7.2114" stroke-miterlimit="10" points="402.8,378.389 314.806,378.389 
+	<polygon fill="none" stroke="#6F7F84" stroke-width="7.2114" stroke-miterlimit="10" points="402.8,378.389 314.806,378.389 
 		322.027,345.693 395.576,345.693 	"/>
 	
-		<line fill="none" stroke="#708085" stroke-width="7.2114" stroke-miterlimit="10" x1="312.814" y1="227.582" x2="404.791" y2="227.582"/>
-	<path fill="none" stroke="#708085" stroke-width="7.2114" stroke-miterlimit="10" d="M394.684,231.203v79.858
+		<line fill="none" stroke="#6F7F84" stroke-width="7.2114" stroke-miterlimit="10" x1="312.814" y1="227.582" x2="404.791" y2="227.582"/>
+	<path fill="none" stroke="#6F7F84" stroke-width="7.2114" stroke-miterlimit="10" d="M394.684,231.203v79.858
 		c0,9.71-7.87,17.582-17.584,17.582h-36.598c-9.71,0-17.582-7.872-17.582-17.582v-79.858l4.852-20.09h62.062L394.684,231.203z"/>
-	<path fill="none" stroke="#708085" stroke-width="7.2114" stroke-miterlimit="10" d="M343.403,210.454v-10.95
+	<path fill="none" stroke="#6F7F84" stroke-width="7.2114" stroke-miterlimit="10" d="M343.403,210.454v-10.95
 		c0-4.231,3.43-7.667,7.664-7.667h15.955c4.234,0,7.668,3.436,7.668,7.667v10.95"/>
 	<g>
 		
-			<line fill="none" stroke="#708085" stroke-width="7.2114" stroke-miterlimit="10" x1="341.805" y1="343.068" x2="341.805" y2="328.643"/>
+			<line fill="none" stroke="#6F7F84" stroke-width="7.2114" stroke-miterlimit="10" x1="341.805" y1="343.068" x2="341.805" y2="328.643"/>
 		
-			<line fill="none" stroke="#708085" stroke-width="7.2114" stroke-miterlimit="10" x1="375.801" y1="328.643" x2="375.801" y2="343.068"/>
+			<line fill="none" stroke="#6F7F84" stroke-width="7.2114" stroke-miterlimit="10" x1="375.801" y1="328.643" x2="375.801" y2="343.068"/>
 	</g>
-	<path fill="none" stroke="#708085" stroke-width="7.2114" stroke-miterlimit="10" d="M193.632,289.559"/>
-	<path fill="none" stroke="#708085" stroke-width="7.2114" stroke-miterlimit="10" d="M243.667,173.016
+	<path fill="none" stroke="#6F7F84" stroke-width="7.2114" stroke-miterlimit="10" d="M193.632,289.559"/>
+	<path fill="none" stroke="#6F7F84" stroke-width="7.2114" stroke-miterlimit="10" d="M243.667,173.016
 		c28.829-27.398,67.809-44.213,110.719-44.213c88.784,0,160.758,71.973,160.758,160.756S443.17,450.316,354.386,450.316
 		c-88.78,0-160.754-71.974-160.754-160.757V0"/>
-	<polygon fill="#708085" points="260.287,173.482 238.228,179.393 244.138,157.333 	"/>
+	<polygon fill="#6F7F84" points="260.287,173.482 238.228,179.393 244.138,157.333 	"/>
 	
-		<line fill="none" stroke="#708085" stroke-width="7.2114" stroke-miterlimit="10" x1="157.604" y1="227.77" x2="2.55" y2="382.823"/>
-	<path fill="none" stroke="#708085" stroke-width="7.2114" stroke-linejoin="round" stroke-miterlimit="10" d="M356.858,328.165
+		<line fill="none" stroke="#6F7F84" stroke-width="7.2114" stroke-miterlimit="10" x1="157.604" y1="227.77" x2="2.55" y2="382.823"/>
+	<path fill="none" stroke="#6F7F84" stroke-width="7.2114" stroke-linejoin="round" stroke-miterlimit="10" d="M356.858,328.165
 		c4.22-7.429,1.631-12.695-0.885-15.752c-2.514-3.057-5.881-5.635-7.476-9.387c-1.794-4.014-1.753-7.479-0.489-11.56
 		c2.277-7.364,9.998-14.627,16.77-18.194c-4.087,3.68-5.611,9.867-4.341,15.104c1.906,7.441,9.473,13.908,8.33,22.102
 		C368.079,316.262,362.429,323.489,356.858,328.165z"/>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
 </g>
 <g>
 </g>

@@ -6,32 +6,50 @@
 	 xml:space="preserve">
 <g>
 	<g>
-		<path fill="none" stroke="#CFCFCE" stroke-width="10.2098" stroke-miterlimit="10" d="M242.882,180.115"/>
+		<path fill="none" stroke="#CECECE" stroke-width="10.2098" stroke-miterlimit="10" d="M242.882,180.115"/>
 		<g>
-			<path fill="none" stroke="#CFCFCE" stroke-width="7.1395" stroke-miterlimit="10" d="M359.497,133.556
+			<path fill="none" stroke="#CECECE" stroke-width="7.1395" stroke-miterlimit="10" d="M359.497,133.556
 				c39.361,1.002,78.422,16.518,108.462,46.56c62.152,62.151,62.152,162.922,0,225.075c-62.153,62.152-162.923,62.152-225.077,0
 				c-62.15-62.153-62.15-162.923,0-225.075"/>
-			<polygon fill="#CFCFCE" points="370.806,145.518 351.225,134.211 370.806,122.907 			"/>
+			<polygon fill="#CECECE" points="370.806,145.518 351.225,134.211 370.806,122.907 			"/>
 		</g>
 	</g>
 	
-		<line fill="none" stroke="#CFCFCE" stroke-width="7.1395" stroke-miterlimit="10" x1="242.683" y1="179.914" x2="420.073" y2="2.524"/>
+		<line fill="none" stroke="#CECECE" stroke-width="7.1395" stroke-miterlimit="10" x1="242.683" y1="179.914" x2="420.073" y2="2.524"/>
 	<g>
 		<g>
 			
-				<line fill="none" stroke="#CFCFCE" stroke-width="7.1395" stroke-miterlimit="10" x1="353.666" y1="194.865" x2="353.666" y2="232.454"/>
-			<circle fill="none" stroke="#CFCFCE" stroke-width="7.1395" stroke-miterlimit="10" cx="353.667" cy="252" r="19.545"/>
+				<line fill="none" stroke="#CECECE" stroke-width="7.1395" stroke-miterlimit="10" x1="353.666" y1="194.865" x2="353.666" y2="232.454"/>
+			<circle fill="none" stroke="#CECECE" stroke-width="7.1395" stroke-miterlimit="10" cx="353.667" cy="252" r="19.545"/>
 			
-				<line fill="none" stroke="#CFCFCE" stroke-width="7.1395" stroke-miterlimit="10" x1="338.929" y1="264.83" x2="299.72" y2="377.693"/>
+				<line fill="none" stroke="#CECECE" stroke-width="7.1395" stroke-miterlimit="10" x1="338.929" y1="264.83" x2="299.72" y2="377.693"/>
 			
-				<line fill="none" stroke="#CFCFCE" stroke-width="7.1395" stroke-miterlimit="10" x1="365.007" y1="264.83" x2="404.213" y2="377.693"/>
+				<line fill="none" stroke="#CECECE" stroke-width="7.1395" stroke-miterlimit="10" x1="365.007" y1="264.83" x2="404.213" y2="377.693"/>
 		</g>
-		<path fill="none" stroke="#CFCFCE" stroke-width="7.1395" stroke-miterlimit="10" d="M324.954,300.504
+		<path fill="none" stroke="#CECECE" stroke-width="7.1395" stroke-miterlimit="10" d="M324.954,300.504
 			c22.377,22.38,58.594,22.38,80.972,0"/>
 	</g>
 </g>
-<polyline fill="none" stroke="#CFCFCE" stroke-width="7.1395" stroke-miterlimit="10" points="216.734,134.213 99.723,134.213 
+<polyline fill="none" stroke="#CECECE" stroke-width="7.1395" stroke-miterlimit="10" points="216.734,134.213 99.723,134.213 
 	2.524,231.41 "/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
 <g>
 </g>
 <g>

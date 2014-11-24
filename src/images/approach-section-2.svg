@@ -10,19 +10,43 @@
 		c30.077-30.077,69.188-45.615,108.599-46.617"/>
 	<polygon fill="#798082" points="147.522,167.923 167.128,156.602 147.522,145.285 	"/>
 </g>
-<g>
-	<polyline fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" points="254.134,379.516 89.071,379.516 
-		89.071,231.215 	"/>
-	<path fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" d="M226.09,378.148v-99.592
-		c0-2.133-0.912-2.395-2.027-0.575l-30.084,49.006c-1.114,1.819-3.3,2.113-4.855,0.657l-14.55-13.62
-		c-1.555-1.456-3.795-1.194-4.972,0.584l-20.425,30.806c-1.178,1.777-3.432,2.057-5.009,0.621l-9.514-8.676
-		c-1.576-1.436-3.956-1.25-5.29,0.412l-29.954,37.352c-1.333,1.663-0.681,3.025,1.446,3.025"/>
-	
-		<line fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" x1="145.47" y1="346.035" x2="145.47" y2="379.516"/>
-	
-		<line fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" x1="193.979" y1="326.987" x2="193.979" y2="379.516"/>
-</g>
 <line fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" x1="322.279" y1="156.604" x2="494.619" y2="156.604"/>
+<g>
+	<polyline fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" points="258.05,383.035 85.154,383.035 
+		85.154,227.696 	"/>
+	<g>
+		
+			<rect x="111.021" y="307.016" fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" width="25.406" height="76.02"/>
+		
+			<rect x="157.146" y="273.982" fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" width="25.404" height="109.053"/>
+		
+			<rect x="203.269" y="320.883" fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" width="25.404" height="62.152"/>
+	</g>
+	
+		<line fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" x1="136.427" y1="328.508" x2="111.021" y2="353.914"/>
+	
+		<line fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" x1="182.451" y1="315.189" x2="157.044" y2="340.596"/>
+	
+		<line fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" x1="228.576" y1="335.422" x2="203.169" y2="360.828"/>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
 <g>
 </g>
 <g>
