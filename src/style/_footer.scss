@@ -2,7 +2,6 @@ footer {
   clear: both;
   padding: 120px 0 60px 0;
   background-color: $black;
-  background-image: none;
   background-position: center bottom;
   background-repeat: no-repeat;
   @include font(14px);
@@ -87,3 +86,16 @@ footer {
     background-image: url('images/icons/icon-stars-light.svg');
   }
 }
+
+.stars-disable {
+  cursor: default;
+  &:hover {
+    background-image: url('images/icons/icon-stars.svg');
+  }
+}
+
+
+
+
+
+

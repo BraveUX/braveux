@@ -9,10 +9,14 @@ $(document).ready(function() {
 
 function initEasterEggs() {
   $('.footer-copyright-stars').click(function() {
-    // scroll to bottom
-    $('footer').velocity('scroll', { duration: 500, axis: 'y', begin: function() {
-      // show easter egg
-      $('footer').addClass('is-egg');
+
+    $('footer').velocity('scroll', { duration: 500, axis: 'y',  begin: function() {
+       
+       $('footer').addClass('is-egg');
+
+       // disable from clicking
+       $('.footer-copyright-stars').addClass('stars-disable');
+
     }});
   });
 }
