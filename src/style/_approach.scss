@@ -2,6 +2,16 @@
   @include clearfix;
   @include size(100% 670px);
 
+  &:nth-child(odd) {
+    .approach-section-heading,
+    .approach-section-text,
+    .approach-section-next {
+      float: right;
+      clear: right;
+      text-align: right;
+    }
+  }
+
   &.white {
     background-color: #F1F1F1;
     color: #6F7F86;
@@ -16,6 +26,16 @@
     background-color: #6B6B6B;
     color: #E1E1E1;
   }
+}
+
+.approach-section-content-wrapper {
+  position: relative;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+.approach-section-icon-wrapper {
+
 }
 
 .approach-section-icon {
