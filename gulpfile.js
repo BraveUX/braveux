@@ -41,7 +41,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('src/images/**/*', ['ejs']);
+  gulp.watch('src/images/**/*', ['images']);
   gulp.watch('src/views/**/*.ejs', ['ejs']);
   gulp.watch('src/style/*.scss', ['sass']);
   gulp.watch('src/scripts/*.js', ['scripts']);
