@@ -1,6 +1,6 @@
 .approach-section {
   @include clearfix;
-  @include size(100% 670px);
+  @include size(100% 575px);
 
   &:nth-child(odd) {
     .approach-section-heading,
@@ -35,11 +35,23 @@
 }
 
 .approach-section-icon-wrapper {
-
+  position: relative;
+  height: 100%;
 }
 
 .approach-section-icon {
+  position: absolute;
+  @include size(75% auto);
 
+  &.top    { top: 0; }
+  &.left   { left: 0; }
+  &.bottom { bottom: 0; }
+  &.right  { right: 0; }
+
+  &.middle {
+    top: 50%;
+    @include transform(translateY(-50%));
+  }
 }
 
 .approach-section-heading {
