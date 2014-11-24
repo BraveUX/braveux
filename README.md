@@ -3,7 +3,7 @@
 ### Run
 
 ```bash
-$ npm i && bower i
+$ npm i
 $ gulp
 ```
 
