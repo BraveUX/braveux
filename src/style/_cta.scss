@@ -12,19 +12,8 @@
 .cta-link {
   display: inline-block;
   @include font(22px, 200, #414141);
-
-  footer & {
-    // this is hacky, should find a better approach
-    display: table;
-    margin:  0 auto 75px auto;
-    color: #E6E6E6;
-  }
 }
 
 .cta-icon {
   margin: 0 0 -6px 15px;
-
-  footer & {
-    margin-bottom: -2px;
-  }
 }
