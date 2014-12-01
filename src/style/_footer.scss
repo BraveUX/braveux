@@ -6,6 +6,10 @@ footer {
   background-repeat: no-repeat;
   @include font(14px);
 
+  &.has-cta {
+    padding-top: 75px;
+  }
+
   &.is-short {
     padding: 80px 0;
 
@@ -89,13 +93,8 @@ footer {
 
 .stars-disable {
   cursor: default;
+
   &:hover {
     background-image: url('images/icons/icon-stars.svg');
   }
 }
-
-
-
-
-
-
