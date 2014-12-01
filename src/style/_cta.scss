@@ -10,7 +10,7 @@
 }
 
 .cta-link {
-  display: block;
+  display: inline-block;
   @include font(22px, 200, #414141);
 
   footer & {
