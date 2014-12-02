@@ -14,11 +14,13 @@ function initApproach() {
   var approachIcon = $('.approach-section-icon').eq(0).get(0);
 
   // hide approach section icon shapes
-  $('.lamp').hide();
+  // $('.graph').hide();
+  // $('.arrowhead').hide();
 
-  var test = new Vivus(approachIcon, {type: 'async', start: 'inViewport', duration: 250}, function() {
+  var test = new Vivus(approachIcon, {type: 'async', start: 'inViewport', duration: 80}, function() {
     // callback to fade in icon
-    $('.lamp').fadeIn(500);
+    // $('.graph').fadeIn(500);
+    // $('.arrowhead').fadeIn(500);
   });
 
   // $('.approach-section-icon').eq(0).waypoint(function(direction) {
