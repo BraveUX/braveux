@@ -20,12 +20,10 @@
         }, opts.delay)
       }
     }
-    $selector.removeClass('typewriter-highlight');
-    $selector.text('');
-    $('.typewriter-cursor').text('|')
-    window.getSelection().removeAllRanges();
+    _reset($selector)
     return typeit(phrases[0].split(''));
   }
+
 
 // ---- private
 
@@ -45,6 +43,11 @@
     arr.push(arr.shift());
   }
 
+  function _reset($selector) {
+    $selector.removeClass('typewriter-highlight');
+    $selector.text('');
+    $('.typewriter-cursor').text('|');
+  }
 
 })(jQuery);
 
