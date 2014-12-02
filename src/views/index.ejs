@@ -5,8 +5,17 @@
 <div class="wrapper home">
   <div class="container">
     <div class="typewriter-wrapper">
-      <p class="typewriter">You need <span class="typewriter-rotating"></span>.</p>
-      <p class="typewriter">We are <span class="typewriter-rotating"></span>.</p>
+      <h1 class="typewriter-text">
+        You need
+        <span class="typewriter typewriter-1"></span>
+        <span class="typewriter-cursor"></span>
+      </h1>
+
+      <h1 class="typewriter-text">
+        We are
+        <span class="typewriter typewriter-2"></span>
+        <span class="typewriter-cursor"></span>
+      </h1>
     </div>
   </div>
 
@@ -21,3 +30,17 @@
 </div><!-- END wrapper -->
 
 <% include partials/closer %>
+
+<script type="text/javascript">
+  $(document).on('ready', function() {
+    $('.typewriter-text-1').typewriter();
+  });
+</script>
+
+
+
+
+
+
+
+
