@@ -42,6 +42,7 @@
 
 .work-rollover-cta {
   @include font(24px, 600, null, 'Sentinel');
+  letter-spacing: 1px;
 }
 
 .work-rollover-cta-icon {
