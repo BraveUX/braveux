@@ -1,57 +1,81 @@
 (function($) {
-  
-  $.fn.typewriter = function(phrases, opts) {
-    var $selector = this.find('.typewriter');
-    return typewriter($selector, phrases, _setOpts(opts));
-  };
+ 
 
-  function typewriter($selector, phrases, opts) {
-    function typeit(word) {
+  var test = [
+    {
+      selector: $('.typewriter-1'),
+      words: ['This is test1 ', 'this is test2 ']
+    }, {
+      selector: $('.typewriter-2'),
+      words: ['This is test3 ', 'this is test4 ']
+    }
+];
+  
+  function reset() {
+
+  }
+
+  $.fn.typewriter = function() {
+    var current = {
+      selector: test[0].selector,
+      phrase: test[0].words,
+      word: test[0].words[0].split('')
+    }
+    var iterator = 0;
+
+    function type (word) {
       if (word.length) {
-        _setText($selector, word[0]);
+        current.selector.text(current.selector.text() + word[0])
         word.shift();
-        return setTimeout(typeit, opts.characterDelay, word);
-      }
-      else {
-        _swap(phrases);
-        setTimeout(function() {
-          $selector.addClass('typewriter-highlight');
-          $selector.siblings('.typewriter-cursor').text('');
-          return setTimeout(typewriter, opts.clearTiming, $selector, phrases, opts);
-        }, opts.delay)
+        setTimeout(type, 80, word);
+      } else {
+        iterator ++;
+        
+        // if second, start highlights
+        if (iterator % 2 === 0) {
+          // start first highlight
+          current.selector.addClass('typewriter-highlight');
+          
+          setTimeout(function() {
+            current.selector.text('');
+            current.selector.removeClass('typewriter-highlight');
+            test[1].selector.addClass('typewriter-highlight');
+          }, 1000);
+
+          setTimeout(function() {
+            test[1].selector.text('');
+            test[1].selector.removeClass('typewriter-highlight');
+            current.phrase.push(current.phrase.shift());
+            test.push(test.shift());
+            current = {
+              selector: test[0].selector,
+              phrase: test[0].words,
+              word: test[0].words[0].split('')
+            }
+            type(current.word)
+          }, 2000);
+
+        } else {
+          // swap current phrases
+          current.phrase.push(current.phrase.shift());
+
+          // swap current with other
+          test.push(test.shift());
+
+          //reset
+          current = {
+            selector: test[0].selector,
+            phrase: test[0].words,
+            word: test[0].words[0].split('')
+          }
+          type(current.word)  
+        }
+
+        
+
       }
     }
-    _reset($selector)
-    return typeit(phrases[0].split(''));
-  }
-
-
-// ---- private
-
-  function _setOpts(opts) {
-    opts = opts || {}
-    opts.characterDelay = opts.characterDelay || 80;
-    opts.delay = opts.delay || 4500;
-    opts.clearTiming = opts.clearTiming || 1000;
-    return opts;
-  }
-
-  function _setText($selector, word) {
-    $selector.text($selector.text() + word);
-  }
-
-  function _swap(arr) {
-    arr.push(arr.shift());
-  }
-
-  function _reset($selector) {
-    $selector.removeClass('typewriter-highlight');
-    $selector.text('');
-    $selector.siblings('.typewriter-cursor').text('|');
-  }
+    type(current.word);
+  };
 
 })(jQuery);
-
-
-
-

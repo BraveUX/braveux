@@ -5,15 +5,15 @@
 <div class="wrapper home">
   <div class="container">
     <div class="typewriter-wrapper">
-      <h1 class="typewriter-text typewriter-text-1">
+      <h1 class="typewriter-text">
         You need
-        <span class="typewriter"></span>
+        <span class="typewriter typewriter-1"></span>
         <span class="typewriter-cursor">|</span>
       </h1>
 
-      <h1 class="typewriter-text typewriter-text-2">
+      <h1 class="typewriter-text">
         We are
-        <span class="typewriter"></span>
+        <span class="typewriter typewriter-2"></span>
         <span class="typewriter-cursor">|</span>
       </h1>
     </div>
@@ -33,11 +33,7 @@
 
 <script type="text/javascript">
   $(document).on('ready', function() {
-    var phrases1 = ['user experience.', 'happy users.', 'better user flow.', 'to understand your users.'];
-    $('.typewriter-text-1').typewriter(phrases1);
-
-    // var phrases2 = ['brave', 'designing awesome apps', 'smart and capable', 'research driven'];
-    // $('.typewriter-text-2').typewriter(phrases2);
+    $('.typewriter-text-1').typewriter();
   });
 </script>
 
