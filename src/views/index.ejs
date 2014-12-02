@@ -5,8 +5,14 @@
 <div class="wrapper home">
   <div class="container">
     <div class="typewriter-wrapper">
-      <h1 class="typewriter-text">
+      <h1 class="typewriter-text typewriter-text-1">
         You need
+        <span class="typewriter"></span>
+        <span class="typewriter-cursor">|</span>
+      </h1>
+
+      <h1 class="typewriter-text typewriter-text-2">
+        We are
         <span class="typewriter"></span>
         <span class="typewriter-cursor">|</span>
       </h1>
@@ -27,8 +33,11 @@
 
 <script type="text/javascript">
   $(document).on('ready', function() {
-    var phrases = ['user experience.', 'happy users.', 'better user flow.', 'to understand your users.'];
-    $('.typewriter').typewriter(phrases);
+    var phrases1 = ['user experience.', 'happy users.', 'better user flow.', 'to understand your users.'];
+    $('.typewriter-text-1').typewriter(phrases1);
+
+    // var phrases2 = ['brave', 'designing awesome apps', 'smart and capable', 'research driven'];
+    // $('.typewriter-text-2').typewriter(phrases2);
   });
 </script>
 

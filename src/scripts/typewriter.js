@@ -1,7 +1,8 @@
 (function($) {
   
   $.fn.typewriter = function(phrases, opts) {
-    return typewriter(this, phrases, _setOpts(opts));
+    var $selector = this.find('.typewriter');
+    return typewriter($selector, phrases, _setOpts(opts));
   };
 
   function typewriter($selector, phrases, opts) {
@@ -15,7 +16,7 @@
         _swap(phrases);
         setTimeout(function() {
           $selector.addClass('typewriter-highlight');
-          $('.typewriter-cursor').text('');
+          $selector.siblings('.typewriter-cursor').text('');
           return setTimeout(typewriter, opts.clearTiming, $selector, phrases, opts);
         }, opts.delay)
       }
@@ -29,7 +30,7 @@
 
   function _setOpts(opts) {
     opts = opts || {}
-    opts.characterDelay = opts.characterDelay || 130;
+    opts.characterDelay = opts.characterDelay || 80;
     opts.delay = opts.delay || 4500;
     opts.clearTiming = opts.clearTiming || 1000;
     return opts;
@@ -46,7 +47,7 @@
   function _reset($selector) {
     $selector.removeClass('typewriter-highlight');
     $selector.text('');
-    $('.typewriter-cursor').text('|');
+    $selector.siblings('.typewriter-cursor').text('|');
   }
 
 })(jQuery);
