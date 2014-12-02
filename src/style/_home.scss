@@ -17,8 +17,46 @@
   &:last-child {
     margin-bottom: 0;
   }
+  &::selection {
+    background-color: #CCC;
+  }
 }
+
+.typewriter-text {
+  @include font(54px, 200, #ECECEC);  
+}
+
 
 .typewriter-rotating {
   text-decoration: underline;
+}
+
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@-moz-keyframes blink {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes blink {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+.typewriter-cursor {
+  font-weight: 100;
+  margin-left: -5px;
+  padding: 0;
+  font-size: 1em;
+  -webkit-animation: blink 0.75s;
+  -moz-animation: blink 0.75s;
+  animation: blink 0.75s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
 }
