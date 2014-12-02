@@ -5,7 +5,36 @@ $(document).ready(function() {
   initScrollSpy();
   initEasterEggs();
   console.log('Looking for this? https://github.com/BraveUX/website');
+
+  initApproach();
 });
+
+function initApproach() {
+  // cache vars
+  var approachIcon = $('.approach-section-icon').eq(0).get(0);
+
+  // hide approach section icon shapes
+  $('.lamp').hide();
+
+  var test = new Vivus(approachIcon, {type: 'async', start: 'inViewport', duration: 250}, function() {
+    // callback to fade in icon
+    $('.lamp').fadeIn(500);
+  });
+
+  // $('.approach-section-icon').eq(0).waypoint(function(direction) {
+  //   // only while scrolling down
+  //   if(direction === 'down') {
+  //     // fire vivus
+
+  //   }
+
+  // }, {
+  //   // fire when bottom of image hits bottom of screen
+  //   offset: function() {
+  //     return -$(this).height() + $(window).height();
+  //   }
+  // });
+}
 
 function initEasterEggs() {
   $('.footer-copyright-stars').click(function() {
