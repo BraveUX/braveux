@@ -76,6 +76,17 @@
   &.right  { right: 0; }
 }
 
+// FULL IMAGE STYLE
+
+.case-full-image {
+  @include size(100% 75vh);
+
+  img {
+    @include position(absolute, 0 0 0 0);
+    margin: auto;
+  }
+}
+
 // IMAGE STYLE
 
 .case-block-image {
@@ -114,7 +125,7 @@
 }
 
 .case-block-text-subtext {
-  @include font(14px, null, null, 'Sentinel');
+  @include font(13px, null, null, 'Sentinel');
   line-height: 1.9;
 }
 
