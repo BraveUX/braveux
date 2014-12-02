@@ -9,14 +9,11 @@ $(document).ready(function() {
 
 function initEasterEggs() {
   $('.footer-copyright-stars').click(function() {
-
     $('footer').velocity('scroll', { duration: 500, axis: 'y',  begin: function() {
-       
        $('footer').addClass('is-egg');
 
        // disable from clicking
        $('.footer-copyright-stars').addClass('stars-disable');
-
     }});
   });
 }
