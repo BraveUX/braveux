@@ -17,7 +17,6 @@
 
   .container {
     position: relative;
-    margin: 0 12.5%;
   }
 }
 
@@ -35,7 +34,7 @@
 
   // PADDING MODIFIERS
 
-  &.left-padded    { padding-left: 5%; }
+  &.left-padded    { padding-left: $site-padding; }
 
   // ALIGNMENT MODIFIERS
 

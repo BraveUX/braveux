@@ -1,11 +1,13 @@
 .contact-section {
   @include clearfix;
   position: relative;
-  padding-left: 5%;
+  padding-left: $site-padding;
   background-color: #EDEDED;
 }
 
 .contact-info {
+  @include clearfix;
+  width: 50% - $site-padding;
   padding: 100px 0 120px 0;
 }
 
