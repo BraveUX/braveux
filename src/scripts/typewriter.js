@@ -16,8 +16,8 @@
         setTimeout(function() {
           $selector.addClass('typewriter-highlight');
           $('.typewriter-cursor').text('');
-          return setTimeout(typewriter, 1000, $selector, phrases, opts);
-        }, 4500)
+          return setTimeout(typewriter, opts.clearTiming, $selector, phrases, opts);
+        }, opts.delay)
       }
     }
     $selector.removeClass('typewriter-highlight');
@@ -30,12 +30,10 @@
 // ---- private
 
   function _setOpts(opts) {
-    opts                = opts || {}
+    opts = opts || {}
     opts.characterDelay = opts.characterDelay || 130;
-    opts.delay          = opts.delay || 4000;
-    opts.startDelay     = opts.startDelay || false;
-    opts.cursor         = opts.cursor || true;
-    opts.highlight      = opts.highlight || true;
+    opts.delay = opts.delay || 4500;
+    opts.clearTiming = opts.clearTiming || 1000;
     return opts;
   }
 
