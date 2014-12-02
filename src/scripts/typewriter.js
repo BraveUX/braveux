@@ -13,11 +13,16 @@
       }
       else {
         _swap(phrases);
-        setTimeout(_highlight, 1500, $selector, phrases, opts);
+        setTimeout(function() {
+          $selector.addClass('typewriter-highlight');
+          $('.typewriter-cursor').text('');
+          return setTimeout(typewriter, 1000, $selector, phrases, opts);
+        }, 4500)
       }
     }
-
+    $selector.removeClass('typewriter-highlight');
     $selector.text('');
+    $('.typewriter-cursor').text('|')
     window.getSelection().removeAllRanges();
     return typeit(phrases[0].split(''));
   }
@@ -42,24 +47,9 @@
     arr.push(arr.shift());
   }
 
-  function _highlight($selector, phrases, opts) {
-    var $el = document.getElementsByClassName('typewriter').item(0).firstChild;
-    var range = document.createRange();
-    var selection = window.getSelection();
-    range.setStart($el, $el.length);
-    selection.addRange(range);
 
-    function _moveHighlight(arr) {
-      if (arr.length) {
-        selection.modify('extend', 'backward', 'character');
-        arr.shift();
-        setTimeout(_moveHighlight, 5, arr);
-      } 
-      else {
-       return setTimeout(typewriter, opts.delay - 1500, $selector, phrases, opts);
-      }
-    }
-
-  return _moveHighlight($el.data.split(''));
-}
 })(jQuery);
+
+
+
+
