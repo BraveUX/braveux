@@ -3,6 +3,7 @@ $(document).ready(function() {
   initScrollSpy();
   initEasterEggs();
   console.log('Looking for this? https://github.com/BraveUX/website');
+  initNavBar();
 });
 
 function initEasterEggs() {
@@ -12,6 +13,46 @@ function initEasterEggs() {
        $('.footer-copyright-stars').addClass('stars-disable');
     }});
   });
+}
+
+function initNavBar() {
+  var scroll;
+  var scrollPrevious = 0;
+  var scrollDelta = 50;
+
+  $(window).scroll(function() {
+    scroll = true;
+  });
+
+  setInterval(function() {
+    if(scroll) {
+      toggleNav();
+      scroll = false;
+    }
+  }, 250);
+
+  function toggleNav() {
+    // current scroll position
+    var scrollCurrent = $(window).scrollTop();
+
+    // check for scroll more than delta
+    if(Math.abs(scrollPrevious - scrollCurrent) <= scrollDelta)
+      return;
+
+    // if current scroll is past navbar height
+    if(scrollCurrent > 50) {
+      // down
+      if(scrollCurrent > scrollPrevious)
+        $('.menu').addClass('is-collapsed');
+
+      // up
+      else
+        $('.menu').removeClass('is-collapsed');
+
+      // make current scroll the previous scroll
+      scrollPrevious = scrollCurrent;
+    }
+  }
 }
 
 function initScrollSpy() {

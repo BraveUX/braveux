@@ -3,7 +3,7 @@ $menu-height: 50px;
 .menu {
   z-index: 15;
   @include transition(all 0.5s ease);
-  // @include position(fixed, 0 0 null null);
+  @include position(fixed, 0 0 null null);
   position: fixed;
   @include size(100% $menu-height);
   background-color: $black;
@@ -21,7 +21,7 @@ $menu-height: 50px;
 .logo {
   z-index: 10;
   @include transition(all 0.5s ease);
-  @include position(fixed, null null null $site-padding);
+  @include position(fixed, 0 null null $site-padding);
   display: block;
   @include size($menu-height);
   @include hide-text;

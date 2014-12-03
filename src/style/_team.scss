@@ -28,7 +28,7 @@
 .team-section-profile {
   @include clearfix;
   @include size(50% auto);
-  padding: 80px 0 80px 5%;
+  padding: 80px 0 80px $site-padding;
 }
 
 .team-section-image {
