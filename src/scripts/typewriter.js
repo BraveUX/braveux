@@ -1,5 +1,5 @@
 (function($) {
- 
+
 
   var test = [
     {
@@ -10,10 +10,6 @@
       words: ['Brave', 'designing awesome apps.', 'smart and capable.', 'research-driven.']
     }
 ];
-  
-  function reset() {
-
-  }
 
   $.fn.typewriter = function() {
     var current = {
@@ -73,10 +69,6 @@
             type(current.word)  
           }
         }, 1000);
-        
-
-        
-
       }
     }
     type(current.word);
