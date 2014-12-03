@@ -25,12 +25,12 @@ $menu-height: 50px;
   display: block;
   @include size($menu-height);
   @include hide-text;
-  background: url('images/flag.svg') $light-black center center no-repeat;
+  background: url('images/icons/flag.svg') $light-black center center no-repeat;
 
   &:hover {
     width: 110px;
     margin-left: -60px;
-    background-image: url('images/wordmark.svg');
+    background-image: url('images/icons/wordmark.svg');
   }
 
   .is-home & {
@@ -71,8 +71,6 @@ $menu-height: 50px;
   @include transition(all 0.5s ease);
   @include position(absolute, 15px 15px null null);
   @include size(42px 22px);
-  // border-width: 1px;
-  // border-style: solid;
   border: 1px solid $black;
   border-radius: 11px;
   cursor: pointer;
@@ -92,12 +90,12 @@ $menu-height: 50px;
   display: block;
   @include size(16px);
   @include hide-text;
-  background: url('images/ux-icon.svg') #808080 center center no-repeat;
+  background: url('images/ux/ux-icon.svg') #808080 center center no-repeat;
   border-radius: 50%;
 
   .is-active & {
     right: 22px;
-    background-image: url('images/ux-icon-toggled.svg');
+    background-image: url('images/ux/ux-icon-toggled.svg');
     background-color: #F3F3F3;
   }
 }

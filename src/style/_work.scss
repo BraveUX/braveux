@@ -5,11 +5,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-  &.is-felix     { background-image: url('images/work-landing-felix.jpg'); }
-  &.is-character { background-image: url('images/work-landing-character.png'); }
-  &.is-fieldone  { background-image: url('images/work-landing-fieldone.svg'); }
-  &.is-obesity   { background-image: url('images/work-landing-obesity.svg'); }
-  &.is-dtd       { background-image: url('images/work-landing-dtd.png'); }
+  &.is-felix     { background-image: url('images/work/work-landing-felix.jpg'); }
+  &.is-character { background-image: url('images/work/work-landing-character.png'); }
+  &.is-fieldone  { background-image: url('images/work/work-landing-fieldone.svg'); }
+  &.is-obesity   { background-image: url('images/work/work-landing-obesity.svg'); }
+  &.is-dtd       { background-image: url('images/work/work-landing-dtd.png'); }
 }
 
 .work-rollover {
