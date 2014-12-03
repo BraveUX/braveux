@@ -48,8 +48,13 @@ function initNavBar() {
 
     // if current scroll is past navbar height
     if(scrollCurrent > 50) {
-      if(scrollCurrent > scrollPrevious) $('.menu').addClass('is-collapsed');     // down
-      else $('.menu').removeClass('is-collapsed');                                // up
+      // down
+      if(scrollCurrent > scrollPrevious)
+        $('.menu').addClass('is-collapsed');
+
+      // up
+      else
+        $('.menu').removeClass('is-collapsed');
 
       // make current scroll the previous scroll
       scrollPrevious = scrollCurrent;

@@ -21,7 +21,7 @@ $menu-height: 50px;
 .logo {
   z-index: 10;
   @include transition(all 0.5s ease);
-  @include position(fixed, null null null $site-padding);
+  @include position(fixed, 0 null null $site-padding);
   display: block;
   @include size($menu-height);
   @include hide-text;
