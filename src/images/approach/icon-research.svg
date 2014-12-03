@@ -1,55 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="494.6px" height="478.2px" viewBox="0 0 494.6 478.2" enable-background="new 0 0 494.6 478.2" xml:space="preserve">
-<g>
-	<path fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" d="M75.6,2.5l200,200
-		c62.2,62.2,62.2,163.1,0,225.4s-163.1,62.2-225.4,0s-62.2-163.1,0-225.4c30.1-30.1,69.2-45.6,108.6-46.6"/>
-	<polygon fill="#798082" points="147.5,167.9 167.1,156.6 147.5,145.3 	"/>
-</g>
-<line fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" x1="322.3" y1="156.6" x2="494.6" y2="156.6"/>
-<g>
-	<polyline fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" points="258.1,383 85.2,383 85.2,227.7 	"/>
-	<g>
-		<rect x="111" y="307" fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" width="25.4" height="76"/>
-		
-			<rect x="157.1" y="274" fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" width="25.4" height="109.1"/>
-		
-			<rect x="203.3" y="320.9" fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" width="25.4" height="62.2"/>
-	</g>
-	<line fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" x1="136.4" y1="328.5" x2="111" y2="353.9"/>
-	<line fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" x1="182.5" y1="315.2" x2="157" y2="340.6"/>
-	<line fill="none" stroke="#798082" stroke-width="7.1484" stroke-miterlimit="10" x1="228.6" y1="335.4" x2="203.2" y2="360.8"/>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
+<svg class="approach-section-icon-svg" xmlns="http://www.w3.org/2000/svg" width="494.6" height="478.2" viewBox="0 0 494.6 478.2">
+  <!-- ICON -->
+  <g fill="none" stroke="#798082" stroke-width="7.148" stroke-miterlimit="10">
+    <path d="M258.1 383H85.2V227.7"></path>
+    <path d="M111 307h25.4v76H111zM157.1 274h25.4v109.1h-25.4zM203.3 320.9h25.4v62.2h-25.4zM136.4 328.5L111 353.9M182.5 315.2L157 340.6M228.6 335.4l-25.4 25.4"></path>
+  </g>
+
+  <!-- LOOP -->
+  <path fill="none" stroke="#798082" stroke-width="7.148" stroke-miterlimit="10" d="M75.6 2.5l200 200c62.2 62.2 62.2 163.1 0 225.4s-163.1 62.2-225.4 0-62.2-163.1 0-225.4c30.1-30.1 69.2-45.6 108.6-46.6"></path>
+
+  <!-- ARROWHEAD -->
+  <path fill="#798082" d="M147.5 167.9l19.6-11.3-19.6-11.3z"></path>
+
+  <!-- TO NEXT -->
+  <path fill="none" stroke="#798082" stroke-width="7.148" stroke-miterlimit="10" d="M322.3 156.6h172.3"></path>
 </svg>

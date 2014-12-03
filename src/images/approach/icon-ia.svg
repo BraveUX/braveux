@@ -1,57 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="518.1px" height="455.4px" viewBox="0 0 518.1 455.4" enable-background="new 0 0 518.1 455.4" xml:space="preserve">
-<g>
-	<g>
-		<path fill="none" stroke="#CECECE" stroke-width="10.2098" stroke-miterlimit="10" d="M242.9,180.1"/>
-		<g>
-			<path fill="none" stroke="#CECECE" stroke-width="7.1395" stroke-miterlimit="10" d="M359.5,133.6c39.4,1,78.4,16.5,108.5,46.6
-				c62.2,62.2,62.2,162.9,0,225.1c-62.2,62.2-162.9,62.2-225.1,0c-62.2-62.2-62.2-162.9,0-225.1"/>
-			<polygon fill="#CECECE" points="370.8,145.5 351.2,134.2 370.8,122.9 			"/>
-		</g>
-	</g>
-	<line fill="none" stroke="#CECECE" stroke-width="7.1395" stroke-miterlimit="10" x1="242.7" y1="179.9" x2="420.1" y2="2.5"/>
-	<g>
-		<g>
-			<line fill="none" stroke="#CECECE" stroke-width="7.1395" stroke-miterlimit="10" x1="353.7" y1="194.9" x2="353.7" y2="232.5"/>
-			<circle fill="none" stroke="#CECECE" stroke-width="7.1395" stroke-miterlimit="10" cx="353.7" cy="252" r="19.5"/>
-			<line fill="none" stroke="#CECECE" stroke-width="7.1395" stroke-miterlimit="10" x1="338.9" y1="264.8" x2="299.7" y2="377.7"/>
-			<line fill="none" stroke="#CECECE" stroke-width="7.1395" stroke-miterlimit="10" x1="365" y1="264.8" x2="404.2" y2="377.7"/>
-		</g>
-		<path fill="none" stroke="#CECECE" stroke-width="7.1395" stroke-miterlimit="10" d="M325,300.5c22.4,22.4,58.6,22.4,81,0"/>
-	</g>
-</g>
-<polyline fill="none" stroke="#CECECE" stroke-width="7.1395" stroke-miterlimit="10" points="216.7,134.2 99.7,134.2 2.5,231.4 "/>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
+<svg class="approach-section-icon-svg" xmlns="http://www.w3.org/2000/svg" width="518.1" height="478.2" viewBox="-192.2 0 518.1 478.2" enable-background="new -192.2 0 518.1 478.2">
+  <!-- ICON -->
+  <g fill="none" stroke="#CECECE" stroke-width="7.139" stroke-miterlimit="10">
+    <path d="M161.4 217.6v37.6"></path>
+    <circle cx="161.4" cy="274.8" r="19.5"></circle>
+    <path d="M146.7 287.6l-39.3 112.9M172.7 287.6l39.2 112.9M132.7 323.3c22.4 22.4 58.6 22.4 81 0"></path>
+  </g>
+
+  <!-- LOOP -->
+  <path fill="none" stroke="#CECECE" stroke-width="7.148" stroke-miterlimit="10" d="M250.2 2.5l-200 200c-62.2 62.2-62.2 163.1 0 225.4 62.2 62.3 163.1 62.2 225.4 0 62.3-62.2 62.2-163.1 0-225.4-30.1-30.1-69.2-45.6-108.6-46.6"></path>
+
+  <!-- ARROWHEAD -->
+  <path fill="#CECECE" d="M178.1 145.3l-19.6 11.3 19.6 11.3v-22.6z"></path>
+
+  <!-- TO NEXT -->
+  <path fill="none" stroke="#CECECE" stroke-width="7.139" stroke-miterlimit="10" d="M24.5 157H-92.6l-97.1 97.2"></path>
 </svg>
