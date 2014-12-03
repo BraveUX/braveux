@@ -14,7 +14,7 @@
 .contact-map {
   @include position(absolute, 0 0 null null);
   @include size(50% 100%);
-  background: url('images/contact/map.svg') center center no-repeat;
+  background: url('images/contact/map.svg') center center/100% no-repeat;
 }
 
 .contact-email,
@@ -26,7 +26,7 @@
 
 .contact-heading {
   margin-bottom: 20px;
-  @include font(null, 600, #4D4D4D, 'Trade Gothic LT Std');
+  @include font(16px, 600, #4D4D4D, 'Trade Gothic LT Std');
   letter-spacing: 2px;
   text-transform: uppercase;
 }

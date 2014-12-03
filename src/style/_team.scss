@@ -3,7 +3,7 @@
   position: relative;
   @include clearfix;
 
-  &:nth-child(odd) {
+  &:nth-child(even) {
     .team-section-profile {
       margin-left: 50%;
     }
@@ -13,7 +13,7 @@
     }
   }
 
-  &:nth-child(even) {
+  &:nth-child(odd) {
     .team-section-image {
       right: 0;
     }
@@ -70,11 +70,15 @@
 }
 
 .team-section-name {
+  margin-bottom: 35px;
   @include font(36px, 200, #414141, 'Trade Gothic LT Std');
-  margin-bottom: 10px;
 
   &::first-letter {
     margin-left: -4px;
+  }
+
+  &.founder {
+    margin-bottom: 10px;
   }
 }
 
