@@ -11,17 +11,39 @@ $(document).ready(function() {
 
 function initApproach() {
   // cache vars
-  var approachIcon = $('.approach-section-icon').eq(0).get(0);
+  var approachIcon1 = $('.approach-section-icon-svg').eq(0).get(0);
+  var approachIcon2 = $('.approach-section-icon-svg').eq(1).get(0);
+  var approachIcon3 = $('.approach-section-icon-svg').eq(2).get(0);
+  var approachIcon4 = $('.approach-section-icon-svg').eq(3).get(0);
+  var approachIcon5 = $('.approach-section-icon-svg').eq(4).get(0);
+  var approachIcon6 = $('.approach-section-icon-svg').eq(5).get(0);
 
-  // hide approach section icon shapes
-  $('.lamp').hide();
-  $('.arrowhead').hide();
-  $('.to-next').hide();
+  // hide inner icons
+  $('.approach-section-inner-icon').hide();
 
-  var test = new Vivus(approachIcon, {type: 'async', start: 'inViewport', duration: 80}, function() {
-    // callback to fade in icon
-    $('.lamp').fadeIn(500);
-    $('.arrowhead').fadeIn(500);
+  // init vivus
+  new Vivus(approachIcon1, {type: 'async', start: 'inViewport', duration: 80}, function() {
+
+  });
+
+  new Vivus(approachIcon2, {type: 'async', start: 'inViewport', duration: 80}, function() {
+
+  });
+
+  new Vivus(approachIcon3, {type: 'async', start: 'inViewport', duration: 80}, function() {
+
+  });
+
+  new Vivus(approachIcon4, {type: 'async', start: 'inViewport', duration: 80}, function() {
+
+  });
+
+  new Vivus(approachIcon5, {type: 'async', start: 'inViewport', duration: 80}, function() {
+
+  });
+
+  new Vivus(approachIcon6, {type: 'async', start: 'inViewport', duration: 80}, function() {
+
   });
 
   // $('.approach-section-icon').eq(0).waypoint(function(direction) {
