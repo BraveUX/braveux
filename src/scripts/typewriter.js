@@ -7,7 +7,7 @@
       words: ['user experience.', 'happy users.', 'better user flow.', 'to understand your users.']
     }, {
       selector: $('.typewriter-2'),
-      words: ['Brave', 'designing awesome apps.', 'smart and capable.', 'research-driven.']
+      words: ['Brave.', 'designing awesome apps.', 'smart and capable.', 'research-driven.']
     }
 ];
 
