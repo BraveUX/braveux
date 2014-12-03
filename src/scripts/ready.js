@@ -5,14 +5,14 @@ $(document).ready(function() {
   initEasterEggs();
   console.log('Looking for this? https://github.com/BraveUX/website');
 
-
+  initNavBar();
 });
 
 function initEasterEggs() {
   $('.footer-copyright-stars').click(function() {
 
     $('footer').velocity('scroll', { duration: 500, axis: 'y',  begin: function() {
-       
+
        $('footer').addClass('is-egg');
 
        // disable from clicking
@@ -20,6 +20,41 @@ function initEasterEggs() {
 
     }});
   });
+}
+
+function initNavBar() {
+  var scroll;
+  var scrollPrevious = 0;
+  var scrollDelta = 50;
+
+  $(window).scroll(function() {
+    scroll = true;
+  });
+
+  setInterval(function() {
+    if(scroll) {
+      toggleNav();
+      scroll = false;
+    }
+  }, 250);
+
+  function toggleNav() {
+    // current scroll position
+    var scrollCurrent = $(window).scrollTop();
+
+    // check for scroll more than delta
+    if(Math.abs(scrollPrevious - scrollCurrent) <= scrollDelta)
+      return;
+
+    // if current scroll is past navbar height
+    if(scrollCurrent > 50) {
+      if(scrollCurrent > scrollPrevious) $('.menu').addClass('is-collapsed');     // down
+      else $('.menu').removeClass('is-collapsed');                                // up
+
+      // make current scroll the previous scroll
+      scrollPrevious = scrollCurrent;
+    }
+  }
 }
 
 function initScrollSpy() {
