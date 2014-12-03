@@ -17,6 +17,10 @@
 
   .container {
     position: relative;
+
+    &.narrow {
+      margin: 0 15%;
+    }
   }
 }
 
@@ -34,7 +38,8 @@
 
   // PADDING MODIFIERS
 
-  &.left-padded    { padding-left: $site-padding; }
+  &.left-padded  { padding-left: $site-padding; }
+  &.right-padded { padding-right: $site-padding; }
 
   // ALIGNMENT MODIFIERS
 
@@ -92,10 +97,18 @@
   display: block;
   @include size(100% auto);
 
+  // SIUZE MODIFIERS
+
+  &.maintain-size { width: auto; }
+
   // SPACING MODIFIERS
 
   &.text-above { margin-top: 80px; }
   &.text-below { margin-bottom: 80px; }
+
+  // ALIGNMENT MODIFIERS
+
+  &.align-right { float: right; }
 }
 
 // CASE TEXT

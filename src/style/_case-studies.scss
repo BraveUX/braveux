@@ -28,6 +28,7 @@ $darkblue: #2E3D5A;
   text-transform: uppercase;
   letter-spacing: 3px;
 
+  .felix & { font-size: 22px; }
   .fieldone & { color: $graphite; }
   .obesity & { color: #8FA3AD; }
 }
@@ -37,13 +38,17 @@ $darkblue: #2E3D5A;
   @include font(48px, 200, null, 'Trade Gothic LT Std');
   line-height: 1.15;
 
-  .felix & { color: #F2F2F0; }
-  .fieldone & { color: $blue; }
+  .felix & {
+    font-size: 45px;
+    color: #F2F2F0;
+  }
 
   .obesity & {
     font-size: 70px;
     color: #33393D;
   }
+
+  .fieldone & { color: $blue; }
 }
 
 .case-header-type {
