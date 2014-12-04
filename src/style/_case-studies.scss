@@ -136,11 +136,13 @@ $darkblue: #2E3D5A;
 
 .case-breakdown-footnote {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 20px;
   padding-top: 20px;
   border-top-width: 2px;
   border-top-style: solid;
+  
   @include font(11px, 200, null, 'Sentinel');
+  font-style: italic;
 
   .obesity & {
     border-top-color: #808080;
