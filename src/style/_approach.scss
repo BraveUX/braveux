@@ -1,4 +1,5 @@
 .approach-section {
+  overflow: hidden;
   @include clearfix;
   @include size(100% 575px);
 
@@ -43,10 +44,13 @@
   position: absolute;
   @include size(75% auto);
 
-  &.top    { top: 0; }
-  &.left   { left: 0; }
-  &.bottom { bottom: 0; }
-  &.right  { right: 0; }
+  // hide jagged corners
+  $offset: -5px;
+
+  &.top    { top: $offset; }
+  &.left   { left: $offset; }
+  &.bottom { bottom: $offset; }
+  &.right  { right: $offset; }
 
   &.middle {
     top: 50%;
