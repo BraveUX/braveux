@@ -14,7 +14,7 @@
 .contact-map {
   @include position(absolute, 0 0 null null);
   @include size(50% 100%);
-  background: url('images/contact/map.svg') center center/110% no-repeat;
+  background: url('images/contact/map.svg') center center/100% no-repeat;
 }
 
 .contact-email,
