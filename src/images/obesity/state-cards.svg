@@ -2,14 +2,14 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="681.664px" height="302.006px" viewBox="0 0 681.664 302.006" enable-background="new 0 0 681.664 302.006"
+	 width="681.664px" height="302px" viewBox="0 0 681.664 302" enable-background="new 0 0 681.664 302"
 	 xml:space="preserve">
 <g>
 	<g>
 		<g>
-			<rect fill="#FFFFFF" width="211.542" height="302.006"/>
+			<rect fill="#FFFFFF" width="211" height="302"/>
 			<g>
-				<rect x="176.435" fill="#A6273C" width="35.107" height="35.106"/>
+				<rect x="176.435" fill="#A6273C" width="35" height="35"/>
 				<g>
 					<path fill="#EDEDED" d="M187.927,21h2.103v-6.77h-1.671v-0.763c0.422-0.077,0.79-0.171,1.102-0.281
 						c0.312-0.11,0.593-0.242,0.842-0.396h0.908V21h1.901v0.979h-5.185V21z"/>
@@ -591,8 +591,8 @@
 		</g>
 	</g>
 	<g>
-		<rect x="235.061" fill="#FFFFFF" width="211.542" height="302.006"/>
-		<rect x="411.496" fill="#A6273C" width="35.106" height="35.106"/>
+		<rect x="235.061" fill="#FFFFFF" width="211" height="302"/>
+		<rect x="411.496" fill="#A6273C" width="35" height="35"/>
 		<g>
 			<path fill="#EDEDED" d="M421.525,21.273c0.691-0.691,1.306-1.315,1.844-1.872c0.537-0.557,0.988-1.073,1.354-1.548
 				c0.365-0.476,0.643-0.912,0.836-1.312c0.191-0.397,0.287-0.784,0.287-1.159c0-0.527-0.144-0.96-0.432-1.296
@@ -1162,8 +1162,8 @@
 			368.551,74.254 368.551,62.824 360.828,55.102 360.828,49.54 354.186,42.899 354.186,36.928 322.601,36.928 		"/>
 	</g>
 	<g>
-		<rect x="470.122" fill="#FFFFFF" width="211.542" height="302.006"/>
-		<rect x="646.557" fill="#A6273C" width="35.107" height="35.106"/>
+		<rect x="470.122" fill="#FFFFFF" width="211" height="302"/>
+		<rect x="646.557" fill="#A6273C" width="35" height="35"/>
 		<g>
 			<path fill="#EDEDED" d="M656.99,20.078c0.277,0.288,0.602,0.543,0.972,0.764s0.828,0.331,1.376,0.331
 				c0.557,0,1.012-0.151,1.367-0.453c0.355-0.303,0.533-0.714,0.533-1.231c0-0.27-0.051-0.517-0.15-0.742
