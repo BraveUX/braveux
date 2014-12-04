@@ -1,50 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="541.7px" height="453.9px" viewBox="0 0 541.7 453.9" enable-background="new 0 0 541.7 453.9" xml:space="preserve">
-<path fill="none" stroke="#6F7F84" stroke-width="7.2114" stroke-miterlimit="10" d="M275.1,173c-28.8-27.4-67.8-44.2-110.7-44.2
-	c-88.8,0-160.8,72-160.8,160.8s72,160.8,160.8,160.8c88.8,0,160.8-72,160.8-160.8V0"/>
-<line fill="none" stroke="#6F7F84" stroke-width="7.2114" stroke-miterlimit="10" x1="364.7" y1="269.9" x2="539.1" y2="444.3"/>
-<g>
-	
-		<rect x="96.3" y="206.2" fill="none" stroke="#6F7F84" stroke-width="7.2114" stroke-miterlimit="10" width="139.5" height="177.2"/>
-	<line fill="none" stroke="#6F7F84" stroke-width="7.2114" stroke-miterlimit="10" x1="235.8" y1="260.6" x2="96.3" y2="260.6"/>
-	<polyline fill="none" stroke="#6F7F84" stroke-width="7.2114" stroke-miterlimit="10" points="115.2,260.6 144.4,234.2 
-		158.6,247.1 183.6,224.4 223.8,261 	"/>
-	<line fill="none" stroke="#6F7F84" stroke-width="7.2114" stroke-miterlimit="10" x1="125.2" y1="279" x2="206.8" y2="279"/>
-	<line fill="none" stroke="#6F7F84" stroke-width="7.2114" stroke-miterlimit="10" x1="143.2" y1="293.4" x2="188.8" y2="293.4"/>
-	<rect x="115.2" y="316" fill="none" stroke="#6F7F84" stroke-width="7.2114" stroke-miterlimit="10" width="42.8" height="51.1"/>
-	<rect x="175.8" y="316" fill="none" stroke="#6F7F84" stroke-width="7.2114" stroke-miterlimit="10" width="42.8" height="51.1"/>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
+<svg class="approach-section-icon-svg" xmlns="http://www.w3.org/2000/svg" width="541.7" height="453.9" viewBox="0 0 541.7 453.9">
+  <!-- ICON -->
+  <g fill="none" stroke="#6F7F84" stroke-width="7.211" stroke-miterlimit="10">
+    <path d="M96.3 206.2h139.5v177.2H96.3V206.2zm139.5 54.4H96.3m18.9 0l29.2-26.4 14.2 12.9 25-22.7 40.2 36.6m-98.6 18h81.6m-63.6 14.4h45.6"></path>
+    <path d="M115.2 316H158v51.1h-42.8V316zm60.6 0h42.8v51.1h-42.8V316z"></path>
+  </g>
+
+  <!-- LOOP -->
+  <path fill="none" stroke="#6F7F84" stroke-width="7.211" stroke-miterlimit="10" d="M325.2 0v289.6c0 88.8-72 160.8-160.8 160.8-88.8 0-160.8-72-160.8-160.8 0-88.8 72-160.8 160.8-160.8 42.9 0 81.9 16.8 110.7 44.2"></path>
+
+  <!-- ARROWHEAD -->
+  <path fill="#6F7F84" d="M261.6 176.8l21.8 5.9-5.9-21.9-15.9 16z"></path>
+
+  <!-- TO NEXT -->
+  <path fill="none" stroke="#6F7F84" stroke-width="7.211" stroke-miterlimit="10" d="M364.7 269.9l174.4 174.4"></path>
 </svg>

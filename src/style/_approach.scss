@@ -34,12 +34,12 @@
   @include transform(translateY(-50%));
 }
 
-.approach-section-icon-wrapper {
+.approach-section-icon {
   position: relative;
   height: 100%;
 }
 
-.approach-section-icon {
+.approach-section-icon-svg {
   position: absolute;
   @include size(75% auto);
 
