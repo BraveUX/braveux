@@ -29,7 +29,12 @@ $darkblue: #2E3D5A;
   letter-spacing: 3px;
 
   .felix & { font-size: 22px; }
-  .fieldone & { color: $graphite; }
+  
+  .fieldone & { 
+    color: $graphite; 
+    text-transform: none;
+  }
+
   .obesity & { color: #8FA3AD; }
 }
 
