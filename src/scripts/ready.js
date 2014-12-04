@@ -16,59 +16,41 @@ function initApproach() {
   var fadeInDuration = 500;
   var fadeInEasing = 'ease';
 
-  var approachIcon1 = $('.approach-section-icon-svg').eq(0).get(0);
-  var approachIcon2 = $('.approach-section-icon-svg').eq(1).get(0);
-  var approachIcon3 = $('.approach-section-icon-svg').eq(2).get(0);
-  var approachIcon4 = $('.approach-section-icon-svg').eq(3).get(0);
-  var approachIcon5 = $('.approach-section-icon-svg').eq(4).get(0);
-  var approachIcon6 = $('.approach-section-icon-svg').eq(5).get(0);
-
   // hide inner icons
   $('.approach-inner-icon, .approach-arrowhead').css('opacity', '0');
 
-  // init vivus
-  new Vivus(approachIcon1, {type: 'async', start: 'inViewport', duration: drawDuration}, function() {
-    $('.approach-inner-icon').eq(0).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
-    $('.approach-arrowhead').eq(0).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
-  });
+  function bindVivus(index) {
+    return new Vivus($('.approach-section-icon-svg').eq(index).get(0), {type: 'async', start: 'inViewport', duration: drawDuration}, function() {
+      $('.approach-inner-icon').eq(index).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
+      $('.approach-arrowhead').eq(index).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
+    });
+  }
 
-  new Vivus(approachIcon2, {type: 'async', start: 'inViewport', duration: drawDuration}, function() {
-    $('.approach-inner-icon').eq(1).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
-    $('.approach-arrowhead').eq(1).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
-  });
+  function bindWaypoints(index) {
 
-  new Vivus(approachIcon3, {type: 'async', start: 'inViewport', duration: drawDuration}, function() {
-    $('.approach-inner-icon').eq(2).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
-    $('.approach-arrowhead').eq(2).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
-  });
+  }
 
-  new Vivus(approachIcon4, {type: 'async', start: 'inViewport', duration: drawDuration}, function() {
-    $('.approach-inner-icon').eq(3).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
-    $('.approach-arrowhead').eq(3).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
-  });
+  // on each icon
+  for(var i = 0; i <= 5; i++) {
+    // bind vivus
+    bindVivus(i);
 
-  new Vivus(approachIcon5, {type: 'async', start: 'inViewport', duration: drawDuration}, function() {
-    $('.approach-inner-icon').eq(4).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
-    $('.approach-arrowhead').eq(4).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
-  });
-
-  new Vivus(approachIcon6, {type: 'async', start: 'inViewport', duration: drawDuration}, function() {
-    $('.approach-inner-icon').eq(5).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
-    $('.approach-arrowhead').eq(5).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
-  });
+    // bind waypoints
+    bindWaypoints(i);
+  }
 
   // $('.approach-section-icon').eq(0).waypoint(function(direction) {
   //   // only while scrolling down
   //   if(direction === 'down') {
   //     // fire vivus
-
+  //     console.log('hit top')
   //   }
-
   // }, {
+  //   offset: 0
   //   // fire when bottom of image hits bottom of screen
-  //   offset: function() {
-  //     return -$(this).height() + $(window).height();
-  //   }
+  //   // offset: function() {
+  //   //   return -$(this).height() + $(window).height();
+  //   // }
   // });
 }
 
