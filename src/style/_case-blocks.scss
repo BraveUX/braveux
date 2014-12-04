@@ -120,7 +120,7 @@
 
   // LENGTH MODIFIERS
 
-  &.short-length  { max-width: 300px; }
+  &.short-length  { max-width: 310px; }
   &.medium-length { max-width: 550px; }
 
   // ALIGNMENT MODIFIERS
@@ -158,9 +158,4 @@
 .case-block-text-quote-icon {
   display: block;
   margin: 0 auto 35px auto;
-}
-
-.case-block-extend {
-  max-width: 306px;
-  width: 306px;
 }
