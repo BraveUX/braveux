@@ -12,53 +12,45 @@ $(document).ready(function() {
 
 function initApproach() {
   // cache vars
-  var approachIcon1 = $('.approach-section-icon-svg').eq(0).get(0);
-  var approachIcon2 = $('.approach-section-icon-svg').eq(1).get(0);
-  var approachIcon3 = $('.approach-section-icon-svg').eq(2).get(0);
-  var approachIcon4 = $('.approach-section-icon-svg').eq(3).get(0);
-  var approachIcon5 = $('.approach-section-icon-svg').eq(4).get(0);
-  var approachIcon6 = $('.approach-section-icon-svg').eq(5).get(0);
+  var drawDuration = 100;
+  var fadeInDuration = 500;
+  var fadeInEasing = 'ease';
 
   // hide inner icons
-  $('.approach-section-inner-icon').hide();
+  $('.approach-inner-icon, .approach-arrowhead').css('opacity', '0');
 
-  // init vivus
-  new Vivus(approachIcon1, {type: 'async', start: 'inViewport', duration: 80}, function() {
+  function bindVivus(index) {
+    return new Vivus($('.approach-section-icon-svg').eq(index).get(0), {type: 'async', start: 'inViewport', duration: drawDuration}, function() {
+      $('.approach-inner-icon').eq(index).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
+      $('.approach-arrowhead').eq(index).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
+    });
+  }
 
-  });
+  function bindWaypoints(index) {
 
-  new Vivus(approachIcon2, {type: 'async', start: 'inViewport', duration: 80}, function() {
+  }
 
-  });
+  // on each icon
+  for(var i = 0; i <= 5; i++) {
+    // bind vivus
+    bindVivus(i);
 
-  new Vivus(approachIcon3, {type: 'async', start: 'inViewport', duration: 80}, function() {
-
-  });
-
-  new Vivus(approachIcon4, {type: 'async', start: 'inViewport', duration: 80}, function() {
-
-  });
-
-  new Vivus(approachIcon5, {type: 'async', start: 'inViewport', duration: 80}, function() {
-
-  });
-
-  new Vivus(approachIcon6, {type: 'async', start: 'inViewport', duration: 80}, function() {
-
-  });
+    // bind waypoints
+    bindWaypoints(i);
+  }
 
   // $('.approach-section-icon').eq(0).waypoint(function(direction) {
   //   // only while scrolling down
   //   if(direction === 'down') {
   //     // fire vivus
-
+  //     console.log('hit top')
   //   }
-
   // }, {
+  //   offset: 0
   //   // fire when bottom of image hits bottom of screen
-  //   offset: function() {
-  //     return -$(this).height() + $(window).height();
-  //   }
+  //   // offset: function() {
+  //   //   return -$(this).height() + $(window).height();
+  //   // }
   // });
 }
 
