@@ -3,7 +3,10 @@ $(document).ready(function() {
   initScrollSpy();
   initEasterEggs();
   initNavBar();
-  initApproach();
+
+  if(window.location.pathname === '/approach.html')
+    initApproach();
+
   console.log('Looking for this? https://github.com/BraveUX/website');
 });
 
