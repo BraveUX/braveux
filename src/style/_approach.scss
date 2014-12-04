@@ -35,6 +35,8 @@
   @include transform(translateY(-50%));
 }
 
+// SVG ICONS
+
 .approach-section-icon {
   position: relative;
   height: 100%;
@@ -56,6 +58,18 @@
     top: 50%;
     @include transform(translateY(-50%));
   }
+}
+
+.approach-to-next {
+  // @include transition(stroke-dashoffset 0.5s ease);
+
+
+
+// 220
+// 173
+// 255
+// 247
+// 138
 }
 
 .approach-section-heading {
