@@ -12,6 +12,10 @@ $(document).ready(function() {
 
 function initApproach() {
   // cache vars
+  var drawDuration = 100;
+  var fadeInDuration = 500;
+  var fadeInEasing = 'ease';
+
   var approachIcon1 = $('.approach-section-icon-svg').eq(0).get(0);
   var approachIcon2 = $('.approach-section-icon-svg').eq(1).get(0);
   var approachIcon3 = $('.approach-section-icon-svg').eq(2).get(0);
@@ -20,31 +24,37 @@ function initApproach() {
   var approachIcon6 = $('.approach-section-icon-svg').eq(5).get(0);
 
   // hide inner icons
-  $('.approach-section-inner-icon').hide();
+  $('.approach-inner-icon, .approach-arrowhead').css('opacity', '0');
 
   // init vivus
-  new Vivus(approachIcon1, {type: 'async', start: 'inViewport', duration: 80}, function() {
-
+  new Vivus(approachIcon1, {type: 'async', start: 'inViewport', duration: drawDuration}, function() {
+    $('.approach-inner-icon').eq(0).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
+    $('.approach-arrowhead').eq(0).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
   });
 
-  new Vivus(approachIcon2, {type: 'async', start: 'inViewport', duration: 80}, function() {
-
+  new Vivus(approachIcon2, {type: 'async', start: 'inViewport', duration: drawDuration}, function() {
+    $('.approach-inner-icon').eq(1).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
+    $('.approach-arrowhead').eq(1).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
   });
 
-  new Vivus(approachIcon3, {type: 'async', start: 'inViewport', duration: 80}, function() {
-
+  new Vivus(approachIcon3, {type: 'async', start: 'inViewport', duration: drawDuration}, function() {
+    $('.approach-inner-icon').eq(2).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
+    $('.approach-arrowhead').eq(2).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
   });
 
-  new Vivus(approachIcon4, {type: 'async', start: 'inViewport', duration: 80}, function() {
-
+  new Vivus(approachIcon4, {type: 'async', start: 'inViewport', duration: drawDuration}, function() {
+    $('.approach-inner-icon').eq(3).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
+    $('.approach-arrowhead').eq(3).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
   });
 
-  new Vivus(approachIcon5, {type: 'async', start: 'inViewport', duration: 80}, function() {
-
+  new Vivus(approachIcon5, {type: 'async', start: 'inViewport', duration: drawDuration}, function() {
+    $('.approach-inner-icon').eq(4).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
+    $('.approach-arrowhead').eq(4).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
   });
 
-  new Vivus(approachIcon6, {type: 'async', start: 'inViewport', duration: 80}, function() {
-
+  new Vivus(approachIcon6, {type: 'async', start: 'inViewport', duration: drawDuration}, function() {
+    $('.approach-inner-icon').eq(5).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
+    $('.approach-arrowhead').eq(5).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
   });
 
   // $('.approach-section-icon').eq(0).waypoint(function(direction) {
