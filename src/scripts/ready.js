@@ -12,7 +12,7 @@ $(document).ready(function() {
 
 function initApproach() {
   // cache vars
-  var drawDuration = 50;
+  var drawDuration = 80;
   var fadeInDuration = 500;
   var fadeInEasing = 'ease';
 
@@ -52,6 +52,20 @@ function initApproach() {
     // bind waypoints
     bindWaypoints(i);
   }
+
+  // bind next arrow handler
+  $('.approach-section-next').click(function(e) {
+    e.preventDefault();
+
+    // get button index
+    var index = $(this).index('.approach-section-next');
+
+    // calculate scroll offset
+    var offset = ($(window).height() - $('.approach-section').height()) / 2;
+
+    // scroll to next section
+    $('.approach-section').eq(index + 1).velocity('scroll', { offset: -offset, duration: fadeInDuration, easing: fadeInEasing });
+  });
 }
 
 function initEasterEggs() {
