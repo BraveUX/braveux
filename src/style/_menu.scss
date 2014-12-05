@@ -8,6 +8,15 @@ $menu-height: 50px;
   @include size(100% $menu-height);
   background-color: $black;
 
+  @include mq($tablet) {
+    @include size(65% 100%);
+    padding-top: 40px;
+
+    .container {
+      margin: 0;
+    }
+  }
+
   &.is-collapsed {
     top: -$menu-height;
   }
@@ -39,6 +48,14 @@ $menu-height: 50px;
   }
 }
 
+.mobile-logo {
+  display: none;
+
+  @include mq($tablet) {
+    display: block;
+  }
+}
+
 .menu-link {
   @include transition(all 0.5s ease);
   @include size(auto $menu-height);
@@ -50,12 +67,25 @@ $menu-height: 50px;
   text-transform: uppercase;
   letter-spacing: 2px;
 
+  @include mq($tablet) {
+    float: none;
+    padding: 18px 0 0 40px;
+    border-bottom: 2px solid $light-black;
+    border-right: 0;
+    font-size: 12px;
+  }
+
   &:hover {
     background-color: $light-black;
   }
 
   &:first-child {
     margin-left: $menu-height;
+
+    @include mq($tablet) {
+      border-top: 2px solid $light-black;
+      margin-left: 0;
+    }
   }
 
   .is-home & {
@@ -80,6 +110,10 @@ $menu-height: 50px;
   border: 1px solid $black;
   border-radius: 11px;
   cursor: pointer;
+
+  @include mq($tablet) {
+    display: none;
+  }
 
   &.is-active {
     border-color: #778F9B;
