@@ -7,7 +7,7 @@
     words: ['designing awesome apps.', 'smart and capable.', 'research-driven.', 'Brave.']
   }];
 
-  $.fn.typewriter = function() {
+  $.fn.typewriter = function(callback) {
     var iterator = 0;
 
     var current = {
@@ -17,8 +17,8 @@
     }
 
     function type (word) {
-      current.selector.siblings('.typewriter-cursor').text('|');
 
+      current.selector.siblings('.typewriter-cursor').text('|');
       if (word.length) {
         current.selector.text(current.selector.text() + word[0])
         word.shift();
@@ -29,9 +29,8 @@
           current.selector.siblings('.typewriter-cursor').text('');
           iterator ++;
 
-          // if second, start highlights
           if (iterator % 2 === 0) {
-            // start first highlight
+            if (current.phrase.length < 2) return callback();
             current.selector.addClass('typewriter-highlight');
 
             setTimeout(function() {
@@ -43,7 +42,7 @@
             setTimeout(function() {
               test[1].selector.text('');
               test[1].selector.removeClass('typewriter-highlight');
-              current.phrase.push(current.phrase.shift());
+              current.phrase.shift()
               test.push(test.shift());
 
               current = {
@@ -56,13 +55,9 @@
             }, 2000);
           }
           else {
-            // swap current phrases
-            current.phrase.push(current.phrase.shift());
-
-            // swap current with other
+            current.phrase.shift();
             test.push(test.shift());
-
-            //reset
+            
             current = {
               selector: test[0].selector,
               phrase: test[0].words,

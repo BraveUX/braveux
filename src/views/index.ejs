@@ -46,6 +46,8 @@
 
 <script type="text/javascript">
   $(document).on('ready', function() {
-    $('.typewriter-text-1').typewriter();
+    $('.typewriter-text-1').typewriter(function() {
+      console.log('callback called')
+    });
   });
 </script>
