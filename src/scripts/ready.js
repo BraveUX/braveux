@@ -93,7 +93,7 @@ function initNavBar() {
       toggleNav();
       scroll = false;
     }
-  }, 250);
+  }, 200);
 
   function toggleNav() {
     // current scroll position
@@ -102,6 +102,12 @@ function initNavBar() {
     // check for scroll more than delta
     if(Math.abs(scrollPrevious - scrollCurrent) <= scrollDelta)
       return;
+
+    // check for scrolled to top
+    if(scrollCurrent === 0) {
+      $('.menu').removeClass('is-collapsed');
+      return;
+    }
 
     // if current scroll is past navbar height
     if(scrollCurrent > 50) {
