@@ -81,6 +81,10 @@ $menu-height: 50px;
   border-radius: 11px;
   cursor: pointer;
 
+  @include mq($tablet) {
+    display: none;
+  }
+
   &.is-active {
     border-color: #778F9B;
   }
