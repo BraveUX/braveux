@@ -65,15 +65,20 @@
   @include transform-origin(center center);
 
   &.gear { @include animation(spin 10.0s linear infinite); }
+
+  .stopwatch-hand {
+    @include transform-origin(center 174px);
+    @include animation(spin 10.0s linear infinite);
+  }
 }
 
 @include keyframes(spin) {
   0% {
-    @include transform(rotate(0deg));
+    @include transform(rotate(360deg));
   }
 
   100% {
-    @include transform(rotate(360deg));
+    @include transform(rotate(0deg));
   }
 }
 
