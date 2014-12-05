@@ -5,6 +5,10 @@
   background-position: center bottom;
   background-repeat: no-repeat;
   @include font(14px);
+  
+  @include mq($tablet) {
+    padding-bottom: 120px;
+  }
 
   &.is-short {
     padding: 80px 0;
@@ -23,6 +27,12 @@
 
 .footer-column {
   float: left;
+  
+  @include mq($tablet) {
+    float: none;
+    overflow: hidden;
+    width: auto !important;
+  }
 
   &:nth-child(1) {
     width: 20%;
@@ -34,19 +44,23 @@
 
   &:nth-child(3) {
     width: 35%;
+
+    @include mq($tablet) {
+      margin-bottom: 50px;
+    }
   }
 
   &:nth-child(4) {
     width: 20%;
-
-    .footer-heading {
-      margin-bottom: 32px;
-    }
   }
 }
 
 .footer-logo {
   margin-top: 30px;
+
+  @include mq($tablet) {
+    margin: 0 0 50px 0;
+  }
 }
 
 .footer-heading {
@@ -54,23 +68,44 @@
   @include font(null, 600, #979797, 'Trade Gothic LT Std');
   letter-spacing: 2px;
   text-transform: uppercase;
+
+  @include mq($tablet) {
+    margin-bottom: 20px;
+    font-size: 13px;
+  }
 }
 
 .footer-email-link {
   @include font(24px, null, #979797);
   line-height: 1.5;
+
+  @include mq($tablet) {
+    display: block;
+    font-size: 23px;
+    margin-bottom: 50px;
+  }
 }
 
 .footer-product-link {
   display: block;
   @include font(16px, null, #979797);
+
+  @include mq($tablet) {
+    font-size: 20px;
+    line-height: 2;
+  }
 }
 
 .footer-copyright {
   clear: both;
+  position: relative;
   margin-top: 95px;
   @include font(null, null, #666, 'Sentinel');
   text-align: center;
+
+  @include mq($tablet) {
+    line-height: 2.8;
+  }
 }
 
 .footer-copyright-stars {
@@ -81,9 +116,24 @@
   background-position: center center;
   background-repeat: no-repeat;
   cursor: pointer;
+  
+  @include mq($tablet) {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    margin-left: -20px;
+  }
 
   &:hover {
     background-image: url('images/icons/icon-stars-light.svg');
+  }
+}
+
+.footer-break {
+  display: none;
+
+  @include mq($tablet) {
+    display: block;
   }
 }
 
