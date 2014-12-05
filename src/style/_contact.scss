@@ -16,6 +16,7 @@
 
   @include mq($tablet) {
     width: 100%;
+    padding: 70px 0;
   }
 }
 
@@ -27,6 +28,16 @@
   @include mq($tablet) {
     display: none;
   }
+}
+
+.contact-map-mobile {
+  display: none;
+
+  @include mq($tablet) {
+    display: block;
+    @include size(auto 400px);
+    background: url('images/contact/map.svg') center center/100% no-repeat white;
+  } 
 }
 
 .contact-email,
@@ -41,6 +52,8 @@
 
   @include mq($tablet) {
     width: 200px;
+    margin-bottom: 0;
+        
     .social-link:nth-last-child(-n+2) {
       margin-top: 25px;
     }
