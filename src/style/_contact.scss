@@ -48,18 +48,6 @@
   overflow: hidden;
 }
 
-.contact-follow {
-
-  @include mq($tablet) {
-    width: 200px;
-    margin-bottom: 0;
-        
-    .social-link:nth-last-child(-n+2) {
-      margin-top: 25px;
-    }
-  }
-}
-
 .contact-heading {
   margin-bottom: 20px;
   @include font(16px, 600, #4D4D4D, 'Trade Gothic LT Std');
