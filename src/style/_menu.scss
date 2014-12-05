@@ -11,7 +11,7 @@ $menu-height: 50px;
   @include mq($tablet) {
     @include size(65% 100%);
     padding-top: 40px;
-
+    display: none; // dev only delete this
     .container {
       margin: 0;
     }
