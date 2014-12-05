@@ -37,7 +37,7 @@
     display: block;
     @include size(auto 400px);
     background: url('images/contact/map.svg') center center/100% no-repeat white;
-  } 
+  }
 }
 
 .contact-email,
@@ -66,7 +66,7 @@
 
   @include mq($tablet) {
     font-size: 19px;
-  } 
+  }
 }
 
 .contact-email-link {
