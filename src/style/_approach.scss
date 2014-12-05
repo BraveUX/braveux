@@ -60,16 +60,47 @@
   }
 }
 
+// $magic-number is the length of the .approach-to-next path
+// calculated via getTotalLength() beforehand, because Firefox doesn't always do it right
+// this length doesn't change, even if the size of the SVG does
+
 .approach-to-next {
-  // @include transition(stroke-dashoffset 0.5s ease);
+  @include transition(stroke-dashoffset .2s linear);
 
+  &.one.hidden   {
+    $magic-number: 220px;
 
+    stroke-dashoffset: $magic-number !important;
+    stroke-dasharray: $magic-number !important;
+  }
 
-// 220
-// 173
-// 255
-// 247
-// 138
+  &.two.hidden   {
+    $magic-number: 173px;
+
+    stroke-dashoffset: $magic-number !important;
+    stroke-dasharray: $magic-number !important;
+  }
+
+  &.three.hidden   {
+    $magic-number: 255px;
+
+    stroke-dashoffset: $magic-number !important;
+    stroke-dasharray: $magic-number !important;
+  }
+
+  &.four.hidden   {
+    $magic-number: 247px;
+
+    stroke-dashoffset: $magic-number !important;
+    stroke-dasharray: $magic-number !important;
+  }
+
+  &.five.hidden   {
+    $magic-number: 138px;
+
+    stroke-dashoffset: $magic-number !important;
+    stroke-dasharray: $magic-number !important;
+  }
 }
 
 .approach-section-heading {

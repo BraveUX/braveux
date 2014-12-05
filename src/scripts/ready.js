@@ -12,7 +12,7 @@ $(document).ready(function() {
 
 function initApproach() {
   // cache vars
-  var drawDuration = 100;
+  var drawDuration = 50;
   var fadeInDuration = 500;
   var fadeInEasing = 'ease';
 
@@ -20,14 +20,35 @@ function initApproach() {
   $('.approach-inner-icon, .approach-arrowhead').css('opacity', '0');
 
   function bindVivus(index) {
-    return new Vivus($('.approach-section-icon-svg').eq(index).get(0), {type: 'async', start: 'inViewport', duration: drawDuration}, function() {
+    // animate loops, fade in arrowhead and icon
+    return new Vivus($('.approach-section-icon-svg').eq(index).get(0), { type: 'async', start: 'inViewport', duration: drawDuration }, function() {
       $('.approach-inner-icon').eq(index).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
-      $('.approach-arrowhead').eq(index).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
+      $('.approach-arrowhead').eq(index).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing, complete: function() {
+        // self destroy ;)
+      } });
     });
   }
 
   function bindWaypoints(index) {
+    $('.approach-section-icon').eq(index).waypoint(function(direction) {
+      // only while scrolling down
+      if(direction === 'down') {
+        // fire vivus
+        console.log('hit top')
 
+        // drop the hidden class, let her rip
+        // not sure about the browser support on this one...
+        $('.approach-to-next').eq(index).get(0).classList.remove('hidden');
+      }
+    }, {
+      offset: 0
+
+      // fire when image is half way offscreen, just in case
+
+      // offset: function() {
+      //   return -$(this).height() + $(window).height();
+      // }
+    });
   }
 
   // on each icon
@@ -38,20 +59,6 @@ function initApproach() {
     // bind waypoints
     bindWaypoints(i);
   }
-
-  // $('.approach-section-icon').eq(0).waypoint(function(direction) {
-  //   // only while scrolling down
-  //   if(direction === 'down') {
-  //     // fire vivus
-  //     console.log('hit top')
-  //   }
-  // }, {
-  //   offset: 0
-  //   // fire when bottom of image hits bottom of screen
-  //   // offset: function() {
-  //   //   return -$(this).height() + $(window).height();
-  //   // }
-  // });
 }
 
 function initEasterEggs() {
