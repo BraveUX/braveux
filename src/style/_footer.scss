@@ -1,3 +1,7 @@
+.menu.is-collapsed {
+  display: none;
+}
+
 .footer {
   clear: both;
   padding: 120px 0 60px 0;
@@ -12,7 +16,17 @@
     .footer-copyright {
       margin-top: 0;
       font-size: 20px;
+
+      @include mq($tablet) {
+        font-size: 14px;
+        width: 80%;
+        margin: 0 auto;
+        position: relative;
+        line-height: 2.8;
+      }
     }
+
+
   }
 
   &.is-egg {
@@ -85,6 +99,12 @@
   &:hover {
     background-image: url('images/icons/icon-stars-light.svg');
   }
+
+  @include mq($tablet) {
+    display: block;
+    @include position(absolute, null null -30px 50%);
+    margin-left: -20px;
+  }
 }
 
 .stars-disable {
@@ -92,5 +112,13 @@
 
   &:hover {
     background-image: url('images/icons/icon-stars.svg');
+  }
+}
+
+.mobile-footer-break {
+  display: none;
+
+  @include mq($tablet) {
+    display: block;
   }
 }
