@@ -35,7 +35,7 @@
   @include transform(translateY(-50%));
 }
 
-// SVG ICONS
+// SVG ICON
 
 .approach-section-icon {
   position: relative;
@@ -57,6 +57,23 @@
   &.middle {
     top: 50%;
     @include transform(translateY(-50%));
+  }
+}
+
+.approach-inner-icon {
+  // @include transition(all 1.0 ease);
+  @include transform-origin(center center);
+
+  &.gear { @include animation(spin 10.0s linear infinite); }
+}
+
+@include keyframes(spin) {
+  0% {
+    @include transform(rotate(0deg));
+  }
+
+  100% {
+    @include transform(rotate(360deg));
   }
 }
 
