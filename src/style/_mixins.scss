@@ -1,4 +1,13 @@
 /**
+ * @param $size - breakpoint, in pixels
+ */
+@mixin mq($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+/**
  * @param $size   - font size, default: null
  * @param $weight - font weight, default: null
  * @param $color  - font color, default: null
