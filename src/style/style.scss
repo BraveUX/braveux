@@ -6,10 +6,22 @@
 
 @import "bourbon/bourbon";
 @import "mixins";
+
 // brand colors
 
 $black: #1C1C20;
 $light-black: #262628;
+
+// media queries
+
+@mixin mq($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+$tablet: 800px;
+$mobile: 480px;
 
 // box sizing
 
