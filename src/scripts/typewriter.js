@@ -4,10 +4,10 @@
   var test = [
     {
       selector: $('.typewriter-1'),
-      words: ['user experience.', 'happy users.', 'better user flow.', 'to understand your users.']
+      words: ['happy users.', 'better user flow.', 'to understand your users.', 'user experience.']
     }, {
       selector: $('.typewriter-2'),
-      words: ['Brave.', 'designing awesome apps.', 'smart and capable.', 'research-driven.']
+      words: ['designing awesome apps.', 'smart and capable.', 'research-driven.', 'Brave.']
     }
 ];
 
