@@ -65,6 +65,11 @@ $menu-height: 50px;
     &:first-child {
       margin-left: 75px;
     }
+
+    &:hover {
+      background-color: transparent;
+      color: #777;
+    }
   }
 }
 

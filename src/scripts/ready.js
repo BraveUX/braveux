@@ -12,22 +12,38 @@ $(document).ready(function() {
 
 function initApproach() {
   // cache vars
-  var drawDuration = 100;
+  var drawDuration = 50;
   var fadeInDuration = 500;
   var fadeInEasing = 'ease';
+  var scrollDuration = 500;
+  var scrollEasing = 'linear';
 
   // hide inner icons
   $('.approach-inner-icon, .approach-arrowhead').css('opacity', '0');
 
   function bindVivus(index) {
-    return new Vivus($('.approach-section-icon-svg').eq(index).get(0), {type: 'async', start: 'inViewport', duration: drawDuration}, function() {
+    // animate loops, fade in arrowhead and icon
+    return new Vivus($('.approach-section-icon-svg').eq(index).get(0), { type: 'async', start: 'inViewport', duration: drawDuration }, function() {
+      // remove drawing class
+      if(index != 5)
+        $('.approach-to-next').eq(index).get(0).classList.remove('drawing');
+
+      // fade in icon and arrowhead
       $('.approach-inner-icon').eq(index).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
       $('.approach-arrowhead').eq(index).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
     });
   }
 
   function bindWaypoints(index) {
-
+    $('.approach-section-icon').eq(index).waypoint(function(direction) {
+      // only while scrolling down
+      if(direction === 'down') {
+        // drop the hidden class, let her rip
+        // not sure about the browser support on this one...
+        if(index != 5)
+          $('.approach-to-next').eq(index).get(0).classList.remove('hidden');
+      }
+    });
   }
 
   // on each icon
@@ -39,19 +55,19 @@ function initApproach() {
     bindWaypoints(i);
   }
 
-  // $('.approach-section-icon').eq(0).waypoint(function(direction) {
-  //   // only while scrolling down
-  //   if(direction === 'down') {
-  //     // fire vivus
-  //     console.log('hit top')
-  //   }
-  // }, {
-  //   offset: 0
-  //   // fire when bottom of image hits bottom of screen
-  //   // offset: function() {
-  //   //   return -$(this).height() + $(window).height();
-  //   // }
-  // });
+  // bind next arrow handler
+  $('.approach-section-next').click(function(e) {
+    e.preventDefault();
+
+    // get button index
+    var index = $(this).index('.approach-section-next');
+
+    // calculate scroll offset
+    var offset = ($(window).height() - $('.approach-section').height()) / 2;
+
+    // scroll to next section
+    $('.approach-section').eq(index + 1).velocity('scroll', { offset: -offset, duration: scrollDuration, easing: scrollEasing });
+  });
 }
 
 function initEasterEggs() {

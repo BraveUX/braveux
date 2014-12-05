@@ -35,7 +35,7 @@
   @include transform(translateY(-50%));
 }
 
-// SVG ICONS
+// SVG ICON
 
 .approach-section-icon {
   position: relative;
@@ -60,16 +60,73 @@
   }
 }
 
+.approach-inner-icon {
+  // @include transition(all 1.0 ease);
+  @include transform-origin(center center);
+
+  &.gear { @include animation(spin 10.0s linear infinite); }
+
+  .stopwatch-hand {
+    @include transform-origin(center 174px);
+    @include animation(spin 10.0s linear infinite);
+  }
+}
+
+@include keyframes(spin) {
+  0% {
+    @include transform(rotate(360deg));
+  }
+
+  100% {
+    @include transform(rotate(0deg));
+  }
+}
+
+// $magic-number is the length of the .approach-to-next path
+// calculated via getTotalLength() beforehand, because Firefox doesn't always do it right
+// this length doesn't change, even if the size of the SVG does
+
 .approach-to-next {
-  // @include transition(stroke-dashoffset 0.5s ease);
+  @include transition(stroke-dashoffset .3s linear);
 
+  &.drawing {
+    @include transition(none);
+  }
 
+  &.one.hidden   {
+    $magic-number: 220px;
 
-// 220
-// 173
-// 255
-// 247
-// 138
+    stroke-dashoffset: $magic-number !important;
+    stroke-dasharray: $magic-number !important;
+  }
+
+  &.two.hidden   {
+    $magic-number: 173px;
+
+    stroke-dashoffset: $magic-number !important;
+    stroke-dasharray: $magic-number !important;
+  }
+
+  &.three.hidden   {
+    $magic-number: 255px;
+
+    stroke-dashoffset: $magic-number !important;
+    stroke-dasharray: $magic-number !important;
+  }
+
+  &.four.hidden   {
+    $magic-number: 247px;
+
+    stroke-dashoffset: $magic-number !important;
+    stroke-dasharray: $magic-number !important;
+  }
+
+  &.five.hidden   {
+    $magic-number: 138px;
+
+    stroke-dashoffset: $magic-number !important;
+    stroke-dasharray: $magic-number !important;
+  }
 }
 
 .approach-section-heading {
