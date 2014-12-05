@@ -12,9 +12,11 @@ $(document).ready(function() {
 
 function initApproach() {
   // cache vars
-  var drawDuration = 80;
+  var drawDuration = 50;
   var fadeInDuration = 500;
   var fadeInEasing = 'ease';
+  var scrollDuration = 500;
+  var scrollEasing = 'linear';
 
   // hide inner icons
   $('.approach-inner-icon, .approach-arrowhead').css('opacity', '0');
@@ -64,7 +66,7 @@ function initApproach() {
     var offset = ($(window).height() - $('.approach-section').height()) / 2;
 
     // scroll to next section
-    $('.approach-section').eq(index + 1).velocity('scroll', { offset: -offset, duration: fadeInDuration, easing: fadeInEasing });
+    $('.approach-section').eq(index + 1).velocity('scroll', { offset: -offset, duration: scrollDuration, easing: scrollEasing });
   });
 }
 
