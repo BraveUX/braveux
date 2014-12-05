@@ -65,7 +65,11 @@
 // this length doesn't change, even if the size of the SVG does
 
 .approach-to-next {
-  @include transition(stroke-dashoffset .2s linear);
+  @include transition(stroke-dashoffset .3s linear);
+
+  &.drawing {
+    @include transition(none);
+  }
 
   &.one.hidden   {
     $magic-number: 220px;

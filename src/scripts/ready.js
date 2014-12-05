@@ -22,10 +22,13 @@ function initApproach() {
   function bindVivus(index) {
     // animate loops, fade in arrowhead and icon
     return new Vivus($('.approach-section-icon-svg').eq(index).get(0), { type: 'async', start: 'inViewport', duration: drawDuration }, function() {
+      // remove drawing class
+      if(index != 5)
+        $('.approach-to-next').eq(index).get(0).classList.remove('drawing');
+
+      // fade in icon and arrowhead
       $('.approach-inner-icon').eq(index).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
-      $('.approach-arrowhead').eq(index).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing, complete: function() {
-        // self destroy ;)
-      } });
+      $('.approach-arrowhead').eq(index).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
     });
   }
 
@@ -33,21 +36,11 @@ function initApproach() {
     $('.approach-section-icon').eq(index).waypoint(function(direction) {
       // only while scrolling down
       if(direction === 'down') {
-        // fire vivus
-        console.log('hit top')
-
         // drop the hidden class, let her rip
         // not sure about the browser support on this one...
-        $('.approach-to-next').eq(index).get(0).classList.remove('hidden');
+        if(index != 5)
+          $('.approach-to-next').eq(index).get(0).classList.remove('hidden');
       }
-    }, {
-      offset: 0
-
-      // fire when image is half way offscreen, just in case
-
-      // offset: function() {
-      //   return -$(this).height() + $(window).height();
-      // }
     });
   }
 
