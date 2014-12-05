@@ -3,18 +3,41 @@
   position: relative;
   padding-left: $site-padding;
   background-color: #EDEDED;
+
+  @include mq($tablet) {
+    padding-right: $site-padding;
+  }
 }
 
 .contact-info {
   @include clearfix;
   width: 50% - $site-padding;
   padding: 100px 0 120px 0;
+
+  @include mq($tablet) {
+    width: 100%;
+    padding: 70px 0;
+  }
 }
 
 .contact-map {
   @include position(absolute, 0 0 null null);
   @include size(50% 100%);
   background: url('images/contact/map.svg') center center/100% no-repeat;
+
+  @include mq($tablet) {
+    display: none;
+  }
+}
+
+.contact-map-mobile {
+  display: none;
+
+  @include mq($tablet) {
+    display: block;
+    @include size(auto 400px);
+    background: url('images/contact/map.svg') center center/100% no-repeat white;
+  } 
 }
 
 .contact-email,
@@ -22,6 +45,7 @@
 .contact-location,
 .contact-follow {
   margin-bottom: 40px;
+  overflow: hidden;
 }
 
 .contact-heading {
@@ -29,12 +53,20 @@
   @include font(16px, 600, #4D4D4D, 'Trade Gothic LT Std');
   letter-spacing: 2px;
   text-transform: uppercase;
+
+  @include mq($tablet) {
+    font-size: 20px;
+  }
 }
 
 .contact-email-link,
 .contact-phone-link,
 .contact-location-link {
   @include font(24px, 200, #808080, 'Sentinel');
+
+  @include mq($tablet) {
+    font-size: 19px;
+  } 
 }
 
 .contact-email-link {

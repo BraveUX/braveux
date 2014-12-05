@@ -6,6 +6,10 @@
   @include hide-text;
   background-position: center center;
   background-repeat: no-repeat;
+
+  @include mq($tablet) {
+    margin-bottom: 25px;
+  }
 }
 
 .light-twitter  { background-image: url('images/icons/icon-light-twitter.svg'); }
