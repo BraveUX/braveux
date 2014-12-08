@@ -10,6 +10,10 @@
   @include mq($tablet) {
     margin-bottom: 25px;
   }
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .light-twitter  { background-image: url('images/icons/icon-light-twitter.svg'); }

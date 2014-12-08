@@ -3,6 +3,11 @@
   @include clearfix;
   @include size(100% 575px);
 
+  @include mq($tablet) {
+    height: auto;
+    padding: 80px 0;
+  }
+
   &:nth-child(odd) {
     .approach-section-heading,
     .approach-section-text,
@@ -10,6 +15,12 @@
       float: right;
       clear: right;
       text-align: right;
+
+      @include mq($tablet) {
+        float: none;
+        clear: none;
+        text-align: center;
+      }
     }
   }
 
@@ -33,6 +44,12 @@
   position: relative;
   top: 50%;
   @include transform(translateY(-50%));
+
+  @include mq($tablet) {
+    position: static;
+    top: auto;
+    @include transform(none);
+  }
 }
 
 // SVG ICON
@@ -40,6 +57,10 @@
 .approach-section-icon {
   position: relative;
   height: 100%;
+
+  @include mq($tablet) {
+    display: none;
+  }
 }
 
 .approach-section-icon-svg {
@@ -132,12 +153,18 @@
 .approach-section-heading {
   max-width: 600px;
   margin: 0 0 45px 0;
-  @include font(28px, bold, null, 'Trade Gothic LT Std');
-  letter-spacing: 2px;
+  @include font(36px, bold, null, 'Trade Gothic LT Std');
+  letter-spacing: 3px;
   text-transform: uppercase;
 
-  &:first-child {
-    @include font(40px);
+  @include mq($tablet) {
+    margin: 0 auto 25px auto;
+    font-size: 28px;
+    text-align: center;
+  }
+
+  @include mq($mobile) {
+    max-width: 85%;
   }
 }
 
@@ -147,8 +174,23 @@
   @include font(18px);
   line-height: 2;
 
+  @include mq($tablet) {
+    margin: 0 auto 30px auto;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  @include mq($mobile) {
+    max-width: 85%;
+  }
+
   strong {
     @include font(24px, 600);
+
+    @include mq($tablet) {
+      display: block;
+      font-size: 18px;
+    }
   }
 }
 
@@ -157,6 +199,10 @@
   @include size(25px);
   background-position: center center;
   background-repeat: no-repeat;
+
+  @include mq($tablet) {
+    margin: 0 auto;
+  }
 
   .white & { background-image: url('images/approach/approach-section-next-white.svg'); }
   .black & { background-image: url('images/approach/approach-section-next-black.svg'); }
