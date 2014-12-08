@@ -2,7 +2,7 @@
   float: left;
   display: block;
   @include size(37px);
-  margin-right: 25px;
+  margin: 0 25px 25px 0;
   @include hide-text;
   background-position: center center;
   background-repeat: no-repeat;

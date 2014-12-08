@@ -1,13 +1,16 @@
+$footer-tablet: 900px;
+
 .footer {
   clear: both;
-  padding: 120px 0 60px 0;
+  padding: 120px 0 65px 0;
   background-color: $black;
   background-position: center bottom;
   background-repeat: no-repeat;
   @include font(14px);
+  text-align: center;
 
-  @include mq($tablet) {
-    padding-bottom: 120px;
+  @include mq($footer-tablet) {
+    padding-top: 60px;
   }
 
   &.is-short {
@@ -16,14 +19,6 @@
     .footer-copyright {
       margin-top: 0;
       font-size: 20px;
-
-      @include mq($tablet) {
-        font-size: 14px;
-        width: 80%;
-        margin: 0 auto;
-        position: relative;
-        line-height: 2.8;
-      }
     }
   }
 
@@ -34,41 +29,57 @@
 }
 
 .footer-column {
+  @include clearfix;
   float: left;
+  text-align: left;
 
-  @include mq($tablet) {
+  @include mq($footer-tablet) {
     float: none;
-    overflow: hidden;
     width: auto !important;
+    margin-bottom: 60px;
   }
 
   &:nth-child(1) {
     width: 20%;
+
+    @include mq(1100px) {
+      float: none;
+      width: auto;
+      margin-bottom: 60px;
+    }
   }
 
   &:nth-child(2) {
     width: 25%;
+
+    @include mq(1100px) {
+      width: 32.5%;
+    }
   }
 
   &:nth-child(3) {
     width: 35%;
 
-    @include mq($tablet) {
-      margin-bottom: 50px;
+    @include mq(1100px) {
+      width: 42.5%;
+    }
+
+    @include mq($footer-tablet) {
+      margin-bottom: 35px;
     }
   }
 
   &:nth-child(4) {
     width: 20%;
+
+    @include mq(1100px) {
+      width: 25%;
+    }
   }
 }
 
 .footer-logo {
   margin-top: 30px;
-
-  @include mq($tablet) {
-    margin: 0 0 50px 0;
-  }
 }
 
 .footer-heading {
@@ -77,77 +88,75 @@
   letter-spacing: 2px;
   text-transform: uppercase;
 
-  @include mq($tablet) {
-    margin-bottom: 20px;
-    font-size: 13px;
+  @include mq($footer-tablet) {
+    margin-bottom: 25px;
   }
 }
 
 .footer-email-link {
   @include font(24px, null, #979797);
   line-height: 1.5;
-
-  @include mq($tablet) {
-    display: block;
-    font-size: 23px;
-    margin-bottom: 50px;
-  }
 }
 
 .footer-product-link {
   display: block;
   @include font(16px, null, #979797);
 
+  @include mq($footer-tablet) {
+    font-size: 24px;
+  }
+}
+
+// LAST LINE
+
+.footer-last-line {
+  @include clearfix;
+  display: inline-block;
+  margin-top: 90px;
+  @include font(15px, 200, #666, 'Sentinel');
+
+  @include mq($footer-tablet) {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+}
+
+.footer-copyright,
+.footer-made,
+.footer-stars {
+  float: left;
+
   @include mq($tablet) {
-    font-size: 20px;
-    line-height: 2;
+    float: none;
+    width: auto;
+    margin-bottom: 20px;
   }
 }
 
 .footer-copyright {
-  clear: both;
-  position: relative;
-  margin-top: 95px;
-  @include font(null, null, #666, 'Sentinel');
-  text-align: center;
 
+}
+
+.footer-made {
   @include mq($tablet) {
-    line-height: 2.8;
+    margin-bottom: 0;
   }
 }
 
-.footer-copyright-stars {
-  display: inline-block;
+.footer-stars {
   @include size(40px 10px);
-  margin: 0 50px;
+  margin: 5px 50px 0 50px;
   background-image: url('images/icons/icon-stars.svg');
   background-position: center center;
   background-repeat: no-repeat;
   cursor: pointer;
 
   @include mq($tablet) {
-    position: absolute;
-    bottom: -40px;
-    left: 50%;
-    margin-left: -20px;
+    margin: 0 auto 20px auto;
   }
 
   &:hover {
     background-image: url('images/icons/icon-stars-light.svg');
-  }
-
-  @include mq($tablet) {
-    display: block;
-    @include position(absolute, null null -30px 50%);
-    margin-left: -20px;
-  }
-}
-
-.footer-break {
-  display: none;
-
-  @include mq($tablet) {
-    display: block;
   }
 }
 
@@ -156,13 +165,5 @@
 
   &:hover {
     background-image: url('images/icons/icon-stars.svg');
-  }
-}
-
-.mobile-footer-break {
-  display: none;
-
-  @include mq($tablet) {
-    display: block;
   }
 }
