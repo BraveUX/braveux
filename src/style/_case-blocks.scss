@@ -7,10 +7,28 @@
   @include size(100% auto);
   padding: 120px 0;
 
+  @include mq($tablet) {
+    padding: 80px 0;
+  }
+
   // MODIFIERS
 
-  &.extra-padded { padding: 200px 0; }
-  &.top-padded { padding: 120px 0 0 0; }
+  &.extra-padded {
+    padding: 200px 0;
+
+    @include mq($tablet) {
+      padding: 80px 0;
+    }
+  }
+
+  &.top-padded {
+    padding: 120px 0 0 0;
+
+    @include mq($tablet) {
+      padding-top: 80px;
+    }
+  }
+
   &.not-padded { padding: 0; }
 
   // CONTAINER
@@ -20,7 +38,34 @@
 
     &.narrow {
       margin: 0 15%;
+
+      @include mq($tablet) {
+        margin: 0 7.5%;
+      }
     }
+  }
+
+  // MOBILE MODIFIERS
+
+  &.mobile-container {
+    @include mq($tablet) {
+      padding-left: 7.5%;
+      padding-right: 7.5%;
+    }
+  }
+}
+
+// MOBILE ONLY CLASSES
+
+@include mq($tablet) {
+  $spacing: 50px;
+
+  .mobile-padded-above {
+    margin-top: $spacing !important;
+  }
+
+  .mobile-padded-below {
+    margin-bottom: $spacing !important;
   }
 }
 
@@ -36,15 +81,43 @@
   &.two-third   { width: 60%; }
   &.full-height { height: 100%; }
 
+  &.half,
+  &.one-third,
+  &.two-third {
+    @include mq($tablet) {
+      width: 100%;
+    }
+  }
+
   // PADDING MODIFIERS
 
-  &.left-padded  { padding-left: $site-padding; }
-  &.right-padded { padding-right: $site-padding; }
+  &.left-padded  {
+    padding-left: $site-padding;
+
+    @include mq($tablet) {
+      padding-left: 0;
+    }
+  }
+
+  &.right-padded {
+    padding-right: $site-padding;
+
+    @include mq($tablet) {
+      padding-right: 0;
+    }
+  }
 
   // ALIGNMENT MODIFIERS
 
   &.float-left  { float: left; }
   &.float-right { float: right; }
+
+  &.float-left,
+  &.float-right {
+    @include mq($tablet) {
+      float: none;
+    }
+  }
 
   &.absolute-left {
     position: absolute;
@@ -56,21 +129,52 @@
     right: 0;
   }
 
+  &.absolute-left,
+  &.absolute-right {
+    @include mq($tablet) {
+      position: static;
+    }
+  }
+
   &.vertical-center {
-    top: 50%;
     @include transform(translateY(-50%));
+    top: 50%;
+
+    @include mq($tablet) {
+      @include transform(none);
+      top: auto;
+    }
+  }
+
+  // MOBILE MODIFIERS
+  &.mobile-container {
+    @include mq($tablet) {
+      padding: 80px 7.5%;
+    }
   }
 }
 
 // PARTIAL BLOCK
 
 .partial-block {
+  display: block;
   position: absolute;
+
+  @include mq($tablet) {
+    position: static;
+  }
 
   // SIZE MODIFIERS
 
   &.quarter { @include size(50%); }
   &.half    { @include size(100% 50%); }
+
+  &.quarter,
+  &.half {
+    @include mq($tablet) {
+      @include size(100% auto);
+    }
+  }
 
   // POSITION MODIFIERS
 
@@ -84,6 +188,11 @@
 
 .case-full-image {
   @include size(100% 75vh);
+
+  @include mq($tablet) {
+    // fixes iOS glitch with vh units
+    max-height: 500px;
+  }
 
   img {
     @include position(absolute, 0 0 0 0);
@@ -101,16 +210,41 @@
 
   // SIUZE MODIFIERS
 
-  &.maintain-size { width: auto; }
+  &.maintain-size {
+    width: auto;
+
+    @include mq($tablet) {
+      margin: 0 auto;
+    }
+  }
 
   // SPACING MODIFIERS
 
-  &.text-above { margin-top: 80px; }
-  &.text-below { margin-bottom: 80px; }
+  &.text-above {
+    margin-top: 80px;
+
+    @include mq($tablet) {
+      margin-top: 0;
+    }
+  }
+
+  &.text-below {
+    margin-bottom: 80px;
+
+    @include mq($tablet) {
+      margin-bottom: 0;
+    }
+  }
 
   // ALIGNMENT MODIFIERS
 
-  &.align-right { float: right; }
+  &.align-right {
+    float: right;
+
+    @include mq($tablet) {
+      float: none;
+    }
+  }
 }
 
 // CASE TEXT
@@ -118,10 +252,21 @@
 [class^="case-block-text"] {
   font-weight: 200;
 
+  @include mq($tablet) {
+    text-align: center;
+  }
+
   // LENGTH MODIFIERS
 
   &.short-length  { max-width: 310px; }
   &.medium-length { max-width: 550px; }
+
+  &.short-length,
+  &.medium-length {
+    @include mq($tablet) {
+      max-width: none;
+    }
+  }
 
   // ALIGNMENT MODIFIERS
 
@@ -136,6 +281,10 @@
   margin-bottom: 15px;
   @include font(32px, null, null, 'Trade Gothic LT Std');
   line-height: 1.2;
+
+  @include mq($tablet) {
+    margin-bottom: 10px;
+  }
 }
 
 .case-block-text-subtext {
