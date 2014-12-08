@@ -71,10 +71,10 @@ function initApproach() {
 }
 
 function initEasterEggs() {
-  $('.footer-copyright-stars').click(function() {
-    $('footer').velocity('scroll', { duration: 500, axis: 'y',  begin: function() {
+  $('.footer-stars').click(function() {
+    $('.footer-egg').velocity('scroll', { duration: 500, axis: 'y',  begin: function() {
        $('footer').addClass('is-egg');
-       $('.footer-copyright-stars').addClass('stars-disable');
+       $('.footer-stars').addClass('is-found');
     }});
   });
 }

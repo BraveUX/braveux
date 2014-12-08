@@ -167,15 +167,8 @@ $footer-tablet: 900px;
     margin: 0 auto 20px auto;
   }
 
+  &.is-found,
   &:hover {
     background-image: url('images/icons/icon-stars-light.svg');
-  }
-}
-
-.stars-disable {
-  cursor: default;
-
-  &:hover {
-    background-image: url('images/icons/icon-stars.svg');
   }
 }
