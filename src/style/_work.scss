@@ -1,15 +1,25 @@
 .work-landing {
   @include clearfix;
-  height: 520px;
+  position: relative;
+  @include size(100% 500px);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 
-  &.is-felix     { background-image: url('images/work/work-landing-felix.jpg'); }
-  &.is-character { background-image: url('images/work/work-landing-character.png'); }
-  &.is-fieldone  { background-image: url('images/work/work-landing-fieldone.svg'); }
-  &.is-obesity   { background-image: url('images/work/work-landing-obesity.svg'); }
-  &.is-dtd       { background-image: url('images/work/work-landing-dtd.png'); }
+  &.half-landing {
+    float: left;
+    width: 50%;
+
+    @include mq($tablet) {
+      width: 100%;
+    }
+  }
+
+  &.felix     { background-image: url('images/work/work-landing-felix.jpg'); }
+  &.character { background-image: url('images/work/work-landing-character.png'); }
+  &.fieldone  { background-image: url('images/work/work-landing-fieldone.svg'); }
+  &.obesity   { background-image: url('images/work/work-landing-obesity.svg'); }
+  &.wedding   { background-image: url(''); }
 }
 
 .work-rollover {
@@ -17,32 +27,60 @@
   @include transition(all 0.5s ease);
   display: block;
   @include size(100%);
-  padding-top: 235px;
+  padding: 225px 50px 0 50px;
   background-color: $black;
   text-align: center;
   color: white;
 
+  @include mq($tablet) {
+    opacity: .8;
+    @include position(absolute, null null 0 0);
+    @include size(100% auto);
+    padding: 50px $site-padding;
+  }
+
   &:hover {
     opacity: .8;
-    padding-top: 185px;
+    padding-top: 175px;
+
+    @include mq($tablet) {
+      padding-top: 50px;
+    }
   }
 }
 
 .work-rollover-project-name {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   @include font(24px, 600, null, 'Source Sans Pro');
   letter-spacing: 3px;
   text-transform: uppercase;
+
+  @include mq($tablet) {
+    font-size: 18px;
+  }
+
+  @include mq($mobile) {
+    font-size: 14px;
+  }
 }
 
 .work-rollover-client-name {
   margin-bottom: 20px;
   @include font(48px, 200, null, 'Source Sans Pro');
+
+  @include mq($tablet) {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
 }
 
 .work-rollover-cta {
   @include font(24px, 600, null, 'Sentinel');
   letter-spacing: 1px;
+
+  @include mq($tablet) {
+    display: none;
+  }
 }
 
 .work-rollover-cta-icon {
