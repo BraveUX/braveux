@@ -16,9 +16,17 @@ $footer-tablet: 900px;
   &.is-short {
     padding: 80px 0;
 
-    .footer-copyright {
-      margin-top: 0;
+    .footer-copyright,
+    .footer-made {
       font-size: 20px;
+
+      @include mq($mobile) {
+        font-size: 16px;
+      }
+    }
+
+    .footer-stars {
+      margin-top: 10px;
     }
   }
 
@@ -118,6 +126,10 @@ $footer-tablet: 900px;
   @include mq($footer-tablet) {
     margin-top: 10px;
     font-size: 14px;
+  }
+
+  .is-short & {
+    margin-top: 0;
   }
 }
 

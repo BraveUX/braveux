@@ -5,7 +5,7 @@
   background-color: #EDEDED;
 
   @include mq($tablet) {
-    padding-right: $site-padding;
+    padding: 0;
   }
 }
 
@@ -16,27 +16,21 @@
 
   @include mq($tablet) {
     width: 100%;
-    padding: 70px 0;
+    padding: 60px $site-padding;
   }
 }
 
 .contact-map {
   @include position(absolute, 0 0 null null);
   @include size(50% 100%);
-  background: url('images/contact/map.svg') center center/100% no-repeat;
+  background: url('images/contact/map.svg') center center no-repeat;
+  background-size: cover;
 
   @include mq($tablet) {
-    display: none;
-  }
-}
-
-.contact-map-mobile {
-  display: none;
-
-  @include mq($tablet) {
-    display: block;
-    @include size(auto 400px);
-    background: url('images/contact/map.svg') center center/100% no-repeat white;
+    position: static;
+    @include size(100% auto);
+    min-height: 500px;
+    background-position: left center;
   }
 }
 
@@ -48,15 +42,15 @@
   overflow: hidden;
 }
 
+.contact-follow {
+  margin-bottom: 0;
+}
+
 .contact-heading {
   margin-bottom: 20px;
   @include font(16px, 600, #4D4D4D, 'Trade Gothic LT Std');
   letter-spacing: 2px;
   text-transform: uppercase;
-
-  @include mq($tablet) {
-    font-size: 20px;
-  }
 }
 
 .contact-email-link,
@@ -64,11 +58,15 @@
 .contact-location-link {
   @include font(24px, 200, #808080, 'Sentinel');
 
-  @include mq($tablet) {
-    font-size: 19px;
+  @include mq($mobile) {
+    font-size: 20px;
   }
 }
 
 .contact-email-link {
-  @include font(40px);
+  @include font(36px);
+
+  @include mq($mobile) {
+    font-size: 28px;
+  }
 }

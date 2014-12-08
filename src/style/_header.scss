@@ -1,6 +1,11 @@
 header {
   @include size(100% 340px);
   padding-top: 145px;
+
+  @include mq($mobile) {
+    height: auto;
+    padding: 140px 0 100px 0;
+  }
 }
 
 .page-heading {
@@ -10,6 +15,4 @@ header {
 
 .page-subheading {
   @include font(24px, 200, #AEAEAE, 'Sentinel');
-
-  
 }
