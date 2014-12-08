@@ -1,12 +1,16 @@
 .cta {
   clear: both;
-  padding: 140px 0 120px 0;
+  padding: 120px 0;
   text-align: center;
 }
 
 .cta-text {
   margin-bottom: 30px;
   @include font(26px, 200, #ACACAC, 'Sentinel');
+
+  @include mq($mobile) {
+    font-size: 21px;
+  }
 }
 
 .cta-link {

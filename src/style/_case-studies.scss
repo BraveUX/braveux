@@ -13,7 +13,14 @@ $darkblue: #2E3D5A;
   .felix & { background: url('images/felix/header.jpg') center center/cover no-repeat; }
   .fieldone & { background: url('images/fieldone/header.svg') #EBEEF0 right center/auto 100% no-repeat; }
   .character & { background: url('images/character/header.jpg') center center/cover no-repeat; }
-  .obesity & { background: url('images/obesity/header.svg') #F9F9F9 90% center no-repeat; }
+
+  .obesity & {
+    background: url('images/obesity/header.svg') #F9F9F9 90% center no-repeat;
+
+    @include mq($mobile) {
+      background: #F9F9F9;
+    }
+  }
 }
 
 .case-header-container {
@@ -28,19 +35,26 @@ $darkblue: #2E3D5A;
   text-transform: uppercase;
   letter-spacing: 3px;
 
-  .felix & { font-size: 22px; }
+  @include mq($mobile) {
+    font-size: 18px;
+  }
+
   .fieldone & { color: $graphite; }
   .obesity & { color: #8FA3AD; }
 }
 
 .case-header-tagline {
   margin-bottom: 15px;
-  @include font(48px, 200, null, 'Trade Gothic LT Std');
+  @include font(48px, 300, null, 'Source Sans Pro');
   line-height: 1.15;
 
   .felix & {
     font-size: 45px;
     color: #F2F2F0;
+
+    @include mq($mobile) {
+      font-size: 36px;
+    }
   }
 
   .obesity & {
@@ -65,6 +79,12 @@ $darkblue: #2E3D5A;
 
   @include mq($tablet) {
     padding: 60px 0;
+  }
+
+  @include mq($mobile) {
+    br {
+      display: none;
+    }
   }
 }
 
