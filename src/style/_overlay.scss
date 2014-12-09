@@ -75,13 +75,17 @@
   left: 500px;  
 }
 
-// FIXME
-.can-overlay {
-  .is-overlayed & {
-    .social-link {
-      margin-bottom: 0;
-    }  
-  }
+.is-overlayed & {
+  .social-link {
+    margin-bottom: 0;
+  }  
+}
+
+// INDEX
+.overlay-index-where {
+  top: 30px;
+  right: -80px;
+  text-align: left;
 }
 
 
