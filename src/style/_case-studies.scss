@@ -81,6 +81,10 @@ $darkblue: #2E3D5A;
   background-position: center center;
   background-repeat: no-repeat;
 
+  @include mq($tablet) {
+    display: none;
+  }
+
   .wedding & {
     bottom: -1px;
     right: 7.5%;
@@ -92,11 +96,13 @@ $darkblue: #2E3D5A;
 .case-exec-summary {
   padding: 100px 0;
 
+  $tablet: 1000px;
+
   @include mq($tablet) {
     padding: 60px 0;
   }
 
-  @include mq($mobile) {
+  @include mq($tablet) {
     br {
       display: none;
     }
