@@ -63,7 +63,7 @@ function initApproach() {
     var index = $(this).index('.approach-section-next');
 
     // calculate scroll offset
-    var offset = ($(window).height() - $('.approach-section').height()) / 2;
+    var offset = ($(window).height() - $('.approach-section').outerHeight()) / 2;
 
     // scroll to next section
     $('.approach-section').eq(index + 1).velocity('scroll', { offset: -offset, duration: scrollDuration, easing: scrollEasing });
