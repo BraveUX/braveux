@@ -11,9 +11,16 @@ $darkblue: #2E3D5A;
   @include size(100%);
 
   .felix & { background: url('images/felix/header.jpg') center center/cover no-repeat; }
-  .fieldone & { background: url('images/fieldone/header.svg') #EBEEF0 right center/auto 100% no-repeat; }
   .character & { background: url('images/character/header.jpg') center center/cover no-repeat; }
   .wedding & { background-color: #19B5BC; }
+
+  .fieldone & {
+    background: url('images/fieldone/header.svg') #EBEEF0 right center/auto 100% no-repeat;
+
+    @include mq($tablet) {
+      background: #EBEEF0;
+    }
+  }
 
   .obesity & {
     background: url('images/obesity/header.svg') #F9F9F9 90% center no-repeat;
