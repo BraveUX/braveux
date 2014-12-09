@@ -93,3 +93,22 @@
   .case-block-text-heading { color: #F4F4F4; }
   .case-block-text-subtext { color: #EBEEF0; }
 }
+
+// WEDDING
+
+.wedding-white {
+  .case-block-text-heading { color: #455A64; }
+  .case-block-text-subtext { color: #424242; }
+}
+
+.wedding-green {
+  background-color: #19B5BC;
+  color: white;
+}
+
+.wedding-gray {
+  background-color: #ECEFF1;
+
+  .case-block-text-quote    { color: #22A9AD; }
+  .case-block-text-citation { color: #006064; }
+}
