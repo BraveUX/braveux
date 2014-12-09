@@ -31,17 +31,17 @@
 
           if (iterator % 2 === 0) {
             if (current.phrase.length < 2) return callback();
-            current.selector.addClass('typewriter-highlight');
+            current.selector.addClass('highlight');
 
             setTimeout(function() {
               current.selector.text('');
-              current.selector.removeClass('typewriter-highlight');
-              test[1].selector.addClass('typewriter-highlight');
+              current.selector.removeClass('highlight');
+              test[1].selector.addClass('highlight');
             }, 1000);
 
             setTimeout(function() {
               test[1].selector.text('');
-              test[1].selector.removeClass('typewriter-highlight');
+              test[1].selector.removeClass('highlight');
               current.phrase.shift()
               test.push(test.shift());
 
@@ -57,7 +57,7 @@
           else {
             current.phrase.shift();
             test.push(test.shift());
-            
+
             current = {
               selector: test[0].selector,
               phrase: test[0].words,

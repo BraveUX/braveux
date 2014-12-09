@@ -1,22 +1,20 @@
 .typewriter {
   position: relative;
   display: inline-block;
-  margin-bottom: 40px;
-  @include font(54px, 200, #ECECEC);
-  
+
   &:last-child {
     margin-bottom: 0;
   }
-  
+
   &::before {
     @include position(absolute, 0 0 null null);
     @include size(0% 100%);
     background-color: #ccc;
     opacity: 0.33;
-    content: ""; 
+    content: "";
   }
 
-  &.typewriter-highlight {
+  &.highlight {
     &::before {
       @include transition(all 0.5s ease);
       width: 100%;
@@ -25,14 +23,19 @@
 }
 
 .typewriter-text {
-  @include font(54px, 200, #ECECEC);  
+  @include font(54px, 200, #ECECEC);
+  margin-bottom: 40px;
+
+  @include mq($mobile) {
+    font-size: 32px;
+  }
 }
 
 .typewriter-cursor {
-  margin-left: -5px;
-  @include font(1em, 100);
   @include animation(blink 0.75s);
   @include animation-iteration-count(infinite);
+  margin-left: -5px;
+  @include font(1em, 100);
 }
 
 @include keyframes(blink) {
