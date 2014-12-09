@@ -96,13 +96,13 @@ $darkblue: #2E3D5A;
 .case-exec-summary {
   padding: 100px 0;
 
-  $tablet: 1000px;
+  $case-exec-summary-tablet: 1000px;
 
-  @include mq($tablet) {
+  @include mq($case-exec-summary-tablet) {
     padding: 60px 0;
   }
 
-  @include mq($tablet) {
+  @include mq($case-exec-summary-tablet) {
     br {
       display: none;
     }
