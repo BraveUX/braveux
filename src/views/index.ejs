@@ -30,6 +30,8 @@
         <span class="typewriter-cursor"></span>
       </h1>
     </div>
+
+    <a class="typewriter-cta" href="/work.html">See Our Work</a>
   </div>
 
   <section class="cta">
@@ -47,7 +49,8 @@
 <script type="text/javascript">
   $(document).on('ready', function() {
     $('.typewriter-text-1').typewriter(function() {
-      console.log('callback called')
+      // reveal homepage CTA
+      $('.typewriter-cta').velocity({ opacity: [1, 0] }, { display: 'block', duration: 500, easing: 'ease' });
     });
   });
 </script>
