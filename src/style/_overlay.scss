@@ -173,7 +173,7 @@
   height: 503px !important;
   background: url("images/ux-view/f-this.png") no-repeat 0 0;
   left: 120px;
-  top: 100px;
+  top: 175px;
   padding: 100px 35px;
 
   .overlay-text {
@@ -203,4 +203,30 @@
   }
 }
 
+.overlay-information-architecture {
+  transform: translate3d(0, -50%, 0);
+  z-index: 12;
+
+  .is-overlayed & {
+    
+    .approach-section-text {
+      color: rgba(206,206,206, 0.2);
+    }
+    .approach-section-next {
+      opacity: 0.2;
+    }
+  }
+}
+
+.can-overlay-approach-information {
+
+  .is-overlayed & {
+    margin-bottom: 15px;
+  }
+}
+
+.overlay-approach-information {
+  left: 100px;
+  top: 58px;
+}
 
