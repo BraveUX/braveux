@@ -9,6 +9,7 @@
 }
 
 .can-overlay {
+  
   .is-overlayed & {
     background-color: #FFFFFF;
     color: #262628;
@@ -33,11 +34,11 @@
 
 .triangle-left {
   border-width: 0px 0px 40px 50px;
-
 }
 
 .overlay-content {
   display: none;
+  
   .is-overlayed & {
     color: white;
     z-index: 10;
@@ -60,12 +61,11 @@
 
 .overlay-footer {
   @include font(12px, 300, #C6C6C6, 'Trade Gothic LT Std');
+  
   a {
     color: #C6C6C6;
   }
 }
-
-// specific pages
 
 // CONTACT
 .overlay-contact-empathy {
@@ -84,6 +84,7 @@
 }
 
 .is-overlayed & {
+  
   .social-link {
     margin-bottom: 0;
   }  
@@ -109,6 +110,7 @@
 
 // WORK
 .can-overlay-work {
+  
   .is-overlayed & {
     width: 450px;
     margin-top: -5px;
@@ -131,9 +133,7 @@
     &::before {
       content: "X-HEIGHT";
       display: inline-block;
-      top: 36px;
-      left: 170px;
-      position: absolute;
+      @include position(absolute, 36px null null 170px);
       font-weight: bold;
       color: #4D4D4D;
     }
@@ -141,6 +141,7 @@
 }
 
 .is-character, .is-obesity {
+  
   .is-overlayed & {
     position: relative;
   }
@@ -163,7 +164,6 @@
   margin-left: -285px;
   background: url("images/ux-view/dismount-carousel.png") no-repeat center 30px;
   padding-top: 70px;
-
 }
 
 // TEAM
@@ -188,6 +188,7 @@
 .team-section-headshot.overlay-headshot-cutout {
   display: none;
   z-index: 9; 
+  
   .is-overlayed & {
     display: block;
   }
@@ -254,4 +255,3 @@
   left: 100px;
   top: 58px;
 }
-
