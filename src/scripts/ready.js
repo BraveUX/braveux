@@ -71,7 +71,9 @@ function initApproach() {
 }
 
 function initEasterEggs() {
-  $('.footer-stars').click(function() {
+  $('.footer-stars').click(function(e) {
+    e.preventDefault();
+
     $('.footer-egg').velocity('scroll', { duration: 500, axis: 'y',  begin: function() {
        $('.footer').addClass('is-egg');
        $('.footer-stars').addClass('is-found');
