@@ -48,6 +48,10 @@
   overflow: hidden;
 }
 
+.contact-follow {
+  overflow: initial;
+}
+
 .contact-heading {
   margin-bottom: 20px;
   @include font(16px, 600, #4D4D4D, 'Trade Gothic LT Std');

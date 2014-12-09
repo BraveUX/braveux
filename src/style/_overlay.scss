@@ -3,49 +3,86 @@
   @include position(fixed, 0 0);
   @include size(100%);
   display: none;
-  opacity: .8;
+  opacity: 0.8;
   background-color: $light-black;
+  overflow: hidden;
 }
 
-.overlay-component {
-  position: relative;
-
+.can-overlay {
   .is-overlayed & {
+    background-color: #FFFFFF;
+    color: #262628;
+    position: relative;
     z-index: 10;
     display: inline-block;
-    padding: 20px 20px 10px 20px;
-    margin: -20px 0 30px -20px;
-    background-color: white;
+    padding: 30px;
+    margin: -30px 0 7px -30px;
     border-radius: 5px;
+    max-width: 400px;
   }
 }
 
-.overlay-note {
+.overlay-content {
   display: none;
-  @include position(absolute, 0 null null 100%);
-  @include size(450px auto);
-  margin-left: 50px;
-
   .is-overlayed & {
+    color: white;
+    z-index: 10;
     display: block;
+    position: absolute;
+    @include size(450px auto);
   }
 }
 
-.overlay-image {
-  display: block;
-  margin-bottom: 40px;
-}
-
-.overlay-heading {
-  margin-bottom: 30px;
-  @include font(30px, null, null, 'Trade Gothic LT Std');
+.overlay-header {
+  @include font(35px, 100, white);
+  margin-bottom: 25px;
 }
 
 .overlay-text {
-  margin-bottom: 20px;
-  @include font(14px, 100, null, 'Sentinel');
+  @include font(14px, 100, white, 'Sentinel');
+  line-height: 1.5;
+  margin-bottom: 25px;
 }
 
-.overlay-footnote {
-  @include font(12px, normal, #C6C6C6, 'Trade Gothic LT Std');
+.overlay-footer {
+  @include font(12px, 300, #C6C6C6, 'Trade Gothic LT Std');
+  a {
+    color: #C6C6C6;
+  }
 }
+
+
+
+
+
+
+// specific pages
+
+
+// CONTACT PAGE
+.overlay-contact-empathy {
+  top: 181px;
+  left: 500px;
+}
+
+.overlay-contact-priority {
+  top: 60px;
+  left: 500px;
+}
+
+.overlay-contact-well {
+  top: 516px;
+  left: 500px;  
+}
+
+// FIXME
+.can-overlay {
+  .is-overlayed & {
+    .social-link {
+      margin-bottom: 0;
+    }  
+  }
+}
+
+
+
