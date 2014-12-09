@@ -25,7 +25,7 @@ $darkblue: #2E3D5A;
   .obesity & {
     background: url('images/obesity/header.svg') #F9F9F9 90% center no-repeat;
 
-    @include mq($mobile) {
+    @include mq(800px) {
       background: #F9F9F9;
     }
   }
