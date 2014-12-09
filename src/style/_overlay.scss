@@ -164,5 +164,39 @@
   }
 }
 
+// APPROACH
+.overlay-approach-f {
+  height: 503px !important;
+  background: url("images/ux-view/f-this.png") no-repeat 0 0;
+  left: 120px;
+  top: 100px;
+  padding: 100px 35px;
+
+  .overlay-text {
+    width: 220px;
+  }
+}
+
+.overlay-approach-fold {
+  background: url("images/ux-view/fold.png") no-repeat right 0;
+  height: 784px !important;
+  right: 100px;
+  top: 100px;
+  text-align: right;
+
+  .fold-content {
+    position: absolute;
+    bottom: 120px;
+    right: 0;
+  }
+
+  .overlay-text {
+    width: 220px;
+    float: right;
+  }
+  .overlay-footer {
+    clear: right;
+  }
+}
 
 
