@@ -51,13 +51,7 @@
   }
 }
 
-
-
-
-
-
 // specific pages
-
 
 // CONTACT
 .overlay-contact-empathy {
@@ -88,8 +82,7 @@
   text-align: left;
 }
 
-
-//WORK
+// WORK
 .can-overlay-work {
   .is-overlayed & {
     width: 450px;
@@ -128,7 +121,6 @@
   }
 }
 
-
 .overlay-work-just {
   top: 124px;
   left: 580px;
@@ -148,4 +140,29 @@
   padding-top: 70px;
 
 }
+
+// TEAM
+.overlay-team-dont {
+  text-align: right;
+  right: 250px;
+  top: 100px;
+  width: 411px !important;
+}
+
+.overlay-team-hey {
+  text-align: right;
+  width: 450px !important;
+  left: -350px;
+  top: 126px;
+}
+
+.team-section-headshot.overlay-headshot-cutout {
+  display: none;
+  z-index: 9; 
+  .is-overlayed & {
+    display: block;
+  }
+}
+
+
 
