@@ -96,6 +96,17 @@
   text-align: left;
 }
 
+.overlay-index-typewriter {
+  background: url("images/ux-view/typewriter.png") no-repeat 0 0;
+  top: 115px;
+  left: 350px;
+  padding-top: 130px;
+
+  .overlay-text {
+    width: 250px;
+  }
+}
+
 // WORK
 .can-overlay-work {
   .is-overlayed & {
