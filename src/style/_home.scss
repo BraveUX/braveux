@@ -1,11 +1,14 @@
 .home {
   height: 100%;
-  background: url('images/home/home-bg.png') #4D4D4D center center no-repeat;
-  background-size: cover;
+
+  > .container {
+    padding: 0 7.5%;
+    margin: 0;
+  }
 }
 
 .typewriter-wrapper {
-  @include position(absolute, 50% null null null);
-  @include size(100% 290px);
+  @include position(absolute, 50% null null 7.5%);
+  @include size(85% 290px);
   margin-top: -145px;
 }
