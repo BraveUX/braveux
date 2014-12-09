@@ -19,7 +19,21 @@
     margin: -30px 0 7px -30px;
     border-radius: 5px;
     max-width: 400px;
+    overflow: visible;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -15px;
+      @include triangle(20px, white, up-left);
+    }
   }
+}
+
+.triangle-left {
+  border-width: 0px 0px 40px 50px;
+
 }
 
 .overlay-content {
@@ -103,7 +117,7 @@
       white-space: nowrap;
     } 
 
-    &::after {
+    &::before {
       content: "X-HEIGHT";
       display: inline-block;
       top: 36px;
