@@ -159,26 +159,13 @@ $darkblue: #2E3D5A;
   padding-right: 30px;
 
   @include mq($tablet) {
-    float: left;
-    width: 50%;
-
-    &:last-child {
-      display: none;
-    }
-  }
-
-  @include mq($mobile) {
     float: none;
     width: 100%;
+    padding-right: 0;
+    margin-bottom: 60px;
 
-    &:first-child {
-      margin-bottom: 60px;
-    }
-  }
-
-  .obesity & {
     &:last-child {
-      display: block;
+      margin-bottom: 0;
     }
   }
 }
@@ -222,6 +209,14 @@ $darkblue: #2E3D5A;
 }
 
 .case-breakdown-detail {
+  @include mq($tablet) {
+    width: 50%;
+    max-width: none;
+  }
+
+  @include mq($mobile) {
+    width: 100%;
+  }
 
   .obesity & {
     margin-bottom: 20px;
