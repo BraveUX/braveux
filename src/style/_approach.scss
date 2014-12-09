@@ -34,10 +34,7 @@
     color: #F4F4F4;
   }
 
-  &.gray {
-    background-color: #6B6B6B;
-    color: #E1E1E1;
-  }
+  &.gray { color: #E1E1E1; }
 }
 
 .approach-section-content-wrapper {
@@ -89,13 +86,23 @@
 
   .stopwatch-hand {
     @include transform-origin(center 174px);
-    @include animation(spin 10.0s linear infinite);
+    @include animation(spinReverse 10.0s linear infinite);
   }
 }
 
 @include keyframes(spin) {
   0% {
     @include transform(rotate(360deg));
+  }
+
+  100% {
+    @include transform(rotate(0deg));
+  }
+}
+
+@include keyframes(spinReverse) {
+  0% {
+    @include transform(rotate(-360deg));
   }
 
   100% {
