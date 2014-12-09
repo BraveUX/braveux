@@ -212,6 +212,7 @@
 
   &.maintain-size {
     width: auto;
+    max-width: 100%;
 
     @include mq($tablet) {
       margin: 0 auto;
