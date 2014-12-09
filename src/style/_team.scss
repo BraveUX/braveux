@@ -6,6 +6,10 @@
   &:nth-child(even) {
     .team-section-profile {
       margin-left: 50%;
+
+      @include mq($tablet) {
+        margin-left: 0;
+      }
     }
 
     .team-section-image {
@@ -18,6 +22,10 @@
       right: 0;
     }
   }
+
+  .social-link {
+    margin-bottom: 0;
+  }
 }
 
 .team-photo {
@@ -29,12 +37,21 @@
   @include clearfix;
   @include size(50% auto);
   padding: 80px $site-padding;
+
+  @include mq($tablet) {
+    width: 100%;
+  }
 }
 
 .team-section-image {
   overflow: hidden;
   position: absolute;
   @include size(50% 100%);
+
+  @include mq($tablet) {
+    position: relative;
+    @include size(100% auto);
+  }
 }
 
 .team-section-headshot,
@@ -51,6 +68,12 @@
     @include transform(translateX(-50%));
     left: 50%;
   }
+
+  @include mq($tablet) {
+    position: static;
+    @include transform(none);
+    @include size(100% auto);
+  }
 }
 
 .team-section-quote {
@@ -63,6 +86,10 @@
   @include font(26px, 300, #EDEDED, 'Sentinel');
   line-height: 1.3;
   text-align: center;
+
+  @include mq($tablet) {
+    display: none;
+  }
 
   &:hover {
     opacity: .8;
