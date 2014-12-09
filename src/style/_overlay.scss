@@ -59,7 +59,7 @@
 // specific pages
 
 
-// CONTACT PAGE
+// CONTACT
 .overlay-contact-empathy {
   top: 181px;
   left: 500px;
@@ -89,4 +89,63 @@
 }
 
 
+//WORK
+.can-overlay-work {
+  .is-overlayed & {
+    width: 450px;
+    margin-top: -5px;
+
+    h1 {
+      width: 120px;
+      border-top: 1px solid #FF345A;
+      border-bottom: 1px solid #C4C4C4;
+      line-height: 0.3;
+      padding-bottom: 11px;
+      margin-bottom: 29px;
+    }
+    h2 {
+      width: 250px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    } 
+
+    &::after {
+      content: "X-HEIGHT";
+      display: inline-block;
+      top: 36px;
+      left: 170px;
+      position: absolute;
+      font-weight: bold;
+      color: #4D4D4D;
+    }
+  }
+}
+
+.is-character, .is-obesity {
+  .is-overlayed & {
+    position: relative;
+  }
+}
+
+
+.overlay-work-just {
+  top: 124px;
+  left: 580px;
+}
+
+.overlay-work-taking {
+  top: 75px;
+  left: 100px;
+}
+
+.overlay-work-dismount {
+  text-align: center;
+  width: 570px !important;
+  left: 100%;
+  margin-left: -285px;
+  background: url("images/ux-view/dismount-carousel.png") no-repeat center 30px;
+  padding-top: 70px;
+
+}
 
