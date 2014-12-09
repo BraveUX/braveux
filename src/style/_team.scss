@@ -28,10 +28,11 @@
 .team-section-profile {
   @include clearfix;
   @include size(50% auto);
-  padding: 80px 0 80px $site-padding;
+  padding: 80px $site-padding;
 }
 
 .team-section-image {
+  overflow: hidden;
   position: absolute;
   @include size(50% 100%);
 }
@@ -44,6 +45,12 @@
 
 .team-section-headshot {
   @include size(100% auto);
+
+  @include mq(1250px) {
+    @include size(auto 100%);
+    @include transform(translateX(-50%));
+    left: 50%;
+  }
 }
 
 .team-section-quote {
