@@ -135,6 +135,11 @@ $darkblue: #2E3D5A;
     background-color: #33393D;
     color: #EBEEF0;
   }
+
+  .wedding & {
+    background-color: #ECEFF1;
+    color: #90A4AE;
+  }
 }
 
 .case-breakdown-column {
@@ -172,6 +177,8 @@ $darkblue: #2E3D5A;
   letter-spacing: 2px;
 
   &.stacked { margin-top: 40px; }
+
+  .wedding & { color: #19B5BC; }
 }
 
 .case-breakdown-summary {
@@ -179,6 +186,7 @@ $darkblue: #2E3D5A;
   @include font(28px, 200, null, 'Trade Gothic LT Std');
 
   .felix & { color: #536D79; }
+  .wedding & { color: #78909C; }
 }
 
 .case-breakdown-detail,
