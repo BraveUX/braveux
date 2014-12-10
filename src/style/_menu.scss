@@ -8,8 +8,25 @@ $menu-height: 50px;
   @include size(100% $menu-height);
   background-color: $black;
 
+  @include mq($tablet) {
+    @include size(65% 100%);
+    right: -65%;
+
+    &.is-expanded {
+      right: 0%;
+    }
+
+    .container {
+      margin: 0;
+    }
+  }
+
   &.is-collapsed {
     top: -$menu-height;
+
+    @include mq($tablet) {
+      top: auto;
+    }
   }
 
   &.is-home {
@@ -19,13 +36,18 @@ $menu-height: 50px;
 }
 
 .logo {
-  z-index: 10;
+  z-index: 20;
   @include transition(all 0.5s ease);
   @include position(fixed, 0 null null $site-padding);
   display: block;
   @include size($menu-height);
   @include hide-text;
   background: url('images/icons/flag.svg') $light-black center center no-repeat;
+
+  @include mq($tablet) {
+    height: 70px;
+    background-position: center 33px;
+  }
 
   &:hover {
     width: 110px;
@@ -39,6 +61,18 @@ $menu-height: 50px;
   }
 }
 
+.mobile-logo {
+  display: none;
+  @include size(97px 16px);
+  margin: 40px 0 40px 40px;
+  background: url('images/icons/wordmark-mobile.svg') center center no-repeat;
+  @include hide-text();
+
+  @include mq($tablet) {
+    display: block;
+  }
+}
+
 .menu-link {
   @include transition(all 0.5s ease);
   @include size(auto $menu-height);
@@ -49,13 +83,30 @@ $menu-height: 50px;
   @include font(9px, 600, #F3F3F3, 'Trade Gothic LT Std');
   text-transform: uppercase;
   letter-spacing: 2px;
+  outline: none;
 
-  &:hover {
+  @include mq($tablet) {
+    float: none;
+    height: 55px;
+    padding-left: 40px;
+    border-right: none;
+    border-bottom: 2px solid $light-black;
+    font-size: 12px;
+  }
+
+  &:hover,
+  &:active {
     background-color: $light-black;
   }
 
   &:first-child {
     margin-left: $menu-height;
+
+    @include mq($tablet) {
+      margin-left: 0;
+      padding-top: 20px;
+      border-top: 2px solid $light-black;
+    }
   }
 
   .is-home & {
@@ -81,6 +132,10 @@ $menu-height: 50px;
   border-radius: 11px;
   cursor: pointer;
 
+  @include mq($tablet) {
+    display: none;
+  }
+
   &.is-active {
     border-color: #778F9B;
   }
@@ -99,5 +154,17 @@ $menu-height: 50px;
     right: 22px;
     background-image: url('images/ux-view/ux-icon-toggled.svg');
     background-color: #F3F3F3;
+  }
+}
+
+.mobile-menu-toggle {
+  display: none;
+  z-index: 20;
+  @include position(fixed, 40px 7.5% null null);
+  @include size(16px 15px);
+  cursor: pointer;
+
+  @include mq($tablet) {
+    display: block;
   }
 }
