@@ -51,6 +51,20 @@
 
 // SVG ICON
 
+.approach-section-mobile-icon {
+  display: none;
+  @include size(100% auto);
+  margin-bottom: 55px;
+
+  @include mq($tablet) {
+    display: block;
+  }
+
+  &.touch-top {
+    margin-top: -80px;
+  }
+}
+
 .approach-section-icon {
   position: relative;
   height: 100%;
