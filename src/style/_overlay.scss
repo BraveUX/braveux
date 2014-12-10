@@ -72,10 +72,16 @@
 }
 
 // CONTACT
+.overlay-header-definition {
+  margin-bottom: 5px;
+}
 
 .overlay-contact-empathy {
   top: 181px;
   left: 500px;
+  .overlay-text {
+    margin-bottom: 20px;
+  }
 }
 
 .overlay-contact-priority {
@@ -87,6 +93,16 @@
   top: 516px;
   left: 500px;
 }
+
+.overlay-noun {
+  font-size: 18px;
+}
+
+.overlay-definition {
+  margin-bottom: 18px;
+  font-weight: 100;
+}
+
 
 .is-overlayed & {
   .page-subheading {
