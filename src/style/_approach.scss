@@ -173,8 +173,8 @@
 
 .approach-section-heading {
   max-width: 600px;
-  margin: 0 0 45px 0;
-  @include font(36px, bold, null, 'Trade Gothic LT Std');
+  margin: 0 0 20px 0;
+  @include font(34px, bold, null, 'Trade Gothic LT Std');
   letter-spacing: 3px;
   text-transform: uppercase;
 
@@ -191,13 +191,14 @@
 
 .approach-section-text {
   max-width: 400px;
-  margin: 0 0 35px 0;
-  @include font(18px);
-  line-height: 2;
+  margin: 0 0 30px 0;
+  font-family: 'Sentinel';
+  font-size: 24px;
+  line-height: 1.8;
 
   @include mq($tablet) {
     margin: 0 auto 30px auto;
-    font-size: 15px;
+    font-size: 16px;
     text-align: center;
   }
 
@@ -206,12 +207,7 @@
   }
 
   strong {
-    @include font(24px, 600);
-
-    @include mq($tablet) {
-      display: block;
-      font-size: 18px;
-    }
+    font-weight: 600;
   }
 }
 

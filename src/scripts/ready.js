@@ -62,11 +62,17 @@ function initApproach() {
     // get button index
     var index = $(this).index('.approach-section-next');
 
-    // calculate scroll offset
-    var offset = ($(window).height() - $('.approach-section').eq(index + 1).outerHeight()) / 2;
-
-    // scroll to next section
-    $('.approach-section').eq(index + 1).velocity('scroll', { offset: -offset, duration: scrollDuration, easing: scrollEasing });
+    // check if final arrow
+    if(index == 5) {
+      // scroll to approach cta
+      var offset = ($(window).height() - $('.approach .cta').outerHeight()) / 2;
+      $('.approach .cta').velocity('scroll', { offset: -offset, duration: scrollDuration, easing: scrollEasing });
+    }
+    else {
+      // scroll to next section
+      var offset = ($(window).height() - $('.approach-section').eq(index + 1).outerHeight()) / 2;
+      $('.approach-section').eq(index + 1).velocity('scroll', { offset: -offset, duration: scrollDuration, easing: scrollEasing });
+    }
   });
 }
 
