@@ -152,6 +152,10 @@ $menu-height: 50px;
   &.is-active {
     border-color: #778F9B;
   }
+
+  .is-home & {
+    right: 7.5%;
+  }
 }
 
 .ux-toggle {
