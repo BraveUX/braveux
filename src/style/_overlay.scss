@@ -1,51 +1,268 @@
 .overlay {
-  z-index: 9;
-  @include position(fixed, 0 0);
-  @include size(100%);
   display: none;
-  opacity: .8;
+  opacity: 0.8;
+  overflow: hidden;
+  z-index: 9;
+  @include position(fixed, 0 0 null null);
+  @include size(100%);
   background-color: $light-black;
 }
 
-.overlay-component {
-  position: relative;
+.overlay-content {
+  display: none;
 
   .is-overlayed & {
     z-index: 10;
-    display: inline-block;
-    padding: 20px 20px 10px 20px;
-    margin: -20px 0 30px -20px;
-    background-color: white;
-    border-radius: 5px;
+    position: absolute;
+    display: block;
+    @include size(450px auto);
+    color: white;
   }
 }
 
-.overlay-note {
+.can-overlay {
+  .is-overlayed & {
+    z-index: 10;
+    overflow: visible;
+    position: relative;
+    display: inline-block;
+    max-width: 400px;
+    padding: 30px;
+    margin: -30px 0 7px -30px;
+    background-color: white;
+    border-radius: 5px;
+    color: #262628;
+
+    &::after {
+      content: "";
+      @include position(absolute, 0 -16px null null);
+      @include triangle(20px, white, up-left);
+    }
+  }
+}
+
+.overlay-triangle-left {
+  .is-overlayed & {
+    &::after {
+      content: "";
+      @include position(absolute, 0 null null -16px);
+      @include triangle(20px, white, up-right);
+      border-right: none;
+    }
+  }
+}
+
+.overlay-header {
+  margin-bottom: 25px;
+  @include font(35px, 100, white);
+}
+
+.overlay-text {
+  margin-bottom: 25px;
+  @include font(14px, 100, white, 'Sentinel');
+  line-height: 1.5;
+}
+
+.overlay-footer {
+  @include font(12px, 300, #C6C6C6, 'Trade Gothic LT Std');
+
+  a {
+    color: #C6C6C6;
+  }
+}
+
+// CONTACT
+
+.overlay-contact-empathy {
+  top: 181px;
+  left: 500px;
+}
+
+.overlay-contact-priority {
+  top: 60px;
+  left: 500px;
+}
+
+.overlay-contact-well {
+  top: 516px;
+  left: 500px;
+}
+
+.is-overlayed & {
+  .social-link {
+    margin-bottom: 0;
+  }
+}
+
+// INDEX
+
+.overlay-index-where {
+  top: 30px;
+  right: -80px;
+  text-align: left;
+}
+
+.overlay-index-typewriter {
+  top: 0;
+  left: 350px;
+  padding-top: 130px;
+  background: url("images/ux-view/typewriter.png") 0 0 no-repeat;
+
+  .overlay-text {
+    width: 250px;
+  }
+}
+
+// WORK
+.can-overlay-work {
+  .is-overlayed & {
+    width: 450px;
+    margin-top: -5px;
+
+    h1 {
+      width: 120px;
+      margin-bottom: 29px;
+      padding-bottom: 11px;
+      border-top: 1px solid #FF345A;
+      border-bottom: 1px solid #C4C4C4;
+      line-height: 0.3;
+    }
+
+    h2 {
+      overflow: hidden;
+      width: 250px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &::before {
+      content: "X-HEIGHT";
+      @include position(absolute, 36px null null 170px);
+      display: inline-block;
+      font-weight: bold;
+      color: #4D4D4D;
+    }
+  }
+}
+
+.is-character,
+.is-obesity {
+  .is-overlayed & {
+    position: relative;
+  }
+}
+
+.can-overlay-see-work {
+  .is-overlayed & {
+    margin-left: 0px;
+  }
+}
+
+.overlay-work-just {
+  top: 124px;
+  left: 580px;
+}
+
+.overlay-work-taking {
+  top: 75px;
+  left: 100px;
+}
+
+.overlay-work-dismount {
+  left: 100%;
+  width: 570px !important;
+  margin-left: -285px;
+  padding-top: 70px;
+  text-align: center;
+  background: url("images/ux-view/dismount-carousel.png") center 30px no-repeat;
+}
+
+// TEAM
+
+.overlay-team-dont {
+  top: 100px;
+  right: 250px;
+  width: 411px !important;
+  text-align: right;
+}
+
+.overlay-team-hey {
+  top: 126px;
+  left: -350px;
+  width: 450px !important;
+  text-align: right;
+}
+
+.team-section-team-pic {
+  z-index: 10;
+}
+
+.team-section-headshot.overlay-headshot-cutout {
   display: none;
-  @include position(absolute, 0 null null 100%);
-  @include size(450px auto);
-  margin-left: 50px;
+  z-index: 9;
 
   .is-overlayed & {
     display: block;
   }
 }
 
-.overlay-image {
-  display: block;
-  margin-bottom: 40px;
+// APPROACH
+
+.overlay-approach-f {
+  top: 175px;
+  left: 120px;
+  height: 503px !important;
+  padding: 100px 35px;
+  background: url("images/ux-view/f-this.png") 0 0 no-repeat;
+
+  .overlay-text {
+    width: 220px;
+  }
 }
 
-.overlay-heading {
-  margin-bottom: 30px;
-  @include font(30px, null, null, 'Trade Gothic LT Std');
+.overlay-approach-fold {
+  top: 100px;
+  right: 100px;
+  height: 784px !important;
+  background: url("images/ux-view/fold.png") right 0 no-repeat;
+  text-align: right;
+
+  .fold-content {
+    @include position(absolute, null 0 120px null);
+  }
+
+  .overlay-text {
+    float: right;
+    width: 220px;
+  }
+
+  .overlay-footer {
+    clear: right;
+  }
 }
 
-.overlay-text {
-  margin-bottom: 20px;
-  @include font(14px, 100, null, 'Sentinel');
+.overlay-information-architecture {
+  z-index: 12;
+  @include transform(translate3d(0, -50%, 0));
+
+  .is-overlayed & {
+    .approach-section-text {
+      color: rgba(206, 206, 206, 0.2);
+    }
+
+    .approach-section-next {
+      opacity: 0.2;
+    }
+  }
 }
 
-.overlay-footnote {
-  @include font(12px, normal, #C6C6C6, 'Trade Gothic LT Std');
+.can-overlay-approach-information {
+  .is-overlayed & {
+    margin-bottom: 15px;
+  }
+}
+
+.overlay-approach-information {
+  top: 58px;
+  left: 100px;
 }

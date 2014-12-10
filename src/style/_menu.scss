@@ -84,10 +84,6 @@ $menu-height: 50px;
   &.is-active {
     border-color: #778F9B;
   }
-
-  .is-home & {
-    display: none;
-  }
 }
 
 .ux-toggle {
