@@ -34,6 +34,7 @@
     &::after {
       @include position(absolute, 0 null null -16px);
       @include triangle(20px, white, up-right);
+      border-right: none;
       content: "";
     }
   }
