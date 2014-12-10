@@ -169,7 +169,7 @@ $menu-height: 50px;
 
   .is-active & {
     right: 22px;
-    background-image: url('images/ux-view/ux-icon-toggled.svg');
+    background: url('images/ux-view/ux-icon-toggled.svg') 4px center no-repeat;
     background-color: #F3F3F3;
   }
 }
