@@ -161,6 +161,13 @@
   }
 }
 
+// temp fix for see-our-work #102
+.cta {
+  .can-overlay {
+    margin-bottom: -3px;
+  }
+}
+
 // WORK
 .can-overlay-work {
   .is-overlayed & {
