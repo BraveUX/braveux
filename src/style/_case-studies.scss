@@ -183,7 +183,7 @@ $darkblue: #2E3D5A;
 
 .case-breakdown-summary {
   margin-bottom: 15px;
-  @include font(28px, 200, null, 'Trade Gothic LT Std');
+  @include font(28px, 200, null, 'Source Sans Pro');
 
   .felix & { color: #536D79; }
   .wedding & { color: #78909C; }
