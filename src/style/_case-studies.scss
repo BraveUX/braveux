@@ -88,13 +88,13 @@ $darkblue: #2E3D5A;
   background-position: center center;
   background-repeat: no-repeat;
 
-  @include mq($tablet) {
-    display: none;
-  }
-
   .wedding & {
     bottom: -1px;
     right: 7.5%;
+
+    @include mq(1000px) {
+      display: none;
+    }
   }
 }
 
