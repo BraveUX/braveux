@@ -21,6 +21,7 @@
     overflow: visible;
     border-radius: 5px;
     color: #262628;
+    
     &::after {
       @include position(absolute, 0 -16px null null);
       @include triangle(20px, white, up-left);
@@ -30,7 +31,9 @@
 }
 
 .overlay-triangle-left {
+  
   .is-overlayed & {
+    
     &::after {
       @include position(absolute, 0 null null -16px);
       @include triangle(20px, white, up-right);
@@ -102,7 +105,7 @@
 }
 
 .overlay-index-typewriter {
-  top: 115px;
+  top: 0;
   left: 350px;
   padding-top: 130px;
   background: url("images/ux-view/typewriter.png") no-repeat 0 0;
@@ -150,6 +153,13 @@
   .is-overlayed & {
     position: relative;
   }
+}
+
+.can-overlay-see-work {
+
+  .is-overlayed & {
+    margin-left: 0px;
+  } 
 }
 
 .overlay-work-just {
