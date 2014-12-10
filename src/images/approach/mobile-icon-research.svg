@@ -2,18 +2,16 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="320px" height="150.4px" viewBox="0 0 320 150.4" enable-background="new 0 0 320 150.4" xml:space="preserve">
+	 width="320px" height="245px" viewBox="0 0 320 245" enable-background="new 0 0 320 245" xml:space="preserve">
 <g>
-	<path fill="none" stroke="#97A8B6" stroke-width="3" stroke-miterlimit="10" d="M0,1.5h158c40.7,0,73.7,33,73.7,73.7
-		s-33,73.7-73.7,73.7c-40.7,0-73.7-33-73.7-73.7c0-19.7,7.7-37.5,20.3-50.8"/>
-	<polygon fill="none" stroke="#97A8B6" stroke-width="3" stroke-miterlimit="10" points="104.7,32.1 107.4,21.9 97.3,24.7 	"/>
-	<line fill="none" stroke="#97A8B6" stroke-width="3" stroke-miterlimit="10" x1="231.7" y1="1.5" x2="320" y2="1.5"/>
-	<polyline fill="none" stroke="#97A8B6" stroke-width="3" stroke-miterlimit="10" points="198.8,107.9 122.5,107.9 122.5,39.3 	"/>
-	<path fill="none" stroke="#97A8B6" stroke-width="3" stroke-miterlimit="10" d="M185.8,107.2V61.2c0-1-0.4-1.1-0.9-0.3L171,83.6
-		c-0.5,0.8-1.5,1-2.2,0.3l-6.7-6.3c-0.7-0.7-1.8-0.6-2.3,0.3l-9.4,14.2c-0.5,0.8-1.6,1-2.3,0.3l-4.4-4c-0.7-0.7-1.8-0.6-2.4,0.2
-		l-13.9,17.3c-0.6,0.8-0.3,1.4,0.7,1.4"/>
-	<line fill="none" stroke="#97A8B6" stroke-width="3" stroke-miterlimit="10" x1="148.5" y1="92.4" x2="148.5" y2="107.9"/>
-	<line fill="none" stroke="#97A8B6" stroke-width="3" stroke-miterlimit="10" x1="171" y1="83.6" x2="171" y2="107.9"/>
+	<rect x="233.3" y="92.3" fill="#97A8B6" width="86.7" height="3.3"/>
+	<path fill="#97A8B6" d="M155.7,146.4v50.2h-6.3v-35h-15v35h-8.6v-69.8h-3.3v73.1h11.9h15h6.3h14.9h6.3h15h11.9v-3.3h-11.9v-28.6
+		h-15v28.6h-6.3v-50.2H155.7z M146.2,164.8v7.5l-8.4,8.4v-16H146.2L146.2,164.8z M137.7,196.5v-11.1l8.4-8.4v19.5L137.7,196.5
+		L137.7,196.5z M188.6,171.2v4.3l-8.4,8.4v-12.7L188.6,171.2L188.6,171.2z M180.2,188.6l8.4-8.4v16.3h-8.4L180.2,188.6L180.2,188.6z
+		 M167.4,149.7v16.6l-8.4,8.4v-25L167.4,149.7L167.4,149.7z M158.9,196.5v-17.3l8.4-8.4v25.6L158.9,196.5L158.9,196.5z"/>
+	<path fill="#97A8B6" d="M99,0h-4.6l116.3,116.3c27.9,27.9,27.9,73.4,0,101.4c-13.5,13.5-31.5,21-50.7,21s-37.1-7.5-50.7-21
+		c-27.9-27.9-27.9-73.4,0-101.4c11.8-11.8,27.1-19,43.6-20.7v3.5l9-5.2l-9-5.2v3.6c-17.3,1.6-33.5,9.2-45.9,21.6
+		c-29.2,29.2-29.2,76.8,0,106c14.6,14.6,33.8,21.9,53,21.9s38.4-7.3,53-21.9c29.2-29.2,29.2-76.8,0-106L99,0z"/>
 </g>
 <g>
 </g>

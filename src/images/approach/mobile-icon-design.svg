@@ -2,36 +2,18 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="319.8px" height="153.7px" viewBox="0 0 319.8 153.7" enable-background="new 0 0 319.8 153.7" xml:space="preserve">
+	 width="320px" height="245px" viewBox="0 0 320 245" enable-background="new 0 0 320 245" xml:space="preserve">
 <g>
-	<path fill="none" stroke="#97A8B6" stroke-width="3" stroke-miterlimit="10" d="M0,1.5h159.9c41.6,0,75.4,33.7,75.4,75.4
-		c0,41.6-33.7,75.4-75.4,75.4s-75.4-33.7-75.4-75.4c0-20.1,7.9-38.4,20.7-51.9"/>
-	<polygon fill="none" stroke="#97A8B6" stroke-width="3" stroke-miterlimit="10" points="105.5,32.7 108.3,22.4 97.9,25.2 	"/>
-	<line fill="none" stroke="#97A8B6" stroke-width="3" stroke-miterlimit="10" x1="235.3" y1="1.5" x2="319.8" y2="1.5"/>
-	<g>
-		<g>
-			<g>
-				<polygon fill="none" stroke="#97A8B6" stroke-width="3" stroke-miterlimit="10" points="131.5,55.6 138.3,48.8 194.7,105.7 
-					195.8,113.7 187.9,112.5 				"/>
-				
-					<rect x="127" y="44.6" transform="matrix(-0.7072 0.7071 -0.7071 -0.7072 259.626 -9.3891)" fill="none" stroke="#97A8B6" stroke-width="3" stroke-miterlimit="10" width="9.6" height="9"/>
-				<g>
-					<path fill="none" stroke="#97A8B6" stroke-width="3" stroke-miterlimit="10" d="M131.3,52.2"/>
-				</g>
-			</g>
-		</g>
-		<polyline fill="none" stroke="#97A8B6" stroke-width="3" stroke-miterlimit="10" points="189.6,112.5 192.2,110.1 195.2,108.7 		
-			"/>
-	</g>
-	<g>
-		<g>
-			<path fill="none" stroke="#97A8B6" stroke-width="3" stroke-miterlimit="10" d="M141.5,102.4l41.7-41.7l1.4,1.4l11.9-3.2
-				l3.2-11.8l-1.7-1.7l-7.5,7.5l-5.5-5.5l7.5-7.5l-1.4-1.4l-11.9,3.2L176,53.4l1.4,1.4l-41.8,41.8c-4.1-1.7-9-0.9-12.3,2.4
-				c-4.4,4.4-4.4,11.5,0,15.8c4.4,4.4,11.5,4.4,15.8,0C142.6,111.4,143.3,106.5,141.5,102.4z"/>
-			<polygon fill="none" stroke="#97A8B6" stroke-width="3" stroke-miterlimit="10" points="127.8,107.7 128.8,104 132.6,103 
-				135.3,105.7 134.3,109.5 130.5,110.5 			"/>
-		</g>
-	</g>
+	<path fill="#97A8B6" d="M235.3,163.4c0,41.1-33.4,74.5-74.4,74.5c-41.1,0-74.5-33.4-74.5-74.5c0-41.1,33.4-74.5,74.5-74.5
+		c17.3,0,33.9,6,47.2,16.9l-2.6,2.6l10.5,2.8l-2.8-10.5l-2.6,2.6c-13.9-11.6-31.4-17.9-49.6-17.9c-43,0-77.9,35-77.9,77.9
+		c0,43,34.9,77.9,77.9,77.9c42.9,0,77.9-34.9,77.9-77.9V0h-3.4L235.3,163.4L235.3,163.4z"/>
+	<polygon fill="#97A8B6" points="320,215.9 257,152.9 254.5,155.3 320,220.7 	"/>
+	<path fill="#97A8B6" d="M126.9,209.5h69.5v-87.3h-69.5V209.5z M130.3,206.1v-54.8H193v54.8H130.3L130.3,206.1z M141.9,147.9
+		l9.4-8.5l6.8,6.2l11.8-10.8l14.4,13.1H141.9z M193,125.6v22.4h-3.5L170,130.2L158.1,141l-6.8-6.2l-14.5,13.1h-6.6v-22.4H193z"/>
+	<rect x="142.3" y="156.7" fill="#97A8B6" width="38.7" height="3.4"/>
+	<rect x="150.8" y="163.5" fill="#97A8B6" width="21.6" height="3.4"/>
+	<path fill="#97A8B6" d="M135.8,201.9h23.7v-27.6h-23.7V201.9z M139.2,177.6h16.9v20.8h-16.9V177.6z"/>
+	<path fill="#97A8B6" d="M164.5,201.9h23.7v-27.6h-23.7V201.9z M168,177.6h16.8v20.8h-16.9L168,177.6L168,177.6z"/>
 </g>
 <g>
 </g>
