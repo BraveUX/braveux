@@ -123,6 +123,16 @@
   }
 }
 
+.is-overlayed & {
+
+  .cta {
+    .can-overlay {
+      margin-left: 0;
+      margin-bottom: -30px;
+    }
+  }
+}
+
 // WORK
 .can-overlay-work {
   .is-overlayed & {
