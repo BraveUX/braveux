@@ -44,6 +44,7 @@
 }
 
 .team-section-image {
+  overflow: hidden;
   position: absolute;
   @include size(50% 100%);
 
@@ -62,7 +63,7 @@
 .team-section-headshot {
   @include size(100% auto);
 
-  @include mq(1250px) {
+  @include mq(1200px) {
     @include size(auto 100%);
     @include transform(translateX(-50%));
     left: 50%;
