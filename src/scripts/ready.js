@@ -7,6 +7,9 @@ $(document).ready(function() {
   if(window.location.pathname === '/approach.html')
     initApproach();
 
+  if($(window).width() <= 800)
+    initMobileNav();
+
   console.log('Looking for this? https://github.com/BraveUX/website');
 });
 
@@ -131,6 +134,14 @@ function initNavBar() {
       scrollPrevious = scrollCurrent;
     }
   }
+}
+
+function initMobileNav() {
+  $('.mobile-menu-toggle').click(function(e) {
+    e.preventDefault();
+
+    $('.menu, .mobile-menu-toggle').toggleClass('is-expanded');
+  });
 }
 
 function initScrollSpy() {
