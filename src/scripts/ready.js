@@ -134,7 +134,7 @@ function initMobileNav() {
   $('.mobile-menu-toggle').click(function(e) {
     e.preventDefault();
 
-    $('.menu').toggleClass('is-expanded');
+    $('.menu, .mobile-menu-toggle').toggleClass('is-expanded');
   });
 }
 

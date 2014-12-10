@@ -161,10 +161,48 @@ $menu-height: 50px;
   display: none;
   z-index: 20;
   @include position(fixed, 40px 7.5% null null);
-  @include size(16px 15px);
+  @include size(20px 17px);
   cursor: pointer;
 
   @include mq($tablet) {
     display: block;
+  }
+}
+
+.mobile-menu-toggle-burger {
+  @include transition(all 0.5s ease);
+  @include position(absolute, 7px null 0);
+  @include size(20px 3px);
+  background-color: #AFBDC4;
+
+  .is-expanded & {
+    background-color: transparent;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    @include transition(all 0.5s ease);
+    position: absolute;
+    @include size(100%);
+    background-color: #AFBDC4;
+  }
+
+  &::before {
+    top: -7px;
+
+    .is-expanded & {
+      @include transform(rotate(45deg));
+      top: 0;
+    }
+  }
+
+  &::after {
+    top: 7px;
+
+    .is-expanded & {
+      @include transform(rotate(-45deg));
+      top: 0;
+    }
   }
 }
