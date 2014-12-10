@@ -32,6 +32,11 @@ $menu-height: 50px;
   &.is-home {
     margin-top: 20px;
     background-color: transparent;
+
+    @include mq($tablet) {
+      margin-top: 0;
+      background-color: $black;
+    }
   }
 }
 
@@ -55,9 +60,13 @@ $menu-height: 50px;
     background-image: url('images/icons/wordmark.svg');
   }
 
-  .is-home & {
+  &.is-home {
     top: 20px;
     background-color: transparent;
+
+    @include mq($tablet) {
+      top: 3px;
+    }
   }
 }
 
@@ -115,6 +124,10 @@ $menu-height: 50px;
 
     &:first-child {
       margin-left: 75px;
+
+      @include mq($tablet) {
+        margin-left: 0;
+      }
     }
 
     &:hover {
@@ -175,6 +188,10 @@ $menu-height: 50px;
   @include size(20px 3px);
   background-color: #AFBDC4;
 
+  .is-home & {
+    background-color: white;
+  }
+
   .is-expanded & {
     background-color: transparent;
   }
@@ -186,6 +203,10 @@ $menu-height: 50px;
     position: absolute;
     @include size(100%);
     background-color: #AFBDC4;
+
+    .is-home & {
+      background-color: white;
+    }
   }
 
   &::before {
