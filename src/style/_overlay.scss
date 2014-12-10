@@ -1,8 +1,8 @@
 .overlay {
+  display: none;
   z-index: 9;
   @include position(fixed, 0 0);
   @include size(100%);
-  display: none;
   opacity: 0.8;
   background-color: $light-black;
   overflow: hidden;
@@ -11,52 +11,46 @@
 .can-overlay {
   
   .is-overlayed & {
-    background-color: #FFFFFF;
-    color: #262628;
-    position: relative;
     z-index: 10;
     display: inline-block;
+    position: relative;    
+    background-color: #FFFFFF;
     padding: 30px;
     margin: -30px 0 7px -30px;
     border-radius: 5px;
     max-width: 400px;
     overflow: visible;
+    color: #262628;
 
     &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: -15px;
+      @include position(absolute, 0 -16px null null);
       @include triangle(20px, white, up-left);
+      content: "";
     }
   }
-}
-
-.triangle-left {
-  border-width: 0px 0px 40px 50px;
 }
 
 .overlay-content {
   display: none;
   
   .is-overlayed & {
-    color: white;
     z-index: 10;
-    display: block;
     position: absolute;
+    display: block;
     @include size(450px auto);
+    color: white;
   }
 }
 
 .overlay-header {
-  @include font(35px, 100, white);
   margin-bottom: 25px;
+  @include font(35px, 100, white);
 }
 
 .overlay-text {
+  margin-bottom: 25px;
   @include font(14px, 100, white, 'Sentinel');
   line-height: 1.5;
-  margin-bottom: 25px;
 }
 
 .overlay-footer {
@@ -98,10 +92,10 @@
 }
 
 .overlay-index-typewriter {
-  background: url("images/ux-view/typewriter.png") no-repeat 0 0;
   top: 115px;
   left: 350px;
   padding-top: 130px;
+  background: url("images/ux-view/typewriter.png") no-repeat 0 0;
 
   .overlay-text {
     width: 250px;
@@ -116,13 +110,14 @@
     margin-top: -5px;
 
     h1 {
+      margin-bottom: 29px;
+      padding-bottom: 11px;
       width: 120px;
       border-top: 1px solid #FF345A;
       border-bottom: 1px solid #C4C4C4;
       line-height: 0.3;
-      padding-bottom: 11px;
-      margin-bottom: 29px;
     }
+
     h2 {
       width: 250px;
       text-overflow: ellipsis;
@@ -131,11 +126,11 @@
     } 
 
     &::before {
-      content: "X-HEIGHT";
-      display: inline-block;
       @include position(absolute, 36px null null 170px);
+      display: inline-block;
       font-weight: bold;
       color: #4D4D4D;
+      content: "X-HEIGHT";
     }
   }
 }
@@ -158,27 +153,27 @@
 }
 
 .overlay-work-dismount {
-  text-align: center;
-  width: 570px !important;
   left: 100%;
   margin-left: -285px;
-  background: url("images/ux-view/dismount-carousel.png") no-repeat center 30px;
+  width: 570px !important;
   padding-top: 70px;
+  text-align: center;
+  background: url("images/ux-view/dismount-carousel.png") no-repeat center 30px;
 }
 
 // TEAM
 .overlay-team-dont {
-  text-align: right;
-  right: 250px;
   top: 100px;
+  right: 250px;
   width: 411px !important;
+  text-align: right;
 }
 
 .overlay-team-hey {
-  text-align: right;
-  width: 450px !important;
   left: -350px;
   top: 126px;
+  width: 450px !important;
+  text-align: right;
 }
 
 .team-section-team-pic {
@@ -187,8 +182,8 @@
 
 .team-section-headshot.overlay-headshot-cutout {
   display: none;
-  z-index: 9; 
-  
+  z-index: 9;
+
   .is-overlayed & {
     display: block;
   }
@@ -196,33 +191,31 @@
 
 // APPROACH
 .overlay-approach-f {
-  height: 503px !important;
-  background: url("images/ux-view/f-this.png") no-repeat 0 0;
-  left: 120px;
   top: 175px;
+  left: 120px;  
+  height: 503px !important;
   padding: 100px 35px;
-
+  background: url("images/ux-view/f-this.png") no-repeat 0 0;
+  
   .overlay-text {
     width: 220px;
   }
 }
 
 .overlay-approach-fold {
-  background: url("images/ux-view/fold.png") no-repeat right 0;
-  height: 784px !important;
-  right: 100px;
   top: 100px;
+  right: 100px;
+  height: 784px !important;
+  background: url("images/ux-view/fold.png") no-repeat right 0;
   text-align: right;
 
   .fold-content {
-    position: absolute;
-    bottom: 120px;
-    right: 0;
+    @include position(absolute, null 0 120px null);
   }
 
   .overlay-text {
-    width: 220px;
     float: right;
+    width: 220px;
   }
   .overlay-footer {
     clear: right;
@@ -238,6 +231,7 @@
     .approach-section-text {
       color: rgba(206,206,206, 0.2);
     }
+
     .approach-section-next {
       opacity: 0.2;
     }
@@ -252,6 +246,6 @@
 }
 
 .overlay-approach-information {
-  left: 100px;
   top: 58px;
+  left: 100px;
 }
