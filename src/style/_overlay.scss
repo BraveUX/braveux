@@ -89,6 +89,9 @@
 }
 
 .is-overlayed & {
+  .page-subheading {
+    color: #AEAEAE;
+  }
   .social-link {
     margin-bottom: 0;
   }
@@ -101,6 +104,12 @@
     .can-overlay {
       margin-bottom: -8px;
     }
+  }
+}
+
+.overlay-underline {
+  .is-overlayed & {
+    text-decoration: underline;  
   }
 }
 
