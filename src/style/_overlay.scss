@@ -17,14 +17,23 @@
     background-color: #FFFFFF;
     padding: 30px;
     margin: -30px 0 7px -30px;
-    border-radius: 5px;
     max-width: 400px;
     overflow: visible;
+    border-radius: 5px;
     color: #262628;
-
     &::after {
       @include position(absolute, 0 -16px null null);
       @include triangle(20px, white, up-left);
+      content: "";
+    }
+  }
+}
+
+.overlay-triangle-left {
+  .is-overlayed & {
+    &::after {
+      @include position(absolute, 0 null null -16px);
+      @include triangle(20px, white, up-right);
       content: "";
     }
   }
@@ -196,7 +205,7 @@
   height: 503px !important;
   padding: 100px 35px;
   background: url("images/ux-view/f-this.png") no-repeat 0 0;
-  
+
   .overlay-text {
     width: 220px;
   }
