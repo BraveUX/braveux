@@ -178,4 +178,10 @@ function initToggle() {
         $('.wrapper').toggleClass('is-overlayed');
       } });
   });
+  $('.overlay-exit').click(function() {
+    $('.ux-toggle-frame').toggleClass('is-active');
+    $('.overlay').velocity({ opacity: [0, 0.8] }, { display: 'none', duration: 500, easing: 'ease', begin: function() {
+      $('.wrapper').toggleClass('is-overlayed');
+    } });
+  });
 }
