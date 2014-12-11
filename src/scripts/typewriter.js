@@ -17,7 +17,6 @@
     }
 
     function type (word) {
-
       current.selector.siblings('.typewriter-cursor').text('|');
       if (word.length) {
         current.selector.text(current.selector.text() + word[0])
@@ -69,7 +68,6 @@
         }, 1000);
       }
     }
-
     type(current.word);
   };
 

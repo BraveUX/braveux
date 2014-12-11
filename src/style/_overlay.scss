@@ -322,5 +322,47 @@
   top: 41px;
   left: 230px;
   text-align: right;
+}
 
+
+
+
+@mixin ux-pos($top, $left, $right:null) {
+  top: $top;
+  left: $left;
+  right: $right;
+}
+
+
+.overlay-relative {
+  position: relative;
+  display: inline-block;
+}
+
+.overlay-index-where {
+  @include ux-pos(-40px, 250px);
+}
+
+.overlay-work-just {
+  @include ux-pos(-30px, 420px);
+}
+
+.overlay-contact-empathy {
+  @include ux-pos(-50px, 400px);
+}
+
+.overlay-contact-priority {
+  @include ux-pos(-50px, 400px);
+}
+
+.overlay-contact-well {
+  @include ux-pos(-55px, 370px);
+}
+
+.overlay-approach-information {
+  @include ux-pos(30px, initial, 80px);
+}
+
+.overlay-index-typewriter {
+  @include ux-pos(null, 280px);
 }
