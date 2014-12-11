@@ -190,11 +190,7 @@ $menu-height: 50px;
   @include transition(all 0.5s ease);
   @include position(absolute, 7px null 0);
   @include size(20px 3px);
-  background-color: #AFBDC4;
-
-  .is-home & {
-    background-color: white;
-  }
+  background-color: white;
 
   .is-expanded & {
     background-color: transparent;
@@ -206,11 +202,7 @@ $menu-height: 50px;
     @include transition(all 0.5s ease);
     position: absolute;
     @include size(100%);
-    background-color: #AFBDC4;
-
-    .is-home & {
-      background-color: white;
-    }
+    background-color: white;
   }
 
   &::before {
