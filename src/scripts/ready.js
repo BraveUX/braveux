@@ -26,9 +26,6 @@ function initApproach() {
   var scrollDuration = 500;
   var scrollEasing = 'linear';
 
-  // hide inner icons
-  $('.approach-inner-icon, .approach-arrowhead').css('opacity', '0');
-
   function bindVivus(index) {
     // animate loops, fade in arrowhead and icon
     return new Vivus($('.approach-section-icon-svg').eq(index).get(0), { type: 'async', start: 'inViewport', duration: drawDuration }, function() {
@@ -54,13 +51,24 @@ function initApproach() {
     });
   }
 
-  // on each icon
-  for(var i = 0; i <= 5; i++) {
-    // bind vivus
-    bindVivus(i);
+  // check for IE
+  var isIE = !$('#ie-test').get(0).classList;
 
-    // bind waypoints
-    bindWaypoints(i);
+  // if IE, dont bind Vivus or Waypoints
+  if(isIE) {
+    // remove hidden classes
+    $('.approach-to-next').removeAttr('class');
+    return false;
+  }
+  else {
+    // hide inner icons
+    $('.approach-inner-icon, .approach-arrowhead').css('opacity', '0');
+
+    // bind Vivus and Waypoints on each approach section svg
+    for(var i = 0; i <= 5; i++) {
+      bindVivus(i);
+      bindWaypoints(i);
+    }
   }
 
   // bind next arrow handler
