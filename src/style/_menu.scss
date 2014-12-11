@@ -24,6 +24,10 @@ $menu-height: 50px;
   &.is-collapsed {
     top: -$menu-height;
 
+    &.is-home {
+      top: -70px;
+    }
+
     @include mq($tablet) {
       top: auto;
     }
