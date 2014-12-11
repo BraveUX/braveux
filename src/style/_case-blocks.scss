@@ -167,7 +167,13 @@
   // SIZE MODIFIERS
 
   &.quarter { @include size(50%); }
-  &.half    { @include size(100% 50%); }
+  &.half    {
+    @include size(100% 50%);
+
+    &.maintain-ratio {
+      height: auto;
+    }
+  }
 
   &.quarter,
   &.half {
