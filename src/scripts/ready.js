@@ -5,7 +5,9 @@ $(document).ready(function() {
   initToggle();
   initScrollSpy();
   initEasterEggs();
-  initNavBar();
+
+  if(window.location.pathname !== '/')
+    initNavBar();
 
   if(window.location.pathname === '/approach.html')
     initApproach();
