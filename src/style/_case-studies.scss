@@ -93,7 +93,8 @@ $darkblue: #2E3D5A;
 }
 
 .case-header-type {
-  @include font(18px, 600, null, 'Sentinel');
+  @include font(18px, 600, null, null);
+  font-family: 'Sentinel A', 'Sentinel B';
 
   .fieldone & { color: $graphite; }
   .obesity & { color: #8FA3AD; }
@@ -135,7 +136,8 @@ $darkblue: #2E3D5A;
 }
 
 .case-exec-summary-text {
-  @include font(24px, 200, #616161, 'Sentinel');
+  @include font(24px, 300, #616161, null);
+  font-family: 'Sentinel A', 'Sentinel B';
 }
 
 // BREAKDOWN
@@ -210,7 +212,8 @@ $darkblue: #2E3D5A;
 .case-breakdown-detail,
 .case-breakdown-scope-list {
   max-width: 260px;
-  @include font(13px, 200, null, 'Sentinel');
+  @include font(13px, 300, null, null);
+  font-family: 'Sentinel A', 'Sentinel B';
   line-height: 1.9;
 
   @include mq($mobile) {
@@ -244,7 +247,8 @@ $darkblue: #2E3D5A;
 .case-breakdown-scope-list {
   padding-left: 0;
   list-style: none;
-  @include font(13px, 200, null, 'Sentinel');
+  @include font(13px, 300, null, null);
+  font-family: 'Sentinel A', 'Sentinel B';
 }
 
 .case-breakdown-footnote {
@@ -253,8 +257,8 @@ $darkblue: #2E3D5A;
   padding-top: 20px;
   border-top-width: 2px;
   border-top-style: solid;
-
-  @include font(11px, 200, null, 'Sentinel');
+  @include font(11px, 300, null, null);
+  font-family: 'Sentinel A', 'Sentinel B';
   font-style: italic;
 
   .obesity & {

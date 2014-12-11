@@ -57,7 +57,8 @@
 .contact-email-link,
 .contact-phone-link,
 .contact-location-link {
-  @include font(24px, 200, #808080, 'Sentinel');
+  @include font(24px, 300, #808080, null);
+  font-family: 'Sentinel A', 'Sentinel B';
 
   @include mq($mobile) {
     font-size: 20px;
