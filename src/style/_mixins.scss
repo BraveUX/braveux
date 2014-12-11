@@ -2,13 +2,13 @@
  * @param $size - breakpoint, in pixels
  */
 @mixin mq($size) {
-  @media only screen and (max-width: $size) {
+  @media only screen and (min-width: 1px) and (max-width: $size) {
     @content;
   }
 }
 
 @mixin mq-min($size) {
-  @media only screen and (min-width: $size) {
+  @media only screen and (min-width: 1px) and (min-width: $size) {
     @content;
   }
 }
