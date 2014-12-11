@@ -17,6 +17,18 @@ $light-black: #262628;
 $tablet: 800px;
 $mobile: 480px;
 
+// load Trade Gothic
+
+@font-face {
+  font-family: 'Trade Gothic LT Std';
+  src: url('fonts/2CD600_0_0.eot');
+  src: url('fonts/2CD600_0_0.eot?#iefix') format('embedded-opentype'),
+       url('fonts/2CD600_0_0.woff2') format('woff2'),
+       url('fonts/2CD600_0_0.woff') format('woff'),
+       url('fonts/2CD600_0_0.ttf') format('truetype'),
+       url('fonts/2CD600_0_0.svg#wf') format('svg');
+}
+
 // box sizing
 
 *,
