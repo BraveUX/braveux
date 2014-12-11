@@ -41,7 +41,7 @@ em {
 }
 
 body {
-  @include font(12px, 300, white, "Source Sans Pro");
+  @include font(12px, 300, white, 'Source Sans Pro');
   line-height: 1.3;
 }
 
