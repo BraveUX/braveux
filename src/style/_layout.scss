@@ -5,6 +5,13 @@ body {
   height: 100%;
 }
 
+body {
+  // fix Chrome overlay bug
+  [data-user-agent*="Chrome"] & {
+    opacity: .99999;
+  }
+}
+
 .wrapper {
 	@include clearfix;
 	@include size(100% auto);
