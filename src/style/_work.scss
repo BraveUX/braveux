@@ -75,7 +75,8 @@
 }
 
 .work-rollover-cta {
-  @include font(24px, 600, null, 'Sentinel');
+  @include font(24px, 600, null, null);
+  font-family: 'Sentinel A', 'Sentinel B';
   letter-spacing: 1px;
 
   @include mq($tablet) {

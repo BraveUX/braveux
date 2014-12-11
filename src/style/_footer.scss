@@ -121,8 +121,8 @@ $footer-tablet: 900px;
   @include clearfix;
   display: inline-block;
   margin-top: 90px;
-  @include font(15px, 200, #666, 'Sentinel');
-
+  @include font(15px, 300, #666, null);
+  font-family: 'Sentinel A', 'Sentinel B';
   @include mq($footer-tablet) {
     margin-top: 10px;
     font-size: 14px;

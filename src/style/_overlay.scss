@@ -59,7 +59,8 @@
 
 .overlay-text {
   margin-bottom: 25px;
-  @include font(14px, 100, white, 'Sentinel');
+  @include font(14px, 300, white, null);
+  font-family: 'Sentinel A', 'Sentinel B';
   line-height: 1.5;
 }
 
