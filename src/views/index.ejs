@@ -50,12 +50,15 @@
   <section class="cta">
     <div class="container">
       <p class="cta-text">We design and build interfaces people love to use.</p>
-      <a class="cta-link can-overlay" href="/work.html">See Our Work<img class="cta-icon" src="images/icons/icon-cta.svg"></a>
 
-      <div class="overlay-content overlay-index-where">
-        <p class="overlay-header">Where to?</p>
-        <p class="overlay-text">Effective websites don&rsquo;t leave you guessing where to go next. We use clear calls-to-action on every page to drive you through the site. We&rsquo;re telling you a story, and the next chapter is showing you some of our best and favorite projects. See you on the Work page!</p>
-        <p class="overlay-footer"><a href="http://uxmag.com/articles/usability-tip-no-dead-ends-please">1. Source</a></p>
+      <div class="overlay-relative">
+        <a class="cta-link can-overlay" href="/work.html">See Our Work<img class="cta-icon" src="images/icons/icon-cta.svg"></a>
+
+        <div class="overlay-content overlay-index-where">
+          <p class="overlay-header">Where to?</p>
+          <p class="overlay-text">Effective websites don&rsquo;t leave you guessing where to go next. We use clear calls-to-action on every page to drive you through the site. We&rsquo;re telling you a story, and the next chapter is showing you some of our best and favorite projects. See you on the Work page!</p>
+          <p class="overlay-footer"><a href="http://uxmag.com/articles/usability-tip-no-dead-ends-please">1. Source</a></p>
+        </div>
       </div>
     </div>
   </section>
@@ -67,9 +70,21 @@
 
 <script type="text/javascript">
   $(document).on('ready', function() {
+    var isUx = false;
+    $('.ux-toggle').click(function(e) {
+      throw new Error('stop js')
+    });
     $('.typewriter-text-1').typewriter(function() {
       // reveal homepage CTA
       $('.typewriter-cta').velocity({ opacity: [1, 0] }, { display: 'block', duration: 500, easing: 'ease' });
-    });
+    }, isUx);
   });
 </script>
+
+
+
+
+
+
+
+
