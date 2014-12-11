@@ -36,6 +36,10 @@
   @include animation-iteration-count(infinite);
   margin-left: -5px;
   @include font(1em, 100);
+
+  @include mq($mobile) {
+    display: none;
+  }
 }
 
 @include keyframes(blink) {
