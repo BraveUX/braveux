@@ -339,6 +339,10 @@
   display: inline-block;
 }
 
+.overlay-index-typewriter {
+  top: 4px;
+}
+
 .overlay-index-where {
   @include ux-pos(-40px, 250px);
 }
