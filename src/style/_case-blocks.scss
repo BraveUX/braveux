@@ -184,24 +184,6 @@
   &.right  { right: 0; }
 }
 
-// FULL IMAGE STYLE
-
-.case-full-image {
-  @include size(100% 75vh);
-
-  @include mq($tablet) {
-    // fixes iOS glitch with vh units
-    max-height: 500px;
-  }
-
-  img {
-    @include position(absolute, 0 0 0 0);
-    min-width: 100%;
-    min-height: 100%;
-    margin: auto;
-  }
-}
-
 // IMAGE STYLE
 
 .case-block-image {
