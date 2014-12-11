@@ -3,7 +3,7 @@
   @include clearfix;
   @include size(100% 575px);
 
-  @media mq-min(1500px) {
+  @include mq-min(1500px) {
     height: 750px;
   }
 
