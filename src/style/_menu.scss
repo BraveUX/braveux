@@ -153,12 +153,13 @@ $menu-height: 50px;
     display: none;
   }
 
-  &.is-active {
-    border-color: #778F9B;
-  }
-
   .is-home & {
     right: 7.5%;
+    border-color: transparent;
+  }
+
+  &.is-active {
+    border-color: #778F9B;
   }
 }
 
