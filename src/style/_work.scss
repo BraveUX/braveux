@@ -15,11 +15,11 @@
     }
   }
 
-  &.felix     { background-image: url('images/work/work-landing-felix.jpg'); }
-  &.character { background-image: url('images/work/work-landing-character.png'); }
-  &.fieldone  { background-image: url('images/work/work-landing-fieldone.svg'); }
-  &.obesity   { background-image: url('images/work/work-landing-obesity.svg'); }
-  &.wedding   { background-image: url('images/work/work-landing-wedding.jpg'); }
+  &.felix     { background-image: url('images/felix/boardwalk.jpg'); }
+  &.character { background-image: url('images/work/landing-character.jpg'); }
+  &.fieldone  { background-image: url('images/work/landing-fieldone.svg'); }
+  &.wedding   { background-image: url('images/wedding/bouquet.jpg'); }
+  &.obesity { background: url('images/obesity/header.svg') #F2F2F2 center center/cover no-repeat; }
 }
 
 .work-rollover {
