@@ -370,3 +370,10 @@
 .overlay-index-typewriter {
   @include ux-pos(null, 280px);
 }
+
+.overlay-typewriter {
+  .is-overlayed & {
+    margin-bottom: -30px;
+    margin-right: -30px;
+  }
+}
