@@ -40,8 +40,15 @@ em {
   font-style: italic;
 }
 
+@include font-face(Sentinel, '/fonts/Sentinel-Bold', 600);
+@include font-face(Sentinel, '/fonts/SentinelItalic', 600, italic);
+@include font-face(Sentinel, '/fonts/Sentinel-Book', 400);
+@include font-face(Sentinel, '/fonts/Sentinel-Light', 300);
+@include font-face(Sentinel, '/fonts/Sentinel-LightItalic', 300, italic);
+@include font-face('Trade Gothic LT Std', '/fonts/TradeGothicLTStd-Bd2', 600);
+
 body {
-  @include font(12px, 300, white, 'Source Sans Pro');
+  @include font(12px, 300, white, "Source Sans Pro");
   line-height: 1.3;
 }
 
