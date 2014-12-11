@@ -1,0 +1,26 @@
+// FULL IMAGE STYLE
+
+.case-full-image {
+  @include size(100% 75vh);
+
+  @include mq($tablet) {
+    // fixes iOS glitch with vh units
+    max-height: 500px;
+  }
+}
+
+// CHARACTER
+
+.character-school {
+  background: url('images/character/logo.svg') center center no-repeat,
+              url('images/character/school.jpg') center center/cover no-repeat;
+
+  @include mq($mobile) {
+    background: url('images/character/logo.svg') center center/85% auto no-repeat,
+                url('images/character/school.jpg') center center/cover no-repeat;
+  }
+}
+
+.character-forum {
+  background: url('images/character/forum.jpg') center center no-repeat;
+}
