@@ -4,9 +4,7 @@
   text-align: center;
 
   .team & {
-    @include mq($tablet) {
-      background-color: #F1F1F1;
-    }
+    background-color: #F1F1F1;
   }
 }
 
