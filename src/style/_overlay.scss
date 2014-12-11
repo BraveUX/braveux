@@ -320,7 +320,7 @@
 
 .overlay-approach-information {
   top: 41px;
-  left: 230px;
+  left: initial;
   text-align: right;
 }
 
@@ -364,7 +364,7 @@
 }
 
 .overlay-approach-information {
-  @include ux-pos(40px, initial, 80px);
+  @include ux-pos(130px, initial, 80px);
 }
 
 .overlay-index-typewriter {
