@@ -13,7 +13,7 @@ $darkblue: #2E3D5A;
   .wedding & { background-color: #19B5BC; }
 
   .felix & {
-    background: url('images/felix/header.jpg') center center/cover no-repeat;
+    background: url('images/felix/header.jpg') top center/cover no-repeat;
 
     @include mq($tablet) {
       background-position: left center;
