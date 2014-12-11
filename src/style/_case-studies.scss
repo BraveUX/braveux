@@ -10,8 +10,19 @@ $darkblue: #2E3D5A;
   position: relative;
   @include size(100%);
 
-  .felix & { background: url('images/felix/header.jpg') center center/cover no-repeat; }
   .wedding & { background-color: #19B5BC; }
+
+  .felix & {
+    background: url('images/felix/header.jpg') center center/cover no-repeat;
+
+    @include mq($tablet) {
+      background-position: left center;
+    }
+
+    @include mq($mobile) {
+      background-image: url('images/felix/header-mobile.jpg');
+    }
+  }
 
   .character & {
     background: url('images/character/header.jpg') center center/cover no-repeat;
