@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  // set user agent on html element
+  $('html').attr('data-user-agent', window.navigator.userAgent);
+
   initToggle();
   initScrollSpy();
   initEasterEggs();

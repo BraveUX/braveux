@@ -97,14 +97,23 @@
 }
 
 .approach-inner-icon {
-  // @include transition(all 1.0 ease);
-  @include transform-origin(center center);
+  [data-user-agent]:not([data-user-agent*="Firefox"]) & {
+    @include transform-origin(center center);
+  }
 
-  &.gear { @include animation(spin 10.0s linear infinite); }
+  &.gear {
+    // disable animation and transform origin in FireFox
+    [data-user-agent]:not([data-user-agent*="Firefox"]) & {
+      @include animation(spin 10.0s linear infinite);
+    }
+  }
 
   .stopwatch-hand {
-    @include transform-origin(center 174px);
-    @include animation(spinReverse 10.0s linear infinite);
+    // disable animation and transform origin in FireFox
+    [data-user-agent]:not([data-user-agent*="Firefox"]) & {
+      @include transform-origin(center 174px);
+      @include animation(spinReverse 10.0s linear infinite);
+    }
   }
 }
 
