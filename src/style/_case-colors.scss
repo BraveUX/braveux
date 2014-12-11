@@ -12,6 +12,13 @@
   .case-block-text-subtext { color: #414141; }
 }
 
+.felix-gradient {
+  @include background(linear-gradient(90deg, white, #EEE));
+
+  .case-block-text-heading { color: #536D79; }
+  .case-block-text-subtext { color: #414141; }
+}
+
 .felix-black {
   background-color: #3F454A;
   color: white;
