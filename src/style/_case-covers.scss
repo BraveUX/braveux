@@ -12,7 +12,7 @@
 // FELIX
 
 .felix-boardwalk {
-  background: url('images/felix/boardwalk.jpg') center center no-repeat;
+  background: url('images/felix/boardwalk.jpg') center center/cover no-repeat;
 
   @include mq($tablet) {
     background-position: right center;
@@ -22,7 +22,7 @@
 // FIELDONE
 
 .fieldone-traffic {
-  background: url('images/fieldone/traffic.jpg') center center no-repeat;
+  background: url('images/fieldone/traffic.jpg') center center/cover no-repeat;
 }
 
 // CHARACTER
@@ -38,17 +38,17 @@
 }
 
 .character-forum {
-  background: url('images/character/forum.jpg') center center no-repeat;
+  background: url('images/character/forum.jpg') center center/cover no-repeat;
 }
 
 // OBESITY
 
 .obesity-racial-inequity {
-  background: url('images/obesity/racial-inequity.jpg') center center no-repeat;
+  background: url('images/obesity/racial-inequity.jpg') center center/cover no-repeat;
 }
 
 // WEDDING
 
 .wedding-bouquet {
-  background: url('images/wedding/bouquet.jpg') center center no-repeat;
+  background: url('images/wedding/bouquet.jpg') center center/cover no-repeat;
 }
