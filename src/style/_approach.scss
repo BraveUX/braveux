@@ -3,6 +3,10 @@
   @include clearfix;
   @include size(100% 575px);
 
+  @media mq-min(1500px) {
+    height: 750px;
+  }
+
   @include mq($tablet) {
     height: auto;
     padding: 80px 0;
