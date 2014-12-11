@@ -314,7 +314,7 @@
 
 .can-overlay-approach-information {
   .is-overlayed & {
-    margin-bottom: 15px;
+    margin-bottom: -7px;
   }
 }
 
@@ -360,9 +360,11 @@
 }
 
 .overlay-approach-information {
-  @include ux-pos(30px, initial, 80px);
+  @include ux-pos(40px, initial, 80px);
 }
 
 .overlay-index-typewriter {
   @include ux-pos(null, 280px);
 }
+
+
