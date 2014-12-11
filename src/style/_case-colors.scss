@@ -13,7 +13,7 @@
 }
 
 .felix-gradient {
-  @include background(linear-gradient(90deg, white, #EEE));
+  @include linear-gradient(to bottom, #FFF, #EEE);
 
   .case-block-text-heading { color: #536D79; }
   .case-block-text-subtext { color: #414141; }
