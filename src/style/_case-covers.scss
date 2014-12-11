@@ -9,6 +9,16 @@
   }
 }
 
+// FELIX
+
+.felix-boardwalk {
+  background: url('images/felix/boardwalk.jpg') center center no-repeat;
+
+  @include mq($tablet) {
+    background-position: right center;
+  }
+}
+
 // CHARACTER
 
 .character-school {
