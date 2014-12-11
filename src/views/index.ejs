@@ -70,13 +70,14 @@
 
 <script type="text/javascript">
   $(document).on('ready', function() {
-    var isUx = false;
-    $('.ux-toggle').click(function(e) {
-      throw new Error('stop js')
+    $('.ux-toggle-frame').click(function(e) {
+      $('.typewriter-1').toggleClass('hide-typewriter');
+      $('.typewriter-2').toggleClass('hide-typewriter');
+      $('.typewriter-cursor').toggleClass('hide-typewriter');
     });
     $('.typewriter-text-1').typewriter(function() {
       // reveal homepage CTA
       $('.typewriter-cta').velocity({ opacity: [1, 0] }, { display: 'block', duration: 500, easing: 'ease' });
-    }, isUx);
+    });
   });
 </script>
