@@ -76,8 +76,16 @@ function initApproach() {
 
   // if IE, dont bind Vivus or Waypoints
   if(isIE) {
+    // delete svgs
+    $('.approach-section-icon-svg').remove();
+
+    // show jpgs
+    $('.approach-ie-only').removeClass('hidden');
+
     // remove hidden classes
     $('.approach-to-next').removeAttr('class');
+
+    // exit approach init
     return false;
   }
   else {
