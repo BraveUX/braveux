@@ -180,37 +180,22 @@ function initScrollSpy() {
 }
 
 function initToggle() {
-  // if overlay, carry on overlay on other pages
-  if (document.cookie.indexOf('overlay=true') > -1) {
-    $('.ux-toggle-frame').toggleClass('is-active');
-    $('.overlay').velocity({ opacity: [0.8, 0] }, { display: 'block', duration: 500, easing: 'ease', begin: function() {
-      $('.wrapper').toggleClass('is-overlayed');
-    } });
-  }
-
   $('.ux-toggle-frame').click(function(e) {
     e.preventDefault();
     $('.ux-toggle-frame').toggleClass('is-active');
-
-    // is cookie
-    if (document.cookie.indexOf('overlay=true') === -1) {
-      document.cookie="overlay=true; expires=Fri, 12 Dec 2020 12:00:00 UTC; path=/";
-    }
 
     // show/hide overlay
     if($('.ux-toggle-frame').hasClass('is-active'))
       $('.overlay').velocity({ opacity: [0.8, 0] }, { display: 'block', duration: 500, easing: 'ease', begin: function() {
         $('.wrapper').toggleClass('is-overlayed');
-      }});
+      } });
     else
       $('.overlay').velocity({ opacity: [0, 0.8] }, { display: 'none', duration: 500, easing: 'ease', begin: function() {
-        document.cookie="overlay=true; expires=Fri, 12 Dec 1980 12:00:00 UTC; path=/";
         $('.wrapper').toggleClass('is-overlayed');
       } });
   });
   $('.overlay-exit').click(function() {
     $('.ux-toggle-frame').toggleClass('is-active');
-    document.cookie="overlay=true; expires=Fri, 12 Dec 1980 12:00:00 UTC; path=/";
     $('.overlay').velocity({ opacity: [0, 0.8] }, { display: 'none', duration: 500, easing: 'ease', begin: function() {
       $('.wrapper').toggleClass('is-overlayed');
     } });

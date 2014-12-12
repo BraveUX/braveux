@@ -116,29 +116,18 @@
     <script src="//braveux.com/scripts.js"></script>
 
     <script type="text/javascript">
-      $('.ux-toggle-frame').click(function() {
-        $('.typewriter-wrapper').empty();
-        $('.typewriter-cursor').toggleClass('hide-typewriter');
-        $('.typewriter-wrapper').append('<h1 class="typewriter-text"><span class="can-overlay overlay-typewriter">You need</span> <span class="typewriter typewriter-1"> user experience</span></h1><h1 class="typewriter-text">We are <span class="typewriter typewriter-2">Brave</span></h1><div class="overlay-content overlay-index-typewriter"><p class="overlay-header">Tick, tock</p><p class="overlay-text">We don&rsquo;t want to waste your time. Studies show that a user will only wait up to 2 seconds for pages or images to load, and only slightly longer if there is feedback that something is happening, like these fun animations.</p><p class="overlay-footer"><a target="_blank" href="http://cba.unl.edu/research/articles/548/">Source</a></p></div></div>');
-        $('.typewriter-cta').css('display', 'block');
-        $('.typewriter-cta').css('opacity', '1.0');
-
-        if (document.cookie.indexOf('overlay=true') > -1) {
-          document.cookie="overlay=true; expires=Fri, 12 Dec 1980 12:00:00 UTC; path=/";
-        } else {
-          document.cookie="overlay=true; expires=Fri, 12 Dec 2020 12:00:00 UTC; path=/";
-        }
+      $(document).on('ready', function() {
+        $('.ux-toggle-frame').click(function() {
+          $('.typewriter-wrapper').empty();
+          $('.typewriter-cursor').toggleClass('hide-typewriter');
+          $('.typewriter-wrapper').append('<h1 class="typewriter-text"><span class="can-overlay overlay-typewriter">You need</span> <span class="typewriter typewriter-1"> user experience</span></h1><h1 class="typewriter-text">We are <span class="typewriter typewriter-2">Brave</span></h1><div class="overlay-content overlay-index-typewriter"><p class="overlay-header">Tick, tock</p><p class="overlay-text">We don&rsquo;t want to waste your time. Studies show that a user will only wait up to 2 seconds for pages or images to load, and only slightly longer if there is feedback that something is happening, like these fun animations.</p><p class="overlay-footer"><a target="_blank" href="http://cba.unl.edu/research/articles/548/">Source</a></p></div></div>');
+          $('.typewriter-cta').css('display', 'block');
+          $('.typewriter-cta').css('opacity', '1.0');
+        });
+        $('.typewriter-text-1').typewriter(function() {
+          $('.typewriter-cta').velocity({ opacity: [1, 0] }, { display: 'block', duration: 500, easing: 'ease' });
+        });
       });
-      $('.typewriter-text-1').typewriter(function() {
-        $('.typewriter-cta').velocity({ opacity: [1, 0] }, { display: 'block', duration: 500, easing: 'ease' });
-      });
-
-      if (document.cookie.indexOf('overlay=true') > -1) {
-        $('.ux-toggle-frame').toggleClass('is-active');
-        $('.overlay').velocity({ opacity: [0.8, 0] }, { display: 'block', duration: 500, easing: 'ease', begin: function() {
-          $('.wrapper').toggleClass('is-overlayed');
-        } });
-      }
     </script>
 
     <script>
