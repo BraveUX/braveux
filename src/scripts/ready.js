@@ -7,7 +7,7 @@ $(document).ready(function() {
   initEasterEggs();
   initNavBar();
 
-  if(window.location.pathname === '/approach.html')
+  if(window.location.pathname === '/approach')
     initApproach();
 
   if($(window).width() <= 800)
