@@ -379,6 +379,18 @@
   }
 }
 
+.overlay-show {
+  z-index: 10;
+
+  .is-overlayed & {
+    .work-rollover {
+      &:hover {
+        display: none;
+      }
+    }
+  }
+}
+
 .overlay-exit {
   position: fixed;
   display: block;
