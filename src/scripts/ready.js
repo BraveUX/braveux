@@ -5,11 +5,9 @@ $(document).ready(function() {
   initToggle();
   initScrollSpy();
   initEasterEggs();
+  initNavBar();
 
-  if(window.location.pathname !== '/')
-    initNavBar();
-
-  if(window.location.pathname === '/approach.html')
+  if(window.location.pathname === '/approach')
     initApproach();
 
   if($(window).width() <= 800)
@@ -25,9 +23,6 @@ function initApproach() {
   var fadeInEasing = 'ease';
   var scrollDuration = 500;
   var scrollEasing = 'linear';
-
-  // hide inner icons
-  $('.approach-inner-icon, .approach-arrowhead').css('opacity', '0');
 
   function bindVivus(index) {
     // animate loops, fade in arrowhead and icon
@@ -54,15 +49,6 @@ function initApproach() {
     });
   }
 
-  // on each icon
-  for(var i = 0; i <= 5; i++) {
-    // bind vivus
-    bindVivus(i);
-
-    // bind waypoints
-    bindWaypoints(i);
-  }
-
   // bind next arrow handler
   $('.approach-section-next').click(function(e) {
     e.preventDefault();
@@ -82,6 +68,34 @@ function initApproach() {
       $('.approach-section').eq(index + 1).velocity('scroll', { offset: -offset, duration: scrollDuration, easing: scrollEasing });
     }
   });
+
+  // check for IE
+  var isIE = !$('#ie-test').get(0).classList;
+
+  // if IE, dont bind Vivus or Waypoints
+  if(isIE) {
+    // delete svgs
+    $('.approach-section-icon-svg').remove();
+
+    // show jpgs
+    $('.approach-ie-only').removeClass('hidden');
+
+    // remove hidden classes
+    $('.approach-to-next').removeAttr('class');
+
+    // exit approach init
+    return false;
+  }
+  else {
+    // hide inner icons
+    $('.approach-inner-icon, .approach-arrowhead').css('opacity', '0');
+
+    // bind Vivus and Waypoints on each approach section svg
+    for(var i = 0; i <= 5; i++) {
+      bindVivus(i);
+      bindWaypoints(i);
+    }
+  }
 }
 
 function initEasterEggs() {

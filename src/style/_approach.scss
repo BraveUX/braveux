@@ -78,9 +78,12 @@
   }
 }
 
-.approach-section-icon-svg {
+.approach-section-icon-svg,
+.approach-ie-only {
   position: absolute;
   @include size(75% auto);
+
+  // POSITION MODIFIERS
 
   // hide jagged corners
   $offset: -5px;
@@ -93,6 +96,11 @@
   &.middle {
     top: 50%;
     @include transform(translateY(-50%));
+  }
+
+  // VISIBILITY MODIFIERS
+  &.hidden {
+    display: none;
   }
 }
 
