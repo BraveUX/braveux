@@ -1,80 +1,109 @@
-<% include partials/header %>
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Brave UX - Contact</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--[if lt IE 9]><script>document.createElement('header');document.createElement('nav');document.createElement('section');document.createElement('article');document.createElement('aside');document.createElement('footer');document.createElement('hgroup');</script><![endif]-->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,600">
+    <link rel="stylesheet" href="//cloud.typography.com/7775932/607446/css/fonts.css">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div class="overlay"><a class="overlay-exit"><img src="/images/ux-view/x.svg"></a></div>
 
-<% include partials/menu %>
+    <% include partials/menu %>
 
-<div class="wrapper contact">
-  <header>
-    <div class="container">
-      <h1 class="page-heading">Contact</h1>
+    <div class="wrapper contact">
+      <header>
+        <div class="container">
+          <h1 class="page-heading">Contact</h1>
 
-      <div class="overlay-relative">
-        <h2 class="page-subheading can-overlay">Let&rsquo;s talk about <span class="overlay-underline">your</span> great ideas.</h2>
-        <div class="overlay-content overlay-contact-empathy">
-          <p class="overlay-header overlay-header-definition"><img src="images/ux-view/empathy.svg"></p>
-          <p class="overlay-definition"><span class="overlay-noun">noun</span><br>the ability to understand and share the feelings of another</p>
-          <p class="overlay-text">It&rsquo;s not about us; user empathy is essential to sound user experience. &ldquo;When you really get what makes people tick and why they do what they do, you&rsquo;ll have a much easier time going to bat to make their lives better.&rdquo;</p>
-          <p class="overlay-footer"><a target="_blank" href="http://www.merriam-webster.com/dictionary/empathy">1. Source</a> <a target="_blank" href="http://www.designprinciplesftw.com/collections/5-guiding-principles-for-experience-designers">2. Source</a></p>
-        </div>
-      </div>
-
-    </div>
-  </header>
-
-  <div class="contact-section">
-    <div class="contact-info">
-
-      <div class="overlay-relative">
-        <div class="contact-email can-overlay">
-          <p class="contact-heading">Email Us</p>
-          <a class="contact-email-link" href="mailto:team@braveux.com">team@braveux.com</a>
-        </div>
-
-        <div class="overlay-content overlay-contact-priority">
-          <p class="overlay-header">Priority Mail</p>
-          <p class="overlay-text">80% of our initial correspondence with clients is via email. So our email address is the most prominent in scale and list priority.</p>
-          <p class="overlay-footer"><a href="">Internal Research</a></p>
-        </div>
-      </div>
-
-      <div class="contact-phone">
-        <p class="contact-heading">Call Us</p>
-        <a class="contact-phone-link" href="tel:18442728389">844.BRAVE.UX</a>
-      </div>
-
-      <div class="contact-location">
-        <p class="contact-heading">Stop By</p>
-        <a class="contact-location-link" href="https://www.google.com/maps/place/1200+18th+St+NW+%23700,+Washington,+DC+20036/">1200 18th St NW<br>Suite 700<br>Washington, DC</a>
-      </div>
-
-      <div class="contact-follow">
-        <p class="contact-heading">Follow Us</p>
-        <div class="overlay-relative">
-          <div class="can-overlay">
-            <a class="social-link dark-twitter" href="https://twitter.com/brave_ux" target="_blank">Twitter</a>
-            <a class="social-link dark-facebook" href="https://www.facebook.com/braveux" target="_blank">Facebook</a>
-            <a class="social-link dark-linkedin" href="https://www.linkedin.com/company/brave-ux" target="_blank">LinkedIn</a>
-            <a class="social-link dark-dribbble" href="https://dribbble.com/braveux" target="_blank">Dribbble</a>
-            <a class="social-link dark-github" href="https://github.com/braveux" target="_blank">GitHub</a>
+          <div class="overlay-relative">
+            <h2 class="page-subheading can-overlay">Let&rsquo;s talk about <span class="overlay-underline">your</span> great ideas.</h2>
+            <div class="overlay-content overlay-contact-empathy">
+              <p class="overlay-header overlay-header-definition"><img src="images/ux-view/empathy.svg"></p>
+              <p class="overlay-definition"><span class="overlay-noun">noun</span><br>the ability to understand and share the feelings of another</p>
+              <p class="overlay-text">It&rsquo;s not about us; user empathy is essential to sound user experience. &ldquo;When you really get what makes people tick and why they do what they do, you&rsquo;ll have a much easier time going to bat to make their lives better.&rdquo;</p>
+              <p class="overlay-footer"><a target="_blank" href="http://www.merriam-webster.com/dictionary/empathy">1. Source</a> <a target="_blank" href="http://www.designprinciplesftw.com/collections/5-guiding-principles-for-experience-designers">2. Source</a></p>
+            </div>
           </div>
 
-          <div class="overlay-content overlay-contact-well">
-            <p class="overlay-header">Well</p>
-            <p class="overlay-text">You&rsquo;re on the contact page. Which means you&rsquo;re probably trying to get in touch with us in some way or another. So we&rsquo;ve moved social links out of the footer and gave them higher priority.</p>
-          </div>
         </div>
-      </div>
-    </div><!-- END contact-info -->
+      </header>
 
-    <div class="contact-map"></div>
-  </div><!-- END contact-section -->
+      <div class="contact-section">
+        <div class="contact-info">
 
-  <footer class="footer is-short">
-    <div class="footer-last-line">
-      <p class="footer-copyright">&copy;2014 Brave UX. All Rights Reserved.</p>
-      <div class="footer-stars"></div>
-      <p class="footer-made">Proudly made in our Nation&rsquo;s Capital.</p>
-    </div>
-  </footer>
-</div><!-- END wrapper -->
+          <div class="overlay-relative">
+            <div class="contact-email can-overlay">
+              <p class="contact-heading">Email Us</p>
+              <a class="contact-email-link" href="mailto:team@braveux.com">team@braveux.com</a>
+            </div>
 
-<% include partials/closer %>
+            <div class="overlay-content overlay-contact-priority">
+              <p class="overlay-header">Priority Mail</p>
+              <p class="overlay-text">80% of our initial correspondence with clients is via email. So our email address is the most prominent in scale and list priority.</p>
+              <p class="overlay-footer">Internal Research</p>
+            </div>
+          </div>
+
+          <div class="contact-phone">
+            <p class="contact-heading">Call Us</p>
+            <a class="contact-phone-link" href="tel:18442728389">844.BRAVE.UX</a>
+          </div>
+
+          <div class="contact-location">
+            <p class="contact-heading">Stop By</p>
+            <a class="contact-location-link" href="https://www.google.com/maps/place/1200+18th+St+NW+%23700,+Washington,+DC+20036/">1200 18th St NW<br>Suite 700<br>Washington, DC</a>
+          </div>
+
+          <div class="contact-follow">
+            <p class="contact-heading">Follow Us</p>
+            <div class="overlay-relative">
+              <div class="can-overlay">
+                <a class="social-link dark-twitter" href="https://twitter.com/brave_ux" target="_blank">Twitter</a>
+                <a class="social-link dark-facebook" href="https://www.facebook.com/braveux" target="_blank">Facebook</a>
+                <a class="social-link dark-linkedin" href="https://www.linkedin.com/company/brave-ux" target="_blank">LinkedIn</a>
+                <a class="social-link dark-dribbble" href="https://dribbble.com/braveux" target="_blank">Dribbble</a>
+                <a class="social-link dark-github" href="https://github.com/braveux" target="_blank">GitHub</a>
+              </div>
+
+              <div class="overlay-content overlay-contact-well">
+                <p class="overlay-header">Well</p>
+                <p class="overlay-text">You&rsquo;re on the contact page. Which means you&rsquo;re probably trying to get in touch with us in some way or another. So we&rsquo;ve moved social links out of the footer and gave them higher priority.</p>
+              </div>
+            </div>
+          </div>
+        </div><!-- END contact-info -->
+
+        <div class="contact-map"></div>
+      </div><!-- END contact-section -->
+
+      <footer class="footer is-short">
+        <div class="footer-last-line">
+          <p class="footer-copyright">&copy;2014 Brave UX. All Rights Reserved.</p>
+          <div class="footer-stars"></div>
+          <p class="footer-made">Proudly made in our Nation&rsquo;s Capital.</p>
+        </div>
+      </footer>
+    </div><!-- END wrapper -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/velocity/1.1.0/velocity.min.js"></script>
+    <script src="scripts.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-48218627-1', 'braveux.com');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
