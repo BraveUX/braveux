@@ -51,26 +51,6 @@ function initApproach() {
     });
   }
 
-  // check for IE
-  var isIE = !$('#ie-test').get(0).classList;
-
-  // if IE, dont bind Vivus or Waypoints
-  if(isIE) {
-    // remove hidden classes
-    $('.approach-to-next').removeAttr('class');
-    return false;
-  }
-  else {
-    // hide inner icons
-    $('.approach-inner-icon, .approach-arrowhead').css('opacity', '0');
-
-    // bind Vivus and Waypoints on each approach section svg
-    for(var i = 0; i <= 5; i++) {
-      bindVivus(i);
-      bindWaypoints(i);
-    }
-  }
-
   // bind next arrow handler
   $('.approach-section-next').click(function(e) {
     e.preventDefault();
@@ -90,6 +70,26 @@ function initApproach() {
       $('.approach-section').eq(index + 1).velocity('scroll', { offset: -offset, duration: scrollDuration, easing: scrollEasing });
     }
   });
+
+  // check for IE
+  var isIE = !$('#ie-test').get(0).classList;
+
+  // if IE, dont bind Vivus or Waypoints
+  if(isIE) {
+    // remove hidden classes
+    $('.approach-to-next').removeAttr('class');
+    return false;
+  }
+  else {
+    // hide inner icons
+    $('.approach-inner-icon, .approach-arrowhead').css('opacity', '0');
+
+    // bind Vivus and Waypoints on each approach section svg
+    for(var i = 0; i <= 5; i++) {
+      bindVivus(i);
+      bindWaypoints(i);
+    }
+  }
 }
 
 function initEasterEggs() {
