@@ -21,7 +21,7 @@
       if (word.length) {
         current.selector.text(current.selector.text() + word[0])
         word.shift();
-        setTimeout(type, 80, word);
+        setTimeout(type, 64, word);
       }
       else {
         setTimeout(function() {
