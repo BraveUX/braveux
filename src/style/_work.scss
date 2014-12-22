@@ -15,12 +15,31 @@
     }
   }
 
-  &.felix     { background-image: url('images/felix/boardwalk.jpg'); }
+  &.felix {
+    background-image: url('images/felix/boardwalk.jpg');
+    background-position: center left;
+
+    .is-overlayed & {
+      display: none;
+    }
+  }
+
+  &.preload-felix {
+    background-image: url('images/felix/boardwalk-cutout.jpg');
+    background-position: center left;
+
+    .is-overlayed & {
+      display: block;
+    }
+  }
+
   &.character { background-image: url('images/work/landing-character.jpg'); }
   &.fieldone  { background-image: url('images/work/landing-fieldone.svg'); }
   &.wedding   { background-image: url('images/wedding/bouquet.jpg'); }
   &.obesity { background: url('images/obesity/header.svg') #F2F2F2 center center/cover no-repeat; }
 }
+
+
 
 .work-rollover {
   opacity: 0;
