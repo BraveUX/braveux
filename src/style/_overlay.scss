@@ -263,6 +263,22 @@
   }
 }
 
+.team-photo {
+  .is-overlayed & {
+    display: none;
+  }
+}
+
+.overlay-team-show-cutout {
+  display: none;
+  z-index: 9;
+  @include size(100% auto);
+
+  .is-overlayed & {
+    display: block;
+  }
+}
+
 // APPROACH
 
 .overlay-approach-f {
