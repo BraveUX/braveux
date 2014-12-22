@@ -104,6 +104,10 @@ $footer-tablet: 900px;
 .footer-email-link {
   @include font(24px, null, #979797);
   line-height: 1.5;
+
+  &:hover {
+    color: white;
+  }
 }
 
 .footer-product-link {
@@ -112,6 +116,10 @@ $footer-tablet: 900px;
 
   @include mq($footer-tablet) {
     font-size: 24px;
+  }
+
+  &:hover {
+    color: white;
   }
 }
 

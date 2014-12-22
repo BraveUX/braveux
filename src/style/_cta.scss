@@ -21,8 +21,15 @@
 .cta-link {
   display: inline-block;
   @include font(22px, 200, #414141);
+
+  &:hover {
+    .cta-icon {
+      margin-left: 22px;
+    }
+  }
 }
 
 .cta-icon {
+  @include transition(all 0.5s ease);
   margin: 0 0 -6px 15px;
 }

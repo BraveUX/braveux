@@ -27,3 +27,13 @@
 .dark-linkedin { background-image: url('images/icons/icon-dark-linkedin.svg'); }
 .dark-dribbble { background-image: url('images/icons/icon-dark-dribbble.svg'); }
 .dark-github   { background-image: url('images/icons/icon-dark-github.svg'); }
+
+// footer hover states
+
+.footer {
+  .light-twitter:hover { background-image: url('images/icons/icon-white-twitter.svg'); }
+  .light-facebook:hover { background-image: url('images/icons/icon-white-facebook.svg'); }
+  .light-linkedin:hover { background-image: url('images/icons/icon-white-linkedin.svg'); }
+  .light-dribbble:hover { background-image: url('images/icons/icon-white-dribbble.svg'); }
+  .light-github:hover { background-image: url('images/icons/icon-white-github.svg'); }
+}
