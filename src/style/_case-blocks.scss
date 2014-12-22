@@ -268,7 +268,7 @@
 
 .case-block-text-heading {
   margin-bottom: 15px;
-  @include font(32px, null, null, 'Source Sans Pro');
+  @include font(36px, null, null, 'Source Sans Pro');
   line-height: 1.2;
 
   @include mq($tablet) {

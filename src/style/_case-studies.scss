@@ -212,7 +212,7 @@ $darkblue: #2E3D5A;
 .case-breakdown-detail,
 .case-breakdown-scope-list {
   max-width: 260px;
-  @include font(13px, 300, null, null);
+  @include font(15px, 300, null, null);
   font-family: 'Sentinel A', 'Sentinel B';
   line-height: 1.9;
 
@@ -247,7 +247,7 @@ $darkblue: #2E3D5A;
 .case-breakdown-scope-list {
   padding-left: 0;
   list-style: none;
-  @include font(13px, 300, null, null);
+  @include font(15px, 300, null, null);
   font-family: 'Sentinel A', 'Sentinel B';
 }
 
