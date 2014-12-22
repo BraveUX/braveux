@@ -124,8 +124,10 @@
           $('.typewriter-cta').css('display', 'block');
           $('.typewriter-cta').css('opacity', '1.0');
         });
+
         $('.typewriter-text-1').typewriter(function() {
-          $('.typewriter-cta').velocity({ opacity: [1, 0] }, { display: 'block', duration: 500, easing: 'ease' });
+          // per #147, have this visible always for now
+          // $('.typewriter-cta').velocity({ opacity: [1, 0] }, { display: 'block', duration: 500, easing: 'ease' });
         });
       });
     </script>

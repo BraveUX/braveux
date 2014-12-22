@@ -23,6 +23,10 @@
 
 .fieldone-traffic {
   background: url('images/fieldone/traffic.jpg') center center/cover no-repeat;
+
+  @include mq($mobile) {
+    background-position: -150px center;
+  }
 }
 
 // CHARACTER

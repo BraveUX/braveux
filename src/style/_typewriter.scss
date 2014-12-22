@@ -52,16 +52,21 @@
 }
 
 .typewriter-cta {
-  display: none;
-  opacity: 0;
+  // display: none;
+  // opacity: 0;
+  @include transition(all 0.5s ease);
   @include position(absolute, null null 25% 7.5%);
   @include size(150px 45px);
-  padding-top: 17px;
+  padding-top: 16px;
   background-color: #1C1C1E;
   @include font(12px, 600, white, 'Trade Gothic LT Std');
   letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
+
+  &:hover {
+    color: #777;
+  }
 }
 
 .hide-typewriter {
