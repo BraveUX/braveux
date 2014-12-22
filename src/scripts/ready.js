@@ -7,8 +7,11 @@ $(document).ready(function() {
   initEasterEggs();
   initNavBar();
 
-  if(window.location.pathname === '/approach')
+  if(window.location.pathname === '/approach' || window.location.pathname === '/approach.html')
     initApproach();
+
+  if(window.location.pathname === '/team' || window.location.pathname === '/team.html')
+    initTeam();
 
   if($(window).width() <= 800)
     initMobileNav();
@@ -95,6 +98,22 @@ function initApproach() {
       bindVivus(i);
       bindWaypoints(i);
     }
+  }
+}
+
+function initTeam() {
+  var selector = null
+
+  // hashchange event
+  $(window).on('hashchange', function() {
+    // build member selector and scroll
+    selector = '.member-' + location.hash.slice(1);
+    $(selector).velocity('scroll', { duration: 1000, axis: 'y' });
+  });
+
+  // fire the event on page load too
+  if(window.location.hash) {
+    $(window).trigger('hashchange');
   }
 }
 
