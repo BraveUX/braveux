@@ -236,10 +236,11 @@
 // TEAM
 
 .overlay-team-dont {
-  top: 100px;
+  top: 205px;
   right: 7.5%;
   width: 411px !important;
   text-align: right;
+  z-index: 20 !important;
 }
 
 .overlay-team-hey {
