@@ -102,7 +102,7 @@ function initApproach() {
 }
 
 function initTeam() {
-  var selector = null
+  var selector = null;
 
   // hashchange event
   $(window).on('hashchange', function() {
