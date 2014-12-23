@@ -27,7 +27,7 @@
   &.preload-felix {
     background-image: url('images/felix/boardwalk-cutout.jpg');
     background-position: center left;
-
+    display: none;
     .is-overlayed & {
       display: block;
     }
