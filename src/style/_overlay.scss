@@ -73,6 +73,7 @@
 }
 
 // CONTACT
+
 .overlay-header-definition {
   margin-bottom: 5px;
 }
@@ -103,7 +104,6 @@
   margin-bottom: 18px;
   font-weight: 100;
 }
-
 
 .is-overlayed & {
   .page-subheading {
@@ -151,7 +151,6 @@
 }
 
 .is-overlayed & {
-
   .cta {
     .can-overlay {
       margin-left: 0;
@@ -342,15 +341,11 @@
   text-align: right;
 }
 
-
-
-
 @mixin ux-pos($top, $left, $right:null) {
   top: $top;
   left: $left;
   right: $right;
 }
-
 
 .overlay-relative {
   position: relative;
@@ -416,6 +411,3 @@
   background: url("images/ux-view/x.svg") center center no-repeat;
   cursor: pointer;
 }
-
-
-
