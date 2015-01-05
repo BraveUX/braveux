@@ -143,7 +143,7 @@ $menu-height: 50px;
 
 .ux-toggle-frame {
   @include transition(all 0.5s ease);
-  @include position(absolute, 15px 15px null null);
+  @include position(absolute, 14px 15px null null);
   @include size(42px 22px);
   border: 1px solid $black;
   border-radius: 11px;

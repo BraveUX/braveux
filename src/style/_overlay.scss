@@ -8,6 +8,20 @@
   background-color: $light-black;
 }
 
+.overlay-exit {
+  display: none;
+  opacity: 0;
+  z-index: 50;
+  @include position(fixed, 64px 15px null null);
+  @include size(15px);
+  background: url("images/ux-view/x.svg") center center no-repeat;
+  cursor: pointer;
+
+  &.is-home {
+    right: 7.5%;
+  }
+}
+
 .overlay-content {
   display: none;
 
@@ -400,19 +414,5 @@
         display: none;
       }
     }
-  }
-}
-
-.overlay-exit {
-  z-index: 10;
-  position: fixed;
-  display: block;
-  @include position(fixed, 85px 15px null null);
-  @include size(15px 15px);
-  background: url("images/ux-view/x.svg") center center no-repeat;
-  cursor: pointer;
-
-  &.is-home {
-    right: 7.5%;
   }
 }
