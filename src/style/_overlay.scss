@@ -404,10 +404,15 @@
 }
 
 .overlay-exit {
+  z-index: 10;
   position: fixed;
   display: block;
-  @include position(fixed, 85px 7.5% null null);
+  @include position(fixed, 85px 15px null null);
   @include size(15px 15px);
   background: url("images/ux-view/x.svg") center center no-repeat;
   cursor: pointer;
+
+  &.is-home {
+    right: 7.5%;
+  }
 }
