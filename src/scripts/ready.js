@@ -7,6 +7,9 @@ $(document).ready(function() {
   initEasterEggs();
   initNavBar();
 
+  if(window.location.pathname.indexOf('/work/') !== -1)
+    initCarousels();
+
   if(window.location.pathname === '/approach' || window.location.pathname === '/approach.html')
     initApproach();
 
@@ -18,6 +21,36 @@ $(document).ready(function() {
 
   console.log('Looking for this? https://github.com/BraveUX/website');
 });
+
+function initCarousels() {
+  $('.carousel').each(function() {
+    // init carousels as they scroll into view
+    bindCarousel($(this));
+  });
+
+  function bindCarousel(element) {
+    element.waypoint(function(direction) {
+      // only while scrolling down
+      if(direction === 'down') {
+        element.slick({
+          // init carousel
+          lazyLoad: 'ondemand',
+          arrows: false,
+          dots: true,
+          autoplay: true,
+          autoplaySpeed: 2500,
+
+          // dev only
+          onInit: function() {
+            console.log('carousel inited');
+          }
+        });
+      }
+    }, {
+      offset: '100%'
+    });
+  }
+}
 
 function initApproach() {
   // cache vars
