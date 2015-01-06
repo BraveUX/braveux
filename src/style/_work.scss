@@ -1,0 +1,53 @@
+.work-landing {
+  @include clearfix;
+  @include size(100% 540px);
+
+  &:nth-child(odd) {
+    background-color: #F9F9F9;
+  }
+}
+
+.work-landing-type {
+  opacity: .9;
+  margin: 0 0 20px 0;
+  font-family: 'Trade Gothic LT Std';
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  .felix & { color: #00BBD3; }
+  .obesity & { color: #A6273C; }
+  .wedding & { color: #00BBD3; }
+  .character & { color: #B9272D; }
+  .fieldone & { color: #34AEFF; }
+}
+
+.work-landing-client {
+  margin: 0 0 35px 0;
+  font-family: 'Sentinel A','Sentinel B';
+  font-weight: 200;
+  font-size: 54px;
+  line-height: 1.25;
+  color: #8FA3AD;
+
+  .felix & {
+    margin-bottom: 30px;
+    font-size: 44px;
+    line-height: 1.2;
+  }
+}
+
+.work-landing-cta {
+  display: block;
+  @include size(110px 35px);
+  padding-top: 9px;
+  border: 2px solid #8DA3AD;
+  border-radius: 3px;
+  font-family: 'Trade Gothic LT Std';
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #8DA3AD;
+}
