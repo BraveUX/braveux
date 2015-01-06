@@ -2,6 +2,7 @@
   @include clearfix;
   @include size(100% 540px);
 
+  // swap these when new homepage is done
   &:nth-child(even) {
     background-color: #F9F9F9;
   }
@@ -10,19 +11,31 @@
     text-align: right;
   }
 
+  // CONTAINER MODIFICATIONS
+
   .container {
     height: 100%;
+    // margin: 0 15%;
+  }
+
+  // COLUMN MODIFICATIONS
+
+  .col {
+    // vertical center both images and text
+    position: relative;
+    top: 50%;
+    @include transform(translateY(-50%));
   }
 }
 
-.work-landing-content {
-  position: relative;
-  top: 50%;
-  @include transform(translateY(-50%));
-}
-
 .work-landing-image {
+  display: block;
+  max-width: 50%;
+  margin: 0 auto;
 
+  .character & {
+    @include transform(rotate(-5deg));
+  }
 }
 
 .work-landing-type {
