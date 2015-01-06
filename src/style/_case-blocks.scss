@@ -211,7 +211,13 @@
   display: block;
   @include size(100% auto);
 
-  // SIUZE MODIFIERS
+  // POSIITON MODIFIERS
+
+  &.absolute {
+    @include position(absolute, 0 null null 0);
+  }
+
+  // SIZE MODIFIERS
 
   &.maintain-size {
     width: auto;
