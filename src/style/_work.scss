@@ -2,9 +2,27 @@
   @include clearfix;
   @include size(100% 540px);
 
-  &:nth-child(odd) {
+  &:nth-child(even) {
     background-color: #F9F9F9;
   }
+
+  &:nth-child(odd) {
+    text-align: right;
+  }
+
+  .container {
+    height: 100%;
+  }
+}
+
+.work-landing-content {
+  position: relative;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+.work-landing-image {
+
 }
 
 .work-landing-type {
@@ -39,7 +57,7 @@
 }
 
 .work-landing-cta {
-  display: block;
+  display: inline-block;
   @include size(110px 35px);
   padding-top: 9px;
   border: 2px solid #8DA3AD;
