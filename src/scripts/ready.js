@@ -36,14 +36,8 @@ function initCarousels() {
           // init carousel
           lazyLoad: 'ondemand',
           arrows: false,
-          dots: true,
           autoplay: true,
-          autoplaySpeed: 2500,
-
-          // dev only
-          onInit: function() {
-            console.log('carousel inited');
-          }
+          autoplaySpeed: 2500
         });
       }
     }, {

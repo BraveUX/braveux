@@ -3,6 +3,11 @@
 .carousel {
   // SPACING MODIFIERS
 
+  &.slick-slider {
+    // remove reserved space for dots
+    margin-bottom: 0;
+  }
+
   &.text-above {
     margin-top: 80px;
   }
