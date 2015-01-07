@@ -1,0 +1,63 @@
+.has-next-buttons {
+  position: relative;
+}
+
+.next-button {
+  background-color: #262628;
+  color: white;
+  height: 65px;
+  width: 170px;
+  position: absolute;
+  top: 50%;
+  margin-top: -32px;
+
+  @include transition(transform 0.5s ease);
+}
+
+.next-button-right {
+  right: 0;
+  background: url("images/icons/arrow-right.png") #262628 25px center no-repeat;
+  @include transform(translateX(115px));
+
+  &:hover {
+    @include transform(translateX(0px));
+
+    &::after {
+      opacity: 1.0;
+      @include transition(opacity 0.5s ease);
+    }
+  }
+
+  &::after {
+    @include transition(opacity 0.5s ease);
+    opacity: 0;
+    content: attr(title);
+    font-family: 'Sentinel A', 'Sentinel B';
+    @include position(absolute, 22px null null 55px);
+    @include font(16px, 100);
+  }
+}
+
+.next-button-left {
+  left: 0;
+  background: url("images/icons/arrow-left.png") #262628 133px center no-repeat;
+  @include transform(translateX(-115px));
+
+  &:hover {
+    @include transform(translateX(0px));
+
+    &::after {
+      opacity: 1.0;
+      @include transition(opacity 0.5s ease);
+    }
+  }
+
+  &::after {
+    @include transition(opacity 0.5s ease);
+    opacity: 0;
+    content: attr(title);
+    font-family: 'Sentinel A', 'Sentinel B';
+    @include position(absolute, 22px null null 55px);
+    @include font(16px, 100);
+  }
+}
