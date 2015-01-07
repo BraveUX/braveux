@@ -2,7 +2,7 @@ $(document).ready(function() {
   // set user agent on html element
   $('html').attr('data-user-agent', window.navigator.userAgent);
 
-  initToggle();
+  // initToggle();
   initScrollSpy();
   initEasterEggs();
   initNavBar();
@@ -240,36 +240,36 @@ function initScrollSpy() {
   });
 }
 
-function initToggle() {
-  // ux button click handler
-  $('.ux-toggle-frame').click(function(e) {
-    e.preventDefault();
+// function initToggle() {
+//   // ux button click handler
+//   $('.ux-toggle-frame').click(function(e) {
+//     e.preventDefault();
 
-    // toggle button class
-    $('.ux-toggle-frame').toggleClass('is-active');
+//     // toggle button class
+//     $('.ux-toggle-frame').toggleClass('is-active');
 
-    // show/hide overlay
-    if($('.ux-toggle-frame').hasClass('is-active')) {
-      $('.overlay').velocity({ opacity: [0.8, 0] }, { display: 'block', duration: 500, easing: 'ease' });
-      $('.overlay-exit').velocity({ opacity: [1, 0] }, { display: 'block', duration: 500, easing: 'ease' });
-    }
-    else {
-      $('.overlay').velocity({ opacity: [0, 0.8] }, { display: 'none', duration: 500, easing: 'ease' });
-      $('.overlay-exit').velocity({ opacity: [0, 1] }, { display: 'none', duration: 500, easing: 'ease' });
-    }
+//     // show/hide overlay
+//     if($('.ux-toggle-frame').hasClass('is-active')) {
+//       $('.overlay').velocity({ opacity: [0.8, 0] }, { display: 'block', duration: 500, easing: 'ease' });
+//       $('.overlay-exit').velocity({ opacity: [1, 0] }, { display: 'block', duration: 500, easing: 'ease' });
+//     }
+//     else {
+//       $('.overlay').velocity({ opacity: [0, 0.8] }, { display: 'none', duration: 500, easing: 'ease' });
+//       $('.overlay-exit').velocity({ opacity: [0, 1] }, { display: 'none', duration: 500, easing: 'ease' });
+//     }
 
-    // toggle wrapper class
-    $('.wrapper').toggleClass('is-overlayed');
-  });
+//     // toggle wrapper class
+//     $('.wrapper').toggleClass('is-overlayed');
+//   });
 
-  // close button click handler
-  $('.overlay-exit').click(function() {
-    // remove classes
-    $('.ux-toggle-frame').removeClass('is-active');
-    $('.wrapper').removeClass('is-overlayed');
+//   // close button click handler
+//   $('.overlay-exit').click(function() {
+//     // remove classes
+//     $('.ux-toggle-frame').removeClass('is-active');
+//     $('.wrapper').removeClass('is-overlayed');
 
-    // fade out
-    $('.overlay').velocity({ opacity: [0, 0.8] }, { display: 'none', duration: 500, easing: 'ease' });
-    $('.overlay-exit').velocity({ opacity: [0, 1] }, { display: 'none', duration: 500, easing: 'ease' });
-  });
-}
+//     // fade out
+//     $('.overlay').velocity({ opacity: [0, 0.8] }, { display: 'none', duration: 500, easing: 'ease' });
+//     $('.overlay-exit').velocity({ opacity: [0, 1] }, { display: 'none', duration: 500, easing: 'ease' });
+//   });
+// }
