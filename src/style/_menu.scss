@@ -22,10 +22,10 @@ $menu-height: 50px;
   }
 
   &.is-collapsed {
-    top: -$menu-height;
+    @include transform(translateY(-$menu-height));
 
     &.is-home {
-      top: -70px;
+      @include transform(translateY(-70px));
     }
 
     @include mq($tablet) {
