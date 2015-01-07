@@ -9,6 +9,10 @@
 
   .social-link {
     margin-bottom: 0;
+
+    @include mq(900px) {
+      margin-bottom: 25px;
+    }
   }
 }
 
@@ -36,7 +40,10 @@
   margin-bottom: 30px;
   font-family: 'Sentinel A', 'Sentinel B';
   @include font(26px, 300, #ABABAB, null);
-  letter-spacing: 1px;
+
+  @include mq(900px) {
+    font-size: 20px;
+  }
 }
 
 .contact-link {
@@ -44,12 +51,20 @@
   font-family: 'Sentinel A', 'Sentinel B';
   @include font(27px, 300, #808080, null);
 
+  @include mq(900px) {
+    font-size: 22px;
+  }
+
   &.email {
     margin-top: -5px;
     font-size: 42px;
-  }
 
-  &.location {
-    margin-top: -17px;
+    @include mq(1000px) {
+      font-size: 32px;
+    }
+
+    @include mq($tablet) {
+      font-size: 24px;
+    }
   }
 }
