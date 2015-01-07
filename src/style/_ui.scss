@@ -24,7 +24,7 @@
     @include position(absolute, 22px null null 55px);
     @include transition(opacity 0.5s ease);
     font-family: 'Sentinel A', 'Sentinel B';
-    @include font(16px, 100);
+    @include font(16px, 300, null, null);
     content: attr(title);
   }
 }
