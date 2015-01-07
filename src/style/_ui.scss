@@ -39,4 +39,8 @@
   left: 0;
   background: url("images/icons/arrow-left.png") #262628 133px center no-repeat;
   @include transform(translateX(-115px));
+
+  &::after {
+    left: 50px;
+  }
 }
