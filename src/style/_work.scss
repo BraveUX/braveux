@@ -2,7 +2,13 @@
   @include clearfix;
   @include size(100% 540px);
 
-  // swap these when new homepage is done
+  @include mq($tablet) {
+    height: auto;
+    padding: 80px 0;
+  }
+
+  // swap even/odd when new homepage is done
+
   &:nth-child(even) {
     background-color: #F9F9F9;
   }
@@ -15,7 +21,6 @@
 
   .container {
     height: 100%;
-    // margin: 0 15%;
   }
 
   // COLUMN MODIFICATIONS
@@ -25,6 +30,13 @@
     position: relative;
     top: 50%;
     @include transform(translateY(-50%));
+
+    @include mq($tablet) {
+      position: static;
+      top: auto;
+      @include transform(none);
+      text-align: center;
+    }
   }
 }
 
@@ -32,6 +44,15 @@
   display: block;
   max-width: 50%;
   margin: 0 auto;
+
+  @include mq(1250px) {
+    max-width: 70%;
+    margin-bottom: 60px;
+  }
+
+  @include mq($mobile) {
+    max-width: 80%;
+  }
 
   .character & {
     @include transform(rotate(-5deg));
@@ -46,6 +67,11 @@
   font-size: 20px;
   letter-spacing: 3px;
   text-transform: uppercase;
+
+  @include mq($tablet) {
+    margin-bottom: 15px;
+    font-size: 15px;
+  }
 
   .felix & { color: #00BBD3; }
   .obesity & { color: #A6273C; }
@@ -68,10 +94,26 @@
     }
   }
 
+  @include mq($tablet) {
+    font-size: 40px;
+  }
+
+  @include mq($mobile) {
+    font-size: 32px;
+  }
+
   .felix & {
     margin-bottom: 30px;
     font-size: 44px;
     line-height: 1.2;
+
+    @include mq($tablet) {
+      font-size: 40px;
+    }
+
+    @include mq($mobile) {
+      font-size: 32px;
+    }
   }
 }
 

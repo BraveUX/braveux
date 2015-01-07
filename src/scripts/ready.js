@@ -10,6 +10,9 @@ $(document).ready(function() {
   if(window.location.pathname.indexOf('/work/') !== -1)
     initCarousels();
 
+  if(window.location.pathname === '/work/' || window.location.pathname === '/work/index.html')
+    initWork();
+
   if(window.location.pathname === '/approach' || window.location.pathname === '/approach.html')
     initApproach();
 
@@ -42,6 +45,18 @@ function initCarousels() {
       }
     }, {
       offset: '100%'
+    });
+  }
+}
+
+function initWork() {
+  // case study images moved above test for responsive
+  if($(window).width() < 800) {
+    $('.work-landing:odd').each(function() {
+      var firstCol = $(this).find('.col').eq(0);
+      var secondCol = $(this).find('.col').eq(1);
+
+      secondCol.insertBefore(firstCol);
     });
   }
 }
