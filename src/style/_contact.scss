@@ -54,13 +54,25 @@
       @include transform(none);
     }
   }
+}
 
-  // IMAGE COLUMNS
+// IMAGE COLUMNS
 
-  &.cover-background {
-    @include mq($tablet) {
-      height: 250px;
-    }
+.contact-cover-background {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  @include mq($tablet) {
+    height: 250px;
+  }
+
+  &.cover-monument {
+    background-image: url("../images/contact/cover-monument.jpg");
+  }
+
+  &.cover-capital {
+    background-image: url("../images/contact/cover-capital.jpg");
   }
 }
 
