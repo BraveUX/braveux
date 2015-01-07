@@ -62,6 +62,12 @@
   line-height: 1.25;
   color: #8FA3AD;
 
+  @include mq(1000px) {
+    br {
+      display: none;
+    }
+  }
+
   .felix & {
     margin-bottom: 30px;
     font-size: 44px;
