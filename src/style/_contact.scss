@@ -2,8 +2,20 @@
   @include clearfix;
   @include size(100% 420px);
 
+  @include mq($tablet) {
+    height: auto;
+  }
+
   &.left-gray { @include linear-gradient(to right, #F4F4F4 0%,#F4F4F4 50%, white 50%); }
   &.right-gray { @include linear-gradient(to left, #F4F4F4 0%,#F4F4F4 50%, white 50%); }
+
+  &.left-gray,
+  &.right-gray {
+    @include mq($tablet) {
+      background-image: none;
+      background-color: transparent;
+    }
+  }
 
   // SOCIAL ICONS MODIFIERS
 
@@ -17,15 +29,38 @@
 }
 
 .contact-column {
+  @include clearfix;
   float: left;
   @include size(50% 100%);
   padding: 0 7.5%;
+
+  @include mq($tablet) {
+    position: static;
+    float: none;
+    width: 100%;
+  }
+
+  // TEXT COLUMNS
 
   &.vertical-center {
     position: relative;
     top: 50%;
     height: auto;
     @include transform(translateY(-50%));
+
+    @include mq($tablet) {
+      top: auto;
+      padding: 60px 7.5%;
+      @include transform(none);
+    }
+  }
+
+  // IMAGE COLUMNS
+
+  &.cover-background {
+    @include mq($tablet) {
+      height: 250px;
+    }
   }
 }
 
