@@ -1,74 +1,55 @@
 .contact-section {
   @include clearfix;
-  position: relative;
-  padding-left: $site-padding;
-  background-color: #EDEDED;
+  @include size(100% 420px);
 
-  @include mq($tablet) {
-    padding: 0;
+  &.left-gray { @include linear-gradient(to right, #F4F4F4 0%,#F4F4F4 50%, white 50%); }
+  &.right-gray { @include linear-gradient(to left, #F4F4F4 0%,#F4F4F4 50%, white 50%); }
+
+  // SOCIAL ICONS MODIFIERS
+
+  .social-link {
+    margin-bottom: 0;
   }
 }
 
-.contact-info {
-  @include clearfix;
-  width: 50% - $site-padding;
-  padding: 100px 0 120px 0;
-
-  @include mq($tablet) {
-    width: 100%;
-    padding: 60px $site-padding;
-  }
-}
-
-.contact-map {
-  @include position(absolute, 0 0 null null);
+.contact-column {
+  float: left;
   @include size(50% 100%);
-  background: url('images/contact/map.svg') center center no-repeat;
-  background-size: cover;
+  padding: 0 7.5%;
 
-  @include mq($tablet) {
-    position: static;
-    @include size(100% auto);
-    min-height: 500px;
-    background-position: left center;
+  &.vertical-center {
+    position: relative;
+    top: 50%;
+    height: auto;
+    @include transform(translateY(-50%));
   }
-}
-
-.contact-email,
-.contact-phone,
-.contact-location,
-.contact-follow {
-  margin-bottom: 40px;
-  overflow: hidden;
-}
-
-.contact-follow {
-  overflow: visible;
-  margin-bottom: 0;
 }
 
 .contact-heading {
-  margin-bottom: 20px;
-  @include font(16px, 600, #4D4D4D, 'Trade Gothic LT Std');
+  margin-bottom: 30px;
+  @include font(18px, 600, #4D4D4D, 'Trade Gothic LT Std');
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
-.contact-email-link,
-.contact-phone-link,
-.contact-location-link {
-  @include font(24px, 300, #808080, null);
+.contact-subheading {
+  margin-bottom: 30px;
   font-family: 'Sentinel A', 'Sentinel B';
-
-  @include mq($mobile) {
-    font-size: 20px;
-  }
+  @include font(26px, 300, #ABABAB, null);
+  letter-spacing: 1px;
 }
 
-.contact-email-link {
-  @include font(36px);
+.contact-link {
+  display: block;
+  font-family: 'Sentinel A', 'Sentinel B';
+  @include font(27px, 300, #808080, null);
 
-  @include mq($mobile) {
-    font-size: 28px;
+  &.email {
+    margin-top: -5px;
+    font-size: 42px;
+  }
+
+  &.location {
+    margin-top: -17px;
   }
 }
