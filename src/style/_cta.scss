@@ -21,15 +21,19 @@
 .cta-link {
   display: inline-block;
   @include font(22px, 200, #414141);
+  @include transition(all 0.5s ease);
 
   &:hover {
+     @include transform(translateX(-5px));
+
     .cta-icon {
-      margin-left: 22px;
+      @include transform(translateX(25px));
     }
   }
 }
 
 .cta-icon {
   @include transition(all 0.5s ease);
-  margin: 0 0 -6px 15px;
+  @include transform(translateX(15px));
+  margin: 0 0 -6px 0;
 }
