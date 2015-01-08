@@ -81,14 +81,6 @@
 </section>
 
 <div class="wrapper work">
-  <header>
-    <div class="container">
-      <div class="can-overlay can-overlay-work">
-        <h1 class="page-heading">Work</h1>
-        <h2 class="page-subheading">More than a one-trick pony. Our case studies show the work we&rsquo;ve done, from design and information architecture through dev and testing.</h2>
-      </div>
-    </div>
-  </header>
 
   <section class="work-landing felix">
     <div class="container">
@@ -217,6 +209,12 @@
   var j = new Vivus("outline", {type: 'oneByOne', duration: 75, delay:50, start: 'autostart'}, function() {
     console.log('done')
   });
+
+  $('.menu-link').eq(0).click(function(e) {
+    e.preventDefault()
+    $('.wrapper.work').velocity('scroll', { duration: 500, axis: 'y' });
+  })
+
 </script>
 
 
