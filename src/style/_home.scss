@@ -1,9 +1,9 @@
 .home {
-  height: 100%;
   background: #1C1C1E;
   > .container {
-    padding: 0 7.5%;
+    padding: 120px 7.5%;
     margin: 0;
+    height: auto;
   }
 }
 
@@ -15,7 +15,6 @@
 
 
 .home-cta {
-  padding-top: 120px;
   text-transform: uppercase;
   color: #AFBBBF;
   font-size: 16px;
@@ -34,4 +33,10 @@
   font-size: 12px;
   letter-spacing: 2px;
   margin-top: 40px;
+  opacity: 0.85;
+  @include transition(opacity ease .25s);
+
+  &:hover {
+    opacity: 1.0;
+  }
 }
