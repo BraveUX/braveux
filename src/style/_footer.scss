@@ -165,11 +165,12 @@ $footer-tablet: 900px;
 
 .footer-stars {
   @include size(40px 10px);
-  margin: 5px 50px 0 50px;
-  background-image: url('images/icons/icon-stars.svg');
-  background-position: center center;
-  background-repeat: no-repeat;
+  margin: 0px 50px 0 50px;
   cursor: pointer;
+
+  g {
+    fill: #676767;
+  }
 
   @include mq($tablet) {
     margin: 0 auto 20px auto;
@@ -177,6 +178,10 @@ $footer-tablet: 900px;
 
   &.is-found,
   &:hover {
-    background-image: url('images/icons/icon-stars-light.svg');
+    @include transition(all 1.0s ease);
+    g {
+      fill: #C8C8C8;
+    }
+
   }
 }
