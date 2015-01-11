@@ -113,7 +113,8 @@ $footer-tablet: 900px;
 
 .footer-product-link {
   display: block;
-  @include font(16px, null, #979797);
+  font-size: 16px;
+  color: #979797;
 
   @include mq($footer-tablet) {
     font-size: 24px;

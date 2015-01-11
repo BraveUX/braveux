@@ -39,8 +39,8 @@ em {
 }
 
 body {
-  @include font(12px, 300, white, "Source Sans Pro");
-  line-height: 1.3;
+  font: 300 12px/1.3 "Source Sans Pro";
+  color: white;
 }
 
 // site wide
