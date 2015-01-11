@@ -60,11 +60,9 @@
 }
 
 .work-landing-type {
-  opacity: .9;
+  opacity: 0.9;
   margin: 0 0 20px 0;
-  font-family: "Trade Gothic LT Std";
-  font-weight: 600;
-  font-size: 20px;
+  font: 600 20px "Trade Gothic LT Std";
   letter-spacing: 3px;
   text-transform: uppercase;
 
@@ -82,10 +80,7 @@
 
 .work-landing-client {
   margin: 0 0 35px 0;
-  font-family: "Sentinel A","Sentinel B";
-  font-weight: 200;
-  font-size: 54px;
-  line-height: 1.25;
+  font: 200 54px/1.25 "Sentinel A","Sentinel B";
   color: #8FA3AD;
 
   @include mq(1000px) {
@@ -123,9 +118,7 @@
   padding-top: 9px;
   border: 2px solid #8DA3AD;
   border-radius: 3px;
-  font-family: "Trade Gothic LT Std";
-  font-weight: 600;
-  font-size: 11px;
+  font: 600 11px "Trade Gothic LT Std";
   text-transform: uppercase;
   text-align: center;
   color: #8DA3AD;
