@@ -6,8 +6,6 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="overlay"></div>
-    <div class="overlay-exit is-home"></div>
 
     <a class="logo is-home" href="/">Brave UX</a>
 
@@ -25,16 +23,13 @@
         <a class="menu-link" href="/contact">Contact</a>
       </div>
 
-      <div class="ux-toggle-frame">
-        <a class="ux-toggle" href="#">?</a>
-      </div>
     </section><!-- END menu -->
 
     <div class="wrapper home">
       <div class="container" data-vide-bg="images/video/homepage" data-vide-options="posterType: jpg">
         <div class="typewriter-wrapper">
           <h1 class="typewriter-text">
-            <span class="can-overlay">You need</span>
+            <span>You need</span>
             <span class="typewriter typewriter-1"></span>
             <span class="typewriter-cursor"></span>
           </h1>
@@ -45,12 +40,6 @@
             <span class="typewriter-cursor"></span>
           </h1>
 
-          <div class="overlay-content overlay-index-typewriter">
-            <p class="overlay-header">Tick, tock</p>
-            <p class="overlay-text">We don&rsquo;t want to waste your time. Studies show that a user will only wait up to 2 seconds for pages or images to load, and only slightly longer if there is feedback that something is happening, like these fun animations.</p>
-            <p class="overlay-footer"><a target="_blank" href="http://cba.unl.edu/research/articles/548/
-    ">Source</a></p>
-          </div>
         </div>
 
         <a class="typewriter-cta" href="/work">See Our Work</a>
@@ -59,16 +48,6 @@
       <section class="cta">
         <div class="container">
           <p class="cta-text">We design and build interfaces people love to use.</p>
-
-          <div class="overlay-relative">
-            <a class="cta-link can-overlay" href="/work">See Our Work<img class="cta-icon" src="images/icons/icon-cta.svg"></a>
-
-            <div class="overlay-content overlay-index-where">
-              <p class="overlay-header">Where to?</p>
-              <p class="overlay-text">Effective websites don&rsquo;t leave you guessing where to go next. We use clear calls-to-action on every page to drive you through the site. We&rsquo;re telling you a story, and the next chapter is showing you some of our best and favorite projects. See you on the Work page!</p>
-              <p class="overlay-footer"><a target="_blank" href="http://uxmag.com/articles/usability-tip-no-dead-ends-please">Source</a></p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -118,18 +97,8 @@
 
     <script type="text/javascript">
       $(document).on('ready', function() {
-        $('.ux-toggle-frame').click(function() {
-          $('.typewriter-wrapper').empty();
-          $('.typewriter-cursor').toggleClass('hide-typewriter');
-          $('.typewriter-wrapper').append('<h1 class="typewriter-text"><span class="can-overlay overlay-typewriter">You need</span> <span class="typewriter typewriter-1"> user experience</span></h1><h1 class="typewriter-text">We are <span class="typewriter typewriter-2">Brave</span></h1><div class="overlay-content overlay-index-typewriter"><p class="overlay-header">Tick, tock</p><p class="overlay-text">We don&rsquo;t want to waste your time. Studies show that a user will only wait up to 2 seconds for pages or images to load, and only slightly longer if there is feedback that something is happening, like these fun animations.</p><p class="overlay-footer"><a target="_blank" href="http://cba.unl.edu/research/articles/548/">Source</a></p></div></div>');
-          $('.typewriter-cta').css('display', 'block');
-          $('.typewriter-cta').css('opacity', '1.0');
-        });
 
-        $('.typewriter-text-1').typewriter(function() {
-          // per #147, have this visible always for now
-          // $('.typewriter-cta').velocity({ opacity: [1, 0] }, { display: 'block', duration: 500, easing: 'ease' });
-        });
+        $('.typewriter-text-1').typewriter(function() {});
       });
     </script>
 
