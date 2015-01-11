@@ -13,27 +13,27 @@ $darkblue: #2E3D5A;
   .wedding & { background-color: #19B5BC; }
 
   .felix & {
-    background: url('images/felix/header.jpg') top center/cover no-repeat;
+    background: url("images/felix/header.jpg") top center/cover no-repeat;
 
     @include mq($tablet) {
       background-position: left center;
     }
 
     @include mq($mobile) {
-      background-image: url('images/felix/header-mobile.jpg');
+      background-image: url("images/felix/header-mobile.jpg");
     }
   }
 
   .character & {
-    background: url('images/character/header.jpg') center center/cover no-repeat;
+    background: url("images/character/header.jpg") center center/cover no-repeat;
 
     @include mq($tablet) {
-      background-image: url('images/character/header-mobile.jpg');
+      background-image: url("images/character/header-mobile.jpg");
     }
   }
 
   .fieldone & {
-    background: url('images/fieldone/header.svg') #EBEEF0 right center/auto 100% no-repeat;
+    background: url("images/fieldone/header.svg") #EBEEF0 right center/auto 100% no-repeat;
 
     @include mq($tablet) {
       background: #EBEEF0;
@@ -41,7 +41,7 @@ $darkblue: #2E3D5A;
   }
 
   .obesity & {
-    background: url('images/obesity/header.svg') #F9F9F9 90% center no-repeat;
+    background: url("images/obesity/header.svg") #F9F9F9 90% center no-repeat;
 
     @include mq(800px) {
       background: #F9F9F9;
@@ -57,7 +57,7 @@ $darkblue: #2E3D5A;
 
 .case-header-client-name {
   margin-bottom: 15px;
-  @include font(24px, 600, null, 'Trade Gothic LT Std');
+  @include font(24px, 600, null, "Trade Gothic LT Std");
   text-transform: uppercase;
   letter-spacing: 3px;
 
@@ -72,7 +72,7 @@ $darkblue: #2E3D5A;
 
 .case-header-tagline {
   margin-bottom: 15px;
-  @include font(48px, 300, null, 'Source Sans Pro');
+  @include font(48px, 300, null, "Source Sans Pro");
   line-height: 1.15;
 
   .felix & {
@@ -94,7 +94,7 @@ $darkblue: #2E3D5A;
 
 .case-header-type {
   @include font(18px, 600, null, null);
-  font-family: 'Sentinel A', 'Sentinel B';
+  font-family: "Sentinel A", "Sentinel B";
 
   .fieldone & { color: $graphite; }
   .obesity & { color: #8FA3AD; }
@@ -137,7 +137,7 @@ $darkblue: #2E3D5A;
 
 .case-exec-summary-text {
   @include font(24px, 300, #616161, null);
-  font-family: 'Sentinel A', 'Sentinel B';
+  font-family: "Sentinel A", "Sentinel B";
 }
 
 // BREAKDOWN
@@ -192,7 +192,7 @@ $darkblue: #2E3D5A;
 
 .case-breakdown-heading {
   margin-bottom: 20px;
-  @include font(13px, 600, null, 'Trade Gothic LT Std');
+  @include font(13px, 600, null, "Trade Gothic LT Std");
   text-transform: uppercase;
   letter-spacing: 2px;
 
@@ -203,7 +203,7 @@ $darkblue: #2E3D5A;
 
 .case-breakdown-summary {
   margin-bottom: 15px;
-  @include font(28px, 200, null, 'Source Sans Pro');
+  @include font(28px, 200, null, "Source Sans Pro");
 
   .felix & { color: #536D79; }
   .wedding & { color: #78909C; }
@@ -213,7 +213,7 @@ $darkblue: #2E3D5A;
 .case-breakdown-scope-list {
   max-width: 260px;
   @include font(15px, 300, null, null);
-  font-family: 'Sentinel A', 'Sentinel B';
+  font-family: "Sentinel A", "Sentinel B";
   line-height: 1.9;
 
   @include mq($mobile) {
@@ -248,7 +248,7 @@ $darkblue: #2E3D5A;
   padding-left: 0;
   list-style: none;
   @include font(15px, 300, null, null);
-  font-family: 'Sentinel A', 'Sentinel B';
+  font-family: "Sentinel A", "Sentinel B";
 }
 
 .case-breakdown-footnote {
@@ -258,7 +258,7 @@ $darkblue: #2E3D5A;
   border-top-width: 2px;
   border-top-style: solid;
   @include font(11px, 300, null, null);
-  font-family: 'Sentinel A', 'Sentinel B';
+  font-family: "Sentinel A", "Sentinel B";
   font-style: italic;
 
   .obesity & {

@@ -51,7 +51,7 @@ $menu-height: 50px;
   display: block;
   @include size($menu-height);
   @include hide-text;
-  background: url('images/icons/flag.svg') $light-black center center no-repeat;
+  background: url("images/icons/flag.svg") $light-black center center no-repeat;
 
   @include mq($tablet) {
     height: 70px;
@@ -61,7 +61,7 @@ $menu-height: 50px;
   &:hover {
     width: 110px;
     margin-left: -60px;
-    background-image: url('images/icons/wordmark.svg');
+    background-image: url("images/icons/wordmark.svg");
   }
 
   &.is-home {
@@ -78,7 +78,7 @@ $menu-height: 50px;
   display: none;
   @include size(97px 16px);
   margin: 40px 0 40px 40px;
-  background: url('images/icons/wordmark-mobile.svg') center center no-repeat;
+  background: url("images/icons/wordmark-mobile.svg") center center no-repeat;
   @include hide-text();
 
   @include mq($tablet) {
@@ -93,7 +93,7 @@ $menu-height: 50px;
   display: block;
   padding: 18px 40px 0 20px;
   border-right: 2px solid $light-black;
-  @include font(11px, 600, #F3F3F3, 'Trade Gothic LT Std');
+  @include font(11px, 600, #F3F3F3, "Trade Gothic LT Std");
   text-transform: uppercase;
   letter-spacing: 2px;
   outline: none;
@@ -175,12 +175,12 @@ $menu-height: 50px;
 //   display: block;
 //   @include size(16px);
 //   @include hide-text;
-//   background: url('images/ux-view/ux-icon.svg') #808080 center center no-repeat;
+//   background: url("images/ux-view/ux-icon.svg") #808080 center center no-repeat;
 //   border-radius: 50%;
 
 //   .is-active & {
 //     right: 22px;
-//     background: url('images/ux-view/ux-icon-toggled.svg') center center no-repeat;
+//     background: url("images/ux-view/ux-icon-toggled.svg") center center no-repeat;
 //     background-color: #F3F3F3;
 //   }
 // }

@@ -11,7 +11,7 @@
 .cta-text {
   margin-bottom: 30px;
   @include font(26px, 300, #ACACAC, null);
-  font-family: 'Sentinel A', 'Sentinel B';
+  font-family: "Sentinel A", "Sentinel B";
 
   @include mq($mobile) {
     font-size: 21px;

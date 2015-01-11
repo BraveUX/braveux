@@ -32,7 +32,7 @@ $footer-tablet: 900px;
 
   &.is-egg {
     padding-bottom: 200px;
-    background-image: url('images/footer/footer-egg.svg');
+    background-image: url("images/footer/footer-egg.svg");
   }
 }
 
@@ -92,7 +92,7 @@ $footer-tablet: 900px;
 
 .footer-heading {
   margin-bottom: 35px;
-  @include font(null, 600, #979797, 'Trade Gothic LT Std');
+  @include font(null, 600, #979797, "Trade Gothic LT Std");
   letter-spacing: 2px;
   text-transform: uppercase;
 
@@ -130,7 +130,7 @@ $footer-tablet: 900px;
   display: inline-block;
   margin-top: 90px;
   @include font(15px, 300, #666, null);
-  font-family: 'Sentinel A', 'Sentinel B';
+  font-family: "Sentinel A", "Sentinel B";
   @include mq($footer-tablet) {
     margin-top: 10px;
     font-size: 14px;
@@ -166,7 +166,7 @@ $footer-tablet: 900px;
 .footer-stars {
   @include size(40px 10px);
   margin: 5px 50px 0 50px;
-  background-image: url('images/icons/icon-stars.svg');
+  background-image: url("images/icons/icon-stars.svg");
   background-position: center center;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -177,6 +177,6 @@ $footer-tablet: 900px;
 
   &.is-found,
   &:hover {
-    background-image: url('images/icons/icon-stars-light.svg');
+    background-image: url("images/icons/icon-stars-light.svg");
   }
 }

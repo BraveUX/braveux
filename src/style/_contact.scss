@@ -78,14 +78,14 @@
 
 .contact-heading {
   margin-bottom: 30px;
-  @include font(18px, 600, #4D4D4D, 'Trade Gothic LT Std');
+  @include font(18px, 600, #4D4D4D, "Trade Gothic LT Std");
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 .contact-subheading {
   margin-bottom: 30px;
-  font-family: 'Sentinel A', 'Sentinel B';
+  font-family: "Sentinel A", "Sentinel B";
   @include font(26px, 300, #ABABAB, null);
 
   @include mq(900px) {
@@ -95,7 +95,7 @@
 
 .contact-link {
   display: block;
-  font-family: 'Sentinel A', 'Sentinel B';
+  font-family: "Sentinel A", "Sentinel B";
   @include font(27px, 300, #808080, null);
 
   @include mq(900px) {
