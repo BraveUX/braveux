@@ -53,8 +53,6 @@
 }
 
 .typewriter-cta {
-  // display: none;
-  // opacity: 0;
   @include transition(all 0.5s ease);
   @include position(absolute, null null 25% 7.5%);
   @include size(150px 45px);

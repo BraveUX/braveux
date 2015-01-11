@@ -148,44 +148,6 @@ $menu-height: 50px;
   display: none;
 }
 
-// .ux-toggle-frame {
-//   @include transition(all 0.5s ease);
-//   @include position(absolute, 14px 15px null null);
-//   @include size(42px 22px);
-//   border: 1px solid $black;
-//   border-radius: 11px;
-//   cursor: pointer;
-
-//   @include mq($tablet) {
-//     display: none;
-//   }
-
-//   .is-home & {
-//     right: 7.5%;
-//     border-color: transparent;
-//   }
-
-//   &.is-active {
-//     border-color: #778F9B;
-//   }
-// }
-
-// .ux-toggle {
-//   @include transition(all 0.5s ease);
-//   @include position(absolute, 2px 2px null null);
-//   display: block;
-//   @include size(16px);
-//   @include hide-text;
-//   background: url("images/ux-view/ux-icon.svg") #808080 center center no-repeat;
-//   border-radius: 50%;
-
-//   .is-active & {
-//     right: 22px;
-//     background: url("images/ux-view/ux-icon-toggled.svg") center center no-repeat;
-//     background-color: #F3F3F3;
-//   }
-// }
-
 .mobile-menu-toggle {
   display: none;
   z-index: 20;

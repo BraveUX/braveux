@@ -202,6 +202,7 @@ $darkblue: #2E3D5A;
 .case-breakdown-summary {
   margin-bottom: 15px;
   font: 200 28px "Source Sans Pro";
+
   .felix & { color: #536D79; }
   .wedding & { color: #78909C; }
 }
@@ -251,7 +252,6 @@ $darkblue: #2E3D5A;
   padding-top: 20px;
   border-top-width: 2px;
   border-top-style: solid;
-
   font: italic 300 11px "Sentinel A", "Sentinel B";
 
   .obesity & {
