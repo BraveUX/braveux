@@ -57,7 +57,7 @@ $darkblue: #2E3D5A;
 
 .case-header-client-name {
   margin-bottom: 15px;
-  @include font(24px, 600, null, "Trade Gothic LT Std");
+  font: 600 24px "Trade Gothic LT Std";
   text-transform: uppercase;
   letter-spacing: 3px;
 
@@ -72,8 +72,7 @@ $darkblue: #2E3D5A;
 
 .case-header-tagline {
   margin-bottom: 15px;
-  @include font(48px, 300, null, "Source Sans Pro");
-  line-height: 1.15;
+  font: 300 48px/1.5 "Source Sans Pro";
 
   .felix & {
     font-size: 45px;
@@ -93,8 +92,7 @@ $darkblue: #2E3D5A;
 }
 
 .case-header-type {
-  @include font(18px, 600, null, null);
-  font-family: "Sentinel A", "Sentinel B";
+  font: 600 18px "Sentinel A", "Sentinel B";
 
   .fieldone & { color: $graphite; }
   .obesity & { color: #8FA3AD; }
@@ -136,8 +134,8 @@ $darkblue: #2E3D5A;
 }
 
 .case-exec-summary-text {
-  @include font(24px, 300, #616161, null);
-  font-family: "Sentinel A", "Sentinel B";
+  font: 300 24px "Sentinel A", "Sentinel B";
+  color: #616161;
 }
 
 // BREAKDOWN
@@ -192,7 +190,7 @@ $darkblue: #2E3D5A;
 
 .case-breakdown-heading {
   margin-bottom: 20px;
-  @include font(13px, 600, null, "Trade Gothic LT Std");
+  font: 600 13px "Trade Gothic LT Std";
   text-transform: uppercase;
   letter-spacing: 2px;
 
@@ -203,8 +201,7 @@ $darkblue: #2E3D5A;
 
 .case-breakdown-summary {
   margin-bottom: 15px;
-  @include font(28px, 200, null, "Source Sans Pro");
-
+  font: 200 28px "Source Sans Pro";
   .felix & { color: #536D79; }
   .wedding & { color: #78909C; }
 }
@@ -212,9 +209,7 @@ $darkblue: #2E3D5A;
 .case-breakdown-detail,
 .case-breakdown-scope-list {
   max-width: 260px;
-  @include font(15px, 300, null, null);
-  font-family: "Sentinel A", "Sentinel B";
-  line-height: 1.9;
+  font: 300 15px/1.9 "Sentinel A", "Sentinel B";
 
   @include mq($mobile) {
     max-width: none;
@@ -247,8 +242,7 @@ $darkblue: #2E3D5A;
 .case-breakdown-scope-list {
   padding-left: 0;
   list-style: none;
-  @include font(15px, 300, null, null);
-  font-family: "Sentinel A", "Sentinel B";
+  font: 300 15px "Sentinel A", "Sentinel B";
 }
 
 .case-breakdown-footnote {
@@ -257,9 +251,8 @@ $darkblue: #2E3D5A;
   padding-top: 20px;
   border-top-width: 2px;
   border-top-style: solid;
-  @include font(11px, 300, null, null);
-  font-family: "Sentinel A", "Sentinel B";
-  font-style: italic;
+
+  font: italic 300 11px "Sentinel A", "Sentinel B";
 
   .obesity & {
     border-top-color: #808080;
