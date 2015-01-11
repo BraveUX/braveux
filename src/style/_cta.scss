@@ -10,8 +10,8 @@
 
 .cta-text {
   margin-bottom: 30px;
-  @include font(26px, 300, #ACACAC, null);
-  font-family: "Sentinel A", "Sentinel B";
+  font: 300 26px "Sentinel A", "Sentinel B";
+  color: #ACACAC;
 
   @include mq($mobile) {
     font-size: 21px;
@@ -20,7 +20,8 @@
 
 .cta-link {
   display: inline-block;
-  @include font(22px, 200, #414141);
+  font: 200 22px;
+  color: #414141;
 
   &:hover {
     .cta-icon {
