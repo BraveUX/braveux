@@ -10,10 +10,11 @@ header {
 
 .page-heading {
   margin: 0 0 15px 0;
-  @include font(52px, 200, #333333);
+  font: 200 52px;
+  color: #333333;
 }
 
 .page-subheading {
-  @include font(22px, 300, #AEAEAE, null);
-  font-family: "Sentinel A", "Sentinel B";
+  font: 300 22px "Sentinel A", "Sentinel B";
+  color: #AEAEAE;
 }
