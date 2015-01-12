@@ -7,8 +7,8 @@ $(document).ready(function() {
   initEasterEggs();
   initNavBar();
 
-  if(window.location.pathname.indexOf('/work/') !== -1)
-    initCarousels();
+  // if(window.location.pathname.indexOf('/work/') !== -1)
+  //   initCarousels();
 
   if(window.location.pathname === '/work/' || window.location.pathname === '/work/index.html')
     initWork();
@@ -25,29 +25,29 @@ $(document).ready(function() {
   console.log('Looking for this? https://github.com/BraveUX/website');
 });
 
-function initCarousels() {
-  $('.carousel').each(function() {
-    // init carousels as they scroll into view
-    bindCarousel($(this));
-  });
+// function initCarousels() {
+//   $('.carousel').each(function() {
+//     // init carousels as they scroll into view
+//     bindCarousel($(this));
+//   });
 
-  function bindCarousel(element) {
-    element.waypoint(function(direction) {
-      // only while scrolling down
-      if(direction === 'down') {
-        element.slick({
-          // init carousel
-          lazyLoad: 'ondemand',
-          arrows: false,
-          autoplay: true,
-          autoplaySpeed: 2500
-        });
-      }
-    }, {
-      offset: '100%'
-    });
-  }
-}
+//   function bindCarousel(element) {
+//     element.waypoint(function(direction) {
+//       // only while scrolling down
+//       if(direction === 'down') {
+//         element.slick({
+//           // init carousel
+//           lazyLoad: 'ondemand',
+//           arrows: false,
+//           autoplay: true,
+//           autoplaySpeed: 2500
+//         });
+//       }
+//     }, {
+//       offset: '100%'
+//     });
+//   }
+// }
 
 function initWork() {
   // case study images moved above test for responsive
