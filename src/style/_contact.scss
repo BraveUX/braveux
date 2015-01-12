@@ -38,6 +38,10 @@
     position: static;
     float: none;
     width: 100%;
+
+    &.column-visit {
+      background-color: #F5F5F5;
+    }
   }
 
   // TEXT COLUMNS
