@@ -289,8 +289,7 @@
 
 .case-block-text-heading {
   margin-bottom: 15px;
-  @include font(36px, null, null, 'Source Sans Pro');
-  line-height: 1.2;
+  font: 36px/1.2 "Source Sans Pro";
 
   @include mq($tablet) {
     margin-bottom: 15px;
@@ -302,15 +301,12 @@
 }
 
 .case-block-text-subtext {
-  @include font(14px, null, null, null);
-  font-family: 'Sentinel A', 'Sentinel B';
-  line-height: 1.9;
+  font: 14px/1.9 "Sentinel A", "Sentinel B";
 }
 
 .case-block-text-quote {
   margin-bottom: 40px;
-  @include font(35px, null, null, 'Source Sans Pro');
-  line-height: 1.3;
+  font: 35px/1.3 "Source Sans Pro";
 
   @include mq($mobile) {
     font-size: 24px;
@@ -318,8 +314,7 @@
 }
 
 .case-block-text-citation {
-  @include font(18px, null, null, null);
-  font-family: 'Sentinel A', 'Sentinel B';
+  font: 18px "Sentinel A", "Sentinel B";
 
   @include mq($mobile) {
     font-size: 14px;

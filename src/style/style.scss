@@ -1,13 +1,10 @@
-// normalize
+// utils
 
 @import "normalize";
-
-// mixins
-
 @import "bourbon/bourbon";
 @import "mixins";
 
-// brand colors
+// colors
 
 $black: #1C1C20;
 $light-black: #333;
@@ -17,19 +14,8 @@ $light-black: #333;
 $tablet: 800px;
 $mobile: 480px;
 
-// load Trade Gothic
 
-@font-face {
-  font-family: 'Trade Gothic LT Std';
-  src: url('fonts/2CD600_0_0.eot');
-  src: url('fonts/2CD600_0_0.eot?#iefix') format('embedded-opentype'),
-       url('fonts/2CD600_0_0.woff2') format('woff2'),
-       url('fonts/2CD600_0_0.woff') format('woff'),
-       url('fonts/2CD600_0_0.ttf') format('truetype'),
-       url('fonts/2CD600_0_0.svg#wf') format('svg');
-}
-
-// box sizing
+@include font-face("Trade Gothic LT Std", "fonts/2CD600_0_0");
 
 *,
 *::before,
@@ -53,11 +39,9 @@ em {
 }
 
 body {
-  @include font(12px, 300, white, 'Source Sans Pro');
-  line-height: 1.3;
+  font: 300 12px/1.3 "Source Sans Pro";
+  color: white;
 }
-
-// partials
 
 // site wide
 

@@ -6,7 +6,7 @@ $footer-tablet: 900px;
   background-color: $black;
   background-position: center bottom;
   background-repeat: no-repeat;
-  @include font(14px);
+  font-size: 14px;
   text-align: center;
 
   @include mq($footer-tablet) {
@@ -32,7 +32,7 @@ $footer-tablet: 900px;
 
   &.is-egg {
     padding-bottom: 200px;
-    background-image: url('images/footer/footer-egg.svg');
+    background-image: url("images/footer/footer-egg.svg");
   }
 }
 
@@ -92,7 +92,8 @@ $footer-tablet: 900px;
 
 .footer-heading {
   margin-bottom: 35px;
-  @include font(null, 600, #979797, 'Trade Gothic LT Std');
+  font: 600 14px "Trade Gothic LT Std";
+  color: #979797;
   letter-spacing: 2px;
   text-transform: uppercase;
 
@@ -102,8 +103,8 @@ $footer-tablet: 900px;
 }
 
 .footer-email-link {
-  @include font(24px, null, #979797);
-  line-height: 1.5;
+  font: 24px/1.5;
+  color: #979797;
 
   &:hover {
     color: white;
@@ -112,7 +113,8 @@ $footer-tablet: 900px;
 
 .footer-product-link {
   display: block;
-  @include font(16px, null, #979797);
+  font-size: 16px;
+  color: #979797;
 
   @include mq($footer-tablet) {
     font-size: 24px;
@@ -129,8 +131,9 @@ $footer-tablet: 900px;
   @include clearfix;
   display: inline-block;
   margin-top: 90px;
-  @include font(15px, 300, #666, null);
-  font-family: 'Sentinel A', 'Sentinel B';
+  font: 300 15px "Sentinel A", "Sentinel B";
+  color: #666666;
+
   @include mq($footer-tablet) {
     margin-top: 10px;
     font-size: 14px;
@@ -153,9 +156,6 @@ $footer-tablet: 900px;
   }
 }
 
-.footer-copyright {
-
-}
 
 .footer-made {
   @include mq($tablet) {
@@ -166,7 +166,7 @@ $footer-tablet: 900px;
 .footer-stars {
   @include size(40px 10px);
   margin: 5px 50px 0 50px;
-  background-image: url('images/icons/icon-stars.svg');
+  background-image: url("images/icons/icon-stars.svg");
   background-position: center center;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -177,6 +177,6 @@ $footer-tablet: 900px;
 
   &.is-found,
   &:hover {
-    background-image: url('images/icons/icon-stars-light.svg');
+    background-image: url("images/icons/icon-stars-light.svg");
   }
 }
