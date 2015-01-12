@@ -16,4 +16,8 @@ header {
 .page-subheading {
   @include font(22px, 300, #AEAEAE, null);
   font-family: 'Sentinel A', 'Sentinel B';
+
+  @include mq($tablet) {
+    font-size: 20px;
+  }
 }

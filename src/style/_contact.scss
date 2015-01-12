@@ -64,7 +64,7 @@
   background-repeat: no-repeat;
 
   @include mq($tablet) {
-    height: 250px;
+    height: 480px;
   }
 
   &.cover-monument {
