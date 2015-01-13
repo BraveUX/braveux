@@ -7,7 +7,8 @@
   }
 
   &.left-gray { @include linear-gradient(to right, #F4F4F4 0%,#F4F4F4 50%, white 50%); }
-  &.right-gray { @include linear-gradient(to left, #F4F4F4 0%,#F4F4F4 50%, white 50%); }
+  &.right-gray { @include background(url("../images/contact/gradient-fix.jpg") center top repeat-y,
+                          linear-gradient(to left, #F4F4F4 0%,#F4F4F4 50%, white 50%)); }
 
   &.left-gray,
   &.right-gray {
