@@ -1,4 +1,6 @@
 .cta {
+  overflow: hidden;
+  position: relative;
   clear: both;
   padding: 120px 0;
   text-align: center;
@@ -32,4 +34,47 @@
 .cta-icon {
   @include transition(all 0.5s ease);
   margin: 0 0 -6px 15px;
+}
+
+.cta-button {
+  @include transition(transform 0.5s ease);
+  @include size(170px 65px);
+  @include position(absolute, 50% null null null);
+  margin-top: -32px;
+  background-color: #262628;
+  color: white;
+
+  &:hover {
+    @include transform(translateX(0px));
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &::after {
+    content: attr(title);
+    opacity: 0;
+    @include transition(opacity 0.5s ease);
+    @include position(absolute, 22px null null 55px);
+    font-family: 'Sentinel A', 'Sentinel B';
+    font-weight: 300;
+    font-size: 16px;
+  }
+}
+
+.cta-button-right {
+  @include transform(translateX(115px));
+  right: 0;
+  background: url("../images/icons/cta-arrow-right.png") #262628 25px center no-repeat;
+}
+
+.cta-button-left {
+  @include transform(translateX(-115px));
+  left: 0;
+  background: url("../images/icons/cta-arrow-left.png") #262628 133px center no-repeat;
+
+  &::after {
+    left: 50px;
+  }
 }
