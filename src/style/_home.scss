@@ -1,6 +1,7 @@
 .home {
   background: #1C1C1E;
   height: 100%;
+
   > .container {
     padding: 120px 7.5%;
     margin: 0;
@@ -15,13 +16,6 @@
     }
   }
 }
-
-.typewriter-wrapper {
-  @include position(absolute, 50% null null 7.5%);
-  @include size(85% 290px);
-  margin-top: -145px;
-}
-
 
 .home-cta {
   text-transform: uppercase;
