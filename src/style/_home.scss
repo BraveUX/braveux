@@ -1,26 +1,35 @@
 .home {
-  position: relative;
   background: #1C1C1E;
   height: 100%;
+  > .container {
+    padding: 120px 7.5%;
+    margin: 0;
+    height: 100%;
 
-  .container {
-    position: relative;
-    top: 50%;
-    @include transform(translateY(-50%));
+    @include mq($mobile) {
+      padding: 95px 10%;
+    }
 
-    @media only screen and (max-width: 700px) and (orientation: landscape) {
+    @media only screen and (max-width : 700px) and (orientation : landscape) {
       padding-top: 85px;
     }
   }
 }
 
-.home-heading {
-  margin-bottom: 40px;
-  font-family: "Trade Gothic LT Std";
-  font-size: 16px;
-  letter-spacing: 2px;
+.typewriter-wrapper {
+  @include position(absolute, 50% null null 7.5%);
+  @include size(85% 290px);
+  margin-top: -145px;
+}
+
+
+.home-cta {
   text-transform: uppercase;
   color: white;
+  font-size: 16px;
+  font-family: "Trade Gothic LT Std";
+  letter-spacing: 2px;
+  margin-bottom: 40px;
 
   @include mq($tablet) {
     width: 400px;
@@ -33,50 +42,52 @@
     line-height: 2;
   }
 
-  @media only screen and (max-width: 700px) and (orientation: landscape) {
+  @media only screen and (max-width : 700px) and (orientation : landscape) {
     margin-bottom: 15px;
   }
+
 }
 
-.home-cta {
-  @include transition(opacity ease .25s);
-  opacity: 0.85;
+.home-see-it {
   display: inline-block;
-  padding: 15px 30px;
-  margin-top: 40px;
   border: 3px solid white;
   border-radius: 2px;
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 2px;
+  padding: 15px 30px;
   text-transform: uppercase;
   text-align: center;
   color: white;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-top: 40px;
+  opacity: 0.85;
+  font-weight: 600;
+  @include transition(opacity ease .25s);
 
   @include mq($mobile) {
-    @include size(105px 35px);
+    width: 105px;
+    height: 35px;
     padding: 9px 0 0 0;
-    margin-top: 20px;
     border: 2px solid white;
     font-size: 9px;
     letter-spacing: 1px;
+    margin-top: 20px;
   }
-
   @media only screen and (max-width : 700px) and (orientation : landscape) {
-    @include size(105px 35px);
+    margin-top:5px;
+    width: 105px;
+    height: 35px;
     padding: 9px 0 0 0;
-    margin-top: 5px;
     border: 2px solid white;
     font-size: 9px;
     letter-spacing: 1px;
   }
 
   &:hover {
-    opacity: 1;
+    opacity: 1.0;
   }
 }
 
-%outline {
+.outline {
   display: none;
   position: relative;
   left: -5px;
@@ -95,16 +106,17 @@
   @extend .outline;
   height: 100%;
   max-height: 550px;
+  display: block;
 
-  @include mq($tablet) {
-    display: block;
+  @include mq-min($tablet) {
+    display: none;
   }
 
   @include mq(560px) {
     display: none;
   }
 
-  @media only screen and (max-width: 700px) and (orientation: landscape) {
+  @media only screen and (max-width : 700px) and (orientation : landscape) {
     display: none;
   }
 }
@@ -112,22 +124,24 @@
 .outline-mobile {
   @extend .outline;
   height: 100%;
-  max-height: 320px;
+  width: auto;
 
+  max-height: 320px;
   @include mq(560px) {
     display: block;
   }
 
-  @media only screen and (max-width: 700px) and (orientation: landscape) {
+  @media only screen and (max-width : 700px) and (orientation : landscape) {
     display: none;
   }
 }
 
+
 .outline-mobile-landscape {
   display: none;
   padding: 5px 0;
-
-  @media only screen and (max-width: 700px) and (orientation: landscape) {
+  @media only screen and (max-width : 700px) and (orientation : landscape) {
     display: block;
+    overflow: visible !important;
   }
 }

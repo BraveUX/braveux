@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  console.log('ready')
   // set user agent on html element
   $('html').attr('data-user-agent', window.navigator.userAgent);
 
@@ -10,7 +11,7 @@ $(document).ready(function() {
   // if(window.location.pathname.indexOf('/work/') !== -1)
   //   initCarousels();
 
-  if(window.location.pathname === '/' || window.location.pathname === '/index.html')
+  if(window.location.pathname === '/work/' || window.location.pathname === '/work/index.html')
     initWork();
 
   if(window.location.pathname === '/approach' || window.location.pathname === '/approach.html')
@@ -171,6 +172,7 @@ function initEasterEggs() {
 }
 
 function initNavBar() {
+  console.log('not working')
   var scroll;
   var scrollPrevious = 0;
   var scrollDelta = 50;

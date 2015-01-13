@@ -27,6 +27,11 @@ body {
 .container {
   @include clearfix;
   margin: 0 $site-padding;
+
+  .home & {
+    position: relative;
+    height: 100%;
+  }
 }
 
 // grid

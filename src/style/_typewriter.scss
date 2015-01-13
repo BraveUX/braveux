@@ -1,0 +1,74 @@
+.typewriter {
+  position: relative;
+  display: inline-block;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    @include position(absolute, 0 0 null null);
+    @include size(0% 100%);
+    background-color: #ccc;
+    opacity: 0.33;
+    content: "";
+  }
+
+  &.highlight {
+    &::before {
+      @include transition(all 0.5s ease);
+      width: 100%;
+    }
+  }
+}
+
+.typewriter-text {
+  @include font(54px, 200, #ECECEC);
+  margin-bottom: 40px;
+
+  @include mq($mobile) {
+    font-size: 32px;
+  }
+}
+
+.typewriter-cursor {
+  @include animation(blink 0.75s);
+  @include animation-iteration-count(infinite);
+  margin-left: -5px;
+  @include font(1em, 100);
+
+  @include mq($mobile) {
+    display: none;
+  }
+}
+
+@include keyframes(blink) {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.typewriter-cta {
+  // display: none;
+  // opacity: 0;
+  @include transition(all 0.5s ease);
+  @include position(absolute, null null 25% 7.5%);
+  @include size(150px 45px);
+  padding-top: 16px;
+  background-color: #1C1C1E;
+  @include font(12px, 600, white, 'Trade Gothic LT Std');
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+
+  &:hover {
+    color: #777;
+  }
+}
+
+.hide-typewriter {
+  display: none;
+}
