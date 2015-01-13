@@ -10,11 +10,11 @@
   // swap even/odd when new homepage is done
 
   &:nth-child(even) {
-    background-color: #F9F9F9;
+    text-align: right;
   }
 
   &:nth-child(odd) {
-    text-align: right;
+    background-color: #F9F9F9;
   }
 
   // CONTAINER MODIFICATIONS

@@ -70,4 +70,4 @@ gulp.task('watch', function() {
   gulp.watch('src/scripts/*.js', ['scripts']);
 });
 
-gulp.task('default', [ 'server', 'images', 'fonts', 'ejs', 'sass', 'scripts', 'watch' ]);
+gulp.task('default', [ 'server', 'fonts', 'ejs', 'sass', 'scripts', 'watch' ]);

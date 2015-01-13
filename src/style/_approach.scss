@@ -8,8 +8,8 @@
   }
 
   @include mq($tablet) {
-    height: auto;
     padding: 80px 0;
+    height: auto;
   }
 
   &:nth-child(odd) {

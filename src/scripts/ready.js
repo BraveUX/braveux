@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  console.log('ready')
   // set user agent on html element
   $('html').attr('data-user-agent', window.navigator.userAgent);
 
@@ -171,6 +172,7 @@ function initEasterEggs() {
 }
 
 function initNavBar() {
+  console.log('not working')
   var scroll;
   var scrollPrevious = 0;
   var scrollDelta = 50;
