@@ -168,16 +168,14 @@
     <script src="scripts.js"></script>
 
     <script>
-      new Vivus("outline-desktop", {type: 'delayed', duration: 115, delay:50, start: 'autostart'}, function() {
-      });
-      new Vivus("outline-tablet", {type: 'delayed', duration: 115, delay:50, start: 'autostart'}, function() {
-      });
-      new Vivus("outline-mobile", {type: 'delayed', duration: 115, delay:50, start: 'autostart'}, function() {
-      });
-      new Vivus("outline-mobile-landscape", {type: 'delayed', duration: 115, delay:50, start: 'autostart'}, function() {
-      });
+      var vivusConfig = { type: 'delayed', duration: 115, delay:50, start: 'autostart' };
 
-      $('.menu-link').eq(0).click(function(e) {
+      new Vivus("outline-desktop", vivusConfig);
+      new Vivus("outline-tablet", vivusConfig);
+      new Vivus("outline-mobile", vivusConfig);
+      new Vivus("outline-mobile-landscape", vivusConfig);
+
+      $('.menu-link:eq(0), .home-cta').click(function(e) {
         e.preventDefault()
         $('.wrapper.work').velocity('scroll', { duration: 500, axis: 'y' });
       });

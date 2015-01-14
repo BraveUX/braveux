@@ -6,6 +6,15 @@
     position: relative;
     top: 50%;
     @include transform(translateY(-50%));
+
+    @include mq(560px) {
+      padding-top: 25px;
+      margin: 0 10%;
+    }
+
+    @media only screen and (max-width: 700px) and (orientation: landscape) {
+      padding-top: 50px;
+    }
   }
 }
 
@@ -23,7 +32,7 @@
 
   @include mq($mobile) {
     width: 250px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-size: 11px;
     line-height: 2;
   }
@@ -51,7 +60,7 @@
   @include mq($mobile) {
     @include size(105px 35px);
     padding: 9px 0 0 0;
-    margin-top: 20px;
+    margin-top: 25px;
     border: 2px solid white;
     font-size: 9px;
     letter-spacing: 1px;
@@ -60,7 +69,7 @@
   @media only screen and (max-width: 700px) and (orientation: landscape) {
     @include size(105px 35px);
     padding: 9px 0 0 0;
-    margin-top: 5px;
+    margin-top: 15px;
     border: 2px solid white;
     font-size: 9px;
     letter-spacing: 1px;
@@ -73,9 +82,11 @@
 
 %outline {
   display: none;
-  position: relative;
-  left: -5px;
-  padding: 5px;
+
+  &:not(:root) {
+    // prevent clipping on top
+    overflow: visible;
+  }
 }
 
 .outline-desktop {
@@ -88,43 +99,38 @@
 
 .outline-tablet {
   @extend %outline;
-  display: block;
-  height: 100%;
-  max-height: 550px;
+  @include size(75% auto);
 
-  @include mq-min($tablet) {
-    display: none;
+  @include mq($tablet) {
+    display: block;
   }
 
   @include mq(560px) {
     display: none;
   }
 
-  @media only screen and (max-width : 700px) and (orientation : landscape) {
+  @media only screen and (max-width: 700px) and (orientation: landscape) {
     display: none;
   }
 }
 
 .outline-mobile {
   @extend %outline;
-  height: 100%;
-  max-height: 320px;
+  @include size(90% auto);
 
   @include mq(560px) {
     display: block;
   }
 
-  @media only screen and (max-width : 700px) and (orientation : landscape) {
+  @media only screen and (max-width: 700px) and (orientation: landscape) {
     display: none;
   }
 }
 
 .outline-mobile-landscape {
-  display: none;
-  padding: 5px 0;
+  @extend %outline;
 
-  @media only screen and (max-width : 700px) and (orientation : landscape) {
+  @media only screen and (max-width: 700px) and (orientation: landscape) {
     display: block;
-    overflow: visible !important;
   }
 }
