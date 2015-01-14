@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  console.log('ready')
   // set user agent on html element
   $('html').attr('data-user-agent', window.navigator.userAgent);
 
@@ -172,7 +171,6 @@ function initEasterEggs() {
 }
 
 function initNavBar() {
-  console.log('not working')
   var scroll;
   var scrollPrevious = 0;
   var scrollDelta = 50;
@@ -211,6 +209,14 @@ function initNavBar() {
       // up
       else
         $('.menu').removeClass('is-collapsed');
+
+      if($('.wrapper.work').length > 0) {
+        // if in work section on homepage, show normal nav
+        if(scrollCurrent > $('.wrapper.work').offset().top)
+          $('.logo, .menu').removeClass('is-home');
+        else
+          $('.logo, .menu').addClass('is-home');
+      }
 
       // make current scroll the previous scroll
       scrollPrevious = scrollCurrent;

@@ -1,6 +1,7 @@
 $menu-height: 50px;
 
 .menu {
+  @include backface-visibility(hidden);
   z-index: 15;
   @include transition(all 0.5s ease);
   @include position(fixed, 0 0 null null);
@@ -45,6 +46,7 @@ $menu-height: 50px;
 }
 
 .logo {
+  @include backface-visibility(hidden);
   z-index: 20;
   @include transition(all 0.5s ease);
   @include position(fixed, 0 null null $site-padding);
