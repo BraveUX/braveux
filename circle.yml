@@ -1,8 +1,10 @@
 machine:
   node:
-    version: 0.10.35
+    version: 0.10.28
 
 dependencies:
+  cache_directories:
+    - "node_modules"
   override:
     - npm install --dev
 
