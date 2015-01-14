@@ -3,6 +3,8 @@ machine:
     version: 0.10.28
 
 dependencies:
+  pre:
+    - npm update npm -g
   cache_directories:
     - "node_modules"
 
