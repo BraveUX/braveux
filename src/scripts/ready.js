@@ -197,6 +197,7 @@ function initNavBar() {
     // check for scrolled to top
     if(scrollCurrent === 0) {
       $('.menu').removeClass('is-collapsed');
+      $('.logo, .menu').addClass('is-home');
       return;
     }
 
