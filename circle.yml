@@ -2,9 +2,9 @@ machine:
   node:
     version: 0.10.35
 deployment:
-  pre:
-    - ./node_modules/.bin/gulp
   staging:
+    pre:
+      - ./node_modules/.bin/gulp
     branch: master
     commands:
       - echo "deploying to master"
