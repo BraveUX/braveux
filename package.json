@@ -1,5 +1,6 @@
 {
   "name": "BraveUX",
+  "repository": "https://github.com/braveux/website",
   "scripts": {
     "test": "exit 0"
   },

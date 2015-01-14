@@ -1,0 +1,10 @@
+machine:
+  node:
+    version: 0.10.35
+deployment:
+  pre:
+    - ./node_modules/.bin/gulp
+  staging:
+    branch: master
+    commands:
+      - echo "deploying to master"
