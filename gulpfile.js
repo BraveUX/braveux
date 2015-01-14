@@ -60,5 +60,17 @@ gulp.task('watch', function() {
   gulp.watch('src/scripts/*.js', ['scripts']);
 });
 
+gulp.task('push', function() {
+  var awsOpts = {
+    "key": process.env.AWS_ACCESS,
+    "secret": process.env.AWS_SECRET,
+    "bucket": process.env.AWS_BUCKET,
+    "region": process.env.AWS_REGION
+  }
+
+  gulp.src('./public/**')
+    .pipe(p.s3(awsOpts));
+});
+
 gulp.task('default', [ 'server', 'fonts', 'images', 'ejs', 'sass', 'scripts', 'watch' ]);
-gulp.task('build', ['fonts', 'images', 'ejs', 'sass', 'scripts']);
+gulp.task('build', ['fonts', 'images', 'ejs', 'sass', 'scripts', 'push']);
