@@ -11,3 +11,4 @@ deployment:
     branch: master
     commands:
       - ./node_modules/.bin/gulp build
+      - ./node_modules/.bin/gulp push
