@@ -61,3 +61,4 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', [ 'server', 'fonts', 'images', 'ejs', 'sass', 'scripts', 'watch' ]);
+gulp.task('build', ['fonts', 'images', 'ejs', 'sass', 'scripts']);

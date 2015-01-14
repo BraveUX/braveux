@@ -1,10 +1,14 @@
 machine:
   node:
     version: 0.10.35
+
+dependencies:
+  override:
+    - npm install --dev
+
 deployment:
   staging:
-    pre:
-      - ./node_modules/.bin/gulp
     branch: master
     commands:
-      - echo "deploying to master"
+      - ./node_modules/.bin/gulp build
+      - echo "done"
