@@ -5,8 +5,6 @@ machine:
 dependencies:
   cache_directories:
     - "node_modules"
-  override:
-    - npm install --dev
 
 deployment:
   staging:
