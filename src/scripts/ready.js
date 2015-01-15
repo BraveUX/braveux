@@ -10,7 +10,7 @@ $(document).ready(function() {
   // if(window.location.pathname.indexOf('/work/') !== -1)
   //   initCarousels();
 
-  if(window.location.pathname === '/work/' || window.location.pathname === '/work/index.html')
+  if(window.location.pathname === '/' || window.location.pathname === '/index.html')
     initWork();
 
   if(window.location.pathname === '/approach' || window.location.pathname === '/approach.html')
