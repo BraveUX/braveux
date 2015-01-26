@@ -8,9 +8,12 @@ body {
 body {
   // fix Chrome overlay bug
   // fix artifacting on homepage nav
-  [data-user-agent*="Chrome"] & {
-    @include backface-visibility(hidden);
-    opacity: .99999;
+
+  @include mq-min($tablet) {
+    [data-user-agent*="Chrome"] & {
+      @include backface-visibility(hidden);
+      opacity: .99999;
+    }
   }
 }
 
