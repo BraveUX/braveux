@@ -44,6 +44,10 @@
   background-color: #262628;
   color: white;
 
+  @include mq($tablet) {
+    display: none;
+  }
+
   &:hover {
     @include transform(translateX(0px));
 
