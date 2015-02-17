@@ -1,1 +1,2 @@
-RedirectMatch 301 /work(.*) //$1
+RewriteEngine on
+RewriteRule ^/work/$ index.html
