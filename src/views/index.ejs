@@ -166,10 +166,12 @@
     <script src="//cdn.jsdelivr.net/velocity/1.1.0/velocity.min.js"></script>
 
     <script>
-      if (window.location.pathname === "/work") {
-        e.preventDefault()
-        $('.wrapper.work').velocity('scroll', { duration: 500, axis: 'y' });
-      }
+      $(document).on('ready', function() {
+        if (window.location.pathname === "/work") {
+          e.preventDefault()
+          $('.wrapper.work').velocity('scroll', { duration: 500, axis: 'y' });
+        }
+      });
     </script>
 
     <script src="//cdn.jsdelivr.net/vivus/0.1.2/vivus.min.js"></script>
