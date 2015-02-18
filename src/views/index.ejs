@@ -164,6 +164,18 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/velocity/1.1.0/velocity.min.js"></script>
+
+    <script>
+      $(document).on('ready', function() {
+
+        if (document.cookie.indexOf("fromwork") > -1) {
+          document.cookie = 'fromwork=na;domain=.braveux.com;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+          $('.wrapper.work').velocity('scroll', { duration: 500, axis: 'y' });
+        }
+
+      });
+    </script>
+
     <script src="//cdn.jsdelivr.net/vivus/0.1.2/vivus.min.js"></script>
     <script src="scripts.js"></script>
 
