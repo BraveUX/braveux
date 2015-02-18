@@ -167,10 +167,12 @@
 
     <script>
       $(document).on('ready', function() {
-        if (window.location.pathname === "/work") {
-          e.preventDefault()
+
+        if (document.cookie.indexOf("fromwork") > -1) {
+          document.cookie = 'fromwork=na;domain=.braveux.com;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
           $('.wrapper.work').velocity('scroll', { duration: 500, axis: 'y' });
         }
+
       });
     </script>
 
