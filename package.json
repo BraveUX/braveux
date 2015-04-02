@@ -2,7 +2,8 @@
   "name": "BraveUX",
   "repository": "https://github.com/braveux/website",
   "scripts": {
-    "test": "exit 0"
+    "test": "exit 0",
+    "build": "./node_modules/.bin/gulp build"
   },
   "version": "1.0.0",
   "devDependencies": {
