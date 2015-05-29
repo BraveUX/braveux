@@ -190,6 +190,11 @@ $upturn-dark-blue: #1B3E4C;
     background-color: #ECEFF1;
     color: #90A4AE;
   }
+
+  .upturn & {
+    background-color: $upturn-dark-blue;
+    color: white;
+  }
 }
 
 .case-breakdown-column {
