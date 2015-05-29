@@ -129,4 +129,12 @@
   text-transform: uppercase;
   text-align: center;
   color: #8DA3AD;
+
+  .upturn & {
+    margin-top: 45px;
+
+    @include mq($tablet) {
+      display: none;
+    }
+  }
 }
