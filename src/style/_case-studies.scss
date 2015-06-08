@@ -13,7 +13,7 @@ $upturn-dark-blue: #1B3E4C;
   position: relative;
   @include size(100%);
 
-  .wedding &  { background-color: #19B5BC; }
+  .wedding &  { background-color: #19B5BC;        }
   .upturn &   { background-color: $upturn-cream;  }
 
   .felix & {
@@ -57,6 +57,10 @@ $upturn-dark-blue: #1B3E4C;
   @include position(absolute, 50% null null 0);
   @include size(auto 210px);
   margin-top: -80px;
+
+  .upturn & {
+    z-index: 5;
+  }
 }
 
 .case-header-client-name {
@@ -126,7 +130,7 @@ $upturn-dark-blue: #1B3E4C;
   .upturn & {
     top: 50px;
     right: 0;
-    // TODO fix z-index here
+    z-index: 4;
 
     @include mq(1000px) {
       display: none;
