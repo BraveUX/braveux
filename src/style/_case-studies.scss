@@ -4,13 +4,17 @@ $graphite: #778F9B;
 $blue: #34B2FF;
 $darkblue: #2E3D5A;
 
+$upturn-cream: #FBF9F3;
+$upturn-dark-blue: #1B3E4C;
+
 // HEADER
 
 .case-header {
   position: relative;
   @include size(100%);
 
-  .wedding & { background-color: #19B5BC; }
+  .wedding &  { background-color: #19B5BC;        }
+  .upturn &   { background-color: $upturn-cream;  }
 
   .felix & {
     background: url('images/felix/header.jpg') top center/cover no-repeat;
@@ -53,6 +57,10 @@ $darkblue: #2E3D5A;
   @include position(absolute, 50% null null 0);
   @include size(auto 210px);
   margin-top: -80px;
+
+  .upturn & {
+    z-index: 5;
+  }
 }
 
 .case-header-client-name {
@@ -66,8 +74,9 @@ $darkblue: #2E3D5A;
   }
 
   .fieldone & { color: $graphite; }
-  .obesity & { color: #8FA3AD; }
-  .wedding & { color: #006064; }
+  .obesity &  { color: #8FA3AD; }
+  .wedding &  { color: #006064; }
+  .upturn &   { color: $upturn-dark-blue; }
 }
 
 .case-header-tagline {
@@ -89,16 +98,18 @@ $darkblue: #2E3D5A;
     color: #33393D;
   }
 
-  .fieldone & { color: $blue; }
+  .fieldone &   { color: $blue; }
+  .upturn &     { color: $upturn-dark-blue; }
 }
 
 .case-header-type {
   @include font(18px, 600, null, null);
   font-family: 'Sentinel A', 'Sentinel B';
 
-  .fieldone & { color: $graphite; }
-  .obesity & { color: #8FA3AD; }
-  .wedding & { color: #006064; }
+  .fieldone &   { color: $graphite; }
+  .obesity &    { color: #8FA3AD; }
+  .wedding &    { color: #006064; }
+  .upturn &     { color: $upturn-dark-blue; }
 }
 
 .case-header-image {
@@ -110,6 +121,16 @@ $darkblue: #2E3D5A;
   .wedding & {
     bottom: -1px;
     right: 7.5%;
+
+    @include mq(1000px) {
+      display: none;
+    }
+  }
+
+  .upturn & {
+    top: 50px;
+    right: 0;
+    z-index: 4;
 
     @include mq(1000px) {
       display: none;
@@ -172,6 +193,11 @@ $darkblue: #2E3D5A;
   .wedding & {
     background-color: #ECEFF1;
     color: #90A4AE;
+  }
+
+  .upturn & {
+    background-color: $upturn-dark-blue;
+    color: white;
   }
 }
 
