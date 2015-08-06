@@ -53,10 +53,6 @@
   @include mq($mobile) {
     max-width: 80%;
   }
-
-  .character & {
-    @include transform(rotate(-5deg));
-  }
 }
 
 .work-landing-type {
@@ -76,7 +72,7 @@
   .felix & { color: #00BBD3; }
   .obesity & { color: #A6273C; }
   .wedding & { color: #00BBD3; }
-  .character & { color: #B9272D; }
+  .upturn & { color: #FF5722; }
   .fieldone & { color: #34AEFF; }
 }
 
