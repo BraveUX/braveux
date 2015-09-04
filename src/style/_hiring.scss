@@ -1,0 +1,29 @@
+.hiring-footer-container {
+  padding-top: 90px;
+}
+.hiring-footer {
+  margin-bottom: 80px;
+}
+
+.hiring-footer-title {
+  color: white;
+  font-size: 43px;
+  font-family: 'Sentinel A', 'Sentinel B';
+  font-weight: 100;
+
+  @media screen and (max-width: 480px) {
+    font-size: 30px;
+  }
+
+  &:hover {
+    .cta-icon {
+      margin-left: 22px;
+    }
+  }
+
+  .cta-icon {
+    margin-top: -5px;
+    position: relative;
+    top: -3px;
+  }
+}
