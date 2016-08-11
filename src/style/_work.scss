@@ -128,9 +128,5 @@
 
   .upturn & {
     margin-top: 45px;
-
-    @include mq($tablet) {
-      display: none;
-    }
   }
 }
