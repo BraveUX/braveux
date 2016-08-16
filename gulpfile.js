@@ -7,7 +7,7 @@ var handle = function(err) {
 
 gulp.task('server', function() {
   return p.connect.server({
-    root: 'public',
+    root: 'public_html',
     port: 8000,
     livereload: true
   });
@@ -17,12 +17,12 @@ gulp.task('images', function() {
   return gulp.src('src/images/**/*')
     .pipe(p.imagemin({progressive: true}))
     .on('error', p.notify.onError('Error: <%= error.message %>'))
-    .pipe(gulp.dest('public/images'));
+    .pipe(gulp.dest('public_html/images'));
 });
 
 gulp.task('fonts', function() {
   return gulp.src('src/fonts/**/*')
-    .pipe(gulp.dest('public/fonts'));
+    .pipe(gulp.dest('public_html/fonts'));
 });
 
 gulp.task('ejs', function() {
@@ -30,7 +30,7 @@ gulp.task('ejs', function() {
     .pipe(p.ejs())
     .on('error', p.notify.onError('Error: <%= error.message %>'))
     .pipe(p.htmlmin({collapseWhitespace: true, removeComments: true}))
-    .pipe(gulp.dest('public'))
+    .pipe(gulp.dest('public_html'))
     .pipe(p.connect.reload());
 });
 
@@ -39,7 +39,7 @@ gulp.task('sass', function() {
     .pipe(p.sass({outputStyle: 'compressed'}))
     .on('error', p.notify.onError('Error: <%= error.message %>'))
     .on('error', handle)
-    .pipe(gulp.dest('public'))
+    .pipe(gulp.dest('public_html'))
     .pipe(p.connect.reload());
 });
 
@@ -48,7 +48,7 @@ gulp.task('scripts', function() {
     .pipe(p.concat('scripts.js'))
     .pipe(p.uglify())
     .on('error', p.notify.onError('Error: <%= error.message %>'))
-    .pipe(gulp.dest('public'))
+    .pipe(gulp.dest('public_html'))
     .pipe(p.connect.reload());
 });
 
@@ -68,7 +68,7 @@ gulp.task('push', function() {
     "region": process.env.AWS_REGION
   }
 
-  gulp.src('./public/**')
+  gulp.src('./public_html/**')
     .pipe(p.s3(awsOpts));
 });
 
