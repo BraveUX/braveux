@@ -4,6 +4,12 @@
     <title>Brave UX - Contact</title>
     <% include partials/head %>
     <link rel="stylesheet" href="style.css">
+    <!-- No Script Section in case of JS being disabled -->
+    <noscript>
+        <style>
+            body .hiring-details.collapsed {display: block;}
+        </style>
+    </noscript>
   </head>
   <body>
     <div class="overlay"></div>
@@ -23,11 +29,11 @@
         <div class="container">
           <h2>Front End Developer</h2>
           <p>We are looking for an experienced front-end developer whose code is so clean it smells like fresh lemons.</p>
-          <a href="" class="hiring-interested">
+          <button class="hiring-interested">
             I&rsquo;m interested.
 
             <img class="cta-icon" src="../images/icons/icon-cta.svg">
-          </a>
+        </button>
 
           <div class="hiring-details collapsed">
             <h4>Responsibilities include:</h4>
@@ -69,10 +75,10 @@
         <div class="container">
           <h2>UX Designer</h2>
           <p>We are looking for an experienced UX designer whose designs exude both beauty and brains.</p>
-          <a href="" class="hiring-interested">
+          <button class="hiring-interested">
             I&rsquo;m interested.
             <img class="cta-icon" src="../images/icons/icon-cta.svg">
-          </a>
+        </button>
 
           <div class="hiring-details collapsed">
             <h4>Responsibilities include:</h4>
@@ -128,8 +134,9 @@
 
     <script>
       $('.hiring-interested').click(function(e) {
-        e.preventDefault();
+        // e.preventDefault();
         $(this).parent().find('.hiring-details').slideToggle();
+        $(this).parent().find('.hiring-details').toggleClass('collapsed');
         $(this).parent().find('.cta-icon').toggleClass('turned');
       });
     </script>

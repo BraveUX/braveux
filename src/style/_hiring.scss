@@ -1,111 +1,123 @@
 .hiring-footer-container {
-  padding-top: 90px;
+    padding-top: 90px;
 }
+
 .hiring-footer {
-  margin-bottom: 80px;
+    margin-bottom: 80px;
 }
 
 .hiring-footer-title {
-  color: white;
-  font-size: 43px;
-  font-family: 'Sentinel A', 'Sentinel B';
-  font-weight: 100;
-
-  @media screen and (max-width: 480px) {
-    font-size: 30px;
-  }
-
-  &:hover {
-    .cta-icon {
-      margin-left: 22px;
+    color: white;
+    font-size: 43px;
+    font-family: 'Sentinel A', 'Sentinel B';
+    font-weight: 300;
+    &:hover {
+        .cta-icon {
+            margin-left: 22px;
+        }
     }
-  }
 
-  .cta-icon {
-    margin-top: -5px;
-    position: relative;
-    top: -3px;
-  }
+    @media screen and (max-width: 480px) {
+        font-size: 30px;
+    }
+
+    .cta-icon {
+        margin-top: -5px;
+        position: relative;
+        top: -3px;
+    }
 }
 
 .hiring-section {
-  padding: 60px 0;
-  font-weight: 100;
-  color: #424242;
+    padding: 60px 0;
+    font-weight: 300;
+    color: #424242;
 
-  &.gray {background-color: #F4F4F4;}
-
-  h2 {
-    font-family: 'Sentinel A', 'Sentinel B';
-    font-weight: 100;
-    color: #4D4D4D;
-    font-size: 48px;
-
-  }
-
-  p {
-    font-family: 'Sentinel A', 'Sentinel B';
-    font-weight: 100;
-    color: #8D8D8D;
-    font-size: 18px;
-  }
-}
-
-.hiring-interested {
-  margin-top: 30px;
-  color: #424242;
-  font-size: 22px;
-  display: inline-block;
-
-  &:hover {
-    .cta-icon {
-      margin-left: 22px;
+    &.gray {
+        background-color: #F4F4F4;
     }
-  }
 
-  .cta-icon.turned {
-    transform: rotate(.25turn);
-  }
+    h2 {
+        font-family: 'Sentinel A', 'Sentinel B';
+        font-weight: 300;
+        color: #4D4D4D;
+        font-size: 48px;
+    }
+
+    p {
+        font-family: 'Sentinel A', 'Sentinel B';
+        font-weight: 300;
+        color: #8D8D8D;
+        font-size: 18px;
+    }
 }
+.hiring-interested {
+    margin-top: 30px;
+    color: #424242;
+    font-size: 22px;
+    display: inline-block;
+    border: 0;
+    background: transparent;
+    outline: 0;
+    padding: 5px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+    &:focus {
+        outline: none !important;
+        box-shadow: 0 0 5px rgba(#4D4D4D, 0.3);
+        border: 2px solid rgba(#4D4D4D, 0.3);
+    }
+    &:hover,
+    &:focus {
+        .cta-icon {
+            margin-left: 22px;
+        }
+    }
 
+    .cta-icon.turned {
+        transform: rotate(.25turn);
+    }
+}
 
 .hiring-details {
-  &.collapsed { display: none;}
-
-  h4 {
-    font-family: 'Sentinel A', 'Sentinel B';
-    font-weight: 100;
-    color: #000;
-    font-size: 27px;
-    margin: 20px 0;
-  }
-
-  ul {
-    padding-left: 20px;
-  }
-
-  li {
-    color: #424242;
-    font-size: 20px;
-    font-weight: 100;
-    line-height: 28px;
-  }
-
-  li.sub {
-    margin-left: 20px;
-    font-size: 16px;
-  }
-
-  .hiring-cta {
-    font-size: 30px;
-    line-height: 28px;
-    font-family: 'Sentinel A', 'Sentinel B';
-    font-weight: 100;
-    color: #A7A7A7;
-    margin-top: 40px;
-
-    a {
-      color: #424242;
+    &.collapsed {
+        display: none;
     }
-  }
+
+    h4 {
+        font-family: 'Sentinel A', 'Sentinel B';
+        font-weight: 300;
+        color: #000;
+        font-size: 27px;
+        margin: 20px 0;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    li {
+        color: #424242;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 28px;
+    }
+
+    li.sub {
+        margin-left: 20px;
+        font-size: 16px;
+    }
+
+    .hiring-cta {
+        font-size: 30px;
+        line-height: 28px;
+        font-family: 'Sentinel A', 'Sentinel B';
+        font-weight: 300;
+        color: #A7A7A7;
+        margin-top: 40px;
+
+        a {
+            color: #424242;
+        }
+    }
 }
