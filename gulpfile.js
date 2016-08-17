@@ -56,7 +56,7 @@ gulp.task('watch', function() {
   gulp.watch('src/images/**/*', ['images']);
   gulp.watch('src/fonts/**/*', ['fonts']);
   gulp.watch('src/views/**/*.ejs', ['ejs']);
-  gulp.watch('src/style/*.scss', ['sass']);
+  gulp.watch('src/style/**/*.scss', ['sass']);
   gulp.watch('src/scripts/*.js', ['scripts']);
 });
 
