@@ -1,0 +1,64 @@
+// load Trade Gothic
+@font-face {
+  font-family: 'Trade Gothic LT Std';
+  src: url('fonts/2CD600_0_0.eot');
+  src: url('fonts/2CD600_0_0.eot?#iefix') format('embedded-opentype'),
+       url('fonts/2CD600_0_0.woff2') format('woff2'),
+       url('fonts/2CD600_0_0.woff') format('woff'),
+       url('fonts/2CD600_0_0.ttf') format('truetype'),
+       url('fonts/2CD600_0_0.svg#wf') format('svg');
+}
+
+$trade-gothic: 'Trade Gothic LT Std';
+$sentinel: 'Sentinel A', 'Sentinel B';
+$source-sans: 'Source Sans Pro';
+
+@mixin font($size, $weight: null, $color: null, $family: null) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+/*=========================================================================
+------------------------Text Mixins for Consistency------------------------
+=========================================================================*/
+@mixin case-text($size, $color: null) {
+
+    /*========================Text Style Controls========================*/
+    @if ($size == 'h1') {
+        @include font(48px, 300, $color, 'Source Sans Pro');
+        line-height: 1.15;
+        @include mq($mobile) {
+          font-size: 36px;
+        }
+
+    } @else if ($size == 'h2') {
+        @include font(36px, 300, $color, 'Source Sans Pro');
+        line-height: 1.2;
+        @include mq($tablet) {
+          font-size: 24px;
+        }
+
+    } @else if ($size == 'h3') {
+        @include font(28px, 300, $color, 'Source Sans Pro');
+
+    } @else if ($size == 'h4') {
+        @include font(24px, 300, $color, ('Sentinel A', 'Sentinel B'));
+
+    } @else if ($size == 'h5') {
+        @include font(24px, 600, $color, 'Trade Gothic LT Std');
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        @include mq($mobile) {
+            font-size: 18px;
+        }
+
+    } @else if ($size == 'h6') {
+        @include font(18px, 600, $color, ('Sentinel A', 'Sentinel B'));
+
+    } @else if ($size == 'p') {
+        @include font(15px, 300, $color, ('Sentinel A', 'Sentinel B'));
+        line-height: 1.9;
+    }
+}
