@@ -1,24 +1,21 @@
 // normalize
+@import "partials/normalize";
 
-@import "normalize";
+// vendors
+@import "vendors/bourbon/bourbon";
 
 // mixins
-
-@import "bourbon/bourbon";
-@import "mixins";
+@import "modules/mixins";
 
 // brand colors
-
 $black: #1C1C20;
 $light-black: #333;
 
 // media queries
-
 $tablet: 800px;
 $mobile: 480px;
 
 // load Trade Gothic
-
 @font-face {
   font-family: 'Trade Gothic LT Std';
   src: url('fonts/2CD600_0_0.eot');
@@ -30,7 +27,6 @@ $mobile: 480px;
 }
 
 // box sizing
-
 *,
 *::before,
 *::after {
@@ -59,25 +55,24 @@ body {
 
 // partials
 
-// site wide
-
-@import "layout";
-@import "menu";
-@import "overlay";
-@import "header";
-@import "cta";
-@import "social";
-@import "footer";
+// global
+@import "partials/cta";
+@import "partials/footer";
+@import "partials/header";
+@import "partials/layout";
+@import "partials/menu";
+@import "partials/overlay";
+@import "partials/social";
+@import "partials/ui";
 
 // sections
-
-@import "home";
-@import "work";
-@import "case-studies";
-@import "case-blocks";
-@import "case-colors";
-@import "case-covers";
-@import "approach";
-@import "team";
-@import "contact";
-@import "hiring";
+@import "partials/sections/approach";
+@import "partials/sections/case-blocks";
+@import "partials/sections/case-colors";
+@import "partials/sections/case-covers";
+@import "partials/sections/case-studies";
+@import "partials/sections/contact";
+@import "partials/sections/hiring";
+@import "partials/sections/home";
+@import "partials/sections/team";
+@import "partials/sections/work";
