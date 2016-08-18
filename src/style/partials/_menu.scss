@@ -31,6 +31,7 @@ $menu-height: 50px;
 
     @include mq($tablet) {
       top: auto;
+      transform: none;
     }
   }
 
@@ -49,7 +50,7 @@ $menu-height: 50px;
   @include backface-visibility(hidden);
   z-index: 20;
   @include transition(all 0.5s ease);
-  @include position(fixed, 0 null null $site-padding);
+  @include position(fixed, 0 null null $site-spacing);
   display: block;
   @include size($menu-height);
   @include hide-text;
@@ -64,6 +65,9 @@ $menu-height: 50px;
     width: 110px;
     margin-left: -60px;
     background-image: url('images/icons/wordmark.svg');
+    @include mq($tablet) {
+        margin: 0;
+    }
   }
 
   &.is-home {

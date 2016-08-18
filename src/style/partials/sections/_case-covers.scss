@@ -1,72 +1,57 @@
 // FULL IMAGE STYLE
-
 .case-full-image {
-  @include size(100% 75vh);
-
-  @include mq($tablet) {
-    // fixes iOS glitch with vh units
-    max-height: 500px;
-  }
+    @include size(100% 75vh);
+    @include mq($tablet) {
+        // fixes iOS glitch with vh units
+        max-height: 500px;
+    }
 }
-
+// GENZ
+.genz-laptop {
+    background: url('images/genz/laptop.jpg') center center/cover no-repeat;
+    @include mq($tablet) {
+        background-position: right center;
+    }
+}
 // FELIX
-
 .felix-boardwalk {
-  background: url('images/felix/boardwalk.jpg') center center/cover no-repeat;
-
-  @include mq($tablet) {
-    background-position: right center;
-  }
+    background: url('images/felix/boardwalk.jpg') center center/cover no-repeat;
+    @include mq($tablet) {
+        background-position: right center;
+    }
 }
-
 // FIELDONE
-
 .fieldone-traffic {
-  background: url('images/fieldone/traffic.jpg') center center/cover no-repeat;
-
-  @include mq($mobile) {
-    background-position: -150px center;
-  }
+    background: url('images/fieldone/traffic.jpg') center center/cover no-repeat;
+    @include mq($mobile) {
+        background-position: -150px center;
+    }
 }
-
 // CHARACTER
-
 .character-school {
-  background: url('images/character/logo.svg') center center no-repeat,
-              url('images/character/school.jpg') center center/cover no-repeat;
-
-  @include mq($mobile) {
-    background: url('images/character/logo.svg') center center/85% auto no-repeat,
-                url('images/character/school.jpg') center center/cover no-repeat;
-  }
+    background: url('images/character/logo.svg') center center no-repeat, url('images/character/school.jpg') center center/cover no-repeat;
+    @include mq($mobile) {
+        background: url('images/character/logo.svg') center center/85% auto no-repeat, url('images/character/school.jpg') center center/cover no-repeat;
+    }
 }
-
 .character-students {
-  background: url('images/character/students.jpg') center center/cover no-repeat;
+    background: url('images/character/students.jpg') center center/cover no-repeat;
 }
-
 .character-forum {
-  background: url('images/character/forum.jpg') center center/cover no-repeat;
+    background: url('images/character/forum.jpg') center center/cover no-repeat;
 }
-
 // OBESITY
-
 .obesity-racial-inequity {
-  background: url('images/obesity/racial-inequity.jpg') center center/cover no-repeat;
+    background: url('images/obesity/racial-inequity.jpg') center center/cover no-repeat;
 }
-
 // WEDDING
-
 .wedding-bouquet {
-  background: url('images/wedding/bouquet.jpg') center center/cover no-repeat;
+    background: url('images/wedding/bouquet.jpg') center center/cover no-repeat;
 }
-
 // UPTURN
-
 .upturn-icons {
-  background: url('images/upturn/upturn-icons.svg') center center/cover no-repeat;
+    background: url('images/upturn/upturn-icons.svg') center center/cover no-repeat;
 }
-
 .upturn-cards {
-  background: url('images/upturn/upturn-cards.svg') center center/cover no-repeat;
+    background: url('images/upturn/upturn-cards.svg') center center/cover no-repeat;
 }

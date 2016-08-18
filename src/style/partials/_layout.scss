@@ -1,4 +1,4 @@
-$site-padding: 7.5%;
+$site-spacing: 7.5%;
 
 html,
 body {
@@ -29,7 +29,7 @@ body {
 
 .container {
   @include clearfix;
-  margin: 0 $site-padding;
+  margin: 0 $site-spacing;
 }
 
 // grid

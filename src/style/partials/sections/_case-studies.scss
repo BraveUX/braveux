@@ -1,294 +1,284 @@
 // CLIENT COLORS
-
 $graphite: #778F9B;
 $blue: #34B2FF;
 $darkblue: #2E3D5A;
-
 $upturn-cream: #FBF9F3;
 $upturn-dark-blue: #1B3E4C;
-
 // HEADER
-
 .case-header {
-  position: relative;
-  @include size(100%);
-
-  .wedding &  { background-color: #19B5BC;        }
-  .upturn &   { background-color: $upturn-cream;  }
-
-  .felix & {
-    background: url('images/felix/header.jpg') top center/cover no-repeat;
-
-    @include mq($tablet) {
-      background-position: left center;
+    position: relative;
+    @include size(100%);
+    .wedding & {
+        background-color: #19B5BC;
     }
-
-    @include mq($mobile) {
-      background-image: url('images/felix/header-mobile.jpg');
+    .upturn & {
+        background-color: $upturn-cream;
     }
-  }
-
-  .character & {
-    background: url('images/character/header.jpg') center center/cover no-repeat;
-
-    @include mq($tablet) {
-      background-image: url('images/character/header-mobile.jpg');
+    .genz & {
+        background: url('images/genz/header.jpg') top center/cover no-repeat;
+        @include mq($tablet) {
+            background-position: left center;
+        }
     }
-  }
-
-  .fieldone & {
-    background: url('images/fieldone/header.svg') #EBEEF0 right center/auto 100% no-repeat;
-
-    @include mq($tablet) {
-      background: #EBEEF0;
+    .felix & {
+        background: url('images/felix/header.jpg') top center/cover no-repeat;
+        @include mq($tablet) {
+            background-position: left center;
+        }
+        @include mq($mobile) {
+            background-image: url('images/felix/header-mobile.jpg');
+        }
     }
-  }
-
-  .obesity & {
-    background: url('images/obesity/header.svg') #F9F9F9 90% center no-repeat;
-
-    @include mq(800px) {
-      background: #F9F9F9;
+    .character & {
+        background: url('images/character/header.jpg') center center/cover no-repeat;
+        @include mq($tablet) {
+            background-image: url('images/character/header-mobile.jpg');
+        }
     }
-  }
+    .fieldone & {
+        background: url('images/fieldone/header.svg') #EBEEF0 right center/auto 100% no-repeat;
+        @include mq($tablet) {
+            background: #EBEEF0;
+        }
+    }
+    .obesity & {
+        background: url('images/obesity/header.svg') #F9F9F9 90% center no-repeat;
+        @include mq(800px) {
+            background: #F9F9F9;
+        }
+    }
 }
-
 .case-header-container {
-  @include position(absolute, 50% null null 0);
-  @include size(auto 210px);
-  margin-top: -80px;
-
-  .upturn & {
-    z-index: 5;
-  }
+    @include position(absolute, 50% null null 0);
+    @include size(auto 210px);
+    margin-top: -80px;
+    .upturn & {
+        z-index: 5;
+    }
 }
-
 .case-header-client-name {
-  margin-bottom: 15px;
-  @include font(24px, 600, null, 'Trade Gothic LT Std');
-  text-transform: uppercase;
-  letter-spacing: 3px;
+    margin-bottom: 15px;
+    // @include font(24px, 600, null, 'Trade Gothic LT Std');
+    @include case-text('h5');
 
-  @include mq($mobile) {
-    font-size: 18px;
-  }
-
-  .fieldone & { color: $graphite; }
-  .obesity &  { color: #8FA3AD; }
-  .wedding &  { color: #006064; }
-  .upturn &   { color: $upturn-dark-blue; }
+    .fieldone & {
+        color: $graphite;
+    }
+    .obesity & {
+        color: #8FA3AD;
+    }
+    .wedding & {
+        color: #006064;
+    }
+    .upturn & {
+        color: $upturn-dark-blue;
+    }
 }
-
 .case-header-tagline {
-  margin-bottom: 15px;
-  @include font(48px, 300, null, 'Source Sans Pro');
-  line-height: 1.15;
-
-  .felix & {
-    font-size: 45px;
-    color: #F2F2F0;
-
-    @include mq($mobile) {
-      font-size: 36px;
+    margin-bottom: 15px;
+    // @include font(48px, 300, null, 'Source Sans Pro');
+    // line-height: 1.15;
+    @include case-text( 'h1', #F2F2F0);
+    .felix & {
+        font-size: 45px;
+        color: #F2F2F0;
+        @include mq($mobile) {
+            font-size: 36px;
+        }
     }
-  }
-
-  .obesity & {
-    font-size: 70px;
-    color: #33393D;
-  }
-
-  .fieldone &   { color: $blue; }
-  .upturn &     { color: $upturn-dark-blue; }
+    .obesity & {
+        font-size: 70px;
+        color: #33393D;
+    }
+    .fieldone & {
+        color: $blue;
+    }
+    .upturn & {
+        color: $upturn-dark-blue;
+    }
 }
-
 .case-header-type {
-  @include font(18px, 600, null, null);
-  font-family: 'Sentinel A', 'Sentinel B';
-
-  .fieldone &   { color: $graphite; }
-  .obesity &    { color: #8FA3AD; }
-  .wedding &    { color: #006064; }
-  .upturn &     { color: $upturn-dark-blue; }
+    // @include font(18px, 600, null, null);
+    // font-family: 'Sentinel A', 'Sentinel B';
+    @include case-text('h6');
+    .fieldone & {
+        color: $graphite;
+    }
+    .obesity & {
+        color: #8FA3AD;
+    }
+    .wedding & {
+        color: #006064;
+    }
+    .upturn & {
+        color: $upturn-dark-blue;
+    }
 }
-
 .case-header-image {
-  position: absolute;
-  display: block;
-  background-position: center center;
-  background-repeat: no-repeat;
-
-  .wedding & {
-    bottom: -1px;
-    right: 7.5%;
-
-    @include mq(1000px) {
-      display: none;
+    position: absolute;
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    .wedding & {
+        bottom: -1px;
+        right: 7.5%;
+        @include mq(1000px) {
+            display: none;
+        }
     }
-  }
-
-  .upturn & {
-    top: 50px;
-    right: 0;
-    z-index: 4;
-
-    @include mq(1000px) {
-      display: none;
+    .upturn & {
+        top: 50px;
+        right: 0;
+        z-index: 4;
+        @include mq(1000px) {
+            display: none;
+        }
     }
-  }
 }
-
 // EXECUTIVE SUMMARY
-
 .case-exec-summary {
-  padding: 100px 0;
-
-  $case-exec-summary-tablet: 1000px;
-
-  @include mq($case-exec-summary-tablet) {
-    padding: 60px 0;
-  }
-
-  @include mq($case-exec-summary-tablet) {
-    br {
-      display: none;
+    padding: 100px 0;
+    $case-exec-summary-tablet: 1000px;
+    @include mq($case-exec-summary-tablet) {
+        padding: 60px 0;
     }
-  }
+    @include mq($case-exec-summary-tablet) {
+        br {
+            display: none;
+        }
+    }
 }
-
 .case-exec-summary-text {
-  @include font(24px, 300, #616161, null);
-  font-family: 'Sentinel A', 'Sentinel B';
+    // @include font(24px, 300, #616161, null);
+    // font-family: 'Sentinel A', 'Sentinel B';
+    @include case-text('h4', #616161);
 }
-
 // BREAKDOWN
-
 .case-breakdown {
-  padding: 100px 0 140px 0;
-
-  @include mq($tablet) {
-    padding: 80px 0;
-  }
-
-  .felix & {
-    background-color: #F9F9F9;
-    color: #414141;
-  }
-
-  .fieldone & {
-    background-color: $darkblue;
-    color: #EBEEF0;
-  }
-
-  .character & {
-    background-color: #AA243B;
-    color: #EBEEF0;
-  }
-
-  .obesity & {
-    background-color: #33393D;
-    color: #EBEEF0;
-  }
-
-  .wedding & {
-    background-color: #ECEFF1;
-    color: #90A4AE;
-  }
-
-  .upturn & {
-    background-color: $upturn-dark-blue;
-    color: white;
-  }
-}
-
-.case-breakdown-column {
-  padding-right: 30px;
-
-  @include mq($tablet) {
-    float: none;
-    width: 100%;
-    padding-right: 0;
-    margin-bottom: 60px;
-
-    &:last-child {
-      margin-bottom: 0;
+    padding: 100px 0 140px;
+    @include mq($tablet) {
+        padding: 80px 0;
     }
-  }
+    .genz & {
+        background-color: #F0F0F0;
+        color: #424242;
+    }
+    .felix & {
+        background-color: #F9F9F9;
+        color: #414141;
+    }
+    .fieldone & {
+        background-color: $darkblue;
+        color: #EBEEF0;
+    }
+    .character & {
+        background-color: #AA243B;
+        color: #EBEEF0;
+    }
+    .obesity & {
+        background-color: #33393D;
+        color: #EBEEF0;
+    }
+    .wedding & {
+        background-color: #ECEFF1;
+        color: #90A4AE;
+    }
+    .upturn & {
+        background-color: $upturn-dark-blue;
+        color: white;
+    }
 }
-
+.case-breakdown-column {
+    padding-right: 30px;
+    @include mq($tablet) {
+        float: none;
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 60px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
 .case-breakdown-heading {
-  margin-bottom: 20px;
-  @include font(13px, 600, null, 'Trade Gothic LT Std');
-  text-transform: uppercase;
-  letter-spacing: 2px;
-
-  &.stacked { margin-top: 40px; }
-
-  .wedding & { color: #19B5BC; }
+    // ===============
+    // CONSIDER COMING BACK TO THIS AND MAKING IT INTO A MIXIN
+    // ===============
+    margin-bottom: 20px;
+    @include font(13px, 600, null, 'Trade Gothic LT Std');
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    &.stacked {
+        margin-top: 40px;
+    }
+    .genz & {
+        color: #FF1744;
+    }
+    .wedding & {
+        color: #19B5BC;
+    }
 }
-
 .case-breakdown-summary {
-  margin-bottom: 15px;
-  @include font(28px, 200, null, 'Source Sans Pro');
-
-  .felix & { color: #536D79; }
-  .wedding & { color: #78909C; }
+    margin-bottom: 15px;
+    // @include font(28px, 200, null, 'Source Sans Pro');
+    @include case-text('h3');
+    .genz & {
+        max-width: 310px;
+        color: #546E7A;
+    }
+    .felix & {
+        color: #536D79;
+    }
+    .wedding & {
+        color: #78909C;
+    }
 }
-
 .case-breakdown-detail,
 .case-breakdown-scope-list {
-  max-width: 260px;
-  @include font(15px, 300, null, null);
-  font-family: 'Sentinel A', 'Sentinel B';
-  line-height: 1.9;
-
-  @include mq($mobile) {
-    max-width: none;
-  }
-
-  .obesity & {
-    max-width: 350px;
-
+    max-width: 260px;
+    // @include font(15px, 300, null, null);
+    // font-family: 'Sentinel A', 'Sentinel B';
+    // line-height: 1.9;
+    @include case-text('p');
     @include mq($mobile) {
-      max-width: none;
+        max-width: none;
     }
-  }
+    .obesity & {
+        max-width: 350px;
+        @include mq($mobile) {
+            max-width: none;
+        }
+    }
 }
-
 .case-breakdown-detail {
-  @include mq($tablet) {
-    width: 50%;
-    max-width: none;
-  }
-
-  @include mq($mobile) {
-    width: 100%;
-  }
-
-  .obesity & {
-    margin-bottom: 20px;
-  }
+    @include mq($tablet) {
+        width: 50%;
+        max-width: none;
+    }
+    @include mq($mobile) {
+        width: 100%;
+    }
+    .obesity & {
+        margin-bottom: 20px;
+    }
 }
-
 .case-breakdown-scope-list {
-  padding-left: 0;
-  list-style: none;
-  @include font(15px, 300, null, null);
-  font-family: 'Sentinel A', 'Sentinel B';
+    padding-left: 0;
+    list-style: none;
+    @include font(15px, 300, null, null);
+    font-family: 'Sentinel A', 'Sentinel B';
 }
-
 .case-breakdown-footnote {
-  display: inline-block;
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top-width: 2px;
-  border-top-style: solid;
-  @include font(11px, 300, null, null);
-  font-family: 'Sentinel A', 'Sentinel B';
-  font-style: italic;
-
-  .obesity & {
-    border-top-color: #808080;
-    color: #808080;
-  }
+    display: inline-block;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top-width: 2px;
+    border-top-style: solid;
+    @include font(11px, 300, null, null);
+    font-family: 'Sentinel A', 'Sentinel B';
+    font-style: italic;
+    .obesity & {
+        border-top-color: #808080;
+        color: #808080;
+    }
 }
