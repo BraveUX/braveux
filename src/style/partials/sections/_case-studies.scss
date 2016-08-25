@@ -4,15 +4,34 @@ $blue: #34B2FF;
 $darkblue: #2E3D5A;
 $upturn-cream: #FBF9F3;
 $upturn-dark-blue: #1B3E4C;
+
 // HEADER
 .case-header {
-    position: relative;
     @include size(100%);
+    &::after {
+
+    }
     .wedding & {
         background-color: #19B5BC;
     }
     .upturn & {
         background-color: $upturn-cream;
+    }
+    .andPizza & {
+        padding-left: 600px;
+        @include mq($tablet) {
+            padding: 0;
+        }
+        &::after {
+            content: '';
+            background: url('images/andPizza/header.jpg') #FFFFFF left bottom/auto 70% no-repeat;
+            height: 100%;
+            width: 100%;
+            display: block;
+            @include mq($tablet) {
+                content: none;
+            }
+        }
     }
     .genz & {
         background: url('images/genz/header.jpg') top center/cover no-repeat;
@@ -43,7 +62,7 @@ $upturn-dark-blue: #1B3E4C;
     }
     .obesity & {
         background: url('images/obesity/header.svg') #F9F9F9 90% center no-repeat;
-        @include mq(800px) {
+        @include mq($tablet) {
             background: #F9F9F9;
         }
     }
@@ -55,6 +74,9 @@ $upturn-dark-blue: #1B3E4C;
     .upturn & {
         z-index: 5;
     }
+}
+.case-header-logo {
+    max-width: 165px;
 }
 .case-header-client-name {
     margin-bottom: 15px;
@@ -86,6 +108,9 @@ $upturn-dark-blue: #1B3E4C;
             font-size: 36px;
         }
     }
+    .andPizza & {
+        color: #202020;
+    }
     .obesity & {
         font-size: 70px;
         color: #33393D;
@@ -101,6 +126,9 @@ $upturn-dark-blue: #1B3E4C;
     // @include font(18px, 600, null, null);
     // font-family: 'Sentinel A', 'Sentinel B';
     @include case-text('h6');
+    .andPizza & {
+        color: #202020;
+    }
     .fieldone & {
         color: $graphite;
     }
@@ -152,12 +180,18 @@ $upturn-dark-blue: #1B3E4C;
     // @include font(24px, 300, #616161, null);
     // font-family: 'Sentinel A', 'Sentinel B';
     @include case-text('h4', #616161);
+    .andPizza & {
+        color: #FFFFFF;
+    }
 }
 // BREAKDOWN
 .case-breakdown {
     padding: 100px 0 140px;
     @include mq($tablet) {
         padding: 80px 0;
+    }
+    .andPizza & {
+        color: #262D35;
     }
     .genz & {
         background-color: #F0F0F0;

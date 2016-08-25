@@ -9,7 +9,8 @@
         margin-top: 80px;
     }
 }
-// CASE BLOCK
+
+// CASE BLOCKS
 .case-block {
     overflow: hidden;
     position: relative;
@@ -19,6 +20,34 @@
     @include mq($tablet) {
         padding: 80px 0;
     }
+}
+
+.case-block-flex {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    @include size(100% auto);
+    padding: 120px 0;
+    @include mq($tablet) {
+        flex-flow: column nowrap;
+        padding: 80px 0;
+    }
+
+    // FLEX MODIFIERS
+    .flex-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .flex-col {
+        flex-flow: column nowrap;
+    }
+}
+
+.case-block,
+.case-block-flex {
     // MODIFIERS
     &.extra-padded {
         padding: 200px 0;
@@ -32,9 +61,16 @@
             padding-top: 80px;
         }
     }
+    &.bottom-padded {
+        padding: 0 0 120px;
+        @include mq($tablet) {
+            padding-bottom: 80px;
+        }
+    }
     &.not-padded {
         padding: 0;
     }
+
     // CONTAINER
     .container {
         position: relative;
@@ -50,6 +86,26 @@
         @include mq($tablet) {
             padding-left: 7.5%;
             padding-right: 7.5%;
+        }
+    }
+    &.mobile-container-left {
+        @include mq($tablet) {
+            padding-left: 7.5%;
+        }
+    }
+    &.mobile-container-right {
+        @include mq($tablet) {
+            padding-right: 7.5%;
+        }
+    }
+    &.mobile-container-top {
+        @include mq($tablet) {
+            padding-top: 7.5%;
+        }
+    }
+    &.mobile-container-bottom {
+        @include mq($tablet) {
+            padding-bottom: 7.5%;
         }
     }
 }
@@ -106,6 +162,9 @@
         }
     }
     // PADDING MODIFIERS
+    &.padded {
+        padding: $site-spacing;
+    }
     &.top-padded {
         padding-top: $site-spacing;
     }
@@ -162,10 +221,42 @@
     &.relative {
         position: relative;
     }
+    // OVERLAY MODIFIERS
+    &.overlay {
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: rgba(#000000, 0.5);
+        }
+    }
+
     // MOBILE MODIFIERS
     &.mobile-container {
         @include mq($tablet) {
             padding: 80px 7.5%;
+        }
+    }
+    &.mobile-container-extra {
+        @include mq($tablet) {
+            padding: 80px;
+        }
+    }
+    &.mobile-container-absolute {
+        @include mq($tablet) {
+            padding: 0 7.5%;
+        }
+    }
+    &.mobile-container-left {
+        @include mq($tablet) {
+            padding-left: 7.5%;
+        }
+    }
+    &.mobile-container-right {
+        @include mq($tablet) {
+            padding-right: 7.5%;
         }
     }
 }
@@ -212,7 +303,19 @@
     @include size(100% auto);
     // POSIITON MODIFIERS
     &.absolute {
-        @include position(absolute, 0 null null 0);
+        @include position(absolute, 0 0 0 0);
+
+        .andPizza & {
+            margin: auto;
+            height: 80%;
+            width: auto;
+        }
+    }
+    &.absolute-offset-right {
+        @include position(absolute, 0 -5% 0 0);
+    }
+    &.absolute-offset-left {
+        @include position(absolute, 0 0 0 0);
     }
     // SIZE MODIFIERS
     &.maintain-size {
@@ -245,10 +348,14 @@
 }
 // CASE TEXT
 [class^="case-block-text"] {
-    font-weight: 200;
+    font-weight: 300;
     @include mq($tablet) {
         text-align: center;
+        br {
+            display: none;
+        }
     }
+
     // LENGTH MODIFIERS
     &.short-length {
         max-width: 310px;
@@ -292,6 +399,27 @@
     @include mq($mobile) {
         font-size: 24px;
     }
+
+    .andPizza & {
+        font-size: 20px;
+        line-height: 2;
+        text-align: left;
+    }
+}
+.case-block-text-blockquote {
+    @include font(65px, null, null, 'Source Sans Pro');
+    line-height: 1.15;
+    position: relative;
+    @include mq($tablet) {
+        text-align: left;
+    }
+    &::before {
+        content: '"';
+        position: absolute;
+        top: 0;
+        left: -25px;
+        @include font(65px, null, null, 'Source Sans Pro');
+    }
 }
 .case-block-text-citation {
     @include font(18px, null, null, null);
@@ -299,9 +427,22 @@
     @include mq($mobile) {
         font-size: 14px;
     }
+
+    .andPizza & {
+        text-align: left;
+    }
 }
 // CASE ICONS
 .case-block-text-quote-icon {
     display: block;
+    height: 47px;
+    width: 39px;
     margin: 0 auto 35px;
+
+    &.align-left {
+        margin: 0 0 35px;
+        @include mq($tablet) {
+            margin: 0 auto 35px;
+        }
+    }
 }
