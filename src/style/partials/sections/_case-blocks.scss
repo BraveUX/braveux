@@ -410,17 +410,21 @@
     @include font(65px, null, null, 'Source Sans Pro');
     line-height: 1.15;
     position: relative;
+    quotes: "“" "”" "‘" "’";
     @include mq($tablet) {
         text-align: left;
     }
     &::before {
-        content: '"';
+        content: open-quote;
         position: absolute;
         top: 0;
         left: -25px;
-        @include font(65px, null, null, 'Source Sans Pro');
+    }
+    &::after {
+       content: close-quote;
     }
 }
+
 .case-block-text-citation {
     @include font(18px, null, null, null);
     font-family: 'Sentinel A', 'Sentinel B';
