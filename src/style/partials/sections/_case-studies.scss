@@ -8,14 +8,17 @@ $upturn-dark-blue: #1B3E4C;
 // HEADER
 .case-header {
     @include size(100%);
-    &::after {
-
-    }
     .wedding & {
         background-color: #19B5BC;
     }
     .upturn & {
         background-color: $upturn-cream;
+    }
+    .idauto & {
+        background: url('images/idauto/header.jpg') top center/cover no-repeat;
+        @include mq($tablet) {
+            background-position: left center;
+        }
     }
     .andPizza & {
         padding-left: 600px;
@@ -66,12 +69,26 @@ $upturn-dark-blue: #1B3E4C;
             background: #F9F9F9;
         }
     }
+
+    &.overlay {
+        position: relative;
+        &::after {
+            content: ' ';
+            @include position(absolute, 0 0 0 0);
+            @include size(100% 100%);
+            opacity: 0.2;
+            background-color: #212121;
+        }
+    }
 }
 .case-header-container {
     @include position(absolute, 50% null null 0);
     @include size(auto 210px);
     margin-top: -80px;
     .upturn & {
+        z-index: 5;
+    }
+    .idauto & {
         z-index: 5;
     }
 }
@@ -190,6 +207,9 @@ $upturn-dark-blue: #1B3E4C;
     @include mq($tablet) {
         padding: 80px 0;
     }
+    .idauto & {
+        color: #2E3439;
+    }
     .andPizza & {
         color: #262D35;
     }
@@ -245,6 +265,9 @@ $upturn-dark-blue: #1B3E4C;
     &.stacked {
         margin-top: 40px;
     }
+    .idauto & {
+        color: #E52526;
+    }
     .genz & {
         color: #FF1744;
     }
@@ -256,6 +279,9 @@ $upturn-dark-blue: #1B3E4C;
     margin-bottom: 15px;
     // @include font(28px, 200, null, 'Source Sans Pro');
     @include case-text('h3');
+    .idauto & {
+        color: #2E3439;
+    }
     .genz & {
         max-width: 310px;
         color: #546E7A;
@@ -276,6 +302,9 @@ $upturn-dark-blue: #1B3E4C;
     @include case-text('p');
     @include mq($mobile) {
         max-width: none;
+    }
+    .idauto & {
+        color: #828588;
     }
     .obesity & {
         max-width: 350px;

@@ -305,11 +305,26 @@
     &.absolute {
         @include position(absolute, 0 0 0 0);
 
+        // IDENTITY AUTOMATION
+        .idauto-white & {
+            margin: auto auto 0;
+            height: 80%;
+            width: auto;
+        }
+
+        .idauto-black & {
+            margin: auto 10% 0 auto;
+            height: 80%;
+            width: auto;
+        }
+
+        // andPizza
         .andPizza & {
             margin: auto;
             height: 80%;
             width: auto;
         }
+
     }
     &.absolute-offset-right {
         @include position(absolute, 0 -5% 0 0);
