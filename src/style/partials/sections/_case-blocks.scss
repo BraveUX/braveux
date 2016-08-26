@@ -38,6 +38,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        .container {
+            margin: 0;
+        }
     }
 
 
@@ -81,6 +85,15 @@
             }
         }
     }
+
+    // VIEW HEIGHT MODIFIERS
+    &.view-three-quarter {
+        min-height: 75vh;
+        @include mq($tablet) {
+            min-height: 0;
+        }
+    }
+
     // MOBILE MODIFIERS
     &.mobile-container {
         @include mq($tablet) {
@@ -415,7 +428,7 @@
         font-size: 24px;
     }
 
-    .andPizza & {
+    .half & {
         font-size: 20px;
         line-height: 2;
         text-align: left;
@@ -447,7 +460,7 @@
         font-size: 14px;
     }
 
-    .andPizza & {
+    .flex-center & {
         text-align: left;
     }
 }
@@ -460,6 +473,7 @@
 
     &.align-left {
         margin: 0 0 35px;
+        align-self: flex-start;
         @include mq($tablet) {
             margin: 0 auto 35px;
         }
