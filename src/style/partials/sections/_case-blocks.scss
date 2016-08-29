@@ -317,7 +317,6 @@
     // POSIITON MODIFIERS
     &.absolute {
         @include position(absolute, 0 0 0 0);
-
         // IDENTITY AUTOMATION
         .idauto-white & {
             margin: auto auto 0;
@@ -338,6 +337,12 @@
             width: auto;
         }
 
+    }
+    &.absolute-center {
+        @include position(absolute, 0 0 0 0);
+        margin: auto;
+        height: 60%;
+        width: auto;
     }
     &.absolute-offset-right {
         @include position(absolute, 0 -5% 0 0);
@@ -450,6 +455,14 @@
     }
     &::after {
        content: close-quote;
+    }
+
+    .homezen & {
+        br {
+            @include mq($desktop) {
+                display: none;
+            }
+        }
     }
 }
 
