@@ -7,6 +7,68 @@
     }
 }
 
+// RECITY
+.recity-city {
+    position: relative;
+    display: inline-block;
+
+    .city-bg {
+        max-width:100%;
+        display: block;
+    }
+
+    .pin {
+        position: absolute;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url('images/recity/pin.svg');
+    }
+
+    .pin-one {
+        height: 6%;
+        width: 2%;
+        top: 46%;
+        left: 57%;
+    }
+
+    .pin-two {
+        height: 4%;
+        width: 2%;
+        top: 28%;
+        left: 59.5%;
+    }
+
+    .pin-three {
+        height: 5%;
+        width: 2%;
+        top: 23%;
+        left: 68%;
+    }
+
+    .pin-four {
+        height: 8%;
+        width: 2%;
+        top: 40%;
+        left: 73%;
+    }
+
+    .pin-five {
+        height: 3%;
+        width: 2%;
+        top: 32%;
+        left: 86%;
+    }
+}
+
+.recity-construction {
+    background: url('images/recity/construction.jpg') center center/cover no-repeat;
+}
+
+.recity-laptop {
+    background: url('images/recity/laptop.jpg') center center/cover no-repeat;
+}
+
 // HOMEZEN
 .homezen-laptop {
     background: url('images/homezen/laptop.jpg') center center/cover no-repeat;
