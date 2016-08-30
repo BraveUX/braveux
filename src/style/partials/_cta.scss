@@ -34,6 +34,8 @@
 .cta-icon {
   @include transition(all 0.5s ease);
   margin: 0 0 -6px 15px;
+  height: 27px;
+  width: 27px;
 }
 
 .cta-button {

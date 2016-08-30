@@ -121,6 +121,11 @@
             padding-bottom: 7.5%;
         }
     }
+    &.mobile-not-padded {
+        @include mq($tablet) {
+            padding: 0;
+        }
+    }
 }
 // MOBILE ONLY CLASSES
 @include mq($tablet) {
@@ -130,6 +135,32 @@
     }
     .mobile-padded-below {
         margin-bottom: $spacing !important;
+    }
+}
+// MOBILE ONLY MODIFIERS
+&.mobile-container {
+    @include mq($tablet) {
+        padding: 80px 7.5%;
+    }
+}
+&.mobile-container-extra {
+    @include mq($tablet) {
+        padding: 80px;
+    }
+}
+&.mobile-container-absolute {
+    @include mq($tablet) {
+        padding: 0 7.5%;
+    }
+}
+&.mobile-container-left {
+    @include mq($tablet) {
+        padding-left: 7.5%;
+    }
+}
+&.mobile-container-right {
+    @include mq($tablet) {
+        padding-right: 7.5%;
     }
 }
 // INNER BLOCK
@@ -243,33 +274,6 @@
             height: 100%;
             width: 100%;
             background: rgba(#000000, 0.5);
-        }
-    }
-
-    // MOBILE MODIFIERS
-    &.mobile-container {
-        @include mq($tablet) {
-            padding: 80px 7.5%;
-        }
-    }
-    &.mobile-container-extra {
-        @include mq($tablet) {
-            padding: 80px;
-        }
-    }
-    &.mobile-container-absolute {
-        @include mq($tablet) {
-            padding: 0 7.5%;
-        }
-    }
-    &.mobile-container-left {
-        @include mq($tablet) {
-            padding-left: 7.5%;
-        }
-    }
-    &.mobile-container-right {
-        @include mq($tablet) {
-            padding-right: 7.5%;
         }
     }
 }
@@ -440,18 +444,24 @@
     }
 }
 .case-block-text-blockquote {
-    @include font(65px, null, null, 'Source Sans Pro');
+    @include font(60px, null, null, 'Source Sans Pro');
     line-height: 1.15;
     position: relative;
     quotes: "“" "”" "‘" "’";
     @include mq($tablet) {
         text-align: left;
     }
+    @include mq($mobile) {
+        font-size: 36px;
+    }
     &::before {
         content: open-quote;
         position: absolute;
         top: 0;
         left: -25px;
+        @include mq($mobile) {
+            left: -15px;
+        }
     }
     &::after {
        content: close-quote;

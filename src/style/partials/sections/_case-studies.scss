@@ -14,6 +14,21 @@ $upturn-dark-blue: #1B3E4C;
     .upturn & {
         background-color: $upturn-cream;
     }
+    .ijr & {
+        background: url('images/ijr/header.jpg') top center/cover no-repeat;
+        @include mq($tablet) {
+            background-position: left center;
+        }
+        &::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+            @include position(absolute, 0 0 0 0);
+            @include linear-gradient(to top, rgba(#FFF,0), rgba(#FFF,0.9));
+            z-index: 5;
+        }
+    }
     .homezen & {
         background: url('images/homezen/header.jpg') #064A66 top center/cover no-repeat;
         @include mq($tablet) {
@@ -220,7 +235,8 @@ $upturn-dark-blue: #1B3E4C;
     // @include font(24px, 300, #616161, null);
     // font-family: 'Sentinel A', 'Sentinel B';
     @include case-text('h4', #616161);
-    .andPizza & {
+    .andPizza &,
+    .ijr & {
         color: #FFFFFF;
     }
 }
