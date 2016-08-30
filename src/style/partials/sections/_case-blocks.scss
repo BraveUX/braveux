@@ -137,32 +137,6 @@
         margin-bottom: $spacing !important;
     }
 }
-// MOBILE ONLY MODIFIERS
-&.mobile-container {
-    @include mq($tablet) {
-        padding: 80px 7.5%;
-    }
-}
-&.mobile-container-extra {
-    @include mq($tablet) {
-        padding: 80px;
-    }
-}
-&.mobile-container-absolute {
-    @include mq($tablet) {
-        padding: 0 7.5%;
-    }
-}
-&.mobile-container-left {
-    @include mq($tablet) {
-        padding-left: 7.5%;
-    }
-}
-&.mobile-container-right {
-    @include mq($tablet) {
-        padding-right: 7.5%;
-    }
-}
 // INNER BLOCK
 .inner-block {
     @include clearfix;
@@ -264,6 +238,32 @@
     }
     &.relative {
         position: relative;
+    }
+    // MOBILE ONLY MODIFIERS
+    &.mobile-container {
+        @include mq($tablet) {
+            padding: 80px 7.5%;
+        }
+    }
+    &.mobile-container-extra {
+        @include mq($tablet) {
+            padding: 80px;
+        }
+    }
+    &.mobile-container-absolute {
+        @include mq($tablet) {
+            padding: 0 7.5%;
+        }
+    }
+    &.mobile-container-left {
+        @include mq($tablet) {
+            padding-left: 7.5%;
+        }
+    }
+    &.mobile-container-right {
+        @include mq($tablet) {
+            padding-right: 7.5%;
+        }
     }
     // OVERLAY MODIFIERS
     &.overlay {
@@ -380,6 +380,17 @@
         float: right;
         @include mq($tablet) {
             float: none;
+        }
+    }
+    // MOBILE ONLY MODIFIERS
+    &.mobile-padded-left {
+        @include mq($tablet) {
+            padding-left: 7.5%;
+        }
+    }
+    &.mobile-padded-right {
+        @include mq($tablet) {
+            padding-right: 7.5%;
         }
     }
 }
