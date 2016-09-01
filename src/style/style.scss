@@ -8,6 +8,15 @@
 @import "modules/mixins";
 @import "modules/text";
 
+// DIN Next LT Pro - Medium // USED FOR FOH CASE STUDY
+@font-face {
+	font-family: 'DIN Next LT Pro';
+	src: url('DINNextLTPro-Medium.eot');
+	src: url('DINNextLTPro-Medium.eot?#iefix') format('embedded-opentype'),
+		url('DINNextLTPro-Medium.woff') format('woff'),
+		url('DINNextLTPro-Medium.ttf') format('truetype');
+}
+
 // brand colors
 $black: #1C1C20;
 $light-black: #333;

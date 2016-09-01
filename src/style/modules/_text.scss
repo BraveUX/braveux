@@ -1,3 +1,12 @@
+// DIN Next LT Pro - Medium // USED FOR FOH CASE STUDY
+@font-face {
+	font-family: 'DIN Next LT Pro';
+	src: url('fonts/DINNextLTPro-Medium.eot');
+	src: url('fonts/DINNextLTPro-Medium.eot?#iefix') format('embedded-opentype'),
+		url('fonts/DINNextLTPro-Medium.woff') format('woff'),
+		url('fonts/DINNextLTPro-Medium.ttf') format('truetype');
+}
+
 // load Trade Gothic
 @font-face {
   font-family: 'Trade Gothic LT Std';
@@ -9,6 +18,7 @@
        url('fonts/2CD600_0_0.svg#wf') format('svg');
 }
 
+$din-next: 'DIN Next LT Pro';
 $trade-gothic: 'Trade Gothic LT Std';
 $sentinel: 'Sentinel A', 'Sentinel B';
 $source-sans: 'Source Sans Pro';

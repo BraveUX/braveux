@@ -86,6 +86,18 @@
         }
     }
 
+    // OVERFLOW MODIFIER
+    &.overflow {
+        &::after {
+            content: '';
+            width: 100%;
+            box-shadow: 0 -10em 0 10em #FFFFFF;
+            @include mq($desktop) {
+                box-shadow: 0 -5em 0 5em #FFFFFF;
+            }
+        }
+    }
+
     // VIEW HEIGHT MODIFIERS
     &.view-three-quarter {
         min-height: 75vh;
@@ -183,6 +195,12 @@
     &.padded {
         padding: $site-spacing;
     }
+    &.extra-padded {
+        padding: $site-spacing*1.5;
+        @include mq($tablet) {
+            padding: $site-spacing*2;
+        };
+    }
     &.top-padded {
         padding-top: $site-spacing;
     }
@@ -199,6 +217,12 @@
         padding-right: $site-spacing;
         @include mq($tablet) {
             padding-right: 0;
+        }
+    }
+    &.overflow-padded {
+        padding-bottom: 10em; // Used with parent overflow
+        @include mq($tablet) {
+            padding-bottom: $site-spacing;;
         }
     }
     // ALIGNMENT MODIFIERS
@@ -353,6 +377,11 @@
     }
     &.absolute-offset-left {
         @include position(absolute, 0 0 0 0);
+    }
+    // OFFSET MODIFIERS
+    &.offset-bottom {
+        position: relative;
+        bottom: -200px;
     }
     // SIZE MODIFIERS
     &.maintain-size {
