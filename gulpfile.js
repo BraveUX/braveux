@@ -3,7 +3,7 @@ var p = require('gulp-load-plugins')();
 
 var handle = function(err) {
   console.log(err); this.emit('end');
-}
+};
 
 gulp.task('server', function() {
   return p.connect.server({
@@ -39,6 +39,7 @@ gulp.task('sass', function() {
     .pipe(p.sass({outputStyle: 'compressed'}))
     .on('error', p.notify.onError('Error: <%= error.message %>'))
     .on('error', handle)
+    .pipe(p.autoprefixer())
     .pipe(gulp.dest('public_html'))
     .pipe(p.connect.reload());
 });
@@ -66,7 +67,7 @@ gulp.task('push', function() {
     "secret": process.env.AWS_SECRET,
     "bucket": process.env.AWS_BUCKET,
     "region": process.env.AWS_REGION
-  }
+};
 
   gulp.src('./public_html/**')
     .pipe(p.s3(awsOpts));
