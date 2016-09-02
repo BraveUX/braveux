@@ -14,6 +14,12 @@ $upturn-dark-blue: #1B3E4C;
     .upturn & {
         background-color: $upturn-cream;
     }
+    .clutch & {
+        background: url('images/clutch/header.jpg') top center/cover no-repeat;
+        @include mq($tablet) {
+            background-position: left center;
+        }
+    }
     .foh & {
         background: url('images/foh/header.jpg') top center/cover no-repeat;
         @include mq($tablet) {
@@ -127,7 +133,6 @@ $upturn-dark-blue: #1B3E4C;
             .homezen & {
                 opacity: 0.8;
                 background-color: #064A66;
-
             }
         }
     }
@@ -242,13 +247,17 @@ $upturn-dark-blue: #1B3E4C;
             display: none;
         }
     }
+    .clutch & {
+        background-color: #17313B;
+    }
 }
 .case-exec-summary-text {
     // @include font(24px, 300, #616161, null);
     // font-family: 'Sentinel A', 'Sentinel B';
     @include case-text('h4', #616161);
     .andPizza &,
-    .ijr & {
+    .ijr &,
+    .clutch & {
         color: #FFFFFF;
     }
 }
@@ -257,6 +266,9 @@ $upturn-dark-blue: #1B3E4C;
     padding: 100px 0 140px;
     @include mq($tablet) {
         padding: 80px 0;
+    }
+    .clutch & {
+        color: #424242;
     }
     .foh & {
         background-color: #F3F5F6;
@@ -327,6 +339,9 @@ $upturn-dark-blue: #1B3E4C;
     letter-spacing: 2px;
     &.stacked {
         margin-top: 40px;
+    }
+    .clutch & {
+        color: #1D2B42;
     }
     .recity & {
         color: #2E358E;
