@@ -81,7 +81,7 @@
   z-index: 0;
   opacity: 0;
   @include size(100%);
-  padding-top: 300px;
+  padding: 300px 7.5% 0;
   background-color: $black;
   @include font(26px, 300, #EDEDED, null);
   font-family: 'Sentinel A', 'Sentinel B';
