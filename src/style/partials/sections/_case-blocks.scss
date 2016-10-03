@@ -20,6 +20,25 @@
     @include mq($tablet) {
         padding: 80px 0;
     }
+
+    // FADE MODIFIERS
+    &.fade-bottom {
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 150px;
+            z-index: 100;
+        }
+
+        // Section Colors
+        &.smp-romance-lt {
+            &::after {
+                box-shadow: inset 0px -115px 50px -25px #FBF9F6;
+            }
+        }
+    }
 }
 
 .case-block-flex {
@@ -62,13 +81,13 @@
     &.top-padded {
         padding: 120px 0 0;
         @include mq($tablet) {
-            padding-top: 80px;
+            padding-top: 50px;
         }
     }
     &.bottom-padded {
         padding: 0 0 120px;
         @include mq($tablet) {
-            padding-bottom: 80px;
+            padding-bottom: 50px;
         }
     }
     &.not-padded {
@@ -358,13 +377,24 @@
             width: auto;
         }
 
-        // andPizza
+        // &PIZZA
         .andPizza & {
             margin: auto;
             height: 80%;
             width: auto;
         }
 
+        // SMP
+        .smp-romance-lt & {
+            z-index: 1;
+        }
+    }
+    &.absolute-over-fade {
+        @include position(absolute, 0 0 0 0);
+        z-index: 115;
+        @include mq($tablet) {
+            z-index: 0;
+        }
     }
     &.absolute-center {
         @include position(absolute, 0 0 0 0);

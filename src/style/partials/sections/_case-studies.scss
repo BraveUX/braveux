@@ -14,6 +14,12 @@ $upturn-dark-blue: #1B3E4C;
     .upturn & {
         background-color: $upturn-cream;
     }
+    .smp & {
+        background: url('images/smp/header.jpg') top center/cover no-repeat;
+        @include mq($tablet) {
+            background-position: 20% center;
+        }
+    }
     .clutch & {
         background: url('images/clutch/header.jpg') top center/cover no-repeat;
         @include mq($tablet) {
@@ -252,20 +258,22 @@ $upturn-dark-blue: #1B3E4C;
     }
 }
 .case-exec-summary-text {
-    // @include font(24px, 300, #616161, null);
-    // font-family: 'Sentinel A', 'Sentinel B';
     @include case-text('h4', #616161);
     .andPizza &,
     .ijr &,
-    .clutch & {
+    .clutch &,
+    .smp & {
         color: #FFFFFF;
     }
 }
 // BREAKDOWN
 .case-breakdown {
     padding: 100px 0 140px;
-    @include mq($tablet) {
+    @include mq($tablet) cool{
         padding: 80px 0;
+    }
+    .smp & {
+        color: #221F1F;
     }
     .clutch & {
         color: #424242;

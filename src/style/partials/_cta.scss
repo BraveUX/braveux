@@ -8,6 +8,10 @@
   .team & {
     background-color: #F1F1F1;
   }
+
+  .smp & {
+    background-color: #55575A;
+  }
 }
 
 .cta-text {
@@ -23,6 +27,10 @@
 .cta-link {
   display: inline-block;
   @include font(22px, 200, #414141);
+
+  .smp & {
+      color: #FFFFFF;
+  }
 
   &:hover {
     .cta-icon {
