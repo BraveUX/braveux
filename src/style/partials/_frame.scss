@@ -1,0 +1,93 @@
+.frame {
+    position: relative;
+    height: auto;
+    width: auto;
+
+    img {
+        padding-top: 20px;
+    }
+}
+
+.frame-desktop {
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #ededed;
+        height: 20px;
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+    &::after {
+        color: #FFF;
+        content: ' \25CF'; // circle
+        font-size: 15px;
+        line-height: 0px;
+        position: absolute;
+        top: 10px;
+        left: 7px;
+        text-shadow: 12px 0px 0px, 24px 0px 0px; // duplicates circle
+    }
+
+    &.dark {
+        &::before {
+            background-color: #BDBDBD;
+        }
+    }
+}
+
+.frame-phone {
+    position: absolute;
+    z-index: 1000;
+
+    // SECTION MODIFIERS
+    .cds-white & {
+        width: 30%;
+        top: 25%;
+        right: 7%;
+
+        @include mq($desktop) {
+            right: 3%;
+        }
+    }
+}
+
+.frame-container {
+    .frame-phone & {
+        background-image: url('../images/cds/frame-phone.svg');
+        width: 100%;
+        background-size: cover;
+        height: 0;
+        padding: 0; /* reset */
+        padding-bottom: 195.5%;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 9%;
+            left: 3%;
+            width: 94%;
+            height: 85%;
+            background: #ededed;
+            z-index: -1;
+        }
+
+        img {
+            padding: 18.5% 6.4% 12.6% 6.8%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: inherit;
+        }
+    }
+
+    &.dark {
+        .frame-phone & {
+            background-image: url('../images/cds/frame-dark-phone.svg');
+        }
+    }
+
+}

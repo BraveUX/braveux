@@ -1,3 +1,26 @@
+// CDS
+.cds-blue {
+    background-color: #326B92;
+}
+
+.cds-red {
+    background-color: #893131;
+}
+
+.cds-dark-blue {
+    background-color: #1D2B42;
+}
+
+.cds-narvik {
+    background-color: #E5E4D6;
+    color: #424242;
+}
+
+.cds-white {
+    background-color: #F5F5F5;
+    color: #1D2B42;
+}
+
 // SMP
 .smp-coral {
     background-color: #F29182;
@@ -223,6 +246,33 @@
 
 .felix-slate {
   background-color: #AFBDC4;
+}
+
+// FIELD ONE v2
+
+.fieldone-blue {
+    background-color: #3498DB;
+}
+
+.fieldone-dark-blue {
+  background-color: #2E3D5A;
+
+  .case-block-text-heading  { color: #EBEEF0; }
+  .case-block-text-subtext  { color: #EBEEF0; }
+  .case-block-text-quote    { color: #CED7DB; }
+  .case-block-text-citation { color: #8FA3AD; }
+}
+
+.fieldone-white {
+  background-color: white;
+
+  .case-block-text-heading { color: #445963; }
+  .case-block-text-subtext { color: #414141; }
+}
+
+.fieldone-off-white {
+  background-color: #EBEEF0;
+  color: #536D79;
 }
 
 // FIELD ONE

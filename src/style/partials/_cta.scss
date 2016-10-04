@@ -12,6 +12,18 @@
   .smp & {
     background-color: #55575A;
   }
+
+  .cds & {
+      background-color: #893131;
+  }
+}
+
+.cta-text,
+.cta-link {
+    .smp &,
+    .cds & {
+        color: #FFFFFF;
+    }
 }
 
 .cta-text {
@@ -27,10 +39,6 @@
 .cta-link {
   display: inline-block;
   @include font(22px, 200, #414141);
-
-  .smp & {
-      color: #FFFFFF;
-  }
 
   &:hover {
     .cta-icon {
@@ -77,18 +85,24 @@
   }
 }
 
+.cta-button-right,
+.cta-button-left {
+    .cds & {
+        background-color: #6B2828;
+    }
+}
+
 .cta-button-right {
-  @include transform(translateX(115px));
-  right: 0;
-  background: url("../images/icons/cta-arrow-right.png") #262628 25px center no-repeat;
+    @include transform(translateX(115px));
+    right: 0;
+    background: url("../images/icons/cta-arrow-right.png") #262628 25px center no-repeat;
 }
 
 .cta-button-left {
-  @include transform(translateX(-115px));
-  left: 0;
-  background: url("../images/icons/cta-arrow-left.png") #262628 133px center no-repeat;
-
-  &::after {
-    left: 50px;
-  }
+    @include transform(translateX(-115px));
+    left: 0;
+    background: url("../images/icons/cta-arrow-left.png") #262628 133px center no-repeat;
+    &::after {
+        left: 50px;
+    }
 }

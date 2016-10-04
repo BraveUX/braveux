@@ -116,6 +116,9 @@
             }
         }
     }
+    &.overflow-initial {
+        overflow: initial;
+    }
 
     // VIEW HEIGHT MODIFIERS
     &.view-three-quarter {
@@ -308,8 +311,8 @@
             padding-right: 7.5%;
         }
     }
-    // OVERLAY MODIFIERS
-    &.overlay {
+    // OVERFLOW MODIFIERS
+    &.overflow {
         position: relative;
         &::before {
             content: '';
