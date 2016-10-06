@@ -1,20 +1,32 @@
 .frame {
     position: relative;
+    z-index: 1;
     height: auto;
     width: auto;
 
     img {
         padding-top: 20px;
     }
+
+    // SHADOW MODIFERS
+    &.shadow {
+        filter: drop-shadow(0 0 20px rgba(0,0,0,0.2));
+    }
+
+    // ABSOLUTE MODIFIERS
+    &.absolute {
+        position: absolute;
+    }
 }
 
 .frame-desktop {
+    border-radius: 10px 10px 0 0;
     &::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
-        background-color: #ededed;
+        background-color: #bdbdbd;
         height: 20px;
         width: 100%;
         border-radius: 10px 10px 0 0;
@@ -30,38 +42,151 @@
         text-shadow: 12px 0px 0px, 24px 0px 0px; // duplicates circle
     }
 
+    // EDGE MODIFIERS
+    &.edge-right {
+        border-radius: 10px 0 0 0;
+        &::before {
+            border-radius: 10px 0 0 0;
+        }
+    }
+
+    &.edge-left {
+        border-radius: 0 10px 0 0;
+        &::before {
+            border-radius: 0 10px 0 0;
+        }
+        &::after {
+            left: 1px;
+        }
+    }
+
+    // COLOR MODIFIERS
     &.dark {
         &::before {
-            background-color: #BDBDBD;
+            background-color: #757575;
+        }
+        &::after {
+            color: #4D4D4D;
+        }
+    }
+
+    &.light {
+        &::before {
+            background-color: #ededed;
+        }
+    }
+
+    // SECTION MODIFIERS
+    .interfolio-off-white & {
+        height: 100%;
+        bottom: 0;
+        right: 0;
+
+        img {
+            height: 100%;
+            width: auto;
         }
     }
 }
 
-.frame-phone {
-    position: absolute;
-    z-index: 1000;
+.frame-tablet {
+    // COLOR MODIFIERS
+    &.dark {
+        &.frame-tablet {
+            .frame-container {
+                background-image: url('../images/frames/tablet-dark.svg');
+            }
+        }
+    }
+    &.light {
+        &.frame-tablet {
+            .frame-container {
 
+            }
+        }
+    }
+    // SECTION MODIFIERS
+}
+
+.frame-mobile {
+    // COLOR MODIFIERS
+    &.dark {
+        &.frame-mobile {
+            .frame-container {
+                background-image: url('../images/frames/mobile-dark.svg');
+            }
+        }
+    }
+    &.light {
+        &.frame-mobile {
+            .frame-container {
+                background-image: url('../images/frames/mobile-light.svg');
+            }
+        }
+    }
     // SECTION MODIFIERS
     .cds-white & {
         width: 30%;
-        top: 25%;
-        right: 7%;
+        bottom: -10%;
+        right: -7%;
+        z-index: 1000;
 
-        @include mq($desktop) {
-            right: 3%;
+        @include mq($tablet) {
+            right: -3%;
+        }
+    }
+
+    .interfolio-off-white & {
+        width: 20%;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+
+        &:last-of-type {
+            z-index: 900;
+            top: 25%;
+            left:12%;
         }
     }
 }
 
 .frame-container {
-    .frame-phone & {
-        background-image: url('../images/cds/frame-phone.svg');
-        width: 100%;
-        background-size: cover;
-        height: 0;
-        padding: 0; /* reset */
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 0;
+    padding: 0; /* reset */
+    position: relative;
+
+    .frame-tablet & {
+        background-image: url('../images/frames/tablet.svg');
+        padding-bottom: 67.5%;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 2%;
+            left: 6%;
+            width: 87%;
+            height: 95%;
+            background: #ededed;
+            z-index: -2;
+        }
+
+        img {
+            padding: 2.3% 8.9% 2.8% 8.9%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: inherit;
+            z-index: -1;
+        }
+    }
+
+    .frame-mobile & {
+        background-image: url('../images/frames/mobile.svg');
         padding-bottom: 195.5%;
-        position: relative;
 
         &::after {
             content: '';
@@ -71,23 +196,17 @@
             width: 94%;
             height: 85%;
             background: #ededed;
-            z-index: -1;
+            z-index: -2;
         }
 
         img {
-            padding: 18.5% 6.4% 12.6% 6.8%;
+            padding: 18.5% 6.2% 14.6% 7.4%;
             position: absolute;
             top: 0;
             left: 0;
             height: 100%;
             width: inherit;
+            z-index: -1;
         }
     }
-
-    &.dark {
-        .frame-phone & {
-            background-image: url('../images/cds/frame-dark-phone.svg');
-        }
-    }
-
 }

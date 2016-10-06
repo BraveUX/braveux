@@ -16,12 +16,22 @@
   .cds & {
       background-color: #893131;
   }
+
+  .interfolio & {
+      background-color: #3D80AE;
+  }
+
+  .unbox & {
+      background-color: #3DB78E;
+  }
 }
 
 .cta-text,
 .cta-link {
     .smp &,
-    .cds & {
+    .cds &,
+    .interfolio &,
+    .unbox & {
         color: #FFFFFF;
     }
 }

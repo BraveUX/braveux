@@ -21,6 +21,30 @@
         padding: 80px 0;
     }
 
+    // SHADOW MODIFIERS
+    &.shadow-inset-top {
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 150px;
+            z-index: 100;
+            box-shadow: inset 0 125px 60px -100px rgba(0,0,0,0.2);
+        }
+    }
+    &.shadow-inset-bottom {
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 150px;
+            z-index: 100;
+            box-shadow: inset 0 -125px 60px -100px rgba(0,0,0,0.2);
+        }
+    }
+
     // FADE MODIFIERS
     &.fade-bottom {
         &::after {
@@ -174,6 +198,8 @@
 // INNER BLOCK
 .inner-block {
     @include clearfix;
+    max-width: 1300px;
+    margin: 0 auto;
     // SIZE MODIFIERS
     &.half {
         width: 50%;
@@ -213,6 +239,7 @@
             margin-right: 0;
         }
     }
+
     // PADDING MODIFIERS
     &.padded {
         padding: $site-spacing;
@@ -364,6 +391,22 @@
 .case-block-image {
     display: block;
     @include size(100% auto);
+    // SHADOW MODIFERS
+    &.shadow {
+        box-shadow: 0 0 60px 0px rgba(0,0,0,0.3);
+
+        // UNBOX
+        .unbox-purple & {
+            border-radius: 10px 0 0 7px;
+        }
+    }
+    // ROUNDER CORNER MODIFIERS
+    &.rounded {
+        // UNBOX
+        .unbox-teal & {
+            border-radius: 5px;
+        }
+    }
     // POSIITON MODIFIERS
     &.absolute {
         @include position(absolute, 0 0 0 0);

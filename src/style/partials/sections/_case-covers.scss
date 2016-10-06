@@ -7,6 +7,24 @@
     }
 }
 
+// UNBOX
+.unbox-laptop {
+    background: url('images/unbox/laptop.jpg') center center/cover no-repeat;
+}
+
+.unbox-fork-lift {
+    background: url('images/unbox/fork-lift.svg') #34495E center center/cover no-repeat;
+}
+
+// INTERFOLIO
+.interfolio-walking {
+    background: url('images/interfolio/walking.jpg') center center/cover no-repeat;
+}
+
+.interfolio-graduates {
+    background: url('images/interfolio/graduates.jpg') center center/cover no-repeat;
+}
+
 // CDS
 .cds-congress {
     background: url('images/cds/congress.jpg') center center/cover no-repeat;
@@ -14,6 +32,7 @@
 
 .cds-hiw {
     background: url('images/cds/how-it-works.svg') #326B92 center center/contain no-repeat;
+    height: 100vh;
 }
 
 // SMP
