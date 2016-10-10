@@ -1,4 +1,4 @@
-@mixin frame($type, $color) {
+@mixin frame($type, $color: null) {
     $colorPrimary: #bdbdbd;
     $colorSecondary: #9b9b9b;
 
@@ -8,8 +8,8 @@
         $colorSecondary: #222222;
     }
     @else if ($color == 'dark') {
-        $colorPrimary: green;
-        $colorSecondary: yellow;
+        $colorPrimary: #757575;
+        $colorSecondary: #4D4D4D;
     }
     @else if ($color == 'light') {
         $colorPrimary: #e0e0e0;
@@ -120,18 +120,28 @@
 }
 
 .frame-tablet {
+    .frame-container {
+        @include frame('tablet');
+    }
     // COLOR MODIFIERS
+    &.black {
+        &.frame-tablet {
+            .frame-container {
+                @include frame('tablet', 'black');
+            }
+        }
+    }
     &.dark {
         &.frame-tablet {
             .frame-container {
-                background-image: url('../images/frames/tablet-dark.svg');
+                @include frame('tablet', 'dark');
             }
         }
     }
     &.light {
         &.frame-tablet {
             .frame-container {
-
+                @include frame('tablet', 'light');
             }
         }
     }
@@ -139,6 +149,9 @@
 }
 
 .frame-mobile {
+    .frame-container {
+        @include frame('mobile');
+    }
     // COLOR MODIFIERS
     &.black {
         &.frame-mobile {
@@ -243,6 +256,9 @@
 }
 
 .frame-mobile-ios {
+    .frame-container {
+        @include frame('mobile-ios');
+    }
     // COLOR MODIFIERS
     &.black {
         &.frame-mobile-ios {
@@ -252,7 +268,7 @@
         }
     }
     &.dark {
-        &.frame-mobile {
+        &.frame-mobile-ios {
             .frame-container {
                 @include frame('mobile-ios', 'dark');
             }
@@ -260,7 +276,7 @@
     }
     &.light {
         &.frame-mobile {
-            .frame-container {
+            .frame-container-ios {
                 @include frame('mobile-ios', 'light');
             }
         }
