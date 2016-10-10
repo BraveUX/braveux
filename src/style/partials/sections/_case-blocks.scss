@@ -139,6 +139,14 @@
                 box-shadow: 0 -5em 0 5em #FFFFFF;
             }
         }
+        &.snagajob-orange {
+            &::after {
+                box-shadow: 0 0 0 15em #EEEEEE;
+                @include mq($desktop) {
+                    box-shadow: 0 0 0 5em #EEEEEE;
+                }
+            }
+        }
     }
     &.overflow-initial {
         overflow: initial;

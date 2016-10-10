@@ -17,6 +17,12 @@ $upturn-dark-blue: #1B3E4C;
     .interfolio & {
         background: url('images/interfolio/header.jpg') center center/cover no-repeat;
     }
+    .snagajob & {
+        background: url('images/snagajob/header.jpg') 20% center/cover no-repeat;
+        @include mq($tablet) {
+            background-position: left center;
+        }
+    }
     .unbox & {
         background: url('images/unbox/header.jpg') center center/cover no-repeat;
         @include mq($tablet) {
@@ -309,6 +315,9 @@ $upturn-dark-blue: #1B3E4C;
     .unbox & {
         color: #FFFFFF;
     }
+    .snagajob & {
+        color: #222222;
+    }
 }
 // BREAKDOWN
 .case-breakdown {
@@ -416,6 +425,9 @@ $upturn-dark-blue: #1B3E4C;
     }
     .wedding & {
         color: #19B5BC;
+    }
+    .snagajob & {
+        color: #222222;
     }
 
 }
