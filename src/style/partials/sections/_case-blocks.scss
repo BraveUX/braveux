@@ -52,14 +52,19 @@
             position: absolute;
             bottom: 0;
             width: 100%;
-            height: 150px;
+            height: 175px;
             z-index: 100;
         }
 
         // Section Colors
         &.smp-romance-lt {
             &::after {
-                box-shadow: inset 0px -115px 50px -25px #FBF9F6;
+                box-shadow: inset 0px -135px 130px -55px #FBF9F6;
+            }
+        }
+        &.smp-rose-white {
+            &::after {
+                box-shadow: inset 0px -135px 130px -55px #FDF4F2;
             }
         }
     }
@@ -211,12 +216,15 @@
     // SIZE MODIFIERS
     &.half {
         width: 50%;
+        max-width: none;
     }
     &.one-third {
         width: 30%;
+        max-width: none;
     }
     &.two-third {
         width: 60%;
+        max-width: none;
     }
     &.full-height {
         height: 100%;

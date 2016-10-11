@@ -135,16 +135,10 @@ $upturn-dark-blue: #1B3E4C;
             background-image: url('images/character/header-mobile.jpg');
         }
     }
-    .fieldone-v2 & {
-        background: url('images/fieldone-v2/header.svg') center center/cover no-repeat;
+    .fieldone & {
+        background: url('images/fieldone/header.svg') center center/cover no-repeat;
         @include mq($tablet) {
             background-position: rigth center;
-        }
-    }
-    .fieldone & {
-        background: url('images/fieldone/header.svg') #EBEEF0 right center/auto 100% no-repeat;
-        @include mq($tablet) {
-            background: #EBEEF0;
         }
     }
     .obesity & {
@@ -199,8 +193,7 @@ $upturn-dark-blue: #1B3E4C;
     // @include font(24px, 600, null, 'Trade Gothic LT Std');
     @include case-text('h5');
 
-    .fieldone &,
-    .fieldone-v2 & {
+    .fieldone & {
         color: $graphite;
     }
     .obesity & {
@@ -238,8 +231,7 @@ $upturn-dark-blue: #1B3E4C;
         font-size: 70px;
         color: #33393D;
     }
-    .fieldone &,
-    .fieldone-v2 & {
+    .fieldone & {
         color: $blue;
     }
     .upturn & {
@@ -253,8 +245,7 @@ $upturn-dark-blue: #1B3E4C;
     .andPizza & {
         color: #202020;
     }
-    .fieldone &,
-    .fieldone-v2 & {
+    .fieldone & {
         color: $graphite;
     }
     .obesity & {
@@ -360,8 +351,7 @@ $upturn-dark-blue: #1B3E4C;
         background-color: #F9F9F9;
         color: #414141;
     }
-    .fieldone &,
-    .fieldone-v2 & {
+    .fieldone & {
         background-color: $darkblue;
         color: #EBEEF0;
     }

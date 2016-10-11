@@ -40,7 +40,7 @@
 
     // SHADOW MODIFERS
     &.shadow {
-        filter: drop-shadow(0 0 20px rgba(0,0,0,0.2));
+        filter: drop-shadow(0 0 20px rgba(0,0,0,0.1));
     }
 
     // ABSOLUTE MODIFIERS
@@ -102,11 +102,15 @@
 
     &.light {
         &::before {
-            background-color: #ededed;
+            background-color: #E0E0E0;
+        }
+        &::after {
+            color: #D1D1D1;
         }
     }
 
     // SECTION MODIFIERS
+    // INTERFOLIO
     .interfolio-off-white & {
         height: 100%;
         bottom: 0;
@@ -116,6 +120,29 @@
             height: 100%;
             width: auto;
         }
+    }
+    // SMP
+    .smp-desktop & {
+        width: 64.5%;
+        bottom: 0;
+        &:nth-of-type(1) {
+            right: 0;
+        }
+        &:nth-of-type(2) {
+            left: 0;
+        }
+    }
+    .smp-nav & {
+        width: 90%;
+        bottom: 0;
+        right: 0;
+    }
+    .smp-size & {
+        width: 75.5%;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
     }
 }
 
@@ -146,6 +173,13 @@
         }
     }
     // SECTION MODIFIERS
+    // SMP
+    .smp-size & {
+        width: 65%;
+        height: 42.75%;
+        left: 0;
+        bottom: 15%;
+    }
 }
 
 .frame-mobile {
@@ -252,6 +286,21 @@
             top: 25%;
             left:12%;
         }
+    }
+    // SMP
+    .smp-nav & {
+        width: 32%;
+        height: 62.5%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto 0;
+    }
+    .smp-size & {
+        width: 22%;
+        height: 42%;
+        top: 15%;
+        right: 0;
     }
 }
 
