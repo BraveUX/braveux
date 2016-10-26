@@ -14,6 +14,9 @@ $upturn-dark-blue: #1B3E4C;
     .upturn & {
         background-color: $upturn-cream;
     }
+    .cityhealth & {
+        background: url('images/cityhealth/header.jpg') center center/cover no-repeat;
+    }
     .interfolio & {
         background: url('images/interfolio/header.jpg') center center/cover no-repeat;
     }
@@ -300,6 +303,7 @@ $upturn-dark-blue: #1B3E4C;
     .andPizza &,
     .ijr &,
     .clutch &,
+    .cityhealth &,
     .smp &,
     .cds &,
     .interfolio &,
@@ -397,6 +401,9 @@ $upturn-dark-blue: #1B3E4C;
     }
     .cds & {
         color: #1D2B42;
+    }
+    .cityhealth & {
+        color: #662417;
     }
     .clutch & {
         color: #1D2B42;

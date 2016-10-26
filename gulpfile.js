@@ -1,11 +1,13 @@
 var gulp = require('gulp');
 var p = require('gulp-load-plugins')();
 
+
 var handle = function(err) {
   console.log(err); this.emit('end');
 };
 
 gulp.task('server', function() {
+require('events').EventEmitter.prototype._maxListeners = 0;
   return p.connect.server({
     root: 'public_html',
     port: 8000,
@@ -30,7 +32,8 @@ gulp.task('ejs', function() {
     .pipe(p.ejs())
     .on('error', p.notify.onError('Error: <%= error.message %>'))
     .pipe(p.htmlmin({collapseWhitespace: true, removeComments: true}))
-    .pipe(gulp.dest('public_html'))
+    .pipe(p.ejs({}, {ext:'.html'}))
+    .pipe(gulp.dest('./public_html'))
     .pipe(p.connect.reload());
 });
 
@@ -73,5 +76,5 @@ gulp.task('push', function() {
     .pipe(p.s3(awsOpts));
 });
 
-gulp.task('default', [ 'server', 'fonts', 'images', 'ejs', 'sass', 'scripts', 'watch' ]);
+gulp.task('default', [ 'server', 'watch' ]);
 gulp.task('build', ['fonts', 'images', 'ejs', 'sass', 'scripts']);
