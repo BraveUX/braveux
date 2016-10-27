@@ -209,8 +209,9 @@
         }
     }
     // SECTION MODIFIERS
-    // SNAGAJOB
-    .snagajob-white & {
+    // MULTIPLE
+    .snagajob-white &,
+    .upfront-gradient-blue & {
         width: 30%;
         top: 0;
         bottom: 0;
@@ -230,6 +231,28 @@
             right: 0;
         }
     }
+
+    // UPFRONT
+    .upfront-connected & {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        &:nth-of-type(1) {
+            width: 35%;
+            height: 66.5%;
+            margin: auto auto auto 20%;
+            z-index: 10;
+        }
+        &:nth-of-type(2) {
+            width: 30%;
+            height: 57%;
+            margin: auto 20% auto auto;
+        }
+
+    }
+
+    // SNAGAJOB
     .snagajob-orange & {
         width: 36.5%;
         top: 0;

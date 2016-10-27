@@ -17,7 +17,7 @@ require('events').EventEmitter.prototype._maxListeners = 0;
 
 gulp.task('images', function() {
   return gulp.src('src/images/**/*')
-    .pipe(p.imagemin({progressive: true}))
+    // .pipe(p.imagemin({progressive: true}))
     .on('error', p.notify.onError('Error: <%= error.message %>'))
     .pipe(gulp.dest('public_html/images'));
 });

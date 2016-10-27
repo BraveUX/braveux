@@ -38,6 +38,12 @@ $upturn-dark-blue: #1B3E4C;
             background-position: right center;
         }
     }
+    .upfront & {
+        background: url('images/upfront/header.jpg') right 50% center/cover no-repeat;
+        @include mq($tablet) {
+            background-position: left center;
+        }
+    }
     .smp & {
         background: url('images/smp/header.jpg') top center/cover no-repeat;
         @include mq($tablet) {
@@ -205,6 +211,9 @@ $upturn-dark-blue: #1B3E4C;
     .wedding & {
         color: #006064;
     }
+    .upfront & {
+        color: #666666;
+    }
     .upturn & {
         color: $upturn-dark-blue;
     }
@@ -237,6 +246,9 @@ $upturn-dark-blue: #1B3E4C;
     .fieldone & {
         color: $blue;
     }
+    .upfront & {
+        color: #333333;
+    }
     .upturn & {
         color: $upturn-dark-blue;
     }
@@ -256,6 +268,9 @@ $upturn-dark-blue: #1B3E4C;
     }
     .wedding & {
         color: #006064;
+    }
+    .upfront & {
+        color: #666666;
     }
     .upturn & {
         color: $upturn-dark-blue;
@@ -307,7 +322,8 @@ $upturn-dark-blue: #1B3E4C;
     .smp &,
     .cds &,
     .interfolio &,
-    .unbox & {
+    .unbox &,
+    .upfront & {
         color: #FFFFFF;
     }
     .snagajob & {

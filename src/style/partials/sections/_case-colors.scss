@@ -1,3 +1,26 @@
+// UPFRONT
+.upfront-gradient-blue {
+    @include linear-gradient(to right, #4fb8b5, #3cb0bf);
+}
+
+.upfront-blue {
+    background-color: #2A3039;
+}
+
+.upfront-white,
+.upfront-offwhite {
+    color: #333333;
+}
+
+.upfront-white {
+    background-color: #FFFFFF;
+}
+
+.upfront-offwhite {
+    background-color: #FFF8F3;
+}
+
+
 // CITYHEALTH
 .cityhealth-green {
     background-color: #86ACAC;

@@ -28,6 +28,10 @@
   .unbox & {
       background-color: #3DB78E;
   }
+
+  .upfront & {
+      background-color: #FFF8F3;
+  }
 }
 
 .cta-text,
@@ -38,6 +42,9 @@
     .interfolio &,
     .unbox & {
         color: #FFFFFF;
+    }
+    .upfront & {
+        color: #333333;
     }
 }
 
