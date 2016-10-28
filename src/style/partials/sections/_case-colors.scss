@@ -1,3 +1,21 @@
+// DCV
+.dcv-light-blue {
+    background-color: #1BBAFF;
+}
+
+.dcv-blue {
+    background-color: #1E497C;
+}
+
+.dcv-offwhite {
+    background-color: #E3F2FD;
+    color: #1E497C;
+}
+
+.dcv-white {
+    background-color: #FFF;
+}
+
 // UPFRONT
 .upfront-gradient-blue {
     @include linear-gradient(to right, #4fb8b5, #3cb0bf);

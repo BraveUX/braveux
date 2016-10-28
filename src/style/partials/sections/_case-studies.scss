@@ -17,6 +17,9 @@ $upturn-dark-blue: #1B3E4C;
     .cityhealth & {
         background: url('images/cityhealth/header.jpg') center center/cover no-repeat;
     }
+    .dcv & {
+        background: url('images/dcv/header.svg') left center/cover no-repeat;
+    }
     .interfolio & {
         background: url('images/interfolio/header.jpg') center center/cover no-repeat;
     }
@@ -202,6 +205,9 @@ $upturn-dark-blue: #1B3E4C;
     // @include font(24px, 600, null, 'Trade Gothic LT Std');
     @include case-text('h5');
 
+    .dcv & {
+        color: #5C5C66;
+    }
     .fieldone & {
         color: $graphite;
     }
@@ -239,6 +245,9 @@ $upturn-dark-blue: #1B3E4C;
     .andPizza & {
         color: #202020;
     }
+    .dcv & {
+        color: #1E497C;
+    }
     .obesity & {
         font-size: 70px;
         color: #33393D;
@@ -259,6 +268,9 @@ $upturn-dark-blue: #1B3E4C;
     @include case-text('h6');
     .andPizza & {
         color: #202020;
+    }
+    .dcv & {
+        color: #5C5C66;
     }
     .fieldone & {
         color: $graphite;
@@ -316,6 +328,7 @@ $upturn-dark-blue: #1B3E4C;
 .case-exec-summary-text {
     @include case-text('h4', #616161);
     .andPizza &,
+    .dcv &,
     .ijr &,
     .clutch &,
     .cityhealth &,
