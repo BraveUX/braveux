@@ -76,5 +76,5 @@ gulp.task('push', function() {
     .pipe(p.s3(awsOpts));
 });
 
-gulp.task('default', [ 'server', 'watch' ]);
+gulp.task('default', [ 'server', 'fonts', 'images', 'ejs', 'sass', 'scripts', 'watch' ]);
 gulp.task('build', ['fonts', 'images', 'ejs', 'sass', 'scripts']);
