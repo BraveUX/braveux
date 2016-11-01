@@ -7,6 +7,10 @@
         $colorPrimary: #000000;
         $colorSecondary: #222222;
     }
+    @else if ($color == 'darker') {
+        $colorPrimary: #303232;
+        $colorSecondary: #454747;
+    }
     @else if ($color == 'dark') {
         $colorPrimary: #757575;
         $colorSecondary: #4D4D4D;
@@ -112,6 +116,14 @@
     }
 
     // COLOR MODIFIERS
+    &.darker {
+        &::before {
+            background-color: #303232;
+        }
+        &::after {
+            color: #454747;
+        }
+    }
     &.dark {
         &::before {
             background-color: #757575;
@@ -179,6 +191,13 @@
             }
         }
     }
+    &.darker {
+        &.frame-tablet {
+            .frame-container {
+                @include frame('tablet', 'darker');
+            }
+        }
+    }
     &.dark {
         &.frame-tablet {
             .frame-container {
@@ -220,6 +239,13 @@
         &.frame-tablet-vertical {
             .frame-container {
                 @include frame('tablet-vertical', 'black');
+            }
+        }
+    }
+    &.darker {
+        &.frame-tablet-vertical {
+            .frame-container {
+                @include frame('tablet-vertical', 'darker');
             }
         }
     }
@@ -271,6 +297,13 @@
             }
         }
     }
+    &.darker {
+        &.frame-mobile {
+            .frame-container {
+                @include frame('mobile', 'darker');
+            }
+        }
+    }
     &.dark {
         &.frame-mobile {
             .frame-container {
@@ -313,6 +346,94 @@
         }
         &:nth-of-type(3) {
             right: 0;
+        }
+    }
+
+    // LIVESAFE
+    .livesafe-homepage & {
+        bottom: -20%;
+        right: 0;
+        width: 45%;
+        height: 125%;
+        z-index: 10;
+        @include mq($tablet) {
+            left: 0;
+            margin: auto;
+        }
+    }
+    .livesafe-security & {
+        &:nth-of-type(1) {
+            top: 8%;
+            left: 15%;
+            width: 42%;
+            height: 74.5%;
+            z-index: 10;
+        }
+        &:nth-of-type(2) {
+            bottom: 8%;
+            right: 15%;
+            width: 36%;
+            height: 64%;
+            z-index: 0;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+    }
+    .livesafe-nav & {
+        &:nth-of-type(1) {
+            bottom: 0;
+            top: 0;
+            left: 0;
+            margin: auto 0;
+            width: 27%;
+            height: 72%;
+        }
+        &:nth-of-type(2) {
+            bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 37.5%;
+            height: 100%;
+            z-index: 10;
+        }
+        &:nth-of-type(3) {
+            bottom: 0;
+            top: 0;
+            right: 0;
+            margin: auto 0;
+            width: 27%;
+            height: 72%;
+        }
+    }
+    .livesafe-resources & {
+        &:nth-of-type(1) {
+            bottom: 0;
+            top: 0;
+            left: 0;
+            margin: auto 0;
+            width: 37.25%;
+            height: 100%;
+            z-index: 10;
+        }
+        &:nth-of-type(2) {
+            bottom: 0;
+            top: 0;
+            left: 13%;
+            right: 0;
+            margin: auto;
+            width: 29.5%;
+            height: 79.5%;
+            z-index: 9;
+        }
+        &:nth-of-type(3) {
+            bottom: 0;
+            top: 0;
+            right: 0;
+            margin: auto 0;
+            width: 24.5%;
+            height: 66%;
         }
     }
 
@@ -444,6 +565,13 @@
         &.frame-mobile-ios {
             .frame-container {
                 @include frame('mobile-ios', 'black');
+            }
+        }
+    }
+    &.darker {
+        &.frame-mobile-ios {
+            .frame-container {
+                @include frame('mobile-ios', 'darker');
             }
         }
     }

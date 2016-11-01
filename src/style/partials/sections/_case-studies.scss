@@ -14,6 +14,12 @@ $upturn-dark-blue: #1B3E4C;
     .upturn & {
         background-color: $upturn-cream;
     }
+    .livesafe & {
+        background: url('images/livesafe/header.jpg') center center/cover no-repeat;
+        @include mq($tablet) {
+            background-position: left center;
+        }
+    }
     .cityhealth & {
         background: url('images/cityhealth/header.jpg') center center/cover no-repeat;
     }
@@ -342,6 +348,7 @@ $upturn-dark-blue: #1B3E4C;
     .smp &,
     .cds &,
     .interfolio &,
+    .livesafe &,
     .unbox &,
     .upfront & {
         color: #FFFFFF;
@@ -455,6 +462,9 @@ $upturn-dark-blue: #1B3E4C;
     }
     .genz & {
         color: #FF1744;
+    }
+    .livesafe & {
+        color: #1D2B42;
     }
     .wedding & {
         color: #19B5BC;

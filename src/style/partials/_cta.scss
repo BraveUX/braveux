@@ -25,6 +25,10 @@
       background-color: #3D80AE;
   }
 
+  .livesafe & {
+      background-color: #1D2B42;
+  }
+
   .unbox & {
       background-color: #3DB78E;
   }
@@ -40,7 +44,8 @@
     .cityhealth &,
     .cds &,
     .interfolio &,
-    .unbox & {
+    .livesafe &,
+    .unbox &, {
         color: #FFFFFF;
     }
     .upfront & {
