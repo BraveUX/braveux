@@ -7,6 +7,24 @@
     }
 }
 
+// COLLABORATE
+.collaborate-venue {
+    background: url('images/collaborate/venue.jpg') center center/cover no-repeat;
+}
+.collaborate-conference {
+    background: url('images/collaborate/conference.jpg') center center/cover no-repeat;
+}
+.collaborate-compass-board {
+    background: url('images/collaborate/compass-board.jpg') center center/cover no-repeat;
+    height: inherit;
+    max-height: none;
+    @include mq($tablet) {
+        // fixes iOS glitch with vh units
+        height: auto;
+        min-height: 60%;
+    }
+}
+
 // DCV
 .dcv-sharks {
     background: url('images/dcv/sharks.jpg') center center/cover no-repeat;

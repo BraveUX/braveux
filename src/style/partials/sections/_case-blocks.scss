@@ -154,7 +154,7 @@
         }
     }
     &.overflow-initial {
-        overflow:  ;
+        overflow:  initial;
     }
 
     // VIEW HEIGHT MODIFIERS
@@ -170,6 +170,11 @@
         @include mq($tablet) {
             padding-left: 7.5%;
             padding-right: 7.5%;
+        }
+    }
+    &.mobile-container-all {
+        @include mq($tablet) {
+            padding: 7.5%;
         }
     }
     &.mobile-container-left {
@@ -235,6 +240,10 @@
         @include mq($tablet) {
             width: 100%;
         }
+    }
+    &.full-width {
+        width: 100%;
+        max-width: none;
     }
     // MARGIN MODIFIERS
     &.top-margin {
@@ -444,6 +453,14 @@
             margin: auto;
             height: 80%;
             width: auto;
+        }
+
+        // COLLABORATE
+        .collaborate-lanyards & {
+            top: -15%;
+            @include mq($tablet) {
+                top: 0;
+            }
         }
 
         // SMP

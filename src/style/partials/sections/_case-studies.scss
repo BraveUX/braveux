@@ -17,6 +17,12 @@ $upturn-dark-blue: #1B3E4C;
     .cityhealth & {
         background: url('images/cityhealth/header.jpg') center center/cover no-repeat;
     }
+    .collaborate & {
+        background: url('images/collaborate/header.jpg') center center/cover no-repeat;
+        @include mq($tablet) {
+            background-position: left center;
+        }
+    }
     .dcv & {
         background: url('images/dcv/header.svg') left center/cover no-repeat;
     }
@@ -328,6 +334,7 @@ $upturn-dark-blue: #1B3E4C;
 .case-exec-summary-text {
     @include case-text('h4', #616161);
     .andPizza &,
+    .collaborate &,
     .dcv &,
     .ijr &,
     .clutch &,

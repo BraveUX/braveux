@@ -43,6 +43,9 @@
 
     img {
         padding-top: 20px;
+        @include mq($tablet) {
+            padding-top: 15px;
+        }
     }
 
     // SHADOW MODIFERS
@@ -58,6 +61,9 @@
 
 .frame-desktop {
     border-radius: 10px 10px 0 0;
+    @include mq($tablet) {
+        border-radius: 5px 5px 0 0;
+    }
     &::before {
         content: '';
         position: absolute;
@@ -67,6 +73,10 @@
         height: 20px;
         width: 100%;
         border-radius: 10px 10px 0 0;
+        @include mq($tablet) {
+            height: 15px;
+            border-radius: 5px 5px 0 0;
+        }
     }
     &::after {
         color: #FFF;
@@ -77,6 +87,10 @@
         top: 10px;
         left: 7px;
         text-shadow: 12px 0px 0px, 24px 0px 0px; // duplicates circle
+        @include mq($tablet) {
+            top: 8px;
+            font-size: 10px;
+        }
     }
 
     // EDGE MODIFIERS
@@ -314,7 +328,8 @@
             left: initial;
         }
     }
-    .dcv-displays & {
+    .dcv-displays &,
+    .collaborate-displays & {
         bottom: 20%;
         left: -70px;
         width: 25%;
