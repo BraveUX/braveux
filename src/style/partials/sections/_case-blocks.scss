@@ -345,7 +345,7 @@
     }
     &.mobile-container-extra {
         @include mq($tablet) {
-            padding: 80px;
+            padding: 55px;
         }
     }
     &.mobile-container-absolute {
@@ -618,22 +618,22 @@
     }
 }
 .case-block-text-blockquote {
-    @include font(60px, null, null, 'Source Sans Pro');
+    @include font(55px, null, null, 'Source Sans Pro');
     line-height: 1.15;
     position: relative;
     quotes: "“" "”" "‘" "’";
     @include mq($tablet) {
         text-align: left;
     }
-    @include mq($mobile) {
-        font-size: 36px;
+    @include mq($tablet) {
+        @include font(32px, null, null, 'Source Sans Pro');
     }
     &::before {
         content: open-quote;
         position: absolute;
         top: 0;
         left: -25px;
-        @include mq($mobile) {
+        @include mq($tablet) {
             left: -15px;
         }
     }
