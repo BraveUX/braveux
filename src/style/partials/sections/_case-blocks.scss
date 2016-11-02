@@ -455,12 +455,18 @@
             width: auto;
         }
 
+
         // COLLABORATE
         .collaborate-lanyards & {
             top: -15%;
             @include mq($tablet) {
                 top: 0;
             }
+        }
+
+        // B-LINE
+        .bline-multi-data & {
+            height: 100%;
         }
 
         // SMP

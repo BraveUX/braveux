@@ -20,6 +20,12 @@ $upturn-dark-blue: #1B3E4C;
             background-position: left center;
         }
     }
+    .bline & {
+        background: url('images/bline/header.jpg') center center/cover no-repeat;
+        @include mq($tablet) {
+            background-position: left center;
+        }
+    }
     .cityhealth & {
         background: url('images/cityhealth/header.jpg') center center/cover no-repeat;
     }
@@ -340,6 +346,7 @@ $upturn-dark-blue: #1B3E4C;
 .case-exec-summary-text {
     @include case-text('h4', #616161);
     .andPizza &,
+    .bline &,
     .collaborate &,
     .dcv &,
     .ijr &,
@@ -441,6 +448,9 @@ $upturn-dark-blue: #1B3E4C;
     letter-spacing: 2px;
     &.stacked {
         margin-top: 40px;
+    }
+    .bline & {
+        color: #244161;
     }
     .cds & {
         color: #1D2B42;
