@@ -647,6 +647,10 @@
        content: close-quote;
     }
 
+    span {
+        white-space: nowrap;
+    }
+
     .homezen & {
         br {
             @include mq($desktop) {
@@ -680,5 +684,9 @@
         @include mq($tablet) {
             margin: 0 auto 35px;
         }
+    }
+
+    span {
+        white-space: nowrap;
     }
 }
