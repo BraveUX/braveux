@@ -246,3 +246,66 @@
   .black & { background-image: url('images/approach/approach-section-next-black.svg'); }
   .gray &  { background-image: url('images/approach/approach-section-next-gray.svg'); }
 }
+
+// APPROACH-V2 Styles
+// Change all 'approachTemp' names to 'approach' when ready for production release
+.approach-v2 {
+    .approachTemp-hero {
+        background: url('images/approach-v2/hero-bg.svg') bottom left/cover no-repeat;
+        height: calc(100vh - 340px);
+        width: 100%;
+    }
+
+    .approachTemp-section {
+        background-color: #262628;
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+
+        @include mq($tablet) {
+            flex-flow: column nowrap;
+        }
+    }
+
+    .approachTemp-inner-content-wrapper {
+        padding-left: 7.5%;
+        @include mq($tablet) {
+            padding: 0 7.5% 7.5%;
+            order: 1;
+            width: 100%;
+        }
+
+    }
+
+    .approachTemp-inner-block {
+        @include mq($tablet) {
+            order: 0;
+            width: 100%;
+        }
+    }
+
+    .approachTemp-image {
+        // background-size: contain;
+    }
+
+    .approachTemp-section-title {
+        @include font(20px, 300, #FFF, 'Trade Gothic LT Std');
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        max-width: 600px;
+    }
+
+    .approachTemp-section-text {
+        @include font(15px, 300, #BDBDBD, ('Sentinel A', 'Sentinel B'));
+        line-height: 1.9;
+        letter-spacing: 1px;
+        max-width: 350px;
+        margin-top: 20px;
+
+        @include mq($tablet) {
+            max-width: none;
+        }
+    }
+}
