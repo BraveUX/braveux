@@ -309,3 +309,26 @@
         }
     }
 }
+
+.testing {
+    .light-source1 {
+        animation: light 4s infinite;
+    }
+    .light-beam1 {
+        animation: light 4s infinite;
+    }
+    .light-beam-ground1 {
+        animation: light 4s infinite;
+    }
+}
+
+@keyframes light {
+    0% { opacity: 0; }
+    40% { opacity: 0; }
+    50% { opacity: .75; }
+    55% { opacity: .40; }
+    60% { opacity: 0; }
+    70% { opacity: .40; }
+    80% { opacity: .75; }
+    100% { opacity: 1; }
+}
