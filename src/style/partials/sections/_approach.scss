@@ -310,25 +310,46 @@
     }
 }
 
-.testing {
-    .light-source1 {
-        animation: light 4s infinite;
+.problems {
+    .animation-descent {
+        transform-origin: 50% 0;
+        animation: descent 5000ms ease-out 1;
     }
-    .light-beam1 {
-        animation: light 4s infinite;
+    .animation-swing {
+        transform-origin: 50% 0;
+        animation: swing 5500ms ease-in 1;
     }
-    .light-beam-ground1 {
-        animation: light 4s infinite;
+    .animation-light {
+        animation: light 2500ms ease 5000ms 1 backwards;
     }
-}
 
-@keyframes light {
-    0% { opacity: 0; }
-    40% { opacity: 0; }
-    50% { opacity: .75; }
-    55% { opacity: .40; }
-    60% { opacity: 0; }
-    70% { opacity: .40; }
-    80% { opacity: .75; }
-    100% { opacity: 1; }
+    @keyframes descent {
+        0% { transform: translateY(-1000px) scale(0.1); }
+        50% { transform: scale(0.5); }
+        85% { transform: translateY(5px); }
+        90% { transform: translateY(0px); }
+        95% { transform: translateY(2px); }
+        100% { transform: translateY(0px) scale(1); }
+    }
+
+    @keyframes swing {
+        0% { transform:  rotate(10deg); }
+        15% { transform: rotate(-5deg); }
+        50% { transform: rotate(2.5deg); }
+        75% { transform: rotate(-1.25deg); }
+        90% { transform: rotate(0.75deg); }
+        100% { transform: rotate(0deg); }
+    }
+
+    @keyframes light {
+        0% { opacity: 0; }
+        28% { opacity: 0; }
+        30% { opacity: .5; }
+        32% { opacity: 0; }
+        34% { opacity: .5; }
+        36% { opacity: 0; }
+        50% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
 }
