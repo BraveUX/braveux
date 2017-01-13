@@ -15,6 +15,11 @@
     100% { opacity: 1; }
 }
 
+@keyframes animation-river {
+    0% { transform: skew(0) rotate(0); }
+    100% { transform: skew(0.8deg) rotate(0.1deg); }
+}
+
 // ANIMATION-ONE
 .animation-one {
     .animation-one-descent {
@@ -50,13 +55,55 @@
 
 // ANIMATION-TWO
 .animation-two {
-    .animation-two-light {
-        animation: animation-light-flicker 2500ms ease 500ms 1 backwards;
+    .animation-two-bg {
+        animation: animation-two-bg 2500ms ease 1 backwards;
+    }
+    .animation-two-bg-flicker {
+        animation: animation-two-bg-flicker 10000ms ease 3000ms infinite;
     }
 
-    .animation-light-pulse {
-        animation: animation-light-pulse 5000ms ease 5000ms infinite;
+    .animation-two-light {
+        animation: animation-light-flicker 2500ms ease 1 backwards;
     }
+
+    .animation-two-light-flicker {
+        animation: animation-two-light-flicker 10000ms ease 3000ms infinite;
+    }
+}
+
+// ANIMATION-TWO KEYFRAMES
+@keyframes animation-two-bg {
+    0% { opacity: 0.6; }
+    28% { opacity: 0.6; }
+    30% { opacity: 1; }
+    32% { opacity: 0.6; }
+    34% { opacity: 1; }
+    36% { opacity: 0.6; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+@keyframes animation-two-bg-flicker {
+    0% { opacity: 1; }
+    45% { opacity: 1; }
+    73.5% { opacity: 1; }
+    74% { opacity: 0.6; }
+    74.5% { opacity: 1; }
+    75% { opacity: 0.6; }
+    75.5% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+@keyframes animation-two-light-flicker {
+    0% { opacity: 1; }
+    25% { opacity: .65; }
+    45% { opacity: 1; }
+    73.5% { opacity: 1; }
+    74% { opacity: 0; }
+    74.5% { opacity: 1; }
+    75% { opacity: 0; }
+    75.5% { opacity: 1; }
+    100% { opacity: 1; }
 }
 
 // ANIMATION-THREE
@@ -73,11 +120,11 @@
             }
             &:nth-of-type(3) {
                 transform: translateX(1px);
-                animation: animation-three-waterfall 2000ms linear 1000ms infinite;
+                animation: animation-three-waterfall 2000ms linear -1000ms infinite;
             }
             &:nth-of-type(4) {
                 transform: translateX(-1px);
-                animation: animation-three-waterfall 2000ms linear 1000ms infinite;
+                animation: animation-three-waterfall 2000ms linear -1000ms infinite;
             }
         }
     }
@@ -99,13 +146,13 @@
     .animation-three-river {
         path {
             &:nth-of-type(1) {
-                animation: animation-three-river 1500ms linear alternate infinite;
+                animation: animation-river 1500ms linear alternate infinite;
             }
             &:nth-of-type(2) {
-                animation: animation-three-river 2000ms linear alternate-reverse infinite;
+                animation: animation-river 2000ms linear alternate-reverse infinite;
             }
             &:nth-of-type(3) {
-                animation: animation-three-river 2500ms linear alternate infinite;
+                animation: animation-river 2500ms linear alternate infinite;
             }
         }
     }
@@ -128,11 +175,6 @@
 @keyframes animation-three-waterfall {
     0% { transform: translateY(0px); }
     100% { transform: translateY(160px); }
-}
-
-@keyframes animation-three-river {
-    0% { transform: skew(0) rotate(0); }
-    100% { transform: skew(0.8deg) rotate(0.1deg); }
 }
 
 @keyframes animation-three-splash {
@@ -164,8 +206,8 @@
     }
 
     .animation-four-light {
-        opacity: 0;
-        visibility: hidden;
+        // opacity: 0;
+        // visibility: hidden;
     }
 
     .animation-four-waterfall {
@@ -193,23 +235,83 @@
             }
             &:nth-of-type(3) {
                 transform: translateX(1px);
-                animation: animation-four-waterfall-drop 2000ms linear 1000ms infinite;
+                animation: animation-four-waterfall-drop 2000ms linear -1000ms infinite;
             }
             &:nth-of-type(4) {
                 transform: translateX(-1px);
-                animation: animation-four-waterfall-drop 2000ms linear 1000ms infinite;
+                animation: animation-four-waterfall-drop 2000ms linear -1000ms infinite;
             }
         }
     }
 
     .animation-chest-open {
-        display: none;
+        opacity: 0;
+        animation: animation-four-chest-opened 2000ms linear 2000ms forwards 1;
     }
     .animation-chest-closed {
         transform-origin: bottom;
         display: block;
-        animation: animation-four-waterfall-drop 2000ms linear 1000ms infinite;
+        animation: animation-four-chest-closed 2000ms linear forwards 1;
     }
+
+    .animation-four-particles {
+        circle {
+            transform-origin: bottom;
+            &:nth-of-type(1) {
+                animation: animation-four-particles 20000ms linear infinite;
+            }
+            &:nth-of-type(2) {
+                animation: animation-four-particles 20000ms linear -3333ms infinite;
+            }
+            &:nth-of-type(3) {
+                animation: animation-four-particles 20000ms linear -6666ms infinite;
+            }
+            &:nth-of-type(4) {
+                animation: animation-four-particles 20000ms linear -10000ms infinite;
+            }
+            &:nth-of-type(5) {
+                animation: animation-four-particles 20000ms linear -13333ms infinite;
+            }
+            &:nth-of-type(6) {
+                animation: animation-four-particles 20000ms linear -16666ms infinite;
+            }
+            &:nth-of-type(7) {
+                animation: animation-four-particles 20000ms linear -20000ms infinite;
+            }
+        }
+        &.reverse circle {
+            &:nth-of-type(1) {
+                animation: animation-four-particles 20000ms linear reverse infinite;
+            }
+            &:nth-of-type(2) {
+                animation: animation-four-particles 20000ms linear -3333ms reverse infinite;
+            }
+            &:nth-of-type(3) {
+                animation: animation-four-particles 20000ms linear -6666ms reverse infinite;
+            }
+        }
+    }
+
+    .animation-four-river {
+        path {
+            &:nth-of-type(1) {
+                animation: animation-river 2000ms linear alternate infinite;
+            }
+            &:nth-of-type(2) {
+                animation: animation-river 2000ms linear alternate-reverse infinite;
+            }
+            &:nth-of-type(3) {
+                animation: animation-river 2000ms linear alternate infinite;
+            }
+            &:nth-of-type(4) {
+                animation: animation-river 2000ms linear alternate-reverse infinite;
+            }
+            &:nth-of-type(5) {
+                animation: animation-river 2000ms linear alternate infinite;
+            }
+        }
+    }
+
 }
 
 // ANIMATION-FOUR KEYFRAMES
@@ -231,10 +333,45 @@
 @keyframes animation-four-chest-closed {
     0% { transform: scale(1,1); }
     20% { transform: scale(1,1); }
-    25% { transform: scale(1.1,0.9); }
-    30% { transform: scale(1.05,0.95); }
-    35% { transform: scale(1.1,0.9); }
-    40% { transform: scale(1.05,0.95); }
-    45% { transform: scale(1.1,0.9); }
-    100% { transform: scale(1,1); }
+    25% { transform: scale(1.3,0.8); }
+    30% { transform: scale(1.25,0.90); }
+    35% { transform: scale(1.3,0.8); }
+    40% { transform: scale(1.25,0.90); }
+    45% { transform: scale(1.3,0.8); }
+    50% { transform: scale(1.3,0.8); }
+    55% { transform: scale(1.25,0.90); }
+    60% { transform: scale(1.3,0.8); }
+    80% { transform: scale(1.25,0.90); }
+    97% { transform: scale(1.25,0.90) translateY(0); }
+    99% {
+        transform: scale(1.25,0.90) translateY(-5px);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1,1) translateY(-5px);
+        opacity: 0;
+    }
+}
+
+@keyframes animation-four-chest-opened {
+    0% {
+        transform: scale(1,1) translateY(-5px);
+        opacity: 1;
+    }
+    2% { transform: translateY(0); }
+    100% {
+        transform: scale(1,1);
+        opacity: 1;
+    }
+}
+
+@keyframes animation-four-particles {
+    0% { transform: rotate(0deg) translate(30px); }
+    25% { opacity: 0.75; }
+    35% { opacity: 0; }
+    45% { opacity: 0.5; }
+    75% { opacity: 0.5; }
+    85% { opacity: 0; }
+    95% { opacity: 0.75; }
+    100% { transform: rotate(360deg) translate(30px); }
 }
