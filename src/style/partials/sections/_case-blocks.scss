@@ -485,7 +485,7 @@
         @include position(absolute, 0 0 0 0);
         margin: auto;
         height: 60%;
-        width: auto;
+        width: 100%;
     }
     &.absolute-offset-right {
         @include position(absolute, 0 -5% 0 0);

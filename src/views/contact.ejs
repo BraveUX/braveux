@@ -3,69 +3,189 @@
   <head>
     <title>Brave UX - Contact</title>
     <% include partials/head %>
-    
+
   </head>
   <body>
-    <div class="overlay"></div>
-    <div class="overlay-exit"></div>
-
       <% include partials/menu %>
 
     <div class="wrapper contact">
       <header>
         <div class="container">
           <h1 class="page-heading">Contact</h1>
+          <h2 class="page-subheading">Let&rsquo;s talk about your great ideas.</h2>
+      </header>
 
-          <div class="overlay-relative">
-            <h2 class="page-subheading can-overlay">Let&rsquo;s talk about <span class="overlay-underline">your</span> great ideas.</h2>
-            <div class="overlay-content overlay-contact-empathy">
-              <p class="overlay-header overlay-header-definition"><img src="images/ux-view/empathy.svg"></p>
-              <p class="overlay-definition"><span class="overlay-noun">noun</span><br>the ability to understand and share the feelings of another</p>
-              <p class="overlay-text">It&rsquo;s not about us; user empathy is essential to sound user experience. &ldquo;When you really get what makes people tick and why they do what they do, you&rsquo;ll have a much easier time going to bat to make their lives better.&rdquo;</p>
-              <p class="overlay-footer"><a target="_blank" href="http://www.merriam-webster.com/dictionary/empathy">1. Source</a> <a target="_blank" href="http://www.designprinciplesftw.com/collections/5-guiding-principles-for-experience-designers">2. Source</a></p>
+      <section class="contact-section gray padded">
+        <div class="contact-column phone">
+          <div class="contact-content">
+            <p class="contact-heading">Talk to us</p>
+            <p class="contact-text">
+              Fill out the card on the&nbsp;<br />
+              right, and let&rsquo;s get the&nbsp;<br />
+              conversation started.
+            </p>
+            <p class="contact-text">Or, you can call us at:</p>
+            <a class="contact-link" href="tel:202-909-2700">202-909-2700</a>
+          </div>
+        </div>
+
+        <div class="contact-column">
+          <!-- DELETE hover LATER!!! -->
+          <div class="contact-letter">
+            <div class="contact-flipper">
+              <div class="contact-front contact-cover-background cover-monument">
+                <!-- Front of the letter content -->
+                <p class="contact-front-heading">Greetings From</p>
+                <div class="contact-star-container">
+                  <i class="contact-star"></i>
+                  <i class="contact-star"></i>
+                  <i class="contact-star"></i>
+                </div>
+                <p class="contact-front-title">Washington, DC</p>
+              </div>
+              <div class="contact-back">
+                <!-- Back of the letter content -->
+                <form class="contact-form" name="contact-form" method="POST" action="">
+                  <div class="contact-form-stamp"></div>
+                  <!-- Page 1 -->
+                  <div id="page1" class="contact-form-page">
+                    <div class="contact-form-intro">
+                      <p class="contact-form-counter">01</p>
+                      <p class="contact-form-text">Hi! We&rsquo;re Brave. Who are you?</p>
+                    </div>
+                    <div class="contact-form-content">
+                      <div class="contact-form-item">
+                        <input id="user-name" name="user-name" type="text" required>
+                        <label for="user-name">My name is...</label>
+                        <span class="error error-name">Please enter a valid name!</span>
+                      </div>
+                      <div class="contact-form-item">
+                        <input id="organization" name="organization" type="text" required>
+                        <label for="organization">My organization is...</label>
+                        <span class="error error-org">Please enter a valid organization!</span>
+                      </div>
+                    </div>
+                    <div class="contact-form-footer">
+                      <div class="contact-form-paging">
+                        <i class="paging-circle filled"></i>
+                        <i class="paging-circle"></i>
+                        <i class="paging-circle"></i>
+                      </div>
+                      <button class="contact-form-cta" type="button" name="next">Next</button>
+                    </div>
+                  </div>
+                  <!-- Page 2 -->
+                  <div id="page2" class="contact-form-page">
+                    <div class="contact-form-intro">
+                      <p class="contact-form-counter">02</p>
+                      <p class="contact-form-text"></p>
+                    </div>
+                    <div class="contact-form-content">
+                      <div class="contact-form-item">
+                        <textarea id="comment" name="comment" required></textarea>
+                        <label for="comment">I'd like to talk about...</label>
+                        <span class="error error-comment">Please leave a comment!</span>
+                      </div>
+                    </div>
+                    <div class="contact-form-footer">
+                      <div class="contact-form-paging">
+                        <i class="paging-circle"></i>
+                        <i class="paging-circle filled"></i>
+                        <i class="paging-circle"></i>
+                      </div>
+                      <button class="contact-form-cta" type="button" name="next">Next</button>
+                    </div>
+                  </div>
+                  <!-- Page 3 -->
+                  <div id="page3" class="contact-form-page">
+                    <div class="contact-form-intro">
+                      <p class="contact-form-counter">03</p>
+                      <p class="contact-form-text">Finally, how can we reach you?</p>
+                    </div>
+                    <div class="contact-form-content">
+                      <div class="contact-form-item">
+                        <input id="email" type="email" name="email" required>
+                        <label for="email">Email me at...</label>
+                        <span class="error error-email">Please leave a valid email!</span>
+                      </div>
+                      <div class="contact-form-item">
+                        <input id="telephone" name="telephone" type="tel" required>
+                        <label for="telephone">Call me at...</label>
+                        <span class="error error-tel">Please leave a valid number!</span>
+                      </div>
+                    </div>
+                    <div class="contact-form-footer">
+                      <div class="contact-form-paging">
+                        <i class="paging-circle"></i>
+                        <i class="paging-circle"></i>
+                        <i class="paging-circle filled"></i>
+                      </div>
+                      <button class="contact-form-cta" type="submit" name="send">Send</button>
+                    </div>
+                  </div>
+                  <!-- Page 4 -->
+                  <div id="page4" class="contact-form-page">
+                    <div class="contact-form-intro">
+                      <p class="contact-form-counter">Done!</p>
+                    </div>
+                    <div class="contact-form-content">
+                      <p class="contact-form-text">We’ll be in touch with you within the next day.</p>
+                      <p class="contact-form-text">Thanks for reaching out!</p>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </header>
+      </section>
 
-      <div class="contact-section left-gray">
-        <div class="contact-column vertical-center">
-          <p class="contact-heading">Email Us</p>
-          <p class="contact-subheading">We love email. It&rsquo;s our favorite.</p>
-          <a class="contact-link email" href="mailto:team@braveux.com">team@braveux.com</a>
+      <section class="contact-section padded">
+        <div class="contact-column visit">
+          <div class="contact-content">
+            <p class="contact-heading">Visit us</p>
+            <p class="contact-text">
+              Our storefront office is in the&nbsp;<br />
+              heart of downtown DC, just&nbsp;<br />
+              north of Farragut Square.
+            </p>
+            <a class="contact-link" href="https://goo.gl/maps/vA2kJq8Gvbn">
+              1705 DeSales St NW&nbsp;<br />
+              Washington, DC 20036
+            </a>
+            <div class="contact-map-pin"></div>
+          </div>
         </div>
 
-        <div class="contact-column contact-cover-background cover-monument"></div>
-      </div>
+        <div class="contact-column">
+          <a class="contact-cover-background google-map" href="https://goo.gl/maps/vA2kJq8Gvbn"></a>
+          <a class="contact-cover-background google-street"href="https://goo.gl/maps/ivZJRuE6ZET2"></a>
+        </div>
+      </section>
 
-      <div class="contact-section right-gray">
-        <div class="contact-column vertical-center">
-          <p class="contact-heading">Call Us</p>
-          <p class="contact-subheading">Hello. Is it Lee you&rsquo;re looking for?</p>
-          <a class="contact-link" href="tel:18442728389">844.BRAVE.UX (844.272.8389)</a>
+      <section class="contact-section">
+        <div class="contact-column light-gray hiring">
+          <div class="contact-content">
+            <p class="contact-heading">Join us</p>
+            <a class="contact-link" href="/careers">Get on the boat.</a>
+            <p class="contact-text">We're hiring.</p>
+          </div>
         </div>
 
-        <div class="contact-column column-visit vertical-center">
-          <p class="contact-heading">Join Us</p>
-          <p class="contact-subheading">Get on the boat.</p>
-          <p class="contact-subheading contact-hiring">We&rsquo;re hiring. Click <a class="contact-link contact-hiring-link" href="/careers">here.</a></p>
+        <div class="contact-column gray social">
+          <div class="contact-content">
+            <p class="contact-heading">Follow us</p>
+            <p class="contact-text">Bet you can&rsquo;t click just one!</p>
+            <div class="contact-social-container">
+              <a class="social-link dark-twitter" href="https://twitter.com/brave_ux" target="_blank">Twitter</a>
+              <a class="social-link dark-facebook" href="https://www.facebook.com/braveux" target="_blank">Facebook</a>
+              <a class="social-link dark-linkedin" href="https://www.linkedin.com/company/brave-ux" target="_blank">LinkedIn</a>
+              <a class="social-link dark-dribbble" href="https://dribbble.com/braveux" target="_blank">Dribbble</a>
+              <a class="social-link dark-github" href="https://github.com/braveux" target="_blank">GitHub</a>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="contact-section left-gray">
-        <div class="contact-column vertical-center">
-          <p class="contact-heading">Follow Us</p>
-          <p class="contact-subheading">Bet you can&rsquo;t click just one!</p>
-
-          <a class="social-link dark-twitter" href="https://twitter.com/brave_ux" target="_blank">Twitter</a>
-          <a class="social-link dark-facebook" href="https://www.facebook.com/braveux" target="_blank">Facebook</a>
-          <a class="social-link dark-linkedin" href="https://www.linkedin.com/company/brave-ux" target="_blank">LinkedIn</a>
-          <a class="social-link dark-dribbble" href="https://dribbble.com/braveux" target="_blank">Dribbble</a>
-          <a class="social-link dark-github" href="https://github.com/braveux" target="_blank">GitHub</a>
-        </div>
-
-        <div class="contact-column contact-cover-background cover-capital"></div>
-      </div>
+      </section>
 
       <footer class="footer is-short">
         <div class="footer-last-line">
