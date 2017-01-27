@@ -32,6 +32,9 @@
     padding: 60px 0;
     font-weight: 300;
     color: #424242;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
 
     &.gray {
         background-color: #F4F4F4;
@@ -46,9 +49,12 @@
 
     p {
         font-family: 'Sentinel A', 'Sentinel B';
+        letter-spacing: 0.5px;
         font-weight: 300;
         color: #8D8D8D;
         font-size: 18px;
+        line-height: 1.6;
+        max-width: 900px;
     }
 }
 .hiring-interested {
@@ -62,11 +68,11 @@
     padding: 5px;
     border: 2px solid transparent;
     transition: 0.3s ease;
-    &:focus {
-        outline: none !important;
-        box-shadow: 0 0 5px rgba(#4D4D4D, 0.3);
-        border: 2px solid rgba(#4D4D4D, 0.3);
-    }
+    // &:focus {
+    //     outline: none !important;
+    //     box-shadow: 0 0 5px rgba(#4D4D4D, 0.3);
+    //     border: 2px solid rgba(#4D4D4D, 0.3);
+    // }
     &:hover,
     &:focus {
         .cta-icon {
@@ -74,9 +80,9 @@
         }
     }
 
-    .cta-icon.turned {
-        transform: rotate(.25turn);
-    }
+    // .cta-icon.turned {
+    //     transform: rotate(.25turn);
+    // }
 }
 
 .hiring-details {
