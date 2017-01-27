@@ -4,11 +4,16 @@
   @include size(37px);
   margin: 0 25px 25px 0;
   @include hide-text;
+  background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
 
   @include mq($tablet) {
     margin-bottom: 25px;
+  }
+
+  @include mq($mobile) {
+    @include size(30px);
   }
 
   &:last-child {
