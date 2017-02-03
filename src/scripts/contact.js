@@ -2,19 +2,23 @@
 
 // Contact Letter Flip
 $(function() {
-  var letter = $('.contact-letter'); // Get Letter
-  var letterOffset = $('.contact-letter').offset().top;
+  // Get Letter
+  var letter = $('.contact-letter');
+  // Be sure to get offset after obj contains ele
+  if (letter.length) {
+    var letterOffset = letter.offset().top;
+  }
   var letterDistance;
 
   // Update var if window resizes
   $(window).resize(function() {
-    letterDistance = letterOffset;
+    var letterDistance = letterOffset;
   });
 
   // Flip card when scrolled into viewport
   $(window).scroll(function() {
-    letterDistance = letterOffset;
     var scroll = $(window).scrollTop();
+    var letterDistance = letterOffset;
     if (scroll >= letterDistance/1.7) {
       letter.addClass('is-flipped');
     } else {

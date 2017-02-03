@@ -6,6 +6,7 @@ $(document).ready(function() {
   initScrollSpy();
   initEasterEggs();
   initNavBar();
+  initMobileNav();
 
   // if(window.location.pathname.indexOf('/work/') !== -1)
   //   initCarousels();
@@ -18,9 +19,6 @@ $(document).ready(function() {
 
   if(window.location.pathname === '/team' || window.location.pathname === '/team.html')
     initTeam();
-
-  if($(window).width() <= 800)
-    initMobileNav();
 
   console.log('Looking for this? https://github.com/BraveUX/website');
 });

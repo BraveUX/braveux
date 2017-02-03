@@ -1,311 +1,445 @@
-.approach-section {
-  overflow: hidden;
-  @include clearfix;
-  @include size(100% 575px);
+// .approach-section {
+//   overflow: hidden;
+//   @include clearfix;
+//   @include size(100% 575px);
+//
+//   @include mq-min(1500px) {
+//     height: 750px;
+//   }
+//
+//   @include mq($tablet) {
+//     padding: 80px 0;
+//     height: auto;
+//   }
+//
+//   &:nth-child(odd) {
+//     .approach-section-heading,
+//     .approach-section-text,
+//     .approach-section-next {
+//       float: right;
+//       clear: right;
+//       text-align: right;
+//
+//       @include mq($tablet) {
+//         float: none;
+//         clear: none;
+//         text-align: center;
+//       }
+//     }
+//   }
+//
+//   &.white {
+//     background-color: #F1F1F1;
+//     color: #6F7F86;
+//   }
+//
+//   &.black {
+//     background-color: $black;
+//     color: #F4F4F4;
+//   }
+//
+//   &.gray { color: #E1E1E1; }
+// }
+//
+// .approach-section-content-wrapper {
+//   position: relative;
+//   top: 50%;
+//   @include transform(translateY(-50%));
+//
+//   @include mq($tablet) {
+//     position: static;
+//     top: auto;
+//     @include transform(none);
+//   }
+// }
+//
+// // SVG ICON
+//
+// .approach-section-mobile-icon {
+//   display: none;
+//   @include size(100% auto);
+//   margin: -80px 0 55px 0;
+//
+//   @include mq($tablet) {
+//     display: block;
+//   }
+//
+//   &.last {
+//     margin-top: 0;
+//   }
+// }
+//
+// .approach-section-icon {
+//   position: relative;
+//   height: 100%;
+//
+//   @include mq($tablet) {
+//     display: none;
+//   }
+// }
+//
+// .approach-section-icon-svg,
+// .approach-ie-only {
+//   position: absolute;
+//   @include size(75% auto);
+//
+//   // POSITION MODIFIERS
+//
+//   // hide jagged corners
+//   $offset: -5px;
+//
+//   &.top    { top: $offset; }
+//   &.left   { left: $offset; }
+//   &.bottom { bottom: $offset; }
+//   &.right  { right: $offset; }
+//
+//   &.middle {
+//     top: 50%;
+//     @include transform(translateY(-50%));
+//   }
+//
+//   // VISIBILITY MODIFIERS
+//   &.hidden {
+//     display: none;
+//   }
+// }
+//
+// .approach-inner-icon {
+//   [data-user-agent]:not([data-user-agent*="Firefox"]) & {
+//     @include transform-origin(center center);
+//   }
+//
+//   &.gear {
+//     // disable animation and transform origin in FireFox
+//     [data-user-agent]:not([data-user-agent*="Firefox"]) & {
+//       @include animation(spin 10.0s linear infinite);
+//     }
+//   }
+//
+//   .stopwatch-hand {
+//     // disable animation and transform origin in FireFox
+//     [data-user-agent]:not([data-user-agent*="Firefox"]) & {
+//       @include transform-origin(center 174px);
+//       @include animation(spinReverse 10.0s linear infinite);
+//     }
+//   }
+// }
+//
+// @include keyframes(spin) {
+//   0% {
+//     @include transform(rotate(360deg));
+//   }
+//
+//   100% {
+//     @include transform(rotate(0deg));
+//   }
+// }
+//
+// @include keyframes(spinReverse) {
+//   0% {
+//     @include transform(rotate(-360deg));
+//   }
+//
+//   100% {
+//     @include transform(rotate(0deg));
+//   }
+// }
+//
+// // $magic-number is the length of the .approach-to-next path
+// // calculated via getTotalLength() beforehand, because Firefox doesn't always do it right
+// // this length doesn't change, even if the size of the SVG does
+//
+// .approach-to-next {
+//   @include transition(stroke-dashoffset .3s linear);
+//
+//   &.drawing {
+//     @include transition(none);
+//   }
+//
+//   &.one.hidden   {
+//     $magic-number: 220px;
+//
+//     stroke-dashoffset: $magic-number !important;
+//     stroke-dasharray: $magic-number !important;
+//   }
+//
+//   &.two.hidden   {
+//     $magic-number: 173px;
+//
+//     stroke-dashoffset: $magic-number !important;
+//     stroke-dasharray: $magic-number !important;
+//   }
+//
+//   &.three.hidden   {
+//     $magic-number: 255px;
+//
+//     stroke-dashoffset: $magic-number !important;
+//     stroke-dasharray: $magic-number !important;
+//   }
+//
+//   &.four.hidden   {
+//     $magic-number: 247px;
+//
+//     stroke-dashoffset: $magic-number !important;
+//     stroke-dasharray: $magic-number !important;
+//   }
+//
+//   &.five.hidden   {
+//     $magic-number: 138px;
+//
+//     stroke-dashoffset: $magic-number !important;
+//     stroke-dasharray: $magic-number !important;
+//   }
+// }
+//
+// .approach-section-heading {
+//   max-width: 600px;
+//   margin: 0 0 20px 0;
+//   @include font(34px, bold, null, 'Source Sans Pro');
+//   letter-spacing: 3px;
+//   text-transform: uppercase;
+//
+//   @include mq($tablet) {
+//     margin: 0 auto 25px auto;
+//     font-size: 28px;
+//     text-align: center;
+//   }
+//
+//   @include mq($mobile) {
+//     max-width: 85%;
+//   }
+// }
+//
+// .approach-section-text {
+//   max-width: 400px;
+//   margin: 0 0 30px 0;
+//   font-family: 'Sentinel A', 'Sentinel B';
+//   font-size: 24px;
+//   line-height: 1.8;
+//
+//   @include mq($tablet) {
+//     margin: 0 auto 30px auto;
+//     font-size: 16px;
+//     text-align: center;
+//   }
+//
+//   @include mq($mobile) {
+//     max-width: 85%;
+//   }
+//
+//   strong {
+//     font-weight: 600;
+//   }
+// }
+//
+// .approach-section-next {
+//   display: block;
+//   @include size(25px);
+//   background-position: center center;
+//   background-repeat: no-repeat;
+//
+//   @include mq($tablet) {
+//     margin: 0 auto;
+//   }
+//
+//   .white & { background-image: url('images/approach/approach-section-next-white.svg'); }
+//   .black & { background-image: url('images/approach/approach-section-next-black.svg'); }
+//   .gray &  { background-image: url('images/approach/approach-section-next-gray.svg'); }
+// }
 
-  @include mq-min(1500px) {
-    height: 750px;
-  }
+// APPROACH-V2 Styles
+// Change all 'approach' names to 'approach' when ready for production release
+.approach {
+  background-color: #EFEFEF;
+}
 
-  @include mq($tablet) {
-    padding: 80px 0;
-    height: auto;
-  }
+.approach-hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
 
-  &:nth-child(odd) {
-    .approach-section-heading,
-    .approach-section-text,
-    .approach-section-next {
-      float: right;
-      clear: right;
-      text-align: right;
+    @include mq($tablet) {
+      min-height: 0;
 
-      @include mq($tablet) {
-        float: none;
-        clear: none;
-        text-align: center;
-      }
     }
-  }
-
-  &.white {
-    background-color: #F1F1F1;
-    color: #6F7F86;
-  }
-
-  &.black {
-    background-color: $black;
-    color: #F4F4F4;
-  }
-
-  &.gray { color: #E1E1E1; }
 }
 
-.approach-section-content-wrapper {
-  position: relative;
-  top: 50%;
-  @include transform(translateY(-50%));
-
-  @include mq($tablet) {
-    position: static;
-    top: auto;
-    @include transform(none);
-  }
-}
-
-// SVG ICON
-
-.approach-section-mobile-icon {
-  display: none;
-  @include size(100% auto);
-  margin: -80px 0 55px 0;
-
-  @include mq($tablet) {
-    display: block;
-  }
-
-  &.last {
-    margin-top: 0;
-  }
-}
-
-.approach-section-icon {
-  position: relative;
-  height: 100%;
-
-  @include mq($tablet) {
-    display: none;
-  }
-}
-
-.approach-section-icon-svg,
-.approach-ie-only {
+.approach-hero-image {
+  // background: url('images/approach-v2/hero-bg.svg') bottom left/cover no-repeat;
+  width: 100%;
   position: absolute;
-  @include size(75% auto);
-
-  // POSITION MODIFIERS
-
-  // hide jagged corners
-  $offset: -5px;
-
-  &.top    { top: $offset; }
-  &.left   { left: $offset; }
-  &.bottom { bottom: $offset; }
-  &.right  { right: $offset; }
-
-  &.middle {
-    top: 50%;
-    @include transform(translateY(-50%));
-  }
-
-  // VISIBILITY MODIFIERS
-  &.hidden {
-    display: none;
-  }
+  bottom: 0;
+  left: 0;
+  display: block;
+  background-size: cover;
 }
 
-.approach-inner-icon {
-  [data-user-agent]:not([data-user-agent*="Firefox"]) & {
-    @include transform-origin(center center);
-  }
-
-  &.gear {
-    // disable animation and transform origin in FireFox
-    [data-user-agent]:not([data-user-agent*="Firefox"]) & {
-      @include animation(spin 10.0s linear infinite);
-    }
-  }
-
-  .stopwatch-hand {
-    // disable animation and transform origin in FireFox
-    [data-user-agent]:not([data-user-agent*="Firefox"]) & {
-      @include transform-origin(center 174px);
-      @include animation(spinReverse 10.0s linear infinite);
-    }
-  }
-}
-
-@include keyframes(spin) {
-  0% {
-    @include transform(rotate(360deg));
-  }
-
-  100% {
-    @include transform(rotate(0deg));
-  }
-}
-
-@include keyframes(spinReverse) {
-  0% {
-    @include transform(rotate(-360deg));
-  }
-
-  100% {
-    @include transform(rotate(0deg));
-  }
-}
-
-// $magic-number is the length of the .approach-to-next path
-// calculated via getTotalLength() beforehand, because Firefox doesn't always do it right
-// this length doesn't change, even if the size of the SVG does
-
-.approach-to-next {
-  @include transition(stroke-dashoffset .3s linear);
-
-  &.drawing {
-    @include transition(none);
-  }
-
-  &.one.hidden   {
-    $magic-number: 220px;
-
-    stroke-dashoffset: $magic-number !important;
-    stroke-dasharray: $magic-number !important;
-  }
-
-  &.two.hidden   {
-    $magic-number: 173px;
-
-    stroke-dashoffset: $magic-number !important;
-    stroke-dasharray: $magic-number !important;
-  }
-
-  &.three.hidden   {
-    $magic-number: 255px;
-
-    stroke-dashoffset: $magic-number !important;
-    stroke-dasharray: $magic-number !important;
-  }
-
-  &.four.hidden   {
-    $magic-number: 247px;
-
-    stroke-dashoffset: $magic-number !important;
-    stroke-dasharray: $magic-number !important;
-  }
-
-  &.five.hidden   {
-    $magic-number: 138px;
-
-    stroke-dashoffset: $magic-number !important;
-    stroke-dasharray: $magic-number !important;
-  }
-}
-
-.approach-section-heading {
-  max-width: 600px;
-  margin: 0 0 20px 0;
-  @include font(34px, bold, null, 'Source Sans Pro');
-  letter-spacing: 3px;
-  text-transform: uppercase;
+.approach-hero-content {
+  position: absolute;
+  top: 0;
+  right: 20%;
+  width: 100%;
+  max-width: 325px;
 
   @include mq($tablet) {
-    margin: 0 auto 25px auto;
-    font-size: 28px;
-    text-align: center;
-  }
-
-  @include mq($mobile) {
-    max-width: 85%;
+    position: relative;
+    right: 0;
+    margin: 0 auto;
+    padding: 0 40px 200px;
   }
 }
 
-.approach-section-text {
-  max-width: 400px;
-  margin: 0 0 30px 0;
+.approach-hero-text {
+  @include font(15px, 300, #424242, null);
   font-family: 'Sentinel A', 'Sentinel B';
-  font-size: 24px;
-  line-height: 1.8;
+  line-height: 2;
+  margin-top: 40px;
 
-  @include mq($tablet) {
-    margin: 0 auto 30px auto;
-    font-size: 16px;
-    text-align: center;
-  }
-
-  @include mq($mobile) {
-    max-width: 85%;
+  &:first-of-type {
+    margin-top: 0;
   }
 
   strong {
-    font-weight: 600;
+    @include font(12px, 400, #424242, $trade-gothic);
+    text-transform: uppercase;
   }
 }
 
-.approach-section-next {
-  display: block;
-  @include size(25px);
-  background-position: center center;
-  background-repeat: no-repeat;
+.approach-cta {
+  @include transition(opacity ease .25s);
+  opacity: 0.85;
+  display: inline-block;
+  padding: 15px 30px;
+  margin-top: 40px;
+  border: 3px solid black;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  color: black;
+
+  @include mq($mobile) {
+    @include size(105px 35px);
+    padding: 9px 0 0 0;
+    margin-top: 25px;
+    border: 2px solid black;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  @media only screen and (max-width: 700px) and (orientation: landscape) {
+    @include size(105px 35px);
+    padding: 9px 0 0 0;
+    margin-top: 15px;
+    border: 2px solid black;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  &:hover {
+    opacity: 1.0;
+  }
+}
+
+.approach-section {
+    background-color: #262628;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    @include mq($tablet) {
+      min-height: 0;
+      flex-flow: column nowrap;
+    }
+}
+
+.approach-inner-content-wrapper {
+  padding: 0 0 0 7.5%;
+  z-index: 1;
 
   @include mq($tablet) {
-    margin: 0 auto;
+      padding: 0 7.5% 7.5%;
+      order: 1;
+      width: 100%;
   }
 
-  .white & { background-image: url('images/approach/approach-section-next-white.svg'); }
-  .black & { background-image: url('images/approach/approach-section-next-black.svg'); }
-  .gray &  { background-image: url('images/approach/approach-section-next-gray.svg'); }
+  .approach-section:nth-of-type(even) & {
+    padding: 0 7.5% 0 0;
+
+    @include mq($tablet) {
+        padding: 0 7.5% 7.5%;
+    }
+  }
 }
 
-// APPROACH-V2 Styles
-// Change all 'approachTemp' names to 'approach' when ready for production release
-.approach-v2 {
-    .approachTemp-hero {
-        background: url('images/approach-v2/hero-bg.svg') bottom left/cover no-repeat;
-        height: calc(100vh - 340px);
-        width: 100%;
+.approach-inner-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: 100%;
+  @include mq($tablet) {
+      order: 0;
+      width: 100%;
+      min-height: 0;
+  }
+}
+
+.approach-animation-container {
+    width: auto !important;
+    height: 100% !important;
+    position: relative;
+}
+
+.approach-animation-canvas {
+  width: auto !important;
+  height: auto !important;
+  display: block;
+  max-height: 100vh;
+  max-width: 100%;
+}
+
+.approach-animation-overlay {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute;
+  top: 0;
+}
+
+.approach-section-title {
+    @include font(20px, 300, #FFF, 'Trade Gothic LT Std');
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    max-width: 600px;
+}
+
+.approach-section-text {
+    @include font(15px, 300, #BDBDBD, ('Sentinel A', 'Sentinel B'));
+    line-height: 1.9;
+    letter-spacing: 1px;
+    max-width: 350px;
+    margin-top: 20px;
+
+    @include mq($tablet) {
+        max-width: none;
     }
+}
 
-    .approachTemp-section {
-        background-color: #262628;
-        justify-content: center;
-        width: 100%;
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
 
-        @include mq($tablet) {
-            flex-flow: column nowrap;
-        }
+/* Safari 6.1+ (10.0 is the latest version of Safari at this time) */
+@media (min-device-width:320px) and (max-device-width:768px) {
+  @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)
+  {
+    _::-webkit-:not(:root:root), .approach-section {
+      padding-top: 30px;
     }
-
-    .approachTemp-inner-content-wrapper {
-        padding-left: 7.5%;
-        @include mq($tablet) {
-            padding: 0 7.5% 7.5%;
-            order: 1;
-            width: 100%;
-        }
-
+    _::-webkit-:not(:root:root), .safari_only {
+      display: none;
     }
-
-    .approachTemp-inner-block {
-        @include mq($tablet) {
-            order: 0;
-            width: 100%;
-        }
-    }
-
-    .approachTemp-image {
-        // background-size: contain;
-    }
-
-    .approachTemp-section-title {
-        @include font(20px, 300, #FFF, 'Trade Gothic LT Std');
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        max-width: 600px;
-    }
-
-    .approachTemp-section-text {
-        @include font(15px, 300, #BDBDBD, ('Sentinel A', 'Sentinel B'));
-        line-height: 1.9;
-        letter-spacing: 1px;
-        max-width: 350px;
-        margin-top: 20px;
-
-        @include mq($tablet) {
-            max-width: none;
-        }
-    }
+  }
 }
