@@ -7,3 +7,4 @@
 
 ## TODO
 * Refactor frame.scss modifiers
+* NOSCRIPT (No Animation) for approach page/mobile
