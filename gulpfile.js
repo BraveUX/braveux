@@ -56,12 +56,22 @@ gulp.task('scripts', function() {
     .pipe(p.connect.reload());
 });
 
+gulp.task('animations', function() {
+  return gulp.src(['src/scripts/animations/approach.js', 'src/scripts/animations/*.js'])
+    .pipe(p.concat('animations.js'))
+    .pipe(p.uglify())
+    .on('error', p.notify.onError('Error: <%= error.message %>'))
+    .pipe(gulp.dest('public_html'))
+    .pipe(p.connect.reload());
+});
+
 gulp.task('watch', function() {
   gulp.watch('src/images/**/*', ['images']);
   gulp.watch('src/fonts/**/*', ['fonts']);
   gulp.watch('src/views/**/*.ejs', ['ejs']);
   gulp.watch('src/style/**/*.scss', ['sass']);
   gulp.watch('src/scripts/*.js', ['scripts']);
+  gulp.watch('src/scripts/animations/*.js', ['animations']);
 });
 
 gulp.task('push', function() {
@@ -76,5 +86,5 @@ gulp.task('push', function() {
     .pipe(p.s3(awsOpts));
 });
 
-gulp.task('default', [ 'server', 'fonts', 'images', 'ejs', 'sass', 'scripts', 'watch' ]);
-gulp.task('build', ['fonts', 'images', 'ejs', 'sass', 'scripts']);
+gulp.task('default', [ 'server', 'fonts', 'images', 'ejs', 'sass', 'scripts', 'animations', 'watch' ]);
+gulp.task('build', ['fonts', 'images', 'ejs', 'sass', 'scripts', 'animations']);
