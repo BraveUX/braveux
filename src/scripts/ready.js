@@ -14,8 +14,8 @@ $(document).ready(function() {
   if(window.location.pathname === '/' || window.location.pathname === '/index.html')
     initWork();
 
-  if(window.location.pathname === '/approach' || window.location.pathname === '/approach.html')
-    initApproach();
+  // if(window.location.pathname === '/approach' || window.location.pathname === '/approach.html')
+  //   initApproach();
 
   if(window.location.pathname === '/team' || window.location.pathname === '/team.html')
     initTeam();
@@ -59,87 +59,87 @@ function initWork() {
   }
 }
 
-function initApproach() {
-  // cache vars
-  var drawDuration = 50;
-  var fadeInDuration = 500;
-  var fadeInEasing = 'ease';
-  var scrollDuration = 500;
-  var scrollEasing = 'linear';
-
-  function bindVivus(index) {
-    // animate loops, fade in arrowhead and icon
-    return new Vivus($('.approach-section-icon-svg').eq(index).get(0), { type: 'async', start: 'inViewport', duration: drawDuration }, function() {
-      // remove drawing class
-      if(index != 5)
-        $('.approach-to-next').eq(index).get(0).classList.remove('drawing');
-
-      // fade in icon and arrowhead
-      $('.approach-inner-icon').eq(index).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
-      $('.approach-arrowhead').eq(index).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
-    });
-  }
-
-  function bindWaypoints(index) {
-    $('.approach-section-icon').eq(index).waypoint(function(direction) {
-      // only while scrolling down
-      if(direction === 'down') {
-        // drop the hidden class, let her rip
-        // not sure about the browser support on this one...
-        if(index != 5)
-          $('.approach-to-next').eq(index).get(0).classList.remove('hidden');
-      }
-    });
-  }
-
-  // bind next arrow handler
-  $('.approach-section-next').click(function(e) {
-    e.preventDefault();
-
-    // get button index
-    var index = $(this).index('.approach-section-next');
-
-    // check if final arrow
-    if(index == 5) {
-      // scroll to approach cta
-      var offset = ($(window).height() - $('.approach .cta').outerHeight()) / 2;
-      $('.approach .cta').velocity('scroll', { offset: -offset, duration: scrollDuration, easing: scrollEasing });
-    }
-    else {
-      // scroll to next section
-      var offset = ($(window).height() - $('.approach-section').eq(index + 1).outerHeight()) / 2;
-      $('.approach-section').eq(index + 1).velocity('scroll', { offset: -offset, duration: scrollDuration, easing: scrollEasing });
-    }
-  });
-
-  // check for IE
-  var isIE = !$('#ie-test').get(0).classList;
-
-  // if IE, dont bind Vivus or Waypoints
-  if(isIE) {
-    // delete svgs
-    $('.approach-section-icon-svg').remove();
-
-    // show jpgs
-    $('.approach-ie-only').removeClass('hidden');
-
-    // remove hidden classes
-    $('.approach-to-next').removeAttr('class');
-
-    // exit approach init
-    return false;
-  }
-  else {
-    // hide inner icons
-    $('.approach-inner-icon, .approach-arrowhead').css('opacity', '0');
-
-    // bind Vivus and Waypoints on each approach section svg
-    for(var i = 0; i <= 5; i++) {
-      bindVivus(i);
-      bindWaypoints(i);
-    }
-  }
-}
+// function initApproach() {
+//   // cache vars
+//   var drawDuration = 50;
+//   var fadeInDuration = 500;
+//   var fadeInEasing = 'ease';
+//   var scrollDuration = 500;
+//   var scrollEasing = 'linear';
+//
+//   function bindVivus(index) {
+//     // animate loops, fade in arrowhead and icon
+//     return new Vivus($('.approach-section-icon-svg').eq(index).get(0), { type: 'async', start: 'inViewport', duration: drawDuration }, function() {
+//       // remove drawing class
+//       if(index != 5)
+//         $('.approach-to-next').eq(index).get(0).classList.remove('drawing');
+//
+//       // fade in icon and arrowhead
+//       $('.approach-inner-icon').eq(index).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
+//       $('.approach-arrowhead').eq(index).velocity({ 'opacity': 1 }, { duration: fadeInDuration, easing: fadeInEasing });
+//     });
+//   }
+//
+//   function bindWaypoints(index) {
+//     $('.approach-section-icon').eq(index).waypoint(function(direction) {
+//       // only while scrolling down
+//       if(direction === 'down') {
+//         // drop the hidden class, let her rip
+//         // not sure about the browser support on this one...
+//         if(index != 5)
+//           $('.approach-to-next').eq(index).get(0).classList.remove('hidden');
+//       }
+//     });
+//   }
+//
+//   // bind next arrow handler
+//   $('.approach-section-next').click(function(e) {
+//     e.preventDefault();
+//
+//     // get button index
+//     var index = $(this).index('.approach-section-next');
+//
+//     // check if final arrow
+//     if(index == 5) {
+//       // scroll to approach cta
+//       var offset = ($(window).height() - $('.approach .cta').outerHeight()) / 2;
+//       $('.approach .cta').velocity('scroll', { offset: -offset, duration: scrollDuration, easing: scrollEasing });
+//     }
+//     else {
+//       // scroll to next section
+//       var offset = ($(window).height() - $('.approach-section').eq(index + 1).outerHeight()) / 2;
+//       $('.approach-section').eq(index + 1).velocity('scroll', { offset: -offset, duration: scrollDuration, easing: scrollEasing });
+//     }
+//   });
+//
+//   // check for IE
+//   var isIE = !$('#ie-test').get(0).classList;
+//
+//   // if IE, dont bind Vivus or Waypoints
+//   if(isIE) {
+//     // delete svgs
+//     $('.approach-section-icon-svg').remove();
+//
+//     // show jpgs
+//     $('.approach-ie-only').removeClass('hidden');
+//
+//     // remove hidden classes
+//     $('.approach-to-next').removeAttr('class');
+//
+//     // exit approach init
+//     return false;
+//   }
+//   else {
+//     // hide inner icons
+//     $('.approach-inner-icon, .approach-arrowhead').css('opacity', '0');
+//
+//     // bind Vivus and Waypoints on each approach section svg
+//     for(var i = 0; i <= 5; i++) {
+//       bindVivus(i);
+//       bindWaypoints(i);
+//     }
+//   }
+// }
 
 function initTeam() {
   var selector = null;
