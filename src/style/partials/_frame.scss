@@ -55,6 +55,10 @@
     // SHADOW MODIFERS
     &.shadow {
         filter: drop-shadow(0 0 20px rgba(0,0,0,0.2));
+
+        .upside & {
+          filter: drop-shadow(0 0 20px rgba(0,0,0,0.3));
+        }
     }
 
     // ABSOLUTE MODIFIERS
@@ -176,6 +180,11 @@
         right: 0;
         left: 0;
         margin: 0 auto;
+    }
+    // UPSIDE
+    .upside-interface & {
+      max-width: 1300px;
+      margin: 0 auto;
     }
 }
 

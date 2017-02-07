@@ -459,6 +459,22 @@
             width: auto;
         }
 
+        // UPSIDE
+        .upside-interface & {
+          width: 50%;
+          top: 0;
+          bottom: 0;
+          margin: auto 0;
+          &:nth-of-type(1) {
+            left: 0;
+            transform: translateX(-25%);
+          }
+          &:nth-of-type(2) {
+            right: 0;
+            left: initial;
+            transform: translateX(50%);
+          }
+        }
 
         // COLLABORATE
         .collaborate-lanyards & {

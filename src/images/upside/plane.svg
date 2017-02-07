@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1359.3 548.8">
+  <title>plane</title>
+  <g>
+    <rect width="1359.3" height="548.77" style="fill: none"/>
+    <g>
+      <polygon points="359.2 319.7 289.7 279.5 266.9 281.5 317.9 323.3 359.2 319.7" style="fill: #9364de;fill-rule: evenodd"/>
+      <path d="M414.8,330.2a8.3,8.3,0,0,0,5.7-13.5L408,309.5a16.2,16.2,0,0,0-9.4-2.1l-107.3,9.1a65,65,0,0,1-41.2-10.4l-18.6-12.2L219,295l15.9,25.3-2.5-.2a4.5,4.5,0,0,0-2.6,8.5l6.4,3.4-4.5,11.7,9.7-.8,3.8-6.1s8.5,7.1,25.7,5.7Z" style="fill: #9364de;fill-rule: evenodd"/>
+      <polygon points="420.5 316.6 409.5 316.9 407.1 312.6 412.7 312.1 420.5 316.6" style="fill: #512d8c;fill-rule: evenodd"/>
+      <polygon points="244.5 302.4 231.5 293.9 219 295 224.7 304.1 244.5 302.4" style="fill: #512d8c;fill-rule: evenodd"/>
+      <path d="M271,342.4l143.9-12.3c6.6-.6,7.9-4.2,7.5-8.3l-177.2,15s8.4,7.1,25.5,5.7" style="fill: #512d8c;fill-rule: evenodd"/>
+      <path d="M355.4,333.5,297,382.2l-.7.3-19.5,1.7a1.2,1.2,0,0,1-1-2l39-47a1.2,1.2,0,0,1,.8-.4l38.9-3.3a1.2,1.2,0,0,1,.9,2.2" style="fill: #9364de;fill-rule: evenodd"/>
+      <path d="M286.5,325.1a2.5,2.5,0,1,0-2.3,2.7,2.5,2.5,0,0,0,2.3-2.7" style="fill: #483369;fill-rule: evenodd"/>
+      <path d="M294.9,324.4a2.5,2.5,0,1,0-2.3,2.7,2.5,2.5,0,0,0,2.3-2.7" style="fill: #483369;fill-rule: evenodd"/>
+      <path d="M303.2,323.7a2.5,2.5,0,1,0-2.3,2.7,2.5,2.5,0,0,0,2.3-2.7" style="fill: #483369;fill-rule: evenodd"/>
+      <path d="M311.6,323a2.5,2.5,0,1,0-2.3,2.7,2.5,2.5,0,0,0,2.3-2.7" style="fill: #483369;fill-rule: evenodd"/>
+      <g>
+        <path d="M325.4,313" style="fill: #483369"/>
+        <path d="M326.9,330.5" style="fill: #483369"/>
+      </g>
+      <path d="M319.9,322.3a2.5,2.5,0,1,0-2.3,2.7,2.5,2.5,0,0,0,2.3-2.7" style="fill: #483369;fill-rule: evenodd"/>
+      <path d="M328.3,321.6a2.5,2.5,0,1,0-2.3,2.7,2.5,2.5,0,0,0,2.3-2.7" style="fill: #483369;fill-rule: evenodd"/>
+      <path d="M331.6,321.3a2.5,2.5,0,1,0,2.3-2.7,2.5,2.5,0,0,0-2.3,2.7" style="fill: #483369;fill-rule: evenodd"/>
+      <path d="M345,320.1a2.5,2.5,0,1,0-2.3,2.7,2.5,2.5,0,0,0,2.3-2.7" style="fill: #f7aa22;fill-rule: evenodd"/>
+      <path d="M353.3,319.4a2.5,2.5,0,1,0-2.3,2.7,2.5,2.5,0,0,0,2.3-2.7" style="fill: #483369;fill-rule: evenodd"/>
+      <path d="M361.7,318.7a2.5,2.5,0,1,0-2.3,2.7,2.5,2.5,0,0,0,2.3-2.7" style="fill: #483369;fill-rule: evenodd"/>
+      <path d="M370,318a2.5,2.5,0,1,0-2.3,2.7A2.5,2.5,0,0,0,370,318" style="fill: #483369;fill-rule: evenodd"/>
+      <path d="M378.4,317.3a2.5,2.5,0,1,0-2.3,2.7,2.5,2.5,0,0,0,2.3-2.7" style="fill: #483369;fill-rule: evenodd"/>
+      <path d="M386.7,316.6a2.5,2.5,0,1,0-2.3,2.7,2.5,2.5,0,0,0,2.3-2.7" style="fill: #483369;fill-rule: evenodd"/>
+    </g>
+  </g>
+</svg>

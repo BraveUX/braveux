@@ -32,6 +32,12 @@ $upturn-dark-blue: #1B3E4C;
           background-position: left center;
       }
     }
+    .upside & {
+      background: url('images/upside/header.jpg') center center/cover no-repeat;
+      @include mq($tablet) {
+          background-position: left center;
+      }
+    }
     .cityhealth & {
         background: url('images/cityhealth/header.jpg') center center/cover no-repeat;
     }
@@ -363,7 +369,8 @@ $upturn-dark-blue: #1B3E4C;
     .interfolio &,
     .livesafe &,
     .unbox &,
-    .upfront & {
+    .upfront &,
+    .upside & {
         color: #FFFFFF;
     }
     .snagajob & {

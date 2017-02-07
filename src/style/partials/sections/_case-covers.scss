@@ -7,6 +7,34 @@
     }
 }
 
+// UPSIDE
+.upside-terminal {
+    background: url('images/upside/terminal-banner.jpg') center center/cover no-repeat;
+}
+.upside-airplane {
+    background: url('images/upside/airplane-banner.jpg') center center/cover no-repeat;
+}
+.upside-plane-bg {
+    background: url('images/upside/plane-bg.svg') center bottom/cover repeat-x;
+    padding: 0;
+}
+.upside-plane-bg {
+    background: url('images/upside/plane-bg.svg') center bottom/cover repeat-x;
+    padding: 0;
+}
+.upside-section-6-bg {
+  background: url('images/upside/section-6-bg.svg') center center/cover;
+  padding: 0;
+
+  img {
+    @include size(100% 75vh);
+    @include mq($tablet) {
+        // fixes iOS glitch with vh units
+        max-height: 500px;
+    }
+  }
+}
+
 // TMT
 .tmt-server {
     background: url('images/tmt/server-banner.jpg') center center/cover no-repeat;
