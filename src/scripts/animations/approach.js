@@ -1,27 +1,22 @@
 $(document).ready(function() {
-  // $(function() {
-  //   var visible = false;
-  //   $('#animation-container-one').waypoint(function() {
-  //     if (!visible) {
-  //       animationOne();
-  //       visible = true;
-  //     }
-  //   }, {
-  //     offset: '50%'
-  //   });
-  // })
   ctaScroll();
-  initAnimation('#animation-container-one');
-  initAnimation('#animation-container-two');
-  initAnimation('#animation-container-three');
-  initAnimation('#animation-container-four');
-  // $('body').click(function () {
-  //   animationOne();
-  //   animationTwo();
-  //   animationThree();
-  //   animationFour();
-  // });
+  mediaCheck();
 });
+
+// Run on window resize
+$(window).resize(function () {
+  mediaCheck();
+});
+
+function mediaCheck() {
+  // Check if not on mobile
+  if ( $(window).width() > 800 ) {
+    initAnimation('#animation-container-one');
+    initAnimation('#animation-container-two');
+    initAnimation('#animation-container-three');
+    initAnimation('#animation-container-four');
+  }
+}
 
 // Hero CTA Controls
 function ctaScroll() {
