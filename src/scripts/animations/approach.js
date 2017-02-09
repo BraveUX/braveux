@@ -1,3 +1,4 @@
+// Run on page load
 $(document).ready(function() {
   ctaScroll();
   mediaCheck();
@@ -22,6 +23,8 @@ function mediaCheck() {
 function ctaScroll() {
 	var btn = $('.approach-cta');
 	btn.click(function(e) {
+    // disable href if JS is enabled
+    e.preventDefault();
 		e.stopPropagation();
 		// animate to page content
 		$('html, body').animate({
