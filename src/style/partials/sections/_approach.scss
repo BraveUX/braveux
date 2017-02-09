@@ -154,11 +154,11 @@
 
 .approach-image {
   display: none;
+  width: 100%;
+  padding: 0 7.5%;
 
   @include mq($tablet) {
     display: block;
-    width: 100%;
-    padding: 0 7.5%;
   }
 }
 
