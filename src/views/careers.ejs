@@ -24,18 +24,51 @@
           <h2 class="page-subheading can-overlay">Get on the boat.</h2>
         </div>
       </header>
-
       <div class="hiring-section gray">
-        <div class="container">
-          <h2>UX Project Manager</h2>
-          <p>We’re looking for a smart, curious and analytical rockstar that can handle a hybrid role within our small agency: everything from project management and operations to business development and internal initiatives. Part air traffic controller, part communication hub, and part liaison. We know it's a lot to take on. Are you up for the challenge?</p>
-          <a href="https://braveux.recruiterbox.com/jobs/fk0mjn7/?source=bravesite" class="hiring-interested">
-            I&rsquo;m interested.
+          <div class="container">
+            <h2>UX Designer</h2>
+            <p>We are looking for an experienced UX designer whose wireframes and mockups exude both beauty and brains.</p>
+            <button class="hiring-interested">
+              I&rsquo;m interested.
+              <img class="cta-icon" src="../images/icons/icon-cta.svg">
+            </button>
 
-            <img class="cta-icon" src="../images/icons/icon-cta.svg">
-        </a>
+            <div class="hiring-details">
+              <h4>Responsibilities include:</h4>
+              <ul>
+                <li>Understanding the strategy behind complex user interfaces</li>
+                <li>Extending information architecture through taxonomy, flows and wireframing</li>
+                <li>Ensuring tidy organization with feature-complete wireframes and pixel-perfect mockups</li>
+                <li>Working closely with strategists, designers, developers and clients</li>
+                <li>Staying ahead of interaction and visual trends</li>
+              </ul>
+
+              <h4>Must haves:</h4>
+              <ul>
+                <li>Proficient Adobe Illustrator skills</li>
+                <li>A diverse aesthetic that can handle everything from enterprise to start-ups</li>
+                <li>Experience with:</li>
+                <li class="sub">Wireframes, storyboards and site maps</li>
+                <li class="sub">Vector and raster-based design</li>
+                <li class="sub">Interface information architecture and design (web and/or app)</li>
+                <li class="sub">Responsive information architecture and design (desktop through mobile applications)</li>
+                <li class="sub">Information architecting and designing for content management systems and limitations</li>
+              </ul>
+
+              <h4>Nice-to-haves:</h4>
+              <ul>
+                <li>Experience with:</li>
+                <li class="sub">Sketch</li>
+                <li class="sub">Print deliverables and processes</li>
+                <li class="sub">HTML, CSS</li>
+                <li class="sub">Web browser developer tools (Chrome Timeline, etc.)</li>
+                <li class="sub">Animation (desktop, video and/or browser-based)</li>
+              </ul>
+
+              <h4 class="hiring-cta">If this sounds like you, please email us at <a href="mailto:team@braveux.com">team@braveux.com.</a></h4>
+            </div>
+          </div>
         </div>
-      </div>
       <footer class="footer is-short">
         <div class="footer-last-line">
           <p class="footer-copyright">&copy;2017 Brave UX. All Rights Reserved.</p>
@@ -51,8 +84,11 @@
     <script src="scripts.js"></script>
 
     <script>
+      (function () {
+        $('.hiring-details').toggleClass('collapsed');
+      })();
       $('.hiring-interested').click(function(e) {
-        // e.preventDefault();
+        e.preventDefault();
         $(this).parent().find('.hiring-details').slideToggle();
         $(this).parent().find('.hiring-details').toggleClass('collapsed');
         $(this).parent().find('.cta-icon').toggleClass('turned');
