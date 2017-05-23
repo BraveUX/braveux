@@ -1,243 +1,99 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <title>Brave UX - Contact</title>
-    <% include partials/head %>
+<head>
+  <title>Brave UX - Contact</title>
+  <% include partials/_head %>
+</head>
+<body>
+  <!-- content -->
+  <% include partials/_menu %>
+  <main class="wrapper">
+    <header class="hero">
+      <div class="container">
+        <h1 class="hero-title">Contact</h1>
+        <p class="hero-text">Let&rsquo;s talk about your Brave ideas.</p>
+      </div>
+    </header>
 
-  </head>
-  <body>
-      <% include partials/menu %>
-
-    <div class="wrapper contact-page">
-      <header>
-        <div class="container">
-          <h1 class="page-heading">Contact</h1>
-          <h2 class="page-subheading">Let&rsquo;s talk about your great ideas.</h2>
-      </header>
-
-      <section class="contact-section gray padded">
-        <div class="contact-wrapper">
-          <div class="contact-column contact">
-            <div class="contact-content">
-                <p class="contact-heading">Talk to us</p>
-                <p class="contact-text">
-                  Drop us a line, and let&rsquo;s get&nbsp;<br />
-                  the&nbsp; conversation started.
-                </p>
-                <a href="mailto:team@braveux.com" class="contact-group">
-                  <p class="contact-text">We&rsquo;re available at:</p>
-                  <p class="contact-link">team@braveux.com</p>
-                </a>
-                <p class="contact-text">Or, you can call us at:</p>
-                <a class="contact-link" href="tel:202-909-2700">202-909-2700</a>
-            </div>
+    <section class="block padded white-smoke">
+      <div class="container row">
+        <div class="inner-block column one-third-md">
+          <div class="contact-content">
+            <p class="contact-title">Talk To Us</p>
+            <p class="contact-text">Drop us a line, and let&rsquo;s get&nbsp;<br />the  conversation started.</p>
           </div>
-
-          <div class="contact-column letter">
-            <!-- DELETE hover LATER!!! -->
-            <div class="contact-letter">
-              <div class="contact-flipper">
-                <div class="contact-front contact-cover-background cover-monument">
-                  <!-- Front of the letter content -->
-                  <p class="contact-front-heading">Greetings From</p>
-                  <div class="contact-star-container">
-                    <i class="contact-star"></i>
-                    <i class="contact-star"></i>
-                    <i class="contact-star"></i>
+          <a href="mailto:team@braveux.com" class="contact-group">
+            <p class="contact-text">We&rsquo;re available at:</p>
+            <p class="contact-link">team@braveux.com</p>
+          </a>
+          <div class="contact-content">
+            <p class="contact-text">Or, you can call us at:</p>
+            <a href="tel:202-909-2700" class="contact-link">202-909-2700</a>
+          </div>
+        </div>
+        <div class="inner-block column two-third-md">
+          <div class="contact-letter">
+            <div class="contact-flipper">
+              <div class="contact-front contact-cover-background cover-monument">
+                <!-- Front of the letter content -->
+                <p class="contact-front-heading">Greetings From</p>
+                <p class="contact-star">&#9733;</p>
+                <p class="contact-front-title">Washington, DC</p>
+              </div>
+              <div class="contact-back">
+                <!-- Back of the letter content -->
+                <div class="contact-back-stamp"></div>
+                <div class="contact-back-content">
+                  <div class="contact-back-box-intro">
+                    <p class="contact-back-tagline">Send us an email</p>
                   </div>
-                  <p class="contact-front-title">Washington, DC</p>
-                </div>
-                <div class="contact-back">
-                  <!-- Back of the letter content -->
-                  <div class="contact-form-stamp"></div>
-                  <div class="contact-form-temp">
-                    <div class="contact-form-page">
-                      <div class="contact-form-intro">
-                        <p class="contact-form-counter">Send us an email</p>
-                      </div>
-                      <a href="mailto:team@braveux.com" class="contact-form-content">
-                        <p class="contact-form-text">We’re available at:</p>
-                        <p class="contact-form-link">team@braveux.com</p>
-                      </a>
-                    </div>
-                  </div>
-                  <!-- <form class="contact-form" name="contact-form" method="POST" action="">
-                    <div class="contact-form-stamp"></div>
-                    <div id="page1" class="contact-form-page">
-                      <div class="contact-form-intro">
-                        <p class="contact-form-counter">01</p>
-                        <p class="contact-form-text">Hi! We&rsquo;re Brave. Who are you?</p>
-                      </div>
-                      <div class="contact-form-content">
-                        <div class="contact-form-item">
-                          <input id="user-name" name="user-name" type="text" required>
-                          <label for="user-name">My name is...</label>
-                          <span class="error error-name">Please enter a valid name!</span>
-                        </div>
-                        <div class="contact-form-item">
-                          <input id="organization" name="organization" type="text" required>
-                          <label for="organization">My organization is...</label>
-                          <span class="error error-org">Please enter a valid organization!</span>
-                        </div>
-                      </div>
-                      <div class="contact-form-footer">
-                        <div class="contact-form-paging">
-                          <i class="paging-circle filled"></i>
-                          <i class="paging-circle"></i>
-                          <i class="paging-circle"></i>
-                        </div>
-                        <button class="contact-form-cta" type="button" name="next">Next</button>
-                      </div>
-                    </div>
-                    <div id="page2" class="contact-form-page">
-                      <div class="contact-form-intro">
-                        <p class="contact-form-counter">02</p>
-                        <p class="contact-form-text"></p>
-                      </div>
-                      <div class="contact-form-content">
-                        <div class="contact-form-item">
-                          <textarea id="comment" name="comment" required></textarea>
-                          <label for="comment">I'd like to talk about...</label>
-                          <span class="error error-comment">Please leave a comment!</span>
-                        </div>
-                      </div>
-                      <div class="contact-form-footer">
-                        <div class="contact-form-paging">
-                          <i class="paging-circle"></i>
-                          <i class="paging-circle filled"></i>
-                          <i class="paging-circle"></i>
-                        </div>
-                        <button class="contact-form-cta" type="button" name="next">Next</button>
-                      </div>
-                    </div>
-                    <div id="page3" class="contact-form-page">
-                      <div class="contact-form-intro">
-                        <p class="contact-form-counter">03</p>
-                        <p class="contact-form-text">Finally, how can we reach you?</p>
-                      </div>
-                      <div class="contact-form-content">
-                        <div class="contact-form-item">
-                          <input id="email" type="email" name="email" required>
-                          <label for="email">Email me at...</label>
-                          <span class="error error-email">Please leave a valid email!</span>
-                        </div>
-                        <div class="contact-form-item">
-                          <input id="telephone" name="telephone" type="tel" required>
-                          <label for="telephone">Call me at...</label>
-                          <span class="error error-tel">Please leave a valid number!</span>
-                        </div>
-                      </div>
-                      <div class="contact-form-footer">
-                        <div class="contact-form-paging">
-                          <i class="paging-circle"></i>
-                          <i class="paging-circle"></i>
-                          <i class="paging-circle filled"></i>
-                        </div>
-                        <button class="contact-form-cta" type="submit" name="send">Send</button>
-                      </div>
-                    </div>
-                    <div id="page4" class="contact-form-page">
-                      <div class="contact-form-intro">
-                        <p class="contact-form-counter">Done!</p>
-                      </div>
-                      <div class="contact-form-content">
-                        <p class="contact-form-text">We’ll be in touch with you within the next day.</p>
-                        <p class="contact-form-text">Thanks for reaching out!</p>
-                      </div>
-                    </div>
-                  </form> -->
+                  <a href="mailto:team@braveux.com" class="contact-back-box-link">
+                    <p class="contact-back-text">We&rsquo;re available at:</p>
+                    <p class="contact-back-email">team@braveux.com</p>
+                  </a>
                 </div>
               </div>
             </div>
-        </div>
-      </section>
-
-      <section class="contact-section padded">
-        <div class="contact-wrapper">
-          <div class="contact-column visit">
-            <div class="contact-content">
-              <p class="contact-heading">Visit us</p>
-              <p class="contact-text">
-                Our storefront office is in the&nbsp;
-                heart of downtown DC, just&nbsp;
-                north of Farragut Square.
-              </p>
-              <div class="contact-group">
-                <a class="contact-link" href="https://goo.gl/maps/vA2kJq8Gvbn" target="_blank">
-                  1705 DeSales St NW&nbsp;<br />
-                  Washington, DC 20036
-                </a>
-                <a class="contact-map-pin" href="https://goo.gl/maps/vA2kJq8Gvbn" target="_blank"></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="contact-column">
-            <a class="contact-cover-background google-map" href="https://goo.gl/maps/vA2kJq8Gvbn" target="_blank"></a>
-            <a class="contact-cover-background google-street"href="https://goo.gl/maps/ivZJRuE6ZET2" target="_blank"></a>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="contact-section">
-        <div class="contact-column light-gray hiring">
+    <section class="block padded">
+      <div class="container row">
+        <div class="inner-block column one-third-md">
           <div class="contact-content">
-            <p class="contact-heading">Join us</p>
-            <a href="/careers" class="contact-group">
-              <p class="contact-link">Get on the boat.</p>
-              <p class="contact-text">We&rsquo;re hiring.</p>
-            </a>
-          </div>
-        </div>
-
-        <div class="contact-column gray social">
-          <div class="contact-content">
-            <p class="contact-heading">Follow us</p>
-            <p class="contact-text">Bet you can&rsquo;t click just one!</p>
-            <div class="contact-social-container">
-              <a class="social-link dark-twitter" href="https://twitter.com/brave_ux" target="_blank">Twitter</a>
-              <a class="social-link dark-facebook" href="https://www.facebook.com/braveux" target="_blank">Facebook</a>
-              <a class="social-link dark-linkedin" href="https://www.linkedin.com/company/brave-ux" target="_blank">LinkedIn</a>
-              <a class="social-link dark-dribbble" href="https://dribbble.com/braveux" target="_blank">Dribbble</a>
-              <a class="social-link dark-github" href="https://github.com/braveux" target="_blank">GitHub</a>
+            <p class="contact-title">Visit Us</p>
+            <p class="contact-text">Our storefront office is in the&nbsp;<br />heart of downtown DC, just&nbsp;<br />north of Farragut Square.</p>
+            <div class="contact-address-group" target="_blank">
+              <a href="https://goo.gl/maps/episQWmr91H2" class="contact-link">
+                1705 DeSales St NW<br />
+                Washington, DC 20036
+              </a>
+              <a href="https://goo.gl/maps/episQWmr91H2" class="contact-map-pin"></a>
             </div>
           </div>
         </div>
-      </section>
-
-      <footer class="footer is-short">
-        <div class="footer-last-line">
-          <p class="footer-copyright">&copy;2017 Brave UX. All Rights Reserved.</p>
-          <div class="footer-stars"></div>
-          <p class="footer-made">Proudly made in our Nation&rsquo;s Capital.</p>
+        <div class="inner-block gutter-top-mobile column two-third-md">
+          <div class="contact-map-container">
+            <a class="contact-cover-background column full-xs half-sm google-map" href="https://goo.gl/maps/episQWmr91H2" target="_blank"></a>
+            <a class="contact-cover-background column full-xs half-sm google-street" href="https://goo.gl/maps/qkhmQ3K5aDD2" target="_blank"></a>
+          </div>
         </div>
-        <div class="footer-egg"></div>
-      </footer>
-    </div><!-- END wrapper -->
+      </div>
+    </section>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="//cdn.jsdelivr.net/velocity/1.1.0/velocity.min.js"></script>
-    <script src="scripts.js"></script>
+    <section class="cta-block padded white-smoke">
+      <div class="cta-content container">
+        <div class="cta-text">Get on the boat. We&rsquo;re hiring.</div>
+        <a href="./careers" class="btn btn-text icon-arrow">Join Us</a>
+      </div>
+    </section>
 
-    <script>
-      (function(f,b){
-        var c;
-        f.hj=f.hj||function(){(f.hj.q=f.hj.q||[]).push(arguments)};
-        f._hjSettings={hjid:20443, hjsv:3};
-        c=b.createElement("script");c.async=1;
-        c.src="//static.hotjar.com/c/hotjar-20443.js?sv=3";
-        b.getElementsByTagName("head")[0].appendChild(c);
-      })(window,document);
-    </script>
+    <% include partials/_footer %>
+  </main>
 
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <%- include partials/_footer-scripts %>
 
-      ga('create', 'UA-48218627-1', 'braveux.com');
-      ga('send', 'pageview');
-    </script>
-  </body>
+</body>
 </html>

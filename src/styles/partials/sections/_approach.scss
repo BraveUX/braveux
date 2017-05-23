@@ -1,0 +1,124 @@
+.approach-hero {
+  // background: url('../images/sections/approach/hero-bg.svg') rgba($white-smoke, 0.5) 100% bottom/contain no-repeat;
+  display: flex;
+  flex-direction: column;
+  // margin-top: $gridGap*1.5;
+  margin-bottom: -1px; // ensure that the mountains are flush with next section
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  @include media('>=md') {
+    // min-height: calc(100vh + 100px);
+    min-height: 100vh;
+  }
+}
+
+.approach-hero-image {
+  @include position(absolute, null, null, 0);
+  object-fit: cover;
+  padding-top: 100px;
+  width: 100%;
+}
+
+.approach-hero-box {
+  padding-top: $gridGap*6;
+}
+
+.approach-hero-content {
+  background-color: rgba($white-smoke, 0.5);
+  margin: 0 -1em; // negative margin to keep text aligned despite background
+  padding: 1em;
+  position: relative;
+  right: 0;
+  top: #{-$gridGap*4.5};
+  width: calc(100% + 2em);
+
+  @include media('>=md') {
+    margin: 0 14% 0 auto;
+    max-width: 325px;
+    padding: 1em;
+    width: 100%;
+  }
+}
+
+.approach-hero-text {
+  @include text('sentinel', 15, 300, $charcoal);
+  line-height: 2;
+  margin-top: $textGap*2;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &:last-of-type {
+    margin-bottom: $textGap*2;
+  }
+
+  strong {
+    @include text('trade-gothic', 13, 400, $charcoal);
+    text-transform: uppercase;
+  }
+}
+
+.approach-content-tagline {
+  @include text('trade-gothic', 20, 300, $white-smoke);
+  letter-spacing: 2px;
+  max-width: 450px;
+  text-transform: uppercase;
+}
+
+.approach-content-text {
+  @include text('sentinel', 15, 300, $silver);
+  line-height: 2;
+  max-width: 400px;
+}
+
+.approach-animation-container {
+  display: none;
+  height: auto !important;
+  min-height: 50vh;
+  position: relative;
+  width: auto !important;
+
+  @include media('>=md') {
+    display: block;
+  }
+}
+
+.approach-image {
+  display: block;
+  outline: 10px solid $jaguar; // cleans up seam of canvas with bg
+  width: 100%;
+
+  @include media('>=md') {
+    display: none;
+  }
+}
+
+.approach-animation-canvas {
+  display: block;
+  height: auto !important;
+  max-height: 100vh;
+  max-width: 100%;
+  width: auto !important;
+}
+
+.approach-animation-overlay {
+  box-shadow: inset 0 0 0 5px $jaguar; // cleans up seam of canvas with bg
+  height: 100% !important;
+  position: absolute;
+  top: 0;
+  width: 100% !important;
+}
+
+.inner-block-approach {
+  @extend .inner-block;
+  align-items: center;
+  height: 100%;
+
+  @include media('>=md') {
+    min-height: 50vh;
+  }
+}

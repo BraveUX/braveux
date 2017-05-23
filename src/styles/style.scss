@@ -1,0 +1,84 @@
+// NORMALIZE
+@import "normalize";  // loaded from node_modules
+
+// VENDORS
+@import "animate.scss"; // loaded from node_modules
+@import "include-media"; // loaded from node_modules
+@import "vendors/viewport-text";
+@import "vendors/link-underline";
+
+// MODULES & VARIABLES
+@import "modules/svgs";
+@import "modules/text";
+@import "modules/utilities";
+@import "modules/variables";
+
+// PARTIALS
+@import "partials/blocks";
+@import "partials/btns";
+@import "partials/cta";
+@import "partials/colors";
+@import "partials/content";
+@import "partials/footer";
+@import "partials/hero";
+@import "partials/layout";
+@import "partials/menu";
+@import "partials/outline";
+
+// PARTIALS - SECTIONS
+@import "partials/sections/approach";
+@import "partials/sections/careers";
+@import "partials/sections/contact";
+@import "partials/sections/home";
+@import "partials/sections/work";
+@import "partials/sections/team";
+
+// PARTIALS - WORK
+@import "partials/work/case-colors";
+@import "partials/work/case-defaults";
+@import "partials/work/case-footer";
+@import "partials/work/case-frames";
+@import "partials/work/case-intro";
+@import "partials/work/case-sections";
+
+// BOX-SIZING - FONT-SIZING PRESETS
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // Scales 1 rem unit to 10px
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $night-rider;
+  color: $jaguar;
+  font-size: 1.4rem; // = 14px default font size
+  margin: 0;
+  min-width: 250px;
+}
+
+// Accessibility focus outline
+button,
+a {
+  &:focus {
+    outline: 1px dotted $dark-gray;
+    outline-offset: 2px;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
+
+// Scroll Reveal Styles
+.case-breakdown-box,
+.case-inner-block-content,
+.case-exec-summary-text,
+.case-referral-quote-icon,
+[class *= 'sr-'] {
+  visibility: hidden;
+}
