@@ -1,3 +1,7 @@
+.team-hero-image {
+  width: calc(100% + 1px); // cleans up a stray 1px line that can appear at some resolutions
+}
+
 .team-content-name {
   @include text('source-sans-pro', 36, 300, $charcoal);
   margin: 0;
