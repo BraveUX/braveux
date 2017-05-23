@@ -10,7 +10,7 @@ $(document).ready(function() {
   sectionJump();
 
   // Repo Info
-  console.log('Looking for this? https://github.com/BraveUX/website');
+  console.log('Looking for this? https://github.com/BraveUX/braveux');
 });
 
 // function pageFade() {
