@@ -11,7 +11,7 @@ $ git clone https://github.com/BraveUX/braveux.git
 ```
 ```command
 # Move into the downloaded repo
-$ cd website
+$ cd braveux
 ```
 ```command
 # Install NPM packages
