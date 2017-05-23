@@ -240,6 +240,10 @@
     box-shadow: 0 0 60px 0 rgba($jaguar, 0.3);
   }
 
+  &.shadow-dark {
+    box-shadow: 0 0 60px 0 rgba($black, 0.4);
+  }
+
   // SECTION MODIFIERS
   .work-card-image & {
     margin: 0;

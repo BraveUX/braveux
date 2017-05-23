@@ -88,6 +88,10 @@
   &.shadow {
     filter: drop-shadow(0 0 15px rgba($jaguar, 0.2));
   }
+
+  &.shadow-dark {
+    filter: drop-shadow(0 0 15px rgba($black, 0.4));
+  }
 }
 
 /*
