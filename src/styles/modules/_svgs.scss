@@ -1,0 +1,71 @@
+/* For SVG's that will change color, use rgba for
+ * fill in order to maintain cross-browser support
+ * by converting hex to rgba.
+*/
+
+
+// ICON MIXINS
+@mixin icon-arrow($color: $white-smoke, $width: 13px, $height: 13px) {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'%3E%3Ctitle%3Eicon-arrow_1%3C/title%3E%3Cpath fill='none' d='M0 0h13v13H0z'/%3E%3Cpath fill='#{rgba(($color),0.99999)}' d='M3.343 9.98l1.415 1.415 4.9-4.9L4.76 1.602 3.348 3.016l3.48 3.48-3.485 3.486'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  height: $height;
+  width: $width;
+}
+
+@mixin icon-minus($color: $white-smoke, $width: 13px, $height: 13px) {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'%3E%3Ctitle%3Eicon-minus%3C/title%3E%3Cpath fill='none' d='M0 0h13v13H0z'/%3E%3Cpath fill='#{rgba(($color),0.99999)}' d='M10.948 7.5H2.052v-2h8.896z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  height: $height;
+  width: $width;
+}
+
+@mixin icon-plus($color: $white-smoke, $width: 13px, $height: 13px) {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'%3E%3Ctitle%3Eicon-plus%3C/title%3E%3Cpath fill='#{rgba(($color),0.99999)}' d='M10.948 5.5H7.5V2.052h-2V5.5H2.052v2H5.5v3.448h2V7.5h3.448v-2'/%3E%3Cpath fill='none' d='M0 0h13v13H0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  height: $height;
+  width: $width;
+}
+
+@mixin icon-quote($color: $jaguar, $height: 47px, $width: 39px) {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 54.87 65.74'%3E%3Cpath fill='#{rgba(($color),0.99999)}' d='M27.26 0a27 27 0 1 0 0 54h2.31v11.74a42.72 42.72 0 0 0 25.3-38.48C54.87 12.19 42.33 0 27.26 0zm-.18 28.86l-4.63 6.5h-4.81l3.21-6.85h-3.1v-9.33h9.34zm12.45 0l-4.26 6.5h-4.81l3.21-6.85h-4.1v-9.33h10z' data-name='Layer 1'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  height: $height;
+  width: $width;
+}
+
+
+// Social Icons
+@mixin icon-dribble($color: $white-smoke, $width: 18px, $height: 18px) {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M9 0a9 9 0 1 0 9 9 9.015 9.015 0 0 0-9-9zm5.738 4.222l.136-.172.137.17a7.746 7.746 0 0 1 1.67 4.58l.005.216-.212-.042a18.623 18.623 0 0 0-3.417-.328 14.24 14.24 0 0 0-1.67.1l-.135.016-.05-.127-.13-.32c-.145-.333-.3-.67-.46-1.01l-.083-.17.17-.07a10.088 10.088 0 0 0 4.042-2.843zM7.332 1.5a7.665 7.665 0 0 1 6.674 1.676l.123.1-.1.13a8.644 8.644 0 0 1-3.873 2.684l-.14.054-.07-.134A38.66 38.66 0 0 0 7.23 1.775l-.16-.214zM1.5 7.144a7.407 7.407 0 0 1 4.147-5l.13-.106.084.082a42.332 42.332 0 0 1 2.726 4.174l.11.12-.217.048a25.4 25.4 0 0 1-6.77.746h-.252zm1.842 7.065l-.154-.18A7.675 7.675 0 0 1 1.318 9a1.26 1.26 0 0 1 .005-.15l.01-.17h.353a27.98 27.98 0 0 0 7.428-1.06l.14-.04.064.13c.212.417.385.785.536 1.125l.083.185-.192.056c-.066.018-.128.035-.184.055a12.11 12.11 0 0 0-6.085 4.88zm8.578 1.9a7.665 7.665 0 0 1-7.586-1l-.116-.09.066-.13a10.47 10.47 0 0 1 5.937-4.7l.16-.056.06.16a31.57 31.57 0 0 1 1.583 5.628l.03.137zm4.645-5.8a7.74 7.74 0 0 1-3.15 4.982l-.223.157-.05-.268a33.057 33.057 0 0 0-1.408-5.163l-.07-.2.206-.032a10.122 10.122 0 0 1 1.48-.1 11.368 11.368 0 0 1 3.1.43l.147.042z' fill='#{rgba(($color),0.99999)}'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  height: $height;
+  width: $width;
+}
+
+@mixin icon-facebook($color: $white-smoke, $width: 9px, $height: 15px) {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 18'%3E%3Cpath d='M10 3.175H7.337c-.337 0-.67.64-.67 1.21v1.967H10V9.53H6.667V18H3.333V9.53H0V6.352h3.333V4.7c0-2.384 1.622-4.7 4-4.7H10v3.175z' fill='#{rgba(($color),0.99999)}'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  height: $height;
+  width: $width;
+}
+
+@mixin icon-github($color: $white-smoke, $width: 17px, $height: 17px) {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M11.853 17.983c-.457.09-.62-.2-.62-.444 0-.3.01-1.3.01-2.53a2.237 2.237 0 0 0-.61-1.71c2-.228 4.11-1.01 4.11-4.555a3.6 3.6 0 0 0-.927-2.474 3.38 3.38 0 0 0-.09-2.442s-.758-.248-2.474.946a8.342 8.342 0 0 0-4.5 0c-1.72-1.194-2.474-.946-2.474-.946a3.407 3.407 0 0 0-.09 2.443 3.6 3.6 0 0 0-.926 2.475c0 3.537 2.1 4.328 4.1 4.562a1.983 1.983 0 0 0-.57 1.234 1.89 1.89 0 0 1-2.62-.765 1.9 1.9 0 0 0-1.38-.952s-.878-.01-.06.56a2.444 2.444 0 0 1 1 1.35s.53 1.795 3.032 1.237c0 .77.014 1.352.014 1.57 0 .245-.167.53-.618.444A9.212 9.212 0 0 1 0 9.23 9.116 9.116 0 0 1 9 0a9.12 9.12 0 0 1 9 9.23 9.21 9.21 0 0 1-6.147 8.753z' fill='#{rgba(($color),0.99999)}'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  height: $height;
+  width: $width;
+}
+
+@mixin icon-linkedin($color: $white-smoke, $width: 13px, $height: 13px) {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 17'%3E%3Cpath fill='#{rgba(($color),0.99999)}' d='M.097 5.14H3.73V17H.098zM1.888 3.685A1.8 1.8 0 0 1 0 1.843 1.817 1.817 0 0 1 1.937 0a1.81 1.81 0 0 1 1.915 1.843 1.825 1.825 0 0 1-1.964 1.842zM17 17h-3.635v-6.573c0-1.528-.527-2.57-1.84-2.57A2 2 0 0 0 9.66 9.24a2.65 2.65 0 0 0-.12.92V17H5.907V8.924c0-1.48-.05-2.715-.1-3.784h3.158l.17 1.65H9.2a4.183 4.183 0 0 1 3.61-1.916C15.205 4.874 17 6.5 17 9.99V17z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  height: $height;
+  width: $width;
+}
+
+@mixin icon-twitter($color: $white-smoke, $width: 14px, $height: 11px) {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 14'%3E%3Cpath d='M16.157 3.487c.01.15.014.3.014.458A10.2 10.2 0 0 1 5.66 14 10.8 10.8 0 0 1 0 12.412a7.845 7.845 0 0 0 .88.05 7.645 7.645 0 0 0 4.59-1.513A3.68 3.68 0 0 1 2.015 8.5a4.04 4.04 0 0 0 .693.063 2.992 2.992 0 0 0 .857-.125A3.683 3.683 0 0 1 .49 4.968v-.045a8.59 8.59 0 0 0 1.788.442A3.444 3.444 0 0 1 .69 2.423 3.38 3.38 0 0 1 1.227.647 10.673 10.673 0 0 0 8.85 4.34a3.44 3.44 0 0 1-.09-.806A3.623 3.623 0 0 1 12.458 0a3.78 3.78 0 0 1 2.7 1.117A7.66 7.66 0 0 0 17.5.26a3.593 3.593 0 0 1-1.627 1.955A7.62 7.62 0 0 0 18 1.657a7.3 7.3 0 0 1-1.843 1.83z' fill='#{rgba(($color),0.99999)}'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  height: $height;
+  width: $width;
+}

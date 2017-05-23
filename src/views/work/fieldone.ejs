@@ -1,231 +1,174 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
-    <title>Brave UX - Work - FieldOne</title>
-    <% include ../partials/head %>
-    
+  <title>Brave UX - Work - FieldOne</title>
+  <%- include ../partials/_head %>
 </head>
-
 <body>
+  <%- include ../partials/_menu %>
+  <main class="wrapper case-study fieldone">
+    <header class="case-header">
+      <div class="case-header-content container">
+        <h5 class="case-header-client-name">FieldOne</h5>
+        <h1 class="case-header-tagline">More than just looking better.&nbsp;<br />Let’s make it work better.</h1>
+        <h6 class="case-header-type">Asset Management Application</h6>
+      </div>
+    </header>
 
-    <% include ../partials/work-menu %>
+    <section class="case-exec-summary padded">
+      <div class="container">
+        <p class="case-exec-summary-text">We made FieldOne’s asset management platform easy to use and easy on the eyes.</p>
+      </div>
+    </section>
 
-    <div class="wrapper case-study fieldone">
-
-        <section class="case-header">
-            <div class="case-header-container container">
-                <p class="case-header-client-name">Field One</p>
-                <p class="case-header-tagline">More than just looking better.
-                    <br>Let&rsquo;s make it work better.</p>
-                <p class="case-header-type">Asset Management Application</p>
-            </div>
-        </section>
-        <!-- END case-header -->
-
-        <section class="case-exec-summary">
-            <div class="container">
-                <p class="case-exec-summary-text" data-sr>We made FieldOne&rsquo;s asset management web application easy to use and easy on the eyes.</p>
-            </div>
-        </section>
-        <!-- END case-exec-summary -->
-
-        <section class="case-breakdown">
-            <div class="container">
-                <div class="case-breakdown-column col one-third" data-sr="enter top, move 50px">
-                    <p class="case-breakdown-heading">Challenge</p>
-                    <p class="case-breakdown-summary">Make it easy to use.</p>
-                    <p class="case-breakdown-detail">FieldOne&rsquo;s asset management product needed a UX overhaul, including an easier interface with an updated design.</p>
-                </div>
-
-                <div class="case-breakdown-column col one-third" data-sr="wait .25s, enter top, move 50px">
-                    <p class="case-breakdown-heading">Solution</p>
-                    <p class="case-breakdown-summary">Revamp the UX.</p>
-                    <p class="case-breakdown-detail">The Brave team designed and built the design and user interface for FieldOne&rsquo;s core product, including a number of big time improvements for the end user.</p>
-                </div>
-
-                <div class="case-breakdown-column col one-third" data-sr="wait .5s, enter top, move 50px">
-                    <p class="case-breakdown-heading">Scope</p>
-
-                    <ul class="case-breakdown-scope-list">
-                        <li>Information Architecture</li>
-                        <li>Interface Design</li>
-                        <li>Front End Development</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <!-- END case-breakdown -->
-
-        <section class="case-block not-padded fieldone-white">
-            <div class="inner-block half float-right" data-sr>
-                <img class="case-block-image" src="../images/fieldone/tracking.svg">
-            </div>
-
-            <div class="inner-block half absolute-left vertical-center left-padded mobile-container" data-sr>
-                <p class="case-block-text-heading medium-length">Tracking that makes&nbsp;
-                    <br />sense and saves time.</p>
-                <p class="case-block-text-subtext short-length">The core users of the product, dispatchers, wanted a product that would make it easier to view and interact with data on the screen.</p>
-            </div>
-        </section>
-        <!-- END case-block -->
-
-        <section class="case-block not-padded fieldone-blue">
-            <img class="case-block-image" src="../images/fieldone/devices.jpg" data-sr>
-        </section>
-        <!-- END case-block -->
-
-        <section class="case-block fieldone-white">
-            <div class="container">
-                <div class="inner-block float-left two-third mobile-padded-below" data-sr="enter left, move 100px">
-                    <img class="case-block-image" src="../images/fieldone/factory-warehouse.svg">
-                </div>
-
-                <div class="inner-block one-third absolute-right vertical-center" data-sr>
-                    <p class="case-block-text-heading short-length">Easy to view and interact with data.</p>
-                    <p class="case-block-text-subtext short-length">We created simplified views that show high-level availability of assets and resources.</p>
-                </div>
-            </div>
-        </section>
-        <!-- END case-block -->
-
-        <section class="case-block fieldone-dark-blue">
-            <div class="container relative">
-                <img class="case-block-image text-below mobile-padded-below" src="../images/fieldone/schedule.svg">
-                <img class="case-block-image absolute" src="../images/fieldone/schedule-event1.svg" data-sr>
-                <img class="case-block-image absolute" src="../images/fieldone/schedule-event2.svg" data-sr="wait .3s">
-                <img class="case-block-image absolute" src="../images/fieldone/schedule-event3.svg" data-sr="wait .6s">
-                <p class="case-block-text-heading medium-length align-center" data-sr>Scheduling that works the way it should.</p>
-                <p class="case-block-text-subtext medium-length align-center" data-sr>Our improved &ldquo;scheduler assistant&rdquo; functionality relies on natural language and lets a dispatcher set recurring appointments.</p>
-            </div>
-        </section>
-        <!-- END case-block -->
-
-        <section class="case-block case-full-image fieldone-traffic"></section>
-        <!-- END case-block -->
-
-        <section class="case-block fieldone-off-white">
-            <div class="container">
-                <img class="case-block-image text-below mobile-padded-below" src="../images/fieldone/scheduler.svg">
-                <p class="case-block-text-heading medium-length align-center" data-sr>Finding what matters most.</p>
-                <p class="case-block-text-subtext medium-length align-center" data-sr>We improved the hierarchy of information so that dispatchers can quickly identify and prioritize requests, tasks, and resources.</p>
-            </div>
-        </section>
-        <!-- END case-block -->
-
-        <section class="case-block fieldone-white">
-            <div class="container narrow">
-                <div class="inner-block float-left two-third mobile-padded-below" data-sr="enter left, move 100px">
-                    <img class="case-block-image" src="../images/fieldone/tracking-boxes.svg">
-                </div>
-
-                <div class="inner-block one-third absolute-right vertical-center" data-sr>
-                    <p class="case-block-text-heading short-length">Functions that make sense.</p>
-                    <p class="case-block-text-subtext short-length">We reconfigured the core controls into simpler groupings, pairing similar functions to reduce the number of options and decision points for the user.</p>
-                </div>
-            </div>
-        </section>
-        <!-- END case-block -->
-
-        <section class="case-block fieldone-dark-blue">
-            <div class="container">
-                <img class="case-block-text-quote-icon" src="../images/fieldone/quote.svg" data-sr="enter top, move 75px">
-                <p class="case-block-text-quote align-center">&ldquo;Brave helped us turn our application from dated and clunky to modern and easy. Our customers love the changes, and so do we.&rdquo;</p>
-                <p class="case-block-text-citation align-center">Daniel Gittler, <em>Director of Enterprise Services, FieldOne Systems</em></p>
-            </div>
-        </section>
-        <!-- END case-block -->
-
-        <section class="cta">
-            <div class="container">
-              <p class="cta-text">Sometimes, you find something that just works.</p>
-              <a class="cta-link" href="/approach">See Our Approach<img class="cta-icon" src="../images/icons/icon-cta.svg"></a>
-            </div>
-
-            <a class="cta-button cta-button-left" href="/work/character" title="Prev Case"></a>
-            <a class="cta-button cta-button-right" href="/work/hhs" title="Next Case"></a>
-          </section>
-        <!-- END cta -->
-
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-column">
-                    <img class="footer-logo" src="../images/footer/footer-logo.svg">
-                </div>
-
-                <div class="footer-column">
-                    <p class="footer-heading">Get In Touch</p>
-
-                    <a class="footer-email-link" href="mailto:team@braveux.com">team@braveux.com</a>
-                </div>
-
-                <div class="footer-column">
-                    <p class="footer-heading">Follow Us</p>
-                    <a class="social-link light-twitter" href="https://twitter.com/brave_ux" target="_blank">Twitter</a>
-                    <a class="social-link light-facebook" href="https://www.facebook.com/braveux" target="_blank">Facebook</a>
-                    <a class="social-link light-linkedin" href="https://www.linkedin.com/company/brave-ux" target="_blank">LinkedIn</a>
-                    <a class="social-link light-dribbble" href="https://dribbble.com/braveux" target="_blank">Dribbble</a>
-                    <a class="social-link light-github" href="https://github.com/braveux" target="_blank">GitHub</a>
-                </div>
-
-                <div class="footer-column">
-                    <p class="footer-heading">Our Products</p>
-                    <a class="footer-product-link" href="http://fightforux.com/" target="_blank">Fight For UX</a>
-                    <a class="footer-product-link" href="/bravery" target="_blank">Bravery</a>
-                    <a class="footer-product-link" href="http://compass.is" target="_blank">Compass</a>
-                    <a class="footer-product-link" href="http://forthebadge.com/" target="_blank">For the Badge</a>
-                </div>
-
-                <div class="footer-last-line">
-                    <p class="footer-copyright">&copy;2017 Brave UX. All Rights Reserved.</p>
-                    <div class="footer-stars"></div>
-                    <p class="footer-made">Proudly made in our Nation&rsquo;s Capital.</p>
-                </div>
-            </div>
-
-            <div class="footer-egg"></div>
-        </footer>
-
+    <section class="case-breakdown padded dark-blue">
+      <div class="container row between">
+        <div class="case-breakdown-box column gutter">
+          <p class="case-breakdown-heading">Challenge</p>
+          <h3 class="case-breakdown-summary">
+            Make it easy to use.
+          </h3>
+          <p class="case-breakdown-detail">
+            FieldOne’s asset management suite needed a UX overhaul, including an easier interface with an modern design.
+          </p>
         </div>
-        <!-- END wrapper -->
+        <div class="case-breakdown-box column gutter">
+          <p class="case-breakdown-heading">Solution</p>
+          <h3 class="case-breakdown-summary">
+            Revamp the UX.
+          </h3>
+          <p class="case-breakdown-detail">
+            The Brave team designed and built user interface for FieldOne’s core product, including a number of big time improvements for the end user.
+          </p>
+        </div>
+        <div class="case-breakdown-box column gutter">
+          <p class="case-breakdown-heading">Scope</p>
+          <ul class="case-breakdown-list">
+            <li class="case-breakdown-list-item">Information Architecture</li>
+            <li class="case-breakdown-list-item">Interaction Design</li>
+            <li class="case-breakdown-list-item">Front-end Development</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="//cdn.jsdelivr.net/velocity/1.1.0/velocity.min.js"></script>
-    <script src="../scripts.js"></script>
+    <section class="block row">
+      <div class="inner-block absolute-center-md padded column half-md">
+        <div class="inner-block-content container">
+          <h2 class="case-block-heading">Tracking that makes sense and saves time.</h2>
+          <p class="case-block-text">
+            The core users of the product, dispatchers, wanted a product that would make it easier to view and interact with data on the screen.
+          </p>
+        </div>
+      </div>
+      <div class="inner-block column half-md hide-overflow gray">
+        <img src="./images/work/fieldone/tracking-bg.svg" alt="" class="inner-block-image full-height">
+        <img src="./images/work/fieldone/tracking.svg" alt="" class="inner-block-image absolute sr-rotate">
+      </div>
+    </section>
 
-    <script>
-        (function(f, b) {
-            var c;
-            f.hj = f.hj || function() {
-                (f.hj.q = f.hj.q || []).push(arguments)
-            };
-            f._hjSettings = {
-                hjid: 20443,
-                hjsv: 3
-            };
-            c = b.createElement("script");
-            c.async = 1;
-            c.src = "//static.hotjar.com/c/hotjar-20443.js?sv=3";
-            b.getElementsByTagName("head")[0].appendChild(c);
-        })(window, document);
-    </script>
+    <section class="block blue">
+      <img src="./images/work/fieldone/devices.jpg" alt="" class="inner-block-image sr-reveal">
+    </section>
 
-    <script>
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    <section class="block padded">
+      <div class="row container">
+        <div class="inner-block column half-md two-third-lg">
+          <img src="./images/work/fieldone/factory-warehouse.svg" alt="" class="inner-block-image contain sr-left">
+        </div>
+        <div class="inner-block absolute-center-md gutter-bottom-mobile column order-top-xs half-md one-third-lg">
+          <div class="inner-block-content gutter-left">
+            <h2 class="case-block-heading">Easy to view and interact with data.</h2>
+            <p class="case-block-text">
+              We created simplified views that show high-level availability of assets and resources.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        ga('create', 'UA-48218627-1', 'braveux.com');
-        ga('send', 'pageview');
-    </script>
+    <section class="block padded dark-blue">
+      <div class="inner-block padded-bottom row absolute-center-md">
+        <div class="inner-block-content content-centered container">
+          <h2 class="case-block-heading">Scheduling that works the way it should.</h2>
+          <p class="case-block-text">
+            An improved “scheduler assistant” functionality relies on natural language and allows for a dispatcher set recurring appointments.
+          </p>
+        </div>
+      </div>
+      <div class="inner-block row">
+        <div class="container-narrow">
+          <img src="./images/work/fieldone/schedule.svg" alt="" class="inner-block-image contain">
+          <img src="./images/work/fieldone/schedule-event1.svg" alt="" class="inner-block-image contain absolute sr-stagger-bottom">
+          <img src="./images/work/fieldone/schedule-event2.svg" alt="" class="inner-block-image contain absolute sr-stagger-bottom">
+          <img src="./images/work/fieldone/schedule-event3.svg" alt="" class="inner-block-image contain absolute sr-stagger-bottom">
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <img src="./images/work/fieldone/traffic.jpg" alt="" class="inner-block-image">
+    </section>
+
+    <section class="block padded-top gray">
+      <div class="inner-block padded-bottom row absolute-center-md">
+        <div class="inner-block-content content-centered container">
+          <h2 class="case-block-heading">Finding what matters most.</h2>
+          <p class="case-block-text">
+            We improved the information hierarchy so dispatchers can quickly identify and prioritize requests, tasks, and resources.
+          </p>
+        </div>
+      </div>
+      <div class="inner-block row">
+        <div class="container-narrow">
+          <div class="frame frame-desktop sr-bottom">
+            <img src="./images/work/fieldone/scheduler.jpg" alt="" class="inner-block-image contain">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block padded gradient">
+      <div class="row container">
+        <div class="inner-block column half-md">
+          <img src="./images/work/fieldone/tracking-boxes.svg" alt="" class="inner-block-image sr-left">
+        </div>
+        <div class="inner-block absolute-center-md order-top-xs gutter-bottom-mobile column half-md">
+          <div class="inner-block-content gutter-left">
+            <h2 class="case-block-heading">Functions that make sense.</h2>
+            <p class="case-block-text">
+              We reconfigured the core controls into unified groupings, pairing similar functions to reduce the number of friction points for the user.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-referral centered row">
+      <div class="inner-block padded column dark-blue">
+        <div class="container">
+          <div class="case-referral-quote-icon"></div>
+          <p class="case-referral-text centered">&ldquo;Brave helped us turn our application from dated and clunky to modern and easy. Our customers love the changes, and so do we.&rdquo;</p>
+          <p class="case-referral-author">Daniel Gittler, <em>Director of Enterprise Services, FieldOne Systems</em></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-block padded">
+      <a href="./work/upturn" class="cta-button cta-button-left" title="Previous Case">Previous Case</a>
+      <div class="cta-content container">
+        <div class="container">
+          <div class="cta-text">Sometimes, you find something that just works.</div>
+          <a href="/approach/" class="btn btn-text icon-arrow">See Our Approach</a>
+        </div>
+      </div>
+      <a href="./work/andpizza" class="cta-button cta-button-right" title="Next Case">Next Case</a>
+    </section>
+
+    <%- include ../partials/_footer %>
+  </main>
+
+  <%- include ../partials/_footer-scripts %>
+
 </body>
-
 </html>
