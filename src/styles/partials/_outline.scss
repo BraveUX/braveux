@@ -1,0 +1,25 @@
+%outline {
+  margin-bottom: $textGap*2;
+}
+
+.outline-desktop {
+  @extend %outline;
+  display: none;
+
+  @include media('>=md') {
+    display: block;
+  }
+
+  @include media('>=lg') {
+    max-width: 80%;
+  }
+}
+
+.outline-mobile {
+  @extend %outline;
+  display: block;
+
+  @include media('>=md') {
+    display: none;
+  }
+}

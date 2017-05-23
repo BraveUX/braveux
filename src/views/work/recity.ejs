@@ -1,230 +1,181 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
-    <title>Brave UX - Work - Recity</title>
-    <% include ../partials/head %>
-        
+  <title>Brave UX - Work - Recity</title>
+  <%- include ../partials/_head %>
 </head>
-
 <body>
+  <%- include ../partials/_menu %>
+  <main class="wrapper case-study recity">
+    <header class="case-header">
+      <div class="case-header-content container">
+        <h5 class="case-header-client-name">Recity</h5>
+        <h1 class="case-header-tagline">Urban development&nbsp;<br />by the numbers</h1>
+        <h6 class="case-header-type">Commercial Real Estate Insight Platform</h6>
+      </div>
+    </header>
 
-    <% include ../partials/work-menu %>
+    <section class="case-exec-summary padded">
+      <div class="container">
+        <p class="case-exec-summary-text">We designed a platform that makes commercial development data actually usable.</p>
+      </div>
+    </section>
 
-        <div class="wrapper case-study recity">
-
-            <section class="case-header">
-                <div class="case-header-container container">
-                    <h5 class="case-header-client-name">Recity</h5>
-                    <h1 class="case-header-tagline">Urban development&nbsp;<br />by the numbers</h1>
-                    <h6 class="case-header-type">Commercial Real Estate Insight Tools</h6>
-                </div>
-            </section>
-            <!-- END case-header -->
-
-            <section class="case-exec-summary">
-                <div class="container">
-                    <h4 class="case-exec-summary-text" data-sr>We designed a suite of tools that make commercial development data actually usable.</h4>
-                </div>
-            </section>
-            <!-- END case-exec-summary -->
-
-            <section class="case-breakdown">
-                <div class="container">
-                    <div class="case-breakdown-column col one-third" data-sr="enter top, move 50px">
-                        <p class="case-breakdown-heading">Challenge</p>
-                        <h3 class="case-breakdown-summary">What&rsquo;s going on?</h3>
-                        <p class="case-breakdown-detail">Commercial real estate data is tough to find and even harder to understand. We had to make it meaningful and easy to use.</p>
-                    </div>
-
-                    <div class="case-breakdown-column col one-third" data-sr="wait .25s, enter top, move 50px">
-                        <p class="case-breakdown-heading">Solution</p>
-                        <h3 class="case-breakdown-summary">A unified view of&nbsp;<br />numbers, plus context</h3>
-                        <p class="case-breakdown-detail">We designed a cross-platform interface that shows what’s happening at any address, powered by data.</p>
-                    </div>
-                    <div class="case-breakdown-column col one-third" data-sr="wait .5s, enter top, move 50px">
-                        <p class="case-breakdown-heading">Scope</p>
-
-                        <ul class="case-breakdown-scope-list">
-                            <li>Brand Identity</li>
-                            <li>Information Architecture</li>
-                            <li>Desktop Application Design</li>
-                            <li>Mobile App Design</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <!-- END case-breakdown -->
-
-            <section class="case-block recity-orange ">
-                <div class="container">
-                    <div class="inner-block one-third absolute-left vertical-center mobile-padded-below" data-sr>
-                        <h2 class="case-block-text-heading short-length">Not just today, but ten years from now</h2>
-                        <p class="case-block-text-subtext short-length">Whether buying a home or opening a store, time matters for your investments. We created visualizations that let users understand how a neighborhood will change over time.</p>
-                    </div>
-
-                    <div class="inner-block two-third float-right" data-sr="enter right, move 200px">
-                        <img class="case-block-image" src="../images/recity/forecasts-desktop.png">
-                    </div>
-                </div>
-            </section>
-            <!-- END case-block -->
-
-            <section class="case-block case-full-image recity-construction"></section>
-            <!-- END case-block -->
-
-            <section class="case-block recity-gray">
-                <div class="inner-block one-third left-padded absolute-left vertical-center mobile-padded-below mobile-container-absolute" data-sr>
-                    <h2 class="case-block-text-heading short-length">Consistently beautiful, from form to flyout</h2>
-                    <p class="case-block-text-subtext short-length" >Because going out into the real world means leaving your desktop behind, we crafted a visual framework the looks great in HD or in the palm of your hand.</p>
-                </div>
-                <div class="inner-block two-third float-right mobile-container-left relative">
-                    <img class="case-block-image" src="../images/recity/development-desktop.png" data-sr="enter right, move 200px">
-                    <img class="case-block-image absolute mobile-padded-left" src="../images/recity/development-mobile.png" data-sr="wait 0.75s">
-                </div>
-            </section>
-            <!-- END case-block -->
-
-            <section class="case-block case-full-image recity-laptop"></section>
-            <!-- END case-block -->
-
-            <section class="case-block not-padded recity-gray">
-
-                    <div class="inner-block half left-padded absolute-left vertical-center mobile-container" data-sr>
-                        <h2 class="case-block-text-heading short-length">Keeping track so you don&rsquo;t miss a beat</h2>
-                        <p class="case-block-text-subtext short-length">Powerful history, note-taking, and favoriting features are synced on every version of this tool, so users aren’t left guessing.</p>
-                    </div>
-
-                    <div class="inner-block recity-orange half float-right">
-                        <img class="case-block-image" src="../images/recity/favorites-mobile.jpg" data-sr="enter bottom, move 600px">
-                    </div>
-
-            </section>
-            <!-- END case-block -->
-
-            <section class="recity-city">
-                <img class="city-bg" src="../images/recity/city.jpg" alt="" />
-                <div class="pin pin-one" data-sr="wait 0.25s, enter top, move 50px"></div>
-                <div class="pin pin-two" data-sr="wait 0.5s, enter top, move 50px"></div>
-                <div class="pin pin-three" data-sr="wait 0.75s, enter top, move 50px"></div>
-                <div class="pin pin-four" data-sr="wait 1s, enter top, move 50px"></div>
-                <div class="pin pin-five" data-sr="wait 1.25s, enter top, move 50px"></div>
-            </section>
-            <!-- END case-block -->
-
-            <section class="case-block recity-white">
-                <div class="container">
-                    <div class="inner-block half absolute-right left-padded vertical-center mobile-padded-below" data-sr>
-                        <h2 class="case-block-text-heading short-length">Powerful metrics, even on-the-go</h2>
-                        <p class="case-block-text-subtext short-length">Screen size shouldn&rsquo;t kill your productivity. We packed the same advanced metrics into a touch-friendly format.</p>
-                    </div>
-
-                    <div class="inner-block half float-left right-padded" data-sr="enter left, move 100px">
-                        <img class="case-block-image" src="../images/recity/permit-activity.svg">
-                    </div>
-                </div>
-            </section>
-            <!-- END case-block -->
-
-            <section class="case-block recity-blue">
-                <div class="container">
-                    <img class="case-block-text-quote-icon" src="../images/recity/quote.svg" data-sr="enter top, move 75px">
-                    <p class="case-block-text-quote align-center">&ldquo;We came to Brave with an early build and a list of problems; what we left with was a fully realized platform and brand. They took the time to understand our customer, asking thoughtful questions which ultimately increased the product&rsquo;s value. Without Brave, Recity wouldn&rsquo;t be what it is today – a product we are incredibly proud of.&rdquo;</p>
-                    <p class="case-block-text-citation align-center">Guggan Datta, <em>Founder, Recity</em></p>
-                </div>
-            </section>
-            <!-- END case-block -->
-
-            <section class="cta">
-                <div class="container">
-                    <p class="cta-text">Sometimes, you find something that just works.</p>
-                    <a class="cta-link" href="/approach">See Our Approach<img class="cta-icon" src="../images/icons/icon-cta.svg"></a>
-                </div>
-
-                <a class="cta-button cta-button-left" href="/work/fieldone" title="Prev Case"></a>
-                <a class="cta-button cta-button-right" href="/work/stateofobesity" title="Next Case"></a>
-            </section>
-            <!-- END cta -->
-
-            <footer class="footer">
-                <div class="container">
-                    <div class="footer-column">
-                        <img class="footer-logo" src="../images/footer/footer-logo.svg">
-                    </div>
-
-                    <div class="footer-column">
-                        <p class="footer-heading">Get In Touch</p>
-
-                        <a class="footer-email-link" href="mailto:team@braveux.com">team@braveux.com</a>
-                    </div>
-
-                    <div class="footer-column">
-                        <p class="footer-heading">Follow Us</p>
-                        <a class="social-link light-twitter" href="https://twitter.com/brave_ux" target="_blank">Twitter</a>
-                        <a class="social-link light-facebook" href="https://www.facebook.com/braveux" target="_blank">Facebook</a>
-                        <a class="social-link light-linkedin" href="https://www.linkedin.com/company/brave-ux" target="_blank">LinkedIn</a>
-                        <a class="social-link light-dribbble" href="https://dribbble.com/braveux" target="_blank">Dribbble</a>
-                        <a class="social-link light-github" href="https://github.com/braveux" target="_blank">GitHub</a>
-                    </div>
-
-                    <div class="footer-column">
-                        <p class="footer-heading">Our Products</p>
-                        <a class="footer-product-link" href="http://fightforux.com/" target="_blank">Fight For UX</a>
-                        <a class="footer-product-link" href="/bravery" target="_blank">Bravery</a>
-                        <a class="footer-product-link" href="http://compass.is" target="_blank">Compass</a>
-                        <a class="footer-product-link" href="http://forthebadge.com/" target="_blank">For the Badge</a>
-                    </div>
-
-                    <div class="footer-last-line">
-                        <p class="footer-copyright">&copy;2017 Brave UX. All Rights Reserved.</p>
-                        <div class="footer-stars"></div>
-                        <p class="footer-made">Proudly made in our Nation&rsquo;s Capital.</p>
-                    </div>
-                </div>
-
-                <div class="footer-egg"></div>
-            </footer>
+    <section class="case-breakdown padded gray">
+      <div class="container row between">
+        <div class="case-breakdown-box column gutter">
+          <p class="case-breakdown-heading">Challenge</p>
+          <h3 class="case-breakdown-summary">
+            What&rsquo;s going on?
+          </h3>
+          <p class="case-breakdown-detail">
+            Commercial real estate data is tough to find and even harder to understand. We had to make it meaningful and easy to use.
+          </p>
         </div>
-        <!-- END wrapper -->
+        <div class="case-breakdown-box column gutter">
+          <p class="case-breakdown-heading">Solution</p>
+          <h3 class="case-breakdown-summary">
+            A unified view of numbers, plus context
+          </h3>
+          <p class="case-breakdown-detail">
+            We designed a cross-platform interface that shows what’s happening at any address, powered by real-time data.
+          </p>
+        </div>
+        <div class="case-breakdown-box column gutter">
+          <p class="case-breakdown-heading">Scope</p>
+          <ul class="case-breakdown-list">
+            <li class="case-breakdown-list-item">Brand System</li>
+            <li class="case-breakdown-list-item">Information Architecture</li>
+            <li class="case-breakdown-list-item">Interaction Design</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="//cdn.jsdelivr.net/velocity/1.1.0/velocity.min.js"></script>
-        <script src="//cdn.jsdelivr.net/jquery.slick/1.3.15/slick.min.js"></script>
-        <script src="../scripts.js"></script>
+    <section class="block padded orange">
+      <div class="row container">
+        <div class="inner-block absolute-center-md gutter-bottom-mobile column half-md one-third-lg half-xl">
+          <div class="inner-block-content gutter-right">
+            <h2 class="case-block-heading">Not just today, but ten years from now</h2>
+            <p class="case-block-text">
+              Whether buying a home or opening a store, time matters for your investments. We created visualizations that let users understand how a neighborhood will change over time.
+            </p>
+          </div>
+        </div>
+        <div class="inner-block column half-md two-third-lg half-xl">
+          <div class="frame frame-desktop light sr-right">
+            <img src="./images/work/recity/forecasts-desktop.jpg" alt="" class="inner-block-image contain">
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <script>
-            (function(f, b) {
-                var c;
-                f.hj = f.hj || function() {
-                    (f.hj.q = f.hj.q || []).push(arguments)
-                };
-                f._hjSettings = {
-                    hjid: 20443,
-                    hjsv: 3
-                };
-                c = b.createElement("script");
-                c.async = 1;
-                c.src = "//static.hotjar.com/c/hotjar-20443.js?sv=3";
-                b.getElementsByTagName("head")[0].appendChild(c);
-            })(window, document);
-        </script>
+    <section class="block">
+      <img src="./images/work/recity/construction.jpg" alt="" class="block-image">
+    </section>
 
-        <script>
-            (function(i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function() {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    <section class="block padded">
+      <div class="row">
+        <div class="inner-block absolute-center-md gutter-bottom-mobile column half-md one-third-lg half-xl">
+          <div class="container">
+            <div class="inner-block-content">
+              <h2 class="case-block-heading">Consistently beautiful, from form to flyout</h2>
+              <p class="case-block-text">
+                Because going out into the real world means leaving your desktop behind, we crafted an interface that looks great on a big screen or in the palm of your hand.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="inner-block column half-md two-third-lg half-xl recity-forecasts gutter-left-mobile">
+          <div class="frame frame-desktop edge-right shadow sr-right">
+            <img src="./images/work/recity/development-desktop.jpg" alt="" class="inner-block-image contain">
+          </div>
+          <div class="frame frame-mobile shadow sr-bottom absolute">
+            <div class="frame-container">
+                <img src="./images/work/recity/development-mobile.jpg" alt="" class="inner-block-image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            ga('create', 'UA-48218627-1', 'braveux.com');
-            ga('send', 'pageview');
-        </script>
+    <section class="block">
+      <img src="./images/work/recity/laptop.jpg" alt="" class="block-image">
+    </section>
+
+    <section class="block row">
+      <div class="inner-block absolute-center-md padded column half-md gray">
+        <div class="inner-block-content container">
+          <h2 class="case-block-heading">Keeping track so you don&rsquo;t miss a beat</h2>
+          <p class="case-block-text">
+            Powerful history, note-taking, and favoriting features are synced on every version of this tool, so users aren’t left guessing.
+          </p>
+        </div>
+      </div>
+      <div class="inner-block column half-md padded absolute-center-xs hide-overflow orange recity-favorites">
+        <div class="frame frame-mobile lighter sr-bottom">
+          <div class="frame-container">
+            <img src="./images/work/recity/favorites-mobile.jpg" alt="" class="inner-block-image">
+          </div>
+        </div>
+      </div>
+    </section>
+    </section>
+
+    <section class="block">
+      <div class="inner-block row">
+        <div class="recity-city">
+          <img src="./images/work/recity/city.jpg" alt="" class="inner-block-image contain">
+          <span class="pin pin-one"></span>
+          <span class="pin pin-two"></span>
+          <span class="pin pin-three"></span>
+          <span class="pin pin-four"></span>
+          <span class="pin pin-five"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="block padded">
+      <div class="row container">
+        <div class="inner-block column half-md one-third-lg sr-left">
+          <img src="./images/work/recity/permit-activity.svg" alt="" class="inner-block-image">
+        </div>
+        <div class="inner-block absolute-center-md order-top-xs gutter-bottom-mobile column half-md two-third-lg">
+          <div class="inner-block-content gutter-left">
+            <h2 class="case-block-heading">Powerful metrics, even on-the-go</h2>
+            <p class="case-block-text">
+              Screen size shouldn’t kill your productivity. We packed the same advanced metrics into a touch-friendly format.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-referral centered row">
+      <div class="inner-block padded column blue">
+        <div class="container">
+          <div class="case-referral-quote-icon"></div>
+          <p class="case-referral-text centered">&ldquo;We came to Brave with an early build and a list of problems; what we left with was a fully realized platform and brand. They took the time to understand our customer, asking thoughtful questions which ultimately increased the product&rsquo;s value. Without Brave, Recity wouldn&rsquo;t be what it is today – a product we are incredibly proud of.&rdquo;</p>
+          <p class="case-referral-author">Guggan Datta, <em>Founder, Recity</em></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-block padded dark-blue">
+      <a href="./work/felix" class="cta-button cta-button-left" title="Previous Case">Previous Case</a>
+      <div class="cta-content container">
+        <div class="container">
+          <div class="cta-text">Sometimes, you find something that just works.</div>
+          <a href="/approach/" class="btn btn-text icon-arrow">See Our Approach</a>
+        </div>
+      </div>
+      <a href="./work/upfront" class="cta-button cta-button-right" title="Next Case">Next Case</a>
+    </section>
+
+    <%- include ../partials/_footer %>
+  </main>
+
+  <%- include ../partials/_footer-scripts %>
+
 </body>
-
 </html>

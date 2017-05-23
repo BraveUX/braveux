@@ -1,0 +1,55 @@
+.hero {
+  align-items: center;
+  display: flex;
+  padding: calc(6em + 50px) 0 $gridGap*1.5; // 50px top for menu
+  width: 100%;
+}
+
+.hero-lg { // pairs with .menu-home (homepage only)
+  align-items: stretch;
+  background-color: $jaguar;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+
+  @include media('>=md') {
+    justify-content: flex-start;
+    min-height: 70vh;
+    padding: 0 0 $gridGap*2.5;
+  }
+}
+
+.hero-tagline {
+  @include text('trade-gothic', 18, 600, $charcoal);
+  letter-spacing: 2px;
+  margin: 0 0 $textGap*2;
+  text-transform: uppercase;
+
+  .hero-lg & {
+    color: $white-smoke;
+  }
+}
+
+.hero-title {
+  @include text('source-sans-pro', 48, 300, $night-rider);
+  margin: 0 0 $textGap;
+  max-width: 1000px;
+
+  .hero-lg & {
+    @include text('sentinel', 55, 300, $iron);
+    margin: 0 0 $textGap*2;
+  }
+
+  br {
+    display: none;
+
+    @include media('>=md') {
+      display: block;
+    }
+  }
+}
+
+.hero-text {
+  @include text('sentinel', 22, 300, $dark-gray);
+  margin: 0;
+}

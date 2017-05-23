@@ -1,0 +1,21 @@
+# Use PHP54 as default
+AddHandler application/x-httpd-php54 .php
+
+<IfModule mod_suphp.c>
+  suPHP_ConfigPath /opt/php54/lib
+</IfModule>
+
+# Manually re-route work/ requests to work
+RewriteCond %{REQUEST_FILENAME} work/$
+RewriteRule ^(.*)/$ $1
+
+# 301 Redirect Old File
+Redirect 301 /work/hhs /work/felix
+Redirect 301 /work/hhs.html /work/felix
+
+# remove .html extension
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+ErrorDocument 404 /404.html

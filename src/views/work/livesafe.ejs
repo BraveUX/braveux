@@ -1,281 +1,187 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
-    <title>Brave UX - Work - LiveSafe</title>
-    <% include ../partials/head %>
-
+  <title>Brave UX - Work - Livesafe</title>
+  <%- include ../partials/_head %>
 </head>
-
 <body>
+  <main class="wrapper case-study livesafe">
+    <header class="case-header">
+      <div class="case-header-content container">
+        <h5 class="case-header-client-name">Livesafe</h5>
+        <h1 class="case-header-tagline">&lsquo;Safety First&rsquo; in&nbsp;<br />the digital age</h1>
+        <h6 class="case-header-type">User-Centric Safety Mobile App</h6>
+      </div>
+    </header>
 
-    <% include ../partials/work-menu %>
+    <section class="case-exec-summary padded light-blue">
+      <div class="container">
+        <p class="case-exec-summary-text">We designed a testable prototype to promote LiveSafe&rsquo;s long-term business goals and create a better in-app experience for users.</p>
+      </div>
+    </section>
 
-        <div class="wrapper case-study livesafe">
-
-            <section class="case-header">
-                <div class="case-header-container container">
-                    <h5 class="case-header-client-name">Livesafe</h5>
-                    <h1 class="case-header-tagline">&lsquo;Safety First&rsquo; in&nbsp;<br />the digital age</h1>
-                    <h6 class="case-header-type">User-Centric Safety Mobile App</h6>
-                </div>
-            </section>
-            <!-- END case-header -->
-
-            <section class="case-exec-summary livesafe-light-blue">
-                <div class="container">
-                    <h4 class="case-exec-summary-text" data-sr>We designed a testable prototype to promote LiveSafe&rsquo;s long-term &nbsp;<br />business goals and create a better in-app experience for users.</h4>
-                </div>
-            </section>
-            <!-- END case-exec-summary -->
-
-            <section class="case-breakdown livesafe-blue">
-                <div class="container">
-                    <div class="case-breakdown-column col one-third" data-sr="enter top, move 50px">
-                        <p class="case-breakdown-heading">Challenge</p>
-                        <h3 class="case-breakdown-summary">Distinguishing LiveSafe&nbsp;<br />from a user&rsquo;s organization</h3>
-                        <p class="case-breakdown-detail">Who is LiveSafe? Users are confused by who owns each feature in the app and LiveSafe gets lost in the mix.</p>
-                    </div>
-
-                    <div class="case-breakdown-column col one-third" data-sr="wait .25s, enter top, move 50px">
-                        <p class="case-breakdown-heading">Solution</p>
-                        <h3 class="case-breakdown-summary">Clarifying who&rsquo;s&nbsp;<br />the boss</h3>
-                        <p class="case-breakdown-detail">The new prototype clearly differentiates LiveSafe from the organizations using the app.</p>
-                    </div>
-
-                    <div class="case-breakdown-column col one-third" data-sr="wait .5s, enter top, move 50px">
-                        <p class="case-breakdown-heading">Scope</p>
-
-                        <ul class="case-breakdown-scope-list">
-                            <li>Information Architecture</li>
-                            <li>Mobile App Design</li>
-                            <li>Prototype Testing</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <!-- END case-breakdown -->
-
-            <section class="case-block top-padded livesafe-offwhite overflow-initial">
-                <div class="inner-block half left-padded absolute-right vertical-center mobile-padded-above mobile-padded-below mobile-container-absolute" data-sr>
-                    <h2 class="case-block-text-heading short-length">A proper&nbsp;<br />starting point</h2>
-                    <p class="case-block-text-subtext short-length">The new homepage and bottom navigation provide the user with everything they need in one, easy to find place.  The newsfeed shows recent updates while the map orients the user,  providing a natural entry point into SafeWalk.</p>
-                </div>
-
-                <div class="inner-block half float-left left-padded mobile-container-absolute relative livesafe-homepage">
-                    <img class="case-block-image" src="../images/livesafe/mobile-homepage-bg.svg" />
-                    <div class="frame frame-mobile darker shadow absolute" data-sr="enter bottom, move 300px">
-                        <div class="frame-container">
-                            <img class="case-block-image" src="../images/livesafe/mobile-homepage.jpg" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- END case-block -->
-
-            <section class="case-block case-full-image livesafe-pedestrians"></section>
-            <!-- END case-block -->
-
-            <section class="case-block not-padded livesafe-blue">
-                <div class="inner-block half absolute-left vertical-center left-padded mobile-container " data-sr>
-                    <h2 class="case-block-text-heading">Don&rsquo;t be a bystander</h2>
-                    <p class="case-block-text-subtext short-length">LiveSafe&rsquo;s app empowers users to anonymously or publicly report tips to their organization&rsquo;s security team. Users&rsquo; can attach photos or videos, then message security with more details to do their part in keeping themselves and others safe. </p>
-                </div>
-
-                <div class="inner-block half float-right relative livesafe-security livesafe-offwhite">
-                    <img class="case-block-image" src="../images/livesafe/mobile-security-bg.svg" />
-                    <div class="frame frame-mobile darker absolute" data-sr="enter bottom, move 300px">
-                        <div class="frame-container">
-                            <img class="case-block-image" src="../images/livesafe/mobile-security1.jpg" />
-                        </div>
-                    </div>
-                    <div class="frame frame-mobile darker absolute" data-sr="wait 0.5s, enter left, move 75%">
-                        <div class="frame-container">
-                            <img class="case-block-image" src="../images/livesafe/mobile-security2.jpg" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- END case-block -->
-
-            <section class="case-block padded livesafe-white">
-              <div class="container narrow">
-                  <div class="inner-block mobile-padded-below" data-sr>
-                        <p class="case-block-text-heading medium-length align-center">Know where you are</p>
-                        <p class="case-block-text-subtext medium-length align-center">We took a complicated map and simplified it, providing the user with additional information and better safety features. Campus buildings now have a context panel that links to related resources and users’ have an additional entry point into SafeWalk.</p>
-                    </div>
-                <div class="inner-block relative livesafe-nav">
-                    <img class="case-block-image text-above" src="../images/livesafe/mobile-nav-bg.svg" />
-                    <div class="frame frame-mobile darker shadow absolute" data-sr="wait .5s, enter right, move 75%">
-                        <div class="frame-container">
-                            <img class="case-block-image" src="../images/livesafe/mobile-nav1.jpg" />
-                        </div>
-                    </div>
-                    <div class="frame frame-mobile darker shadow absolute" data-sr="enter bottom, move 300px">
-                        <div class="frame-container">
-                            <img class="case-block-image" src="../images/livesafe/mobile-nav2.jpg" />
-                        </div>
-                    </div>
-                    <div class="frame frame-mobile darker shadow absolute" data-sr="wait .5s, enter left, move 75%">
-                        <div class="frame-container">
-                            <img class="case-block-image" src="../images/livesafe/mobile-nav3.jpg" />
-                        </div>
-                    </div>
-                </div>
-              </div>
-            </section>
-            <!-- END case-block -->
-
-            <section class="case-block not-padded livesafe-dark-blue">
-                <div class="inner-block half absolute-right vertical-center left-padded mobile-container " data-sr>
-                    <h2 class="case-block-text-heading">Proven by research</h2>
-                    <p class="case-block-text-subtext short-length">We created an interactive mobile prototype and sat down with actual users, to explore their safety concerns, habits, and mental models. This data validated our approach, and identified refinements that we integrated into LiveSafe&rsquo;s product launch.</p>
-                </div>
-
-                <div class="inner-block half float-left">
-                    <img class="case-block-image" src="../images/livesafe/table-devices.jpg" />
-                </div>
-            </section>
-            <!-- END case-block -->
-
-            <section class="case-block padded livesafe-offwhite overflow-initial">
-                <div class="container">
-                    <div class="inner-block one-third absolute-left vertical-center mobile-padded-below mobile-container-absolute" data-sr>
-                        <h2 class="case-block-text-heading medium-length">Resources when and&nbsp;<br />where you need them</h2>
-                        <p class="case-block-text-subtext short-length">Resources are great to have, but only if the user can find them. We gave a resources tab to keep them all organized and accessible.</p>
-                    </div>
-
-                    <div class="inner-block two-third float-right relative livesafe-resources">
-                        <img class="case-block-image" src="../images/livesafe/mobile-resources-bg.svg" />
-                        <div class="frame frame-mobile darker shadow absolute" data-sr>
-                            <div class="frame-container">
-                                <img class="case-block-image" src="../images/livesafe/mobile-resources1.jpg" />
-                            </div>
-                        </div>
-                        <div class="frame frame-mobile darker shadow absolute" data-sr="wait 0.5s, enter left, move 75%">
-                            <div class="frame-container">
-                                <img class="case-block-image" src="../images/livesafe/mobile-resources2.jpg" />
-                            </div>
-                        </div>
-                        <div class="frame frame-mobile darker shadow absolute" data-sr="wait 1s, enter left, move 75%">
-                            <div class="frame-container">
-                                <img class="case-block-image" src="../images/livesafe/mobile-resources3.jpg" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- END case-block -->
-
-            <section class="case-block case-full-image livesafe-crosswalk"></section>
-            <!-- END case-block -->
-
-            <!-- <section class="case-block-flex not-padded view-three-quarter">
-                <div class="inner-block half float-left padded mobile-container-extra flex-center livesafe-blue">
-                    <h2 class="case-block-text-blockquote medium-length">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
-                </div>
-                <div class="inner-block half padded mobile-container livesafe-offwhite flex-center">
-                    <div class="container flex-col">
-                        <img class="case-block-text-quote-icon align-left" src="../images/livesafe/quote.svg" data-sr="enter top, move 75px">
-                        <p class="case-block-text-quote medium-length">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                        <p class="case-block-text-citation">Firstname Lastname, <em>Title, Organization</em></p>
-                    </div>
-
-                </div>
-            </section> -->
-            <!-- END case-block -->
-
-            <section class="cta">
-                <div class="container">
-                    <p class="cta-text">Sometimes, you find something that just works.</p>
-                    <a class="cta-link" href="/approach">See Our Approach<img class="cta-icon" src="../images/icons/icon-cta-inverse.svg"></a>
-                </div>
-
-                <a class="cta-button cta-button-left" href="/work/fieldone" title="Prev Case"></a>
-                <a class="cta-button cta-button-right" href="/work/stateofobesity" title="Next Case"></a>
-            </section>
-            <!-- END cta -->
-
-            <footer class="footer">
-                <div class="container">
-                    <div class="footer-column">
-                        <img class="footer-logo" src="../images/footer/footer-logo.svg">
-                    </div>
-
-                    <div class="footer-column">
-                        <p class="footer-heading">Get In Touch</p>
-
-                        <a class="footer-email-link" href="mailto:team@braveux.com">team@braveux.com</a>
-                    </div>
-
-                    <div class="footer-column">
-                        <p class="footer-heading">Follow Us</p>
-                        <a class="social-link light-twitter" href="https://twitter.com/brave_ux" target="_blank">Twitter</a>
-                        <a class="social-link light-facebook" href="https://www.facebook.com/braveux" target="_blank">Facebook</a>
-                        <a class="social-link light-linkedin" href="https://www.linkedin.com/company/brave-ux" target="_blank">LinkedIn</a>
-                        <a class="social-link light-dribbble" href="https://dribbble.com/braveux" target="_blank">Dribbble</a>
-                        <a class="social-link light-github" href="https://github.com/braveux" target="_blank">GitHub</a>
-                    </div>
-
-                    <div class="footer-column">
-                        <p class="footer-heading">Our Products</p>
-                        <a class="footer-product-link" href="http://fightforux.com/" target="_blank">Fight For UX</a>
-                        <a class="footer-product-link" href="/bravery" target="_blank">Bravery</a>
-                        <a class="footer-product-link" href="http://compass.is" target="_blank">Compass</a>
-                        <a class="footer-product-link" href="http://forthebadge.com/" target="_blank">For the Badge</a>
-                    </div>
-
-                    <div class="footer-last-line">
-                        <p class="footer-copyright">&copy;2017 Brave UX. All Rights Reserved.</p>
-                        <div class="footer-stars"></div>
-                        <p class="footer-made">Proudly made in our Nation&rsquo;s Capital.</p>
-                    </div>
-                </div>
-
-                <div class="footer-egg"></div>
-            </footer>
-
+    <section class="case-breakdown padded blue">
+      <div class="container row between">
+        <div class="case-breakdown-box column gutter">
+          <p class="case-breakdown-heading">Challenge</p>
+          <h3 class="case-breakdown-summary">
+            Distinguishing LiveSafe from a user&rsquo;s organization
+          </h3>
+          <p class="case-breakdown-detail">
+            Who is LiveSafe? Users are confused by who owns each feature in the app and LiveSafe gets lost in the mix.
+          </p>
         </div>
-        <!-- END wrapper -->
+        <div class="case-breakdown-box column gutter">
+          <p class="case-breakdown-heading">Solution</p>
+          <h3 class="case-breakdown-summary">
+            Clarifying who&rsquo;s the boss
+          </h3>
+          <p class="case-breakdown-detail">
+            The new prototype clearly differentiates LiveSafe from the organizations using the app.
+          </p>
+        </div>
+        <div class="case-breakdown-box column gutter">
+          <p class="case-breakdown-heading">Scope</p>
+          <ul class="case-breakdown-list">
+            <li class="case-breakdown-list-item">Information Architecture</li>
+            <li class="case-breakdown-list-item">Mobile App Design</li>
+            <li class="case-breakdown-list-item">Prototype Testing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="//cdn.jsdelivr.net/velocity/1.1.0/velocity.min.js"></script>
-        <script src="//cdn.jsdelivr.net/jquery.slick/1.3.15/slick.min.js"></script>
-        <script src="../scripts.js"></script>
+    <section class="block padded-top gray overflow">
+      <div class="row container">
+        <div class="inner-block column half-md one-third-lg livesafe-homepage">
+          <img src="./images/work/livesafe/mobile-homepage-bg.svg" alt="" class="inner-block-image contain">
+          <div class="frame frame-mobile darker shadow absolute sr-left">
+            <div class="frame-container">
+                <img src="./images/work/livesafe/mobile-homepage.jpg" alt="" class="inner-block-image">
+            </div>
+          </div>
+        </div>
+        <div class="inner-block absolute-center-md order-top-xs column half-md two-third-lg">
+          <div class="inner-block-content gutter-left padded-bottom">
+            <h2 class="case-block-heading">A proper&nbsp;<br />starting point</h2>
+            <p class="case-block-text">
+              The new homepage and bottom navigation provide the user with everything they need in one, easy to find place. The newsfeed shows recent updates while the map orients the user, providing a natural entry point into SafeWalk.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <script>
-            (function(f, b) {
-                var c;
-                f.hj = f.hj || function() {
-                    (f.hj.q = f.hj.q || []).push(arguments)
-                };
-                f._hjSettings = {
-                    hjid: 20443,
-                    hjsv: 3
-                };
-                c = b.createElement("script");
-                c.async = 1;
-                c.src = "//static.hotjar.com/c/hotjar-20443.js?sv=3";
-                b.getElementsByTagName("head")[0].appendChild(c);
-            })(window, document);
-        </script>
+    <section class="block">
+      <img src="./images/work/livesafe/pedestrians.jpg" alt="" class="block-image">
+    </section>
 
-        <script>
-            (function(i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function() {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    <section class="block row">
+      <div class="inner-block absolute-center-md padded column half-md blue">
+        <div class="inner-block-content container">
+          <h2 class="case-block-heading">Don&rsquo;t be a bystander</h2>
+          <p class="case-block-text">
+            LiveSafe&rsquo;s app empowers users to anonymously or publicly report tips to their organization&rsquo;s security team. Users&rsquo; can attach photos or videos, then message security with more details to do their part in keeping themselves and others safe.
+          </p>
+        </div>
+      </div>
+      <div class="inner-block column half-md gray hide-overflow livesafe-security">
+        <img src="./images/work/livesafe/mobile-security-bg.svg" alt="" class="inner-block-image">
+        <div class="frame frame-mobile darker shadow absolute sr-left">
+          <div class="frame-container">
+            <img src="./images/work/livesafe/mobile-security1.jpg" alt="" class="inner-block-image">
+          </div>
+        </div>
+        <div class="frame frame-mobile darker shadow absolute sr-left sr-delay">
+          <div class="frame-container">
+            <img src="./images/work/livesafe/mobile-security2.jpg" alt="" class="inner-block-image">
+          </div>
+        </div>
+      </div>
+    </section>
 
-            ga('create', 'UA-48218627-1', 'braveux.com');
-            ga('send', 'pageview');
-        </script>
+    <section class="block padded">
+      <div class="inner-block padded-bottom row absolute-center-md">
+        <div class="inner-block-content content-centered container">
+          <h2 class="case-block-heading">Know where you are</h2>
+          <p class="case-block-text">
+            We took a complicated map and simplified it, providing the user with additional information and better safety features. Campus buildings now have a context panel that links to related resources and users&rsquo; have an additional entry point into SafeWalk.
+          </p>
+        </div>
+      </div>
+      <div class="inner-block row livesafe-nav">
+        <div class="container-narrow">
+          <img src="./images/work/livesafe/mobile-nav-bg.svg" alt="" class="inner-block-image">``
+          <div class="frame frame-mobile darker shadow absolute sr-right sr-delay">
+            <div class="frame-container">
+              <img src="./images/work/livesafe/mobile-nav1.jpg" alt="" class="inner-block-image">
+            </div>
+          </div>
+          <div class="frame frame-mobile darker shadow absolute sr-bottom">
+            <div class="frame-container">
+              <img src="./images/work/livesafe/mobile-nav2.jpg" alt="" class="inner-block-image">
+            </div>
+          </div>
+          <div class="frame frame-mobile darker shadow absolute sr-left sr-delay">
+            <div class="frame-container">
+              <img src="./images/work/livesafe/mobile-nav3.jpg" alt="" class="inner-block-image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block row dark-blue">
+      <div class="inner-block column">
+        <img src="./images/work/livesafe/table-devices.jpg" alt="" class="inner-block-image full-height">
+      </div>
+      <div class="inner-block absolute-center-md padded column half">
+        <div class="inner-block-content container">
+          <h2 class="case-block-heading">Proven by research</h2>
+          <p class="case-block-text">
+            We created an interactive mobile prototype and sat down with actual users, to explore their safety concerns, habits, and mental models. This data validated our approach, and identified refinements that we integrated into LiveSafe&rsquo;s product launch.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block padded">
+      <div class="row container">
+        <div class="inner-block absolute-center-md gutter-bottom-mobile column half-md">
+          <div class="inner-block-content gutter-right">
+            <h2 class="case-block-heading">Resources when and where you need them</h2>
+            <p class="case-block-text">
+              Resources are great to have, but only if the user can find them. We gave a resources tab to keep them all organized and accessible.
+            </p>
+          </div>
+        </div>
+        <div class="inner-block column half-md livesafe-resources">
+          <img src="./images/work/livesafe/mobile-resources-bg.svg" alt="" class="inner-block-image contain">
+          <div class="frame frame-mobile darker shadow absolute sr-bottom">
+            <div class="frame-container">
+              <img src="./images/work/livesafe/mobile-resources1.jpg" alt="" class="inner-block-image">
+            </div>
+          </div>
+          <div class="frame frame-mobile darker shadow absolute sr-stagger-left sr-delay-double">
+            <div class="frame-container">
+              <img src="./images/work/livesafe/mobile-resources2.jpg" alt="" class="inner-block-image">
+            </div>
+          </div>
+          <div class="frame frame-mobile darker shadow absolute sr-stagger-left sr-delay-double">
+            <div class="frame-container">
+              <img src="./images/work/livesafe/mobile-resources3.jpg" alt="" class="inner-block-image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <img src="./images/work/livesafe/crosswalk.jpg" alt="" class="block-image">
+    </section>
+    
+    <%- include ../partials/_footer-scripts %>
+  </main>
+
 </body>
-
 </html>

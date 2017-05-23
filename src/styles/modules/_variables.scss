@@ -1,0 +1,25 @@
+// Colors - http://www.color-blindness.com/color-name-hue/
+$white: #FFFFFF;
+$white-smoke: #EEEEEE;
+$iron: #D2D3D4;
+$silver: #BDBDBD;
+$dark-gray: #ABABAB;
+$botticelli: #95A6B4;
+$regent-grey: #6F7F84;
+$charcoal: #424242;
+$night-rider: #333333;
+$jaguar: #282829;
+$black: #000000;
+
+// Settings
+$textGap: 20px;
+$gridGap: 4em;
+
+// Media Mixin Breakpoints  (Modify as needed)
+$breakpoints: (
+  xs: 320px, // Mobile
+  sm: 550px, // Mobile-Lg
+  md: 768px, // Tablet
+  lg: 1024px, // Laptop
+  xl: 1440px // Desktop
+);

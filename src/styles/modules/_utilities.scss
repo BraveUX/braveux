@@ -1,0 +1,29 @@
+@mixin wrapper($size: 'full') {
+  $wrapper-width: 1440px;
+
+  @if ($size == 'half') {
+    max-width: $wrapper-width/2;
+  }
+
+  @else {
+    margin: 0 auto;
+    max-width: $wrapper-width;
+  }
+  width: 100%;
+}
+
+@mixin position($position: relative, $top: null, $right: null, $bottom: null, $left: null) {
+  bottom: $bottom;
+  left: $left;
+  position: $position;
+  right: $right;
+  top: $top;
+}
+
+@mixin hide-text {
+  color: transparent;
+  // font-size: 0; // killed em spacing
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+}

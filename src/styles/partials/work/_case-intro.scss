@@ -1,0 +1,387 @@
+/*
+ * This file contains content for the following sections:
+ *   - Header
+ *   - Executive Summary
+ *   - Breakdown
+*/
+
+// HEADER
+.case-header {
+  align-items: center;
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: $gridGap*2 0;
+  position: relative;
+
+  // Overlay
+  &.overlay {
+    &::after {
+      @include position(absolute, 0, 0, 0, 0);
+      background-color: $jaguar;
+      content: ' ';
+      height: 100%;
+      opacity: 0.3;
+      width: 100%;
+    }
+  }
+
+  // Header Backgrounds (Alphabetical)
+  .andpizza & {
+    background-color: $white;
+
+    @include media('>=md') {
+      &::after {
+        @include position(absolute, 0, 0, 0, 0);
+        background: url('../images/work/andpizza/header.jpg') $white left bottom/auto 70% no-repeat;
+        content: '';
+        display: block;
+        height: 100%;
+        margin: auto 7.5% auto calc(300px + 15%);
+        width: 100%;
+      }
+    }
+
+    @include media('>=xl') {
+      &::after {
+        margin: auto 7.5% auto calc(300px + 25%);
+      }
+    }
+  }
+
+  .bline & {
+    background: url('../images/work/bline/header.jpg') #3FB6E5 right center/cover no-repeat;
+
+    @include media('>=md') {
+      background-position: center center;
+    }
+  }
+
+  .cds & {
+    background-color: #1D2B42;
+
+    @include media('>=md') {
+      background: url('../images/work/cds/header.svg') right center/cover no-repeat;
+      background-position: 50% center;
+    }
+  }
+
+  .cityhealth & {
+    background: url('../images/work/cityhealth/header.jpg') #D97A2A center center/cover no-repeat;
+  }
+
+  .clutch & {
+    background: url('../images/work/clutch/header.jpg') #008B87 left center/cover no-repeat;
+  }
+
+  .collaborate & {
+    background: url('../images/work/collaborate/header.jpg') #0BB3F6 left center/cover no-repeat;
+
+    @include media('>=md') {
+      background-position: center center;
+    }
+  }
+
+  .dcv & {
+    background: url('../images/work/dcv/header.svg') #FFFFFF left center/cover no-repeat;
+
+    @include media('>=md') {
+      background-position: right 50% center;
+    }
+  }
+
+  .felix & {
+    background: url('../images/work/felix/header.jpg') #27C6DD 20% center/cover no-repeat;
+
+    @include media('>=md') {
+      background-position: center center;
+    }
+  }
+
+  .fieldone & {
+    background: url('../images/work/fieldone/header.svg') #F1F3F4 center center/cover no-repeat;
+  }
+
+  .foh & {
+    background: url('../images/work/foh/header.jpg') #2096F3 center center/cover no-repeat;
+  }
+
+  .genz & {
+    background: url('../images/work/genz/header.jpg') #2C2C3E left center/cover no-repeat;
+
+    @include media('>=md') {
+      background-position: center center;
+    }
+  }
+
+  .homezen & {
+    background: url('../images/work/homezen/header.jpg') #064A66 left center/cover no-repeat;
+
+    // overlay
+    &.overlay {
+      &::after {
+        background-color: #064A66;
+        opacity: 0.8;
+      }
+    }
+
+    @include media('>=md') {
+      background-position: top center;
+
+      // svg logo
+      &::before {
+        @include position(absolute, 0, 7.5%, 0, 62%);
+        background: url('../images/work/homezen/header-art.svg') right center/contain no-repeat;
+        content: '';
+        height: auto;
+        max-width: 600px;
+        width: 30%;
+        z-index: 5;
+      }
+    }
+  }
+
+  .idauto & {
+    background: url('../images/work/idauto/header.jpg') #1F3A4F 50% center/cover no-repeat;
+
+    @include media('>=md') {
+      background-position: center center;
+    }
+  }
+
+  .ijr & {
+    background: url('../images/work/ijr/header.jpg') #E6B65B left center/cover no-repeat;
+
+    // overlay
+    &.overlay {
+      &::after {
+        background-color: $white-smoke;
+        opacity: 0.2;
+      }
+    }
+
+    @include media('>=md') {
+      background-position: center center;
+    }
+  }
+
+  .interfolio & {
+    background: url('../images/work/interfolio/header.jpg') #3D80AE left center/cover no-repeat;
+
+    @include media('>=md') {
+      background-position: center center;
+    }
+  }
+
+  .livesafe & {
+    background: url('../images/work/livesafe/header.jpg') #027DA9 right center/cover no-repeat;
+
+    @include media('>=md') {
+      background-position: center center;
+    }
+  }
+
+  .recity & {
+    background: url('../images/work/recity/header.svg') #232577 left center/cover no-repeat;
+
+    @include media('>=md') {
+      background-position: center center;
+    }
+  }
+
+  .smp & {
+    background: url('../images/work/smp/header.jpg') #F29182 left center/cover no-repeat;
+  }
+
+  .snagajob & {
+    background: url('../images/work/snagajob/header.jpg') #F7842A left center/cover no-repeat;
+  }
+
+  .sob & {
+    background-color: #F9F9F9;
+    position: relative;
+
+    @include media('>=md') {
+      // svg logo
+      &::before {
+        @include position(absolute, 0, 7.5%, 0, 42.5%);
+        background: url('../images/work/sob/header.svg') right center/contain no-repeat;
+        content: '';
+        height: auto;
+        // max-width: 600px;
+        width: 50%;
+        z-index: 5;
+      }
+    }
+  }
+
+  .tmt & {
+    background: url('../images/work/tmt/header.jpg') #12366A left center/cover no-repeat;
+
+    @include media('>=md') {
+      background-position: center center;
+    }
+  }
+
+  .unbox & {
+    background: url('../images/work/unbox/header.jpg') #5C5CBF 40% center/cover no-repeat;
+
+    @include media('>=md') {
+      background-position: center center;
+    }
+  }
+
+  .upfront & {
+    background: url('../images/work/upfront/header.jpg') #FFF8F3 left center/cover no-repeat;
+
+    @include media('>=md') {
+      background-position: center center;
+    }
+  }
+
+  .upside & {
+    background: url('../images/work/upside/header.jpg') #775AB3 left center/cover no-repeat;
+
+    @include media('>=md') {
+      background-position: center center;
+    }
+  }
+
+  .upturn & {
+    background-color: #FBF9F3;
+
+    @include media('>=md') {
+      &::after {
+        @include position(absolute, 0, 0, 0, null);
+        background: url('../images/work/upturn/upturn-header.svg') left center/cover no-repeat;
+        content: ' ';
+        height: 100%;
+        width: 50%;
+      }
+    }
+  }
+
+  .weddingwire & {
+    background-color: #19B5BC;
+    position: relative;
+
+    @include media('>=md') {
+      // svg logo
+      &::before {
+        @include position(absolute, 0, 7.5%, -2px, 42.5%);
+        background: url('../images/work/weddingwire/header.svg') right center/contain no-repeat;
+        content: '';
+        height: 60%;
+        margin-top: auto;
+        width: 50%;
+        z-index: 5;
+      }
+    }
+  }
+}
+
+.case-header-content {
+  color: $white-smoke;
+  position: relative;
+  width: auto;
+  z-index: 1;
+
+  &.right {
+    @include media('>=md') {
+      margin-left: auto;
+    }
+  }
+}
+
+.case-header-client-name {
+  @include text('trade-gothic', 24, 600);
+  letter-spacing: 3px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.case-header-logo {
+  max-width: 165px;
+}
+
+.case-header-tagline {
+  @include text('source-sans-pro', 48, 300);
+  margin: $textGap*2 0 $textGap;
+
+  br {
+    display: none;
+
+    @include media('>=sm') {
+      display: block;
+    }
+  }
+}
+
+.case-header-type {
+  @include text('sentinel', 18, 600);
+  margin: 0;
+}
+
+// EXECUTIVE SUMMARY
+.case-exec-summary-text {
+  @include text('sentinel', 24, 300);
+  line-height: 1.4;
+  margin: 0;
+  max-width: 700px;
+}
+
+// BREAKDOWN
+.case-breakdown {
+  overflow: hidden;
+}
+
+.case-breakdown-box {
+  max-width: 360px;
+}
+
+.case-breakdown-heading {
+  @include text('trade-gothic', 13, 600);
+  letter-spacing: 2px;
+  margin: 0 0 $textGap;
+  text-transform: uppercase;
+}
+
+.case-breakdown-summary {
+  @include text('source-sans-pro', 28, 300);
+  margin: 0 0 $textGap*0.75;
+}
+
+.case-breakdown-detail,
+.case-breakdown-list-item {
+  @include text('sentinel', 15, 300);
+  line-height: 1.9;
+  margin: 0;
+}
+
+.case-breakdown-detail {
+  + .case-breakdown-detail {
+    margin-top: $textGap;
+  }
+}
+
+.case-breakdown-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.case-breakdown-footnote {
+  border-top: 2px solid $dark-gray;
+  margin-top: $textGap;
+  padding-top: $textGap;
+
+  @include media('>=md') {
+    margin-top: $textGap*2;
+  }
+}
+
+.case-breakdown-footnote-text {
+  @include text('sentinel', 10, 300, $dark-gray);
+  font-style: italic;
+  margin: 0;
+}
