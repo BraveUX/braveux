@@ -35,7 +35,7 @@ function mediaCheck() {
     initAnimation('#animation-container-one');
     initAnimation('#animation-container-two');
     initAnimation('#animation-container-three');
-    initAnimation('#animation-container-four');
+    initAnimation('#animation-container-four');3
   }
 }
 
@@ -127,7 +127,7 @@ function animationOne() {
 
   function handleComplete() {
     //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-    exportRoot = new libOne.scene1animationv2();
+    exportRoot = new libOne.scene1animationv2(); //exportRoot = new window["lib"+index+"."+exportRoot]
     stage = new createjs.Stage(canvas);
     stage.addChild(exportRoot);
     //Registers the "tick" event listener.
@@ -141,6 +141,9 @@ function animationOne() {
     console.log("Launched One");
   }
 }
+
+// function configAnimation(index,exportRoot)
+// configAnimation("one","scene1animationv2")
 
 function animationTwo() {
   canvas = document.getElementById("canvas-two");
