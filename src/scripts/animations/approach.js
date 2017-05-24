@@ -53,27 +53,32 @@ function ctaScroll() {
   });
 }
 
+var animationOneVisible, animationTwoVisible, animationThreeVisible, animationFourVisible = false;
+
 // Initialize Animation
 function initAnimation(id) {
-  var visible = false;
   $(id).waypoint(function() {
-    if (!visible) {
-      // Check which ID is shown
-      if ($(id + '[id*="one"]').length) {
-        animationOne();
-      } else if ($(id + '[id*="two"]').length) {
-        animationTwo();
-      } else if ($(id + '[id*="three"]').length) {
-        animationThree();
-      } else if ($(id + '[id*="four"]').length) {
-        animationFour();
-      }
-      visible = true;
+    // Check ID and see whether it's visible
+    if ($(id + '[id*="one"]').length && !animationOneVisible) {
+      animationOneVisible = true;
+      animationOne();
+      console.log()
+    } else if ($(id + '[id*="two"]').length && !animationTwoVisible) {
+      animationTwoVisible = true;
+      animationTwo();
+    } else if ($(id + '[id*="three"]').length && !animationThreeVisible) {
+      animationThreeVisible = true;
+      animationThree();
+    } else if ($(id + '[id*="four"]').length && !animationFourVisible) {
+      animationFourVisible = true;
+      animationFour();
     }
   }, {
     offset: '100%'
   });
 }
+
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 
 //Code to support hidpi screens and responsive scaling.
 function makeResponsive(isResp, respDim, isScale, scaleType) {
@@ -114,9 +119,6 @@ function makeResponsive(isResp, respDim, isScale, scaleType) {
   }
 }
 
-
-var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
-
 function animationOne() {
   canvas = document.getElementById('canvas-one');
   anim_container = document.getElementById('animation-container-one');
@@ -133,46 +135,10 @@ function animationOne() {
       createjs.Ticker.setFPS(libOne.properties.fps);
       createjs.Ticker.addEventListener("tick", stage);
     }
-    //Code to support hidpi screens and responsive scaling.
-    function makeResponsive(isResp, respDim, isScale, scaleType) {
-      var lastW, lastH, lastS = 1;
-      window.addEventListener('resize', resizeCanvas);
-      resizeCanvas();
 
-      function resizeCanvas() {
-        var w = libOne.properties.width,
-          h = libOne.properties.height;
-        var iw = window.innerWidth,
-          ih = window.innerHeight;
-        var pRatio = window.devicePixelRatio || 1,
-          xRatio = iw / w,
-          yRatio = ih / h,
-          sRatio = 1;
-        if (isResp) {
-          if ((respDim == 'width' && lastW == iw) || (respDim == 'height' && lastH == ih)) {
-            sRatio = lastS;
-          } else if (!isScale) {
-            if (iw < w || ih < h)
-              sRatio = Math.min(xRatio, yRatio);
-          } else if (scaleType == 1) {
-            sRatio = Math.min(xRatio, yRatio);
-          } else if (scaleType == 2) {
-            sRatio = Math.max(xRatio, yRatio);
-          }
-        }
-        canvas.width = w * pRatio * sRatio;
-        canvas.height = h * pRatio * sRatio;
-        canvas.style.width = dom_overlay_container.style.width = anim_container.style.width = w * sRatio + 'px';
-        canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h * sRatio + 'px';
-        stage.scaleX = pRatio * sRatio;
-        stage.scaleY = pRatio * sRatio;
-        lastW = iw;
-        lastH = ih;
-        lastS = sRatio;
-      }
-    }
-    makeResponsive(true, 'both', true, 1);
+    makeResponsive(false, 'both', false, 1);
     fnStartAnimation();
+    console.log("Launched One");
   }
 }
 
@@ -192,46 +158,10 @@ function animationTwo() {
       createjs.Ticker.setFPS(libTwo.properties.fps);
       createjs.Ticker.addEventListener("tick", stage);
     }
-    //Code to support hidpi screens and responsive scaling.
-    function makeResponsive(isResp, respDim, isScale, scaleType) {
-      var lastW, lastH, lastS = 1;
-      window.addEventListener('resize', resizeCanvas);
-      resizeCanvas();
 
-      function resizeCanvas() {
-        var w = libOne.properties.width,
-          h = libOne.properties.height;
-        var iw = window.innerWidth,
-          ih = window.innerHeight;
-        var pRatio = window.devicePixelRatio || 1,
-          xRatio = iw / w,
-          yRatio = ih / h,
-          sRatio = 1;
-        if (isResp) {
-          if ((respDim == 'width' && lastW == iw) || (respDim == 'height' && lastH == ih)) {
-            sRatio = lastS;
-          } else if (!isScale) {
-            if (iw < w || ih < h)
-              sRatio = Math.min(xRatio, yRatio);
-          } else if (scaleType == 1) {
-            sRatio = Math.min(xRatio, yRatio);
-          } else if (scaleType == 2) {
-            sRatio = Math.max(xRatio, yRatio);
-          }
-        }
-        canvas.width = w * pRatio * sRatio;
-        canvas.height = h * pRatio * sRatio;
-        canvas.style.width = dom_overlay_container.style.width = anim_container.style.width = w * sRatio + 'px';
-        canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h * sRatio + 'px';
-        stage.scaleX = pRatio * sRatio;
-        stage.scaleY = pRatio * sRatio;
-        lastW = iw;
-        lastH = ih;
-        lastS = sRatio;
-      }
-    }
-    makeResponsive(true, 'both', true, 1);
+    makeResponsive(false, 'both', false, 1);
     fnStartAnimation();
+    console.log("Launched Two");
   }
 }
 
@@ -251,46 +181,10 @@ function animationThree() {
       createjs.Ticker.setFPS(libThree.properties.fps);
       createjs.Ticker.addEventListener("tick", stage);
     }
-    //Code to support hidpi screens and responsive scaling.
-    function makeResponsive(isResp, respDim, isScale, scaleType) {
-      var lastW, lastH, lastS = 1;
-      window.addEventListener('resize', resizeCanvas);
-      resizeCanvas();
 
-      function resizeCanvas() {
-        var w = libOne.properties.width,
-          h = libOne.properties.height;
-        var iw = window.innerWidth,
-          ih = window.innerHeight;
-        var pRatio = window.devicePixelRatio || 1,
-          xRatio = iw / w,
-          yRatio = ih / h,
-          sRatio = 1;
-        if (isResp) {
-          if ((respDim == 'width' && lastW == iw) || (respDim == 'height' && lastH == ih)) {
-            sRatio = lastS;
-          } else if (!isScale) {
-            if (iw < w || ih < h)
-              sRatio = Math.min(xRatio, yRatio);
-          } else if (scaleType == 1) {
-            sRatio = Math.min(xRatio, yRatio);
-          } else if (scaleType == 2) {
-            sRatio = Math.max(xRatio, yRatio);
-          }
-        }
-        canvas.width = w * pRatio * sRatio;
-        canvas.height = h * pRatio * sRatio;
-        canvas.style.width = dom_overlay_container.style.width = anim_container.style.width = w * sRatio + 'px';
-        canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h * sRatio + 'px';
-        stage.scaleX = pRatio * sRatio;
-        stage.scaleY = pRatio * sRatio;
-        lastW = iw;
-        lastH = ih;
-        lastS = sRatio;
-      }
-    }
-    makeResponsive(true, 'both', true, 1);
+    makeResponsive(false, 'both', false, 1);
     fnStartAnimation();
+    console.log("Launched Three");
   }
 }
 
@@ -311,7 +205,8 @@ function animationFour() {
       createjs.Ticker.addEventListener("tick", stage);
     }
 
-    makeResponsive(true, 'both', true, 1);
+    makeResponsive(false, 'both', false, 1);
     fnStartAnimation();
+    console.log("Launched Four");
   }
 }
