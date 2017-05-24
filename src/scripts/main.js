@@ -64,7 +64,7 @@ function initNavHide() {
 
 // Controls the home navigation expand/collapse
 function homeHeroNav() {
-  if ( window.location.pathname == '/' || window.location.pathname == '/index.html' || window.location.pathname == '/braveux-new/' || window.location.pathname == '/braveux-new/index.html' ) {
+  if ( window.location.pathname == '/' || window.location.pathname == '/index.html' || window.location.pathname == '/braveux/' || window.location.pathname == '/braveux/index.html' ) {
     $('.menu-home-trigger').waypoint(function(direction) {
       if (direction === 'down') {
         $('.menu-home').removeClass('active');
