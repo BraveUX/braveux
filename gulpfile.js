@@ -73,7 +73,13 @@ gulp.task('sass', function() {
 });
 
 gulp.task('scripts', function() {
-  return gulp.src(['!src/scripts/vivus*.js', '!src/scripts/scrollreveal*.js', 'src/scripts/*.js'])
+  return gulp.src([
+    '!src/scripts/vivus*.js',
+    '!src/scripts/scrollreveal*.js',
+    './node_modules/waypoints/lib/jquery.waypoints.min.js',
+    './node_modules/waypoints/lib/shortcuts/inview.min.js',
+    'src/scripts/*.js'
+  ])
     .pipe(plugins.changed('./public_html/scripts'))
     .on('error', plugins.notify.onError('Error: <%= error.message %>'))
     .pipe(plugins.babel())
@@ -108,9 +114,7 @@ gulp.task('scripts-vivus', function() {
 gulp.task('scripts-animations', function() {
   return gulp.src([
       'src/scripts/animations/approach.js',
-      'src/scripts/animations/*.js',
-      './node_modules/waypoints/lib/jquery.waypoints.min.js',
-      './node_modules/waypoints/lib/shortcuts/inview.min.js'
+      'src/scripts/animations/*.js'
     ])
     .on('error', plugins.notify.onError('Error: <%= error.message %>'))
     .pipe(plugins.changed('./public_html/scripts'))
