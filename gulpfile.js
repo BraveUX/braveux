@@ -106,7 +106,12 @@ gulp.task('scripts-vivus', function() {
 });
 
 gulp.task('scripts-animations', function() {
-  return gulp.src(['src/scripts/animations/approach.js', 'src/scripts/animations/*.js'])
+  return gulp.src([
+      'src/scripts/animations/approach.js',
+      'src/scripts/animations/*.js',
+      './node_modules/waypoints/lib/jquery.waypoints.min.js',
+      './node_modules/waypoints/lib/shortcuts/inview.min.js'
+    ])
     .on('error', plugins.notify.onError('Error: <%= error.message %>'))
     .pipe(plugins.changed('./public_html/scripts'))
     .pipe(plugins.concat('animations.js'))

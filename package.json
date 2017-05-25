@@ -28,7 +28,8 @@
     "stylelint": "^7.7.1",
     "stylelint-order": "^0.4.4",
     "stylelint-scss": "^1.4.1",
-    "stylelint-suitcss": "^1.0.0"
+    "stylelint-suitcss": "^1.0.0",
+    "waypoints": "^4.0.1"
   },
   "dependencies": {
     "normalize-scss": "^5.0.3",
