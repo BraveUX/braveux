@@ -69,31 +69,23 @@ function initAnimation(id) {
     enter: function() {
       if (id.indexOf('one') >= 0) {
         resumeAnimation(0);
-        console.log('start animation' + id);
       } else if (id.indexOf('two') >= 0) {
         resumeAnimation(1);
-        console.log('start animation' + id);
       } else if (id.indexOf('three') >= 0) {
         resumeAnimation(2)
-        console.log('start animation' + id);
       } else if (id.indexOf('four') >= 0) {
         resumeAnimation(3)
-        console.log('start animation' + id);
       }
     },
     exited: function() {
       if (id.indexOf('one') >= 0) {
         pauseAnimation(0);
-        console.log('end animation' + id);
       } else if (id.indexOf('two') >= 0) {
         pauseAnimation(1);
-        console.log('end animation' + id);
       } else if (id.indexOf('three') >= 0) {
         pauseAnimation(2)
-        console.log('end animation' + id);
       } else if (id.indexOf('four') >= 0) {
         pauseAnimation(3)
-        console.log('end animation' + id);
       }
     }
   });
