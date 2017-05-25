@@ -1,5 +1,9 @@
 %outline {
   margin-bottom: $textGap*2;
+
+  path {
+    visibility: hidden;
+  }
 }
 
 .outline-desktop {

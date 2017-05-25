@@ -54,11 +54,16 @@
     type: 'delayed',
     duration: 150,
     delay: 130,
-    start: 'autostart'
+    onReady: function() {
+      $('path').css('visibility', 'visible');
+    }
   };
 
-  new Vivus("outline-desktop", vivusConfig);
-  new Vivus("outline-mobile", vivusConfig);
+  // Delay start of vivus animation
+  setTimeout(function(){
+    new Vivus("outline-desktop", vivusConfig);
+    new Vivus("outline-mobile", vivusConfig);
+  }, 1500);
   </script>
 </body>
 </html>
