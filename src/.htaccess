@@ -16,6 +16,8 @@ Redirect 301 /work/hhs.html /work/felix
 # remove .html extension
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [L,R=301]
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
 RewriteCond %{HTTP_HOST} !=compass.is
