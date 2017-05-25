@@ -125,14 +125,12 @@ gulp.task('favicons', function() {
     .pipe(gulp.dest('./public_html/'));
 });
 
-gulp.task('htaccess', function() {
-  return gulp.src([
-    'src/.htaccess'
-  ])
-  .on('error', plugins.notify.onError('Error: <%= error.message %>'))
-  .pipe(gulp.dest('./public_html/'))
-  .pipe(plugins.connect.reload());
-})
+gulp.task('server', function() {
+  return gulp.src('src/server/*')
+    .on('error', plugins.notify.onError('Error: <%= error.message %>'))
+    .pipe(gulp.dest('./public_html/'))
+    .pipe(plugins.connect.reload());
+});
 
 gulp.task('watch', function() {
     gulp.watch('src/images/**/*', ['images']);
@@ -143,7 +141,7 @@ gulp.task('watch', function() {
     gulp.watch('src/scripts/*.js', ['scripts', 'scripts-vivus', 'scripts-sr']);
     gulp.watch('src/scripts/animations/*.js', ['scripts-animations']);
     gulp.watch('src/favicons/**/*', ['favicons']);
-    gulp.watch('src/.htaccess', ['htaccess']);
+    gulp.watch('src/server/**/*', ['server']);
 });
 
 gulp.task('deploy', function() {
@@ -151,5 +149,5 @@ gulp.task('deploy', function() {
     .pipe(plugins.ghPages());
 });
 
-gulp.task('default', ['fonts', 'images', 'documents', 'ejs', 'sass', 'scripts', 'scripts-animations', 'scripts-sr', 'scripts-vivus', 'favicons', 'htaccess', 'connect', 'watch' ]);
-gulp.task('build', ['fonts', 'images', 'documents', 'ejs', 'sass', 'scripts', 'scripts-animations', 'scripts-sr', 'scripts-vivus', 'favicons', 'htaccess']);
+gulp.task('default', ['fonts', 'images', 'documents', 'ejs', 'sass', 'scripts', 'scripts-animations', 'scripts-sr', 'scripts-vivus', 'favicons', 'server', 'connect', 'watch' ]);
+gulp.task('build', ['fonts', 'images', 'documents', 'ejs', 'sass', 'scripts', 'scripts-animations', 'scripts-sr', 'scripts-vivus', 'favicons', 'server']);
