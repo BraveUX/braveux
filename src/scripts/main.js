@@ -144,10 +144,8 @@ function caseTeaseNext() {
     handler: function(direction) {
       if (direction === 'down') {
         btn.addClass('is-expanded');
-        console.log('expanded');
       } else {
         btn.removeClass('is-expanded');
-        console.log('shrink');
       }
     },
     offset: 'bottom-in-view'

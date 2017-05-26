@@ -39,11 +39,21 @@
 
     &:hover,
     &.is-expanded {
-      transform: translateX(0);
-
       &::after {
         opacity: 1;
         transition: opacity 450ms ease 150ms;
+      }
+    }
+
+    &:hover {
+      transform: translateX(0);
+    }
+
+    &.is-expanded {
+      transform: translateX(20px);
+
+      &:hover {
+        transform: translateX(0);
       }
     }
   }
