@@ -37,7 +37,8 @@
       transition: opacity 450ms ease 150ms;
     }
 
-    &:hover {
+    &:hover,
+    &.is-expanded {
       transform: translateX(0);
 
       &::after {

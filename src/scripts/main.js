@@ -5,6 +5,7 @@ $(document).ready(function() {
   homeHeroNav();
   initNavHide();
   initEgg();
+  caseTeaseNext();
   scrollReveal();
   toggleSection('.career');
   sectionJump();
@@ -133,6 +134,23 @@ function sectionJump() {
         scrollTop: $(checkURL).offset().top
       }, 900);
     }
+  });
+}
+
+function caseTeaseNext() {
+  var btn = $('.cta-button-right');
+
+  btn.waypoint({
+    handler: function(direction) {
+      if (direction === 'down') {
+        btn.addClass('is-expanded');
+        console.log('expanded');
+      } else {
+        btn.removeClass('is-expanded');
+        console.log('shrink');
+      }
+    },
+    offset: 'bottom-in-view'
   });
 }
 
