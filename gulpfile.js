@@ -130,7 +130,10 @@ gulp.task('favicons', function() {
 });
 
 gulp.task('server', function() {
-  return gulp.src('src/server/*')
+  return gulp.src([
+    'src/server/*',
+    'src/server/.htaccess'
+  ])
     .on('error', plugins.notify.onError('Error: <%= error.message %>'))
     .pipe(gulp.dest('./public_html/'))
     .pipe(plugins.connect.reload());
@@ -145,7 +148,7 @@ gulp.task('watch', function() {
     gulp.watch('src/scripts/*.js', ['scripts', 'scripts-vivus', 'scripts-sr']);
     gulp.watch('src/scripts/animations/*.js', ['scripts-animations']);
     gulp.watch('src/favicons/**/*', ['favicons']);
-    gulp.watch('src/server/**/*', ['server']);
+    gulp.watch(['src/server/*', 'src/server/.htaccess'], ['server']);
 });
 
 gulp.task('deploy', function() {
