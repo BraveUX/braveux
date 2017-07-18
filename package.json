@@ -25,9 +25,9 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.1",
     "gulp-uglify": "^2.0.0",
-    "stylelint": "^7.7.1",
+    "stylelint": "~8.0.0",
     "stylelint-order": "^0.4.4",
-    "stylelint-scss": "^1.4.1",
+    "stylelint-scss": "^1.4.4",
     "stylelint-suitcss": "^1.0.0",
     "waypoints": "^4.0.1"
   },
