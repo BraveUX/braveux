@@ -77,6 +77,7 @@
   .collaborate & {
     background: url('../images/work/collaborate/header.jpg') #0BB3F6 left center/cover no-repeat;
 
+
     @include media('>=md') {
       background-position: center center;
     }
