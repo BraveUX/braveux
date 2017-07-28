@@ -737,6 +737,57 @@
   }
 }
 
+// Responsum
+.responsum {
+  $gray: #7B8A9D;
+  $blue: #293B52;
+  $off-white: #F0F2F5;
+  $violet: #9895D3;
+  $pink: #E0557D;
+  $teal: #3BC1AD;
+
+  // case study colors
+  color: $blue;
+
+  .gray {
+    background-color: $gray;
+  }
+
+  .blue {
+    background-color: $blue;
+  }
+
+  .gray,
+  .blue {
+    color: $white-smoke;
+  }
+
+  .off-white {
+    background-color: $off-white;
+  }
+
+  .violet {
+    background-color: $violet;
+  }
+
+  .pink {
+    background-color: $pink;
+  }
+
+  .teal {
+    background-color: $teal;
+  }
+
+  .case-breakdown-heading {
+    color: $gray;
+  }
+
+  // quote icon color
+  .case-referral-quote-icon {
+    @include icon-quote($violet);
+  }
+}
+
 // Style Me Pretty
 .smp {
   // case-study color variables

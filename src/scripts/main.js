@@ -157,9 +157,10 @@ function scrollReveal() {
   window.sr = ScrollReveal();
 
   var revealTop = {
-    duration   : 700,
-    distance   : '30%',
+    duration   : 600,
+    distance   : '60px',
     easing     : 'ease-in-out',
+    // rotate     : { z: 5 },
     origin     : 'top',
     scale      : 1,
     viewFactor : 0.5,
@@ -232,7 +233,6 @@ function scrollReveal() {
     distance   : '40px',
     easing     : 'ease-out',
     origin     : 'top',
-    reset      : true,
     scale      : 1,
     viewFactor : 0.9,
   }, 300);
@@ -297,7 +297,7 @@ function scrollReveal() {
   sr.reveal('.sr-stagger-reveal', reveal, 200);
   sr.reveal('.sr-stagger-top', revealTop, 200);
   sr.reveal('.sr-stagger-right', revealRight, 200);
-  sr.reveal('.sr-stagger-bottom', revealBottom, 100);
+  sr.reveal('.sr-stagger-bottom', revealBottom, 150);
   sr.reveal('.sr-stagger-left', revealLeft, 200);
 
   // Unbox forklift animation

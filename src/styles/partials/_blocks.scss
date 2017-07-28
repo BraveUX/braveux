@@ -162,7 +162,11 @@
 }
 
 .inner-box {
+  align-items: center;
+  display: flex;
+  flex: 1;
   overflow: hidden;
+  position: relative;
 }
 
 .inner-block-content {
@@ -234,6 +238,11 @@
   &.absolute-bottom {
     bottom: 0;
     position: absolute;
+  }
+
+  &.absolute-top {
+    position: absolute;
+    top: 0;
   }
 
   &.shadow {

@@ -404,6 +404,30 @@
   }
 }
 
+// Responsum
+.responsum-mobile {
+  .frame-mobile {
+    width: 45%;
+
+    &:last-of-type {
+      right: 0;
+    }
+  }
+}
+
+.responsum-devices {
+  .frame-desktop {
+    bottom: 0;
+    right: 0;
+    width: 90%;
+  }
+
+  .frame-mobile {
+    bottom: -5%;
+    width: 20%;
+  }
+}
+
 // Style Me Pretty (smp)
 .smp-content {
   .frame-desktop {

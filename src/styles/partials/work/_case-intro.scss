@@ -190,6 +190,21 @@
     }
   }
 
+  .responsum & {
+    background: url('../images/work/responsum/header.jpg') #9895D3 left top/cover no-repeat;
+
+    &::before {
+      background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(141, 137, 207, 0.75) 100%);
+      content: ' ';
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 75%;
+    }
+  }
+
   .smp & {
     background: url('../images/work/smp/header.jpg') #F29182 left center/cover no-repeat;
   }

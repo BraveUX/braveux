@@ -5,18 +5,18 @@
 }(this, (function () { 'use strict';
 
 var defaults = {
-	origin: 'bottom',
+	delay: 0,
 	distance: '0',
 	duration: 600,
-	delay: 0,
+	easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
+	opacity: 0,
+	origin: 'bottom',
 	rotate: {
 		x: 0,
 		y: 0,
 		z: 0,
 	},
-	opacity: 0,
 	scale: 1,
-	easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
 	container: document.documentElement,
 	desktop: true,
 	mobile: true,
@@ -29,10 +29,10 @@ var defaults = {
 		bottom: 0,
 		left: 0,
 	},
-	beforeReveal: function beforeReveal () {},
-	beforeReset: function beforeReset () {},
-	afterReveal: function afterReveal () {},
 	afterReset: function afterReset () {},
+	afterReveal: function afterReveal () {},
+	beforeReset: function beforeReset () {},
+	beforeReveal: function beforeReveal () {},
 };
 
 var noop = {
@@ -165,7 +165,7 @@ function transitionSupported () {
 
 function isElementVisible (element) {
 	var container = this.store.containers[element.containerId];
-	var viewFactor = element.config.viewFactor;
+	var viewFactor = Math.max(0, Math.min(1, element.config.viewFactor));
 	var viewOffset = element.config.viewOffset;
 
 	var elementBounds = {
@@ -232,9 +232,11 @@ function getNode (target, container) {
 	if (typeof target === 'string') {
 		try {
 			node = container.querySelector(target);
-			if (!node) { logger(("Querying the selector \"" + target + "\" returned nothing.")); }
-		} catch (err) {
-			logger(("\"" + target + "\" is not a valid selector."));
+		} catch (e) {
+			throw new Error(("\"" + target + "\" is not a valid selector."))
+		}
+		if (!node) {
+			throw new Error(("The selector \"" + target + "\" matches 0 elements."))
 		}
 	}
 	return isNode(target) ? target : node
@@ -244,19 +246,24 @@ function getNode (target, container) {
 function getNodes (target, container) {
 	if ( container === void 0 ) container = document;
 
-	if (isNode(target)) { return [target] }
-	if (isNodeList(target)) { return Array.prototype.slice.call(target) }
+	if (isNode(target)) {
+		return [target]
+	}
+	if (isNodeList(target)) {
+		return Array.prototype.slice.call(target)
+	}
+	var query;
 	if (typeof target === 'string') {
 		try {
-			var query = container.querySelectorAll(target);
-			var nodes = Array.prototype.slice.call(query);
-			if (nodes.length) { return nodes }
-			logger(("Querying the selector \"" + target + "\" returned nothing."));
-		} catch (error) {
-			logger(("\"" + target + "\" is not a valid selector."));
+			query = container.querySelectorAll(target);
+		} catch (e) {
+			throw new Error(("\"" + target + "\" is not a valid selector."))
+		}
+		if (query.length === 0) {
+			throw new Error(("The selector \"" + target + "\" matches 0 elements."))
 		}
 	}
-	return []
+	return Array.prototype.slice.call(query)
 }
 
 
@@ -276,9 +283,10 @@ function logger (message) {
 	var details = [], len = arguments.length - 1;
 	while ( len-- > 0 ) details[ len ] = arguments[ len + 1 ];
 
-	if (console) {
+	if (this.debug && console) {
 		var report = "ScrollReveal: " + message;
 		details.forEach(function (detail) { return report += "\n  - " + detail; });
+		console.log(report); // eslint-disable-line no-console
 	}
 }
 
@@ -304,11 +312,14 @@ function rinse () {
 	/**
 	 * Take stock of active element IDs.
 	 */
-	each(getNodes('[data-sr-id]'), function (node) {
-		var id = parseInt(node.getAttribute('data-sr-id'));
-		elementIds.active.push(id);
-	});
-
+	try {
+		each(getNodes('[data-sr-id]'), function (node) {
+			var id = parseInt(node.getAttribute('data-sr-id'));
+			elementIds.active.push(id);
+		});
+	} catch (e) {
+		throw e
+	}
 	/**
 	 * Destroy stale elements.
 	 */
@@ -366,18 +377,27 @@ function clean (target) {
 
 
 	var dirty;
+	try {
+		each(getNodes(target), function (node) {
+			var id = node.getAttribute('data-sr-id');
+			if (id !== null) {
+				dirty = true;
+				node.setAttribute('style', this$1.store.elements[id].styles.inline);
+				node.removeAttribute('data-sr-id');
+				delete this$1.store.elements[id];
+			}
+		});
+	} catch (e) {
+		return logger.call(this, 'Clean failed.', e.message)
+	}
 
-	each(getNodes(target), function (node) {
-		var id = node.getAttribute('data-sr-id');
-		if (id !== null) {
-			dirty = true;
-			node.setAttribute('style', this$1.store.elements[id].styles.inline);
-			node.removeAttribute('data-sr-id');
-			delete this$1.store.elements[id];
+	if (dirty) {
+		try {
+			rinse.call(this);
+		} catch (e) {
+			return logger.call(this, 'Clean failed.', 'Rinse failed.', e.message)
 		}
-	});
-
-	if (dirty) { rinse.call(this); }
+	}
 }
 
 function destroy () {
@@ -416,9 +436,9 @@ function destroy () {
 	};
 }
 
-/*  @license Redpill v0.4.1
+/*  @license Rematrix v0.1.1
 
-    Copyright (c) 2017, Fisssion LLC
+    Copyright (c) 2017 Fisssion LLC
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -439,7 +459,7 @@ function destroy () {
     THE SOFTWARE.
 */
 /**
- * @module Redpill
+ * @module Rematrix
  */
 
 /**
@@ -479,7 +499,7 @@ function format (source) {
  * Returns a matrix representing no transformation. The product of any matrix
  * multiplied by the identity matrix will be the original matrix.
  *
- * > **Tip:** Similar to how `5 * 1 === 5`, where `1` is the identity number.
+ * > **Tip:** Similar to how `5 * 1 === 5`, where `1` is the identity.
  *
  * @return {array}
  */
@@ -496,25 +516,25 @@ function identity () {
  * Returns a 4x4 matrix describing the combined transformations
  * of both arguments.
  *
- * > **Note:** Order is very important. For example, rotating 90Â°
+ * > **Note:** Order is very important. For example, rotating 45°
  * along the Z-axis, followed by translating 500 pixels along the
  * Y-axis... is not the same as translating 500 pixels along the
- * Y-axis, followed by rotating 45Â° along on the Z-axis.
+ * Y-axis, followed by rotating 45° along on the Z-axis.
  *
- * @param  {array} m1 - Accepts both short and long form matrices.
- * @param  {array} m2 - Accepts both short and long form matrices.
+ * @param  {array} m - Accepts both short and long form matrices.
+ * @param  {array} x - Accepts both short and long form matrices.
  * @return {array}
  */
-function multiply (m1, m2) {
-	var fm1 = format(m1);
-	var fm2 = format(m2);
+function multiply (m, x) {
+	var fm = format(m);
+	var fx = format(x);
 	var product = [];
 
 	for (var i = 0; i < 4; i++) {
-		var row = [fm1[i], fm1[i + 4], fm1[i + 8], fm1[i + 12]];
+		var row = [fm[i], fm[i + 4], fm[i + 8], fm[i + 12]];
 		for (var j = 0; j < 4; j++) {
 			var k = j * 4;
-			var col = [fm2[k], fm2[k + 1], fm2[k + 2], fm2[k + 3]];
+			var col = [fx[k], fx[k + 1], fx[k + 2], fx[k + 3]];
 			var result = row[0] * col[0] + row[1] * col[1] + row[2] * col[2] + row[3] * col[3];
 
 			product[i + k] = result;
@@ -526,11 +546,13 @@ function multiply (m1, m2) {
 
 
 /**
- * Attempts to returns a 4x4 matrix describing the CSS transform matrix passed
- * in, but will return the identity matrix as a fallback.
+ * Attempts to return a 4x4 matrix describing the CSS transform
+ * matrix passed in, but will return the identity matrix as a
+ * fallback.
  *
- * **Tip:** In virtually all cases, this method is used to convert a CSS matrix
- * (retrieved as a `string` from computed styles) to its equivalent array format.
+ * **Tip:** In virtually all cases, this method is used to convert
+ * a CSS matrix (retrieved as a `string` from computed styles) to
+ * its equivalent array format.
  *
  * @param  {string} source - String containing a valid CSS `matrix` or `matrix3d` property.
  * @return {array}
@@ -606,14 +628,14 @@ function rotateZ (angle) {
 * is used for both X and Y-axis scaling, unless an optional
 * second argument is provided to explicitly define Y-axis scaling.
 *
-* @param  {number} scalarX   - Decimal multiplier.
+* @param  {number} scalar    - Decimal multiplier.
 * @param  {number} [scalarY] - Decimal multiplier.
 * @return {array}
 */
-function scale (scalarX, scalarY) {
+function scale (scalar, scalarY) {
 	var matrix = identity();
-	matrix[0] = scalarX;
-	matrix[5] = scalarY || scalarX;
+	matrix[0] = scalar;
+	matrix[5] = scalarY || scalar;
 	return matrix
 }
 
@@ -683,7 +705,7 @@ function style (element) {
 		var axis = (config.origin === 'top' || config.origin === 'bottom') ? 'Y' : 'X';
 
 		/**
-		 * Letâ€™s make sure our our pixel distances are negative for top and left.
+		 * Let’s make sure our our pixel distances are negative for top and left.
 		 * e.g. { origin: 'top', distance: '25px' } starts at `top: -25px` in CSS.
     	 */
 		var distance = config.distance;
@@ -721,7 +743,11 @@ function style (element) {
 	if (config.rotate.x) { transformations.push(rotateX(config.rotate.x)); }
 	if (config.rotate.y) { transformations.push(rotateY(config.rotate.y)); }
 	if (config.rotate.z) { transformations.push(rotateZ(config.rotate.z)); }
-	if (config.scale !== 1) { transformations.push(scale(config.scale)); }
+	if (config.scale !== 1) {
+		config.scale === 0
+			? transformations.push(scale(0.0002))
+			: transformations.push(scale(config.scale));
+	}
 
 	var transform = {};
 	if (transformations.length) {
@@ -868,29 +894,37 @@ function reveal (target, options, interval, sync) {
 	 * the interval being passed as the 2nd argument.
 	 */
 	if (typeof options === 'number') {
-		interval = Math.abs(parseInt(options));
+		interval = parseInt(options);
 		options = {};
 	} else {
-		interval = Math.abs(parseInt(interval));
+		interval = parseInt(interval);
 		options = options || {};
 	}
 
-	var config = deepAssign({}, this.defaults, options);
 	var containers = this.store.containers;
-	var container = getNode(config.container);
-	var targets = getNodes(target, container);
 
-	if (!targets.length) {
-		logger('Reveal aborted.', 'Reveal cannot be performed on 0 elements.');
-		return
+	var config;
+	var container;
+	var nodes;
+	try {
+		config = deepAssign({}, this.defaults, options);
+		container = getNode(config.container);
+		if (!container) {
+			throw new Error('Invalid container.')
+		}
+		nodes = getNodes(target, container);
+		if (!nodes) {
+			throw new Error('Nothing to animate.')
+		}
+	} catch (e) {
+		return logger.call(this, 'Reveal failed.', e.message)
 	}
 
 	/**
 	 * Verify our platform matches our platform configuration.
 	 */
 	if (!config.mobile && isMobile() || !config.desktop && !isMobile()) {
-		logger('Reveal aborted.', 'This platform has been disabled.');
-		return
+		return logger.call(this, 'Reveal aborted.', 'This platform has been disabled.')
 	}
 
 	/**
@@ -908,8 +942,7 @@ function reveal (target, options, interval, sync) {
 				interval: Math.abs(interval),
 			};
 		} else {
-			logger('Reveal failed.', 'Sequence intervals must be at least 16 milliseconds.');
-			return
+			return logger.call(this, 'Reveal failed.', 'Sequence interval must be at least 16ms.')
 		}
 	}
 
@@ -925,7 +958,7 @@ function reveal (target, options, interval, sync) {
 	}
 
 	try {
-		var elements = targets.map(function (node) {
+		var elements = nodes.map(function (node) {
 			var element = {};
 			var existingId = node.getAttribute('data-sr-id');
 
@@ -972,9 +1005,8 @@ function reveal (target, options, interval, sync) {
 			element.node.setAttribute('data-sr-id', element.id);
 		});
 
-	} catch (error) {
-		logger('Reveal failed.', error.message);
-		return
+	} catch (e) {
+		return logger.call(this, 'Reveal failed.', e.message)
 	}
 
 	containers[containerId] = containers[containerId] || {
@@ -1057,7 +1089,6 @@ function animate (element, sequencing) {
 				return
 			}
 		}
-		element.seen = true;
 		return triggerReveal.call(this, element, delayed)
 	}
 
@@ -1082,7 +1113,7 @@ function triggerReveal (element, delayed) {
 	delayed
 		? styles.push(element.styles.transition.generated.delayed)
 		: styles.push(element.styles.transition.generated.instant);
-	element.revealed = true;
+	element.revealed = element.seen = true;
 	element.node.setAttribute('style', styles.filter(function (i) { return i !== ''; }).join(' '));
 	registerCallbacks.call(this, element, delayed);
 }
@@ -1233,9 +1264,14 @@ function delegate (event) {
 	});
 }
 
-var version = "4.0.0-beta.6";
+var version = "4.0.0-beta.9";
+
+var _config;
+var _debug;
+var _instance;
 
 function ScrollReveal (options) {
+	var this$1 = this;
 	if ( options === void 0 ) options = {};
 
 
@@ -1246,32 +1282,47 @@ function ScrollReveal (options) {
 		return new ScrollReveal(options)
 	}
 
+	Object.defineProperty(this, 'debug', {
+		get: function () { return _debug || false; },
+		set: function (value) {
+			if (typeof value === 'boolean') { _debug = value; }
+		},
+	});
+
 	if (!ScrollReveal.isSupported()) {
-		logger('Instantiation aborted.', 'This browser is not supported.');
+		logger.call(this, 'Instantiation aborted.', 'This browser is not supported.');
+		return noop
+	}
+
+	Object.defineProperty(this, 'defaults', {
+		get: function () { return _config; },
+	});
+
+	var buffer;
+	try {
+		buffer = _config
+			? deepAssign({}, _config, options)
+			: deepAssign({}, defaults, options);
+	} catch (e) {
+		logger.call(this, 'Instantiation failed.', 'Invalid configuration.', e.message);
 		return noop
 	}
 
 	try {
-		Object.defineProperty(this, 'defaults', {
-			get: (function () {
-				var config = {};
-				deepAssign(config, defaults, options);
-				return function () { return config; }
-			})(),
-		});
-	} catch (error) {
-		logger('Instantiation failed.', 'Invalid configuration provided.', error.message);
+		var container = getNode(buffer.container);
+		if (!container) {
+			throw new Error('Invalid container.')
+		}
+	} catch (e) {
+		logger.call(this, 'Instantiation failed.', e.message);
 		return noop
 	}
 
-	var container = getNode(this.defaults.container);
-	if (!container) {
-		logger('Instantiation failed.', 'Invalid or missing container.');
-		return noop
-	}
+	_config = buffer;
 
 	if (this.defaults.mobile === isMobile() || this.defaults.desktop === !isMobile()) {
 		document.documentElement.classList.add('sr');
+		document.body.style.height = '100%';
 	}
 
 	this.store = {
@@ -1282,15 +1333,12 @@ function ScrollReveal (options) {
 	};
 
 	this.pristine = true;
-	this.delegate = delegate.bind(this);
 
-	Object.defineProperty(this, 'version', {
-		get: function () { return version; },
-	});
+	Object.defineProperty(this, 'delegate', { get: function () { return delegate.bind(this$1); } });
+	Object.defineProperty(this, 'version', { get: function () { return version; } });
+	Object.defineProperty(this, 'noop', { get: function () { return false; } });
 
-	Object.defineProperty(this, 'noop', {
-		get: function () { return false; },
-	});
+	return _instance ? _instance : _instance = this
 }
 
 ScrollReveal.isSupported = function () { return transformSupported() && transitionSupported(); };
@@ -1318,7 +1366,7 @@ ScrollReveal.prototype.sync = sync;
 /*!
  * ScrollReveal
  * ------------
- * Website : https://scrollreveal.com
+ * Website : https://scrollrevealjs.org
  * Support : https://github.com/jlmakes/scrollreveal/issues
  * Author  : https://twitter.com/jlmakes
  *
@@ -1327,9 +1375,9 @@ ScrollReveal.prototype.sync = sync;
  *
  * For commercial sites, themes, projects, and applications,
  * keep your source code proprietary and please purchase a
- * commercial license from https://scrollreveal.com
+ * commercial license from https://scrollrevealjs.org
  *
- * Copyright (c) 2014â€“2017 Julian Lloyd. All rights reserved.
+ * Copyright (c) 2014–2017 Julian Lloyd. All rights reserved.
  */
 
 return ScrollReveal;
