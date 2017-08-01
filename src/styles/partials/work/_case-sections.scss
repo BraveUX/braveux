@@ -153,14 +153,39 @@
 }
 
 // ID Auto
-.idauto-code-phone {
-  background-color: #212121;
+.idauto-navigate {
+  .frame-desktop.absolute {
+    bottom: 0;
+    height: 75%;
+    margin: auto;
+    opacity: 0.8;
+    top: 0;
+    width: 75%;
+    z-index: 0;
 
-  .inner-block-image.absolute-bottom {
-    height: 80%;
-    margin: auto 10% 0 auto;
-    right: 0;
-    width: auto;
+    &:nth-of-type(2) {
+      left: -25%;
+    }
+
+    &:nth-of-type(3) {
+      right: -30%;
+    }
+  }
+}
+
+.block.shadow-inset-bottom {
+  .idauto & {
+    box-shadow: inset 0 -125px 60px -100px rgba(#789096, 0.25);
+  }
+}
+
+.idauto-mobile-design {
+  .frame-mobile-ios {
+    width: 45%;
+
+    &:last-of-type {
+      right: 0;
+    }
   }
 }
 

@@ -206,7 +206,7 @@ function scrollReveal() {
     duration   : 700,
     distance   : '0',
     easing     : 'ease-in-out',
-    scale      : 0.9,
+    scale      : 1,
     viewFactor : 0.5,
   }
 
