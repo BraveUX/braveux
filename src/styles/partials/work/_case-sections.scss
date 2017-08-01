@@ -153,6 +153,26 @@
 }
 
 // ID Auto
+.gray-langur-adventure {
+  .frame-desktop.absolute {
+    bottom: 0;
+    height: 75%;
+    margin: auto;
+    top: 0;
+    width: 75%;
+    z-index: 0;
+
+    &:nth-of-type(2) {
+      left: -50%;
+    }
+
+    &:nth-of-type(3) {
+      right: -45%;
+    }
+  }
+}
+
+// ID Auto
 .idauto-navigate {
   .frame-desktop.absolute {
     bottom: 0;

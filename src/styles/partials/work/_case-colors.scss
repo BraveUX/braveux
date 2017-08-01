@@ -482,6 +482,45 @@
   }
 }
 
+// Gray Langur
+.gray-langur {
+  // case-study color variables
+  $off-white: #F6F1DF;
+  $black: #211F1C;
+  $gray: #2D2B28;
+  $red: #7B2D3B;
+
+  // case study colors
+  color: $black;
+
+  .off-white {
+    background-color: $off-white;
+  }
+
+  .red,
+  .black,
+  .gray {
+    color: $off-white;
+  }
+
+  .red {
+    background-color: $red;
+  }
+
+  .black {
+    background-color: $black;
+  }
+
+  .gray {
+    background-color: $gray;
+  }
+
+  // quote icon color
+  .case-referral-quote-icon {
+    @include icon-quote($black);
+  }
+}
+
 // HomeZen
 .homezen {
   // case-study color variables

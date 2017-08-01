@@ -115,6 +115,14 @@
     }
   }
 
+  .gray-langur & {
+    background: url('../images/work/gray-langur/header.jpg') #211F1C left center/cover no-repeat;
+
+    @include media('>=md') {
+      background-position: center center;
+    }
+  }
+
   .homezen & {
     background: url('../images/work/homezen/header.jpg') #064A66 left center/cover no-repeat;
 
