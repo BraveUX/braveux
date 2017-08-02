@@ -10,7 +10,7 @@ $(document).ready(function() {
   toggleSection('.career');
   sectionJump();
   videoPlay();
-  
+
   // Repo Info
   console.log('Looking for this? https://github.com/BraveUX/braveux');
 });
@@ -329,10 +329,8 @@ function videoPlay() {
   video.waypoint({
     handler: function(direction) {
       if (direction === 'down') {
-        console.log('play');
         video[0].play();
       } else {
-        console.log('pause');
         video[0].pause();
       }
     },
