@@ -9,7 +9,8 @@ $(document).ready(function() {
   scrollReveal();
   toggleSection('.career');
   sectionJump();
-
+  videoPlay();
+  
   // Repo Info
   console.log('Looking for this? https://github.com/BraveUX/braveux');
 });
@@ -319,5 +320,22 @@ function scrollReveal() {
     distance   : '20px',
     origin     : 'top',
     delay      : '1500',
+  });
+}
+
+function videoPlay() {
+  var video = $('video');
+
+  video.waypoint({
+    handler: function(direction) {
+      if (direction === 'down') {
+        console.log('play');
+        video[0].play();
+      } else {
+        console.log('pause');
+        video[0].pause();
+      }
+    },
+    offset: 'bottom-in-view'
   });
 }
