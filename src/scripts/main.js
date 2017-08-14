@@ -325,15 +325,14 @@ function scrollReveal() {
 
 function videoPlay() {
   var video = $('video');
-
-  video.waypoint({
-    handler: function(direction) {
-      if (direction === 'down') {
-        video[0].play();
-      } else {
-        video[0].pause();
-      }
-    },
-    offset: 'bottom-in-view'
+  
+  video.each(function() {
+    var $this = $(this);
+    $this.waypoint(function() {
+      $this[0].play();
+      this.disable();
+    }, {
+      offset: 'bottom-in-view'
+    });
   });
 }

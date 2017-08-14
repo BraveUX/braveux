@@ -116,11 +116,7 @@
   }
 
   .gray-langur & {
-    background: url('../images/work/gray-langur/header.jpg') #211F1C left center/cover no-repeat;
-
-    @include media('>=md') {
-      background-position: center center;
-    }
+    background-color: #211F1C;
   }
 
   .homezen & {
@@ -302,6 +298,34 @@
       }
     }
   }
+}
+
+.case-header-video-box {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+
+  // Overlay
+  &.overlay {
+    &::after {
+      @include position(absolute, 0, 0, 0, 0);
+      background-color: $jaguar;
+      content: ' ';
+      height: 100%;
+      opacity: 0.6;
+      width: 100%;
+    }
+  }
+}
+
+.case-header-video {
+  height: auto;
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+  top: 0;
+  width: auto;
 }
 
 .case-header-content {
