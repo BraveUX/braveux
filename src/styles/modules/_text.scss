@@ -39,10 +39,10 @@
 
 // Creates responsive font that scales with screen size (input max-size)
 @mixin sizer($size) {
-  @include responsive-font(4vw, $size-reduce-px, $size-px, $size-rem);
   $size-px: $size * 1px; // Convert to px
   $size-reduce-px: $size * 0.7 * 1px; // Convert to smaller px variant for scaling (can change decimal value for project need)
   $size-rem: $size / 10 * 1rem; // Convert to rem
+  @include responsive-font(4vw, $size-reduce-px, $size-px, $size-rem);
 }
 
 // Mixin used for calling font

@@ -158,10 +158,9 @@ function scrollReveal() {
   window.sr = ScrollReveal();
 
   var revealTop = {
-    duration   : 600,
-    distance   : '60px',
+    duration   : 700,
+    distance   : '30%',
     easing     : 'ease-in-out',
-    // rotate     : { z: 5 },
     origin     : 'top',
     scale      : 1,
     viewFactor : 0.5,
@@ -181,7 +180,7 @@ function scrollReveal() {
     distance   : '30%',
     easing     : 'ease-in-out',
     origin     : 'bottom',
-    // scale      : 1,
+    scale      : 1,
     viewFactor : 0.5,
   };
 
