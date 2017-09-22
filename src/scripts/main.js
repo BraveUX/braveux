@@ -9,6 +9,7 @@ $(document).ready(function() {
   scrollReveal();
   toggleSection('.career');
   sectionJump();
+  videoPlay();
 
   // Repo Info
   console.log('Looking for this? https://github.com/BraveUX/braveux');
@@ -179,7 +180,7 @@ function scrollReveal() {
     distance   : '30%',
     easing     : 'ease-in-out',
     origin     : 'bottom',
-    // scale      : 1,
+    scale      : 1,
     viewFactor : 0.5,
   };
 
@@ -205,7 +206,7 @@ function scrollReveal() {
     duration   : 700,
     distance   : '0',
     easing     : 'ease-in-out',
-    scale      : 0.9,
+    scale      : 1,
     viewFactor : 0.5,
   }
 
@@ -232,7 +233,6 @@ function scrollReveal() {
     distance   : '40px',
     easing     : 'ease-out',
     origin     : 'top',
-    reset      : true,
     scale      : 1,
     viewFactor : 0.9,
   }, 300);
@@ -284,6 +284,7 @@ function scrollReveal() {
   sr.reveal('.sr-delay', { delay : 300 });
   sr.reveal('.sr-delay-double', { delay : 600 });
   sr.reveal('.sr-delay-tripple', { delay : 900 });
+  sr.reveal('.sr-half-view', {viewFactor : 0.5});
   sr.reveal('.sr-reveal', reveal);
   sr.reveal('.sr-rotate', rotate);
   sr.reveal('.sr-top', revealTop);
@@ -297,7 +298,7 @@ function scrollReveal() {
   sr.reveal('.sr-stagger-reveal', reveal, 200);
   sr.reveal('.sr-stagger-top', revealTop, 200);
   sr.reveal('.sr-stagger-right', revealRight, 200);
-  sr.reveal('.sr-stagger-bottom', revealBottom, 100);
+  sr.reveal('.sr-stagger-bottom', revealBottom, 150);
   sr.reveal('.sr-stagger-left', revealLeft, 200);
 
   // Unbox forklift animation
@@ -319,5 +320,19 @@ function scrollReveal() {
     distance   : '20px',
     origin     : 'top',
     delay      : '1500',
+  });
+}
+
+function videoPlay() {
+  var video = $('video');
+  
+  video.each(function() {
+    var $this = $(this);
+    $this.waypoint(function() {
+      $this[0].play();
+      this.disable();
+    }, {
+      offset: 'bottom-in-view'
+    });
   });
 }

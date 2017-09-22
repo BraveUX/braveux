@@ -25,4 +25,9 @@
   @include text('sentinel', 16);
   line-height: 1.9;
   margin: 0;
+  max-width: 450px;
+
+  .content-centered & {
+    margin: auto;
+  }
 }

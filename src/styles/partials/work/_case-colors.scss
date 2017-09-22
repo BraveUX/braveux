@@ -482,6 +482,45 @@
   }
 }
 
+// Gray Langur
+.gray-langur {
+  // case-study color variables
+  $off-white: #F6F1DF;
+  $black: #211F1C;
+  $gray: #2D2B28;
+  $red: #7B2D3B;
+
+  // case study colors
+  color: $black;
+
+  .off-white {
+    background-color: $off-white;
+  }
+
+  .red,
+  .black,
+  .gray {
+    color: $off-white;
+  }
+
+  .red {
+    background-color: $red;
+  }
+
+  .black {
+    background-color: $black;
+  }
+
+  .gray {
+    background-color: $gray;
+  }
+
+  // quote icon color
+  .case-referral-quote-icon {
+    @include icon-quote($black);
+  }
+}
+
 // HomeZen
 .homezen {
   // case-study color variables
@@ -526,23 +565,24 @@
 // Identity Automation
 .idauto {
   // case-study color variables
-  $blue: #1F3A4F;
-  $red: #AB1F23;
-  $gray: #F7F7F7;
+  $red: #981B1E;
+  $gray: #ECEFF1;
+  $green: #789096;
   $dark-gray: #37474F;
 
   // case study colors
-  color: #2E3439;
-
-  .blue {
-    background-color: $blue;
-  }
+  color: $dark-gray;
 
   .gray {
     background-color: $gray;
   }
 
+  .green {
+    background-color: $green;
+  }
+
   .red,
+  .green,
   .dark-gray {
     color: $white-smoke;
   }
@@ -551,18 +591,9 @@
     background-color: $red;
   }
 
-  .dark-gray {
-    background-color: $dark-gray;
-  }
-
-  .case-breakdown-heading,
-  .case-referral-blockquote {
-    color: $red;
-  }
-
   // quote icon color
   .case-referral-quote-icon {
-    @include icon-quote($white-smoke);
+    @include icon-quote($dark-gray);
   }
 }
 
@@ -734,6 +765,57 @@
   // quote icon color
   .case-referral-quote-icon {
     @include icon-quote($white-smoke);
+  }
+}
+
+// Responsum
+.responsum {
+  $gray: #7B8A9D;
+  $blue: #293B52;
+  $off-white: #F0F2F5;
+  $violet: #9895D3;
+  $pink: #E0557D;
+  $teal: #3BC1AD;
+
+  // case study colors
+  color: $blue;
+
+  .gray {
+    background-color: $gray;
+  }
+
+  .blue {
+    background-color: $blue;
+  }
+
+  .gray,
+  .blue {
+    color: $white-smoke;
+  }
+
+  .off-white {
+    background-color: $off-white;
+  }
+
+  .violet {
+    background-color: $violet;
+  }
+
+  .pink {
+    background-color: $pink;
+  }
+
+  .teal {
+    background-color: $teal;
+  }
+
+  .case-breakdown-heading {
+    color: $gray;
+  }
+
+  // quote icon color
+  .case-referral-quote-icon {
+    @include icon-quote($violet);
   }
 }
 

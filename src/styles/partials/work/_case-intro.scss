@@ -115,6 +115,10 @@
     }
   }
 
+  .gray-langur & {
+    background-color: #211F1C;
+  }
+
   .homezen & {
     background: url('../images/work/homezen/header.jpg') #064A66 left center/cover no-repeat;
 
@@ -143,7 +147,7 @@
   }
 
   .idauto & {
-    background: url('../images/work/idauto/header.jpg') #1F3A4F 50% center/cover no-repeat;
+    background: url('../images/work/idauto/header.jpg') #1F3A4F 35% center/cover no-repeat;
 
     @include media('>=md') {
       background-position: center center;
@@ -187,6 +191,21 @@
 
     @include media('>=md') {
       background-position: center center;
+    }
+  }
+
+  .responsum & {
+    background: url('../images/work/responsum/header.jpg') #9895D3 left top/cover no-repeat;
+
+    &::before {
+      background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(141, 137, 207, 0.75) 100%);
+      content: ' ';
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 75%;
     }
   }
 
@@ -279,6 +298,34 @@
       }
     }
   }
+}
+
+.case-header-video-box {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+
+  // Overlay
+  &.overlay {
+    &::after {
+      @include position(absolute, 0, 0, 0, 0);
+      background-color: $jaguar;
+      content: ' ';
+      height: 100%;
+      opacity: 0.6;
+      width: 100%;
+    }
+  }
+}
+
+.case-header-video {
+  height: auto;
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+  top: 0;
+  width: auto;
 }
 
 .case-header-content {
