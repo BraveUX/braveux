@@ -84,6 +84,10 @@
     @include position(absolute, null, null, 0, null);
   }
 
+  &.absolute-top {
+    @include position(absolute, 0, null, null, null);
+  }
+
   // SHADOW MODIFERS
   &.shadow {
     filter: drop-shadow(0 0 15px rgba($jaguar, 0.2));

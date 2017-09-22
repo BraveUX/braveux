@@ -26,6 +26,7 @@
   margin: 0 $gridGap/2;
   max-width: 100%;
   position: relative;
+  width: 100%;
 
   @include media('>=sm') {
     margin: 0 $gridGap;
@@ -34,7 +35,7 @@
   @include media('>=md') {
     margin: 0 $gridGap*2;
     max-width: 1200px;
-    width: 100%;
+    width: calc(100% - (#{$gridGap*2} * 2));
   }
 
   @include media('>=xl') {

@@ -5,18 +5,18 @@
 }(this, (function () { 'use strict';
 
 var defaults = {
-	origin: 'bottom',
+	delay: 0,
 	distance: '0',
 	duration: 600,
-	delay: 0,
+	easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
+	opacity: 0,
+	origin: 'bottom',
 	rotate: {
 		x: 0,
 		y: 0,
 		z: 0,
 	},
-	opacity: 0,
 	scale: 1,
-	easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
 	container: document.documentElement,
 	desktop: true,
 	mobile: true,
@@ -29,10 +29,10 @@ var defaults = {
 		bottom: 0,
 		left: 0,
 	},
-	beforeReveal: function beforeReveal () {},
-	beforeReset: function beforeReset () {},
-	afterReveal: function afterReveal () {},
 	afterReset: function afterReset () {},
+	afterReveal: function afterReveal () {},
+	beforeReset: function beforeReset () {},
+	beforeReveal: function beforeReveal () {},
 };
 
 var noop = {
@@ -165,7 +165,7 @@ function transitionSupported () {
 
 function isElementVisible (element) {
 	var container = this.store.containers[element.containerId];
-	var viewFactor = element.config.viewFactor;
+	var viewFactor = Math.max(0, Math.min(1, element.config.viewFactor));
 	var viewOffset = element.config.viewOffset;
 
 	var elementBounds = {
@@ -232,9 +232,11 @@ function getNode (target, container) {
 	if (typeof target === 'string') {
 		try {
 			node = container.querySelector(target);
-			if (!node) { logger(("Querying the selector \"" + target + "\" returned nothing.")); }
-		} catch (err) {
-			logger(("\"" + target + "\" is not a valid selector."));
+		} catch (e) {
+			throw new Error(("\"" + target + "\" is not a valid selector."))
+		}
+		if (!node) {
+			throw new Error(("The selector \"" + target + "\" matches 0 elements."))
 		}
 	}
 	return isNode(target) ? target : node
@@ -244,19 +246,24 @@ function getNode (target, container) {
 function getNodes (target, container) {
 	if ( container === void 0 ) container = document;
 
-	if (isNode(target)) { return [target] }
-	if (isNodeList(target)) { return Array.prototype.slice.call(target) }
-	if (typeof target === 'string') {
-		try {
-			var query = container.querySelectorAll(target);
-			var nodes = Array.prototype.slice.call(query);
-			if (nodes.length) { return nodes }
-			logger(("Querying the selector \"" + target + "\" returned nothing."));
-		} catch (error) {
-			logger(("\"" + target + "\" is not a valid selector."));
-		}
+	if (target instanceof Array) {
+		return target
 	}
-	return []
+	if (isNode(target)) {
+		return [target]
+	}
+	if (isNodeList(target)) {
+		return Array.prototype.slice.call(target)
+	}
+	if (typeof target === 'string') {
+		var query;
+		try {
+			query = container.querySelectorAll(target);
+		} catch (e) {
+			throw new Error(("\"" + target + "\" is not a valid selector."))
+		}
+		return Array.prototype.slice.call(query)
+	}
 }
 
 
@@ -276,9 +283,10 @@ function logger (message) {
 	var details = [], len = arguments.length - 1;
 	while ( len-- > 0 ) details[ len ] = arguments[ len + 1 ];
 
-	if (console) {
-		var report = "ScrollReveal: " + message;
-		details.forEach(function (detail) { return report += "\n  - " + detail; });
+	if (this.constructor.debug && console) {
+		var report = "%cScrollReveal: " + message;
+		details.forEach(function (detail) { return report += "\n â€” " + detail; });
+		console.log(report, 'color: #ea654b;'); // eslint-disable-line no-console
 	}
 }
 
@@ -304,11 +312,14 @@ function rinse () {
 	/**
 	 * Take stock of active element IDs.
 	 */
-	each(getNodes('[data-sr-id]'), function (node) {
-		var id = parseInt(node.getAttribute('data-sr-id'));
-		elementIds.active.push(id);
-	});
-
+	try {
+		each(getNodes('[data-sr-id]'), function (node) {
+			var id = parseInt(node.getAttribute('data-sr-id'));
+			elementIds.active.push(id);
+		});
+	} catch (e) {
+		throw e
+	}
 	/**
 	 * Destroy stale elements.
 	 */
@@ -366,18 +377,27 @@ function clean (target) {
 
 
 	var dirty;
+	try {
+		each(getNodes(target), function (node) {
+			var id = node.getAttribute('data-sr-id');
+			if (id !== null) {
+				dirty = true;
+				node.setAttribute('style', this$1.store.elements[id].styles.inline);
+				node.removeAttribute('data-sr-id');
+				delete this$1.store.elements[id];
+			}
+		});
+	} catch (e) {
+		return logger.call(this, 'Clean failed.', e.stack || e.message)
+	}
 
-	each(getNodes(target), function (node) {
-		var id = node.getAttribute('data-sr-id');
-		if (id !== null) {
-			dirty = true;
-			node.setAttribute('style', this$1.store.elements[id].styles.inline);
-			node.removeAttribute('data-sr-id');
-			delete this$1.store.elements[id];
+	if (dirty) {
+		try {
+			rinse.call(this);
+		} catch (e) {
+			return logger.call(this, 'Clean failed.', e.stack || e.message)
 		}
-	});
-
-	if (dirty) { rinse.call(this); }
+	}
 }
 
 function destroy () {
@@ -416,9 +436,9 @@ function destroy () {
 	};
 }
 
-/*  @license Redpill v0.4.1
+/*  @license Rematrix v0.1.1
 
-    Copyright (c) 2017, Fisssion LLC
+    Copyright (c) 2017 Fisssion LLC
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -439,7 +459,7 @@ function destroy () {
     THE SOFTWARE.
 */
 /**
- * @module Redpill
+ * @module Rematrix
  */
 
 /**
@@ -479,7 +499,7 @@ function format (source) {
  * Returns a matrix representing no transformation. The product of any matrix
  * multiplied by the identity matrix will be the original matrix.
  *
- * > **Tip:** Similar to how `5 * 1 === 5`, where `1` is the identity number.
+ * > **Tip:** Similar to how `5 * 1 === 5`, where `1` is the identity.
  *
  * @return {array}
  */
@@ -496,25 +516,25 @@ function identity () {
  * Returns a 4x4 matrix describing the combined transformations
  * of both arguments.
  *
- * > **Note:** Order is very important. For example, rotating 90Â°
+ * > **Note:** Order is very important. For example, rotating 45Â°
  * along the Z-axis, followed by translating 500 pixels along the
  * Y-axis... is not the same as translating 500 pixels along the
  * Y-axis, followed by rotating 45Â° along on the Z-axis.
  *
- * @param  {array} m1 - Accepts both short and long form matrices.
- * @param  {array} m2 - Accepts both short and long form matrices.
+ * @param  {array} m - Accepts both short and long form matrices.
+ * @param  {array} x - Accepts both short and long form matrices.
  * @return {array}
  */
-function multiply (m1, m2) {
-	var fm1 = format(m1);
-	var fm2 = format(m2);
+function multiply (m, x) {
+	var fm = format(m);
+	var fx = format(x);
 	var product = [];
 
 	for (var i = 0; i < 4; i++) {
-		var row = [fm1[i], fm1[i + 4], fm1[i + 8], fm1[i + 12]];
+		var row = [fm[i], fm[i + 4], fm[i + 8], fm[i + 12]];
 		for (var j = 0; j < 4; j++) {
 			var k = j * 4;
-			var col = [fm2[k], fm2[k + 1], fm2[k + 2], fm2[k + 3]];
+			var col = [fx[k], fx[k + 1], fx[k + 2], fx[k + 3]];
 			var result = row[0] * col[0] + row[1] * col[1] + row[2] * col[2] + row[3] * col[3];
 
 			product[i + k] = result;
@@ -526,11 +546,13 @@ function multiply (m1, m2) {
 
 
 /**
- * Attempts to returns a 4x4 matrix describing the CSS transform matrix passed
- * in, but will return the identity matrix as a fallback.
+ * Attempts to return a 4x4 matrix describing the CSS transform
+ * matrix passed in, but will return the identity matrix as a
+ * fallback.
  *
- * **Tip:** In virtually all cases, this method is used to convert a CSS matrix
- * (retrieved as a `string` from computed styles) to its equivalent array format.
+ * **Tip:** In virtually all cases, this method is used to convert
+ * a CSS matrix (retrieved as a `string` from computed styles) to
+ * its equivalent array format.
  *
  * @param  {string} source - String containing a valid CSS `matrix` or `matrix3d` property.
  * @return {array}
@@ -606,14 +628,14 @@ function rotateZ (angle) {
 * is used for both X and Y-axis scaling, unless an optional
 * second argument is provided to explicitly define Y-axis scaling.
 *
-* @param  {number} scalarX   - Decimal multiplier.
+* @param  {number} scalar    - Decimal multiplier.
 * @param  {number} [scalarY] - Decimal multiplier.
 * @return {array}
 */
-function scale (scalarX, scalarY) {
+function scale (scalar, scalarY) {
 	var matrix = identity();
-	matrix[0] = scalarX;
-	matrix[5] = scalarY || scalarX;
+	matrix[0] = scalar;
+	matrix[5] = scalarY || scalar;
 	return matrix
 }
 
@@ -721,7 +743,11 @@ function style (element) {
 	if (config.rotate.x) { transformations.push(rotateX(config.rotate.x)); }
 	if (config.rotate.y) { transformations.push(rotateY(config.rotate.y)); }
 	if (config.rotate.z) { transformations.push(rotateZ(config.rotate.z)); }
-	if (config.scale !== 1) { transformations.push(scale(config.scale)); }
+	if (config.scale !== 1) {
+		config.scale === 0
+			? transformations.push(scale(0.0002))
+			: transformations.push(scale(config.scale));
+	}
 
 	var transform = {};
 	if (transformations.length) {
@@ -835,7 +861,7 @@ function initialize () {
 			styles.push(element.styles.transform.generated.initial);
 		}
 
-		element.node.setAttribute('style', styles.filter(function (i) { return i !== ''; }).join(' '));
+		element.node.setAttribute('style', styles.filter(function (s) { return s !== ''; }).join(' '));
 	});
 
 	each(this.store.containers, function (container) {
@@ -855,220 +881,29 @@ function initialize () {
 	 */
 	this.delegate();
 
+	/**
+	 * Wipe any existing `setTimeout` now
+	 * that initialization has completed.
+	 */
 	this.initTimeout = null;
 }
 
-function reveal (target, options, interval, sync) {
-	var this$1 = this;
+function animate (element, options) {
+	if ( options === void 0 ) options = {};
 
-
-	/**
-	 * The reveal method has an optional 2nd parameter,
-	 * so here we just shuffle things around to accept
-	 * the interval being passed as the 2nd argument.
-	 */
-	if (typeof options === 'number') {
-		interval = Math.abs(parseInt(options));
-		options = {};
-	} else {
-		interval = Math.abs(parseInt(interval));
-		options = options || {};
-	}
-
-	var config = deepAssign({}, this.defaults, options);
-	var containers = this.store.containers;
-	var container = getNode(config.container);
-	var targets = getNodes(target, container);
-
-	if (!targets.length) {
-		logger('Reveal aborted.', 'Reveal cannot be performed on 0 elements.');
-		return
-	}
-
-	/**
-	 * Verify our platform matches our platform configuration.
-	 */
-	if (!config.mobile && isMobile() || !config.desktop && !isMobile()) {
-		logger('Reveal aborted.', 'This platform has been disabled.');
-		return
-	}
-
-	/**
-	 * Sequence intervals must be at least 16ms (60fps).
-	 */
-	var sequence;
-	if (interval) {
-		if (interval >= 16) {
-			var sequenceId = nextUniqueId();
-			sequence = {
-				elementIds: [],
-				nose: { blocked: false, index: null, pointer: null },
-				tail: { blocked: false, index: null, pointer: null },
-				id: sequenceId,
-				interval: Math.abs(interval),
-			};
-		} else {
-			logger('Reveal failed.', 'Sequence intervals must be at least 16 milliseconds.');
-			return
-		}
-	}
-
-	var containerId;
-	each(containers, function (storedContainer) {
-		if (!containerId && storedContainer.node === container) {
-			containerId = storedContainer.id;
-		}
-	});
-
-	if (isNaN(containerId)) {
-		containerId = nextUniqueId();
-	}
-
-	try {
-		var elements = targets.map(function (node) {
-			var element = {};
-			var existingId = node.getAttribute('data-sr-id');
-
-			if (existingId) {
-				deepAssign(element, this$1.store.elements[existingId]);
-
-				/**
-				 * In order to prevent previously generated styles
-				 * from throwing off the new styles, the style tag
-				 * has to be reverted to it's pre-reveal state.
-				 */
-				element.node.setAttribute('style', element.styles.inline);
-
-			} else {
-				element.id = nextUniqueId();
-				element.node = node;
-				element.seen = false;
-				element.revealed = false;
-				element.visible = false;
-			}
-
-			element.config = config;
-			element.containerId = containerId;
-			element.styles = style(element);
-
-			if (sequence) {
-				element.sequence = {
-					id: sequence.id,
-					index: sequence.elementIds.length,
-				};
-				sequence.elementIds.push(element.id);
-			}
-
-			return element
-		});
-
-		/**
-		* Modifying the DOM via setAttribute needs to be handled
-		* separately from reading computed styles in the map above
-		* for the browser to batch DOM changes (limiting reflows)
-		*/
-		each(elements, function (element) {
-			this$1.store.elements[element.id] = element;
-			element.node.setAttribute('data-sr-id', element.id);
-		});
-
-	} catch (error) {
-		logger('Reveal failed.', error.message);
-		return
-	}
-
-	containers[containerId] = containers[containerId] || {
-		id: containerId,
-		node: container,
-	};
-
-	if (sequence) {
-		this.store.sequences[sequence.id] = sequence;
-	}
-
-	/**
-	* If reveal wasn't invoked by sync, we want to
-	* make sure to add this call to the history.
-	*/
-	if (!sync) {
-		this.store.history.push({ target: target, options: options, interval: interval });
-
-		/**
-		* Push initialization to the event queue, giving
-		* multiple reveal calls time to be interpretted.
-		*/
-		if (this.initTimeout) {
-			window.clearTimeout(this.initTimeout);
-		}
-		this.initTimeout = window.setTimeout(initialize.bind(this), 0);
-	}
-}
-
-/**
- * Re-runs the reveal method for each record stored in history,
- * for capturing new content asynchronously loaded into the DOM.
- */
-function sync () {
-	var this$1 = this;
-
-	each(this.store.history, function (record) {
-		reveal.call(this$1, record.target, record.options, record.interval, true);
-	});
-
-	initialize.call(this);
-}
-
-function animate (element, sequencing) {
-
-	var sequence = (element.sequence) ? this.store.sequences[element.sequence.id] : false;
+	var pristine = options.pristine || this.pristine;
 	var delayed = element.config.useDelay === 'always'
-		|| element.config.useDelay === 'onload' && this.pristine
+		|| element.config.useDelay === 'onload' && pristine
 		|| element.config.useDelay === 'once' && !element.seen;
 
-	element.visible = isElementVisible.call(this, element);
+	var shouldReveal = element.visible && !element.revealed;
+	var shouldReset = !element.visible && element.revealed && element.config.reset;
 
-	if (sequencing) {
-		if (element.sequence.index === sequence.nose.pointer - 1 && sequence.nose.pointer > sequence.nose.index) {
-			sequence.nose.pointer--;
-			queueSequenceNose.call(this, sequence);
-		} else if (element.sequence.index === sequence.tail.pointer + 1 && sequence.tail.pointer < sequence.tail.index) {
-			sequence.tail.pointer++;
-			queueSequenceTail.call(this, sequence);
-		} else {
-			return
-		}
+	if (shouldReveal || options.reveal) {
 		return triggerReveal.call(this, element, delayed)
 	}
 
-	if (element.visible && !element.revealed) {
-		if (sequence) {
-			updateSequenceIndexes.call(this, sequence);
-			if (sequence.nose.pointer === null && sequence.tail.pointer === null) {
-				sequence.nose.pointer = sequence.tail.pointer = element.sequence.index;
-				queueSequenceNose.call(this, sequence);
-				queueSequenceTail.call(this, sequence);
-			} else if (element.sequence.index === sequence.nose.pointer - 1 && !sequence.nose.blocked) {
-				sequence.nose.pointer--;
-				queueSequenceNose.call(this, sequence);
-			} else if (element.sequence.index === sequence.tail.pointer + 1 && !sequence.tail.blocked) {
-				sequence.tail.pointer++;
-				queueSequenceTail.call(this, sequence);
-			} else {
-				return
-			}
-		}
-		element.seen = true;
-		return triggerReveal.call(this, element, delayed)
-	}
-
-	if (!element.visible && element.revealed && element.config.reset) {
-		if (sequence) {
-			updateSequenceIndexes.call(this, sequence);
-			if (sequence.nose.index !== Infinity && sequence.tail.index !== -Infinity) {
-				sequence.nose.pointer = Math.max(sequence.nose.pointer, sequence.nose.index);
-				sequence.tail.pointer = Math.min(sequence.tail.pointer, sequence.tail.index);
-			}
-		}
+	if (shouldReset || options.reset) {
 		return triggerReset.call(this, element)
 	}
 }
@@ -1082,7 +917,7 @@ function triggerReveal (element, delayed) {
 	delayed
 		? styles.push(element.styles.transition.generated.delayed)
 		: styles.push(element.styles.transition.generated.instant);
-	element.revealed = true;
+	element.revealed = element.seen = true;
 	element.node.setAttribute('style', styles.filter(function (i) { return i !== ''; }).join(' '));
 	registerCallbacks.call(this, element, delayed);
 }
@@ -1135,51 +970,341 @@ function registerCallbacks (element, isDelayed) {
 	};
 }
 
+function sequence (element, pristine) {
+	if ( pristine === void 0 ) pristine = this.pristine;
 
-function updateSequenceIndexes (sequence) {
+	var seq = this.store.sequences[element.sequence.id];
+	var i = element.sequence.index;
+
+	if (seq) {
+		var visible = new SequenceModel('visible', seq, this.store);
+		var revealed = new SequenceModel('revealed', seq, this.store);
+
+		seq.models = { visible: visible, revealed: revealed };
+
+		/**
+		 * If the sequence has no revealed members,
+		 * then we reveal the first visible element
+		 * within that sequence.
+		 *
+		 * The sequence then cues a recursive call
+		 * in both directions.
+		 */
+		if (!revealed.body.length) {
+			var nextId = seq.members[visible.body[0]];
+			var nextElement = this.store.elements[nextId];
+
+			if (nextElement) {
+				cue.call(this, seq, visible.body[0], -1, pristine);
+				cue.call(this, seq, visible.body[0], +1, pristine);
+
+				seq.lastReveal = visible.body[0];
+				return animate.call(this, nextElement, { reveal: true, pristine: pristine })
+			} else {
+				return animate.call(this, element)
+			}
+		}
+
+		/**
+		 * Assuming we have something visible on screen
+		 * already, and we need to evaluate the element
+		 * that was passed inâ€¦
+		 *
+		 * We first check if the element should reset.
+		 */
+		if (!element.visible && element.revealed && element.config.reset) {
+			seq.lastReset = i;
+			return animate.call(this, element, { reset: true })
+		}
+
+		/**
+		 * If our element isnâ€™t resetting, we check the
+		 * element sequence index against the head, and
+		 * then the foot of the sequence.
+		 */
+		if (!seq.headblocked && i === [].concat( revealed.head ).pop() && i >= [].concat( visible.body ).shift()) {
+			cue.call(this, seq, i, -1, pristine);
+			seq.lastReveal = i;
+			return animate.call(this, element, { reveal: true, pristine: pristine })
+		}
+
+		if (!seq.footblocked && i === [].concat( revealed.foot ).shift() && i <= [].concat( visible.body ).pop()) {
+			cue.call(this, seq, i, +1, pristine);
+			seq.lastReveal = i;
+			return animate.call(this, element, { reveal: true, pristine: pristine })
+		}
+	}
+}
+
+
+function Sequence (interval) {
+	if (typeof interval === 'number') {
+
+		if (interval >= 16) {
+			/**
+			 * Instance details.
+			 */
+			this.id = nextUniqueId();
+			this.interval = interval;
+			this.members = [];
+
+			/**
+			 * Flow control for sequencing animations.
+			 */
+			this.headblocked = true;
+			this.footblocked = true;
+
+			/**
+			 * The last successful member indexes,
+			 * and a container for DOM models.
+			 */
+			this.lastReveal = null;
+			this.lastReset = null;
+			this.models = {};
+
+		} else {
+			throw new RangeError('Sequence interval must be at least 16ms.')
+		}
+
+	} else {
+		return null
+	}
+}
+
+
+function SequenceModel (prop, sequence, store) {
 	var this$1 = this;
 
-	var min = Infinity;
-	var max = -Infinity;
-	each(sequence.elementIds, function (id) {
-		var element = this$1.store.elements[id];
-		if (element && element.visible) {
-			min = Math.min(min, element.sequence.index);
-			max = Math.max(max, element.sequence.index);
+
+	this.head = []; // Elements before the body with a falsey prop.
+	this.body = []; // Elements with a truthy prop.
+	this.foot = []; // Elements after the body with a falsey prop.
+
+	each(sequence.members, function (id, index) {
+		var element = store.elements[id];
+		if (element && element[prop]) {
+			this$1.body.push(index);
 		}
 	});
-	sequence.nose.index = min;
-	sequence.tail.index = max;
-}
 
-
-function queueSequenceNose (sequence) {
-	var this$1 = this;
-
-	var nextId = sequence.elementIds[sequence.nose.pointer - 1];
-	var nextElement = this.store.elements[nextId];
-	if (nextElement) {
-		sequence.nose.blocked = true;
-		window.setTimeout(function () {
-			sequence.nose.blocked = false;
-			animate.call(this$1, nextElement, true);
-		}, sequence.interval);
+	if (this.body.length) {
+		each(sequence.members, function (id, index) {
+			var element = store.elements[id];
+			if (element && !element[prop]) {
+				index < this$1.body[0]
+					? this$1.head.push(index)
+					: this$1.foot.push(index);
+			}
+		});
 	}
 }
 
 
-function queueSequenceTail (sequence) {
+function cue (seq, i, charge, pristine) {
 	var this$1 = this;
 
-	var nextId = sequence.elementIds[sequence.tail.pointer + 1];
+	var blocked = ['headblocked', null, 'footblocked'][1 + charge];
+	var nextId = seq.members[i + charge];
 	var nextElement = this.store.elements[nextId];
-	if (nextElement) {
-		sequence.tail.blocked = true;
-		window.setTimeout(function () {
-			sequence.tail.blocked = false;
-			animate.call(this$1, nextElement, true);
-		}, sequence.interval);
+
+	seq[blocked] = true;
+
+	setTimeout(function () {
+		seq[blocked] = false;
+		if (nextElement) {
+			sequence.call(this$1, nextElement, pristine);
+		}
+	}, seq.interval);
+}
+
+function reveal (target, options, interval, sync) {
+	var this$1 = this;
+
+
+	var containerBuffer = [];
+
+	/**
+	 * The reveal method has an optional 2nd parameter,
+	 * so here we just shuffle things around to accept
+	 * the interval being passed as the 2nd argument.
+	 */
+	if (typeof options === 'number') {
+		interval = parseInt(options);
+		options = {};
+	} else {
+		interval = parseInt(interval);
+		options = options || {};
 	}
+
+	/**
+	 * To start things off, build element collection,
+	 * and attempt to instantiate a new sequence.
+	 */
+	var nodes;
+	var sequence$$1;
+	try {
+		nodes = getNodes(target);
+		sequence$$1 = interval ? new Sequence(interval) : null;
+	} catch (e) {
+		return logger.call(this, 'Reveal failed.', e.stack || e.message)
+	}
+
+	/**
+	 * Begin element set-up...
+	 */
+	try {
+		var elements = nodes.reduce(function (elementBuffer, elementNode) {
+			var element = {};
+			var existingId = elementNode.getAttribute('data-sr-id');
+
+			if (existingId) {
+				deepAssign(element, this$1.store.elements[existingId]);
+
+				/**
+				 * In order to prevent previously generated styles
+				 * from throwing off the new styles, the style tag
+				 * has to be reverted to it's pre-reveal state.
+				 */
+				element.node.setAttribute('style', element.styles.inline);
+
+			} else {
+				element.id = nextUniqueId();
+				element.node = elementNode;
+				element.seen = false;
+				element.revealed = false;
+				element.visible = false;
+			}
+
+			var config = deepAssign({}, element.config || this$1.defaults, options);
+
+			/**
+			* Verify the current device passes our platform configuration,
+			* and cache the result for the rest of the loop.
+			*/
+			var disabled;
+			{
+				if (disabled == null) {
+					disabled = !config.mobile && isMobile() || !config.desktop && !isMobile();
+				}
+				if (disabled) {
+					if (existingId) {
+						clean.call(this$1, element);
+					}
+					return elementBuffer
+				}
+			}
+
+			var containerNode = getNode(config.container);
+
+			var containerId;
+			{
+				if (!containerNode) {
+					throw new Error('Invalid container.')
+				}
+				if (!containerNode.contains(elementNode)) {
+					return elementBuffer // skip elements found outside the container
+				}
+
+				containerId = getContainerId(containerNode, containerBuffer, this$1.store.containers);
+
+				if (containerId == null) {
+					containerId = nextUniqueId();
+					containerBuffer.push({ id: containerId, node: containerNode });
+				}
+			}
+
+			element.config = config;
+			element.containerId = containerId;
+			element.styles = style(element);
+
+			if (sequence$$1) {
+				element.sequence = {
+					id: sequence$$1.id,
+					index: sequence$$1.members.length,
+				};
+				sequence$$1.members.push(element.id);
+			}
+
+			elementBuffer.push(element);
+			return elementBuffer
+		}, []);
+
+		/**
+		* Modifying the DOM via setAttribute needs to be handled
+		* separately from reading computed styles in the map above
+		* for the browser to batch DOM changes (limiting reflows)
+		*/
+		each(elements, function (element) {
+			this$1.store.elements[element.id] = element;
+			element.node.setAttribute('data-sr-id', element.id);
+		});
+
+	} catch (e) {
+		return logger.call(this, 'Reveal failed.', e.stack || e.message)
+	}
+
+	/**
+	 * Now that element set-up is complete...
+	 * Letâ€™s commit any container and sequence data we have to the store.
+	 */
+	{
+		each(containerBuffer, function (container) {
+			this$1.store.containers[container.id] = {
+				id: container.id,
+				node: container.node,
+			};
+		});
+		if (sequence$$1) {
+			this.store.sequences[sequence$$1.id] = sequence$$1;
+		}
+	}
+
+	/**
+	* If reveal wasn't invoked by sync, we want to
+	* make sure to add this call to the history.
+	*/
+	if (!sync) {
+		this.store.history.push({ target: target, options: options, interval: interval });
+
+		/**
+		* Push initialization to the event queue, giving
+		* multiple reveal calls time to be interpretted.
+		*/
+		if (this.initTimeout) {
+			window.clearTimeout(this.initTimeout);
+		}
+		this.initTimeout = window.setTimeout(initialize.bind(this), 0);
+	}
+}
+
+
+function getContainerId (node) {
+	var collections = [], len = arguments.length - 1;
+	while ( len-- > 0 ) collections[ len ] = arguments[ len + 1 ];
+
+	var id = null;
+	each(collections, function (collection) {
+		each(collection, function (container) {
+			if (id == null && container.node === node) {
+				id = container.id;
+			}
+		});
+	});
+	return id
+}
+
+/**
+ * Re-runs the reveal method for each record stored in history,
+ * for capturing new content asynchronously loaded into the DOM.
+ */
+function sync () {
+	var this$1 = this;
+
+	each(this.store.history, function (record) {
+		reveal.call(this$1, record.target, record.options, record.interval, true);
+	});
+
+	initialize.call(this);
 }
 
 var polyfill = (function () {
@@ -1202,40 +1327,42 @@ var requestAnimationFrame = window.requestAnimationFrame
 	|| window.mozRequestAnimationFrame
 	|| polyfill;
 
-function delegate (event) {
+function delegate (
+	event,
+	elements
+) {
 	var this$1 = this;
-	if ( event === void 0 ) event = {};
+	if ( event === void 0 ) event = { type: 'init' };
+	if ( elements === void 0 ) elements = this.store.elements;
 
 	requestAnimationFrame(function () {
 		var containers = this$1.store.containers;
-		var elements = this$1.store.elements;
 
-		switch (event.type) {
-
-			case 'scroll':
-				each(containers, function (container) { return container.scroll = getScrolled.call(this$1, container); });
-				each(elements, function (element) { return animate.call(this$1, element); });
-				break
-
-			case 'resize':
-			default:
-				each(containers, function (container) {
-					container.geometry = getGeometry.call(this$1, container, /* isContainer: */ true);
-					container.scroll = getScrolled.call(this$1, container);
-				});
-				each(elements, function (element) {
-					element.geometry = getGeometry.call(this$1, element);
-					animate.call(this$1, element);
-				});
+		if (event.type === 'init' || event.type === 'resize') {
+			each(containers, function (container) { return container.geometry = getGeometry.call(this$1, container, true); });
+			each(elements, function (element) { return element.geometry = getGeometry.call(this$1, element); });
 		}
+
+		each(containers, function (container) { return container.scroll = getScrolled.call(this$1, container); });
+		each(elements, function (element) { return element.visible = isElementVisible.call(this$1, element); });
+
+		each(elements, function (element) { return element.sequence
+			? sequence.call(this$1, element)
+			: animate.call(this$1, element); }
+		);
 
 		this$1.pristine = false;
 	});
 }
 
-var version = "4.0.0-beta.6";
+var version = "4.0.0-beta.14";
+
+var _config;
+var _debug;
+var _instance;
 
 function ScrollReveal (options) {
+	var this$1 = this;
 	if ( options === void 0 ) options = {};
 
 
@@ -1247,31 +1374,52 @@ function ScrollReveal (options) {
 	}
 
 	if (!ScrollReveal.isSupported()) {
-		logger('Instantiation aborted.', 'This browser is not supported.');
+		logger.call(this, 'Instantiation aborted.', 'This browser is not supported.');
 		return noop
 	}
 
-	try {
-		Object.defineProperty(this, 'defaults', {
-			get: (function () {
-				var config = {};
-				deepAssign(config, defaults, options);
-				return function () { return config; }
-			})(),
-		});
-	} catch (error) {
-		logger('Instantiation failed.', 'Invalid configuration provided.', error.message);
-		return noop
+	/**
+	 * Here we use `buffer` to validate our configuration, before
+	 * assigning the contents to the private variable `_config`.
+	 */
+	var buffer;
+	{
+		try {
+			buffer = _config
+				? deepAssign({}, _config, options)
+				: deepAssign({}, defaults, options);
+		} catch (e) {
+			logger.call(this, 'Instantiation failed.', 'Invalid configuration.', e.message);
+			return noop
+		}
+
+		try {
+			var container = getNode(buffer.container);
+			if (!container) {
+				throw new Error('Invalid container.')
+			}
+		} catch (e) {
+			logger.call(this, 'Instantiation failed.', e.message);
+			return noop
+		}
+
+		_config = buffer;
 	}
 
-	var container = getNode(this.defaults.container);
-	if (!container) {
-		logger('Instantiation failed.', 'Invalid or missing container.');
-		return noop
-	}
+	Object.defineProperty(this, 'defaults', { get: function () { return _config; } });
 
+	/**
+	 * Now that we have our configuration, we can
+	 * make our last check for disabled platforms.
+	 */
 	if (this.defaults.mobile === isMobile() || this.defaults.desktop === !isMobile()) {
+		/**
+		 * Modify the DOM to reflect successful instantiation.
+		 */
 		document.documentElement.classList.add('sr');
+		document.addEventListener('DOMContentLoaded', function () {
+			window.setTimeout(function () { return document.body.style.height = '100%'; }, 0);
+		});
 	}
 
 	this.store = {
@@ -1282,19 +1430,33 @@ function ScrollReveal (options) {
 	};
 
 	this.pristine = true;
-	this.delegate = delegate.bind(this);
 
-	Object.defineProperty(this, 'version', {
-		get: function () { return version; },
-	});
+	Object.defineProperty(this, 'delegate', { get: function () { return delegate.bind(this$1); } });
+	Object.defineProperty(this, 'version', { get: function () { return version; } });
+	Object.defineProperty(this, 'noop', { get: function () { return false; } });
 
-	Object.defineProperty(this, 'noop', {
-		get: function () { return false; },
+	return _instance ? _instance : _instance = this
+}
+
+/**
+ * Static members are available immediately during instantiation,
+ * so debugging and browser support details are handled here.
+ */
+{
+	ScrollReveal.isSupported = function () { return transformSupported() && transitionSupported(); };
+
+	Object.defineProperty(ScrollReveal, 'debug', {
+		get: function () { return _debug || false; },
+		set: function (value) {
+			if (typeof value === 'boolean') { _debug = value; }
+		},
 	});
 }
 
-ScrollReveal.isSupported = function () { return transformSupported() && transitionSupported(); };
-
+/**
+ * The primary API is comprised
+ * of these instance methods:
+ */
 ScrollReveal.prototype.clean = clean;
 ScrollReveal.prototype.destroy = destroy;
 ScrollReveal.prototype.reveal = reveal;
@@ -1318,7 +1480,7 @@ ScrollReveal.prototype.sync = sync;
 /*!
  * ScrollReveal
  * ------------
- * Website : https://scrollreveal.com
+ * Website : https://scrollrevealjs.org
  * Support : https://github.com/jlmakes/scrollreveal/issues
  * Author  : https://twitter.com/jlmakes
  *
@@ -1327,7 +1489,7 @@ ScrollReveal.prototype.sync = sync;
  *
  * For commercial sites, themes, projects, and applications,
  * keep your source code proprietary and please purchase a
- * commercial license from https://scrollreveal.com
+ * commercial license from https://scrollrevealjs.org
  *
  * Copyright (c) 2014â€“2017 Julian Lloyd. All rights reserved.
  */
