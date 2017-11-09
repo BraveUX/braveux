@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const imageminJpegRecompress = require('imagemin-jpeg-recompress');
 const browserSync = require('browser-sync');
 const plugins = require('gulp-load-plugins');
 const $ = plugins();
@@ -7,7 +8,7 @@ const $ = plugins();
 gulp.task('images', () => {
   return gulp.src('src/images/**/*')
     .pipe($.changed('./public_html/images'))
-    .pipe($.imagemin({progressive: true}))
+    .pipe($.imagemin([imageminJpegRecompress()]))
     .pipe(gulp.dest('./public_html/images'));
 });
 
