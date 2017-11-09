@@ -15,6 +15,13 @@ $(document).ready(function() {
   console.log('Looking for this? https://github.com/BraveUX/braveux');
 });
 
+if ( $('video').length ) {
+  $(window).on('scroll', _.throttle(function() {
+    // throttle waypoint location to account for image resize
+    Waypoint.refreshAll();
+  }, 500));
+}
+
 // function pageFade() {
 //   var newLocation;
 //   $('body').addClass('fade-in');
@@ -326,13 +333,15 @@ function scrollReveal() {
 function videoPlay() {
   var video = $('video');
   
-  video.each(function() {
-    var $this = $(this);
-    $this.waypoint(function() {
-      $this[0].play();
-      this.disable();
-    }, {
-      offset: 'bottom-in-view'
+  video.each(function(index, vid) {
+    const inview = new Waypoint.Inview({
+      element: $(this),
+      enter: function() {
+        vid.play();
+      },
+      exited: function() {
+        vid.pause();
+      } 
     });
   });
 }
