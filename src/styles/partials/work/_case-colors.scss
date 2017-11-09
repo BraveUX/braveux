@@ -925,6 +925,65 @@
   }
 }
 
+// Stretch
+.stretch {
+  // case-study color variables
+  $green: #36CB9C;
+  $blue: #22A8FA;
+  $purple: #8870F7;
+  $teal: #00BDC1;
+  $red: #FF574E;
+  $black: #2B2B2B;
+  $dark-gray: #484848;
+  $gray: #EEEEEE;
+  $white: #FFFFFF;
+
+  // case study colors
+  color: $white;
+
+  .green {
+    background-color: $green;
+  }
+
+  .blue {
+    background-color: $blue;
+  }
+
+  .purple {
+    background-color: $purple;
+  }
+
+  .teal {
+    background-color: $teal;
+  }
+
+  .red {
+    background-color: $red;
+  }
+
+  .black {
+    background-color: $black;
+  }
+
+  .dark-gray {
+    background-color: $dark-gray;
+  }
+
+  .gray {
+    background-color: $gray;
+  }
+
+  .white {
+    background-color: $white;
+    color: $black;
+  }
+
+  // quote icon color
+  .case-referral-quote-icon {
+    @include icon-quote($white);
+  }
+}
+
 // The Media Trust
 .tmt {
   // case-study color variables

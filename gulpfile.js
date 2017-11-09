@@ -38,7 +38,7 @@ gulp.task('ejs', () => {
 
 // CSS
 gulp.task('sass', () => {
-  return gulp.src('src/styles/style.scss')
+  return gulp.src(['src/styles/style.scss', 'src/styles/stretch.scss'])
     .pipe($.changed('./public_html/styles'))
     .pipe($.sass({
         outputStyle: 'compressed',
