@@ -10,7 +10,7 @@ $(document).ready(function() {
   toggleSection('.career');
   sectionJump();
   videoPlay();
-
+  
   // Repo Info
   console.log('Looking for this? https://github.com/BraveUX/braveux');
 });
@@ -23,7 +23,7 @@ if ( $('video').length ) {
 }
 
 // function pageFade() {
-//   var newLocation;
+//   const newLocation;
 //   $('body').addClass('fade-in');
 //
 //   $('.menu-logo, .menu-link').click(function() {
@@ -50,12 +50,12 @@ function initMobileNav() {
 
 // Hides menu on scroll-down
 function initNavHide() {
-  var lastScroll = 0;
-  var $window = $(window);
-  var menu =  $('.menu');
+  let lastScroll = 0;
+  const $window = $(window);
+  const menu =  $('.menu');
 
   $window.on('scroll', function() {
-      var scrollTop = $window.scrollTop();
+      const scrollTop = $window.scrollTop();
 
       // If scrolling down and document is more than 300px down
       if ( scrollTop > lastScroll && $(document).scrollTop() >= 300) {
@@ -97,7 +97,7 @@ function homeHeroNav() {
 }
 
 function initEgg() {
-  var toggleEgg = $('.footer-stars');
+  const toggleEgg = $('.footer-stars');
   toggleEgg.click(function(e) {
     e.preventDefault();
     // toggle easter egg class
@@ -110,13 +110,13 @@ function initEgg() {
 }
 
 function toggleSection(section) {
-  var button = $(section + '-btn');
-  var box = $(section + '-box');
+  const button = $(section + '-btn');
+  const box = $(section + '-box');
   button.click(function(e) {
     e.stopPropagation();
     e.preventDefault();
     $(this).toggleClass('is-active');
-    var checkActive = $(this).hasClass('is-active'); // chack if active
+    const checkActive = $(this).hasClass('is-active'); // chack if active
     if (checkActive) {
       // if active, set max-height to the height of container
       $(box).css( 'max-height', $(box).get(0).scrollHeight );
@@ -129,10 +129,10 @@ function toggleSection(section) {
 
 // Same Page CTA Controls
 function sectionJump() {
-  var btn = $('a.btn');
+  const btn = $('a.btn');
   btn.click(function(e) {
     // get href info
-    var checkURL = $('html').find(this).attr('href');
+    const checkURL = $('html').find(this).attr('href');
     // if href starts with a hash, execute page scroll to section
     if (checkURL[0] == '#') {
       e.preventDefault();
@@ -146,7 +146,7 @@ function sectionJump() {
 }
 
 function caseTeaseNext() {
-  var btn = $('.cta-button-right');
+  const btn = $('.cta-button-right');
 
   btn.waypoint({
     handler: function(direction) {
@@ -164,7 +164,7 @@ function caseTeaseNext() {
 function scrollReveal() {
   window.sr = ScrollReveal();
 
-  var revealTop = {
+  const revealTop = {
     duration   : 700,
     distance   : '30%',
     easing     : 'ease-in-out',
@@ -173,7 +173,7 @@ function scrollReveal() {
     viewFactor : 0.5,
   };
 
-  var revealRight = {
+  const revealRight = {
     duration   : 700,
     distance   : '30%',
     easing     : 'ease-in-out',
@@ -182,7 +182,7 @@ function scrollReveal() {
     viewFactor : 0.5,
   };
 
-  var revealBottom = {
+  const revealBottom = {
     duration   : 700,
     distance   : '30%',
     easing     : 'ease-in-out',
@@ -191,7 +191,7 @@ function scrollReveal() {
     viewFactor : 0.5,
   };
 
-  var revealLeft = {
+  const revealLeft = {
     duration   : 700,
     distance   : '30%',
     easing     : 'ease-in-out',
@@ -200,7 +200,7 @@ function scrollReveal() {
     viewFactor : 0.5,
   };
 
-  var revealContent = {
+  const revealContent = {
     duration   : 700,
     distance   : '40px',
     easing     : 'ease-in-out',
@@ -209,7 +209,7 @@ function scrollReveal() {
     viewFactor : 0.9,
   }
 
-  var reveal = {
+  const reveal = {
     duration   : 700,
     distance   : '0',
     easing     : 'ease-in-out',
@@ -217,7 +217,7 @@ function scrollReveal() {
     viewFactor : 0.5,
   }
 
-  var rotate = {
+  const rotate = {
     duration   : 700,
     distance   : '30px',
     easing     : 'ease-in-out',
@@ -331,10 +331,10 @@ function scrollReveal() {
 }
 
 function videoPlay() {
-  var video = $('video');
+  const video = $('video');
   
   video.each(function(index, vid) {
-    const inview = new Waypoint.Inview({
+    new Waypoint.Inview({
       element: $(this),
       enter: function() {
         vid.play();

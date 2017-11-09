@@ -1,14 +1,18 @@
 {
-  "name": "",
+  "name": "brave-ux",
   "version": "1.0.0",
-  "description": "",
-  "author": "",
+  "description": "Repo for the BraveUX website.",
+  "author": "Eric Fuhrmann",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm i",
+    "gulp": "gulp"
   },
   "license": "ISC",
   "devDependencies": {
     "animate-scss": "^3.2.1",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "*",
+    "babel-preset-es2015": "^6.24.1",
     "eslint": "^3.9.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
@@ -32,7 +36,7 @@
     "waypoints": "^4.0.1"
   },
   "dependencies": {
-    "normalize-scss": "^5.0.3",
-    "include-media": "^1.4.6"
+    "include-media": "^1.4.6",
+    "normalize-scss": "^5.0.3"
   }
 }

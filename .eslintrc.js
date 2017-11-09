@@ -11,7 +11,9 @@ module.exports = {
   },
   "globals": {
     "sr": true, // ScrollReveal
-    "ScrollReveal": true // ScrollReveal
+    "ScrollReveal": true, // ScrollReveal
+    "_": true, // lodash
+    "Waypoint": true // waypoints
   },
   "rules": {
     "no-console": 0,

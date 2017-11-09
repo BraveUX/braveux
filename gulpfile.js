@@ -78,11 +78,14 @@ gulp.task('scripts', function() {
     '!src/scripts/scrollreveal*.js',
     './node_modules/waypoints/lib/jquery.waypoints.min.js',
     './node_modules/waypoints/lib/shortcuts/inview.min.js',
+    // './node_modules/lodash.throttle/index.js',
     'src/scripts/*.js'
   ])
     .pipe(plugins.changed('./public_html/scripts'))
-    .on('error', plugins.notify.onError('Error: <%= error.message %>'))
-    .pipe(plugins.babel())
+    .pipe(plugins.babel({
+      presets: ['env'],
+      ignore: ['./node_modules/']
+    })).on('error', plugins.notify.onError('Error: <%= error.message %>'))
     .pipe(plugins.concat('scripts.js'))
     .pipe(plugins.uglify())
     .pipe(gulp.dest('./public_html/scripts'))
