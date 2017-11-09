@@ -19,7 +19,7 @@ if ( $('video').length ) {
   $(window).on('scroll', _.throttle(function() {
     // throttle waypoint location to account for image resize
     Waypoint.refreshAll();
-  }, 500));
+  }, 1000));
 }
 
 // function pageFade() {
