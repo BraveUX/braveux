@@ -8,7 +8,10 @@ const $ = plugins();
 gulp.task('images', () => {
   return gulp.src('src/images/**/*')
     .pipe($.changed('./public_html/images'))
-    .pipe($.imagemin([imageminJpegRecompress()]))
+    .pipe($.imagemin([imageminJpegRecompress({
+      min: 50,
+      quality: 'high' 
+    })]))
     .pipe(gulp.dest('./public_html/images'));
 });
 
