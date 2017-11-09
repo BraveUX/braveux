@@ -4,8 +4,7 @@
   "description": "Repo for the BraveUX website.",
   "author": "Eric Fuhrmann",
   "scripts": {
-    "start": "npm i",
-    "gulp": "gulp"
+    "start": "npm i"
   },
   "license": "ISC",
   "devDependencies": {
@@ -13,13 +12,14 @@
     "babel-core": "^6.26.0",
     "babel-preset-env": "*",
     "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.18.13",
     "eslint": "^3.9.1",
-    "gulp": "^3.9.1",
+    "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-babel": "^6.1.2",
     "gulp-changed": "^2.0.0",
+    "gulp-cli": "github:gulpjs/gulp-cli",
     "gulp-concat": "^2.6.0",
-    "gulp-connect": "^5.0.0",
     "gulp-ejs": "^2.1.3",
     "gulp-gh-pages": "^0.5.4",
     "gulp-htmlmin": "^2.0.0",

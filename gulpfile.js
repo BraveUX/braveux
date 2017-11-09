@@ -1,62 +1,45 @@
-var gulp = require('gulp');
-var plugins = require('gulp-load-plugins')();
+const gulp = require('gulp');
+const browserSync = require('browser-sync');
+const plugins = require('gulp-load-plugins');
+const $ = plugins();
 
-// var reportError = function(error) {
-//     plugins.notify({
-//         title: 'Gulp Task Error',
-//         message: 'Check the console.'
-//     }).write(error);
-//     console.log(error.toString());
-//     this.emit('end');
-// };
-
-gulp.task('connect', function() {
-  plugins.connect.server({
-    root: './public_html',
-    port: 8000,
-    livereload: true
-  });
-});
-
-gulp.task('images', function() {
+// Images
+gulp.task('images', () => {
   return gulp.src('src/images/**/*')
-    .pipe(plugins.changed('./public_html/images'))
-    .pipe(plugins.imagemin({progressive: true}))
-    .on('error', plugins.notify.onError('Error: <%= error.message %>'))
-    // .on('error', reportError)
-    .pipe(gulp.dest('./public_html/images'))
-    .pipe(plugins.connect.reload());
+    .pipe($.changed('./public_html/images'))
+    .pipe($.imagemin({progressive: true}))
+    .pipe(gulp.dest('./public_html/images'));
 });
 
-gulp.task('documents', function() {
+// Docs
+gulp.task('documents', () => {
   return gulp.src('src/documents/**/*')
-    .on('error', plugins.notify.onError('Error: <%= error.message %>'))
-    .pipe(plugins.changed('./public_html/images'))
+    .pipe($.changed('./public_html/images'))
     .pipe(gulp.dest('./public_html/documents'));
 });
 
-gulp.task('fonts', function() {
+// Fonts
+gulp.task('fonts', () => {
   return gulp.src('src/fonts/**/*')
-    .on('error', plugins.notify.onError('Error: <%= error.message %>'))
     .pipe(gulp.dest('./public_html/fonts'));
 });
 
-gulp.task('ejs', function() {
+// HTML
+gulp.task('ejs', () => {
   return gulp.src(['src/views/*.ejs', 'src/views/!(partials)**/*.ejs'])
-    .pipe(plugins.changed('./public_html'))
-    .pipe(plugins.ejs())
-    .on('error', plugins.notify.onError('Error: <%= error.message %>'))
-    // .on('error', reportError)
-    .pipe(plugins.htmlmin({collapseWhitespace: true, removeComments: true}))
-    .pipe(plugins.ejs({}, {ext:'.html'}))
-    .pipe(gulp.dest('./public_html'))
-    .pipe(plugins.connect.reload());
+    .pipe($.changed('./public_html'))
+    .pipe($.ejs())
+    .on('error', $.notify.onError('Error: <%= error.message %>'))
+    .pipe($.htmlmin({collapseWhitespace: true, removeComments: true}))
+    .pipe($.ejs({}, {ext:'.html'}))
+    .pipe(gulp.dest('./public_html'));
 });
 
-gulp.task('sass', function() {
+// CSS
+gulp.task('sass', () => {
   return gulp.src('src/styles/style.scss')
-    .pipe(plugins.changed('./public_html/styles'))
-    .pipe(plugins.sass({
+    .pipe($.changed('./public_html/styles'))
+    .pipe($.sass({
         outputStyle: 'compressed',
         includePaths: [
           './node_modules/animate-scss/',
@@ -64,100 +47,138 @@ gulp.task('sass', function() {
           './node_modules/include-media/dist'
         ]
     }))
-    .on('error', plugins.notify.onError('Error: <%= error.message %>'))
-    // .on('error', reportError)
-    .pipe(plugins.autoprefixer())
-    .pipe(plugins.rename({suffix: '.min'}))
-    .pipe(gulp.dest('./public_html/styles'))
-    .pipe(plugins.connect.reload());
+    .on('error', $.notify.onError('Error: <%= error.message %>'))
+    .pipe($.autoprefixer())
+    .pipe($.rename({suffix: '.min'}))
+    .pipe(gulp.dest('./public_html/styles'));
 });
 
-gulp.task('scripts', function() {
+// JS
+gulp.task('scripts', () => {
   return gulp.src([
-    '!src/scripts/vivus*.js',
-    '!src/scripts/scrollreveal*.js',
     './node_modules/waypoints/lib/jquery.waypoints.min.js',
     './node_modules/waypoints/lib/shortcuts/inview.min.js',
-    // './node_modules/lodash.throttle/index.js',
-    'src/scripts/*.js'
+    'src/scripts/main.js',
   ])
-    .pipe(plugins.changed('./public_html/scripts'))
-    .pipe(plugins.babel({
+    .pipe($.changed('./public_html/scripts'))
+    .pipe($.babel({
       presets: ['env'],
       ignore: ['./node_modules/']
-    })).on('error', plugins.notify.onError('Error: <%= error.message %>'))
-    .pipe(plugins.concat('scripts.js'))
-    .pipe(plugins.uglify())
-    .pipe(gulp.dest('./public_html/scripts'))
-    .pipe(plugins.connect.reload());
+    })).on('error', $.notify.onError('Error: <%= error.message %>'))
+    .pipe($.concat('scripts.js'))
+    .pipe($.uglify())
+    .pipe(gulp.dest('./public_html/scripts'));
 });
 
-gulp.task('scripts-sr', function() {
+// JS ScrollReveal
+gulp.task('scripts-sr', () => {
   return gulp.src('src/scripts/scrollreveal*.js')
-    .pipe(plugins.changed('./public_html/scripts'))
-    .on('error', plugins.notify.onError('Error: <%= error.message %>'))
-    .pipe(plugins.babel())
-    .pipe(plugins.concat('scrollreveal.min.js'))
-    .pipe(plugins.uglify())
-    .pipe(gulp.dest('./public_html/scripts'))
-    .pipe(plugins.connect.reload());
+    .pipe($.changed('./public_html/scripts'))
+    .pipe($.babel())
+    .on('error', $.notify.onError('Error: <%= error.message %>'))
+    .pipe($.concat('scrollreveal.min.js'))
+  .pipe($.uglify())
+    .pipe(gulp.dest('./public_html/scripts'));
 });
 
-gulp.task('scripts-vivus', function() {
+// JS Vivus
+gulp.task('scripts-vivus', () => {
   return gulp.src('src/scripts/vivus*.js')
-    .pipe(plugins.changed('./public_html/scripts'))
-    .on('error', plugins.notify.onError('Error: <%= error.message %>'))
-    .pipe(plugins.babel())
-    .pipe(plugins.concat('vivus.min.js'))
-    .pipe(plugins.uglify())
-    .pipe(gulp.dest('./public_html/scripts'))
-    .pipe(plugins.connect.reload());
+    .pipe($.changed('./public_html/scripts'))
+    .pipe($.babel())
+    .on('error', $.notify.onError('Error: <%= error.message %>'))
+    .pipe($.concat('vivus.min.js'))
+    .pipe($.uglify())
+    .pipe(gulp.dest('./public_html/scripts'));
 });
 
-gulp.task('scripts-animations', function() {
+// JS Animations
+gulp.task('scripts-animations', () => {
   return gulp.src([
       'src/scripts/animations/approach.js',
       'src/scripts/animations/*.js'
     ])
-    .on('error', plugins.notify.onError('Error: <%= error.message %>'))
-    .pipe(plugins.changed('./public_html/scripts'))
-    .pipe(plugins.concat('animations.js'))
-    .pipe(plugins.uglify())
-    .pipe(gulp.dest('./public_html/scripts'))
-    .pipe(plugins.connect.reload());
+    .pipe($.changed('./public_html/scripts'))
+    .pipe($.babel())
+    .on('error', $.notify.onError('Error: <%= error.message %>'))
+    .pipe($.concat('animations.js'))
+    .pipe($.uglify())
+    .pipe(gulp.dest('./public_html/scripts'));
 });
 
-gulp.task('favicons', function() {
+// Favicons
+gulp.task('favicons', () => {
   return gulp.src('src/favicons/*')
     .pipe(gulp.dest('./public_html/'));
 });
 
-gulp.task('server', function() {
+// Server files
+gulp.task('server', () => {
   return gulp.src([
     'src/server/*',
     'src/server/.htaccess'
   ])
-    .on('error', plugins.notify.onError('Error: <%= error.message %>'))
-    .pipe(gulp.dest('./public_html/'))
-    .pipe(plugins.connect.reload());
+    .on('error', $.notify.onError('Error: <%= error.message %>'))
+    .pipe(gulp.dest('./public_html/'));
 });
 
-gulp.task('watch', function() {
-    gulp.watch('src/images/**/*', ['images']);
-    gulp.watch('src/fonts/**/*', ['fonts']);
-    gulp.watch('src/documents/**/*', ['documents']);
-    gulp.watch('src/views/**/*.ejs', ['ejs']);
-    gulp.watch('src/styles/**/*.scss', ['sass']);
-    gulp.watch('src/scripts/*.js', ['scripts', 'scripts-vivus', 'scripts-sr']);
-    gulp.watch('src/scripts/animations/*.js', ['scripts-animations']);
-    gulp.watch('src/favicons/**/*', ['favicons']);
-    gulp.watch(['src/server/*', 'src/server/.htaccess'], ['server']);
+// The main building block task
+gulp.task('build', gulp.series(
+  'images',
+  'fonts',
+  'documents',
+  'ejs',
+  'sass',
+  'scripts', 
+  'scripts-animations', 
+  'scripts-sr', 
+  'scripts-vivus', 
+  'favicons', 
+  'server'
+));
+
+function reload(done) {
+  browserSync.reload();
+  done();
+}
+
+// Browser Sync with Live Reload
+gulp.task('browser-sync', done => {
+  return browserSync.init({
+    server : {
+      baseDir : './public_html/',
+      serveStaticOptions : {
+        extensions : ['html']
+      }
+    },
+    port: 8000,
+    open : false,
+    notify: false,
+    logConnections : true
+  });
 });
 
-gulp.task('deploy', function() {
+gulp.task('watch', done => {
+    gulp.watch('src/images/**/*', gulp.series('images', reload));
+    gulp.watch('src/fonts/**/*', gulp.series('fonts', reload));
+    gulp.watch('src/documents/**/*', gulp.series('documents', reload));
+    gulp.watch('src/views/**/*.ejs', gulp.series('ejs', reload));
+    gulp.watch('src/styles/**/*.scss', gulp.series('sass', reload));
+    gulp.watch('src/scripts/*.js', gulp.series(['scripts', 'scripts-vivus', 'scripts-sr'], reload));
+    gulp.watch('src/scripts/animations/*.js', gulp.series('scripts-animations', reload));
+    gulp.watch('src/favicons/**/*', gulp.series('favicons', reload));
+    gulp.watch(['src/server/*', 'src/server/.htaccess'], gulp.series('server', reload));
+    done();
+});
+
+gulp.task('deploy', () => {
   return gulp.src('./public_html/**/*')
-    .pipe(plugins.ghPages());
+    .pipe($.ghPages());
 });
 
-gulp.task('default', ['fonts', 'images', 'documents', 'ejs', 'sass', 'scripts', 'scripts-animations', 'scripts-sr', 'scripts-vivus', 'favicons', 'server', 'connect', 'watch' ]);
-gulp.task('build', ['fonts', 'images', 'documents', 'ejs', 'sass', 'scripts', 'scripts-animations', 'scripts-sr', 'scripts-vivus', 'favicons', 'server']);
+gulp.task('serve', gulp.parallel('browser-sync', 'watch'));
+
+gulp.task('default', gulp.series('build', 'serve'));
+
+gulp.task('build', gulp.series('build'));
+
