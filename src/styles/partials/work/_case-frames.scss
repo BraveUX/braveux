@@ -117,7 +117,7 @@
     height: 15px;
     left: 0;
     position: absolute;
-    top: 0;
+    top: 1px;
     width: 100%;
 
     @include media('>=md') {
@@ -140,6 +140,16 @@
       font-size: 15px;
       text-shadow: 12px 0 0, 24px 0 0;
       top: 10px;
+    }
+  }
+
+  &.rounded {
+    img {
+      border-radius: 0 0 5px 5px;
+
+      @include media('>=md') {
+        border-radius: 0 0 8px 8px;
+      }
     }
   }
 

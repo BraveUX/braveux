@@ -1,5 +1,37 @@
-.test {
-  background-color: pink;
-  height: 100px;
-  width: 100px;
+// MODULES & VARIABLES
+@import "modules/svgs";
+@import "modules/text";
+@import "modules/utilities";
+@import "modules/variables";
+
+/* ====================================
+Styles Unique to the Stretch Case Study
+==================================== */
+
+.stretch-tagline {
+  @include text('trade-gothic', 16, 400);
+  letter-spacing: 1px;
+  margin: 0 0 $textGap;
+  text-transform: uppercase;
+}
+
+.stretch-heading {
+  @include text('trade-gothic', 48, 400)
+}
+
+
+
+/* =======
+Modifiers
+======= */
+.frame-desktop {
+  &.stretch {
+    &::before {
+      background-color: #211F1C;
+    }
+
+    &::after {
+      color: #EBEBEB;
+    }
+  }
 }
