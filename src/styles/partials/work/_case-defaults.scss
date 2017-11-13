@@ -28,16 +28,16 @@
     }
   }
 
-  .lg {
-    @include text('source-sans-pro', 51, 300);
+  &.lg {
+    @include text('source-sans-pro', 48);
   }
 }
 
 .case-block-text {
-  @include text('sentinel', 16);
+  @include text('sentinel', 16, 300);
   line-height: 1.9;
   margin: 0;
-  max-width: 450px;
+  max-width: 375px;
 
   .content-centered & {
     margin: auto;
@@ -45,5 +45,7 @@
 
   &.lg {
     @include text('sentinel', 24);
+    line-height: 1.4;
+    margin: 0 0 $textGap*1.5;
   }
 }

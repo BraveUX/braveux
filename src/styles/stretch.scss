@@ -1,3 +1,8 @@
+// VENDORS
+@import "animate.scss"; // loaded from node_modules
+@import "include-media"; // loaded from node_modules
+@import "vendors/link-underline";
+
 // MODULES & VARIABLES
 @import "modules/svgs";
 @import "modules/text";
@@ -8,24 +13,22 @@
 Styles Unique to the Stretch Case Study
 ==================================== */
 
-.stretch-tagline {
-  @include text('trade-gothic', 16, 400);
-  letter-spacing: 1px;
-  margin: 0 0 $textGap;
-  text-transform: uppercase;
+.stretch-portal {
+  .frame-mobile {
+    margin: 0 auto -25%;
+    width: 55%;
+
+    @include media('>=md') {
+      width: 85%;
+    }
+  }
 }
-
-.stretch-heading {
-  @include text('trade-gothic', 48, 400)
-}
-
-
 
 /* =======
 Modifiers
 ======= */
 .frame-desktop {
-  &.stretch {
+  &.stretch-frame {
     &::before {
       background-color: #211F1C;
     }

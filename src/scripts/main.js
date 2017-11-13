@@ -52,7 +52,7 @@ function initMobileNav() {
 function initNavHide() {
   let lastScroll = 0;
   const $window = $(window);
-  const menu =  $('.menu');
+  const menu =  $('.menu, .subnav');
 
   $window.on('scroll', function() {
       const scrollTop = $window.scrollTop();
@@ -82,19 +82,73 @@ function homeHeroNav() {
       }
     });
   }
-
-
-  // $window.on('scroll', function() {
-  //   // Only run if on homepage
-  //   if ( window.location.pathname == '/' || window.location.pathname == '/index.html' ) {
-  //     if ( $(document).scrollTop() >= 150) {
-  //       body.removeClass('home-menu');
-  //     } else {
-  //       body.addClass('home-menu');
-  //     }
-  //   }
-  // })
 }
+
+// Subnav indicators
+function subnavIndicators() {
+  const subnav = document.querySelector('.subnav-container');
+  const subnavWidth = subnav.scrollWidth - subnav.clientWidth;
+  const $indicatorLeft = $('.subnav-scroll-indicator--left');
+  const $indicatorRight = $('.subnav-scroll-indicator--right');
+  const $subnavScroll = $('.subnav-container').scrollLeft();
+
+  // Check if scroll bar exists or not
+  if (subnav.scrollWidth == subnav.clientWidth) {
+    $indicatorLeft.addClass('is-hidden');
+    $indicatorRight.addClass('is-hidden');
+    // if can scroll left
+  } else if ($subnavScroll <= 0) {
+    $indicatorLeft.addClass('is-hidden');
+    $indicatorRight.removeClass('is-hidden');
+    // if can not scroll right
+  } else if ($subnavScroll >= subnavWidth) {
+    $indicatorRight.addClass('is-hidden');
+    $indicatorLeft.removeClass('is-hidden');
+    $('.subnav__scroll-indicator').removeClass('scrolled');
+    // if can scroll either left or right
+  } else {
+    $indicatorLeft.removeClass('is-hidden');
+    $indicatorRight.removeClass('is-hidden');
+  }
+}
+
+// Click events for indicators
+$('.subnav-scroll-indicator--left').on('click', function(e) {
+  e.preventDefault();
+  $('.subnav-container').animate({
+    scrollLeft: '-=150px'
+  }, 'normal');
+});
+
+$('.subnav-scroll-indicator--right').on('click', function(e) {
+  e.preventDefault();
+  $('.subnav-container').animate({
+    scrollLeft: '+=150px'
+  }, 'normal');
+});
+
+// Or on horizontal subnav scroll
+$('.subnav-container').scroll(function() {
+  // Check for subnav on page
+  if ( $('body').find('.subnav').length ) {
+    subnavIndicators();
+  }
+})
+
+// Or on Resize
+$(window).on('resize',function() {
+  if ( $('body').find('.subnav').length ) {
+    subnavIndicators();
+  }
+}); 
+
+// Run nav once ready
+$(document).ready(function() {  
+  // Check for subnav on page
+  if ( $('body').find('.subnav').length ) {
+    subnavIndicators();
+  }
+});
 
 function initEgg() {
   const toggleEgg = $('.footer-stars');

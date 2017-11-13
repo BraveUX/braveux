@@ -184,6 +184,12 @@
       max-width: 325px;
     }
   }
+  
+  .case-study.stretch & {
+    @include media('>=md') {
+      max-width: none;
+    }
+  }
 
   // GUTTER MODIFIERS
   @include media('>=md') {

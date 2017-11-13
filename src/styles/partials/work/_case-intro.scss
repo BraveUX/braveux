@@ -397,6 +397,10 @@
   line-height: 1.4;
   margin: 0;
   max-width: 750px;
+
+  &.lg {
+    @include text('source-sans-pro', 28, 200);
+  }
 }
 
 // BREAKDOWN

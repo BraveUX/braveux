@@ -132,7 +132,7 @@ $menu-height: 50px;
 
   &.hidden {
     @include media('>=md') {
-      transform: translateY(-100%);
+      transform: translateY(-200%);
     }
   }
 }
