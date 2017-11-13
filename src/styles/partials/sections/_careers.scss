@@ -11,8 +11,8 @@
 }
 
 .career-box {
-  overflow: hidden;
   max-height: 0;
+  overflow: hidden;
   transition: max-height 400ms ease-in-out;
   // WYSIWYG
   h3 {
@@ -45,7 +45,7 @@
   }
 
   a {
-    color: $jaguar;
     @include link-underline($white-smoke, $jaguar, $iron);
+    color: $jaguar;
   }
 }
