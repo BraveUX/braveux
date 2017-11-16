@@ -1,8 +1,8 @@
 $stretch-green: #36CB9C;
+$stretch-blue: #22A8FA;
 
 .subnav {
   @include position(fixed, null, 0, 0, 0);
-  background-color: $stretch-green;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   height: 50px;
@@ -17,17 +17,39 @@ $stretch-green: #36CB9C;
     pointer-events: none;
     width: 50px;
     z-index: -1;
-    // transform: translate3d(0,0,1px);
   }
 
   &::before {
     @include position(absolute, 0, null, 0, 0);
-    background-image: linear-gradient(to right, rgba($stretch-green, 1) 15%, rgba($stretch-green, 0.9) 20%, rgba($stretch-green, 0) 100%);
   }
 
   &::after {
     @include position(absolute, 0, 0, 0);
-    background-image: linear-gradient(to left, rgba($stretch-green, 1) 15%, rgba($stretch-green, 0.9) 20%, rgba($stretch-green, 0) 100%);
+  }
+
+
+  .stretch & {
+    background-color: $stretch-green;
+
+    &::before {
+      background-image: linear-gradient(to right, rgba($stretch-green, 1) 15%, rgba($stretch-green, 0.9) 20%, rgba($stretch-green, 0) 100%);
+    }
+
+    &::after {
+      background-image: linear-gradient(to left, rgba($stretch-green, 1) 15%, rgba($stretch-green, 0.9) 20%, rgba($stretch-green, 0) 100%);
+    }
+  }
+
+  .stretch-portal & {
+    background-color: $stretch-blue;
+
+    &::before {
+      background-image: linear-gradient(to right, rgba($stretch-blue, 1) 15%, rgba($stretch-blue, 0.9) 20%, rgba($stretch-blue, 0) 100%);
+    }
+
+    &::after {
+      background-image: linear-gradient(to left, rgba($stretch-blue, 1) 15%, rgba($stretch-blue, 0.9) 20%, rgba($stretch-blue, 0) 100%);
+    }
   }
 
   @include media('>=md') {

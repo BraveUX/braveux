@@ -243,9 +243,15 @@
     }
     &::before {
       @include position(absolute, 0, 0, 0, 0);
-      background: url('../images/work/stretch/wave-header.png') no-repeat;
-      background-size: 100% 100%;
+      background: url('../images/work/stretch/wave-header.png') center/100% 100% no-repeat;
       content: '';
+    }
+  }
+
+  .stretch-portal & {
+    background: url('../images/work/stretch/header-portal.jpg') #2B2B2B 25% center/cover no-repeat;
+    &::before {
+      background: url('../images/work/stretch/wave-header-portal.png') center/100% 100% no-repeat;
     }
   }
 

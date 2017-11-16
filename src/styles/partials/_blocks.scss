@@ -104,11 +104,11 @@
   }
 
   &.gutter-right-mobile {
-    padding-right: $gridGap*0.75;
+    padding-right: $gridGap/2;
   }
 
   &.gutter-left-mobile {
-    padding-left: $gridGap*0.75;
+    padding-left: $gridGap/2;
   }
 
   &.gutter-top-mobile {
@@ -122,11 +122,11 @@
     }
 
     &.gutter-right-mobile {
-      padding-right: $gridGap*1.5;
+      padding-right: $gridGap;
     }
 
     &.gutter-left-mobile {
-      padding-left: $gridGap*1.5;
+      padding-left: $gridGap;
     }
 
     &.gutter-top-mobile {
@@ -184,7 +184,7 @@
       max-width: 325px;
     }
   }
-  
+
   .case-study.stretch & {
     @include media('>=md') {
       max-width: none;
@@ -246,6 +246,19 @@
     margin: auto 0;
     position: absolute;
     top: 0;
+
+    .gutter-left-mobile &,
+    .gutter-right-mobile & {
+      width: calc(100% - 2em);
+
+      @include media('>=sm') {
+        width: calc(100% - 4em);
+      }
+
+      @include media('>=md') {
+        width: 100%;
+      }
+    }
   }
 
   &.absolute-bottom {
