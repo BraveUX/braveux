@@ -27,7 +27,7 @@ gulp.task('fonts', () => {
 
 // HTML
 gulp.task('ejs', () => {
-  return gulp.src(['src/views/*.ejs', 'src/views/!(partials)**/*.ejs'])
+  return gulp.src(['src/views/**/!(_)*.ejs'])
     .pipe($.changed('./dist'))
     .pipe($.ejs())
     .on('error', $.notify.onError('Error: <%= error.message %>'))
