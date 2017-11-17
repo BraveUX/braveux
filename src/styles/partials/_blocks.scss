@@ -213,9 +213,10 @@
 
   // POSITION MODIFIERS
   &.content-centered {
+    text-align: center;
+
     @include media('>=md') {
       max-width: 600px;
-      text-align: center;
     }
   }
 }

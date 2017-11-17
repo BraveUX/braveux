@@ -1,7 +1,7 @@
 .footer {
   background-color: $jaguar;
   overflow: hidden;
-  padding: $gridGap*2 0 $gridGap;
+  padding: $gridGap*2 0 $gridGap*1.5;
   position: relative;
   transition: padding 500ms ease 300ms;
 
@@ -15,7 +15,7 @@
     height: 135px;
     margin: auto auto 0;
     opacity: 0;
-    transition: opacity 500ms ease;
+    transition: opacity 500ms ease, bottom 500ms ease 500ms;
     width: 419px;
   }
 
@@ -50,7 +50,7 @@
   }
 
   + .footer-box.column {
-    margin-top: $gridGap;
+    margin-top: $gridGap/4;
 
     @include media('>md') {
       margin-top: 0;

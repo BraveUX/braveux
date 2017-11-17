@@ -89,7 +89,7 @@
   }
 
   &.wrap {
-    flex: row wrap;
+    flex-flow: row wrap;
   }
 
   &.between {
