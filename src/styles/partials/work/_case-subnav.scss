@@ -1,5 +1,6 @@
 $stretch-green: #36CB9C;
 $stretch-blue: #22A8FA;
+$stretch-purple: #8870F7;
 
 .subnav {
   @include position(fixed, null, 0, 0, 0);
@@ -49,6 +50,18 @@ $stretch-blue: #22A8FA;
 
     &::after {
       background-image: linear-gradient(to left, rgba($stretch-blue, 1) 15%, rgba($stretch-blue, 0.9) 20%, rgba($stretch-blue, 0) 100%);
+    }
+  }
+
+  .stretch-cms & {
+    background-color: $stretch-purple;
+
+    &::before {
+      background-image: linear-gradient(to right, rgba($stretch-purple, 1) 15%, rgba($stretch-purple, 0.9) 20%, rgba($stretch-purple, 0) 100%);
+    }
+
+    &::after {
+      background-image: linear-gradient(to left, rgba($stretch-purple, 1) 15%, rgba($stretch-purple, 0.9) 20%, rgba($stretch-purple, 0) 100%);
     }
   }
 

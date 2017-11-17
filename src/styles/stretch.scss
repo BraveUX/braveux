@@ -13,6 +13,21 @@
 Styles Unique to the Stretch Case Study
 ==================================== */
 
+.stretch-wave {
+  &::after {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 5em;
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+  }
+}
+
 .stretch-portal-section {
   .frame-mobile {
     margin: 0 auto -25%;
@@ -27,16 +42,6 @@ Styles Unique to the Stretch Case Study
 .stretch-portal-tangible {
   &::after {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100h1440v-8C807.44 90.92 554.07-80.23 0 47.06z' fill='%2322a7fa' data-name='Layer 1'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    bottom: 0;
-    content: '';
-    display: block;
-    height: 5em;
-    left: 0;
-    position: absolute;
-    right: 0;
-    width: 100%;
   }
 }
 
@@ -65,6 +70,24 @@ Styles Unique to the Stretch Case Study
 
     &:nth-of-type(3) {
       right: 0;
+    }
+  }
+}
+
+.stretch-cms-power-tools {
+  &::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 142' preserveAspectRatio='none'%3E%3Cpath d='M0 114.65C793.48 51.78 642.88-59.17 1440 38.81V142H0z' fill='%238870f7' data-name='Layer 1'/%3E%3C/svg%3E");
+  }
+}
+
+.stretch-cms-features {
+  .frame-mobile {
+    margin: 0 auto -25%;
+    width: 55%;
+
+    @include media('>=md') {
+      margin: 0 auto -25% 0;
+      width: 70%;
     }
   }
 }
