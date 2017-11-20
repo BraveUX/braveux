@@ -240,11 +240,12 @@
 
     @include media('>=md') {
       background-position: center left;
-    }
-    &::before {
-      @include position(absolute, 0, 0, 0, 0);
-      background: url('../images/work/stretch/wave-header.png') center/100% 100% no-repeat;
-      content: '';
+
+      &::before {
+        @include position(absolute, 0, 0, 0, 0);
+        background: url('../images/work/stretch/wave-header.png') center/100% 100% no-repeat;
+        content: '';
+      }
     }
   }
 
@@ -259,6 +260,13 @@
     background: url('../images/work/stretch/cms/header-cms.jpg') #2B2B2B 25% center/cover no-repeat;
     &::before {
       background: url('../images/work/stretch/cms/wave-header-cms.png') center/100% 100% no-repeat;
+    }
+  }
+
+  .stretch-support & {
+    background: url('../images/work/stretch/support/header-support.jpg') #2B2B2B 25% center/cover no-repeat;
+    &::before {
+      background: url('../images/work/stretch/support/wave-header-support.png') center/100% 100% no-repeat;
     }
   }
 

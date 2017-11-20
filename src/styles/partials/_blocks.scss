@@ -280,6 +280,14 @@
     box-shadow: 0 0 60px 0 rgba($black, 0.4);
   }
 
+  &.shadow-filter {
+    filter: drop-shadow(0 0 15px rgba($jaguar, 0.2));
+  }
+
+  &.shadow-dark-filter {
+    filter: drop-shadow(0 0 15px rgba($jaguar, 0.4));
+  }
+
   // SECTION MODIFIERS
   .work-card-image & {
     margin: 0;
