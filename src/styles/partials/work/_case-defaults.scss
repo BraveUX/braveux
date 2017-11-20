@@ -48,4 +48,8 @@
     line-height: 1.4;
     margin: 0 0 $textGap*1.5;
   }
+
+  + .case-block-text {
+    margin-top: $textGap;
+  }
 }

@@ -249,6 +249,13 @@
     }
   }
 
+  .stretch-brand & {
+    background: url('../images/work/stretch/brand/header-brand.jpg') #2B2B2B 25% center/cover no-repeat;
+    &::before {
+      background: url('../images/work/stretch/brand/wave-header-brand.png') center/100% 100% no-repeat;
+    }
+  }
+
   .stretch-portal & {
     background: url('../images/work/stretch/portal/header-portal.jpg') #2B2B2B 25% center/cover no-repeat;
     &::before {

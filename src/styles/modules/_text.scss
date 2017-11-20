@@ -52,7 +52,10 @@
 // Mixin used for calling font
 @mixin text($family, $size, $weight: null, $color: null) {
   @include font-family($family);
-  @include sizer($size);
   color: $color;
   font-weight: $weight;
+
+  @if ($size != null) {
+    @include sizer($size);
+  }
 }

@@ -39,6 +39,26 @@ Styles Unique to the Stretch Case Study
   }
 }
 
+.stretch-brand-unique {
+  &::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 143' preserveAspectRatio='none'%3E%3Ctitle%3Ecrowd-wave-top%3C/title%3E%3Cpath d='M1440 0H0v26.05c738.63 1.34 947.83 219 1440 57.1z' fill='%23242629' data-name='Layer 1'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    content: '';
+    display: block;
+    height: 5em;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  &::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 143' preserveAspectRatio='none'%3E%3Ctitle%3Ecrowd-wave-bottom%3C/title%3E%3Cpath d='M.37 143H1440l-.37-26.05C701.19 115.61 492-102 0 59.85z' fill='%238870f7' data-name='Layer 1'/%3E%3C/svg%3E");
+  }
+}
+
 .stretch-portal-tangible {
   &::after {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100h1440v-8C807.44 90.92 554.07-80.23 0 47.06z' fill='%2322a7fa' data-name='Layer 1'/%3E%3C/svg%3E");
@@ -92,6 +112,19 @@ Styles Unique to the Stretch Case Study
   }
 }
 
+.stretch-intro-animation {
+  min-height: 60vh;
+}
+
+.stretch-logo-animation {
+  background-color: #242528;
+
+  video {
+    margin: auto;
+    max-width: 600px;
+  }
+}
+
 /* =======
 Modifiers
 ======= */
@@ -104,5 +137,187 @@ Modifiers
     &::after {
       color: #EBEBEB;
     }
+  }
+}
+
+
+
+/* =======
+Marquee Video
+======= */
+.marquee {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  visibility: hidden;
+  // text-shadow: 1px 1px 2px rgba(map-deep-get($colors, black, primary), 0.2);
+  // width: 100%;
+}
+
+
+.marquee__intro {
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+
+  @include media('>=md') {
+    flex: 1;
+  }
+}
+
+.marquee__logo {
+  fill: #FAFAFA;
+  height: 42px;
+  margin-bottom: $textGap/2;
+  width: 205px;
+
+  @include media('>=md') {
+    margin-bottom: $textGap/2;
+  }
+}
+
+.marquee__title {
+  @include text('sonny-gothic', 64, 800, #EFEFEF);
+  font-size: 48px;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  margin: 0;
+
+  &:last-of-type {
+    margin: 0 0 $textGap/2;
+  }
+
+  @include media('>=md') {
+    max-width: calc(100% - (#{$textGap*2} + 300px));
+  }
+
+  // Styles for when hero is half size
+  .hero--half & {
+    @include text('sonny-gothic', 48, 800, #EFEFEF);
+  }
+}
+
+.marquee__list {
+  display: none;
+
+  @include media('>=md') {
+    display: block;
+    height: 56px;
+    line-height: 1;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: calc(100% - (#{$textGap} + 13px));
+  }
+}
+
+
+
+.marquee__list-item {
+  @include text('sonny-gothic', null, 700);
+  bottom: 0;
+  color: #FAFAFA;
+  font-size: 56px;
+  letter-spacing: 1px;
+  line-height: 0.8;
+  margin: auto 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transform: matrix3d(1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 1);
+  transform-origin: 100% 100% 0;
+  visibility: hidden;
+
+  $listColors:
+    #FFBDB9, // every run
+    #BBB0FD, // every note
+    #88D0FE, // every turn
+    #6FE0D3; // every moment
+
+  @for $i from 1 through length($listColors) {
+    &:nth-of-type(#{length($listColors)}n+#{$i}) {
+      color: nth($listColors, $i);
+    }
+  }
+}
+
+.marquee__text {
+  margin: auto 0 0;
+}
+
+.marquee__line {
+  align-self: flex-start;
+  background-color: #FAFAFA;
+  height: 8px;
+  margin: $textGap/4 0 0;
+  width: 100%;
+}
+
+.marquee__box {
+  align-self: flex-end;
+  margin-top: $textGap*0.75;
+  padding-left: calc(13px + #{$textGap/2}); // account for tagline logo
+  position: relative;
+  width: 100%;
+
+  @include media('>=md') {
+    bottom: calc(#{$textGap} + 8px); // include line on bottom;
+    margin-left: $textGap*0.75;
+    padding-bottom: inherit;
+    padding-right: inherit;
+    position: absolute;
+    right: 0;
+    width: auto;
+  }
+}
+
+.marquee__box--in-line {
+  bottom: 0;
+  margin-bottom: -3px; // offset from line
+  position: relative;
+  width: auto;
+
+  @include media('>=md') {
+    padding: 0;
+  }
+}
+
+
+.marquee__tagline {
+  @include text('sonny-gothic', 18, 400, #EFEFEF);
+  display: block;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 300px;
+}
+
+.marquee__tagline--caps {
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.marquee__tagline--featured {
+  color: #41D6C5;
+}
+
+.marquee__tagline--logo {
+  align-items: center;
+  background-color: #36CB9C;
+  border-radius: 50%;
+  display: flex;
+  height: 13px;
+  position: absolute;
+  top: 5px;
+  transform: translateX(-100%) translateX(-$textGap/4);
+  width: 13px;
+
+  .marquee__box--inline & {
+    top: 3px;
   }
 }
