@@ -1,6 +1,6 @@
 $(window).on('load', function() {
   if($('body').hasClass('stretch-brand')) {
-    homeAnimation();
+    stretchIntroAnimation();
   }
 });
 
@@ -15,21 +15,38 @@ const $item1 = $('.marquee__list-item:nth-of-type(1)');
 const $item2 = $('.marquee__list-item:nth-of-type(2)');
 const $item3 = $('.marquee__list-item:nth-of-type(3)');
 const $item4 = $('.marquee__list-item:nth-of-type(4)');
-const video = document.querySelector('.block__video--hero');
+const video = document.querySelector('.marquee__video');
 
-function homeAnimation() {
+function stretchIntroAnimation() {
   // Set Home timelines
-  const tl = new TimelineMax({delay: 0.5}); // standard timeline
-  const tlMobile = new TimelineMax({delay: 0.5}); // mobile timeline
+  const tl = new TimelineMax({paused: true, delay: 0.5}); // standard timeline
+  const tlMobile = new TimelineMax({paused: true, delay: 0.5}); // mobile timeline
   const loop = new TimelineMax({repeat: -1}); // tagline looper timeline
-
-  // Home intro elements
-  // const video = document.querySelector('.block__video--hero');
 
   const itemIn = {
     autoAlpha: 1, 
     rotationX: '0deg'
   }
+
+  new Waypoint.Inview({
+    element: $('.stretch-brand-intro'),
+    enter: function() {
+      if ( window.matchMedia( '(min-width: 768px)' ).matches ) {
+        tl.play();
+        video.play();
+      } else {
+        tlMobile.play();
+      }
+    },
+    exited: function() {
+      if ( window.matchMedia( '(min-width: 768px)' ).matches ) {
+        tl.pause();
+        video.pause()
+      } else {
+        tlMobile.pause();
+      }
+    } 
+  });
   
   function itemOut(time) {
     return {
@@ -69,7 +86,7 @@ function homeAnimation() {
       .fromTo($marqueeTaglineLogo, 0.2,{opacity: 0}, {opacity: 1, repeat: 4, repeatDelay: 0.3, yoyo: true})
       .add('content -=0.5')
       .staggerFromTo($marqueeTagline, 0.4, {autoAlpha: 0, y: 10}, {autoAlpha: 1, y: 0}, 0.15, 'content')
-      .to($marqueeLogo, 0.35, {y: '0%'}, 'content')
+      .to($marqueeLogo, 0.30, {y: '0%'}, 'content')
       // video
       .fromTo(video, 1, {autoAlpha: 0}, {autoAlpha: 1, ease: Power1.easeIn, onStart: function() { video.defaultPlaybackRate = 1; video.playbackRate = 1; video.currentTime = 0; video.play(); }}, 'content')
       // every run

@@ -28,6 +28,15 @@ Styles Unique to the Stretch Case Study
   }
 }
 
+.stretch-frame-overlay {
+  &::before {
+    box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0.3), inset 0 0 20px 30px rgba(0, 0, 0, 0.4);
+    outline: 1px solid rgba(0, 0, 0, 0.2);
+    outline-offset: -30px;
+  }
+}
+
+// Stretch Sections
 .stretch-portal-section {
   .frame-mobile {
     margin: 0 auto -25%;
@@ -39,7 +48,46 @@ Styles Unique to the Stretch Case Study
   }
 }
 
+.stretch-brand-intro {
+  align-items: center;
+  display: flex;
+  min-height: 60vh;
+
+  &::before {
+    @include position(absolute, 0, 0, 0, 0);
+    background-color: rgba(#211F1C, 0.5);
+    content: '';
+    height: calc(100% + 1px);
+    z-index: 1;
+  }
+
+  &::after {
+    @include position(absolute, 0, 0, 0, 0);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1473.07 768' preserveAspectRatio='none'%3E%3Ctitle%3Ehero-wave%3C/title%3E%3Cpath d='M1250,0C1113.2,259,812.1,18.6,622.9,500.1,586,594.2,450.6,725.3,359,768H0V0Z' style='fill:#{rgba((#211F1C),0.3)}'/%3E%3Cpath d='M0,0H1473.07V768H0Z' style='fill:none'/%3E%3Cpath d='M223.07,768c136.8-259,437.9-18.6,627.1-500.1,36.9-94.1,172.3-225.2,263.9-267.9h359V768Z' style='fill:#{rgba((#211F1C),0.3)}'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    content: '';
+    height: calc(100% + 1px);
+    pointer-events: none;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+.stretch-brand-logo {
+  align-items: center;
+  background-color: #242528;
+  display: flex;
+  height: 400px;
+
+  video {
+    margin: auto;
+    max-width: 600px;
+  }
+}
+
 .stretch-brand-unique {
+  padding-top: $gridGap*2.5;
+
   &::before {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 143' preserveAspectRatio='none'%3E%3Ctitle%3Ecrowd-wave-top%3C/title%3E%3Cpath d='M1440 0H0v26.05c738.63 1.34 947.83 219 1440 57.1z' fill='%23242629' data-name='Layer 1'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
@@ -56,6 +104,7 @@ Styles Unique to the Stretch Case Study
 
   &::after {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 143' preserveAspectRatio='none'%3E%3Ctitle%3Ecrowd-wave-bottom%3C/title%3E%3Cpath d='M.37 143H1440l-.37-26.05C701.19 115.61 492-102 0 59.85z' fill='%238870f7' data-name='Layer 1'/%3E%3C/svg%3E");
+    z-index: 10;
   }
 }
 
@@ -112,19 +161,6 @@ Styles Unique to the Stretch Case Study
   }
 }
 
-.stretch-intro-animation {
-  min-height: 60vh;
-}
-
-.stretch-logo-animation {
-  background-color: #242528;
-
-  video {
-    margin: auto;
-    max-width: 600px;
-  }
-}
-
 /* =======
 Modifiers
 ======= */
@@ -152,8 +188,26 @@ Marquee Video
   overflow: hidden;
   position: relative;
   visibility: hidden;
+  width: 100%;
+  z-index: 2;
   // text-shadow: 1px 1px 2px rgba(map-deep-get($colors, black, primary), 0.2);
   // width: 100%;
+}
+
+.marquee__video {
+  @include position(absolute, 0, 0, 0, 50%);
+  display: none;
+  margin: auto;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  transform: translateX(-50%);
+  width: auto;
+
+  @include media('>=md') {
+    display: block;
+    visibility: hidden;
+  }
 }
 
 
@@ -206,7 +260,7 @@ Marquee Video
 
   @include media('>=md') {
     display: block;
-    height: 56px;
+    height: 50px;
     line-height: 1;
     list-style: none;
     margin: 0;
@@ -220,12 +274,7 @@ Marquee Video
 
 
 .marquee__list-item {
-  @include text('sonny-gothic', null, 700);
   bottom: 0;
-  color: #FAFAFA;
-  font-size: 56px;
-  letter-spacing: 1px;
-  line-height: 0.8;
   margin: auto 0;
   opacity: 0;
   position: absolute;
@@ -233,18 +282,6 @@ Marquee Video
   transform: matrix3d(1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 1);
   transform-origin: 100% 100% 0;
   visibility: hidden;
-
-  $listColors:
-    #FFBDB9, // every run
-    #BBB0FD, // every note
-    #88D0FE, // every turn
-    #6FE0D3; // every moment
-
-  @for $i from 1 through length($listColors) {
-    &:nth-of-type(#{length($listColors)}n+#{$i}) {
-      color: nth($listColors, $i);
-    }
-  }
 }
 
 .marquee__text {

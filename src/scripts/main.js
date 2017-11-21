@@ -280,6 +280,15 @@ function scrollReveal() {
     viewFactor : 0.6,
   }
 
+  const tall = {
+    duration   : 1000,
+    distance   : '30%',
+    easing     : 'ease-in-out',
+    origin     : 'bottom',
+    scale      : 1,
+    viewFactor : 0.1,
+  }
+
   sr.reveal('.case-referral-quote-icon', {
     duration   : 1000,
     distance   : '40px',
@@ -352,6 +361,7 @@ function scrollReveal() {
   sr.reveal('.sr-right', revealRight);
   sr.reveal('.sr-bottom', revealBottom);
   sr.reveal('.sr-left', revealLeft);
+  sr.reveal('.sr-tall', tall);
 
   // Stagger Specific Reveals (only works once per page per class)
   sr.reveal('.case-breakdown-box', revealContent, 200);
@@ -388,14 +398,16 @@ function videoPlay() {
   const video = $('video');
   
   video.each(function(index, vid) {
-    new Waypoint.Inview({
-      element: $(this),
-      enter: function() {
-        vid.play();
-      },
-      exited: function() {
-        vid.pause();
-      } 
-    });
+    if ( !$(this).hasClass('marquee__video') ) {
+      new Waypoint.Inview({
+        element: $(this),
+        enter: function() {
+          vid.play();
+        },
+        exited: function() {
+          vid.pause();
+        } 
+      });
+    }
   });
 }

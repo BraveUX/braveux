@@ -217,6 +217,14 @@
 
     @include media('>=md') {
       max-width: 600px;
+
+      &.narrow {
+        max-width: 400px;
+      }
+
+      &.wide {
+        max-width: 700px;
+      }
     }
   }
 }
@@ -285,7 +293,7 @@
   }
 
   &.shadow-dark-filter {
-    filter: drop-shadow(0 0 15px rgba($jaguar, 0.4));
+    filter: drop-shadow(0 0 15px rgba($black, 0.4));
   }
 
   // SECTION MODIFIERS
