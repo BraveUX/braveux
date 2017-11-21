@@ -390,6 +390,13 @@
   }
 }
 
+.case-header-client-name,
+.case-header-tagline,
+.case-header-type {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .case-header-client-name {
   @include text('trade-gothic', 24, 600);
   letter-spacing: 3px;

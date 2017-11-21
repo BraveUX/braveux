@@ -186,6 +186,25 @@ $stretch-teal: #00BDC1;
   text-transform: uppercase;
   transition: background-color 150ms;
 
+  &::before {
+    @include position(absolute, null, 0, 0, 0);
+    background: $white;
+    content: '';
+    height: 3px;
+    margin: 0 auto;
+    position: absolute;
+    transform: scale3d(0, 1, 1);
+    transition: transform 200ms 300ms;
+    width: calc(100% - #{$textGap*2}); // subtract padding so it only underlines name
+  }
+
+  &.is-active {
+    &::before {
+      transform: scale3d(1, 1, 1);
+      transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 150ms;
+    }
+  }
+
   &.featured {
     @include text('source-sans-pro', 18, 200, $white);
   }
