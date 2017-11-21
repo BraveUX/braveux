@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1773" height="962" viewBox="0 0 1773 962">
+  <g fill="none" fill-rule="evenodd">
+    <g transform="translate(992 176)">
+      <rect width="8" height="124" x="6" y="10" fill="#1CCCB6"/>
+      <circle cx="10" cy="10" r="10" fill="#FFF"/>
+      <text fill="#FFF" font-family="SonnyGothic-Bold, Sonny Gothic" font-size="64" font-weight="bold" letter-spacing="2">
+        <tspan x="6" y="206">95%</tspan>
+      </text>
+      <text fill="#9FEBE2" font-family="Overpass-Bold, Overpass" font-size="16" font-weight="bold">
+        <tspan x="6" y="237">Of calls answered </tspan> <tspan x="6" y="258">within 15 seconds. </tspan>
+      </text>
+    </g>
+    <g transform="translate(1389 298)">
+      <text fill="#FFF" font-family="SonnyGothic-Bold, Sonny Gothic" font-size="64" font-weight="bold" letter-spacing="2">
+        <tspan x="6" y="62">12,067</tspan>
+      </text>
+      <text fill="#9FEBE2" font-family="Overpass-Bold, Overpass" font-size="16" font-weight="bold">
+        <tspan x="6" y="93">Events that have been </tspan> <tspan x="6" y="114">streamed this year.</tspan>
+      </text>
+      <rect width="8" height="215" x="6" y="139" fill="#1CCCB6"/>
+      <circle cx="10" cy="358" r="10" fill="#FFF"/>
+    </g>
+    <g transform="translate(699 582)">
+      <rect width="8" height="110" x="6" y="137" fill="#1CCCB6"/>
+      <circle cx="10" cy="251" r="10" fill="#FFF"/>
+      <text fill="#9FEBE2" font-family="Overpass-Bold, Overpass" font-size="16" font-weight="bold">
+        <tspan x="0" y="93">Organizations we’re </tspan> <tspan x="0" y="114">helping go live.</tspan>
+      </text>
+      <text fill="#FFF" font-family="SonnyGothic-Bold, Sonny Gothic" font-size="64" font-weight="bold" letter-spacing="2">
+        <tspan x="0" y="62">846</tspan>
+      </text>
+    </g>
+  </g>
+</svg>
