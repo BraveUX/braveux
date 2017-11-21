@@ -128,6 +128,10 @@
       border-radius: 10px 10px 0 0;
       height: 20px;
     }
+
+    @include media('>=xl') {
+      width: calc(100% - 1px);
+    }
   }
 
   &::after {
@@ -201,6 +205,7 @@
   // EDGE MODIFIERS
   &.edge-right {
     border-radius: 10px 0 0;
+    right: -1px;
 
     &.shadow {
       border-right: none;
@@ -213,6 +218,7 @@
 
   &.edge-left {
     border-radius: 0 10px 0 0;
+    left: -1px;
 
     &.shadow {
       border-left: none;

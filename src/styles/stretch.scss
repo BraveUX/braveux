@@ -29,10 +29,12 @@ Styles Unique to the Stretch Case Study
 }
 
 .stretch-frame-overlay {
-  &::before {
-    box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0.3), inset 0 0 20px 30px rgba(0, 0, 0, 0.4);
-    outline: 1px solid rgba(0, 0, 0, 0.2);
-    outline-offset: -30px;
+  @include media('>=md') {
+    &::before {
+      box-shadow: inset 0 0 0 40px rgba(0, 0, 0, 0.2), inset 0 0 10px 40px rgba(0, 0, 0, 0.2);
+      outline: 1px solid rgba(0, 0, 0, 0.2);
+      outline-offset: -40px;
+    }
   }
 }
 
