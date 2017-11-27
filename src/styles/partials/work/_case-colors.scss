@@ -245,11 +245,6 @@
     background-color: $gray;
   }
 
-  .case-referral-text,
-  .case-referral-author {
-    color: $blue;
-  }
-
   // quote icon color
   .case-referral-quote-icon {
     @include icon-quote($white-smoke);
