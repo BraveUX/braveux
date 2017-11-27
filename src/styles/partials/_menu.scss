@@ -39,8 +39,7 @@ $menu-height: 50px;
   @include hide-text;
   @include position(fixed, 0, null, null, $gridGap/2);
   backface-visibility: hidden;
-  background: url('./../images/icons/flag.svg') center center no-repeat;
-  background-color: $night-rider;
+  background: url('./../images/icons/flag.svg') $jaguar center center no-repeat;
   display: block;
   height: $menu-height;
   overflow: hidden;
@@ -49,14 +48,36 @@ $menu-height: 50px;
   width: 50px;
   z-index: 20;
 
+  &::before {
+    background: url('./../images/icons/wordmark.svg') $jaguar center center no-repeat;
+    content: ' ';
+    display: block;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    transform: scale(0.5);
+    transform-origin: center;
+    transition: all 300ms;
+    visibility: hidden;
+    width: 100%;
+  }
+
   &:hover {
-    background-image: url('./../images/icons/wordmark.svg');
     margin: 0 -60px 0 0;
     width: 110px;
 
+    &::before {
+      opacity: 1;
+      transform: scale(1);
+      visibility: visible;
+    }
+
     @include media('>=md') {
       margin: 0 0 0 calc(#{$gridGap} - 60px);
-      transition: all 300ms;
+
+      &::before {
+        transform-origin: right;
+      }
     }
 
     @include media('>=lg') {
