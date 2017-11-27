@@ -432,9 +432,7 @@ function introAnimate() {
   const content = $('.case-header-client-name, .case-header-tagline, .case-header-type');
   const tl = new TimelineMax({delay: 0.5});
 
-  if ( window.matchMedia( '(min-width: 768px)' ).matches ) {
-    tl
-      .staggerFromTo(content, 2, {autoAlpha: 0}, {autoAlpha: 1}, 0.25, 0)
-      .staggerFrom(content, 0.8, {y: '100px', ease: Power1.easeOut}, 0.15, 0);
-  }
+  tl
+    .staggerFromTo(content, 2, {autoAlpha: 0}, {autoAlpha: 1}, 0.25, 0)
+    .staggerFrom(content, 0.8, {y: '100px', ease: Power1.easeOut}, 0.15, 0);
 }
