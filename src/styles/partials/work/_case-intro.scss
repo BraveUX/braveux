@@ -58,11 +58,31 @@
   }
 
   .cds & {
-    background-color: #1D2B42;
+    background: url('../images/work/cds/header.svg') #1D2B42 30% center/cover no-repeat;
+
+    &.overlay {
+      &::after {
+        background-color: #1D2B42;
+        opacity: 0.8;
+      }
+    }
 
     @include media('>=md') {
-      background: url('../images/work/cds/header.svg') right center/cover no-repeat;
+      &.overlay {
+        &::after {
+          opacity: 0.6;
+        }
+      }
+    }
+
+    @include media('>=lg') {
       background-position: 50% center;
+
+      &.overlay {
+        &::after {
+          content: none;
+        }
+      }
     }
   }
 

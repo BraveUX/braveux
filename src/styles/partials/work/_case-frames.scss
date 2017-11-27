@@ -71,14 +71,6 @@
   width: auto;
   z-index: 1;
 
-  .inner-block-image {
-    // padding-top: 15px;
-
-    @include media('>=md') {
-      // padding-top: 20px;
-    }
-  }
-
   // POSITION MODIFIERS
   &.absolute {
     @include position(absolute);
@@ -238,6 +230,12 @@
 
     &.shadow {
       border-bottom: none;
+    }
+  }
+
+  @include media('>=xl') {
+    .inner-block-image {
+      width: calc(100% - 1px);
     }
   }
 }
