@@ -1,7 +1,7 @@
 # BraveUX
-http://braveux.com/
+https://braveux.com/
 
-[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
 ### Getting Started
 In command line, do the following steps:
@@ -26,16 +26,16 @@ $ gulp build
 
 ### Folder Structure
 `src` - This directory is where all development should take place. Use gulp to then process the content to the public folder.
-`public_html` - This directory containsthe distribution files which should be uploaded to the FTP when changes are made.
+`public_html` - This directory contains the distribution files which should be uploaded to the FTP when changes are made.
 
 ### Future TODO's
-* Add lazy loading across site due to the high content nature of our site
+* Add lazy loading across site due to the high content nature of our site.
 * Consider page loader so that we can animate content once a user visits the site.
 
 ## Deploying to Staging
 The [gh-pages branch](https://github.com/BraveUX/braveux/tree/gh-pages) is automatically built for staging out development goals of the site.
 
-[Click here to view our stagining site.](http://braveux.github.io/braveux/)
+[Click here to view our stagining site.](https://braveux.github.io/braveux/)
 
 
 ### How to deploy a branch to GH-Pages
@@ -61,6 +61,6 @@ $ gulp default
 $ gulp deploy
 ```
 
-Once done, you should be able to view the branch at http://braveux.github.io/braveux//
+Once done, you should be able to view the branch at http://braveux.github.io/braveux/
 
 **Remember to discard or change back the variable in the `_head.ejs` file back to `false` or your localhost/live site will fail to render correctly!**
