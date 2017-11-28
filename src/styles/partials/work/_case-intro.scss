@@ -456,6 +456,16 @@
   &.lg {
     @include text('source-sans-pro', 28, 200);
   }
+
+  br {
+    display: none;
+  }
+
+  @include media('>=sm') {
+    br {
+      display: block;
+    }
+  }
 }
 
 // BREAKDOWN

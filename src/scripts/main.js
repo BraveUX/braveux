@@ -220,6 +220,16 @@ function caseTeaseNext() {
 function scrollReveal() {
   window.sr = ScrollReveal();
 
+  function heightCheck() {
+    const $this = $(this);
+
+    if ($this.height == 0) {
+    }
+    
+    console.log('no height!');
+    return "100px";
+  }
+
   const revealTop = {
     duration   : 700,
     distance   : '30%',
@@ -247,13 +257,18 @@ function scrollReveal() {
     viewFactor : 0.5,
   };
 
+  // TODO: Try and calculate the height even when it has height - 0 for absolute el
   const revealLeft = {
-    duration   : 700,
-    distance   : '30%',
-    easing     : 'ease-in-out',
-    origin     : 'left',
-    scale      : 1,
-    viewFactor : 0.5,
+    duration     : 700,
+    distance     : test(),
+    easing       : 'ease-in-out',
+    origin       : 'left',
+    scale        : 1,
+    viewFactor   : 0.5,
+    beforeReveal : function test(el) {
+      console.log(`${el} test`);
+      return '300px';
+    }
   };
 
   const revealContent = {
@@ -417,7 +432,7 @@ function videoPlay() {
 /* eslint-disable */
 // LAZYR (lazy load images)
 const instance = Layzr({
-  threshold: 50 // Load within 125% of viewport
+  threshold: 50 // Load within 50% of viewport
 })
 
 // add callbacks
@@ -430,7 +445,8 @@ instance
       element.removeAttribute('src');
     }
     */
-
+    
+    // TODO: REMOVE
     console.log('lazy');
   })
 
@@ -456,7 +472,7 @@ instance
   scrolls better as content sizing is all accounted for before lazy-loading images.
 */
 function imageRatio() {
-  const $image = $('.lazy-ratio');
+  const $image = $('.lazy-ratio, .lazy-test');
 
   // Get each desktop frame
   $image.each(function() {
@@ -473,6 +489,7 @@ function imageRatio() {
         .css('padding-bottom', `${getRatio}%`) // give padding-bottom based on image ratio
         .removeAttr('data-height data-width'); // remove data from HTML
 
+        // TODO: REMOVE
         console.log(`ratio = ${getRatio}%`);
     }
   })
@@ -493,7 +510,7 @@ function navCurrent() {
 }
 
 function introAnimate() {
-  const content = $('.case-header-client-name, .case-header-tagline, .case-header-type');
+  const content = $('.case-header-logo, .case-header-client-name, .case-header-tagline, .case-header-type');
   const tl = new TimelineMax({delay: 0.5});
 
   tl
