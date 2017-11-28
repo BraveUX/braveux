@@ -78,7 +78,19 @@
 
   // hover styles
   .work-card-box:hover & {
-    transform: scale(1.06);
+    transform: scale(1.06) translateY(0);
+  }
+
+  // animation styles
+  img {
+    opacity: 0;
+    transform: translateY(30%);
+    transition: transform 1250ms ease-out 150ms, opacity 1000ms ease-out 200ms;
+
+    .is-visible & {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 

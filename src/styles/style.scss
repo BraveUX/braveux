@@ -82,3 +82,9 @@ a {
 [class *= 'sr-'] {
   visibility: hidden;
 }
+
+// Class applied for ratio-based image scaling
+.lazy-ratio {
+  background-color: transparent;
+  height: 0;
+}

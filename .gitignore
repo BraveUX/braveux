@@ -9,4 +9,4 @@ bower
 *.swo
 *.swp
 .DS_Store
-public_html
+dist

@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "include-media": "^1.4.6",
+    "layzr.js": "^2.2.2",
     "normalize-scss": "^5.0.3"
   }
 }

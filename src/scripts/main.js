@@ -6,7 +6,7 @@ $(document).ready(function() {
   initNavHide();
   initEgg();
   caseTeaseNext();
-  scrollReveal();
+  imageRatio();
   toggleSection('.career');
   sectionJump();
   videoPlay();
@@ -255,14 +255,14 @@ function scrollReveal() {
     beforeReveal: function (el) { el.classList.add('is-visible') },
   }, 150);
 
-  sr.reveal('.work-card img', {
-    duration   : 1000,
-    scale      : 1.05,
-    origin     : 'bottom',
-    distance   : '25%',
-    easing     : 'ease-out',
-    viewFactor : 0.5,
-  }, 150);
+  // sr.reveal('.work-card img', {
+  //   duration   : 1000,
+  //   scale      : 1.05,
+  //   origin     : 'bottom',
+  //   distance   : '25%',
+  //   easing     : 'ease-out',
+  //   viewFactor : 0.5,
+  // }, 150);
 
   // sr.reveal('.work-card-title', {
   //   delay      : 300,
@@ -344,4 +344,68 @@ function videoPlay() {
       } 
     });
   });
+}
+
+/* eslint-disable */
+// LAZYR (lazy load images)
+const instance = Layzr({
+  threshold: 50 // Load within 125% of viewport
+})
+
+// add callbacks
+instance
+  .on('src:after', element => {
+    // Uncomment the following if you want to lazy-load a background-image
+    /*
+    if ( element.classList.contains('inner-block-image') ) {
+      element.style.backgroundImage = `url("${ element.getAttribute('src') }")`;
+      element.removeAttribute('src');
+    }
+    */
+
+    console.log('lazy');
+  })
+
+  
+  
+  // start it up, when the DOM is ready
+  document.addEventListener('DOMContentLoaded', event => {
+    instance
+    .update()           // track initial elements
+    .check()            // check initial elements
+    .handlers(true)     // bind scroll and resize handlers
+    scrollReveal();
+})
+/* eslint-enable */
+
+/*
+  The following functions purpose is to set the image size for lazy-loaded images
+  that do not have a set height. 
+  
+  Without this, the images would take up 0 height on load, and then reposition the 
+  content once they load in. This function also fixes the subnav autoscroller on 
+  'Explore' page as the image height is now accounted for. In addition, the page
+  scrolls better as content sizing is all accounted for before lazy-loading images.
+*/
+function imageRatio() {
+  const $image = $('.lazy-ratio');
+
+  // Get each desktop frame
+  $image.each(function() {
+    const $this = $(this);
+    // Find the % width of $this (subtract parent padding left/right if it has it)
+    const getEleWidth = 100 * parseFloat($this.css('width')) / (parseFloat($this.parent().css('width')) - (parseFloat($this.parent().css('padding-left')) + parseFloat($this.parent().css('padding-right'))) );
+    // Calculate ratio based on data image size and element width -- (2 decimal places)
+    const getRatio = ((this.dataset.height / this.dataset.width) * getEleWidth).toFixed(2);
+    
+    // Make sure that the image has a ratio
+    if (getRatio >= 0) {
+      // apply a padding-bottom and height 0 for ratio scaling
+      $this
+        .css('padding-bottom', `${getRatio}%`) // give padding-bottom based on image ratio
+        .removeAttr('data-height data-width'); // remove data from HTML
+
+        console.log(`ratio = ${getRatio}%`);
+    }
+  })
 }
