@@ -1,0 +1,362 @@
+// VENDORS
+@import "animate.scss"; // loaded from node_modules
+@import "include-media"; // loaded from node_modules
+@import "vendors/link-underline";
+
+// MODULES & VARIABLES
+@import "modules/svgs";
+@import "modules/text";
+@import "modules/utilities";
+@import "modules/variables";
+
+/* ====================================
+Styles Unique to the Stretch Case Study
+==================================== */
+
+.stretch-wave {
+  &::after {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 5em;
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+  }
+}
+
+.stretch-frame-overlay {
+  @include media('>=md') {
+    &::before {
+      box-shadow: inset 0 0 0 40px rgba(0, 0, 0, 0.2), inset 0 0 10px 40px rgba(0, 0, 0, 0.2);
+      outline: 1px solid rgba(0, 0, 0, 0.2);
+      outline-offset: -40px;
+    }
+  }
+}
+
+// Stretch Sections
+.stretch-portal-section {
+  .frame-mobile {
+    margin: 0 auto -25%;
+    width: 55%;
+
+    @include media('>=md') {
+      width: 85%;
+    }
+  }
+}
+
+.stretch-brand-intro {
+  align-items: center;
+  display: flex;
+  min-height: 60vh;
+
+  &::before {
+    @include position(absolute, 0, 0, 0, 0);
+    background-color: rgba(#211F1C, 0.5);
+    content: '';
+    height: calc(100% + 1px);
+    z-index: 1;
+  }
+
+  &::after {
+    @include position(absolute, 0, 0, 0, 0);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1473.07 768' preserveAspectRatio='none'%3E%3Ctitle%3Ehero-wave%3C/title%3E%3Cpath d='M1250,0C1113.2,259,812.1,18.6,622.9,500.1,586,594.2,450.6,725.3,359,768H0V0Z' style='fill:#{rgba((#211F1C),0.3)}'/%3E%3Cpath d='M0,0H1473.07V768H0Z' style='fill:none'/%3E%3Cpath d='M223.07,768c136.8-259,437.9-18.6,627.1-500.1,36.9-94.1,172.3-225.2,263.9-267.9h359V768Z' style='fill:#{rgba((#211F1C),0.3)}'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    content: '';
+    height: calc(100% + 1px);
+    pointer-events: none;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+.stretch-brand-logo {
+  align-items: center;
+  background-color: #242528;
+  display: flex;
+  height: 400px;
+
+  video {
+    margin: auto;
+    max-width: 600px;
+  }
+}
+
+.stretch-brand-unique {
+  padding-top: $gridGap*2.5;
+
+  &::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 143' preserveAspectRatio='none'%3E%3Ctitle%3Ecrowd-wave-top%3C/title%3E%3Cpath d='M1440 0H0v26.05c738.63 1.34 947.83 219 1440 57.1z' fill='%23242629' data-name='Layer 1'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    content: '';
+    display: block;
+    height: 5em;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  &::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 143' preserveAspectRatio='none'%3E%3Ctitle%3Ecrowd-wave-bottom%3C/title%3E%3Cpath d='M.37 143H1440l-.37-26.05C701.19 115.61 492-102 0 59.85z' fill='%238870f7' data-name='Layer 1'/%3E%3C/svg%3E");
+    z-index: 10;
+  }
+}
+
+.stretch-portal-tangible {
+  &::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100h1440v-8C807.44 90.92 554.07-80.23 0 47.06z' fill='%2322a7fa' data-name='Layer 1'/%3E%3C/svg%3E");
+  }
+}
+
+.stretch-portal-personal {
+  .frame-mobile {
+    margin: 0 auto -25%;
+    width: 55%;
+
+    @include media('>=md') {
+      margin: 0 0 -25% auto;
+      width: 70%;
+    }
+  }
+}
+
+.stretch-portal-community {
+  .inner-block-image {
+    &:nth-of-type(2),
+    &:nth-of-type(3) {
+      width: 85%;
+    }
+
+    &:nth-of-type(2) {
+      left: 0;
+    }
+
+    &:nth-of-type(3) {
+      right: 0;
+    }
+  }
+}
+
+.stretch-cms-power-tools {
+  &::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 142' preserveAspectRatio='none'%3E%3Cpath d='M0 114.65C793.48 51.78 642.88-59.17 1440 38.81V142H0z' fill='%238870f7' data-name='Layer 1'/%3E%3C/svg%3E");
+  }
+}
+
+.stretch-cms-features {
+  .frame-mobile {
+    margin: 0 auto -25%;
+    width: 55%;
+
+    @include media('>=md') {
+      margin: 0 auto -25% 0;
+      width: 70%;
+    }
+  }
+}
+
+/* =======
+Modifiers
+======= */
+.frame-desktop {
+  &.stretch-frame {
+    &::before {
+      background-color: #211F1C;
+    }
+
+    &::after {
+      color: #EBEBEB;
+    }
+  }
+}
+
+
+
+/* =======
+Marquee Video
+======= */
+.marquee {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  visibility: hidden;
+  width: 100%;
+  z-index: 2;
+  // text-shadow: 1px 1px 2px rgba(map-deep-get($colors, black, primary), 0.2);
+  // width: 100%;
+}
+
+.marquee__video {
+  @include position(absolute, 0, 0, 0, 50%);
+  display: none;
+  margin: auto;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  transform: translateX(-50%);
+  width: auto;
+
+  @include media('>=md') {
+    display: block;
+    visibility: hidden;
+  }
+}
+
+
+.marquee__intro {
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+
+  @include media('>=md') {
+    flex: 1;
+  }
+}
+
+.marquee__logo {
+  fill: #FAFAFA;
+  height: 42px;
+  margin-bottom: $textGap/2;
+  width: 205px;
+
+  @include media('>=md') {
+    margin-bottom: $textGap/2;
+  }
+}
+
+.marquee__title {
+  @include text('sonny-gothic', 64, 800, #EFEFEF);
+  font-size: 48px;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  margin: 0;
+
+  &:last-of-type {
+    margin: 0 0 $textGap/2;
+  }
+
+  @include media('>=md') {
+    max-width: calc(100% - (#{$textGap*2} + 300px));
+  }
+
+  // Styles for when hero is half size
+  .hero--half & {
+    @include text('sonny-gothic', 48, 800, #EFEFEF);
+  }
+}
+
+.marquee__list {
+  display: none;
+
+  @include media('>=md') {
+    display: block;
+    height: 50px;
+    line-height: 1;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: calc(100% - (#{$textGap} + 13px));
+  }
+}
+
+
+
+.marquee__list-item {
+  bottom: 0;
+  margin: auto 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transform: matrix3d(1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 1);
+  transform-origin: 100% 100% 0;
+  visibility: hidden;
+}
+
+.marquee__text {
+  margin: auto 0 0;
+}
+
+.marquee__line {
+  align-self: flex-start;
+  background-color: #FAFAFA;
+  height: 8px;
+  margin: $textGap/4 0 0;
+  width: 100%;
+}
+
+.marquee__box {
+  align-self: flex-end;
+  margin-top: $textGap*0.75;
+  padding-left: calc(13px + #{$textGap/2}); // account for tagline logo
+  position: relative;
+  width: 100%;
+
+  @include media('>=md') {
+    bottom: calc(#{$textGap} + 8px); // include line on bottom;
+    margin-left: $textGap*0.75;
+    padding-bottom: inherit;
+    padding-right: inherit;
+    position: absolute;
+    right: 0;
+    width: auto;
+  }
+}
+
+.marquee__box--in-line {
+  bottom: 0;
+  margin-bottom: -3px; // offset from line
+  position: relative;
+  width: auto;
+
+  @include media('>=md') {
+    padding: 0;
+  }
+}
+
+
+.marquee__tagline {
+  @include text('sonny-gothic', 18, 400, #EFEFEF);
+  display: block;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 300px;
+}
+
+.marquee__tagline--caps {
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.marquee__tagline--featured {
+  color: #41D6C5;
+}
+
+.marquee__tagline--logo {
+  align-items: center;
+  background-color: #36CB9C;
+  border-radius: 50%;
+  display: flex;
+  height: 13px;
+  position: absolute;
+  top: 5px;
+  transform: translateX(-100%) translateX(-$textGap/4);
+  width: 13px;
+
+  .marquee__box--inline & {
+    top: 3px;
+  }
+}

@@ -49,6 +49,13 @@
       box-shadow: inset 0 -340px 0 -100px $white;
     }
   }
+
+  // IMAGE MODIFIERS
+  &.bg-image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 .block-image {
@@ -97,11 +104,11 @@
   }
 
   &.gutter-right-mobile {
-    padding-right: $gridGap*0.75;
+    padding-right: $gridGap/2;
   }
 
   &.gutter-left-mobile {
-    padding-left: $gridGap*0.75;
+    padding-left: $gridGap/2;
   }
 
   &.gutter-top-mobile {
@@ -115,11 +122,11 @@
     }
 
     &.gutter-right-mobile {
-      padding-right: $gridGap*1.5;
+      padding-right: $gridGap;
     }
 
     &.gutter-left-mobile {
-      padding-left: $gridGap*1.5;
+      padding-left: $gridGap;
     }
 
     &.gutter-top-mobile {
@@ -178,6 +185,12 @@
     }
   }
 
+  .case-study.stretch & {
+    @include media('>=md') {
+      max-width: none;
+    }
+  }
+
   // GUTTER MODIFIERS
   @include media('>=md') {
     &.gutter-top {
@@ -200,9 +213,18 @@
 
   // POSITION MODIFIERS
   &.content-centered {
+    text-align: center;
+
     @include media('>=md') {
       max-width: 600px;
-      text-align: center;
+
+      &.narrow {
+        max-width: 400px;
+      }
+
+      &.wide {
+        max-width: 700px;
+      }
     }
   }
 }
@@ -233,6 +255,19 @@
     margin: auto 0;
     position: absolute;
     top: 0;
+
+    .gutter-left-mobile &,
+    .gutter-right-mobile & {
+      width: calc(100% - 2em);
+
+      @include media('>=sm') {
+        width: calc(100% - 4em);
+      }
+
+      @include media('>=md') {
+        width: 100%;
+      }
+    }
   }
 
   &.absolute-bottom {
@@ -251,6 +286,14 @@
 
   &.shadow-dark {
     box-shadow: 0 0 60px 0 rgba($black, 0.4);
+  }
+
+  &.shadow-filter {
+    filter: drop-shadow(0 0 15px rgba($jaguar, 0.2));
+  }
+
+  &.shadow-dark-filter {
+    filter: drop-shadow(0 0 15px rgba($black, 0.4));
   }
 
   // SECTION MODIFIERS

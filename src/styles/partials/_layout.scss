@@ -26,7 +26,7 @@
   margin: 0 $gridGap/2;
   max-width: 100%;
   position: relative;
-  width: 100%;
+  width: auto;
 
   @include media('>=sm') {
     margin: 0 $gridGap;
@@ -37,9 +37,10 @@
     max-width: 1200px;
     width: calc(100% - (#{$gridGap*2} * 2));
   }
-
+  
   @include media('>=xl') {
     margin: 0 $gridGap*4;
+    width: calc(100% - (#{$gridGap*4} * 2));
   }
 }
 
@@ -89,8 +90,7 @@
   }
 
   &.wrap {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
   }
 
   &.between {
@@ -111,6 +111,10 @@
   flex: 1 0 auto;
   flex-direction: column;
   // flex-basis: 100%;
+
+  &.column-block {
+    display: block;
+  }
 
   &.gutter,
   &.gutter-quarter {

@@ -10,6 +10,8 @@ $(document).ready(function() {
   toggleSection('.career');
   sectionJump();
   videoPlay();
+  navCurrent();
+  introAnimate();
   
   // Repo Info
   console.log('Looking for this? https://github.com/BraveUX/braveux');
@@ -52,7 +54,7 @@ function initMobileNav() {
 function initNavHide() {
   let lastScroll = 0;
   const $window = $(window);
-  const menu =  $('.menu');
+  const menu =  $('.menu, .subnav');
 
   $window.on('scroll', function() {
       const scrollTop = $window.scrollTop();
@@ -82,19 +84,73 @@ function homeHeroNav() {
       }
     });
   }
-
-
-  // $window.on('scroll', function() {
-  //   // Only run if on homepage
-  //   if ( window.location.pathname == '/' || window.location.pathname == '/index.html' ) {
-  //     if ( $(document).scrollTop() >= 150) {
-  //       body.removeClass('home-menu');
-  //     } else {
-  //       body.addClass('home-menu');
-  //     }
-  //   }
-  // })
 }
+
+// Subnav indicators
+function subnavIndicators() {
+  const subnav = document.querySelector('.subnav-container');
+  const subnavWidth = subnav.scrollWidth - subnav.clientWidth;
+  const $indicatorLeft = $('.subnav-scroll-indicator--left');
+  const $indicatorRight = $('.subnav-scroll-indicator--right');
+  const $subnavScroll = $('.subnav-container').scrollLeft();
+
+  // Check if scroll bar exists or not
+  if (subnav.scrollWidth == subnav.clientWidth) {
+    $indicatorLeft.addClass('is-hidden');
+    $indicatorRight.addClass('is-hidden');
+    // if can scroll left
+  } else if ($subnavScroll <= 0) {
+    $indicatorLeft.addClass('is-hidden');
+    $indicatorRight.removeClass('is-hidden');
+    // if can not scroll right
+  } else if ($subnavScroll >= subnavWidth) {
+    $indicatorRight.addClass('is-hidden');
+    $indicatorLeft.removeClass('is-hidden');
+    $('.subnav__scroll-indicator').removeClass('scrolled');
+    // if can scroll either left or right
+  } else {
+    $indicatorLeft.removeClass('is-hidden');
+    $indicatorRight.removeClass('is-hidden');
+  }
+}
+
+// Click events for indicators
+$('.subnav-scroll-indicator--left').on('click', function(e) {
+  e.preventDefault();
+  $('.subnav-container').animate({
+    scrollLeft: '-=150px'
+  }, 'normal');
+});
+
+$('.subnav-scroll-indicator--right').on('click', function(e) {
+  e.preventDefault();
+  $('.subnav-container').animate({
+    scrollLeft: '+=150px'
+  }, 'normal');
+});
+
+// Or on horizontal subnav scroll
+$('.subnav-container').scroll(function() {
+  // Check for subnav on page
+  if ( $('body').find('.subnav').length ) {
+    subnavIndicators();
+  }
+})
+
+// Or on Resize
+$(window).on('resize',function() {
+  if ( $('body').find('.subnav').length ) {
+    subnavIndicators();
+  }
+}); 
+
+// Run nav once ready
+$(document).ready(function() {  
+  // Check for subnav on page
+  if ( $('body').find('.subnav').length ) {
+    subnavIndicators();
+  }
+});
 
 function initEgg() {
   const toggleEgg = $('.footer-stars');
@@ -226,6 +282,15 @@ function scrollReveal() {
     viewFactor : 0.6,
   }
 
+  const tall = {
+    duration   : 1000,
+    distance   : '30%',
+    easing     : 'ease-in-out',
+    origin     : 'bottom',
+    scale      : 1,
+    viewFactor : 0.1,
+  }
+
   sr.reveal('.case-referral-quote-icon', {
     duration   : 1000,
     distance   : '40px',
@@ -298,6 +363,7 @@ function scrollReveal() {
   sr.reveal('.sr-right', revealRight);
   sr.reveal('.sr-bottom', revealBottom);
   sr.reveal('.sr-left', revealLeft);
+  sr.reveal('.sr-tall', tall);
 
   // Stagger Specific Reveals (only works once per page per class)
   sr.reveal('.case-breakdown-box', revealContent, 200);
@@ -330,19 +396,21 @@ function scrollReveal() {
   });
 }
 
+// Video play/pause toggle based on whether in view or not
 function videoPlay() {
   const video = $('video');
-  
   video.each(function(index, vid) {
-    new Waypoint.Inview({
-      element: $(this),
-      enter: function() {
-        vid.play();
-      },
-      exited: function() {
-        vid.pause();
-      } 
-    });
+    if ( !$(this).hasClass('marquee__video') ) {
+      new Waypoint.Inview({
+        element: $(this),
+        enter: function() {
+          vid.play();
+        },
+        exited: function() {
+          vid.pause();
+        } 
+      });
+    }
   });
 }
 
@@ -408,4 +476,27 @@ function imageRatio() {
         console.log(`ratio = ${getRatio}%`);
     }
   })
+}
+
+// Shows current state for nav items based on URL 
+function navCurrent() {
+  const current_location = window.location.href.split('/');
+  const page = current_location[current_location.length - 1];
+
+  // Find a link in the nav that corresponds to current page URL for menu link
+  const navLink = $('.subnav-item[href*="' + page + '"]');
+
+  // Check if submenu link or not
+  if ( $('body').find('.subnav').length ) {
+    navLink.addClass('is-active'); 
+  }
+}
+
+function introAnimate() {
+  const content = $('.case-header-client-name, .case-header-tagline, .case-header-type');
+  const tl = new TimelineMax({delay: 0.5});
+
+  tl
+    .staggerFromTo(content, 2, {autoAlpha: 0}, {autoAlpha: 1}, 0.25, 0)
+    .staggerFrom(content, 0.8, {y: '100px', ease: Power1.easeOut}, 0.15, 0);
 }

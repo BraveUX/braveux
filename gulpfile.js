@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const imageminJpegRecompress = require('imagemin-jpeg-recompress');
+const imageminPngquant = require('imagemin-pngquant');
 const browserSync = require('browser-sync');
 const plugins = require('gulp-load-plugins');
 const $ = plugins();
@@ -8,10 +9,10 @@ const $ = plugins();
 gulp.task('images', () => {
   return gulp.src('src/images/**/*')
     .pipe($.changed('./dist/images'))
-    .pipe($.imagemin([imageminJpegRecompress({
-      min: 50,
-      quality: 'high' 
-    })]))
+    .pipe($.imagemin([
+      imageminJpegRecompress(), 
+      imageminPngquant()
+    ]))
     .pipe(gulp.dest('./dist/images'));
 });
 
@@ -30,7 +31,7 @@ gulp.task('fonts', () => {
 
 // HTML
 gulp.task('ejs', () => {
-  return gulp.src(['src/views/*.ejs', 'src/views/!(partials)**/*.ejs'])
+  return gulp.src(['src/views/**/!(_)*.ejs'])
     .pipe($.changed('./dist'))
     .pipe($.ejs())
     .on('error', $.notify.onError('Error: <%= error.message %>'))
@@ -41,7 +42,7 @@ gulp.task('ejs', () => {
 
 // CSS
 gulp.task('sass', () => {
-  return gulp.src('src/styles/style.scss')
+  return gulp.src(['src/styles/style.scss', 'src/styles/stretch.scss'])
     .pipe($.changed('./dist/styles'))
     .pipe($.sass({
         outputStyle: 'compressed',
@@ -111,6 +112,18 @@ gulp.task('scripts-animations', () => {
     .pipe(gulp.dest('./dist/scripts'));
 });
 
+// JS Stretch
+gulp.task('scripts-stretch', () => {
+  return gulp.src([
+      'src/scripts/stretch.js'
+    ])
+    .pipe($.changed('./dist/scripts'))
+    .pipe($.babel())
+    .on('error', $.notify.onError('Error: <%= error.message %>'))
+    .pipe($.uglify())
+    .pipe(gulp.dest('./dist/scripts'));
+});
+
 // Favicons
 gulp.task('favicons', () => {
   return gulp.src('src/favicons/*')
@@ -138,6 +151,7 @@ gulp.task('build', gulp.series(
   'scripts-animations', 
   'scripts-sr', 
   'scripts-vivus', 
+  'scripts-stretch',
   'favicons', 
   'server'
 ));
@@ -169,7 +183,7 @@ gulp.task('watch', done => {
     gulp.watch('src/documents/**/*', gulp.series('documents', reload));
     gulp.watch('src/views/**/*.ejs', gulp.series('ejs', reload));
     gulp.watch('src/styles/**/*.scss', gulp.series('sass', reload));
-    gulp.watch('src/scripts/*.js', gulp.series(['scripts', 'scripts-vivus', 'scripts-sr'], reload));
+    gulp.watch('src/scripts/*.js', gulp.series(['scripts', 'scripts-vivus', 'scripts-sr', 'scripts-stretch'], reload));
     gulp.watch('src/scripts/animations/*.js', gulp.series('scripts-animations', reload));
     gulp.watch('src/favicons/**/*', gulp.series('favicons', reload));
     gulp.watch(['src/server/*', 'src/server/.htaccess'], gulp.series('server', reload));
