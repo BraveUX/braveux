@@ -199,6 +199,10 @@
     border-radius: 10px 0 0;
     right: -1px;
 
+    @include media('>=xl') {
+      right: -2px;
+    }
+
     &.shadow {
       border-right: none;
     }
@@ -211,6 +215,10 @@
   &.edge-left {
     border-radius: 0 10px 0 0;
     left: -1px;
+
+    @include media('>=xl') {
+      left: -2px;
+    }
 
     &.shadow {
       border-left: none;
