@@ -425,10 +425,10 @@ const instance = Layzr({
 instance
   .on('src:after', element => {
     // Uncomment the following if you want to lazy-load a background-image
-    if ( element.classList.contains('inner-block-background-image') ) {
-      element.style.backgroundImage = `url("${ element.getAttribute('src') }")`;
-      element.removeAttribute('src');
-    }
+    // if ( element.classList.contains('element-class-here') ) {
+    //   element.style.backgroundImage = `url("${ element.getAttribute('src') }")`;
+    //   element.removeAttribute('src');
+    // }
     
     // TODO: REMOVE
     console.log('lazy');
@@ -442,7 +442,7 @@ instance
     .update()           // track initial elements
     .check()            // check initial elements
     .handlers(true)     // bind scroll and resize handlers
-    scrollReveal();
+    scrollReveal();     // run scrollReveal after element loads
 })
 /* eslint-enable */
 
@@ -456,15 +456,18 @@ instance
   scrolls better as content sizing is all accounted for before lazy-loading images.
 */
 function imageRatio() {
-  const $image = $('.lazy-ratio, .lazy-test');
+  const $image = $('.lazy-ratio');
 
   // Get each desktop frame
   $image.each(function() {
     const $this = $(this);
     // Find the % width of $this (subtract parent padding left/right if it has it)
     const getEleWidth = 100 * parseFloat($this.css('width')) / (parseFloat($this.parent().css('width')) - (parseFloat($this.parent().css('padding-left')) + parseFloat($this.parent().css('padding-right'))) );
+    
     // Calculate ratio based on data image size and element width -- (2 decimal places)
     const getRatio = ((this.dataset.height / this.dataset.width) * getEleWidth).toFixed(2);
+    // TODO: REMOVE
+    console.log(`${this.dataset.height} / ${this.dataset.width} * ${getEleWidth} = ${getRatio}%` )
     
     // Make sure that the image has a ratio
     if (getRatio >= 0) {
@@ -472,9 +475,6 @@ function imageRatio() {
       $this
         .css('padding-bottom', `${getRatio}%`) // give padding-bottom based on image ratio
         .removeAttr('data-height data-width'); // remove data from HTML
-
-        // TODO: REMOVE
-        console.log(`ratio = ${getRatio}%`);
     }
   })
 }

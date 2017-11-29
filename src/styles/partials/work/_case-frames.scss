@@ -237,6 +237,10 @@
     bottom: -1px; // Slight offset for when aligned to bottom of block
     margin-top: auto;
 
+    @include media('>=xl') {
+      bottom: -2px;
+    }
+
     &.shadow {
       border-bottom: none;
     }

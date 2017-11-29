@@ -37,7 +37,7 @@
     max-width: 1200px;
     width: calc(100% - (#{$gridGap*2} * 2));
   }
-  
+
   @include media('>=xl') {
     margin: 0 $gridGap*4;
     width: calc(100% - (#{$gridGap*4} * 2));
