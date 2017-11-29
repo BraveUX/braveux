@@ -226,6 +226,7 @@
   }
 
   &.edge-bottom {
+    bottom: -1px; // Slight offset for when aligned to bottom of block
     margin-top: auto;
 
     &.shadow {

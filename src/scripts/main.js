@@ -220,16 +220,6 @@ function caseTeaseNext() {
 function scrollReveal() {
   window.sr = ScrollReveal();
 
-  function heightCheck() {
-    const $this = $(this);
-
-    if ($this.height == 0) {
-    }
-    
-    console.log('no height!');
-    return "100px";
-  }
-
   const revealTop = {
     duration   : 700,
     distance   : '30%',
@@ -260,15 +250,11 @@ function scrollReveal() {
   // TODO: Try and calculate the height even when it has height - 0 for absolute el
   const revealLeft = {
     duration     : 700,
-    distance     : test(),
+    distance     : '30%',
     easing       : 'ease-in-out',
     origin       : 'left',
     scale        : 1,
-    viewFactor   : 0.5,
-    beforeReveal : function test(el) {
-      console.log(`${el} test`);
-      return '300px';
-    }
+    viewFactor   : 0.5
   };
 
   const revealContent = {
@@ -439,12 +425,10 @@ const instance = Layzr({
 instance
   .on('src:after', element => {
     // Uncomment the following if you want to lazy-load a background-image
-    /*
-    if ( element.classList.contains('inner-block-image') ) {
+    if ( element.classList.contains('inner-block-background-image') ) {
       element.style.backgroundImage = `url("${ element.getAttribute('src') }")`;
       element.removeAttribute('src');
     }
-    */
     
     // TODO: REMOVE
     console.log('lazy');
