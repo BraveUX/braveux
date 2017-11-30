@@ -89,6 +89,11 @@
     @include position(absolute, 0, 0, 0, 0);
     margin: auto;
   }
+
+  // SECTION MODIFIERS
+  .lazy-ratio & {
+    height: 100%;
+  }
 }
 
 .inner-block {
@@ -229,8 +234,11 @@
   }
 }
 
-.inner-block-image,
-.inner-block-background-image {
+.inner-block-image {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+
   // IMAGE MODIFIERS
   &.contain {
     // height: initial;
@@ -244,13 +252,6 @@
   &.full-height {
     flex: 1;
     height: 100%;
-  }
-
-  &[class *= 'absolute'] {
-    .lazy-ratio & {
-      height: 100%;
-      width: 100%;
-    }
   }
 
   &.absolute {
@@ -300,43 +301,19 @@
   }
 
   // SECTION MODIFIERS
-  .work-card-image & {
-    margin: 0;
-  }
-}
-
-.inner-block-image {
-  display: block;
-  // height: 100%;
-  object-fit: cover;
-  width: 100%;
-}
-
-.inner-block-background-image {
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 100%;
-  width: 100%;
-}
-
-.inner-block-thumbnail {
-  margin: 0 auto;
-  width: 100%;
-
-  .inner-block-image {
+  .inner-block-thumbnail & {
     margin: 0 auto;
     max-width: 200px;
   }
 
-  &::after {
-    background: rgba($jaguar, 0.1);
-    border-radius: 40%;
-    box-shadow: 0 0 5px rgba($jaguar, 0.08), 0 0 10px rgba($jaguar, 0.08);
-    content: ' ';
-    display: block;
-    height: 4px;
-    margin: 4em auto 0;
-    max-width: 125px;
-    width: 60%;
+  .work-card-image & {
+    margin: 0;
+  }
+
+  .lazy-ratio:not(.frame) & {
+    bottom: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
   }
 }
