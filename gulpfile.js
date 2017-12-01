@@ -36,6 +36,7 @@ gulp.task('ejs', () => {
     .pipe($.ejs())
     .on('error', $.notify.onError('Error: <%= error.message %>'))
     .pipe($.htmlmin({collapseWhitespace: true, removeComments: true}))
+    .on('error', $.notify.onError('Error: <%= error.message %>'))
     .pipe($.ejs({}, {ext:'.html'}))
     .pipe(gulp.dest('./dist'));
 });
