@@ -418,17 +418,17 @@ function videoPlay() {
 /* eslint-disable */
 // LAZYR (lazy load images)
 const instance = Layzr({
-  threshold: 50 // Load within 50% of viewport
+  threshold: 75 // Load within 50% of viewport
 })
 
 // add callbacks
 instance
   .on('src:after', element => {
-    // Uncomment the following if you want to lazy-load a background-image
-    // if ( element.classList.contains('element-class-here') ) {
-    //   element.style.backgroundImage = `url("${ element.getAttribute('src') }")`;
-    //   element.removeAttribute('src');
-    // }
+    if ( element.classList.contains('bg-image') ) {
+      element.style.backgroundImage = `url("${ element.getAttribute('src') }")`;
+      element.removeAttribute('src');
+      console.log('bg-image');
+    }
     
     // TODO: REMOVE
     console.log('lazy');
@@ -442,7 +442,7 @@ instance
     .update()           // track initial elements
     .check()            // check initial elements
     .handlers(true)     // bind scroll and resize handlers
-    scrollReveal();     // run scrollReveal after element loads
+    scrollReveal()     // run scrollReveal after element loads
 })
 /* eslint-enable */
 

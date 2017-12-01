@@ -129,18 +129,23 @@ Styles Unique to the Stretch Case Study
 }
 
 .stretch-portal-community {
-  .inner-block-image {
+  .lazy-ratio .inner-block-image {
     &:nth-of-type(2),
     &:nth-of-type(3) {
+      height: auto;
       width: 85%;
     }
 
     &:nth-of-type(2) {
+      bottom: unset;
       left: 0;
+      top: 0;
     }
 
     &:nth-of-type(3) {
+      bottom: 0;
       right: 0;
+      top: unset;
     }
   }
 }
@@ -157,7 +162,6 @@ Styles Unique to the Stretch Case Study
     width: 55%;
 
     @include media('>=md') {
-      margin: 0 auto -25% 0;
       width: 70%;
     }
   }

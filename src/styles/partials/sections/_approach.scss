@@ -15,7 +15,7 @@
   }
 }
 
-.approach-hero-image {
+.approach-hero-image.lazy-ratio {
   @include position(absolute, null, null, 0);
   object-fit: cover;
   padding-top: 100px;

@@ -315,5 +315,11 @@
     height: 100%;
     position: absolute;
     top: 0;
+
+    &.lazy-unset {
+      bottom: unset;
+      height: auto;
+      top: unset;
+    }
   }
 }
