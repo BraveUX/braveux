@@ -435,7 +435,6 @@ instance
   })
 
   
-  
   // start it up, when the DOM is ready
   document.addEventListener('DOMContentLoaded', event => {
     instance
