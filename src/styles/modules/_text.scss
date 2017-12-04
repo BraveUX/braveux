@@ -53,7 +53,10 @@
 @mixin text($family, $size, $weight: null, $color: null) {
   @include font-family($family);
   color: $color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-weight: $weight;
+  text-rendering: optimizeLegibility;
 
   @if ($size != null) {
     @include sizer($size);

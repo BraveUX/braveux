@@ -179,7 +179,7 @@ $stretch-teal: #00BDC1;
   flex: 0 0 auto;
   height: 100%;
   letter-spacing: 2px;
-  padding: $textGap/2 $textGap;
+  padding: $textGap*0.75 $textGap $textGap/2;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -206,7 +206,9 @@ $stretch-teal: #00BDC1;
   }
 
   &.featured {
-    @include text('source-sans-pro', 18, 200, $white);
+    @include text('source-sans-pro', 18, 400, $white);
+    padding: $textGap/2 $textGap;
+    text-transform: none;
   }
 
   // // padding on first/last item so fade doesn't overlap it

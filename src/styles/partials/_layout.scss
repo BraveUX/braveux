@@ -80,6 +80,13 @@
   }
 }
 
+.block-centered {
+  @include media('>=md') {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
 // FLEX LAYOUT
 .row {
   display: flex;
@@ -103,6 +110,10 @@
 
   &.center {
     justify-content: center;
+  }
+
+  &.stretch {
+    align-items: stretch;
   }
 }
 
@@ -175,12 +186,28 @@
     justify-content: flex-end;
   }
 
+  &.align-self-bottom {
+    align-self: flex-end;
+  }
+
   &.align-left {
     align-items: flex-start;
   }
 
   &.align-right {
     align-items: flex-end;
+  }
+
+  &.align-center {
+    align-items: center;
+  }
+
+  &.align-self-center {
+    align-self: center;
+  }
+
+  &.align-self-stretch {
+    align-self: stretch;
   }
 
   // XS Position Modifiers (Mobile)

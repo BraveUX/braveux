@@ -152,10 +152,11 @@
 // ID Auto
 .gray-langur-adventure {
   .frame-desktop.absolute {
-    bottom: 0;
+    // bottom: 0;
     height: 75%;
     margin: auto;
-    top: 0;
+    top: 50%;
+    transform: translateY(-38%);
     width: 75%;
     z-index: 0;
 
