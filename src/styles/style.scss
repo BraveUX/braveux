@@ -88,6 +88,9 @@ a {
   background-color: transparent;
   flex: 1; // ensures that it always fills box when 50/50
   height: 0;
-  min-height: 100%; // TODO: Test this
   position: relative;
+
+  &.full-height {
+    min-height: 100%; // TODO: Apply this where necessary  (ID Auto and UP)
+  }
 }

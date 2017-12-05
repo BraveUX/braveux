@@ -152,11 +152,10 @@
 // ID Auto
 .gray-langur-adventure {
   .frame-desktop.absolute {
-    // bottom: 0;
+    bottom: 0;
     height: 75%;
     margin: auto;
-    top: 50%;
-    transform: translateY(-38%);
+    top: 0;
     width: 75%;
     z-index: 0;
 
@@ -176,7 +175,6 @@
     bottom: 0;
     height: 75%;
     margin: auto;
-    // opacity: 0.8;
     top: 0;
     width: 75%;
     z-index: 0;
@@ -210,21 +208,21 @@
 // IJR
 .ijr-display {
   .frame-desktop {
-    &:nth-of-type(1) {
+    &:nth-of-type(2) {
       bottom: initial;
       left: 0;
       top: 0;
       width: 80%;
     }
 
-    &:nth-of-type(2) {
+    &:nth-of-type(3) {
       right: 7.5%;
       top: initial;
       width: 80%;
     }
 
     @include media('>=md') {
-      &:nth-of-type(2) {
+      &:nth-of-type(3) {
         right: 0;
       }
     }
@@ -233,7 +231,7 @@
 
 .ijr-article {
   .frame-desktop {
-    align-self: flex-end;
+    margin-left: auto;
     width: 97.5%;
 
     @include media('>=sm') {
@@ -302,14 +300,13 @@
 
 .livesafe-security {
   .frame-mobile {
-    &:nth-of-type(1) {
-      // margin: auto;
+    &:nth-of-type(2) {
       left: 15%;
       top: 10%;
       z-index: 10;
     }
 
-    &:nth-of-type(2) {
+    &:nth-of-type(3) {
       bottom: 10%;
       opacity: 0.6;
       right: 15%;
@@ -351,7 +348,7 @@
 
 .livesafe-resources {
   .frame-mobile {
-    &:nth-of-type(1) {
+    &:nth-of-type(2) {
       bottom: 0;
       height: 100%;
       margin: auto 0;
@@ -360,7 +357,7 @@
       z-index: 10;
     }
 
-    &:nth-of-type(2) {
+    &:nth-of-type(3) {
       bottom: 0;
       height: 79.5%;
       left: 13%;
@@ -371,7 +368,7 @@
       z-index: 9;
     }
 
-    &:nth-of-type(3) {
+    &:nth-of-type(4) {
       bottom: 0;
       height: 66%;
       margin: auto 0;
@@ -396,7 +393,7 @@
   }
 
   .frame-desktop {
-    align-self: flex-end;
+    margin-left: auto;
     width: 87.5%;
   }
 }
@@ -490,7 +487,7 @@
 
 .smp-nav {
   .frame-desktop {
-    align-self: flex-end;
+    margin-left: auto;
     width: 90%;
   }
 
@@ -619,7 +616,7 @@
     }
 
     &:nth-of-type(4) {
-      align-self: flex-end;
+      margin-left: auto;
     }
   }
 }
@@ -656,11 +653,11 @@
     top: 0;
     width: 30%;
 
-    &:nth-of-type(1) {
+    &:nth-of-type(2) {
       left: 0;
     }
 
-    &:nth-of-type(2) {
+    &:nth-of-type(3) {
       height: 95.5%;
       left: 0;
       margin: auto;
@@ -668,7 +665,7 @@
       width: 35%;
     }
 
-    &:nth-of-type(3) {
+    &:nth-of-type(4) {
       right: 0;
     }
   }
@@ -713,7 +710,7 @@
 // Upturn
 .upturn-content {
   .frame-desktop {
-    align-self: flex-end;
+    margin-left: auto;
     width: 90%;
   }
 
