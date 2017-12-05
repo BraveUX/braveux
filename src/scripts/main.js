@@ -352,7 +352,7 @@ function scrollReveal() {
 
 
   // General Reveals (works multiple times per page)
-  sr.reveal('.approach .inner-block-content, .case-study .inner-block-content', revealContent);
+  sr.reveal('.inner-block-content', revealContent);
   sr.reveal('.case-exec-summary-text', reveal);
   sr.reveal('.sr-delay', { delay : 300 });
   sr.reveal('.sr-delay-double', { delay : 600 });
