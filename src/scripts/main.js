@@ -9,6 +9,7 @@ $(document).ready(function() {
   imageRatio();
   toggleSection('.career');
   sectionJump();
+  contactCardFlip();
   videoPlay();
   navCurrent();
   introAnimate();
@@ -395,6 +396,23 @@ function scrollReveal() {
     origin     : 'top',
     delay      : '1500',
   });
+}
+
+function contactCardFlip() {
+  if ( $('body').find('.contact-letter').length ) {
+    const card = $('.contact-letter');
+    new Waypoint({
+      element: card,
+      handler: function(direction) {
+        if ( direction == 'down' ) {
+          card.addClass('is-flipped');
+        } else {
+          card.removeClass('is-flipped');
+        }
+      },
+      offset: '25%'
+    });
+  }
 }
 
 // Video play/pause toggle based on whether in view or not
