@@ -401,6 +401,11 @@ function scrollReveal() {
 function contactCardFlip() {
   if ( $('body').find('.contact-letter').length ) {
     const card = $('.contact-letter');
+
+    card.on('click', function() {
+      card.toggleClass('is-flipped');
+    })
+
     new Waypoint({
       element: card,
       handler: function(direction) {

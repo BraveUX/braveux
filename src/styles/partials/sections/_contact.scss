@@ -109,7 +109,8 @@
   transition: 600ms;
   width: 100%;
 
-  .is-flipped & {
+  .is-flipped &,
+  .contact-letter:hover & {
     transform: rotateX(180deg);
   }
 }
