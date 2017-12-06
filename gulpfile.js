@@ -11,7 +11,8 @@ gulp.task('images', () => {
     .pipe($.changed('./dist/images'))
     .pipe($.imagemin([
       imageminJpegRecompress({
-        progressive: true
+        progressive: true,
+        quality: 'high'
       }), 
       imageminPngquant()
     ]))
