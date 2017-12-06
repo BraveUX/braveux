@@ -250,6 +250,10 @@
     .inner-block-image {
       width: calc(100% - 1px);
     }
+
+    &.edge-left .inner-block-image {
+      width: 100%;
+    }
   }
 }
 
