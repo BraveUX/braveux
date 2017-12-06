@@ -93,13 +93,13 @@ function initAnimation(id) {
 
 // pause animations
 function pauseAnimation(index){
-  var stage = stages[index];
+  const stage = stages[index];
   createjs.Ticker.removeEventListener('tick', stage);
 }
 
 // resume animation
 function resumeAnimation(index){
-   var stage = stages[index];
+  const stage = stages[index];
   createjs.Ticker.addEventListener('tick', stage);
 }
 
@@ -110,21 +110,21 @@ var stages = [];
 // lib = libOne,libTwo, etc
 // scene = scene1animationv2, etc
 function sectionAnimation(index,libName,scene){
-  var lib = window[libName];
-  var canvas = document.getElementById('canvas-'+index);
-  var anim_container = document.getElementById('animation-container-'+index);
-  dom_overlay_container = document.getElementById('dom-overlay-container-'+index);
+  const lib = window[libName];
+  const canvas = document.getElementById('canvas-'+index);
+  const anim_container = document.getElementById('animation-container-'+index);
+  const dom_overlay_container = document.getElementById('dom-overlay-container-'+index);
   handleComplete();
 
   function handleComplete() {
     //This function is always called, irrespective of the content. You can use the variable 'stage' after it is created in token create_stage.
-    exportRoot = new window[libName][scene];
-    stage = new createjs.Stage(canvas);
+    const exportRoot = new window[libName][scene];
+    const stage = new createjs.Stage(canvas);
     stages.push(stage);
     stage.addChild(exportRoot);
 
     // 'tick' event listener handled by initAnimation()
-    fnStartAnimation = function() {
+    const fnStartAnimation = function() {
       createjs.Ticker.setFPS(lib.properties.fps);
     }
 
@@ -133,19 +133,19 @@ function sectionAnimation(index,libName,scene){
 
     //Code to support hidpi screens and responsive scaling.
     function makeResponsive(isResp, respDim, isScale, scaleType) {
-      var lastW, lastH, lastS = 1;
+      let lastW, lastH, lastS = 1;
       window.addEventListener('resize', resizeCanvas);
       resizeCanvas();
 
       function resizeCanvas() {
-        var w = libOne.properties.width,
-          h = libOne.properties.height;
-        var iw = window.innerWidth,
-          ih = window.innerHeight;
-        var pRatio = window.devicePixelRatio || 1,
-          xRatio = iw / w,
-          yRatio = ih / h,
-          sRatio = 1;
+        const w = libOne.properties.width;
+        const h = libOne.properties.height;
+        const iw = window.innerWidth;
+        const ih = window.innerHeight;
+        const pRatio = window.devicePixelRatio || 1;
+        const xRatio = iw / w;
+        const yRatio = ih / h;
+        let sRatio = 1;
         if (isResp) {
           if ((respDim == 'width' && lastW == iw) || (respDim == 'height' && lastH == ih)) {
             sRatio = lastS;

@@ -81,8 +81,7 @@ gulp.task('scripts', () => {
 gulp.task('scripts-sr', () => {
   return gulp.src('src/scripts/scrollreveal*.js')
     .pipe($.changed('./dist/scripts'))
-    .pipe($.babel())
-    .on('error', $.notify.onError('Error: <%= error.message %>'))
+    .pipe($.babel()).on('error', $.notify.onError('Error: <%= error.message %>'))
     .pipe($.concat('scrollreveal.min.js'))
   .pipe($.uglify())
     .pipe(gulp.dest('./dist/scripts'));
@@ -92,8 +91,10 @@ gulp.task('scripts-sr', () => {
 gulp.task('scripts-vivus', () => {
   return gulp.src('src/scripts/vivus*.js')
     .pipe($.changed('./dist/scripts'))
-    .pipe($.babel())
-    .on('error', $.notify.onError('Error: <%= error.message %>'))
+    .pipe($.babel({
+      presets: ['env'],
+      ignore: ['./node_modules/']
+    })).on('error', $.notify.onError('Error: <%= error.message %>'))
     .pipe($.concat('vivus.min.js'))
     .pipe($.uglify())
     .pipe(gulp.dest('./dist/scripts'));
@@ -106,8 +107,10 @@ gulp.task('scripts-animations', () => {
       'src/scripts/animations/*.js'
     ])
     .pipe($.changed('./dist/scripts'))
-    .pipe($.babel())
-    .on('error', $.notify.onError('Error: <%= error.message %>'))
+    .pipe($.babel({
+      presets: ['env'],
+      ignore: ['./node_modules/']
+    })).on('error', $.notify.onError('Error: <%= error.message %>'))
     .pipe($.concat('animations.js'))
     .pipe($.uglify())
     .pipe(gulp.dest('./dist/scripts'));
@@ -119,8 +122,10 @@ gulp.task('scripts-stretch', () => {
       'src/scripts/stretch.js'
     ])
     .pipe($.changed('./dist/scripts'))
-    .pipe($.babel())
-    .on('error', $.notify.onError('Error: <%= error.message %>'))
+    .pipe($.babel({
+      presets: ['env'],
+      ignore: ['./node_modules/']
+    })).on('error', $.notify.onError('Error: <%= error.message %>'))
     .pipe($.uglify())
     .pipe(gulp.dest('./dist/scripts'));
 });
