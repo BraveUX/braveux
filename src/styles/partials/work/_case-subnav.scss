@@ -207,6 +207,7 @@ $stretch-teal: #00BDC1;
 
   &.featured {
     @include text('source-sans-pro', 18, 400, $white);
+    letter-spacing: normal;
     padding: $textGap/2 $textGap;
     text-transform: none;
   }
