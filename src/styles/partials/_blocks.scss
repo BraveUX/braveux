@@ -56,7 +56,15 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  // SECTION MODIFIERS
+  &.block-link {
+    color: $white;
+    display: block;
+    text-decoration: none;
+  }
 }
+
 
 .block-image {
   display: block;
