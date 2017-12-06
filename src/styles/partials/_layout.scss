@@ -146,7 +146,7 @@
   }
 
   @include media('>=md') {
-    flex: 1;
+    flex: 0 1 auto;
 
     &.gutter,
     &.gutter-quarter {
@@ -260,7 +260,7 @@
   &.full-sm, &.half-sm, &.one-third-sm, &.two-third-sm, &.one-quarter-sm, &.three-quarter-sm,
   &.full-lg, &.half-lg, &.one-third-lg, &.two-third-lg, &.one-quarter-lg, &.three-quarter-lg,
   &.full-xl, &.half-xl, &.one-third-xl, &.two-third-xl, &.one-quarter-xl, &.three-quarter-xl {
-    flex: 1;
+    flex: 0 1 auto;
     width: 100%;
   }
 
@@ -271,22 +271,22 @@
   }
 
   &.full-xs {
-    flex: 1;
+    flex: 0 0 100%;
     max-width: 100%;
   }
 
   &.half-xs {
-    flex: 5;
+    flex: 0 0 50%;
     max-width: 50%;
   }
 
   &.one-third-xs {
-    flex: 3.33;
+    flex: 0 0 33.3333334%;
     max-width: 33.3333334%;
   }
 
   &.two-third-xs {
-    flex: 6.66;
+    flex: 0 0 66.6666667%;
     max-width: 66.6666667%;
   }
 

@@ -86,7 +86,7 @@ a {
 // Class applied for ratio-based image scaling
 .lazy-ratio {
   background-color: transparent;
-  flex: 1; // ensures that it always fills box when 50/50
+  flex: 0 0 100%; // ensures that it always fills box when 50/50
   height: 0;
   position: relative;
 

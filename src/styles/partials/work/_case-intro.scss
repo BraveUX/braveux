@@ -9,6 +9,7 @@
 .case-header {
   align-items: center;
   display: flex;
+  height: 100vh;
   min-height: 100vh;
   overflow: hidden;
   padding: $gridGap*2 0;

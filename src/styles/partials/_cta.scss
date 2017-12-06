@@ -62,7 +62,7 @@
 .cta-button-left {
   @include media('>=md') {
     left: 0;
-    transform: translateX(calc(-100% + (40px + 8px))); // -100% + (icon margin + icon size)
+    transform: translateX(-100%) translateX(40px + 8px); // -100% + (icon margin + icon size)
 
     // Icon
     &::before {
@@ -80,7 +80,7 @@
 .cta-button-right {
   @include media('>=md') {
     right: 0;
-    transform: translateX(calc(100% - (40px + 8px))); // 100% - (icon margin + icon size)
+    transform: translateX(100%) translateX(40px + 8px); // 100% - (icon margin + icon size)
 
     // Text
     &::after {

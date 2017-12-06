@@ -244,10 +244,6 @@
     &.shadow {
       border-bottom: none;
     }
-
-    .overflow & {
-      bottom: 0;
-    }
   }
 
   @include media('>=xl') {
