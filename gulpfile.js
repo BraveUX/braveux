@@ -10,7 +10,9 @@ gulp.task('images', () => {
   return gulp.src('src/images/**/*')
     .pipe($.changed('./dist/images'))
     .pipe($.imagemin([
-      imageminJpegRecompress(), 
+      imageminJpegRecompress({
+        progressive: true
+      }), 
       imageminPngquant()
     ]))
     .pipe(gulp.dest('./dist/images'));
