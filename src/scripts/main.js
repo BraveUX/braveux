@@ -248,7 +248,6 @@ function scrollReveal() {
     viewFactor : 0.5,
   };
 
-  // TODO: Try and calculate the height even when it has height - 0 for absolute el
   const revealLeft = {
     duration     : 700,
     distance     : '30%',
@@ -441,7 +440,7 @@ function videoPlay() {
 /* eslint-disable */
 // LAZYR (lazy load images)
 const instance = Layzr({
-  threshold: 75 // Load within 75% of viewport
+  threshold: 100 // Load within 100% of viewport
 })
 
 // add callbacks
@@ -450,11 +449,7 @@ instance
     if ( element.classList.contains('bg-image') ) {
       element.style.backgroundImage = `url("${ element.getAttribute('src') }")`;
       element.removeAttribute('src');
-      console.log('bg-image');
     }
-    
-    // TODO: REMOVE
-    console.log('lazy');
   })
 
   
