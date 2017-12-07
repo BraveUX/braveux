@@ -483,8 +483,6 @@ function imageRatio() {
     
     // Calculate ratio based on data image size and element width -- (2 decimal places)
     const getRatio = ((this.dataset.height / this.dataset.width) * getEleWidth).toFixed(2);
-    // TODO: REMOVE
-    console.log(`${this.dataset.height} / ${this.dataset.width} * ${getEleWidth} = ${getRatio}%` )
     
     // Make sure that the image has a ratio
     if (getRatio >= 0) {
