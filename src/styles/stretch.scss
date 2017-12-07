@@ -67,6 +67,7 @@ Styles Unique to the Stretch Case Study
     @include position(absolute, 0, 0, 0, 0);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1473.07 768' preserveAspectRatio='none'%3E%3Ctitle%3Ehero-wave%3C/title%3E%3Cpath d='M1250,0C1113.2,259,812.1,18.6,622.9,500.1,586,594.2,450.6,725.3,359,768H0V0Z' style='fill:#{rgba((#211F1C),0.3)}'/%3E%3Cpath d='M0,0H1473.07V768H0Z' style='fill:none'/%3E%3Cpath d='M223.07,768c136.8-259,437.9-18.6,627.1-500.1,36.9-94.1,172.3-225.2,263.9-267.9h359V768Z' style='fill:#{rgba((#211F1C),0.3)}'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
+    background-size: cover;
     content: '';
     height: calc(100% + 1px);
     pointer-events: none;
@@ -334,11 +335,11 @@ Marquee Video
 
 
 .marquee__tagline {
-  @include text('sonny-gothic', 18, 400, #EFEFEF);
-  display: block;
+  font-size: 14px;
   line-height: 1.4;
   margin: 0;
-  max-width: 300px;
+  max-width: 125px;
+  width: auto;
 }
 
 .marquee__tagline--caps {
@@ -357,7 +358,7 @@ Marquee Video
   display: flex;
   height: 13px;
   position: absolute;
-  top: 5px;
+  top: 0;
   transform: translateX(-100%) translateX(-$textGap/4);
   width: 13px;
 
