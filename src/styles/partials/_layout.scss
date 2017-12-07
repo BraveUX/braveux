@@ -146,7 +146,7 @@
   }
 
   @include media('>=md') {
-    flex: 0 1 auto;
+    flex: 1 1 auto;
 
     &.gutter,
     &.gutter-quarter {
@@ -252,7 +252,7 @@
 
   // FLEX SIZE MODIFIERS
   &.auto-xs, &.auto-md, &.auto-sm, &.auto-lg, &.auto-xl {
-    flex: 0 1 auto;
+    flex: 1 1 auto;
   }
 
   &.full-xs, &.half-xs, &.one-third-xs, &.two-third-xs, &.one-quarter-xs, &.three-quarter-xs,
@@ -260,13 +260,13 @@
   &.full-sm, &.half-sm, &.one-third-sm, &.two-third-sm, &.one-quarter-sm, &.three-quarter-sm,
   &.full-lg, &.half-lg, &.one-third-lg, &.two-third-lg, &.one-quarter-lg, &.three-quarter-lg,
   &.full-xl, &.half-xl, &.one-third-xl, &.two-third-xl, &.one-quarter-xl, &.three-quarter-xl {
-    flex: 0 1 auto;
+    flex: 1 1 auto;
     width: 100%;
   }
 
   // XS Size Modifiers (Mobile)
   &.auto-xs {
-    flex: 0 1 auto;
+    flex: 1 1 auto;
     max-width: none;
   }
 
@@ -303,7 +303,7 @@
   // SM Size Modifiers (Mobile-Lg)
   @include media('>=sm') {
     &.auto-sm {
-      flex: 0 1 auto;
+      flex: 1 1 auto;
       max-width: none;
     }
 
@@ -341,7 +341,7 @@
   // MD Size Modifiers (Tablet)
   @include media('>=md') {
     &.auto-md {
-      flex: 0 1 auto;
+      flex: 1 1 auto;
       max-width: none;
     }
 
@@ -379,7 +379,7 @@
   // LG Size Modifiers (Laptop)
   @include media('>=lg') {
     &.auto-lg {
-      flex: 0 1 auto;
+      flex: 1 1 auto;
       max-width: none;
     }
 
@@ -417,7 +417,7 @@
   // XL Size Modifiers (Desktop)
   @include media('>=xl') {
     &.auto-xl {
-      flex: 0 1 auto;
+      flex: 1 1 auto;
       max-width: none;
     }
 
