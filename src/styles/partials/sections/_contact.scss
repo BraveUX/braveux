@@ -1,17 +1,15 @@
 .contact-content {
   &:last-of-type {
-    margin-top: 3em;
+    margin-top: $textGap;
   }
 }
 
 .contact-group {
+  align-self: flex-start;
   display: block;
-  margin: $textGap 0 0;
+  margin: $textGap*1.5 0 0;
   text-decoration: none;
-
-  @include media('>=sm') {
-    display: none;
-  }
+  width: auto;
 }
 
 .contact-address-group {
@@ -137,7 +135,7 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: inset 0 0 0 20px rgba(0, 0, 0, 0.3), inset 0 0 10px 20px rgba(0, 0, 0, 0.3);
+  // box-shadow: inset 0 0 0 20px rgba(0, 0, 0, 0.3), inset 0 0 10px 20px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   outline-offset: -20px;
