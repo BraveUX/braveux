@@ -1,17 +1,14 @@
 .contact-content {
   &:last-of-type {
-    margin-top: 3em;
+    margin-top: $textGap;
   }
 }
 
 .contact-group {
+  align-self: flex-start;
   display: block;
-  margin: $textGap 0 0;
+  margin: $textGap*1.5 0 0;
   text-decoration: none;
-
-  @include media('>=sm') {
-    display: none;
-  }
 }
 
 .contact-address-group {
