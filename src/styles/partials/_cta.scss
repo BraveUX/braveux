@@ -17,8 +17,14 @@
     display: flex;
     flex-shrink: 0;
     font-size: 0;
+    position: relative;
     text-decoration: none;
     transition: transform 500ms ease;
+
+    // if IE set position to absolute
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      position: absolute;
+    }
 
     // Icon
     &::before {
@@ -63,7 +69,6 @@
   @include media('>=md') {
     left: 0;
     margin-right: auto;
-    position: absolute;
     transform: translateX(-100%) translateX(40px + 8px); // -100% + (icon margin + icon size)
 
     // Icon
@@ -77,12 +82,13 @@
       margin-left: $gridGap*0.75;
     }
   }
+
+
 }
 
 .cta-button-right {
   @include media('>=md') {
     margin-left: auto;
-    position: absolute;
     right: 0;
     transform: translateX(100%) translateX(40px + 8px); // 100% - (icon margin + icon size)
 
