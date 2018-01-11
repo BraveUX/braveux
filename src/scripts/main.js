@@ -410,8 +410,6 @@ function contactCardFlip() {
       handler: function(direction) {
         if ( direction == 'down' ) {
           card.addClass('is-flipped');
-        } else {
-          card.removeClass('is-flipped');
         }
       },
       offset: '25%'
