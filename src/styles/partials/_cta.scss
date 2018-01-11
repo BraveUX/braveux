@@ -63,12 +63,13 @@
   @include media('>=md') {
     left: 0;
     margin-right: auto;
+    position: absolute;
     transform: translateX(-100%) translateX(40px + 8px); // -100% + (icon margin + icon size)
 
     // Icon
     &::before {
       order: 1;
-      transform: rotateY(180deg);
+      transform: rotate(180deg);
     }
 
     // Text
@@ -81,6 +82,7 @@
 .cta-button-right {
   @include media('>=md') {
     margin-left: auto;
+    position: absolute;
     right: 0;
     transform: translateX(100%) translateX(40px + 8px); // 100% - (icon margin + icon size)
 

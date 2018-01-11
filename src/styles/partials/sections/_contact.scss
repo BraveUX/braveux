@@ -111,6 +111,12 @@
   .contact-letter:hover & {
     transform: rotateX(180deg);
   }
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .contact-letter:hover & {
+      transform: none;
+    }
+  }
 }
 
 .contact-front,

@@ -51,6 +51,12 @@ function initMobileNav() {
   });
 }
 
+// Check for IE
+function isIE(userAgent) {
+  userAgent = userAgent || navigator.userAgent;
+  return userAgent.indexOf('MSIE ') > -1 || userAgent.indexOf('Trident/') > -1;
+}
+
 // Hides menu on scroll-down
 function initNavHide() {
   let lastScroll = 0;
@@ -398,21 +404,21 @@ function scrollReveal() {
 }
 
 function contactCardFlip() {
-  if ( $('body').find('.contact-letter').length ) {
+  // Check that 'contact-letter' is on page
+  if ( $('body').find('.contact-letter').length && !isIE() ) {
     const card = $('.contact-letter');
+      card.on('click', function() {
+        card.toggleClass('is-flipped');
+      })
 
-    card.on('click', function() {
-      card.toggleClass('is-flipped');
-    })
-
-    new Waypoint({
-      element: card,
-      handler: function(direction) {
-        if ( direction == 'down' ) {
-          card.addClass('is-flipped');
-        }
-      },
-      offset: '25%'
+      new Waypoint({
+        element: card,
+        handler: function(direction) {
+          if ( direction == 'down' ) {
+            card.addClass('is-flipped');
+          }
+        },
+        offset: '25%'
     });
   }
 }

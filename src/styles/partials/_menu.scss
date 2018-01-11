@@ -62,11 +62,14 @@ $menu-height: 50px;
     width: 100%;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
+    background: url('./../images/icons/flag.svg') $night-rider center center no-repeat;
     margin: 0 -60px 0 0;
     width: 110px;
 
     &::before {
+      background: url('./../images/icons/wordmark.svg') $night-rider center center no-repeat;
       opacity: 1;
       transform: scale(1);
       visibility: visible;
@@ -87,6 +90,10 @@ $menu-height: 50px;
     @include media('>=xl') {
       margin: 0 0 0 calc(#{$gridGap*2} - 60px);
     }
+  }
+
+  &:focus {
+    outline: none;
   }
 
   @include media('>=sm') {
@@ -221,8 +228,13 @@ $menu-height: 50px;
     width: auto;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $night-rider;
+  }
+
+  &:focus {
+    outline: none;
   }
 
   .menu-home.active & {
