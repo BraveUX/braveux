@@ -444,7 +444,7 @@ function videoPlay() {
 /* eslint-disable */
 // LAZYR (lazy load images)
 const instance = Layzr({
-  threshold: 100 // Load within 100% of viewport
+  threshold: 150 // Load within 100% of viewport
 })
 
 // add callbacks
