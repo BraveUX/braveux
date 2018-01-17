@@ -6,10 +6,13 @@ $(document).ready(function() {
   initNavHide();
   initEgg();
   caseTeaseNext();
-  scrollReveal();
+  imageRatio();
   toggleSection('.career');
   sectionJump();
+  contactCardFlip();
   videoPlay();
+  navCurrent();
+  introAnimate();
   
   // Repo Info
   console.log('Looking for this? https://github.com/BraveUX/braveux');
@@ -48,11 +51,17 @@ function initMobileNav() {
   });
 }
 
+// Check for IE
+function isIE(userAgent) {
+  userAgent = userAgent || navigator.userAgent;
+  return userAgent.indexOf('MSIE ') > -1 || userAgent.indexOf('Trident/') > -1;
+}
+
 // Hides menu on scroll-down
 function initNavHide() {
   let lastScroll = 0;
   const $window = $(window);
-  const menu =  $('.menu');
+  const menu =  $('.menu, .subnav');
 
   $window.on('scroll', function() {
       const scrollTop = $window.scrollTop();
@@ -82,19 +91,73 @@ function homeHeroNav() {
       }
     });
   }
-
-
-  // $window.on('scroll', function() {
-  //   // Only run if on homepage
-  //   if ( window.location.pathname == '/' || window.location.pathname == '/index.html' ) {
-  //     if ( $(document).scrollTop() >= 150) {
-  //       body.removeClass('home-menu');
-  //     } else {
-  //       body.addClass('home-menu');
-  //     }
-  //   }
-  // })
 }
+
+// Subnav indicators
+function subnavIndicators() {
+  const subnav = document.querySelector('.subnav-container');
+  const subnavWidth = subnav.scrollWidth - subnav.clientWidth;
+  const $indicatorLeft = $('.subnav-scroll-indicator--left');
+  const $indicatorRight = $('.subnav-scroll-indicator--right');
+  const $subnavScroll = $('.subnav-container').scrollLeft();
+
+  // Check if scroll bar exists or not
+  if (subnav.scrollWidth == subnav.clientWidth) {
+    $indicatorLeft.addClass('is-hidden');
+    $indicatorRight.addClass('is-hidden');
+    // if can scroll left
+  } else if ($subnavScroll <= 0) {
+    $indicatorLeft.addClass('is-hidden');
+    $indicatorRight.removeClass('is-hidden');
+    // if can not scroll right
+  } else if ($subnavScroll >= subnavWidth) {
+    $indicatorRight.addClass('is-hidden');
+    $indicatorLeft.removeClass('is-hidden');
+    $('.subnav__scroll-indicator').removeClass('scrolled');
+    // if can scroll either left or right
+  } else {
+    $indicatorLeft.removeClass('is-hidden');
+    $indicatorRight.removeClass('is-hidden');
+  }
+}
+
+// Click events for indicators
+$('.subnav-scroll-indicator--left').on('click', function(e) {
+  e.preventDefault();
+  $('.subnav-container').animate({
+    scrollLeft: '-=150px'
+  }, 'normal');
+});
+
+$('.subnav-scroll-indicator--right').on('click', function(e) {
+  e.preventDefault();
+  $('.subnav-container').animate({
+    scrollLeft: '+=150px'
+  }, 'normal');
+});
+
+// Or on horizontal subnav scroll
+$('.subnav-container').scroll(function() {
+  // Check for subnav on page
+  if ( $('body').find('.subnav').length ) {
+    subnavIndicators();
+  }
+})
+
+// Or on Resize
+$(window).on('resize',function() {
+  if ( $('body').find('.subnav').length ) {
+    subnavIndicators();
+  }
+}); 
+
+// Run nav once ready
+$(document).ready(function() {  
+  // Check for subnav on page
+  if ( $('body').find('.subnav').length ) {
+    subnavIndicators();
+  }
+});
 
 function initEgg() {
   const toggleEgg = $('.footer-stars');
@@ -192,12 +255,12 @@ function scrollReveal() {
   };
 
   const revealLeft = {
-    duration   : 700,
-    distance   : '30%',
-    easing     : 'ease-in-out',
-    origin     : 'left',
-    scale      : 1,
-    viewFactor : 0.5,
+    duration     : 700,
+    distance     : '30%',
+    easing       : 'ease-in-out',
+    origin       : 'left',
+    scale        : 1,
+    viewFactor   : 0.5
   };
 
   const revealContent = {
@@ -224,6 +287,15 @@ function scrollReveal() {
     rotate     : { z: 10 },
     scale      : 1.1,
     viewFactor : 0.6,
+  }
+
+  const tall = {
+    duration   : 1000,
+    distance   : '30%',
+    easing     : 'ease-in-out',
+    origin     : 'bottom',
+    scale      : 1,
+    viewFactor : 0.1,
   }
 
   sr.reveal('.case-referral-quote-icon', {
@@ -255,14 +327,14 @@ function scrollReveal() {
     beforeReveal: function (el) { el.classList.add('is-visible') },
   }, 150);
 
-  sr.reveal('.work-card img', {
-    duration   : 1000,
-    scale      : 1.05,
-    origin     : 'bottom',
-    distance   : '25%',
-    easing     : 'ease-out',
-    viewFactor : 0.5,
-  }, 150);
+  // sr.reveal('.work-card img', {
+  //   duration   : 1000,
+  //   scale      : 1.05,
+  //   origin     : 'bottom',
+  //   distance   : '25%',
+  //   easing     : 'ease-out',
+  //   viewFactor : 0.5,
+  // }, 150);
 
   // sr.reveal('.work-card-title', {
   //   delay      : 300,
@@ -286,7 +358,7 @@ function scrollReveal() {
 
 
   // General Reveals (works multiple times per page)
-  sr.reveal('.case-study .inner-block-content', revealContent);
+  sr.reveal('.inner-block-content', revealContent);
   sr.reveal('.case-exec-summary-text', reveal);
   sr.reveal('.sr-delay', { delay : 300 });
   sr.reveal('.sr-delay-double', { delay : 600 });
@@ -298,6 +370,7 @@ function scrollReveal() {
   sr.reveal('.sr-right', revealRight);
   sr.reveal('.sr-bottom', revealBottom);
   sr.reveal('.sr-left', revealLeft);
+  sr.reveal('.sr-tall', tall);
 
   // Stagger Specific Reveals (only works once per page per class)
   sr.reveal('.case-breakdown-box', revealContent, 200);
@@ -330,18 +403,120 @@ function scrollReveal() {
   });
 }
 
+function contactCardFlip() {
+  // Check that 'contact-letter' is on page
+  if ( $('body').find('.contact-letter').length && !isIE() ) {
+    const card = $('.contact-letter');
+      card.on('click', function() {
+        card.toggleClass('is-flipped');
+      })
+
+      new Waypoint({
+        element: card,
+        handler: function(direction) {
+          if ( direction == 'down' ) {
+            card.addClass('is-flipped');
+          }
+        },
+        offset: '25%'
+    });
+  }
+}
+
+// Video play/pause toggle based on whether in view or not
 function videoPlay() {
   const video = $('video');
-  
   video.each(function(index, vid) {
-    new Waypoint.Inview({
-      element: $(this),
-      enter: function() {
-        vid.play();
-      },
-      exited: function() {
-        vid.pause();
-      } 
-    });
+    if ( !$(this).hasClass('marquee__video') ) {
+      new Waypoint.Inview({
+        element: $(this),
+        enter: function() {
+          vid.play();
+        },
+        exited: function() {
+          vid.pause();
+        } 
+      });
+    }
   });
+}
+
+/* eslint-disable */
+// LAZYR (lazy load images)
+const instance = Layzr({
+  threshold: 150 // Load within 100% of viewport
+})
+
+// add callbacks
+instance
+  .on('src:after', element => {
+    if ( element.classList.contains('bg-image') ) {
+      element.style.backgroundImage = `url("${ element.getAttribute('src') }")`;
+      element.removeAttribute('src');
+    }
+  })
+
+  
+  // start it up, when the DOM is ready
+  document.addEventListener('DOMContentLoaded', event => {
+    instance
+    .update()           // track initial elements
+    .check()            // check initial elements
+    .handlers(true)     // bind scroll and resize handlers
+    scrollReveal()     // run scrollReveal after element loads
+})
+/* eslint-enable */
+
+/*
+  The following functions purpose is to set the image size for lazy-loaded images
+  that do not have a set height. 
+  
+  Without this, the images would take up 0 height on load, and then reposition the 
+  content once they load in. This function also fixes the subnav autoscroller on 
+  'Explore' page as the image height is now accounted for. In addition, the page
+  scrolls better as content sizing is all accounted for before lazy-loading images.
+*/
+function imageRatio() {
+  const $image = $('.lazy-ratio');
+
+  // Get each desktop frame
+  $image.each(function() {
+    const $this = $(this);
+    // Find the % width of $this (subtract parent padding left/right if it has it)
+    const getEleWidth = 100 * parseFloat($this.css('width')) / (parseFloat($this.parent().css('width')) - (parseFloat($this.parent().css('padding-left')) + parseFloat($this.parent().css('padding-right'))) );
+    
+    // Calculate ratio based on data image size and element width -- (2 decimal places)
+    const getRatio = ((this.dataset.height / this.dataset.width) * getEleWidth).toFixed(2);
+    
+    // Make sure that the image has a ratio
+    if (getRatio >= 0) {
+      // apply a padding-bottom and height 0 for ratio scaling
+      $this
+        .css('padding-bottom', `${getRatio}%`) // give padding-bottom based on image ratio
+        .removeAttr('data-height data-width'); // remove data from HTML
+    }
+  })
+}
+
+// Shows current state for nav items based on URL 
+function navCurrent() {
+  const current_location = window.location.href.split('/');
+  const page = current_location[current_location.length - 1];
+
+  // Find a link in the nav that corresponds to current page URL for menu link
+  const navLink = $('.subnav-item[href*="' + page + '"]');
+
+  // Check if submenu link or not
+  if ( $('body').find('.subnav').length ) {
+    navLink.addClass('is-active'); 
+  }
+}
+
+function introAnimate() {
+  const content = $('.case-header-logo, .case-header-client-name, .case-header-tagline, .case-header-type');
+  const tl = new TimelineMax({delay: 0.5});
+
+  tl
+    .staggerFromTo(content, 2, {autoAlpha: 0}, {autoAlpha: 1}, 0.25, 0)
+    .staggerFrom(content, 0.8, {y: '100px', ease: Power1.easeOut}, 0.15, 0);
 }

@@ -21,13 +21,14 @@
 
   &::before {
     content: open-quote;
-    left: -25px;
+    left: -20px;
     position: absolute;
     top: 0;
   }
 
   &::after {
     content: close-quote;
+    margin-left: 5px;
   }
 }
 

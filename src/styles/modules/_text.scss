@@ -1,3 +1,6 @@
+// Import 'responsive-font'
+@import "../vendors/viewport-text";
+
 // IMPORT FONTS HERE
 
 // trade gothic
@@ -42,13 +45,20 @@
   $size-px: $size * 1px; // Convert to px
   $size-reduce-px: $size * 0.7 * 1px; // Convert to smaller px variant for scaling (can change decimal value for project need)
   $size-rem: $size / 10 * 1rem; // Convert to rem
+
   @include responsive-font(4vw, $size-reduce-px, $size-px, $size-rem);
 }
 
 // Mixin used for calling font
 @mixin text($family, $size, $weight: null, $color: null) {
   @include font-family($family);
-  @include sizer($size);
   color: $color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-weight: $weight;
+  text-rendering: optimizeLegibility;
+
+  @if ($size != null) {
+    @include sizer($size);
+  }
 }

@@ -26,7 +26,7 @@
   margin: 0 $gridGap/2;
   max-width: 100%;
   position: relative;
-  width: 100%;
+  width: auto;
 
   @include media('>=sm') {
     margin: 0 $gridGap;
@@ -40,6 +40,7 @@
 
   @include media('>=xl') {
     margin: 0 $gridGap*4;
+    width: calc(100% - (#{$gridGap*4} * 2));
   }
 }
 
@@ -79,6 +80,13 @@
   }
 }
 
+.block-centered {
+  @include media('>=md') {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
 // FLEX LAYOUT
 .row {
   display: flex;
@@ -89,8 +97,7 @@
   }
 
   &.wrap {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
   }
 
   &.between {
@@ -104,6 +111,10 @@
   &.center {
     justify-content: center;
   }
+
+  &.stretch {
+    align-items: stretch;
+  }
 }
 
 .column {
@@ -111,6 +122,10 @@
   flex: 1 0 auto;
   flex-direction: column;
   // flex-basis: 100%;
+
+  &.column-block {
+    display: block;
+  }
 
   &.gutter,
   &.gutter-quarter {
@@ -131,7 +146,7 @@
   }
 
   @include media('>=md') {
-    flex: 1;
+    flex: 1 1 auto;
 
     &.gutter,
     &.gutter-quarter {
@@ -171,12 +186,28 @@
     justify-content: flex-end;
   }
 
+  &.align-self-bottom {
+    align-self: flex-end;
+  }
+
   &.align-left {
     align-items: flex-start;
   }
 
   &.align-right {
     align-items: flex-end;
+  }
+
+  &.align-center {
+    align-items: center;
+  }
+
+  &.align-self-center {
+    align-self: center;
+  }
+
+  &.align-self-stretch {
+    align-self: stretch;
   }
 
   // XS Position Modifiers (Mobile)
@@ -221,7 +252,7 @@
 
   // FLEX SIZE MODIFIERS
   &.auto-xs, &.auto-md, &.auto-sm, &.auto-lg, &.auto-xl {
-    flex: 0 1 auto;
+    flex: 1 1 auto;
   }
 
   &.full-xs, &.half-xs, &.one-third-xs, &.two-third-xs, &.one-quarter-xs, &.three-quarter-xs,
@@ -229,33 +260,33 @@
   &.full-sm, &.half-sm, &.one-third-sm, &.two-third-sm, &.one-quarter-sm, &.three-quarter-sm,
   &.full-lg, &.half-lg, &.one-third-lg, &.two-third-lg, &.one-quarter-lg, &.three-quarter-lg,
   &.full-xl, &.half-xl, &.one-third-xl, &.two-third-xl, &.one-quarter-xl, &.three-quarter-xl {
-    flex: 1;
+    flex: 1 1 auto;
     width: 100%;
   }
 
   // XS Size Modifiers (Mobile)
   &.auto-xs {
-    flex: 0 1 auto;
+    flex: 1 1 auto;
     max-width: none;
   }
 
   &.full-xs {
-    flex: 1;
+    flex: 0 0 100%;
     max-width: 100%;
   }
 
   &.half-xs {
-    flex: 5;
+    flex: 0 0 50%;
     max-width: 50%;
   }
 
   &.one-third-xs {
-    flex: 3.33;
+    flex: 0 0 33.3333334%;
     max-width: 33.3333334%;
   }
 
   &.two-third-xs {
-    flex: 6.66;
+    flex: 0 0 66.6666667%;
     max-width: 66.6666667%;
   }
 
@@ -272,7 +303,7 @@
   // SM Size Modifiers (Mobile-Lg)
   @include media('>=sm') {
     &.auto-sm {
-      flex: 0 1 auto;
+      flex: 1 1 auto;
       max-width: none;
     }
 
@@ -310,7 +341,7 @@
   // MD Size Modifiers (Tablet)
   @include media('>=md') {
     &.auto-md {
-      flex: 0 1 auto;
+      flex: 1 1 auto;
       max-width: none;
     }
 
@@ -348,7 +379,7 @@
   // LG Size Modifiers (Laptop)
   @include media('>=lg') {
     &.auto-lg {
-      flex: 0 1 auto;
+      flex: 1 1 auto;
       max-width: none;
     }
 
@@ -386,7 +417,7 @@
   // XL Size Modifiers (Desktop)
   @include media('>=xl') {
     &.auto-xl {
-      flex: 0 1 auto;
+      flex: 1 1 auto;
       max-width: none;
     }
 

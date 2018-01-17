@@ -4,7 +4,6 @@
 // VENDORS
 @import "animate.scss"; // loaded from node_modules
 @import "include-media"; // loaded from node_modules
-@import "vendors/viewport-text";
 @import "vendors/link-underline";
 
 // MODULES & VARIABLES
@@ -40,6 +39,7 @@
 @import "partials/work/case-frames";
 @import "partials/work/case-intro";
 @import "partials/work/case-sections";
+@import "partials/work/case-subnav";
 
 // BOX-SIZING - FONT-SIZING PRESETS
 html {
@@ -81,4 +81,16 @@ a {
 .case-referral-quote-icon,
 [class *= 'sr-'] {
   visibility: hidden;
+}
+
+// Class applied for ratio-based image scaling
+.lazy-ratio {
+  background-color: transparent;
+  flex: 0 0 100%; // ensures that it always fills box when 50/50
+  height: 0;
+  position: relative;
+
+  &.full-height {
+    min-height: 100%; // TODO: Apply this where necessary  (ID Auto and UP)
+  }
 }

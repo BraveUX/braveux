@@ -245,11 +245,6 @@
     background-color: $gray;
   }
 
-  .case-referral-text,
-  .case-referral-author {
-    color: $blue;
-  }
-
   // quote icon color
   .case-referral-quote-icon {
     @include icon-quote($white-smoke);
@@ -922,6 +917,76 @@
 
   .case-breakdown-heading {
     color: $dark-gray;
+  }
+}
+
+// Stretch
+.stretch {
+  // case-study color variables
+  $green: #36CB9C;
+  $blue: #22A8FA;
+  $dark-blue: #37474F;
+  $purple: #8870F7;
+  $teal: #00BDC1;
+  $red: #FF574E;
+  $black: #211F1C;
+  $light-black: #2B2B2B;
+  $dark-gray: #484848;
+  $gray: #EEEEEE;
+  $white: #FFFFFF;
+
+  // case study colors
+  color: $white;
+
+  .green {
+    background-color: $green;
+  }
+
+  .blue {
+    background-color: $blue;
+  }
+
+  .dark-blue {
+    background-color: $dark-blue;
+  }
+
+  .purple {
+    background-color: $purple;
+  }
+
+  .teal {
+    background-color: $teal;
+  }
+
+  .red {
+    background-color: $red;
+  }
+
+  .black {
+    background-color: $black;
+  }
+
+  .light-black {
+    background-color: $light-black;
+  }
+
+  .dark-gray {
+    background-color: $dark-gray;
+  }
+
+  .gray {
+    background-color: $gray;
+    color: $black;
+  }
+
+  .white {
+    background-color: $white;
+    color: $black;
+  }
+
+  // quote icon color
+  .case-referral-quote-icon {
+    @include icon-quote($white);
   }
 }
 

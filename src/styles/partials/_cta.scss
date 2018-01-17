@@ -1,5 +1,6 @@
 .cta-block {
   align-items: center;
+  background-color: $white;
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
@@ -16,9 +17,14 @@
     display: flex;
     flex-shrink: 0;
     font-size: 0;
-    position: absolute;
+    position: relative;
     text-decoration: none;
     transition: transform 500ms ease;
+
+    // if IE set position to absolute
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      position: absolute;
+    }
 
     // Icon
     &::before {
@@ -62,12 +68,13 @@
 .cta-button-left {
   @include media('>=md') {
     left: 0;
-    transform: translateX(calc(-100% + (40px + 8px))); // -100% + (icon margin + icon size)
+    margin-right: auto;
+    transform: translateX(-100%) translateX(40px + 8px); // -100% + (icon margin + icon size)
 
     // Icon
     &::before {
       order: 1;
-      transform: rotateY(180deg);
+      transform: rotate(180deg);
     }
 
     // Text
@@ -75,12 +82,15 @@
       margin-left: $gridGap*0.75;
     }
   }
+
+
 }
 
 .cta-button-right {
   @include media('>=md') {
+    margin-left: auto;
     right: 0;
-    transform: translateX(calc(100% - (40px + 8px))); // 100% - (icon margin + icon size)
+    transform: translateX(100%) translateX(40px + 8px); // 100% - (icon margin + icon size)
 
     // Text
     &::after {

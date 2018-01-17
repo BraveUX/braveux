@@ -7,6 +7,14 @@
   overflow: hidden;
 }
 
+.case-block-tagline {
+  @include text('trade-gothic', 16, 400);
+  letter-spacing: 1px;
+  line-height: 1.2;
+  margin: 0 0 $textGap;
+  text-transform: uppercase;
+}
+
 .case-block-heading {
   @include text('source-sans-pro', 36, 300);
   line-height: 1.2;
@@ -19,15 +27,30 @@
       display: block;
     }
   }
+
+  &.lg {
+    @include text('source-sans-pro', 48);
+  }
 }
 
 .case-block-text {
-  @include text('sentinel', 16);
+  @include text('sentinel', 16, 300);
   line-height: 1.9;
   margin: 0;
-  max-width: 450px;
+  max-width: 375px;
 
   .content-centered & {
     margin: auto;
+    max-width: none;
+  }
+
+  &.lg {
+    @include text('sentinel', 24);
+    line-height: 1.4;
+    margin: 0 0 $textGap*1.5;
+  }
+
+  + .case-block-text {
+    margin-top: $textGap;
   }
 }

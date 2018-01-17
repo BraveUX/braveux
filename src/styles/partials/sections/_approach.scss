@@ -1,7 +1,7 @@
 .approach-hero {
   // background: url('../images/sections/approach/hero-bg.svg') rgba($white-smoke, 0.5) 100% bottom/contain no-repeat;
-  display: flex;
-  flex-direction: column;
+  display: block;
+  // flex-direction: column;
   // margin-top: $gridGap*1.5;
   margin-bottom: -1px; // ensure that the mountains are flush with next section
   min-height: 0;
@@ -15,11 +15,11 @@
   }
 }
 
-.approach-hero-image {
+.approach-hero-image.lazy-ratio {
   @include position(absolute, null, null, 0);
   object-fit: cover;
   padding-top: 100px;
-  width: 100%;
+  width: calc(100% + 1px); // ensures it fills edges
 }
 
 .approach-hero-box {

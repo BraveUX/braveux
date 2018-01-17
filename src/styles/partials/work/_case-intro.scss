@@ -9,6 +9,7 @@
 .case-header {
   align-items: center;
   display: flex;
+  height: 100vh;
   min-height: 100vh;
   overflow: hidden;
   padding: $gridGap*2 0;
@@ -58,11 +59,31 @@
   }
 
   .cds & {
-    background-color: #1D2B42;
+    background: url('../images/work/cds/header.svg') #1D2B42 30% center/cover no-repeat;
+
+    &.overlay {
+      &::after {
+        background-color: #1D2B42;
+        opacity: 0.8;
+      }
+    }
 
     @include media('>=md') {
-      background: url('../images/work/cds/header.svg') right center/cover no-repeat;
+      &.overlay {
+        &::after {
+          opacity: 0.6;
+        }
+      }
+    }
+
+    @include media('>=lg') {
       background-position: 50% center;
+
+      &.overlay {
+        &::after {
+          content: none;
+        }
+      }
     }
   }
 
@@ -235,6 +256,48 @@
     }
   }
 
+  .stretch & {
+    background: url('../images/work/stretch/header.jpg') #2B2B2B 25% center/cover no-repeat;
+
+    @include media('>=md') {
+      background-position: center left;
+
+      &::before {
+        @include position(absolute, 0, 0, 0, 0);
+        background: url('../images/work/stretch/wave-header.png') center/100% 100% no-repeat;
+        content: '';
+      }
+    }
+  }
+
+  .stretch-brand & {
+    background: url('../images/work/stretch/brand/header-brand.jpg') #2B2B2B 25% center/cover no-repeat;
+    &::before {
+      background: url('../images/work/stretch/brand/wave-header-brand.png') center/100% 100% no-repeat;
+    }
+  }
+
+  .stretch-portal & {
+    background: url('../images/work/stretch/portal/header-portal.jpg') #2B2B2B 25% center/cover no-repeat;
+    &::before {
+      background: url('../images/work/stretch/portal/wave-header-portal.png') center/100% 100% no-repeat;
+    }
+  }
+
+  .stretch-cms & {
+    background: url('../images/work/stretch/cms/header-cms.jpg') #2B2B2B 25% center/cover no-repeat;
+    &::before {
+      background: url('../images/work/stretch/cms/wave-header-cms.png') center/100% 100% no-repeat;
+    }
+  }
+
+  .stretch-support & {
+    background: url('../images/work/stretch/support/header-support.jpg') #2B2B2B 25% center/cover no-repeat;
+    &::before {
+      background: url('../images/work/stretch/support/wave-header-support.png') center/100% 100% no-repeat;
+    }
+  }
+
   .tmt & {
     background: url('../images/work/tmt/header.jpg') #12366A left center/cover no-repeat;
 
@@ -339,6 +402,21 @@
       margin-left: auto;
     }
   }
+
+  &.bottom {
+    @include media('>=md') {
+      align-self: flex-end;
+      // margin-bottom: 10%;
+    }
+  }
+}
+
+.case-header-logo,
+.case-header-client-name,
+.case-header-tagline,
+.case-header-type {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .case-header-client-name {
@@ -375,7 +453,21 @@
   @include text('sentinel', 24, 300);
   line-height: 1.4;
   margin: 0;
-  max-width: 700px;
+  max-width: 750px;
+
+  &.lg {
+    @include text('source-sans-pro', 28, 200);
+  }
+
+  br {
+    display: none;
+  }
+
+  @include media('>=sm') {
+    br {
+      display: block;
+    }
+  }
 }
 
 // BREAKDOWN
