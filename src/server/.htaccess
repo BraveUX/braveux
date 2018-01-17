@@ -1,24 +1,11 @@
-# Use PHP54 as default
-AddHandler application/x-httpd-php54 .php
+RewriteEngine On 
 
-<IfModule mod_suphp.c>
-  suPHP_ConfigPath /opt/php54/lib
-</IfModule>
+# Remove file extension
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R]
 
-# Manually re-route work/ requests to work
-RewriteCond %{REQUEST_FILENAME} work/$
-RewriteRule ^(.*)/$ $1
-
-# 301 Redirect Old File
-Redirect 301 /work/hhs /work/felix
-Redirect 301 /work/hhs.html /work/felix
-
-# remove .html extension
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.+)/$ /$1 [R=302]
-RewriteRule ^([^\.]+)$ $1.html [NC,L]
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [NC,L]
 
 RewriteCond %{HTTP_HOST} !=compass.is
 
