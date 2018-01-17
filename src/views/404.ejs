@@ -44,7 +44,7 @@
 
     function load404() {
       $.ajax({
-        url: 'https://api.giphy.com/v1/gifs/search?q=fail&api_key=dc6zaTOxFJmzC'
+        url: 'https://api.giphy.com/v1/gifs/search?q=fail&rating=g&api_key=dc6zaTOxFJmzC'
       }).done(function(data) {
         var length = data.data.length;
         var random = getRandomInt(0, length);
