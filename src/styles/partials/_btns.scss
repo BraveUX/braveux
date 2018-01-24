@@ -113,3 +113,19 @@
     }
   }
 }
+
+.btn-text-lg {
+  @extend .btn-text;
+  @include text('source-sans-pro', 32, 300, $charcoal);
+  line-height: 1.2;
+  transition: color 300ms;
+
+  &::after {
+    content: none;
+  }
+
+  &:hover {
+    transform: translateX(0);
+    color: $jaguar;
+  }
+}

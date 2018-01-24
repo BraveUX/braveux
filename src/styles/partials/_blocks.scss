@@ -65,7 +65,6 @@
   }
 }
 
-
 .block-image {
   display: block;
   height: 75vh;
@@ -223,7 +222,6 @@
     }
   }
 
-
   // POSITION MODIFIERS
   &.content-centered {
     text-align: center;
@@ -308,13 +306,7 @@
     filter: drop-shadow(0 0 15px rgba($black, 0.4));
   }
 
-  // SECTION MODIFIERS
-  .inner-block-thumbnail & {
-    margin: 0 auto;
-    max-width: 200px;
-  }
-
-  .work-card-image & {
+  .card-image & {
     margin: 0;
   }
 

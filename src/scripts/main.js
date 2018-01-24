@@ -13,7 +13,7 @@ $(document).ready(function() {
   videoPlay();
   navCurrent();
   introAnimate();
-  
+
   // Repo Info
   console.log('Looking for this? https://github.com/BraveUX/braveux');
 });
@@ -149,10 +149,10 @@ $(window).on('resize',function() {
   if ( $('body').find('.subnav').length ) {
     subnavIndicators();
   }
-}); 
+});
 
 // Run nav once ready
-$(document).ready(function() {  
+$(document).ready(function() {
   // Check for subnav on page
   if ( $('body').find('.subnav').length ) {
     subnavIndicators();
@@ -316,7 +316,7 @@ function scrollReveal() {
     viewFactor : 0.9,
   }, 300);
 
-  sr.reveal('.work-card', {
+  sr.reveal('.card', {
     duration   : 600,
     distance   : '60px',
     easing     : 'ease-out',
@@ -327,7 +327,7 @@ function scrollReveal() {
     beforeReveal: function (el) { el.classList.add('is-visible') },
   }, 150);
 
-  // sr.reveal('.work-card img', {
+  // sr.reveal('.card img', {
   //   duration   : 1000,
   //   scale      : 1.05,
   //   origin     : 'bottom',
@@ -336,7 +336,7 @@ function scrollReveal() {
   //   viewFactor : 0.5,
   // }, 150);
 
-  // sr.reveal('.work-card-title', {
+  // sr.reveal('.card-title', {
   //   delay      : 300,
   //   duration   : 500,
   //   scale      : 1,
@@ -346,7 +346,7 @@ function scrollReveal() {
   //   viewFactor : 0.5,
   // }, 150);
   //
-  // sr.reveal('.work-card-tagline', {
+  // sr.reveal('.card-tagline', {
   //   delay      : 150,
   //   duration   : 500,
   //   scale      : 1,
@@ -435,7 +435,7 @@ function videoPlay() {
         },
         exited: function() {
           vid.pause();
-        } 
+        }
       });
     }
   });
@@ -456,7 +456,7 @@ instance
     }
   })
 
-  
+
   // start it up, when the DOM is ready
   document.addEventListener('DOMContentLoaded', event => {
     instance
@@ -469,10 +469,10 @@ instance
 
 /*
   The following functions purpose is to set the image size for lazy-loaded images
-  that do not have a set height. 
-  
-  Without this, the images would take up 0 height on load, and then reposition the 
-  content once they load in. This function also fixes the subnav autoscroller on 
+  that do not have a set height.
+
+  Without this, the images would take up 0 height on load, and then reposition the
+  content once they load in. This function also fixes the subnav autoscroller on
   'Explore' page as the image height is now accounted for. In addition, the page
   scrolls better as content sizing is all accounted for before lazy-loading images.
 */
@@ -484,10 +484,10 @@ function imageRatio() {
     const $this = $(this);
     // Find the % width of $this (subtract parent padding left/right if it has it)
     const getEleWidth = 100 * parseFloat($this.css('width')) / (parseFloat($this.parent().css('width')) - (parseFloat($this.parent().css('padding-left')) + parseFloat($this.parent().css('padding-right'))) );
-    
+
     // Calculate ratio based on data image size and element width -- (2 decimal places)
     const getRatio = ((this.dataset.height / this.dataset.width) * getEleWidth).toFixed(2);
-    
+
     // Make sure that the image has a ratio
     if (getRatio >= 0) {
       // apply a padding-bottom and height 0 for ratio scaling
@@ -498,7 +498,7 @@ function imageRatio() {
   })
 }
 
-// Shows current state for nav items based on URL 
+// Shows current state for nav items based on URL
 function navCurrent() {
   const current_location = window.location.href.split('/');
   const page = current_location[current_location.length - 1];
@@ -508,7 +508,7 @@ function navCurrent() {
 
   // Check if submenu link or not
   if ( $('body').find('.subnav').length ) {
-    navLink.addClass('is-active'); 
+    navLink.addClass('is-active');
   }
 }
 

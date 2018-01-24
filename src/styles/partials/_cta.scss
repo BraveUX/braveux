@@ -63,6 +63,10 @@
       }
     }
   }
+
+  &.absolute {
+    position: absolute;
+  }
 }
 
 .cta-button-left {
@@ -82,8 +86,6 @@
       margin-left: $gridGap*0.75;
     }
   }
-
-
 }
 
 .cta-button-right {
@@ -117,5 +119,10 @@
 
 .cta-text {
   @include text('sentinel', 26, 300);
-  margin-bottom: $textGap*1.5;
+  margin: 0 0 $textGap*1.5;
+}
+
+.cta-subtext {
+  @include text('source-sans-pro', 18, 300, $charcoal);
+  margin: -$textGap 0 $textGap*1.5;
 }
