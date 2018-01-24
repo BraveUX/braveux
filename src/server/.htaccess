@@ -1,4 +1,8 @@
-RewriteEngine On 
+RewriteEngine On
+
+# Enforce no trailing-slash
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R]
 
 # Remove file extension
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
