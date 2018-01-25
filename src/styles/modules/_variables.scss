@@ -1,11 +1,11 @@
 // Colors - http://www.color-blindness.com/color-name-hue/
-$white: #FFFFFF;
-$white-smoke: #EEEEEE;
-$iron: #D2D3D4;
-$silver: #BDBDBD;
-$dark-gray: #ABABAB;
-$botticelli: #95A6B4;
-$regent-grey: #6F7F84;
+$white: #ffffff;
+$white-smoke: #eeeeee;
+$iron: #d2d3d4;
+$silver: #bdbdbd;
+$dark-gray: #ababab;
+$botticelli: #95a6b4;
+$regent-grey: #6f7f84;
 $charcoal: #424242;
 $night-rider: #333333;
 $jaguar: #282829;
@@ -17,9 +17,9 @@ $gridGap: 4em;
 
 // Media Mixin Breakpoints  (Modify as needed)
 $breakpoints: (
-  xs: 320px, // Mobile
-  sm: 550px, // Mobile-Lg
-  md: 768px, // Tablet
-  lg: 1024px, // Laptop
-  xl: 1440px // Desktop
+  xs: 320px,
+  sm: 550px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1440px
 );

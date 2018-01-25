@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   // pageFade();
   initMobileNav();
   homeHeroNav();
@@ -18,11 +17,14 @@ $(document).ready(function() {
   console.log('Looking for this? https://github.com/BraveUX/braveux');
 });
 
-if ( $('video').length ) {
-  $(window).on('scroll', _.throttle(function() {
-    // throttle waypoint location to account for image resize
-    Waypoint.refreshAll();
-  }, 1000));
+if ($('video').length) {
+  $(window).on(
+    'scroll',
+    _.throttle(function() {
+      // throttle waypoint location to account for image resize
+      Waypoint.refreshAll();
+    }, 1000)
+  );
 }
 
 // function pageFade() {
@@ -61,28 +63,32 @@ function isIE(userAgent) {
 function initNavHide() {
   let lastScroll = 0;
   const $window = $(window);
-  const menu =  $('.menu, .subnav');
+  const menu = $('.menu, .subnav');
 
   $window.on('scroll', function() {
-      const scrollTop = $window.scrollTop();
+    const scrollTop = $window.scrollTop();
 
-      // If scrolling down and document is more than 300px down
-      if ( scrollTop > lastScroll && $(document).scrollTop() >= 300) {
-        // Hide Menu
-        menu.addClass('hidden');
-        lastScroll = scrollTop;
-      } else {
-        // Show Menu
-        menu.removeClass('hidden');
-        lastScroll = scrollTop;
-      }
+    // If scrolling down and document is more than 300px down
+    if (scrollTop > lastScroll && $(document).scrollTop() >= 300) {
+      // Hide Menu
+      menu.addClass('hidden');
+      lastScroll = scrollTop;
+    } else {
+      // Show Menu
+      menu.removeClass('hidden');
+      lastScroll = scrollTop;
     }
-  );
+  });
 }
 
 // Controls the home navigation expand/collapse
 function homeHeroNav() {
-  if ( window.location.pathname == '/' || window.location.pathname == '/index.html' || window.location.pathname == '/braveux/' || window.location.pathname == '/braveux/index.html' ) {
+  if (
+    window.location.pathname == '/' ||
+    window.location.pathname == '/index.html' ||
+    window.location.pathname == '/braveux/' ||
+    window.location.pathname == '/braveux/index.html'
+  ) {
     $('.menu-home-trigger').waypoint(function(direction) {
       if (direction === 'down') {
         $('.menu-home').removeClass('active');
@@ -124,29 +130,35 @@ function subnavIndicators() {
 // Click events for indicators
 $('.subnav-scroll-indicator--left').on('click', function(e) {
   e.preventDefault();
-  $('.subnav-container').animate({
-    scrollLeft: '-=150px'
-  }, 'normal');
+  $('.subnav-container').animate(
+    {
+      scrollLeft: '-=150px'
+    },
+    'normal'
+  );
 });
 
 $('.subnav-scroll-indicator--right').on('click', function(e) {
   e.preventDefault();
-  $('.subnav-container').animate({
-    scrollLeft: '+=150px'
-  }, 'normal');
+  $('.subnav-container').animate(
+    {
+      scrollLeft: '+=150px'
+    },
+    'normal'
+  );
 });
 
 // Or on horizontal subnav scroll
 $('.subnav-container').scroll(function() {
   // Check for subnav on page
-  if ( $('body').find('.subnav').length ) {
+  if ($('body').find('.subnav').length) {
     subnavIndicators();
   }
-})
+});
 
 // Or on Resize
-$(window).on('resize',function() {
-  if ( $('body').find('.subnav').length ) {
+$(window).on('resize', function() {
+  if ($('body').find('.subnav').length) {
     subnavIndicators();
   }
 });
@@ -154,7 +166,7 @@ $(window).on('resize',function() {
 // Run nav once ready
 $(document).ready(function() {
   // Check for subnav on page
-  if ( $('body').find('.subnav').length ) {
+  if ($('body').find('.subnav').length) {
     subnavIndicators();
   }
 });
@@ -166,10 +178,13 @@ function initEgg() {
     // toggle easter egg class
     $('.footer').toggleClass('footer-egg');
     // scroll to bottom of page
-    $('html, body').animate({
-			scrollTop: toggleEgg.offset().top
-		}, 900);
-  })
+    $('html, body').animate(
+      {
+        scrollTop: toggleEgg.offset().top
+      },
+      900
+    );
+  });
 }
 
 function toggleSection(section) {
@@ -182,10 +197,10 @@ function toggleSection(section) {
     const checkActive = $(this).hasClass('is-active'); // chack if active
     if (checkActive) {
       // if active, set max-height to the height of container
-      $(box).css( 'max-height', $(box).get(0).scrollHeight );
+      $(box).css('max-height', $(box).get(0).scrollHeight);
     } else {
       // if NOT active, set max-height to 0
-      $(box).css( 'max-height', 0 );
+      $(box).css('max-height', 0);
     }
   });
 }
@@ -195,15 +210,20 @@ function sectionJump() {
   const btn = $('a.btn');
   btn.click(function(e) {
     // get href info
-    const checkURL = $('html').find(this).attr('href');
+    const checkURL = $('html')
+      .find(this)
+      .attr('href');
     // if href starts with a hash, execute page scroll to section
     if (checkURL[0] == '#') {
       e.preventDefault();
       e.stopPropagation();
       // animate to page content
-      $('html, body').animate({
-        scrollTop: $(checkURL).offset().top
-      }, 900);
+      $('html, body').animate(
+        {
+          scrollTop: $(checkURL).offset().top
+        },
+        900
+      );
     }
   });
 }
@@ -228,104 +248,114 @@ function scrollReveal() {
   window.sr = ScrollReveal();
 
   const revealTop = {
-    duration   : 700,
-    distance   : '30%',
-    easing     : 'ease-in-out',
-    origin     : 'top',
-    scale      : 1,
-    viewFactor : 0.5,
+    duration: 700,
+    distance: '30%',
+    easing: 'ease-in-out',
+    origin: 'top',
+    scale: 1,
+    viewFactor: 0.5
   };
 
   const revealRight = {
-    duration   : 700,
-    distance   : '30%',
-    easing     : 'ease-in-out',
-    origin     : 'right',
-    scale      : 1,
-    viewFactor : 0.5,
+    duration: 700,
+    distance: '30%',
+    easing: 'ease-in-out',
+    origin: 'right',
+    scale: 1,
+    viewFactor: 0.5
   };
 
   const revealBottom = {
-    duration   : 700,
-    distance   : '30%',
-    easing     : 'ease-in-out',
-    origin     : 'bottom',
-    scale      : 1,
-    viewFactor : 0.5,
+    duration: 700,
+    distance: '30%',
+    easing: 'ease-in-out',
+    origin: 'bottom',
+    scale: 1,
+    viewFactor: 0.5
   };
 
   const revealLeft = {
-    duration     : 700,
-    distance     : '30%',
-    easing       : 'ease-in-out',
-    origin       : 'left',
-    scale        : 1,
-    viewFactor   : 0.5
+    duration: 700,
+    distance: '30%',
+    easing: 'ease-in-out',
+    origin: 'left',
+    scale: 1,
+    viewFactor: 0.5
   };
 
   const revealContent = {
-    duration   : 700,
-    distance   : '40px',
-    easing     : 'ease-in-out',
-    origin     : 'bottom',
-    scale      : 1,
-    viewFactor : 0.9,
-  }
+    duration: 700,
+    distance: '40px',
+    easing: 'ease-in-out',
+    origin: 'bottom',
+    scale: 1,
+    viewFactor: 0.9
+  };
 
   const reveal = {
-    duration   : 700,
-    distance   : '0',
-    easing     : 'ease-in-out',
-    scale      : 1,
-    viewFactor : 0.5,
-  }
+    duration: 700,
+    distance: '0',
+    easing: 'ease-in-out',
+    scale: 1,
+    viewFactor: 0.5
+  };
 
   const rotate = {
-    duration   : 700,
-    distance   : '30px',
-    easing     : 'ease-in-out',
-    rotate     : { z: 10 },
-    scale      : 1.1,
-    viewFactor : 0.6,
-  }
+    duration: 700,
+    distance: '30px',
+    easing: 'ease-in-out',
+    rotate: { z: 10 },
+    scale: 1.1,
+    viewFactor: 0.6
+  };
 
   const tall = {
-    duration   : 1000,
-    distance   : '30%',
-    easing     : 'ease-in-out',
-    origin     : 'bottom',
-    scale      : 1,
-    viewFactor : 0.1,
-  }
+    duration: 1000,
+    distance: '30%',
+    easing: 'ease-in-out',
+    origin: 'bottom',
+    scale: 1,
+    viewFactor: 0.1
+  };
 
   sr.reveal('.case-referral-quote-icon', {
-    duration   : 1000,
-    distance   : '40px',
-    easing     : 'ease-out',
-    origin     : 'top',
-    scale      : 1,
-    viewFactor : 0.9,
+    duration: 1000,
+    distance: '40px',
+    easing: 'ease-out',
+    origin: 'top',
+    scale: 1,
+    viewFactor: 0.9
   });
 
-  sr.reveal('.pin', {
-    duration   : 700,
-    distance   : '40px',
-    easing     : 'ease-out',
-    origin     : 'top',
-    scale      : 1,
-    viewFactor : 0.9,
-  }, 300);
+  sr.reveal(
+    '.pin',
+    {
+      duration: 700,
+      distance: '40px',
+      easing: 'ease-out',
+      origin: 'top',
+      scale: 1,
+      viewFactor: 0.9
+    },
+    300
+  );
 
-  sr.reveal('.card', {
-    duration   : 600,
-    distance   : '60px',
-    easing     : 'ease-out',
-    // rotate     : { z: 5 },
-    origin     : 'bottom',
-    scale      : 1,
-    viewFactor : 0.5,
-    beforeReveal: function (el) { el.classList.add('is-visible') },
-  }, 150);
+  sr.reveal(
+    '.card',
+    {
+      duration: 600,
+      distance: '60px',
+      easing: 'ease-out',
+      // rotate     : { z: 5 },
+      origin: 'bottom',
+      scale: 1,
+      viewFactor: 0.5,
+      beforeReveal: function(el) {
+        el.classList.add('is-visible');
+      }
+    },
+    150
+  );
 
   // sr.reveal('.card img', {
   //   duration   : 1000,
@@ -356,14 +386,13 @@ function scrollReveal() {
   //   viewFactor : 0.5,
   // }, 150);
 
-
   // General Reveals (works multiple times per page)
   sr.reveal('.inner-block-content', revealContent);
   sr.reveal('.case-exec-summary-text', reveal);
-  sr.reveal('.sr-delay', { delay : 300 });
-  sr.reveal('.sr-delay-double', { delay : 600 });
-  sr.reveal('.sr-delay-tripple', { delay : 900 });
-  sr.reveal('.sr-half-view', {viewFactor : 0.5});
+  sr.reveal('.sr-delay', { delay: 300 });
+  sr.reveal('.sr-delay-double', { delay: 600 });
+  sr.reveal('.sr-delay-tripple', { delay: 900 });
+  sr.reveal('.sr-half-view', { viewFactor: 0.5 });
   sr.reveal('.sr-reveal', reveal);
   sr.reveal('.sr-rotate', rotate);
   sr.reveal('.sr-top', revealTop);
@@ -379,46 +408,47 @@ function scrollReveal() {
   sr.reveal('.sr-stagger-top', revealTop, 200);
   sr.reveal('.sr-stagger-right', revealRight, 200);
   sr.reveal('.sr-stagger-bottom', revealBottom, 150);
+  sr.reveal('.sr-stagger-tall', tall, 300);
   sr.reveal('.sr-stagger-left', revealLeft, 200);
 
   // Unbox forklift animation
   sr.reveal('.unbox-forklift .inner-block-image:nth-of-type(1)', {
-    distance   : '50px',
-    origin     : 'bottom',
+    distance: '50px',
+    origin: 'bottom'
   });
   sr.reveal('.unbox-forklift .inner-block-image:nth-of-type(2)', {
-    distance   : '100px',
-    origin     : 'left',
-    delay      : '500',
+    distance: '100px',
+    origin: 'left',
+    delay: '500'
   });
   sr.reveal('.unbox-forklift .inner-block-image:nth-of-type(3)', {
-    distance   : '50px',
-    origin     : 'right',
-    delay      : '1000',
+    distance: '50px',
+    origin: 'right',
+    delay: '1000'
   });
   sr.reveal('.unbox-forklift .inner-block-image:nth-of-type(4)', {
-    distance   : '20px',
-    origin     : 'top',
-    delay      : '1500',
+    distance: '20px',
+    origin: 'top',
+    delay: '1500'
   });
 }
 
 function contactCardFlip() {
   // Check that 'contact-letter' is on page
-  if ( $('body').find('.contact-letter').length && !isIE() ) {
+  if ($('body').find('.contact-letter').length && !isIE()) {
     const card = $('.contact-letter');
-      card.on('click', function() {
-        card.toggleClass('is-flipped');
-      })
+    card.on('click', function() {
+      card.toggleClass('is-flipped');
+    });
 
-      new Waypoint({
-        element: card,
-        handler: function(direction) {
-          if ( direction == 'down' ) {
-            card.addClass('is-flipped');
-          }
-        },
-        offset: '25%'
+    new Waypoint({
+      element: card,
+      handler: function(direction) {
+        if (direction == 'down') {
+          card.addClass('is-flipped');
+        }
+      },
+      offset: '25%'
     });
   }
 }
@@ -427,7 +457,7 @@ function contactCardFlip() {
 function videoPlay() {
   const video = $('video');
   video.each(function(index, vid) {
-    if ( !$(this).hasClass('marquee__video') ) {
+    if (!$(this).hasClass('marquee__video')) {
       new Waypoint.Inview({
         element: $(this),
         enter: function() {
@@ -445,26 +475,24 @@ function videoPlay() {
 // LAZYR (lazy load images)
 const instance = Layzr({
   threshold: 150 // Load within 100% of viewport
-})
+});
 
 // add callbacks
-instance
-  .on('src:after', element => {
-    if ( element.classList.contains('bg-image') ) {
-      element.style.backgroundImage = `url("${ element.getAttribute('src') }")`;
-      element.removeAttribute('src');
-    }
-  })
+instance.on('src:after', element => {
+  if (element.classList.contains('bg-image')) {
+    element.style.backgroundImage = `url("${element.getAttribute('src')}")`;
+    element.removeAttribute('src');
+  }
+});
 
-
-  // start it up, when the DOM is ready
-  document.addEventListener('DOMContentLoaded', event => {
-    instance
-    .update()           // track initial elements
-    .check()            // check initial elements
-    .handlers(true)     // bind scroll and resize handlers
-    scrollReveal()     // run scrollReveal after element loads
-})
+// start it up, when the DOM is ready
+document.addEventListener('DOMContentLoaded', event => {
+  instance
+    .update() // track initial elements
+    .check() // check initial elements
+    .handlers(true); // bind scroll and resize handlers
+  scrollReveal(); // run scrollReveal after element loads
+});
 /* eslint-enable */
 
 /*
@@ -483,10 +511,14 @@ function imageRatio() {
   $image.each(function() {
     const $this = $(this);
     // Find the % width of $this (subtract parent padding left/right if it has it)
-    const getEleWidth = 100 * parseFloat($this.css('width')) / (parseFloat($this.parent().css('width')) - (parseFloat($this.parent().css('padding-left')) + parseFloat($this.parent().css('padding-right'))) );
+    const getEleWidth =
+      100 *
+      parseFloat($this.css('width')) /
+      (parseFloat($this.parent().css('width')) -
+        (parseFloat($this.parent().css('padding-left')) + parseFloat($this.parent().css('padding-right'))));
 
     // Calculate ratio based on data image size and element width -- (2 decimal places)
-    const getRatio = ((this.dataset.height / this.dataset.width) * getEleWidth).toFixed(2);
+    const getRatio = (this.dataset.height / this.dataset.width * getEleWidth).toFixed(2);
 
     // Make sure that the image has a ratio
     if (getRatio >= 0) {
@@ -495,7 +527,7 @@ function imageRatio() {
         .css('padding-bottom', `${getRatio}%`) // give padding-bottom based on image ratio
         .removeAttr('data-height data-width'); // remove data from HTML
     }
-  })
+  });
 }
 
 // Shows current state for nav items based on URL
@@ -507,16 +539,16 @@ function navCurrent() {
   const navLink = $('.subnav-item[href*="' + page + '"]');
 
   // Check if submenu link or not
-  if ( $('body').find('.subnav').length ) {
+  if ($('body').find('.subnav').length) {
     navLink.addClass('is-active');
   }
 }
 
 function introAnimate() {
   const content = $('.case-header-logo, .case-header-client-name, .case-header-tagline, .case-header-type');
-  const tl = new TimelineMax({delay: 0.5});
+  const tl = new TimelineMax({ delay: 0.5 });
 
   tl
-    .staggerFromTo(content, 2, {autoAlpha: 0}, {autoAlpha: 1}, 0.25, 0)
-    .staggerFrom(content, 0.8, {y: '100px', ease: Power1.easeOut}, 0.15, 0);
+    .staggerFromTo(content, 2, { autoAlpha: 0 }, { autoAlpha: 1 }, 0.25, 0)
+    .staggerFrom(content, 0.8, { y: '100px', ease: Power1.easeOut }, 0.15, 0);
 }
