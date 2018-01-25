@@ -3,6 +3,7 @@
   background-color: $white;
   box-shadow: 0 0 20px 5px rgba($black, 0.4);
   display: block;
+  min-height: 100vh;
 }
 
 .container {
@@ -248,18 +249,45 @@
     }
   }
 
-
-
   // FLEX SIZE MODIFIERS
-  &.auto-xs, &.auto-md, &.auto-sm, &.auto-lg, &.auto-xl {
+  &.auto-xs,
+  &.auto-md,
+  &.auto-sm,
+  &.auto-lg,
+  &.auto-xl {
     flex: 1 1 auto;
   }
 
-  &.full-xs, &.half-xs, &.one-third-xs, &.two-third-xs, &.one-quarter-xs, &.three-quarter-xs,
-  &.full-md, &.half-md, &.one-third-md, &.two-third-md, &.one-quarter-md, &.three-quarter-md,
-  &.full-sm, &.half-sm, &.one-third-sm, &.two-third-sm, &.one-quarter-sm, &.three-quarter-sm,
-  &.full-lg, &.half-lg, &.one-third-lg, &.two-third-lg, &.one-quarter-lg, &.three-quarter-lg,
-  &.full-xl, &.half-xl, &.one-third-xl, &.two-third-xl, &.one-quarter-xl, &.three-quarter-xl {
+  &.full-xs,
+  &.half-xs,
+  &.one-third-xs,
+  &.two-third-xs,
+  &.one-quarter-xs,
+  &.three-quarter-xs,
+  &.full-md,
+  &.half-md,
+  &.one-third-md,
+  &.two-third-md,
+  &.one-quarter-md,
+  &.three-quarter-md,
+  &.full-sm,
+  &.half-sm,
+  &.one-third-sm,
+  &.two-third-sm,
+  &.one-quarter-sm,
+  &.three-quarter-sm,
+  &.full-lg,
+  &.half-lg,
+  &.one-third-lg,
+  &.two-third-lg,
+  &.one-quarter-lg,
+  &.three-quarter-lg,
+  &.full-xl,
+  &.half-xl,
+  &.one-third-xl,
+  &.two-third-xl,
+  &.one-quarter-xl,
+  &.three-quarter-xl {
     flex: 1 1 auto;
     width: 100%;
   }

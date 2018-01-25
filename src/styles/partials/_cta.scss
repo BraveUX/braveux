@@ -98,6 +98,13 @@
     &::after {
       margin-right: $gridGap*0.75;
     }
+
+    &.absolute {
+      bottom: 0;
+      height: 53px;
+      margin: auto 0 auto auto;
+      top: 0;
+    }
   }
 }
 

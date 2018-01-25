@@ -118,14 +118,14 @@
   @extend .btn-text;
   @include text('source-sans-pro', 32, 300, $charcoal);
   line-height: 1.2;
-  transition: color 300ms;
+  padding: 0;
 
   &::after {
     content: none;
   }
 
   &:hover {
+    @include link-underline($white, $charcoal, $dark-gray);
     transform: translateX(0);
-    color: $jaguar;
   }
 }
