@@ -1,13 +1,14 @@
-$stretch-green: #36CB9C;
-$stretch-blue: #22A8FA;
-$stretch-purple: #8870F7;
-$stretch-teal: #00BDC1;
+$stretch-green: #36cb9c;
+$stretch-blue: #22a8fa;
+$stretch-purple: #8870f7;
+$stretch-teal: #00bdc1;
 
 .subnav {
   @include position(fixed, null, 0, 0, 0);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   height: 50px;
+  min-height: 0;
   position: fixed;
   width: 100%;
   z-index: 21;
@@ -29,16 +30,25 @@ $stretch-teal: #00BDC1;
     @include position(absolute, 0, 0, 0);
   }
 
-
   .stretch & {
     background-color: $stretch-green;
 
     &::before {
-      background-image: linear-gradient(to right, rgba($stretch-green, 1) 15%, rgba($stretch-green, 0.9) 20%, rgba($stretch-green, 0) 100%);
+      background-image: linear-gradient(
+        to right,
+        rgba($stretch-green, 1) 15%,
+        rgba($stretch-green, 0.9) 20%,
+        rgba($stretch-green, 0) 100%
+      );
     }
 
     &::after {
-      background-image: linear-gradient(to left, rgba($stretch-green, 1) 15%, rgba($stretch-green, 0.9) 20%, rgba($stretch-green, 0) 100%);
+      background-image: linear-gradient(
+        to left,
+        rgba($stretch-green, 1) 15%,
+        rgba($stretch-green, 0.9) 20%,
+        rgba($stretch-green, 0) 100%
+      );
     }
   }
 
@@ -46,11 +56,21 @@ $stretch-teal: #00BDC1;
     background-color: $stretch-blue;
 
     &::before {
-      background-image: linear-gradient(to right, rgba($stretch-blue, 1) 15%, rgba($stretch-blue, 0.9) 20%, rgba($stretch-blue, 0) 100%);
+      background-image: linear-gradient(
+        to right,
+        rgba($stretch-blue, 1) 15%,
+        rgba($stretch-blue, 0.9) 20%,
+        rgba($stretch-blue, 0) 100%
+      );
     }
 
     &::after {
-      background-image: linear-gradient(to left, rgba($stretch-blue, 1) 15%, rgba($stretch-blue, 0.9) 20%, rgba($stretch-blue, 0) 100%);
+      background-image: linear-gradient(
+        to left,
+        rgba($stretch-blue, 1) 15%,
+        rgba($stretch-blue, 0.9) 20%,
+        rgba($stretch-blue, 0) 100%
+      );
     }
   }
 
@@ -58,11 +78,21 @@ $stretch-teal: #00BDC1;
     background-color: $stretch-purple;
 
     &::before {
-      background-image: linear-gradient(to right, rgba($stretch-purple, 1) 15%, rgba($stretch-purple, 0.9) 20%, rgba($stretch-purple, 0) 100%);
+      background-image: linear-gradient(
+        to right,
+        rgba($stretch-purple, 1) 15%,
+        rgba($stretch-purple, 0.9) 20%,
+        rgba($stretch-purple, 0) 100%
+      );
     }
 
     &::after {
-      background-image: linear-gradient(to left, rgba($stretch-purple, 1) 15%, rgba($stretch-purple, 0.9) 20%, rgba($stretch-purple, 0) 100%);
+      background-image: linear-gradient(
+        to left,
+        rgba($stretch-purple, 1) 15%,
+        rgba($stretch-purple, 0.9) 20%,
+        rgba($stretch-purple, 0) 100%
+      );
     }
   }
 
@@ -70,11 +100,21 @@ $stretch-teal: #00BDC1;
     background-color: $stretch-teal;
 
     &::before {
-      background-image: linear-gradient(to right, rgba($stretch-teal, 1) 15%, rgba($stretch-teal, 0.9) 20%, rgba($stretch-teal, 0) 100%);
+      background-image: linear-gradient(
+        to right,
+        rgba($stretch-teal, 1) 15%,
+        rgba($stretch-teal, 0.9) 20%,
+        rgba($stretch-teal, 0) 100%
+      );
     }
 
     &::after {
-      background-image: linear-gradient(to left, rgba($stretch-teal, 1) 15%, rgba($stretch-teal, 0.9) 20%, rgba($stretch-teal, 0) 100%);
+      background-image: linear-gradient(
+        to left,
+        rgba($stretch-teal, 1) 15%,
+        rgba($stretch-teal, 0.9) 20%,
+        rgba($stretch-teal, 0) 100%
+      );
     }
   }
 
