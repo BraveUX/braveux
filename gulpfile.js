@@ -7,8 +7,7 @@ const plugins = require('gulp-load-plugins');
 const $ = plugins();
 
 gulp.task('clean', () => {
-  // return clean(['./dist/**', '!./dist/', './.publish']); // purge all
-  return clean(['./.publish']); // purge publish only
+  return clean(['./dist/**', '!./dist/', './.publish']);
 });
 
 gulp.task('deploy:ghPages', () => {
@@ -230,7 +229,7 @@ gulp.task('watch', done => {
 });
 
 // Task for deploying to GhPages
-gulp.task('deploy', gulp.series('build', 'deploy:ghPages', 'clean'));
+gulp.task('deploy', gulp.series('clean', 'build', 'deploy:ghPages', 'clean'));
 
 gulp.task('serve', gulp.parallel('browser-sync', 'watch'));
 
