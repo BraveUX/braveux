@@ -113,3 +113,19 @@
     }
   }
 }
+
+.btn-text-lg {
+  @extend .btn-text;
+  @include text('source-sans-pro', 32, 300, $charcoal);
+  line-height: 1.2;
+  padding: 0;
+
+  &::after {
+    content: none;
+  }
+
+  &:hover {
+    @include link-underline($white, $charcoal, $dark-gray);
+    transform: translateX(0);
+  }
+}

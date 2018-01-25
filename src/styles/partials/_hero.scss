@@ -5,7 +5,8 @@
   width: 100%;
 }
 
-.hero-lg { // pairs with .menu-home (homepage only)
+.hero-lg {
+  // pairs with .menu-home (homepage only)
   align-items: stretch;
   background-color: $jaguar;
   flex-direction: column;
@@ -50,6 +51,8 @@
 }
 
 .hero-text {
-  @include text('sentinel', 22, 300, $dark-gray);
+  @include text('sentinel', 22, 300, $charcoal);
+  line-height: 1.4;
   margin: 0;
+  max-width: 800px;
 }

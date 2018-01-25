@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>Brave UX - Careers</title>
+  <% include ../partials/_head %>
+
+    <noscript>
+      <style>
+        .career-box {
+          max-height: none;
+        }
+
+        .career-btn {
+          display: none;
+        }
+      </style>
+    </noscript>
+</head>
+
+<body>
+  <!-- content -->
+  <% include ../partials/_menu %>
+    <main class="wrapper column">
+      <header class="hero">
+        <div class="container">
+          <h1 class="hero-title">Careers</h1>
+          <p class="hero-text">Get on the boat.</p>
+        </div>
+      </header>
+
+      <section class="block column padded white-smoke">
+        <div class="container">
+
+          <!-- Career Option -->
+          <a href="careers/ux-designer" class="career-panel">
+            <div class="career-copy">
+              <p class="career-title">UX Designer</p>
+              <p class="career-text">Part artist, part architect, you're looking to tackle complex UX challenges.</p>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <% include ../partials/_footer %>
+    </main>
+
+    <%- include ../partials/_footer-scripts %>
+
+</body>
+
+</html>

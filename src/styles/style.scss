@@ -1,45 +1,46 @@
 // NORMALIZE
-@import "normalize";  // loaded from node_modules
+@import 'normalize'; // loaded from node_modules
 
 // VENDORS
-@import "animate.scss"; // loaded from node_modules
-@import "include-media"; // loaded from node_modules
-@import "vendors/link-underline";
+@import 'animate.scss'; // loaded from node_modules
+@import 'include-media'; // loaded from node_modules
+@import 'vendors/link-underline';
 
 // MODULES & VARIABLES
-@import "modules/svgs";
-@import "modules/text";
-@import "modules/utilities";
-@import "modules/variables";
+@import 'modules/svgs';
+@import 'modules/text';
+@import 'modules/utilities';
+@import 'modules/variables';
 
 // PARTIALS
-@import "partials/blocks";
-@import "partials/btns";
-@import "partials/cta";
-@import "partials/colors";
-@import "partials/content";
-@import "partials/footer";
-@import "partials/hero";
-@import "partials/layout";
-@import "partials/menu";
-@import "partials/outline";
+@import 'partials/blocks';
+@import 'partials/btns';
+@import 'partials/cards';
+@import 'partials/cta';
+@import 'partials/colors';
+@import 'partials/content';
+@import 'partials/footer';
+@import 'partials/hero';
+@import 'partials/layout';
+@import 'partials/menu';
+@import 'partials/outline';
 
 // PARTIALS - SECTIONS
-@import "partials/sections/approach";
-@import "partials/sections/careers";
-@import "partials/sections/contact";
-@import "partials/sections/home";
-@import "partials/sections/work";
-@import "partials/sections/team";
+@import 'partials/sections/approach';
+@import 'partials/sections/careers';
+@import 'partials/sections/contact';
+@import 'partials/sections/home';
+@import 'partials/sections/work';
+@import 'partials/sections/team';
 
 // PARTIALS - WORK
-@import "partials/work/case-colors";
-@import "partials/work/case-defaults";
-@import "partials/work/case-footer";
-@import "partials/work/case-frames";
-@import "partials/work/case-intro";
-@import "partials/work/case-sections";
-@import "partials/work/case-subnav";
+@import 'partials/work/case-colors';
+@import 'partials/work/case-defaults';
+@import 'partials/work/case-footer';
+@import 'partials/work/case-frames';
+@import 'partials/work/case-intro';
+@import 'partials/work/case-sections';
+@import 'partials/work/case-subnav';
 
 // BOX-SIZING - FONT-SIZING PRESETS
 html {
