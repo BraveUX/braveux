@@ -51,7 +51,7 @@
   }
 
   .bline & {
-    background: url('../images/work/bline/header.jpg') #3FB6E5 right center/cover no-repeat;
+    background: url('../images/work/bline/header.jpg') #3fb6e5 right center/cover no-repeat;
 
     @include media('>=md') {
       background-position: center center;
@@ -59,11 +59,11 @@
   }
 
   .cds & {
-    background: url('../images/work/cds/header.svg') #1D2B42 30% center/cover no-repeat;
+    background: url('../images/work/cds/header.svg') #1d2b42 30% center/cover no-repeat;
 
     &.overlay {
       &::after {
-        background-color: #1D2B42;
+        background-color: #1d2b42;
         opacity: 0.8;
       }
     }
@@ -88,16 +88,15 @@
   }
 
   .cityhealth & {
-    background: url('../images/work/cityhealth/header.jpg') #D97A2A center center/cover no-repeat;
+    background: url('../images/work/cityhealth/header.jpg') #d97a2a center center/cover no-repeat;
   }
 
   .clutch & {
-    background: url('../images/work/clutch/header.jpg') #008B87 left center/cover no-repeat;
+    background: url('../images/work/clutch/header.jpg') #008b87 left center/cover no-repeat;
   }
 
   .collaborate & {
-    background: url('../images/work/collaborate/header.jpg') #0BB3F6 left center/cover no-repeat;
-
+    background: url('../images/work/collaborate/header.jpg') #0bb3f6 left center/cover no-repeat;
 
     @include media('>=md') {
       background-position: center center;
@@ -105,7 +104,7 @@
   }
 
   .dcv & {
-    background: url('../images/work/dcv/header.svg') #FFFFFF left center/cover no-repeat;
+    background: url('../images/work/dcv/header.svg') #ffffff left center/cover no-repeat;
 
     @include media('>=md') {
       background-position: right 50% center;
@@ -113,7 +112,7 @@
   }
 
   .felix & {
-    background: url('../images/work/felix/header.jpg') #27C6DD 20% center/cover no-repeat;
+    background: url('../images/work/felix/header.jpg') #27c6dd 20% center/cover no-repeat;
 
     @include media('>=md') {
       background-position: center center;
@@ -121,15 +120,15 @@
   }
 
   .fieldone & {
-    background: url('../images/work/fieldone/header.svg') #F1F3F4 center center/cover no-repeat;
+    background: url('../images/work/fieldone/header.svg') #f1f3f4 center center/cover no-repeat;
   }
 
   .foh & {
-    background: url('../images/work/foh/header.jpg') #2096F3 center center/cover no-repeat;
+    background: url('../images/work/foh/header.jpg') #2096f3 center center/cover no-repeat;
   }
 
   .genz & {
-    background: url('../images/work/genz/header.jpg') #2C2C3E left center/cover no-repeat;
+    background: url('../images/work/genz/header.jpg') #2c2c3e left center/cover no-repeat;
 
     @include media('>=md') {
       background-position: center center;
@@ -137,16 +136,16 @@
   }
 
   .gray-langur & {
-    background-color: #211F1C;
+    background-color: #211f1c;
   }
 
   .homezen & {
-    background: url('../images/work/homezen/header.jpg') #064A66 left center/cover no-repeat;
+    background: url('../images/work/homezen/header.jpg') #064a66 left center/cover no-repeat;
 
     // overlay
     &.overlay {
       &::after {
-        background-color: #064A66;
+        background-color: #064a66;
         opacity: 0.8;
       }
     }
@@ -167,8 +166,16 @@
     }
   }
 
+  .iconstituent & {
+    background: url('../images/work/iconstituent/header.jpg') #454d61 35% center/cover no-repeat;
+
+    @include media('>=md') {
+      background-position: center center;
+    }
+  }
+
   .idauto & {
-    background: url('../images/work/idauto/header.jpg') #1F3A4F 35% center/cover no-repeat;
+    background: url('../images/work/idauto/header.jpg') #1f3a4f 35% center/cover no-repeat;
 
     @include media('>=md') {
       background-position: center center;
@@ -176,7 +183,7 @@
   }
 
   .ijr & {
-    background: url('../images/work/ijr/header.jpg') #E6B65B left center/cover no-repeat;
+    background: url('../images/work/ijr/header.jpg') #e6b65b left center/cover no-repeat;
 
     // overlay
     &.overlay {
@@ -192,7 +199,7 @@
   }
 
   .interfolio & {
-    background: url('../images/work/interfolio/header.jpg') #3D80AE left center/cover no-repeat;
+    background: url('../images/work/interfolio/header.jpg') #3d80ae left center/cover no-repeat;
 
     @include media('>=md') {
       background-position: center center;
@@ -200,7 +207,7 @@
   }
 
   .livesafe & {
-    background: url('../images/work/livesafe/header.jpg') #027DA9 right center/cover no-repeat;
+    background: url('../images/work/livesafe/header.jpg') #027da9 right center/cover no-repeat;
 
     @include media('>=md') {
       background-position: center center;
@@ -216,7 +223,7 @@
   }
 
   .responsum & {
-    background: url('../images/work/responsum/header.jpg') #9895D3 left top/cover no-repeat;
+    background: url('../images/work/responsum/header.jpg') #9895d3 left top/cover no-repeat;
 
     &::before {
       background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(141, 137, 207, 0.75) 100%);
@@ -231,15 +238,15 @@
   }
 
   .smp & {
-    background: url('../images/work/smp/header.jpg') #F29182 left center/cover no-repeat;
+    background: url('../images/work/smp/header.jpg') #f29182 left center/cover no-repeat;
   }
 
   .snagajob & {
-    background: url('../images/work/snagajob/header.jpg') #F7842A left center/cover no-repeat;
+    background: url('../images/work/snagajob/header.jpg') #f7842a left center/cover no-repeat;
   }
 
   .sob & {
-    background-color: #F9F9F9;
+    background-color: #f9f9f9;
     position: relative;
 
     @include media('>=md') {
@@ -257,7 +264,7 @@
   }
 
   .stretch & {
-    background: url('../images/work/stretch/header.jpg') #2B2B2B 25% center/cover no-repeat;
+    background: url('../images/work/stretch/header.jpg') #2b2b2b 25% center/cover no-repeat;
 
     @include media('>=md') {
       background-position: center left;
@@ -271,35 +278,35 @@
   }
 
   .stretch-brand & {
-    background: url('../images/work/stretch/brand/header-brand.jpg') #2B2B2B 25% center/cover no-repeat;
+    background: url('../images/work/stretch/brand/header-brand.jpg') #2b2b2b 25% center/cover no-repeat;
     &::before {
       background: url('../images/work/stretch/brand/wave-header-brand.png') center/100% 100% no-repeat;
     }
   }
 
   .stretch-portal & {
-    background: url('../images/work/stretch/portal/header-portal.jpg') #2B2B2B 25% center/cover no-repeat;
+    background: url('../images/work/stretch/portal/header-portal.jpg') #2b2b2b 25% center/cover no-repeat;
     &::before {
       background: url('../images/work/stretch/portal/wave-header-portal.png') center/100% 100% no-repeat;
     }
   }
 
   .stretch-cms & {
-    background: url('../images/work/stretch/cms/header-cms.jpg') #2B2B2B 25% center/cover no-repeat;
+    background: url('../images/work/stretch/cms/header-cms.jpg') #2b2b2b 25% center/cover no-repeat;
     &::before {
       background: url('../images/work/stretch/cms/wave-header-cms.png') center/100% 100% no-repeat;
     }
   }
 
   .stretch-support & {
-    background: url('../images/work/stretch/support/header-support.jpg') #2B2B2B 25% center/cover no-repeat;
+    background: url('../images/work/stretch/support/header-support.jpg') #2b2b2b 25% center/cover no-repeat;
     &::before {
       background: url('../images/work/stretch/support/wave-header-support.png') center/100% 100% no-repeat;
     }
   }
 
   .tmt & {
-    background: url('../images/work/tmt/header.jpg') #12366A left center/cover no-repeat;
+    background: url('../images/work/tmt/header.jpg') #12366a left center/cover no-repeat;
 
     @include media('>=md') {
       background-position: center center;
@@ -307,7 +314,7 @@
   }
 
   .unbox & {
-    background: url('../images/work/unbox/header.jpg') #5C5CBF 40% center/cover no-repeat;
+    background: url('../images/work/unbox/header.jpg') #5c5cbf 40% center/cover no-repeat;
 
     @include media('>=md') {
       background-position: center center;
@@ -315,7 +322,7 @@
   }
 
   .upfront & {
-    background: url('../images/work/upfront/header.jpg') #FFF8F3 left center/cover no-repeat;
+    background: url('../images/work/upfront/header.jpg') #fff8f3 left center/cover no-repeat;
 
     @include media('>=md') {
       background-position: center center;
@@ -323,7 +330,7 @@
   }
 
   .upside & {
-    background: url('../images/work/upside/header.jpg') #775AB3 left center/cover no-repeat;
+    background: url('../images/work/upside/header.jpg') #775ab3 left center/cover no-repeat;
 
     @include media('>=md') {
       background-position: center center;
@@ -331,7 +338,7 @@
   }
 
   .upturn & {
-    background-color: #FBF9F3;
+    background-color: #fbf9f3;
 
     @include media('>=md') {
       &::after {
@@ -345,7 +352,7 @@
   }
 
   .weddingwire & {
-    background-color: #19B5BC;
+    background-color: #19b5bc;
     position: relative;
 
     @include media('>=md') {
