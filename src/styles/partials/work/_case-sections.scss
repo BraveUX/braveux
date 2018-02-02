@@ -153,6 +153,41 @@
   }
 }
 
+// gCrit
+.gcrit-home {
+  .frame-desktop {
+    margin: auto -1px auto auto;
+    right: 0;
+    width: 85%;
+  }
+
+  .frame-mobile {
+    bottom: 0;
+    height: 69%;
+    left: 0;
+    width: 30%;
+  }
+}
+
+.gcrit-image-break {
+  .container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .inner-block-image {
+      max-width: 30%;
+      object-fit: contain;
+      opacity: 0;
+
+      + .inner-block-image {
+        margin-left: 12%;
+      }
+    }
+  }
+}
+
 // ID Auto
 .gray-langur-adventure {
   .frame-desktop.absolute {

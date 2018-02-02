@@ -12,6 +12,7 @@ $(document).ready(function() {
   videoPlay();
   navCurrent();
   introAnimate();
+  animateGCrit();
 
   // Repo Info
   console.log('Looking for this? https://github.com/BraveUX/braveux');
@@ -515,10 +516,15 @@ function imageRatio() {
       100 *
       parseFloat($this.css('width')) /
       (parseFloat($this.parent().css('width')) -
-        (parseFloat($this.parent().css('padding-left')) + parseFloat($this.parent().css('padding-right'))));
+        (parseFloat($this.parent().css('padding-left')) +
+          parseFloat($this.parent().css('padding-right'))));
 
     // Calculate ratio based on data image size and element width -- (2 decimal places)
-    const getRatio = (this.dataset.height / this.dataset.width * getEleWidth).toFixed(2);
+    const getRatio = (
+      this.dataset.height /
+      this.dataset.width *
+      getEleWidth
+    ).toFixed(2);
 
     // Make sure that the image has a ratio
     if (getRatio >= 0) {
@@ -545,10 +551,42 @@ function navCurrent() {
 }
 
 function introAnimate() {
-  const content = $('.case-header-logo, .case-header-client-name, .case-header-tagline, .case-header-type');
+  const content = $(
+    '.case-header-logo, .case-header-client-name, .case-header-tagline, .case-header-type'
+  );
   const tl = new TimelineMax({ delay: 0.5 });
 
   tl
     .staggerFromTo(content, 2, { autoAlpha: 0 }, { autoAlpha: 1 }, 0.25, 0)
     .staggerFrom(content, 0.8, { y: '100px', ease: Power1.easeOut }, 0.15, 0);
 }
+
+function animateGCrit() {
+  if ($('.gcrit-image-break').length) {
+    console.log('on screen');
+    const tl = new TimelineMax({ delay: 0.5 });
+    const tileOne = $('.gcrit-image-break .inner-block-image:nth-of-type(1)');
+    new Waypoint.Inview({
+      element: $('.gcrit-image-break .inner-block-image'),
+      enter: function() {
+        console.log('entered');
+        tl.to(tileOne, 2, { autoAlpha: 1 }, 0).fromTo(
+          tileOne,
+          1.5,
+          {
+            scale: 0.1
+          },
+          {
+            scale: 1,
+            ease: Elastic.easeOut.config(1, 0.4)
+          },
+          0
+        );
+      }
+    });
+  }
+}
+
+// TODO: fade in each img -- scale in, then fade them out.
+// Once faded, the second image should have the overlay (hover)
+// image fade in on top of it

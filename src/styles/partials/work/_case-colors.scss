@@ -10,7 +10,7 @@
   $gray: #424242;
   $dark-gray: #262628;
   $black: #202020;
-  $solid-black: #000000;
+  $solid-black: #000;
 
   // case study colors
   color: $black;
@@ -300,7 +300,7 @@
   $light-green: #afbdc4;
   $green: #536d79;
   $dark-gray: #3f454a;
-  $gray: #eeeeee;
+  $gray: #eee;
   $light-gray: #f5f5f5;
 
   // case study colors
@@ -432,6 +432,50 @@
   }
 }
 
+// Gensler gCrit
+.gcrit {
+  // case-study color variables
+  $offwhite: #f5f5f5;
+  $gray: #cfd4d8;
+  $dark-gray: #6a737b;
+  $red: #c53a33;
+  $yellow: #faa634;
+
+  // case study colors
+  color: #262d35;
+
+  .offwhite {
+    background-color: $offwhite;
+  }
+
+  .gray {
+    background-color: $gray;
+  }
+
+  .dark-gray {
+    background-color: $dark-gray;
+  }
+
+  .yellow,
+  .red,
+  .dark-gray {
+    color: $white-smoke;
+  }
+
+  .red {
+    background-color: $red;
+  }
+
+  .yellow {
+    background-color: $yellow;
+  }
+
+  // quote icon color
+  .case-referral-quote-icon {
+    @include icon-quote($white-smoke);
+  }
+}
+
 // Gen Z
 .genz {
   // case-study color variables
@@ -516,7 +560,7 @@
 // HomeZen
 .homezen {
   // case-study color variables
-  $gray: #eeeeee;
+  $gray: #eee;
   $blue: #43719c;
   $dark-blue: #064a66;
 
@@ -913,7 +957,7 @@
   }
 
   .case-header-client-name {
-    color: #666666;
+    color: #666;
   }
 
   // quote icon color
@@ -926,8 +970,8 @@
 .snagajob {
   // case-study color variables
   $orange: #f7842a;
-  $gray: #eeeeee;
-  $dark-gray: #222222;
+  $gray: #eee;
+  $dark-gray: #222;
 
   // case study colors
   .color {
@@ -968,8 +1012,8 @@
   $black: #211f1c;
   $light-black: #2b2b2b;
   $dark-gray: #484848;
-  $gray: #eeeeee;
-  $white: #ffffff;
+  $gray: #eee;
+  $white: #fff;
 
   // case study colors
   color: $white;
@@ -1115,7 +1159,7 @@
   }
 
   .case-header-client-name {
-    color: #666666;
+    color: #666;
   }
 
   // quote icon color
@@ -1175,7 +1219,7 @@
   $dark-blue: #1b3e4c;
   $light-gray: #f4f4f4;
   $gray: #3e4446;
-  $dark-gray: #333333;
+  $dark-gray: #333;
   $orange: #ff5722;
 
   // case study colors
@@ -1234,7 +1278,7 @@
   $blue: #19b5bc;
   $dark-blue: #016064;
   $gray: #eceff1;
-  $dark-gray: #333333;
+  $dark-gray: #333;
 
   // case study colors
   color: #455a64;
