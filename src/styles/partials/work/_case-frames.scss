@@ -453,6 +453,14 @@
       }
     }
   }
+
+  &.lighter {
+    &.frame-tablet {
+      .frame-container {
+        @include frame('tablet', 'lighter');
+      }
+    }
+  }
 }
 
 /*

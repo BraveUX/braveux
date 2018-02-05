@@ -595,6 +595,7 @@ function introAnimate() {
 
 function animateGCrit() {
   if ($('.gcrit-image-break').length) {
+    let hasRun = false;
     const tl = new TimelineMax({
       delay: 0.5
     });
@@ -636,64 +637,70 @@ function animateGCrit() {
     }
 
     // Hover Timeline
-    const tlHover = new TimelineMax();
-    const tileBox = '.gcrit-image-break .box.lazy-ratio';
-    const tile =
-      '.gcrit-image-break .box.lazy-ratio > .inner-block-image:nth-of-type(1)';
-    const tileHover =
-      '.gcrit-image-break .box.lazy-ratio > .inner-block-image:nth-of-type(2)';
+    function hoverTimeline() {
+      const tlHover = new TimelineMax();
+      const tileBox = '.gcrit-image-break .box.lazy-ratio';
+      const tile =
+        '.gcrit-image-break .box.lazy-ratio > .inner-block-image:nth-of-type(1)';
+      const tileHover =
+        '.gcrit-image-break .box.lazy-ratio > .inner-block-image:nth-of-type(2)';
 
-    tlHover
-      .to(
-        tile,
-        2,
-        {
-          autoAlpha: 1
-        },
-        0
-      )
-      .fromTo(
-        tileBox,
-        1.5,
-        {
-          scale: 0,
-          y: '100%'
-        },
-        {
-          scale: 1,
-          y: '4%',
-          ease: Power4.easeOut
-        },
-        0
-      )
-      .fromTo(
-        tileBox,
-        1,
-        { y: '4%' },
-        {
-          y: '0%',
-          boxShadow:
-            '0 0 0 1px rgba(0, 0, 0, 0.05), 0 10px 20px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.1)'
-        },
-        2.5
-      )
-      .to(
-        tileHover,
-        1,
-        {
-          autoAlpha: 1
-        },
-        2.5
-      );
+      return tlHover
+        .to(
+          tile,
+          2,
+          {
+            autoAlpha: 1
+          },
+          0
+        )
+        .fromTo(
+          tileBox,
+          1.5,
+          {
+            scale: 0,
+            y: '100%'
+          },
+          {
+            scale: 1,
+            y: '4%',
+            ease: Power4.easeOut
+          },
+          0
+        )
+        .fromTo(
+          tileBox,
+          1,
+          { y: '4%' },
+          {
+            y: '0%',
+            boxShadow:
+              '0 0 0 1px rgba(0, 0, 0, 0.05), 0 10px 20px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.1)'
+          },
+          2
+        )
+        .to(
+          tileHover,
+          1,
+          {
+            autoAlpha: 1
+          },
+          2
+        );
+    }
 
     new Waypoint.Inview({
       element: $('.gcrit-image-break .inner-block-image'),
       enter: function() {
-        tl
-          .add(generalTimeline(1), 0)
-          .add(tlHover, 0.25)
-          .add(generalTimeline(3), 0.5)
-          .add(generalTimeline(4), 0.75);
+        if (!hasRun) {
+          tl
+            .add(generalTimeline(1), 0)
+            .add(hoverTimeline(), 0.25)
+            .add(generalTimeline(3), 0.5)
+            .add(generalTimeline(4), 0.75);
+
+          hasRun = true;
+        }
       }
     });
   }

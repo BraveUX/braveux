@@ -164,8 +164,12 @@
   .frame-mobile {
     bottom: 0;
     height: 69%;
-    left: 0;
+    left: 5%;
     width: 30%;
+
+    @include media('>=md') {
+      left: 0;
+    }
   }
 }
 
@@ -204,6 +208,36 @@
       object-fit: contain;
       opacity: 0;
     }
+  }
+}
+
+.gcrit-project {
+  background: url('../../images/work/gcrit/project-bg.jpg') bottom center/cover no-repeat;
+  background-color: #424242;
+
+  .frame-desktop {
+    margin: 0 17.5% 0 auto;
+    width: 75%;
+  }
+
+  .frame-mobile {
+    bottom: -2.5%;
+    width: 15%;
+  }
+
+  .frame-tablet {
+    bottom: -2.5%;
+    height: 68.75%;
+    margin: auto 0 auto auto;
+    right: 0;
+    width: 45%;
+  }
+}
+
+.gcrit-phone-half {
+  .frame-mobile {
+    margin: 0 auto;
+    width: 60%;
   }
 }
 
