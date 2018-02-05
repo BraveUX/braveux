@@ -176,14 +176,33 @@
     flex-direction: row;
     justify-content: space-between;
 
+    .lazy-ratio {
+      margin-left: 5%;
+      max-width: 20%;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+
+    .box {
+      margin-left: 5%;
+      max-width: 20%;
+      position: relative;
+      width: 100%;
+
+      .inner-block-image:last-of-type {
+        left: 0;
+        margin-left: 0;
+        position: absolute;
+        top: 0;
+      }
+    }
+
     .inner-block-image {
-      max-width: 30%;
+      border-radius: 6px;
       object-fit: contain;
       opacity: 0;
-
-      + .inner-block-image {
-        margin-left: 12%;
-      }
     }
   }
 }

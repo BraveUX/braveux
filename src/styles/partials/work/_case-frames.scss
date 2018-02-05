@@ -269,6 +269,10 @@
     @include frame('mobile');
   }
 
+  &.full-width {
+    width: 100%;
+  }
+
   // COLOR MODIFIERS
   &.black {
     &.frame-mobile {
