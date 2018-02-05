@@ -10,12 +10,10 @@
   display: flex;
   margin: auto;
   overflow: hidden;
-  padding: 0 2.5%;
 }
 
 iframe {
-  height: 100vh;
+  height: calc(100vh + 20px);
   margin-bottom: -20px;
-  margin-top: -60px;
   width: 100vw;
 }

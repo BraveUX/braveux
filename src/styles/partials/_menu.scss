@@ -1,7 +1,8 @@
 $menu-height: 50px;
 
 @include media('>=md') {
-  .menu-home { // pairs with .hero-lg (homepage only)
+  .menu-home {
+    // pairs with .hero-lg (homepage only)
     background-color: $jaguar;
     display: flex;
     flex-direction: column;
@@ -11,7 +12,8 @@ $menu-height: 50px;
     position: relative;
   }
 
-  .menu-home-trigger { // pairs with .hero-lg (homepage only)
+  .menu-home-trigger {
+    // pairs with .hero-lg (homepage only)
     height: $menu-height;
     margin: auto 0;
     position: relative;
@@ -49,7 +51,8 @@ $menu-height: 50px;
   z-index: 20;
 
   &::before {
-    background: url('./../images/icons/wordmark.svg') $jaguar center center no-repeat;
+    background: url('./../images/icons/wordmark.svg') $jaguar center center
+      no-repeat;
     content: ' ';
     display: block;
     height: 100%;
@@ -64,12 +67,14 @@ $menu-height: 50px;
 
   &:hover,
   &:focus {
-    background: url('./../images/icons/flag.svg') $night-rider center center no-repeat;
+    background: url('./../images/icons/flag.svg') $night-rider center center
+      no-repeat;
     margin: 0 -60px 0 0;
     width: 110px;
 
     &::before {
-      background: url('./../images/icons/wordmark.svg') $night-rider center center no-repeat;
+      background: url('./../images/icons/wordmark.svg') $night-rider center
+        center no-repeat;
       opacity: 1;
       transform: scale(1);
       visibility: visible;
@@ -123,6 +128,13 @@ $menu-height: 50px;
   &.is-collapsed {
     transform: translateY(-$menu-height);
   }
+
+  .presentation-box & {
+    @include position(absolute, 0, null, null, 0);
+    height: 60px;
+    margin-left: 0;
+    min-width: 60px;
+  }
 }
 
 .menu {
@@ -171,7 +183,8 @@ $menu-height: 50px;
 
 .menu-mobile-logo {
   @include hide-text;
-  background: url('./../images/icons/wordmark-mobile.svg') center center no-repeat;
+  background: url('./../images/icons/wordmark-mobile.svg') center center
+    no-repeat;
   display: block;
   height: 16px;
   margin: $textGap*1.5 $textGap;
