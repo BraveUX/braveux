@@ -15,7 +15,8 @@
 }
 
 .andpizza-bricks {
-  background: url('../../images/work/andPizza/brick-bg.jpg') bottom center/cover no-repeat;
+  background: url('../../images/work/andPizza/brick-bg.jpg') bottom center/cover
+    no-repeat;
   background-color: #424242;
   color: $white-smoke;
 }
@@ -108,6 +109,111 @@
 
     @include media('>=xl') {
       right: -70px;
+    }
+  }
+}
+
+// Design Labs
+.design-labs-post {
+  .frame-mobile {
+    bottom: -10%;
+    right: 5%;
+    width: 25%;
+  }
+}
+
+.design-labs-reactions {
+  .lazy-ratio:not(.frame) .inner-block-image {
+    height: auto;
+    width: auto;
+
+    // reactions list
+    &:nth-of-type(1) {
+      left: 0;
+      margin: auto 20% auto auto;
+      position: relative;
+      right: 0;
+      width: 40%;
+      z-index: 1;
+    }
+
+    // comment 1
+    &:nth-of-type(2) {
+      left: 15%;
+      top: 5%;
+      width: 30%;
+    }
+
+    // comment 2
+    &:nth-of-type(3) {
+      margin: auto;
+      right: 2.5%;
+      width: 30%;
+    }
+
+    // comment 3
+    &:nth-of-type(4) {
+      bottom: 10%;
+      left: 15%;
+      top: initial;
+      width: 30%;
+      z-index: 2;
+    }
+
+    // innovative
+    &:nth-of-type(5) {
+      bottom: 5%;
+      left: 2.5%;
+      top: initial;
+      width: 5%;
+
+      @include media('>=md') {
+        left: -10%;
+      }
+    }
+
+    // more
+    &:nth-of-type(6) {
+      bottom: 10%;
+      right: 15%;
+      top: initial;
+      width: 6%;
+      z-index: 2;
+    }
+
+    // valuable
+    &:nth-of-type(7) {
+      left: 6%;
+      top: 8%;
+      width: 6%;
+
+      @include media('>=md') {
+        left: -5%;
+      }
+    }
+
+    // provoking
+    &:nth-of-type(8) {
+      right: 8%;
+      top: 15%;
+      width: 6%;
+    }
+
+    // gold
+    &:nth-of-type(9) {
+      left: 25%;
+      top: 40%;
+      width: 6%;
+    }
+  }
+}
+
+.design-labs-row {
+  .lazy-ratio {
+    .inner-block-image {
+      margin: auto;
+      max-height: 300px;
+      width: auto;
     }
   }
 }
@@ -349,7 +455,6 @@
   }
 }
 
-
 .livesafe-resources {
   .frame-mobile {
     &:nth-of-type(2) {
@@ -563,19 +668,19 @@
 
 .snagajob {
   .overflow-bottom {
-    box-shadow: inset 0 -150px 0 -100px #EEEEEE;
+    box-shadow: inset 0 -150px 0 -100px #eee;
     padding-bottom: 20px;
 
     @include media('>=sm') {
-      box-shadow: inset 0 -180px 0 -100px #EEEEEE;
+      box-shadow: inset 0 -180px 0 -100px #eee;
     }
 
     @include media('>=md') {
-      box-shadow: inset 0 -180px 0 -100px #EEEEEE;
+      box-shadow: inset 0 -180px 0 -100px #eee;
     }
 
     @include media('>=lg') {
-      box-shadow: inset 0 -210px 0 -100px #EEEEEE;
+      box-shadow: inset 0 -210px 0 -100px #eee;
     }
   }
 }

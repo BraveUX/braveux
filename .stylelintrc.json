@@ -1,0 +1,12 @@
+{
+  "plugins": ["stylelint-scss", "stylelint-suitcss", "stylelint-order"],
+  "ignoreFiles": ["dist/**", "src/fonts/**/*"],
+  "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
+  "rules": {
+    "order/order": ["custom-properties", "declarations"],
+    "order/properties-alphabetical-order": true,
+    "at-rule-no-unknown": null,
+    "declaration-empty-line-before": "never",
+    "no-descending-specificity": null
+  }
+}

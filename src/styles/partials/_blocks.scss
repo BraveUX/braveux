@@ -329,5 +329,17 @@
       height: auto;
       top: unset;
     }
+
+    &.half {
+      max-width: 50%;
+    }
+
+    &.absolute-right {
+      right: 0;
+    }
+
+    &.absolute-left {
+      left: 0;
+    }
   }
 }
