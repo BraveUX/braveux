@@ -209,11 +209,65 @@
 }
 
 .design-labs-row {
-  .lazy-ratio {
-    .inner-block-image {
-      margin: auto;
-      max-height: 300px;
-      width: auto;
+  align-items: center;
+
+  .inner-block-content {
+    margin: auto;
+    max-width: none;
+    padding: 0 4em;
+    text-align: center;
+
+    br {
+      display: none;
+    }
+
+    @include media('>=lg') {
+      text-align: left;
+
+      br {
+        display: block;
+      }
+    }
+  }
+
+  .case-block-text {
+    max-width: 650px;
+
+    @include media('>=lg') {
+      max-width: 375px;
+    }
+  }
+
+  .catalog-1,
+  .catalog-2,
+  .catalog-3 {
+    flex: none;
+    margin-left: auto;
+    margin-right: #{-$gridGap};
+    margin-top: $gridGap/2;
+    max-width: 75%;
+  }
+
+  .catalog-1 {
+    margin-top: $gridGap;
+  }
+
+  .catalog-2 {
+    margin-left: #{-$gridGap};
+    margin-right: auto;
+
+    @include media('>=lg') {
+      margin-left: $gridGap;
+    }
+  }
+
+  .inner-block-image {
+    flex-shrink: 0;
+    margin: auto;
+
+    @include media('>=lg') {
+      height: auto;
+      width: 100%;
     }
   }
 }
