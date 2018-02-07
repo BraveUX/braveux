@@ -268,6 +268,10 @@
     @include frame('mobile');
   }
 
+  &.full-width {
+    width: 100%;
+  }
+
   // COLOR MODIFIERS
   &.black {
     &.frame-mobile {
@@ -445,6 +449,14 @@
     &.frame-tablet {
       .frame-container {
         @include frame('tablet', 'light');
+      }
+    }
+  }
+
+  &.lighter {
+    &.frame-tablet {
+      .frame-container {
+        @include frame('tablet', 'lighter');
       }
     }
   }

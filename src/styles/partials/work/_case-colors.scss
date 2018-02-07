@@ -483,6 +483,49 @@
   }
 }
 
+// Gensler gCrit
+.gcrit {
+  // case-study color variables
+  $offwhite: #f5f5f5;
+  $gray: #cfd4d8;
+  $dark-gray: #6a737b;
+  $red: #c53a33;
+  $yellow: #faa634;
+
+  // case study colors
+  color: #262d35;
+
+  .offwhite {
+    background-color: $offwhite;
+  }
+
+  .gray {
+    background-color: $gray;
+  }
+
+  .dark-gray {
+    background-color: $dark-gray;
+  }
+
+  .red,
+  .dark-gray {
+    color: $white-smoke;
+  }
+
+  .red {
+    background-color: $red;
+  }
+
+  .yellow {
+    background-color: $yellow;
+  }
+
+  // quote icon color
+  .case-referral-quote-icon {
+    @include icon-quote($white-smoke);
+  }
+}
+
 // Gen Z
 .genz {
   // case-study color variables
