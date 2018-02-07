@@ -1,4 +1,4 @@
-@import "case-colors";
+@import 'case-colors';
 
 /*
  * This file contains content for the following sections:
@@ -13,7 +13,7 @@
   margin: 0 25px; // accounts for ::before
   max-width: 600px;
   position: relative;
-  quotes: "“" "”" "‘" "’"; // shortcodes do not work, must be string
+  quotes: '“' '”' '‘' '’'; // shortcodes do not work, must be string
 
   @include media('>=md') {
     margin: 0;
@@ -50,6 +50,10 @@
     @include text('source-sans-pro', 35, 300);
     line-height: 1.4;
     text-align: center;
+  }
+
+  + .case-referral-text {
+    margin: -$textGap 0 $textGap*2;
   }
 }
 

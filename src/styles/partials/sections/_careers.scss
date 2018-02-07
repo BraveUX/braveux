@@ -38,6 +38,10 @@
     color: $jaguar;
   }
 
+  p {
+    @include text('source-sans-pro', 16, 300, $charcoal);
+  }
+
   > *:last-child() {
     margin-bottom: 0;
   }
@@ -109,6 +113,11 @@
 .career-title {
   @include text('sentinel', 28, 300, $jaguar);
   margin: 0;
+
+  @include media('>=lg') {
+    flex-shrink: 0;
+    width: 150px;
+  }
 }
 
 .career-text {

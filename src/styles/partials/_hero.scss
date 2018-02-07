@@ -55,4 +55,8 @@
   line-height: 1.4;
   margin: 0;
   max-width: 800px;
+
+  + .hero-text {
+    margin-top: $textGap;
+  }
 }
