@@ -852,6 +852,56 @@
   }
 }
 
+// Miller Heiman Group
+.mhg {
+  $blue: #004462;
+  $dark-blue: #022a3c;
+  $green: #00827c;
+  $dark-green: #175d58;
+  $offwhite: #f5f5f5;
+  $gray: #424143;
+
+  // case study colors
+  color: #222;
+
+  .gray {
+    background-color: $gray;
+  }
+
+  .blue {
+    background-color: $blue;
+  }
+
+  .dark-blue {
+    background-color: $dark-blue;
+  }
+
+  .green {
+    background-color: $green;
+  }
+
+  .dark-green {
+    background-color: $dark-green;
+  }
+
+  .offwhite {
+    background-color: $offwhite;
+  }
+
+  .blue,
+  .dark-blue,
+  .green,
+  .dark-green,
+  .gray {
+    color: $white-smoke;
+  }
+
+  // quote icon color
+  .case-referral-quote-icon {
+    @include icon-quote($white-smoke);
+  }
+}
+
 // Recity
 .recity {
   $violet: #4f42ff;

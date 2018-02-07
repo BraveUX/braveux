@@ -13,6 +13,7 @@ $(document).ready(function() {
   navCurrent();
   introAnimate();
   animateGCrit();
+  animateMhg();
 
   // Repo Info
   console.log('Looking for this? https://github.com/BraveUX/braveux');
@@ -697,3 +698,27 @@ function animateGCrit() {
     });
   }
 }
+
+function animateMhg() {
+  if ($('.mhg').length) {
+    let hasRun = false;
+    const tl = new TimelineMax({
+      delay: 0.5
+    });
+
+    const test = $('.graph-top');
+
+    new Waypoint.Inview({
+      element: $('.mhg-graph'),
+      enter: function() {
+        if (!hasRun) {
+          tl.staggerFrom(test, 2, { attr: { height: 0 } }, 1);
+
+          hasRun = true;
+        }
+      }
+    });
+  }
+}
+
+// TODO: https://greensock.com/forums/topic/7794-tween-div-height-from-bottom/
