@@ -372,7 +372,8 @@
 }
 
 .gcrit-project {
-  background: url('../../images/work/gcrit/project-bg.jpg') bottom center/cover no-repeat;
+  background: url('../../images/work/gcrit/project-bg.jpg') bottom center/cover
+    no-repeat;
   background-color: #424242;
 
   .frame-desktop {
@@ -627,6 +628,99 @@
       top: 0;
       width: 24.5%;
     }
+  }
+}
+
+// Miller Heiman Group
+.mhg-cards-1 {
+  .lazy-ratio:not(.frame) .inner-block-image {
+    bottom: initial;
+    height: auto;
+    width: calc(50% - #{$textGap});
+    &:nth-of-type(1) {
+      right: $textGap*0.75;
+      top: 0;
+    }
+    &:nth-of-type(2) {
+      right: calc((50% - #{$textGap}) + #{$textGap*1.5});
+      top: 16%;
+    }
+    &:nth-of-type(3) {
+      right: $textGap*0.75;
+      top: calc(43.25% + #{$textGap});
+    }
+  }
+}
+
+.mhg-cards-2 {
+  .inner-block.padded-bottom {
+    @include media('<md') {
+      padding-bottom: 0;
+    }
+  }
+  .lazy-ratio:not(.frame) .inner-block-image {
+    bottom: initial;
+    height: auto;
+    width: calc(50% - #{$textGap});
+    &:nth-of-type(1) {
+      left: $textGap/2;
+      top: calc(-37% + #{$textGap});
+
+      @include media('>=md') {
+        left: initial;
+        right: calc((-50% + #{$textGap*1.5}) - #{$textGap});
+      }
+    }
+    &:nth-of-type(2) {
+      right: $textGap*0.75;
+      top: -6%;
+
+      @include media('>=md') {
+        right: $textGap/4;
+      }
+    }
+    &:nth-of-type(3) {
+      right: $textGap*0.75;
+      top: calc(22.25% + #{$textGap});
+
+      @include media('>=md') {
+        right: $textGap/4;
+      }
+    }
+    &:nth-of-type(4) {
+      left: $textGap/2;
+      top: 30%;
+
+      @include media('>=md') {
+        left: $textGap;
+      }
+    }
+    &:nth-of-type(5) {
+      left: $textGap/2;
+      top: calc(58.5% + #{$textGap});
+
+      @include media('>=md') {
+        left: $textGap;
+      }
+    }
+    &:nth-of-type(6) {
+      bottom: 0;
+      right: $textGap*0.75;
+      top: initial;
+
+      @include media('>=md') {
+        right: $textGap/4;
+      }
+    }
+  }
+}
+
+.mhg-branding {
+  .frame-desktop.absolute {
+    bottom: 0;
+    left: 25%;
+    top: 0;
+    width: 100%;
   }
 }
 

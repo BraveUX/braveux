@@ -111,6 +111,22 @@
     margin: 0;
   }
 
+  &.gutter-left {
+    margin-left: $gridGap/2;
+
+    @include media('>=sm') {
+      margin-left: $gridGap;
+    }
+
+    @include media('>=lg') {
+      margin-left: $gridGap*1.5;
+    }
+
+    @include media('>=xl') {
+      margin-left: $gridGap;
+    }
+  }
+
   &.gutter-bottom-mobile {
     margin-bottom: $gridGap*0.75;
   }

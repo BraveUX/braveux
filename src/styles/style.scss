@@ -80,7 +80,7 @@ a {
 .case-inner-block-content,
 .case-exec-summary-text,
 .case-referral-quote-icon,
-[class *= 'sr-'] {
+[class*='sr-'] {
   visibility: hidden;
 }
 
@@ -92,6 +92,6 @@ a {
   position: relative;
 
   &.full-height {
-    min-height: 100%; // TODO: Apply this where necessary  (ID Auto and UP)
+    min-height: 100%;
   }
 }
