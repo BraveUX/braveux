@@ -389,9 +389,9 @@ function scrollReveal() {
   // General Reveals (works multiple times per page)
   sr.reveal('.inner-block-content', revealContent);
   sr.reveal('.case-exec-summary-text', reveal);
-  sr.reveal('.sr-delay', { delay: 300 });
-  sr.reveal('.sr-delay-double', { delay: 600 });
-  sr.reveal('.sr-delay-tripple', { delay: 900 });
+  sr.reveal('.sr-delay', { delay: 200 });
+  sr.reveal('.sr-delay-double', { delay: 400 });
+  sr.reveal('.sr-delay-tripple', { delay: 600 });
   sr.reveal('.sr-half-view', { viewFactor: 0.5 });
   sr.reveal('.sr-reveal', reveal);
   sr.reveal('.sr-rotate', rotate);

@@ -1,14 +1,7 @@
 {
-  "plugins": [
-    "stylelint-scss",
-    "stylelint-suitcss",
-    "stylelint-order"
-  ],
+  "plugins": ["stylelint-scss", "stylelint-suitcss", "stylelint-order"],
   "rules": {
-    "order/order": [
-			"custom-properties",
-			"declarations"
-		],
+    "order/order": ["custom-properties", "declarations"],
     "order/properties-alphabetical-order": true,
     "suitcss/custom-property-no-outside-root": true,
     "suitcss/root-no-standard-properties": true,
@@ -19,7 +12,7 @@
       {
         "except": ["blockless-after-blockless", "first-nested"],
         "ignore": ["after-comment", "blockless-after-blockless"],
-        "ignoreAtRules": ["import"],
+        "ignoreAtRules": ["import"]
       }
     ],
     "at-rule-name-case": "lower",
@@ -44,7 +37,7 @@
     "comment-empty-line-before": [
       "always",
       {
-        "ignore": ["after-comment", "stylelint-commands"],
+        "ignore": ["after-comment", "stylelint-commands"]
       }
     ],
     "comment-no-empty": true,
@@ -61,7 +54,7 @@
     "declaration-colon-space-after": "always-single-line",
     "declaration-colon-space-before": "never",
     "declaration-empty-line-before": "never",
-    "declaration-no-important": [ true, { "severity": "warning" }],
+    "declaration-no-important": [true, { "severity": "warning" }],
     "declaration-property-unit-blacklist": {},
     "declaration-property-unit-whitelist": {},
     "declaration-property-value-blacklist": {},
@@ -97,7 +90,7 @@
     "media-query-list-comma-newline-before": "never-multi-line",
     "media-query-list-comma-space-after": "always",
     "media-query-list-comma-space-before": "never",
-    "no-duplicate-selectors": [ true, { "severity": "warning" }],
+    "no-duplicate-selectors": [true, { "severity": "warning" }],
     "no-empty-source": true,
     "no-eol-whitespace": true,
     "no-extra-semicolons": true,
@@ -121,7 +114,10 @@
     "selector-list-comma-space-after": "always-single-line",
     "selector-list-comma-space-before": "never",
     "selector-max-universal": 1,
-    "selector-no-qualifying-type": [ true, { ignore: ["attribute", "class", "id"] }],
+    "selector-no-qualifying-type": [
+      true,
+      { ignore: ["attribute", "class", "id"] }
+    ],
     "selector-no-vendor-prefix": true,
     "selector-pseudo-class-case": "lower",
     "selector-pseudo-class-no-unknown": true,
