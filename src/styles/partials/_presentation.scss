@@ -1,0 +1,19 @@
+.presentation {
+  align-items: center;
+  background-color: $black;
+  display: flex;
+  min-height: 100vh;
+}
+
+.presentation-box {
+  align-self: center;
+  display: flex;
+  margin: auto;
+  overflow: hidden;
+}
+
+iframe {
+  height: calc(100vh + 20px);
+  margin-bottom: -20px;
+  width: 100vw;
+}
