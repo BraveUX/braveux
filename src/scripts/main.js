@@ -12,6 +12,7 @@ $(document).ready(function() {
   videoPlay();
   navCurrent();
   introAnimate();
+  ludusFrame();
 
   // Repo Info
   console.log('Looking for this? https://github.com/BraveUX/braveux');
@@ -560,12 +561,20 @@ function introAnimate() {
     .staggerFrom(content, 0.8, { y: '100px', ease: Power1.easeOut }, 0.15, 0);
 }
 
+// Builds Ludus iFrame on page based on url
 function ludusFrame() {
-  const splitUrl = window.location.href.split('/'); // split URL based on '/'
-  const getLudusId = splitUrl[splitUrl.length - 1].substr(1); // get ending string of URL
+  // Only run on a presentation page
+  if (document.querySelector('.presentation-box')) {
+    // split URL based on '/'
+    const splitUrl = window.location.href.split('/');
+    // get ending string of URL and remove '?' from start of string
+    const getLudusId = splitUrl[splitUrl.length - 1].substr(1);
 
-  const iframe = document.createElement('iframe');
-
-  iframe.src = `https://app.ludus.one/${getLudusId}`;
-  document.querySelector('.presentation-box').appendChild(iframe);
+    // Build iFrame
+    const iframe = document.createElement('iframe');
+    // set src to ludus if ID is given, else build nothing in iFrame
+    iframe.src = getLudusId ? `https://app.ludus.one/${getLudusId}` : '';
+    iframe.frameBorder = 0;
+    document.querySelector('.presentation-box').appendChild(iframe);
+  }
 }
