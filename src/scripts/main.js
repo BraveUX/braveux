@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   // pageFade();
   initMobileNav();
   homeHeroNav();
@@ -22,7 +22,7 @@ $(document).ready(function () {
 if ($('video').length) {
   $(window).on(
     'scroll',
-    _.throttle(function () {
+    _.throttle(function() {
       // throttle waypoint location to account for image resize
       Waypoint.refreshAll();
     }, 1000)
@@ -48,7 +48,7 @@ if ($('video').length) {
 // }
 
 function initMobileNav() {
-  $('.menu-mobile-toggle').click(function (e) {
+  $('.menu-mobile-toggle').click(function(e) {
     e.preventDefault();
 
     $('.menu, .menu-mobile-toggle').toggleClass('is-active');
@@ -67,7 +67,7 @@ function initNavHide() {
   const $window = $(window);
   const menu = $('.menu, .subnav');
 
-  $window.on('scroll', function () {
+  $window.on('scroll', function() {
     const scrollTop = $window.scrollTop();
 
     // If scrolling down and document is more than 300px down
@@ -91,7 +91,7 @@ function homeHeroNav() {
     window.location.pathname == '/braveux/' ||
     window.location.pathname == '/braveux/index.html'
   ) {
-    $('.menu-home-trigger').waypoint(function (direction) {
+    $('.menu-home-trigger').waypoint(function(direction) {
       if (direction === 'down') {
         $('.menu-home').removeClass('active');
       } else {
@@ -130,18 +130,20 @@ function subnavIndicators() {
 }
 
 // Click events for indicators
-$('.subnav-scroll-indicator--left').on('click', function (e) {
+$('.subnav-scroll-indicator--left').on('click', function(e) {
   e.preventDefault();
-  $('.subnav-container').animate({
+  $('.subnav-container').animate(
+    {
       scrollLeft: '-=150px'
     },
     'normal'
   );
 });
 
-$('.subnav-scroll-indicator--right').on('click', function (e) {
+$('.subnav-scroll-indicator--right').on('click', function(e) {
   e.preventDefault();
-  $('.subnav-container').animate({
+  $('.subnav-container').animate(
+    {
       scrollLeft: '+=150px'
     },
     'normal'
@@ -149,7 +151,7 @@ $('.subnav-scroll-indicator--right').on('click', function (e) {
 });
 
 // Or on horizontal subnav scroll
-$('.subnav-container').scroll(function () {
+$('.subnav-container').scroll(function() {
   // Check for subnav on page
   if ($('body').find('.subnav').length) {
     subnavIndicators();
@@ -157,14 +159,14 @@ $('.subnav-container').scroll(function () {
 });
 
 // Or on Resize
-$(window).on('resize', function () {
+$(window).on('resize', function() {
   if ($('body').find('.subnav').length) {
     subnavIndicators();
   }
 });
 
 // Run nav once ready
-$(document).ready(function () {
+$(document).ready(function() {
   // Check for subnav on page
   if ($('body').find('.subnav').length) {
     subnavIndicators();
@@ -173,12 +175,13 @@ $(document).ready(function () {
 
 function initEgg() {
   const toggleEgg = $('.footer-stars');
-  toggleEgg.click(function (e) {
+  toggleEgg.click(function(e) {
     e.preventDefault();
     // toggle easter egg class
     $('.footer').toggleClass('footer-egg');
     // scroll to bottom of page
-    $('html, body').animate({
+    $('html, body').animate(
+      {
         scrollTop: toggleEgg.offset().top
       },
       900
@@ -189,7 +192,7 @@ function initEgg() {
 function toggleSection(section) {
   const button = $(section + '-btn');
   const box = $(section + '-box');
-  button.click(function (e) {
+  button.click(function(e) {
     e.stopPropagation();
     e.preventDefault();
     $(this).toggleClass('is-active');
@@ -207,7 +210,7 @@ function toggleSection(section) {
 // Same Page CTA Controls
 function sectionJump() {
   const btn = $('a.btn');
-  btn.click(function (e) {
+  btn.click(function(e) {
     // get href info
     const checkURL = $('html')
       .find(this)
@@ -217,7 +220,8 @@ function sectionJump() {
       e.preventDefault();
       e.stopPropagation();
       // animate to page content
-      $('html, body').animate({
+      $('html, body').animate(
+        {
           scrollTop: $(checkURL).offset().top
         },
         900
@@ -230,7 +234,7 @@ function caseTeaseNext() {
   const btn = $('.cta-button-right');
 
   btn.waypoint({
-    handler: function (direction) {
+    handler: function(direction) {
       if (direction === 'down') {
         btn.addClass('is-expanded');
       } else {
@@ -328,7 +332,8 @@ function scrollReveal() {
   });
 
   sr.reveal(
-    '.pin', {
+    '.pin',
+    {
       duration: 700,
       distance: '40px',
       easing: 'ease-out',
@@ -340,7 +345,22 @@ function scrollReveal() {
   );
 
   sr.reveal(
-    '.card', {
+    '.rokt-hiw .inner-block-image.absolute-top',
+    {
+      duration: 700,
+      delay: 600,
+      distance: '200px',
+      easing: 'ease-out',
+      origin: 'bottom',
+      scale: 1,
+      viewFactor: 0.7
+    },
+    300
+  );
+
+  sr.reveal(
+    '.card',
+    {
       duration: 600,
       distance: '60px',
       easing: 'ease-out',
@@ -348,7 +368,7 @@ function scrollReveal() {
       origin: 'bottom',
       scale: 1,
       viewFactor: 0.5,
-      beforeReveal: function (el) {
+      beforeReveal: function(el) {
         el.classList.add('is-visible');
       }
     },
@@ -443,13 +463,13 @@ function contactCardFlip() {
   // Check that 'contact-letter' is on page
   if ($('body').find('.contact-letter').length && !isIE()) {
     const card = $('.contact-letter');
-    card.on('click', function () {
+    card.on('click', function() {
       card.toggleClass('is-flipped');
     });
 
     new Waypoint({
       element: card,
-      handler: function (direction) {
+      handler: function(direction) {
         if (direction == 'down') {
           card.addClass('is-flipped');
         }
@@ -462,14 +482,14 @@ function contactCardFlip() {
 // Video play/pause toggle based on whether in view or not
 function videoPlay() {
   const video = $('video');
-  video.each(function (index, vid) {
+  video.each(function(index, vid) {
     if (!$(this).hasClass('marquee__video')) {
       new Waypoint.Inview({
         element: $(this),
-        enter: function () {
+        enter: function() {
           vid.play();
         },
-        exited: function () {
+        exited: function() {
           vid.pause();
         }
       });
@@ -514,7 +534,7 @@ function imageRatio() {
   const $image = $('.lazy-ratio');
 
   // Get each desktop frame
-  $image.each(function () {
+  $image.each(function() {
     const $this = $(this);
     // Find the % width of $this (subtract parent padding left/right if it has it)
     const getEleWidth =
@@ -566,9 +586,11 @@ function introAnimate() {
   tl
     .staggerFromTo(
       content,
-      2, {
+      2,
+      {
         autoAlpha: 0
-      }, {
+      },
+      {
         autoAlpha: 1
       },
       0.25,
@@ -576,7 +598,8 @@ function introAnimate() {
     )
     .staggerFrom(
       content,
-      0.8, {
+      0.8,
+      {
         y: '100px',
         ease: Power1.easeOut
       },
@@ -596,17 +619,20 @@ function animateGCrit() {
       return new TimelineMax()
         .to(
           `.gcrit-image-break .container > .lazy-ratio:nth-of-type(${tileNum}) .inner-block-image`,
-          2, {
+          2,
+          {
             autoAlpha: 1
           },
           0
         )
         .fromTo(
           `.gcrit-image-break .container > .lazy-ratio:nth-of-type(${tileNum}) .inner-block-image`,
-          1.5, {
+          1.5,
+          {
             scale: 0,
             y: '100%'
-          }, {
+          },
+          {
             scale: 1,
             y: '0%',
             ease: Power4.easeOut
@@ -615,7 +641,8 @@ function animateGCrit() {
         )
         .to(
           `.gcrit-image-break .container > .lazy-ratio:nth-of-type(${tileNum}) .inner-block-image`,
-          1, {
+          1,
+          {
             scale: 0.9,
             autoAlpha: 0.35,
             ease: Power1.easeIn
@@ -636,17 +663,20 @@ function animateGCrit() {
       return tlHover
         .to(
           tile,
-          2, {
+          2,
+          {
             autoAlpha: 1
           },
           0
         )
         .fromTo(
           tileBox,
-          1.5, {
+          1.5,
+          {
             scale: 0,
             y: '100%'
-          }, {
+          },
+          {
             scale: 1,
             y: '4%',
             ease: Power4.easeOut
@@ -655,17 +685,21 @@ function animateGCrit() {
         )
         .fromTo(
           tileBox,
-          1, {
+          1,
+          {
             y: '4%'
-          }, {
+          },
+          {
             y: '0%',
-            boxShadow: '0 0 0 1px rgba(0, 0, 0, 0.05), 0 10px 20px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.1)'
+            boxShadow:
+              '0 0 0 1px rgba(0, 0, 0, 0.05), 0 10px 20px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.1)'
           },
           2
         )
         .to(
           tileHover,
-          1, {
+          1,
+          {
             autoAlpha: 1
           },
           2
@@ -674,7 +708,7 @@ function animateGCrit() {
 
     new Waypoint.Inview({
       element: $('.gcrit-image-break .inner-block-image'),
-      enter: function () {
+      enter: function() {
         if (!hasRun) {
           tl
             .add(generalTimeline(1), 0)
@@ -705,44 +739,92 @@ function animateMhg() {
     // If firefox
     if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
       // Do Firefox-related activities
-      tl.staggerFrom(graphTop, 1.5, {
-          autoAlpha: 0
-        }, 0.15)
-        .staggerFrom(graphBottom, 1.5, {
-          autoAlpha: 0
-        }, 0.15, 0)
-        .staggerFrom(numTop, 1, {
-          y: 10,
-          autoAlpha: 0
-        }, 0.15, 1)
-        .staggerFrom(numBottom, 1, {
-          y: -10,
-          autoAlpha: 0
-        }, 0.15, 1)
+      tl
+        .staggerFrom(
+          graphTop,
+          1.5,
+          {
+            autoAlpha: 0
+          },
+          0.15
+        )
+        .staggerFrom(
+          graphBottom,
+          1.5,
+          {
+            autoAlpha: 0
+          },
+          0.15,
+          0
+        )
+        .staggerFrom(
+          numTop,
+          1,
+          {
+            y: 10,
+            autoAlpha: 0
+          },
+          0.15,
+          1
+        )
+        .staggerFrom(
+          numBottom,
+          1,
+          {
+            y: -10,
+            autoAlpha: 0
+          },
+          0.15,
+          1
+        );
     } else {
-      tl.staggerFrom(graphTop, 1, {
-          attr: {
-            height: 0
-          }
-        }, 0.15)
-        .staggerFrom(graphBottom, 1, {
-          attr: {
-            height: 0
-          }
-        }, 0.15, 0)
-        .staggerFrom(numTop, 1, {
-          y: 10,
-          autoAlpha: 0
-        }, 0.15, 1)
-        .staggerFrom(numBottom, 1, {
-          y: -10,
-          autoAlpha: 0
-        }, 0.15, 1)
+      tl
+        .staggerFrom(
+          graphTop,
+          1,
+          {
+            attr: {
+              height: 0
+            }
+          },
+          0.15
+        )
+        .staggerFrom(
+          graphBottom,
+          1,
+          {
+            attr: {
+              height: 0
+            }
+          },
+          0.15,
+          0
+        )
+        .staggerFrom(
+          numTop,
+          1,
+          {
+            y: 10,
+            autoAlpha: 0
+          },
+          0.15,
+          1
+        )
+        .staggerFrom(
+          numBottom,
+          1,
+          {
+            y: -10,
+            autoAlpha: 0
+          },
+          0.15,
+          1
+        );
     }
 
     new Waypoint.Inview({
       element: $('.mhg-graph'),
-      enter: function () {
+      enter: function() {
         if (!hasRun) {
           tl.play();
           hasRun = true;

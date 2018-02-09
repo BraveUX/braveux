@@ -994,6 +994,45 @@
   }
 }
 
+// Rokt
+.rokt {
+  // case study color variables
+  $offwhite: #f6f5f5;
+  $black: #353638;
+  $pink: #b51e6d;
+  $light-pink: #d861a4;
+
+  // case study colors
+  color: $black;
+
+  .offwhite {
+    background-color: $offwhite;
+  }
+
+  .black {
+    background-color: $black;
+  }
+
+  .pink {
+    background-color: $pink;
+  }
+
+  .light-pink {
+    background-color: $light-pink;
+  }
+
+  .pink,
+  .light-pink,
+  .black {
+    color: $white-smoke;
+  }
+
+  // quote icon color
+  .case-referral-quote-icon {
+    @include icon-quote($white-smoke);
+  }
+}
+
 // Style Me Pretty
 .smp {
   // case-study color variables
