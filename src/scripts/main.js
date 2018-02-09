@@ -515,10 +515,15 @@ function imageRatio() {
       100 *
       parseFloat($this.css('width')) /
       (parseFloat($this.parent().css('width')) -
-        (parseFloat($this.parent().css('padding-left')) + parseFloat($this.parent().css('padding-right'))));
+        (parseFloat($this.parent().css('padding-left')) +
+          parseFloat($this.parent().css('padding-right'))));
 
     // Calculate ratio based on data image size and element width -- (2 decimal places)
-    const getRatio = (this.dataset.height / this.dataset.width * getEleWidth).toFixed(2);
+    const getRatio = (
+      this.dataset.height /
+      this.dataset.width *
+      getEleWidth
+    ).toFixed(2);
 
     // Make sure that the image has a ratio
     if (getRatio >= 0) {
@@ -545,10 +550,22 @@ function navCurrent() {
 }
 
 function introAnimate() {
-  const content = $('.case-header-logo, .case-header-client-name, .case-header-tagline, .case-header-type');
+  const content = $(
+    '.case-header-logo, .case-header-client-name, .case-header-tagline, .case-header-type'
+  );
   const tl = new TimelineMax({ delay: 0.5 });
 
   tl
     .staggerFromTo(content, 2, { autoAlpha: 0 }, { autoAlpha: 1 }, 0.25, 0)
     .staggerFrom(content, 0.8, { y: '100px', ease: Power1.easeOut }, 0.15, 0);
+}
+
+function ludusFrame() {
+  const splitUrl = window.location.href.split('/'); // split URL based on '/'
+  const getLudusId = splitUrl[splitUrl.length - 1].substr(1); // get ending string of URL
+
+  const iframe = document.createElement('iframe');
+
+  iframe.src = `https://app.ludus.one/${getLudusId}`;
+  document.querySelector('.presentation-box').appendChild(iframe);
 }
