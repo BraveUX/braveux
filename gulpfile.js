@@ -200,7 +200,7 @@ function reload(done) {
 }
 
 // Browser Sync with Live Reload
-gulp.task('browser-sync', done => {
+gulp.task('browser-sync', () => {
   return browserSync.init({
     server: {
       baseDir: './dist/',
@@ -221,10 +221,22 @@ gulp.task('watch', done => {
   gulp.watch('src/documents/**/*', gulp.series('documents', reload));
   gulp.watch('src/views/**/*.ejs', gulp.series('ejs', reload));
   gulp.watch('src/styles/**/*.scss', gulp.series('sass', reload));
-  gulp.watch('src/scripts/*.js', gulp.series(['scripts', 'scripts-vivus', 'scripts-sr', 'scripts-stretch'], reload));
-  gulp.watch('src/scripts/animations/*.js', gulp.series('scripts-animations', reload));
+  gulp.watch(
+    'src/scripts/*.js',
+    gulp.series(
+      ['scripts', 'scripts-vivus', 'scripts-sr', 'scripts-stretch'],
+      reload
+    )
+  );
+  gulp.watch(
+    'src/scripts/animations/*.js',
+    gulp.series('scripts-animations', reload)
+  );
   gulp.watch('src/favicons/**/*', gulp.series('favicons', reload));
-  gulp.watch(['src/server/*', 'src/server/.htaccess'], gulp.series('server', reload));
+  gulp.watch(
+    ['src/server/*', 'src/server/.htaccess'],
+    gulp.series('server', reload)
+  );
   done();
 });
 
