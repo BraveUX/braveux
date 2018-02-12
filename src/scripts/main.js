@@ -291,7 +291,7 @@ function scrollReveal() {
     easing: 'ease-in-out',
     origin: 'bottom',
     scale: 1,
-    viewFactor: 0.9
+    viewFactor: 0.5
   };
 
   const reveal = {
