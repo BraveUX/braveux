@@ -21,11 +21,15 @@
   &.fade-bottom {
     &::after {
       @include position(absolute, null, null, 0, null);
-      box-shadow: inset 0 -135px 130px -55px rgba($white-smoke, 0.9);
+      box-shadow: inset 0 -135px 130px -70px rgba($white-smoke, 0.9);
       content: '';
       height: 175px;
       width: 100%;
       z-index: 10;
+
+      @include media('>=md') {
+        box-shadow: inset 0 -135px 130px -55px rgba($white-smoke, 0.9);
+      }
     }
   }
 
