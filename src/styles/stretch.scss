@@ -1,13 +1,13 @@
 // VENDORS
-@import "animate.scss"; // loaded from node_modules
-@import "include-media"; // loaded from node_modules
-@import "vendors/link-underline";
+@import 'animate.scss'; // loaded from node_modules
+@import 'include-media'; // loaded from node_modules
+@import 'vendors/link-underline';
 
 // MODULES & VARIABLES
-@import "modules/svgs";
-@import "modules/text";
-@import "modules/utilities";
-@import "modules/variables";
+@import 'modules/svgs';
+@import 'modules/text';
+@import 'modules/utilities';
+@import 'modules/variables';
 
 /* ====================================
 Styles Unique to the Stretch Case Study
@@ -31,7 +31,8 @@ Styles Unique to the Stretch Case Study
 .stretch-frame-overlay {
   @include media('>=md') {
     &::before {
-      box-shadow: inset 0 0 0 40px rgba(0, 0, 0, 0.2), inset 0 0 10px 40px rgba(0, 0, 0, 0.2);
+      box-shadow: inset 0 0 0 40px rgba(0, 0, 0, 0.2),
+        inset 0 0 10px 40px rgba(0, 0, 0, 0.2);
       outline: 1px solid rgba(0, 0, 0, 0.2);
       outline-offset: -40px;
     }
@@ -57,7 +58,7 @@ Styles Unique to the Stretch Case Study
 
   &::before {
     @include position(absolute, 0, 0, 0, 0);
-    background-color: rgba(#211F1C, 0.5);
+    background-color: rgba(#211f1c, 0.5);
     content: '';
     height: calc(100% + 1px);
     z-index: 1;
@@ -175,16 +176,14 @@ Modifiers
 .frame-desktop {
   &.stretch-frame {
     &::before {
-      background-color: #211F1C;
+      background-color: #211f1c;
     }
 
     &::after {
-      color: #EBEBEB;
+      color: #ebebeb;
     }
   }
 }
-
-
 
 /* =======
 Marquee Video
@@ -218,7 +217,6 @@ Marquee Video
   }
 }
 
-
 .marquee__intro {
   display: flex;
   flex: 0 0 100%;
@@ -232,7 +230,7 @@ Marquee Video
 }
 
 .marquee__logo {
-  fill: #FAFAFA;
+  fill: #fafafa;
   height: 42px;
   margin-bottom: $textGap/2;
   width: 205px;
@@ -279,8 +277,6 @@ Marquee Video
   }
 }
 
-
-
 .marquee__list-item {
   bottom: 0;
   margin: auto 0;
@@ -298,7 +294,7 @@ Marquee Video
 
 .marquee__line {
   align-self: flex-start;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   height: 8px;
   margin: $textGap/4 0 0;
   width: 100%;
@@ -333,7 +329,6 @@ Marquee Video
   }
 }
 
-
 .marquee__tagline {
   font-size: 14px;
   line-height: 1.4;
@@ -348,12 +343,12 @@ Marquee Video
 }
 
 .marquee__tagline--featured {
-  color: #41D6C5;
+  color: #1cccb6;
 }
 
 .marquee__tagline--logo {
   align-items: center;
-  background-color: #36CB9C;
+  background-color: #1cccb6;
   border-radius: 50%;
   display: flex;
   height: 13px;
