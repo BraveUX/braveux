@@ -99,6 +99,7 @@
 */
 .frame-desktop {
   border-radius: 5px 5px 0 0;
+  overflow: hidden;
   padding-top: 15px;
 
   @include media('>=md') {
@@ -122,7 +123,7 @@
     }
 
     @include media('>=xl') {
-      width: calc(100% - 1px);
+      width: 100%;
     }
   }
 
@@ -248,11 +249,11 @@
 
   @include media('>=xl') {
     .inner-block-image {
-      width: calc(100% - 1px);
+      width: calc(100% + 1px);
     }
 
     &.edge-left .inner-block-image {
-      width: 100%;
+      width: calc(100% + 1px);
     }
   }
 }
