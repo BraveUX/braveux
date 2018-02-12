@@ -89,6 +89,7 @@
 
   &.half-height {
     height: 37.5vh;
+    min-height: 0;
 
     @include media('>=md') {
       min-height: 400px;
