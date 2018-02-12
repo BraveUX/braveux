@@ -256,13 +256,24 @@
     }
   }
   .rokt & {
-    background: url('../images/work/rokt/header.svg') #353638 left
-      bottom/contain no-repeat;
+    background: url('../images/work/rokt/header-bg.svg') #202022 left
+      center/cover no-repeat;
     padding: 0;
 
-    .case-header-content:nth-of-type(2) {
-      margin: auto 0 auto auto;
-      max-width: 50%;
+    // svg stats
+    @include media('>=md') {
+      &::before {
+        @include position(absolute,
+        0,
+        null,
+        0,
+        calc(100% - (#{$gridGap} + 40%)));
+        background: url('../images/work/rokt/header-stats.svg') right
+          center/contain no-repeat;
+        content: '';
+        width: 50%;
+        z-index: 5;
+      }
     }
   }
   .smp & {

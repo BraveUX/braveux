@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="645" viewBox="0 0 1440 645">
-  <g fill="none" fill-rule="evenodd">
-    <rect width="1440" height="645" fill="#353638"/>
-    <g stroke-width="3" transform="translate(-5 339)">
-      <polyline stroke="#C3E4FF" points=".652 68.359 208.676 94.486 417.953 150.875 657.722 134.486 881.884 99 1045.064 126.058 1248.172 121.001 1451.714 35.879"/>
-      <polyline stroke="#2199F4" points="0 117.365 208.676 167.024 409.107 104.762 657.07 152.736 880.859 91 1044.411 107.264 1247.519 70.182 1477.348 .879"/>
-    </g>
-  </g>
-</svg>

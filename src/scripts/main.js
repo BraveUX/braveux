@@ -353,7 +353,7 @@ function scrollReveal() {
       easing: 'ease-out',
       origin: 'bottom',
       scale: 1,
-      viewFactor: 0.7
+      viewFactor: 0.1
     },
     300
   );
