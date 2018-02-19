@@ -739,91 +739,48 @@ function animateMhg() {
         const numTop = $('.num-top');
         const numBottom = $('.num-bottom');
 
-        // If firefox
-        if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-            // Do Firefox-related activities
-            tl
-                .staggerFrom(
-                    graphTop,
-                    1.5,
-                    {
-                        autoAlpha: 0
-                    },
-                    0.15
-                )
-                .staggerFrom(
-                    graphBottom,
-                    1.5,
-                    {
-                        autoAlpha: 0
-                    },
-                    0.15,
-                    0
-                )
-                .staggerFrom(
-                    numTop,
-                    1,
-                    {
-                        y: 10,
-                        autoAlpha: 0
-                    },
-                    0.15,
-                    1
-                )
-                .staggerFrom(
-                    numBottom,
-                    1,
-                    {
-                        y: -10,
-                        autoAlpha: 0
-                    },
-                    0.15,
-                    1
-                );
-        } else {
-            tl
-                .staggerFrom(
-                    graphTop,
-                    1,
-                    {
-                        attr: {
-                            height: 0
-                        }
-                    },
-                    0.15
-                )
-                .staggerFrom(
-                    graphBottom,
-                    1,
-                    {
-                        attr: {
-                            height: 0
-                        }
-                    },
-                    0.15,
-                    0
-                )
-                .staggerFrom(
-                    numTop,
-                    1,
-                    {
-                        y: 10,
-                        autoAlpha: 0
-                    },
-                    0.15,
-                    1
-                )
-                .staggerFrom(
-                    numBottom,
-                    1,
-                    {
-                        y: -10,
-                        autoAlpha: 0
-                    },
-                    0.15,
-                    1
-                );
-        }
+        tl
+            .staggerFrom(
+                graphTop,
+                0.5,
+                {
+                    attr: {
+                        height: 0
+                    }
+                },
+                0.15
+            )
+            .staggerFrom(
+                graphBottom,
+                0.5,
+                {
+                    attr: {
+                        height: 0
+                    }
+                },
+                0.15,
+                0.5
+            )
+            .staggerFrom(
+                numTop,
+                1,
+                {
+                    y: 10,
+                    autoAlpha: 0
+                },
+                0.15,
+                0.5
+            )
+            .staggerFrom(
+                numBottom,
+                1,
+                {
+                    y: -10,
+                    autoAlpha: 0
+                },
+                0.15,
+                1
+            );
 
         new Waypoint.Inview({
             element: $('.mhg-graph'),
