@@ -145,7 +145,11 @@
     }
 
     &.lazy-ratio {
-        background-color: #fefefe;
+        background: linear-gradient(
+            to top,
+            #fefefe calc(100% - 15px),
+            rgba(#fefefe, 0) 15px
+        ); // prevents bg peak on rounded corners
         padding-top: 16px;
 
         @include media('>=md') {
