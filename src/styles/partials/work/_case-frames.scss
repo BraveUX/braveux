@@ -147,7 +147,9 @@
     &.lazy-ratio {
         background: linear-gradient(
             to top,
-            #fefefe calc(100% - 15px),
+            rgba(#fefefe, 0) 2px,
+            #fefefe 1px,
+            #fefefe calc(100% - 18px),
             rgba(#fefefe, 0) 15px
         ); // prevents bg peak on rounded corners
         padding-top: 16px;
@@ -157,7 +159,7 @@
         }
 
         &::before {
-            top: 0;
+            top: 1px;
         }
     }
 
@@ -262,10 +264,6 @@
         &.shadow {
             border-bottom: none;
         }
-    }
-
-    .inner-block-image {
-        margin-top: -1px;
     }
 
     @include media('>=xl') {
