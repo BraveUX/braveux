@@ -147,9 +147,9 @@
     &.lazy-ratio {
         background: linear-gradient(
             to top,
-            rgba(#fefefe, 0) 2px,
+            rgba(#fefefe, 0) 4px,
             #fefefe 1px,
-            #fefefe calc(100% - 18px),
+            #fefefe calc(100% - 20px),
             rgba(#fefefe, 0) 15px
         ); // prevents bg peak on rounded corners
         padding-top: 16px;
