@@ -264,9 +264,12 @@
         }
     }
 
+    .inner-block-image {
+        margin-top: -1px;
+    }
+
     @include media('>=xl') {
         .inner-block-image {
-            margin-top: -1px;
             width: calc(100% + 1px);
         }
 
