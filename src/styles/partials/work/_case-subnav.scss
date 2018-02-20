@@ -1,4 +1,4 @@
-$stretch-green: #36cb9c;
+$stretch-green: #1cccb6;
 $stretch-blue: #22a8fa;
 $stretch-purple: #8870f7;
 $stretch-teal: #00bdc1;
@@ -235,7 +235,9 @@ $stretch-teal: #00bdc1;
     position: absolute;
     transform: scale3d(0, 1, 1);
     transition: transform 200ms 300ms;
-    width: calc(100% - #{$textGap*2}); // subtract padding so it only underlines name
+    width: calc(
+      100% - #{$textGap*2}
+    ); // subtract padding so it only underlines name
   }
 
   &.is-active {

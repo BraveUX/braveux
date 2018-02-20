@@ -81,6 +81,18 @@
   }
 }
 
+.extra-padded-top {
+  padding-top: $gridGap*0.75;
+
+  @include media('>=sm') {
+    padding-top: $gridGap*1.5;
+  }
+
+  @include media('>=lg') {
+    padding-top: $gridGap*2.5;
+  }
+}
+
 .block-centered {
   @include media('>=md') {
     top: 50%;

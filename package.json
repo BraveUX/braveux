@@ -32,10 +32,12 @@
     "gulp-uglify": "^2.0.0",
     "imagemin-jpeg-recompress": "^5.1.0",
     "imagemin-pngquant": "^5.0.1",
-    "stylelint": "~8.0.0",
-    "stylelint-order": "^0.4.4",
-    "stylelint-scss": "^1.4.4",
-    "stylelint-suitcss": "^1.0.0",
+    "stylelint": "^8.3.0",
+    "stylelint-config-prettier": "^2.0.0",
+    "stylelint-config-standard": "^18.0.0",
+    "stylelint-order": "*",
+    "stylelint-scss": "*",
+    "stylelint-suitcss": "*",
     "waypoints": "^4.0.1"
   },
   "dependencies": {

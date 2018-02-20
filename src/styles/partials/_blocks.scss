@@ -21,11 +21,15 @@
   &.fade-bottom {
     &::after {
       @include position(absolute, null, null, 0, null);
-      box-shadow: inset 0 -135px 130px -55px rgba($white-smoke, 0.9);
+      box-shadow: inset 0 -135px 130px -70px rgba($white-smoke, 0.9);
       content: '';
       height: 175px;
       width: 100%;
       z-index: 10;
+
+      @include media('>=md') {
+        box-shadow: inset 0 -135px 130px -55px rgba($white-smoke, 0.9);
+      }
     }
   }
 
@@ -85,6 +89,7 @@
 
   &.half-height {
     height: 37.5vh;
+    min-height: 0;
 
     @include media('>=md') {
       min-height: 400px;
@@ -109,6 +114,22 @@
 
   .column + & {
     margin: 0;
+  }
+
+  &.gutter-left {
+    margin-left: $gridGap/2;
+
+    @include media('>=sm') {
+      margin-left: $gridGap;
+    }
+
+    @include media('>=lg') {
+      margin-left: $gridGap*1.5;
+    }
+
+    @include media('>=xl') {
+      margin-left: $gridGap;
+    }
   }
 
   &.gutter-bottom-mobile {
@@ -328,6 +349,18 @@
       bottom: unset;
       height: auto;
       top: unset;
+    }
+
+    &.half {
+      max-width: 50%;
+    }
+
+    &.absolute-right {
+      right: 0;
+    }
+
+    &.absolute-left {
+      left: 0;
     }
   }
 }

@@ -1,15 +1,15 @@
 // Colors - http://www.color-blindness.com/color-name-hue/
-$white: #ffffff;
-$white-smoke: #eeeeee;
+$white: #fff;
+$white-smoke: #eee;
 $iron: #d2d3d4;
 $silver: #bdbdbd;
 $dark-gray: #ababab;
 $botticelli: #95a6b4;
 $regent-grey: #6f7f84;
 $charcoal: #424242;
-$night-rider: #333333;
+$night-rider: #333;
 $jaguar: #282829;
-$black: #000000;
+$black: #000;
 
 // Settings
 $textGap: 20px;
@@ -17,9 +17,9 @@ $gridGap: 4em;
 
 // Media Mixin Breakpoints  (Modify as needed)
 $breakpoints: (
-  xs: 320px,
-  sm: 550px,
-  md: 768px,
-  lg: 1024px,
-  xl: 1440px
+    xs: 320px,
+    sm: 550px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1440px
 );

@@ -15,7 +15,8 @@
 }
 
 .andpizza-bricks {
-  background: url('../../images/work/andPizza/brick-bg.jpg') bottom center/cover no-repeat;
+  background: url('../../images/work/andPizza/brick-bg.jpg') bottom center/cover
+    no-repeat;
   background-color: #424242;
   color: $white-smoke;
 }
@@ -112,6 +113,165 @@
   }
 }
 
+// Design Labs
+.design-labs-post {
+  .frame-mobile {
+    bottom: -10%;
+    right: 5%;
+    width: 25%;
+  }
+}
+
+.design-labs-reactions {
+  .lazy-ratio:not(.frame) .inner-block-image {
+    height: auto;
+    width: auto;
+
+    // reactions list
+    &:nth-of-type(1) {
+      left: 0;
+      margin: auto 20% auto auto;
+      position: relative;
+      right: 0;
+      width: 40%;
+      z-index: 1;
+    }
+
+    // comment 1
+    &:nth-of-type(2) {
+      left: 15%;
+      top: 5%;
+      width: 30%;
+    }
+
+    // comment 2
+    &:nth-of-type(3) {
+      margin: auto;
+      right: 2.5%;
+      width: 30%;
+    }
+
+    // comment 3
+    &:nth-of-type(4) {
+      bottom: 10%;
+      left: 15%;
+      top: initial;
+      width: 30%;
+      z-index: 2;
+    }
+
+    // innovative
+    &:nth-of-type(5) {
+      bottom: 5%;
+      left: 2.5%;
+      top: initial;
+      width: 5%;
+
+      @include media('>=md') {
+        left: -10%;
+      }
+    }
+
+    // more
+    &:nth-of-type(6) {
+      bottom: 10%;
+      right: 15%;
+      top: initial;
+      width: 6%;
+      z-index: 2;
+    }
+
+    // valuable
+    &:nth-of-type(7) {
+      left: 6%;
+      top: 8%;
+      width: 6%;
+
+      @include media('>=md') {
+        left: -5%;
+      }
+    }
+
+    // provoking
+    &:nth-of-type(8) {
+      right: 8%;
+      top: 15%;
+      width: 6%;
+    }
+
+    // gold
+    &:nth-of-type(9) {
+      left: 25%;
+      top: 40%;
+      width: 6%;
+    }
+  }
+}
+
+.design-labs-row {
+  align-items: center;
+
+  .inner-block-content {
+    margin: auto;
+    max-width: none;
+    padding: 0 4em;
+    text-align: center;
+
+    br {
+      display: none;
+    }
+
+    @include media('>=lg') {
+      text-align: left;
+
+      br {
+        display: block;
+      }
+    }
+  }
+
+  .case-block-text {
+    max-width: 650px;
+
+    @include media('>=lg') {
+      max-width: 375px;
+    }
+  }
+
+  .catalog-1,
+  .catalog-2,
+  .catalog-3 {
+    flex: none;
+    margin-left: auto;
+    margin-right: #{-$gridGap};
+    margin-top: $gridGap/2;
+    max-width: 75%;
+  }
+
+  .catalog-1 {
+    margin-top: $gridGap;
+  }
+
+  .catalog-2 {
+    margin-left: #{-$gridGap};
+    margin-right: auto;
+
+    @include media('>=lg') {
+      margin-left: $gridGap;
+    }
+  }
+
+  .inner-block-image {
+    flex-shrink: 0;
+    margin: auto;
+
+    @include media('>=lg') {
+      height: auto;
+      width: 100%;
+    }
+  }
+}
+
 // Felix
 .felix-devices {
   .frame-mobile {
@@ -149,6 +309,95 @@
     max-width: 600px;
     min-width: 250px;
     right: 0;
+    width: 60%;
+  }
+}
+
+// gCrit
+.gcrit-home {
+  .frame-desktop {
+    margin: auto -1px auto auto;
+    right: 0;
+    width: 85%;
+  }
+
+  .frame-mobile {
+    bottom: -2.5%;
+    height: 69%;
+    left: 5%;
+    width: 30%;
+
+    @include media('>=md') {
+      left: 0;
+    }
+  }
+}
+
+.gcrit-image-break {
+  .container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .lazy-ratio {
+      margin-left: 5%;
+      max-width: 20%;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+
+    .box {
+      margin-left: 5%;
+      max-width: 20%;
+      position: relative;
+      width: 100%;
+
+      .inner-block-image:last-of-type {
+        left: 0;
+        margin-left: 0;
+        position: absolute;
+        top: 0;
+      }
+    }
+
+    .inner-block-image {
+      border-radius: 6px;
+      object-fit: contain;
+      opacity: 0;
+    }
+  }
+}
+
+.gcrit-project {
+  background: url('../../images/work/gcrit/project-bg.jpg') bottom center/cover
+    no-repeat;
+  background-color: #424242;
+
+  .frame-desktop {
+    margin: 0 17.5% 0 auto;
+    width: 75%;
+  }
+
+  .frame-mobile {
+    bottom: -2.5%;
+    width: 15%;
+  }
+
+  .frame-tablet {
+    bottom: -2.5%;
+    height: 68.75%;
+    margin: auto 0 auto auto;
+    right: 0;
+    width: 45%;
+  }
+}
+
+.gcrit-phone-half {
+  .frame-mobile {
+    margin: 0 auto;
     width: 60%;
   }
 }
@@ -349,7 +598,6 @@
   }
 }
 
-
 .livesafe-resources {
   .frame-mobile {
     &:nth-of-type(2) {
@@ -380,6 +628,99 @@
       top: 0;
       width: 24.5%;
     }
+  }
+}
+
+// Miller Heiman Group
+.mhg-cards-1 {
+  .lazy-ratio:not(.frame) .inner-block-image {
+    bottom: initial;
+    height: auto;
+    width: calc(50% - #{$textGap});
+    &:nth-of-type(1) {
+      right: $textGap*0.75;
+      top: 0;
+    }
+    &:nth-of-type(2) {
+      right: calc((50% - #{$textGap}) + #{$textGap*1.5});
+      top: 16%;
+    }
+    &:nth-of-type(3) {
+      right: $textGap*0.75;
+      top: calc(43.25% + #{$textGap});
+    }
+  }
+}
+
+.mhg-cards-2 {
+  .inner-block.padded-bottom {
+    @include media('<md') {
+      padding-bottom: 0;
+    }
+  }
+  .lazy-ratio:not(.frame) .inner-block-image {
+    bottom: initial;
+    height: auto;
+    width: calc(50% - #{$textGap});
+    &:nth-of-type(1) {
+      left: $textGap/2;
+      top: calc(-37% + #{$textGap});
+
+      @include media('>=md') {
+        left: initial;
+        right: calc((-50% + #{$textGap*1.5}) - #{$textGap});
+      }
+    }
+    &:nth-of-type(2) {
+      right: $textGap*0.75;
+      top: -6%;
+
+      @include media('>=md') {
+        right: $textGap/4;
+      }
+    }
+    &:nth-of-type(3) {
+      right: $textGap*0.75;
+      top: calc(22.25% + #{$textGap});
+
+      @include media('>=md') {
+        right: $textGap/4;
+      }
+    }
+    &:nth-of-type(4) {
+      left: $textGap/2;
+      top: 30%;
+
+      @include media('>=md') {
+        left: $textGap;
+      }
+    }
+    &:nth-of-type(5) {
+      left: $textGap/2;
+      top: calc(58.5% + #{$textGap});
+
+      @include media('>=md') {
+        left: $textGap;
+      }
+    }
+    &:nth-of-type(6) {
+      bottom: 0;
+      right: $textGap*0.75;
+      top: initial;
+
+      @include media('>=md') {
+        right: $textGap/4;
+      }
+    }
+  }
+}
+
+.mhg-branding {
+  .frame-desktop.absolute {
+    bottom: 0;
+    left: 25%;
+    top: 0;
+    width: 100%;
   }
 }
 
@@ -506,6 +847,107 @@
   }
 }
 
+// Rokt
+.rokt-hiw {
+  @include media('>=md') {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 60%,
+      rgba(#353638, 1) 40%
+    );
+  }
+
+  .frame-mobile {
+    padding-top: $gridGap*2;
+    width: 90%;
+
+    @include media('>=md') {
+      filter: drop-shadow(0 2px 15px rgba($jaguar, 0.3));
+      padding-top: $gridGap;
+    }
+
+    @include media('>=lg') {
+      padding-top: $gridGap*1.5;
+    }
+
+    @include media('>=xl') {
+      padding-top: $gridGap*2;
+    }
+  }
+
+  .inner-block-image.absolute-top {
+    width: 90%;
+  }
+
+  .inner-box {
+    overflow: visible;
+    + .inner-box {
+      margin-top: $gridGap*2;
+
+      @include media('>=md') {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .case-block-heading {
+    @include media('>=md') {
+      color: #353638;
+    }
+  }
+
+  .case-block-text {
+    color: $white-smoke;
+    margin-top: $textGap*2;
+    max-width: 300px;
+  }
+}
+
+.rokt-cards {
+  .inner-block:nth-of-type(1) {
+    &::before,
+    &::after {
+      @include position(absolute, null, 0, null, 0);
+      content: ' ';
+      display: block;
+      height: 100px;
+      width: 100%;
+      z-index: 10;
+    }
+
+    &::before {
+      background-image: linear-gradient(
+        to bottom,
+        rgba(#353638, 1),
+        rgba(#353638, 0) 100%
+      );
+      top: 0;
+    }
+
+    &::after {
+      background-image: linear-gradient(
+        to top,
+        rgba(#353638, 1),
+        rgba(#353638, 0) 100%
+      );
+      bottom: 0;
+    }
+  }
+}
+
+.rokt-market {
+  .frame-mobile {
+    width: 45%;
+    &:nth-of-type(1) {
+      bottom: 0;
+    }
+    &:nth-of-type(2) {
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
 .smp-size {
   .frame-desktop {
     left: 0;
@@ -563,19 +1005,19 @@
 
 .snagajob {
   .overflow-bottom {
-    box-shadow: inset 0 -150px 0 -100px #EEEEEE;
+    box-shadow: inset 0 -150px 0 -100px #eee;
     padding-bottom: 20px;
 
     @include media('>=sm') {
-      box-shadow: inset 0 -180px 0 -100px #EEEEEE;
+      box-shadow: inset 0 -180px 0 -100px #eee;
     }
 
     @include media('>=md') {
-      box-shadow: inset 0 -180px 0 -100px #EEEEEE;
+      box-shadow: inset 0 -180px 0 -100px #eee;
     }
 
     @include media('>=lg') {
-      box-shadow: inset 0 -210px 0 -100px #EEEEEE;
+      box-shadow: inset 0 -210px 0 -100px #eee;
     }
   }
 }
