@@ -1,13 +1,14 @@
 {
-  "plugins": ["stylelint-scss", "stylelint-suitcss", "stylelint-order"],
-  "ignoreFiles": ["dist/**", "src/fonts/**/*"],
-  "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
-  "rules": {
-    "order/order": ["custom-properties", "declarations"],
-    "order/properties-alphabetical-order": true,
-    "at-rule-no-unknown": null,
-    "declaration-empty-line-before": "never",
-    "no-descending-specificity": null,
-    "no-duplicate-selectors": null
-  }
+    "plugins": ["stylelint-scss", "stylelint-suitcss", "stylelint-order"],
+    "ignoreFiles": ["dist/**", "src/fonts/**/*", "src/views/404.ejs"],
+    "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
+    "rules": {
+        "order/order": ["custom-properties", "declarations"],
+        "order/properties-alphabetical-order": true,
+        "at-rule-no-unknown": null,
+        "declaration-empty-line-before": "never",
+        "no-descending-specificity": null,
+        "no-duplicate-selectors": null,
+        "no-missing-end-of-source-newline": null
+    }
 }
