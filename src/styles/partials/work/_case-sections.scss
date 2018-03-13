@@ -436,7 +436,15 @@
 
 .hurdlr-icons {
     .inner-block-image {
-        filter: drop-shadow(0 2px 10px rgba($jaguar, 0.2));
+        filter: drop-shadow(0 2px 4px rgba($jaguar, 0.2));
+    }
+}
+
+.hurdlr-condensed {
+    .inner-block-content {
+        + .inner-block-content {
+            margin-top: $textGap*2;
+        }
     }
 }
 

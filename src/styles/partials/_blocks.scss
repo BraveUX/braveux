@@ -232,6 +232,12 @@
         }
     }
 
+    &.full {
+        @include media('>=md') {
+            max-width: none;
+        }
+    }
+
     // GUTTER MODIFIERS
     @include media('>=md') {
         &.gutter-top {
