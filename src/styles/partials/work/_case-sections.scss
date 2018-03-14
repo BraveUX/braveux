@@ -441,10 +441,63 @@
 }
 
 .hurdlr-condensed {
-    .inner-block-content {
-        + .inner-block-content {
-            margin-top: $textGap*2;
+    .container.row {
+        + .container.row {
+            margin-top: $gridGap;
+
+            @include media('>=md', '<lg') {
+                margin-top: $textGap * 2;
+            }
+
+            @include media('>=lg') {
+                margin-top: $textGap/4;
+            }
+
+            .icon {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg data-name='Layer 2'%3E%3Cg data-name='Layer 1' fill='%23666'%3E%3Cpath d='M20 0a20 20 0 1 0 20 20A20 20 0 0 0 20 0zm0 36.67A16.67 16.67 0 1 1 36.67 20 16.69 16.69 0 0 1 20 36.67z'/%3E%3Cpath d='M27.93 26.12l-5.28-5.28 5.28-5.28a1.87 1.87 0 0 0-2.64-2.64L20 18.21l-5.28-5.28a1.87 1.87 0 0 0-2.64 2.64l5.28 5.28-5.26 5.27a1.87 1.87 0 0 0 2.64 2.64L20 23.48l5.28 5.28a1.87 1.87 0 0 0 2.64-2.64z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            }
         }
+
+        .row {
+            flex-direction: row;
+        }
+
+        .icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg data-name='Layer 2'%3E%3Cpath d='M20 36.67A16.67 16.67 0 1 1 36.67 20 16.69 16.69 0 0 1 20 36.67M20 0a20 20 0 1 0 20 20A20 20 0 0 0 20 0m5.72 13.26l-8 9.6-4.12-3.45A1.67 1.67 0 1 0 11.47 22l5.44 4.51a1.67 1.67 0 0 0 2.35-.22l9-10.89a1.67 1.67 0 1 0-2.56-2.13' fill='%235aae46' data-name='Layer 1'/%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            display: block;
+            height: 40px;
+            margin-right: $textGap/2;
+            // margin-top: 3px;
+            width: 40px;
+        }
+
+        .case-block-heading {
+            line-height: 40px;
+        }
+
+        .lazy-ratio {
+            @include media('<md') {
+                margin-left: 45px; // align with text
+                width: 75%;
+            }
+        }
+    }
+
+    .lazy-ratio {
+        @include media('<md') {
+            margin-bottom: $textGap;
+        }
+    }
+}
+
+.hurdlr-notifications.lazy-ratio {
+    @include position(absolute, 0, 0, 0, 0);
+    margin: auto auto auto 7.5%;
+    width: 30%;
+
+    svg {
+        overflow: visible;
     }
 }
 

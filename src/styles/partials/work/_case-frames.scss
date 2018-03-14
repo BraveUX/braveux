@@ -164,31 +164,25 @@
     }
 
     &.rounded {
-        img {
-            border-radius: 0 0 5px 5px;
+        border-radius: 5px;
 
-            @include media('>=md') {
-                border-radius: 0 0 10px 10px;
-            }
+        @include media('>=md') {
+            border-radius: 10px;
         }
 
         &.edge-left {
-            img {
-                border-radius: 0 0 5px;
+            border-radius: 0 5px 5px 0;
 
-                @include media('>=md') {
-                    border-radius: 0 0 10px;
-                }
+            @include media('>=md') {
+                border-radius: 0 10px 10px 0;
             }
         }
 
         &.edge-right {
-            img {
-                border-radius: 0 0 0 5px;
+            border-radius: 5px 0 0 5px;
 
-                @include media('>=md') {
-                    border-radius: 0 0 0 10px;
-                }
+            @include media('>=md') {
+                border-radius: 10px 0 0 10px;
             }
         }
     }

@@ -1,494 +1,497 @@
 .wrapper {
-  @include wrapper;
-  background-color: $white;
-  box-shadow: 0 0 20px 5px rgba($black, 0.4);
-  display: block;
-  min-height: 100vh;
+    @include wrapper;
+    background-color: $white;
+    box-shadow: 0 0 20px 5px rgba($black, 0.4);
+    display: block;
+    min-height: 100vh;
 }
 
 .container {
-  margin: 0 $gridGap/2;
-  position: relative;
+    margin: 0 $gridGap/2;
+    position: relative;
 
-  @include media('>=sm') {
-    margin: 0 $gridGap;
-  }
+    @include media('>=sm') {
+        margin: 0 $gridGap;
+    }
 
-  @include media('>=lg') {
-    margin: 0 $gridGap*1.5;
-  }
+    @include media('>=lg') {
+        margin: 0 $gridGap * 1.5;
+    }
 
-  @include media('>=xl') {
-    margin: 0 $gridGap*2;
-  }
+    @include media('>=xl') {
+        margin: 0 $gridGap * 2;
+    }
 }
 
 .container-narrow {
-  margin: 0 $gridGap/2;
-  max-width: 100%;
-  position: relative;
-  width: auto;
+    margin: 0 $gridGap/2;
+    max-width: 100%;
+    position: relative;
+    width: auto;
 
-  @include media('>=sm') {
-    margin: 0 $gridGap;
-  }
+    @include media('>=sm') {
+        margin: 0 $gridGap;
+    }
 
-  @include media('>=md') {
-    margin: 0 $gridGap*2;
-    max-width: 1200px;
-    width: calc(100% - (#{$gridGap*2} * 2));
-  }
+    @include media('>=md') {
+        margin: 0 $gridGap * 2;
+        max-width: 1200px;
+        width: calc(100% - (#{$gridGap * 2} * 2));
+    }
 
-  @include media('>=xl') {
-    margin: 0 $gridGap*4;
-    width: calc(100% - (#{$gridGap*4} * 2));
-  }
+    @include media('>=xl') {
+        margin: 0 $gridGap * 4;
+        width: calc(100% - (#{$gridGap * 4} * 2));
+    }
 }
 
 .padded {
-  padding: $gridGap*0.75 0;
+    padding: $gridGap * 0.75 0;
 
-  @include media('>=sm') {
-    padding: $gridGap*1.5 0;
-  }
+    @include media('>=sm') {
+        padding: $gridGap * 1.5 0;
+    }
 }
 
 .padded-top {
-  padding-top: $gridGap*0.75;
+    padding-top: $gridGap * 0.75;
 
-  @include media('>=sm') {
-    padding-top: $gridGap*1.5;
-  }
+    @include media('>=sm') {
+        padding-top: $gridGap * 1.5;
+    }
 }
 
 .padded-bottom {
-  padding-bottom: $gridGap*0.75;
+    padding-bottom: $gridGap * 0.75;
 
-  @include media('>=sm') {
-    padding-bottom: $gridGap*1.5;
-  }
+    @include media('>=sm') {
+        padding-bottom: $gridGap * 1.5;
+    }
 }
 
 .extra-padded {
-  padding: $gridGap*0.75 0;
+    padding: $gridGap * 0.75 0;
 
-  @include media('>=sm') {
-    padding: $gridGap*1.5 0;
-  }
+    @include media('>=sm') {
+        padding: $gridGap * 1.5 0;
+    }
 
-  @include media('>=lg') {
-    padding: $gridGap*2.5 0;
-  }
+    @include media('>=lg') {
+        padding: $gridGap * 2.5 0;
+    }
 }
 
 .extra-padded-top {
-  padding-top: $gridGap*0.75;
+    padding-top: $gridGap * 0.75;
 
-  @include media('>=sm') {
-    padding-top: $gridGap*1.5;
-  }
+    @include media('>=sm') {
+        padding-top: $gridGap * 1.5;
+    }
 
-  @include media('>=lg') {
-    padding-top: $gridGap*2.5;
-  }
+    @include media('>=lg') {
+        padding-top: $gridGap * 2.5;
+    }
 }
 
 .block-centered {
-  @include media('>=md') {
-    top: 50%;
-    transform: translateY(-50%);
-  }
+    @include media('>=md') {
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
 
 // FLEX LAYOUT
 .row {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-  @include media('>=md') {
-    flex-direction: row;
-  }
+    @include media('>=md') {
+        flex-direction: row;
+    }
 
-  &.wrap {
-    flex-flow: row wrap;
-  }
+    &.wrap {
+        flex-flow: row wrap;
+    }
 
-  &.between {
-    justify-content: space-between;
-  }
+    &.between {
+        justify-content: space-between;
+    }
 
-  &.vertical-center {
-    align-items: center;
-  }
+    &.vertical-center {
+        align-items: center;
+    }
 
-  &.center {
-    justify-content: center;
-  }
+    &.center {
+        justify-content: center;
+    }
 
-  &.stretch {
-    align-items: stretch;
-  }
+    &.stretch {
+        align-items: stretch;
+    }
 }
 
 .column {
-  display: flex;
-  flex: 1 0 auto;
-  flex-direction: column;
-  // flex-basis: 100%;
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    // flex-basis: 100%;
 
-  &.column-block {
-    display: block;
-  }
-
-  &.gutter,
-  &.gutter-quarter {
-    + .column {
-      margin: $gridGap 0 0;
+    &.column-block {
+        display: block;
     }
-  }
-
-  &.center {
-    justify-content: center;
-  }
-
-  // Gutter Modifiers
-  &.gutter-quarter {
-    + .column {
-      margin: $gridGap/4 0 0;
-    }
-  }
-
-  @include media('>=md') {
-    flex: 1 1 auto;
 
     &.gutter,
     &.gutter-quarter {
-      + .column {
-        margin: 0 0 0 $gridGap;
-      }
-    }
-  }
-
-  @include media('<=md') {
-    &.clear-gutter-md {
-      + .column {
-        margin: 0;
-      }
-    }
-  }
-
-  @include media('<=lg') {
-    &.clear-gutter-lg {
-      + .column {
-        margin: 0;
-      }
-    }
-  }
-
-  @include media('<=xl') {
-    &.clear-gutter-xl {
-      + .column {
-        //for some dumb reason, with left-margin 0 on safari it won't wrap to the next line. Applying a SMALL margin resolves this...
-        margin-left: 0.1px;
-      }
-    }
-  }
-
-  // Position Modifiers
-  &.align-bottom {
-    justify-content: flex-end;
-  }
-
-  &.align-self-bottom {
-    align-self: flex-end;
-  }
-
-  &.align-left {
-    align-items: flex-start;
-  }
-
-  &.align-right {
-    align-items: flex-end;
-  }
-
-  &.align-center {
-    align-items: center;
-  }
-
-  &.align-self-center {
-    align-self: center;
-  }
-
-  &.align-self-stretch {
-    align-self: stretch;
-  }
-
-  // XS Position Modifiers (Mobile)
-  &.absolute-center-xs {
-    align-items: center;
-    justify-content: center;
-  }
-
-  // SM Position Modifiers (Mobile-Lg)
-  @include media('>=sm') {
-    &.absolute-center-sm {
-      align-items: center;
-      justify-content: center;
-    }
-  }
-
-  // MD Position Modifiers (Tablet)
-  @include media('>=md') {
-    &.absolute-center-md {
-      align-items: center;
-      justify-content: center;
-    }
-  }
-
-  // LG Position Modifiers (Laptop)
-  @include media('>=lg') {
-    &.absolute-center-lg {
-      align-items: center;
-      justify-content: center;
-    }
-  }
-
-  // XL Position Modifiers (Desktop)
-  @include media('>=xl') {
-    &.absolute-center-xl {
-      align-items: center;
-      justify-content: center;
-    }
-  }
-
-  // FLEX SIZE MODIFIERS
-  &.auto-xs,
-  &.auto-md,
-  &.auto-sm,
-  &.auto-lg,
-  &.auto-xl {
-    flex: 1 1 auto;
-  }
-
-  &.full-xs,
-  &.half-xs,
-  &.one-third-xs,
-  &.two-third-xs,
-  &.one-quarter-xs,
-  &.three-quarter-xs,
-  &.full-md,
-  &.half-md,
-  &.one-third-md,
-  &.two-third-md,
-  &.one-quarter-md,
-  &.three-quarter-md,
-  &.full-sm,
-  &.half-sm,
-  &.one-third-sm,
-  &.two-third-sm,
-  &.one-quarter-sm,
-  &.three-quarter-sm,
-  &.full-lg,
-  &.half-lg,
-  &.one-third-lg,
-  &.two-third-lg,
-  &.one-quarter-lg,
-  &.three-quarter-lg,
-  &.full-xl,
-  &.half-xl,
-  &.one-third-xl,
-  &.two-third-xl,
-  &.one-quarter-xl,
-  &.three-quarter-xl {
-    flex: 1 1 auto;
-    width: 100%;
-  }
-
-  // XS Size Modifiers (Mobile)
-  &.auto-xs {
-    flex: 1 1 auto;
-    max-width: none;
-  }
-
-  &.full-xs {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-
-  &.half-xs {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-
-  &.one-third-xs {
-    flex: 0 0 33.3333334%;
-    max-width: 33.3333334%;
-  }
-
-  &.two-third-xs {
-    flex: 0 0 66.6666667%;
-    max-width: 66.6666667%;
-  }
-
-  &.one-quarter-xs {
-    flex: 0 0 25%;
-    max-width: 25%;
-  }
-
-  &.three-quarter-xs {
-    flex: 0 0 75%;
-    max-width: 75%;
-  }
-
-  // SM Size Modifiers (Mobile-Lg)
-  @include media('>=sm') {
-    &.auto-sm {
-      flex: 1 1 auto;
-      max-width: none;
+        + .column {
+            margin: $gridGap 0 0;
+        }
     }
 
-    &.full-sm {
-      flex: 0 0 100%;
-      max-width: 100%;
+    &.center {
+        justify-content: center;
     }
 
-    &.half-sm {
-      flex: 0 0 50%;
-      max-width: 50%;
+    // Gutter Modifiers
+    &.gutter-quarter {
+        + .column {
+            margin: $gridGap/4 0 0;
+        }
     }
 
-    &.one-third-sm {
-      flex: 3.33;
-      max-width: 33.3333334%;
+    @include media('>=md') {
+        flex: 1 1 auto;
+
+        &.gutter,
+        &.gutter-quarter {
+            + .column {
+                margin: 0 0 0 $gridGap;
+            }
+        }
     }
 
-    &.two-third-sm {
-      flex: 6.66;
-      max-width: 66.6666667%;
+    @include media('<=md') {
+        &.clear-gutter-md {
+            + .column {
+                margin: 0;
+            }
+        }
     }
 
-    &.one-quarter-sm {
-      flex: 0 0 25%;
-      max-width: 25%;
+    @include media('<=lg') {
+        &.clear-gutter-lg {
+            + .column {
+                margin: 0;
+            }
+        }
     }
 
-    &.three-quarter-sm {
-      flex: 0 0 75%;
-      max-width: 75%;
-    }
-  }
-
-  // MD Size Modifiers (Tablet)
-  @include media('>=md') {
-    &.auto-md {
-      flex: 1 1 auto;
-      max-width: none;
+    @include media('<=xl') {
+        &.clear-gutter-xl {
+            + .column {
+                //for some dumb reason, with left-margin 0 on safari it won't wrap to the next line. Applying a SMALL margin resolves this...
+                margin-left: 0.1px;
+            }
+        }
     }
 
-    &.full-md {
-      flex: 0 0 100%;
-      max-width: 100%;
+    // Position Modifiers
+    &.align-bottom {
+        justify-content: flex-end;
     }
 
-    &.half-md {
-      flex: 0 0 50%;
-      max-width: 50%;
+    &.align-self-bottom {
+        align-self: flex-end;
     }
 
-    &.one-third-md {
-      flex: 3.33;
-      max-width: 33.3333334%;
+    &.align-left {
+        align-items: flex-start;
     }
 
-    &.two-third-md {
-      flex: 6.66;
-      max-width: 66.6666667%;
+    &.align-right {
+        align-items: flex-end;
     }
 
-    &.one-quarter-md {
-      flex: 0 0 25%;
-      max-width: 25%;
+    &.align-center {
+        align-items: center;
     }
 
-    &.three-quarter-md {
-      flex: 0 0 75%;
-      max-width: 75%;
-    }
-  }
-
-  // LG Size Modifiers (Laptop)
-  @include media('>=lg') {
-    &.auto-lg {
-      flex: 1 1 auto;
-      max-width: none;
+    &.align-self-center {
+        align-self: center;
     }
 
-    &.full-lg {
-      flex: 0 0 100%;
-      max-width: 100%;
+    &.align-self-stretch {
+        align-self: stretch;
     }
 
-    &.half-lg {
-      flex: 0 0 50%;
-      max-width: 50%;
+    // XS Position Modifiers (Mobile)
+    &.absolute-center-xs {
+        align-items: center;
+        justify-content: center;
     }
 
-    &.one-third-lg {
-      flex: 3.33;
-      max-width: 33.3333334%;
+    // SM Position Modifiers (Mobile-Lg)
+    @include media('>=sm') {
+        &.absolute-center-sm {
+            align-items: center;
+            justify-content: center;
+        }
     }
 
-    &.two-third-lg {
-      flex: 6.66;
-      max-width: 66.6666667%;
+    // MD Position Modifiers (Tablet)
+    @include media('>=md') {
+        &.absolute-center-md {
+            align-items: center;
+            justify-content: center;
+        }
+        &.align-self-center-md {
+            align-self: center;
+        }
     }
 
-    &.one-quarter-lg {
-      flex: 0 0 25%;
-      max-width: 25%;
+    // LG Position Modifiers (Laptop)
+    @include media('>=lg') {
+        &.absolute-center-lg {
+            align-items: center;
+            justify-content: center;
+        }
     }
 
-    &.three-quarter-lg {
-      flex: 0 0 75%;
-      max-width: 75%;
+    // XL Position Modifiers (Desktop)
+    @include media('>=xl') {
+        &.absolute-center-xl {
+            align-items: center;
+            justify-content: center;
+        }
     }
-  }
 
-  // XL Size Modifiers (Desktop)
-  @include media('>=xl') {
+    // FLEX SIZE MODIFIERS
+    &.auto-xs,
+    &.auto-md,
+    &.auto-sm,
+    &.auto-lg,
     &.auto-xl {
-      flex: 1 1 auto;
-      max-width: none;
+        flex: 1 1 auto;
     }
 
-    &.full-xl {
-      flex: 0 0 100%;
-      max-width: 100%;
-    }
-
-    &.half-xl {
-      flex: 0 0 50%;
-      max-width: 50%;
-    }
-
-    &.one-third-xl {
-      flex: 3.33;
-      max-width: 33.3333334%;
-    }
-
-    &.two-third-xl {
-      flex: 6.66;
-      max-width: 66.6666667%;
-    }
-
-    &.one-quarter-xl {
-      flex: 0 0 25%;
-      max-width: 25%;
-    }
-
+    &.full-xs,
+    &.half-xs,
+    &.one-third-xs,
+    &.two-third-xs,
+    &.one-quarter-xs,
+    &.three-quarter-xs,
+    &.full-md,
+    &.half-md,
+    &.one-third-md,
+    &.two-third-md,
+    &.one-quarter-md,
+    &.three-quarter-md,
+    &.full-sm,
+    &.half-sm,
+    &.one-third-sm,
+    &.two-third-sm,
+    &.one-quarter-sm,
+    &.three-quarter-sm,
+    &.full-lg,
+    &.half-lg,
+    &.one-third-lg,
+    &.two-third-lg,
+    &.one-quarter-lg,
+    &.three-quarter-lg,
+    &.full-xl,
+    &.half-xl,
+    &.one-third-xl,
+    &.two-third-xl,
+    &.one-quarter-xl,
     &.three-quarter-xl {
-      flex: 0 0 75%;
-      max-width: 75%;
+        flex: 1 1 auto;
+        width: 100%;
     }
-  }
+
+    // XS Size Modifiers (Mobile)
+    &.auto-xs {
+        flex: 1 1 auto;
+        max-width: none;
+    }
+
+    &.full-xs {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    &.half-xs {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    &.one-third-xs {
+        flex: 0 0 33.3333334%;
+        max-width: 33.3333334%;
+    }
+
+    &.two-third-xs {
+        flex: 0 0 66.6666667%;
+        max-width: 66.6666667%;
+    }
+
+    &.one-quarter-xs {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    &.three-quarter-xs {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+    // SM Size Modifiers (Mobile-Lg)
+    @include media('>=sm') {
+        &.auto-sm {
+            flex: 1 1 auto;
+            max-width: none;
+        }
+
+        &.full-sm {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        &.half-sm {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        &.one-third-sm {
+            flex: 3.33;
+            max-width: 33.3333334%;
+        }
+
+        &.two-third-sm {
+            flex: 6.66;
+            max-width: 66.6666667%;
+        }
+
+        &.one-quarter-sm {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
+        &.three-quarter-sm {
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+    }
+
+    // MD Size Modifiers (Tablet)
+    @include media('>=md') {
+        &.auto-md {
+            flex: 1 1 auto;
+            max-width: none;
+        }
+
+        &.full-md {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        &.half-md {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        &.one-third-md {
+            flex: 3.33;
+            max-width: 33.3333334%;
+        }
+
+        &.two-third-md {
+            flex: 6.66;
+            max-width: 66.6666667%;
+        }
+
+        &.one-quarter-md {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
+        &.three-quarter-md {
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+    }
+
+    // LG Size Modifiers (Laptop)
+    @include media('>=lg') {
+        &.auto-lg {
+            flex: 1 1 auto;
+            max-width: none;
+        }
+
+        &.full-lg {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        &.half-lg {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        &.one-third-lg {
+            flex: 3.33;
+            max-width: 33.3333334%;
+        }
+
+        &.two-third-lg {
+            flex: 6.66;
+            max-width: 66.6666667%;
+        }
+
+        &.one-quarter-lg {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
+        &.three-quarter-lg {
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+    }
+
+    // XL Size Modifiers (Desktop)
+    @include media('>=xl') {
+        &.auto-xl {
+            flex: 1 1 auto;
+            max-width: none;
+        }
+
+        &.full-xl {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        &.half-xl {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        &.one-third-xl {
+            flex: 3.33;
+            max-width: 33.3333334%;
+        }
+
+        &.two-third-xl {
+            flex: 6.66;
+            max-width: 66.6666667%;
+        }
+
+        &.one-quarter-xl {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
+        &.three-quarter-xl {
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+    }
 }
