@@ -15,7 +15,7 @@
 }
 
 .andpizza-bricks {
-    background: url('../../images/work/andPizza/brick-bg.jpg') bottom
+    background: url('./../images/work/andPizza/brick-bg.jpg') bottom
         center/cover no-repeat;
     background-color: #424242;
     color: $white-smoke;
@@ -372,8 +372,8 @@
 }
 
 .gcrit-project {
-    background: url('../../images/work/gcrit/project-bg.jpg') bottom
-        center/cover no-repeat;
+    background: url('./../images/work/gcrit/project-bg.jpg') bottom center/cover
+        no-repeat;
     background-color: #424242;
 
     .frame-desktop {
@@ -405,10 +405,18 @@
 // Hurdlr
 .hurdlr-welcome {
     .row {
+        align-items: center;
         flex-direction: row;
+        justify-content: space-around;
     }
     .frame-mobile {
-        width: 30%;
+        &:nth-of-type(1),
+        &:nth-of-type(3) {
+            width: 25%;
+        }
+        &:nth-of-type(2) {
+            width: 30%;
+        }
     }
 }
 
@@ -428,7 +436,7 @@
 }
 
 .hurdlr-map {
-    background: url('../../images/work/hurdlr/map.jpg') center center/cover
+    background: url('./../images/work/hurdlr/map.jpg') center center/cover
         no-repeat;
 
     .frame-mobile {
@@ -503,6 +511,8 @@
     }
 
     svg {
+        -webkit-backface-visibility: hidden;
+        margin: 20px 0;
         overflow: visible;
     }
 }
@@ -862,7 +872,7 @@
 
 .recity-city {
     .pin {
-        background-image: url('../../images/work/recity/pin.svg');
+        background-image: url('./../images/work/recity/pin.svg');
         background-position: top center;
         background-repeat: no-repeat;
         background-size: contain;
