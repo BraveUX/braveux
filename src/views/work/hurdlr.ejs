@@ -102,8 +102,7 @@
         <img alt="Picture of New York City" class="block-image" data-normal="./images/work/hurdlr/nyc.jpg" data-srcset="./images/work/hurdlr/nyc@0.5x.jpg 720w,
           ./images/work/hurdlr/nyc.jpg 1440w,
           ./images/work/hurdlr/nyc@1.5x.jpg 2160w" sizes="100vw">
-        <img data-normal="./images/work/hurdlr/number-gauge.svg" alt="Graphic of a speedometer with a dollar sign pivot and mileage gauge increasing in value"
-          class="inner-block-image absolute sr-reveal">
+        <%- include ../partials/_hurdlr-gauge %>
       </section>
 
       <section class="block row">
@@ -302,92 +301,144 @@
     <%- include ../partials/_footer-scripts %>
 
       <script>
-        let staggerDelay = 0.25;
-
-        $('.notification').each(function () {
-          let tl = new TimelineMax({
+        (function tlGauge() {
+          const tl = new TimelineMax({
             paused: true,
-            delay: staggerDelay,
+            delay: 0.5
           });
 
-          const tlBounce = new TimelineMax({
-            paused: true,
-            delay: 2,
-            repeatDelay: 2,
-            repeat: -1
+          const tlRepeat = new TimelineMax({
+            repeat: -1,
+            repeatDelay: 0.2,
+            yoyo: true
           }).to(
-            $(this).children('.notification-tag'),
-            0.2, {
-              y: -20
+            $('#needle'),
+            5, {
+              rotation: 168,
+              ease: Back.easeInOut.config(1.7)
             }
           ).to(
-            $(this).children('.notification-tag'),
-            1.5, {
-              y: 0,
-              ease: Elastic.easeOut.config(0.7, 0.3)
+            $('#needle'),
+            4, {
+              rotation: 155,
+              ease: Back.easeInOut.config(1.7)
+            }
+          ).to(
+            $('#needle'),
+            4, {
+              rotation: 145,
+              ease: Back.easeInOut.config(1.7)
             }
           );
 
-          const tlFade = new TimelineMax({
-            paused: true,
-            delay: 1.5,
-            repeat: -1,
-            repeatDelay: 1
-          }).staggerTo(
-            $(this).children('.text'),
-            1, {
-              autoAlpha: 0.4
-            }, 0.25
-          ).staggerTo(
-            $(this).children('.text'),
-            1, {
-              autoAlpha: 1
-            }, 0.25
-          );
-
-          tl
-            .from(
-              $(this),
-              0.75, {
-                y: '100%',
-                autoAlpha: 0
-              }
-            )
-            .staggerFrom(
-              $(this).children('.text'),
-              0.5, {
-                attr: {
-                  width: 0
-                },
-                onComplete: function () {
-                  tlFade.play()
-                }
-              },
-              0.25,
-              0.25
-            )
-            .from(
-              $(this).children('.notification-tag'),
-              2, {
-                y: 50,
-                autoAlpha: 0,
-                ease: Elastic.easeOut.config(0.7, 0.3),
-                onComplete: function () {
-                  tlBounce.play();
-                }
-              },
-              0.55
-            );
-
-          staggerDelay += 0.25;
+          tl.to(
+            $('#needle'),
+            3, {
+              transformOrigin: '100% 50%',
+              rotation: 150,
+              // ease: Elastic.easeOut.config(1, 1)
+              ease: Back.easeOut.config(1.7)
+            }
+          ).add(
+            tlRepeat
+          )
 
           new Waypoint.Inview({
-            element: $('.hurdlr-notifications'),
+            element: $('.hurdlr-gauge svg'),
             enter: function () {
               tl.play();
             }
           });
-        });
+        })();
+
+        (function tlNotifications() {
+          let staggerDelay = 0.25;
+
+          $('.notification').each(function () {
+            let tl = new TimelineMax({
+              paused: true,
+              delay: staggerDelay,
+            });
+
+            const tlBounce = new TimelineMax({
+              paused: true,
+              delay: 2,
+              repeatDelay: 2,
+              repeat: -1
+            }).to(
+              $(this).children('.notification-tag'),
+              0.2, {
+                y: -20
+              }
+            ).to(
+              $(this).children('.notification-tag'),
+              1.5, {
+                y: 0,
+                ease: Elastic.easeOut.config(0.7, 0.3)
+              }
+            );
+
+            const tlFade = new TimelineMax({
+              paused: true,
+              delay: 1.5,
+              repeat: -1,
+              repeatDelay: 1
+            }).staggerTo(
+              $(this).children('.text'),
+              1, {
+                autoAlpha: 0.4
+              }, 0.25
+            ).staggerTo(
+              $(this).children('.text'),
+              1, {
+                autoAlpha: 1
+              }, 0.25
+            );
+
+            tl
+              .from(
+                $(this),
+                0.75, {
+                  y: '100%',
+                  autoAlpha: 0
+                }
+              )
+              .staggerFrom(
+                $(this).children('.text'),
+                0.5, {
+                  attr: {
+                    width: 0
+                  },
+                  onComplete: function () {
+                    tlFade.play()
+                  }
+                },
+                0.25,
+                0.25
+              )
+              .from(
+                $(this).children('.notification-tag'),
+                2, {
+                  y: 50,
+                  autoAlpha: 0,
+                  ease: Elastic.easeOut.config(0.7, 0.3),
+                  onComplete: function () {
+                    tlBounce.play();
+                  }
+                },
+                0.55
+              );
+
+            staggerDelay += 0.25;
+
+            new Waypoint.Inview({
+              element: $('.hurdlr-notifications'),
+              enter: function () {
+                tl.play();
+              }
+            });
+          });
+        })();
       </script>
 
 </body>
