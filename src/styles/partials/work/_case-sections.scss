@@ -501,6 +501,18 @@
     }
 }
 
+.hurdlr-review {
+    .frame-desktop {
+        margin-left: auto;
+        max-width: 87.5%;
+    }
+
+    .frame-mobile {
+        max-width: 25%;
+        top: 21%;
+    }
+}
+
 // ID Auto
 .gray-langur-adventure {
     .frame-desktop.absolute {
