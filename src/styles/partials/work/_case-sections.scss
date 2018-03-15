@@ -413,24 +413,17 @@
 }
 
 .hurdlr-gauge {
-    // .inner-block-image.absolute {
-    //     bottom: 0;
-    //     left: 0;
-    //     margin: auto;
-    //     max-height: 70%;
-    //     max-width: 80%;
-    //     right: 0;
-    //     top: -30px;
-    //     width: auto;
-    // }
-
     svg {
         @include position(absolute, 0, 0, 0, 0);
         margin: auto;
         max-height: 70%;
-        max-width: 80%;
+        max-width: 60%;
         overflow: visible;
         width: auto;
+
+        @include media('>=md') {
+            max-width: 500px;
+        }
     }
 }
 
