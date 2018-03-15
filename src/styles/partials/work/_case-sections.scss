@@ -503,7 +503,11 @@
 .hurdlr-notifications.lazy-ratio {
     @include position(absolute, 0, 0, 0, 0);
     margin: auto auto auto 7.5%;
-    width: 30%;
+    width: 35%;
+
+    @include media('>=md') {
+        width: 30%;
+    }
 
     svg {
         overflow: visible;

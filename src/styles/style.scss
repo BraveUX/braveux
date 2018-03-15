@@ -95,4 +95,8 @@ a {
     &.full-height {
         min-height: 100%;
     }
+
+    &.min-height {
+        min-height: 35vh;
+    }
 }
