@@ -1,131 +1,133 @@
 .career-box {
-  // max-height: 0;
-  // overflow: hidden;
-  max-width: 800px;
-  transition: max-height 400ms ease-in-out;
-  // WYSIWYG
-  h3 {
-    @include text('sentinel', 28, 300);
-    margin: $textGap*2 0 $textGap;
+    // max-height: 0;
+    // overflow: hidden;
+    max-width: 800px;
+    transition: max-height 400ms ease-in-out;
+    // WYSIWYG
+    h3 {
+        @include text('sentinel', 28, 300);
+        margin: $textGap * 2 0 $textGap;
 
-    &:first-of-type {
-      margin: $textGap 0;
+        &:first-of-type {
+            margin: $textGap 0;
+        }
     }
-  }
 
-  h2 {
-    @include text('sentinel', 30, 300, $regent-grey);
-  }
-
-  ul {
-    @include text('source-sans-pro', 18, 300);
-    // list-style-position: inside;
-    list-style-type: disc;
-    padding: 0 0 0 20px;
-
-    > ul {
-      @include text('source-sans-pro', 16, 300, $charcoal);
-      padding-left: $textGap;
+    h2 {
+        @include text('sentinel', 30, 300, $regent-grey);
     }
-  }
 
-  li {
-    padding: $textGap/2 0;
-  }
+    ul {
+        @include text('source-sans-pro', 18, 300);
+        // list-style-position: inside;
+        list-style-type: disc;
+        padding: 0 0 0 20px;
 
-  a {
-    @include link-underline($white-smoke, $jaguar, $iron);
-    color: $jaguar;
-  }
+        > ul {
+            @include text('source-sans-pro', 16, 300, $charcoal);
+            padding-left: $textGap;
+        }
+    }
 
-  p {
-    @include text('source-sans-pro', 16, 300, $charcoal);
-  }
+    li {
+        padding: $textGap/2 0;
+    }
 
-  > *:last-child() {
-    margin-bottom: 0;
-  }
+    a {
+        @include link-underline($white-smoke, $jaguar, $iron);
+        color: $jaguar;
+    }
+
+    p {
+        @include text('source-sans-pro', 16, 300, $charcoal);
+    }
+
+    > *:last-child() {
+        margin-bottom: 0;
+    }
 }
 
 .career-panel {
-  align-items: center;
-  background-color: $white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.19);
-  display: flex;
-  flex: 1 0 auto;
-  padding: $textGap;
-  text-decoration: none;
-  transition: box-shadow 300ms cubic-bezier(0.25, 0.8, 0.25, 1);
-  width: 100%;
-
-  &::after {
-    @include icon-arrow($white-smoke, 12px, 12px);
-    backface-visibility: hidden;
-    background-color: $jaguar;
-    border-radius: 50%;
-    box-shadow: 0 0 0 8px $jaguar; // 8px circle around icon
-    content: ' ';
-    display: inline-flex;
-    flex-shrink: 0;
-    margin: 8px 8px 8px auto; // 8px to account for box-shadow
-    transition: transform 350ms ease;
-
-    @include media('>=md') {
-      height: 16px;
-      width: 16px;
-    }
-  }
-
-  &:hover,
-  &:focus {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.17);
+    align-items: center;
+    background-color: $white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex: 1 0 auto;
+    padding: $textGap;
+    text-decoration: none;
+    transition: box-shadow 300ms cubic-bezier(0.25, 0.8, 0.25, 1);
+    width: 100%;
 
     &::after {
-      transform: translateX($textGap/4);
+        @include icon-arrow($white-smoke, 12px, 12px);
+        backface-visibility: hidden;
+        background-color: $jaguar;
+        border: 10px solid $jaguar;
+        border-radius: 50%;
+        content: ' ';
+        display: inline-flex;
+        flex-shrink: 0;
+        margin-left: auto;
+        padding: 5px;
+        transition: transform 350ms ease;
 
-      @include media('>=md') {
-        transform: translateX($textGap/2);
-      }
+        @include media('>=md') {
+            height: 16px;
+            width: 16px;
+        }
     }
-  }
 
-  + .career-panel {
-    margin-top: $textGap;
-  }
+    &:hover,
+    &:focus {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+            0 10px 10px rgba(0, 0, 0, 0.17);
 
-  @include media('>=md') {
-    padding: $textGap*1.5 $textGap*2;
-  }
+        &::after {
+            transform: translateX($textGap/4);
+
+            @include media('>=md') {
+                transform: translateX($textGap/2);
+            }
+        }
+    }
+
+    + .career-panel {
+        margin-top: $textGap;
+    }
+
+    @include media('>=md') {
+        padding: $textGap * 1.5 $textGap * 2;
+    }
 }
 
 .career-copy {
-  display: flex;
-  flex-direction: column;
-  width: calc(100% - #{$textGap + 12px + 16px});
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - #{$textGap + 12px + 16px});
 
-  @include media('>=lg') {
-    align-items: center;
-    flex-direction: row;
-    width: calc(100% - #{$textGap + 24px + 16px});
-  }
+    @include media('>=lg') {
+        align-items: center;
+        flex-direction: row;
+        width: calc(100% - #{$textGap + 24px + 16px});
+    }
 }
 
 .career-title {
-  @include text('sentinel', 28, 300, $jaguar);
-  margin: 0;
+    @include text('sentinel', 28, 300, $jaguar);
+    margin: 0;
 
-  @include media('>=lg') {
-    flex-shrink: 0;
-    width: 150px;
-  }
+    @include media('>=lg') {
+        flex-shrink: 0;
+        width: 150px;
+    }
 }
 
 .career-text {
-  @include text('sentinel', 18, 300, $charcoal);
-  line-height: 1.4;
-  margin: $textGap/2 $textGap 0 0;
+    @include text('sentinel', 18, 300, $charcoal);
+    line-height: 1.4;
+    margin: $textGap/2 $textGap 0 0;
 
-  @include media('>=lg') {
-    margin: 0 $textGap*2;
-  }
+    @include media('>=lg') {
+        margin: 0 $textGap * 2;
+    }
 }
