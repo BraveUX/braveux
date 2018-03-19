@@ -5,1459 +5,1460 @@
 
 // &Pizza
 .andpizza {
-  // case-study color variables
-  $light-gray: #f3f5f6;
-  $gray: #424242;
-  $dark-gray: #262628;
-  $black: #202020;
-  $solid-black: #000;
+    // case-study color variables
+    $light-gray: #f3f5f6;
+    $gray: #424242;
+    $dark-gray: #262628;
+    $black: #202020;
+    $solid-black: #000;
 
-  // case study colors
-  color: $black;
-
-  .light-gray {
-    background-color: $light-gray;
-  }
-
-  .gray {
-    background-color: $gray;
-  }
-
-  .dark-gray,
-  .black {
-    color: $white-smoke;
-  }
-
-  .dark-gray {
-    background-color: $dark-gray;
-  }
-
-  .black {
-    background-color: $black;
-  }
-
-  .solid-black {
-    background-color: $solid-black;
-  }
-
-  .case-header-content {
+    // case study colors
     color: $black;
-  }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($black);
-  }
+    .light-gray {
+        background-color: $light-gray;
+    }
+
+    .gray {
+        background-color: $gray;
+    }
+
+    .dark-gray,
+    .black {
+        color: $white-smoke;
+    }
+
+    .dark-gray {
+        background-color: $dark-gray;
+    }
+
+    .black {
+        background-color: $black;
+    }
+
+    .solid-black {
+        background-color: $solid-black;
+    }
+
+    .case-header-content {
+        color: $black;
+    }
+
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($black);
+    }
 }
 
 // B-Line
 .bline {
-  // case-study color variables
-  $dark-blue: #1d2b42;
-  $blue: #244161;
-  $light-blue: #3fb6e5;
-  $gray: #efefef;
+    // case-study color variables
+    $dark-blue: #1d2b42;
+    $blue: #244161;
+    $light-blue: #3fb6e5;
+    $gray: #efefef;
 
-  // case study colors
-  color: $dark-blue;
+    // case study colors
+    color: $dark-blue;
 
-  .blue,
-  .light-blue {
-    color: $white-smoke;
-  }
+    .blue,
+    .light-blue {
+        color: $white-smoke;
+    }
 
-  .blue {
-    background-color: $blue;
-  }
+    .blue {
+        background-color: $blue;
+    }
 
-  .light-blue {
-    background-color: $light-blue;
-  }
+    .light-blue {
+        background-color: $light-blue;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .case-breakdown-heading {
-    color: $blue;
-  }
+    .case-breakdown-heading {
+        color: $blue;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($light-blue);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($light-blue);
+    }
 }
 
 // Congressional Digital Service
 .cds {
-  // case-study color variables
-  $dark-blue: #1d2b42;
-  $blue: #326b92;
-  $dark-red: #6b2828;
-  $red: #893131;
-  $tan: #e5e4d6;
-  $gray: #f5f5f5;
+    // case-study color variables
+    $dark-blue: #1d2b42;
+    $blue: #326b92;
+    $dark-red: #6b2828;
+    $red: #893131;
+    $tan: #e5e4d6;
+    $gray: #f5f5f5;
 
-  // case study colors
-  color: #1d2b42;
+    // case study colors
+    color: #1d2b42;
 
-  .blue,
-  .dark-blue {
-    color: $white-smoke;
-  }
+    .blue,
+    .dark-blue {
+        color: $white-smoke;
+    }
 
-  .dark-blue {
-    background-color: $dark-blue;
-  }
+    .dark-blue {
+        background-color: $dark-blue;
+    }
 
-  .blue {
-    background-color: $blue;
-  }
+    .blue {
+        background-color: $blue;
+    }
 
-  .dark-red {
-    background-color: $dark-red;
-  }
+    .dark-red {
+        background-color: $dark-red;
+    }
 
-  .red {
-    background-color: $red;
-  }
+    .red {
+        background-color: $red;
+    }
 
-  .tan {
-    background-color: $tan;
-  }
+    .tan {
+        background-color: $tan;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($blue);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($blue);
+    }
 }
 
 // Clutch
 .clutch {
-  // case-study color variables
-  $green: #008b87;
-  $dark-green: #17313b;
-  $blue: #104f79;
-  $dark-blue: #1d2b42;
-  $gray: #f5f5f5;
+    // case-study color variables
+    $green: #008b87;
+    $dark-green: #17313b;
+    $blue: #104f79;
+    $dark-blue: #1d2b42;
+    $gray: #f5f5f5;
 
-  // case study colors
-  .green,
-  .dark-green,
-  .blue {
-    color: $white-smoke;
-  }
+    // case study colors
+    .green,
+    .dark-green,
+    .blue {
+        color: $white-smoke;
+    }
 
-  .green {
-    background-color: $green;
-  }
+    .green {
+        background-color: $green;
+    }
 
-  .dark-green {
-    background-color: $dark-green;
-  }
+    .dark-green {
+        background-color: $dark-green;
+    }
 
-  .blue {
-    background-color: $blue;
-  }
+    .blue {
+        background-color: $blue;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .case-breakdown-heading {
-    color: $dark-blue;
-  }
+    .case-breakdown-heading {
+        color: $dark-blue;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($white-smoke);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($white-smoke);
+    }
 }
 
 // CityHealth
 .cityhealth {
-  // case-study color variables
-  $green: #86acac;
-  $orange: #d97a2a;
-  $gray: #f5f5f5;
-  $dark-gray: #e0e0e0;
+    // case-study color variables
+    $green: #86acac;
+    $orange: #d97a2a;
+    $gray: #f5f5f5;
+    $dark-gray: #e0e0e0;
 
-  // case study colors
-  .green,
-  .orange {
-    color: $white-smoke;
-  }
+    // case study colors
+    .green,
+    .orange {
+        color: $white-smoke;
+    }
 
-  .green {
-    background-color: $green;
-  }
+    .green {
+        background-color: $green;
+    }
 
-  .orange {
-    background-color: $orange;
-  }
+    .orange {
+        background-color: $orange;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .dark-gray {
-    background-color: $dark-gray;
-  }
+    .dark-gray {
+        background-color: $dark-gray;
+    }
 
-  .case-breakdown-heading {
-    color: #662417;
-  }
+    .case-breakdown-heading {
+        color: #662417;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($orange);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($orange);
+    }
 }
 
 // Collaborate
 .collaborate {
-  // case-study color variables
-  $blue: #364351;
-  $light-blue: #0bb3f6;
-  $gray: #cfd1d2;
+    // case-study color variables
+    $blue: #364351;
+    $light-blue: #0bb3f6;
+    $gray: #cfd1d2;
 
-  // case study colors
-  color: $blue;
+    // case study colors
+    color: $blue;
 
-  .blue,
-  .light-blue {
-    color: $white-smoke;
-  }
+    .blue,
+    .light-blue {
+        color: $white-smoke;
+    }
 
-  .blue {
-    background-color: $blue;
-  }
+    .blue {
+        background-color: $blue;
+    }
 
-  .light-blue {
-    background-color: $light-blue;
-  }
+    .light-blue {
+        background-color: $light-blue;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($white-smoke);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($white-smoke);
+    }
 }
 
 // Discovery Communications Ventures
 .dcv {
-  // case-study color variables
-  $light-blue: #e3f2fd;
-  $blue: #1bbaff;
-  $dark-blue: #1e497c;
+    // case-study color variables
+    $light-blue: #e3f2fd;
+    $blue: #1bbaff;
+    $dark-blue: #1e497c;
 
-  // case study colors
-  color: $dark-blue;
-
-  .light-blue {
-    background-color: $light-blue;
-  }
-
-  .blue,
-  .dark-blue {
-    color: $white-smoke;
-  }
-
-  .blue {
-    background-color: $blue;
-  }
-
-  .dark-blue {
-    background-color: $dark-blue;
-  }
-
-  .case-header-client-name,
-  .case-header-type {
-    color: #5c5c66;
-  }
-
-  .case-header-tagline {
+    // case study colors
     color: $dark-blue;
-  }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($blue);
-  }
+    .light-blue {
+        background-color: $light-blue;
+    }
+
+    .blue,
+    .dark-blue {
+        color: $white-smoke;
+    }
+
+    .blue {
+        background-color: $blue;
+    }
+
+    .dark-blue {
+        background-color: $dark-blue;
+    }
+
+    .case-header-client-name,
+    .case-header-type {
+        color: #5c5c66;
+    }
+
+    .case-header-tagline {
+        color: $dark-blue;
+    }
+
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($blue);
+    }
 }
 
 // Gensler Design Labs
 .design-labs {
-  // case-study color variables
-  $offwhite: #f5f5f5;
-  $slate: #4b4f54;
-  $gray: #353537;
-  $dark-gray: #282829;
-  $black: #1f1c1c;
-  $red: #c53a33;
+    // case-study color variables
+    $offwhite: #f5f5f5;
+    $slate: #4b4f54;
+    $gray: #353537;
+    $dark-gray: #282829;
+    $black: #1f1c1c;
+    $red: #c53a33;
 
-  // case study colors
-  color: #262d35;
+    // case study colors
+    color: #262d35;
 
-  .offwhite {
-    background-color: $offwhite;
-  }
+    .offwhite {
+        background-color: $offwhite;
+    }
 
-  .slate {
-    background-color: $slate;
-  }
+    .slate {
+        background-color: $slate;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .dark-gray {
-    background-color: $dark-gray;
-  }
+    .dark-gray {
+        background-color: $dark-gray;
+    }
 
-  .black {
-    background-color: $dark-gray;
-  }
+    .black {
+        background-color: $dark-gray;
+    }
 
-  .red {
-    background-color: $red;
-  }
+    .red {
+        background-color: $red;
+    }
 
-  .red,
-  .slate,
-  .gray,
-  .dark-gray,
-  .black {
-    color: $white-smoke;
-  }
+    .red,
+    .slate,
+    .gray,
+    .dark-gray,
+    .black {
+        color: $white-smoke;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($white-smoke);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($white-smoke);
+    }
 }
 
 // Felix
 .felix {
-  // case-study color variables
-  $blue: #27c6dd;
-  $light-green: #afbdc4;
-  $green: #536d79;
-  $dark-gray: #3f454a;
-  $gray: #eee;
-  $light-gray: #f5f5f5;
+    // case-study color variables
+    $blue: #27c6dd;
+    $light-green: #afbdc4;
+    $green: #536d79;
+    $dark-gray: #3f454a;
+    $gray: #eee;
+    $light-gray: #f5f5f5;
 
-  // case study colors
-  color: #414141;
+    // case study colors
+    color: #414141;
 
-  .light-gray {
-    background-color: $light-gray;
-  }
+    .light-gray {
+        background-color: $light-gray;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .blue {
-    background-color: $blue;
-  }
+    .blue {
+        background-color: $blue;
+    }
 
-  .dark-gray,
-  .light-green,
-  .blue {
-    color: $white-smoke;
-  }
+    .dark-gray,
+    .light-green,
+    .blue {
+        color: $white-smoke;
+    }
 
-  .dark-gray {
-    background-color: $dark-gray;
-  }
+    .dark-gray {
+        background-color: $dark-gray;
+    }
 
-  .light-green {
-    background-color: $light-green;
-  }
+    .light-green {
+        background-color: $light-green;
+        color: $dark-gray;
+    }
 
-  .gradient {
-    background-image: linear-gradient(to bottom, $white, $gray);
-  }
+    .gradient {
+        background-image: linear-gradient(to bottom, $white, $gray);
+    }
 
-  .case-breakdown-summary {
-    color: $green;
-  }
+    .case-breakdown-summary {
+        color: $green;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($white-smoke);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($white-smoke);
+    }
 }
 
 // FieldOne
 .fieldone {
-  // case-study color variables
-  $blue: #3498db;
-  $dark-blue: #2e3d5a;
-  $gray: #ebeef0;
+    // case-study color variables
+    $blue: #3498db;
+    $dark-blue: #2e3d5a;
+    $gray: #ebeef0;
 
-  // case study colors
-  color: #536d79;
+    // case study colors
+    color: #536d79;
 
-  .blue {
-    background-color: $blue;
-  }
+    .blue {
+        background-color: $blue;
+    }
 
-  .dark-blue {
-    background-color: $dark-blue;
-    color: $white-smoke;
-  }
+    .dark-blue {
+        background-color: $dark-blue;
+        color: $white-smoke;
+    }
 
-  .gray {
-    background-color: #ebeef0;
-  }
+    .gray {
+        background-color: #ebeef0;
+    }
 
-  .case-header-client-name,
-  .case-header-type {
-    color: #778f9b;
-  }
+    .case-header-client-name,
+    .case-header-type {
+        color: #778f9b;
+    }
 
-  .case-header-tagline {
-    color: $blue;
-  }
+    .case-header-tagline {
+        color: $blue;
+    }
 
-  .case-referral-author {
-    color: #8fa3ad;
-  }
+    .case-referral-author {
+        color: #8fa3ad;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($blue);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($blue);
+    }
 }
 
 // Federal Occupational Health
 .foh {
-  // case-study color variables
-  $offwhite: #f0f3f6;
-  $blue: #2096f3;
-  $gray: #f3f5f6;
-  $dark-gray: #90a4ae;
-  $green: #546e7a;
+    // case-study color variables
+    $offwhite: #f0f3f6;
+    $blue: #2096f3;
+    $gray: #f3f5f6;
+    $dark-gray: #90a4ae;
+    $green: #546e7a;
 
-  // case study colors
-  color: #262d35;
+    // case study colors
+    color: #262d35;
 
-  .offwhite {
-    background-color: $offwhite;
-  }
+    .offwhite {
+        background-color: $offwhite;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .blue,
-  .dark-gray,
-  .green {
-    color: $white-smoke;
-  }
+    .blue,
+    .dark-gray,
+    .green {
+        color: $white-smoke;
+    }
 
-  .blue {
-    background-color: $blue;
-  }
+    .blue {
+        background-color: $blue;
+    }
 
-  .dark-gray {
-    background-color: $dark-gray;
-  }
+    .dark-gray {
+        background-color: $dark-gray;
+    }
 
-  .green {
-    background-color: $green;
-  }
+    .green {
+        background-color: $green;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($white-smoke);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($white-smoke);
+    }
 }
 
 // Gensler gCrit
 .gcrit {
-  // case-study color variables
-  $offwhite: #f5f5f5;
-  $gray: #cfd4d8;
-  $dark-gray: #6a737b;
-  $red: #c53a33;
-  $yellow: #faa634;
+    // case-study color variables
+    $offwhite: #f5f5f5;
+    $gray: #cfd4d8;
+    $dark-gray: #6a737b;
+    $red: #c53a33;
+    $yellow: #faa634;
 
-  // case study colors
-  color: #262d35;
+    // case study colors
+    color: #262d35;
 
-  .offwhite {
-    background-color: $offwhite;
-  }
+    .offwhite {
+        background-color: $offwhite;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .dark-gray {
-    background-color: $dark-gray;
-  }
+    .dark-gray {
+        background-color: $dark-gray;
+    }
 
-  .red,
-  .dark-gray {
-    color: $white-smoke;
-  }
+    .red,
+    .dark-gray {
+        color: $white-smoke;
+    }
 
-  .red {
-    background-color: $red;
-  }
+    .red {
+        background-color: $red;
+    }
 
-  .yellow {
-    background-color: $yellow;
-  }
+    .yellow {
+        background-color: $yellow;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($white-smoke);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($white-smoke);
+    }
 }
 
 // Gen Z
 .genz {
-  // case-study color variables
-  $red: #ff1744;
-  $gray: #f0f0f0;
-  $green: #546e7a;
-  $dark-blue: #2c2c3e;
+    // case-study color variables
+    $red: #ff1744;
+    $gray: #f0f0f0;
+    $green: #546e7a;
+    $dark-blue: #2c2c3e;
 
-  // case study colors
-  color: #424242;
+    // case study colors
+    color: #424242;
 
-  .red,
-  .dark-blue {
-    color: $white-smoke;
-  }
+    .red,
+    .dark-blue {
+        color: $white-smoke;
+    }
 
-  .red {
-    background-color: $red;
-  }
+    .red {
+        background-color: $red;
+    }
 
-  .dark-blue {
-    background-color: $dark-blue;
-  }
+    .dark-blue {
+        background-color: $dark-blue;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .case-breakdown-summary {
-    color: $green;
-  }
+    .case-breakdown-summary {
+        color: $green;
+    }
 
-  .case-breakdown-heading {
-    color: $red;
-  }
+    .case-breakdown-heading {
+        color: $red;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($white-smoke);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($white-smoke);
+    }
 }
 
 // Gray Langur
 .gray-langur {
-  // case-study color variables
-  $off-white: #f6f1df;
-  $black: #211f1c;
-  $gray: #2d2b28;
-  $red: #7b2d3b;
+    // case-study color variables
+    $off-white: #f6f1df;
+    $black: #211f1c;
+    $gray: #2d2b28;
+    $red: #7b2d3b;
 
-  // case study colors
-  color: $black;
+    // case study colors
+    color: $black;
 
-  .off-white {
-    background-color: $off-white;
-  }
+    .off-white {
+        background-color: $off-white;
+    }
 
-  .red,
-  .black,
-  .gray {
-    color: $off-white;
-  }
+    .red,
+    .black,
+    .gray {
+        color: $off-white;
+    }
 
-  .red {
-    background-color: $red;
-  }
+    .red {
+        background-color: $red;
+    }
 
-  .black {
-    background-color: $black;
-  }
+    .black {
+        background-color: $black;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($black);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($black);
+    }
 }
 
 // HomeZen
 .homezen {
-  // case-study color variables
-  $gray: #eee;
-  $blue: #43719c;
-  $dark-blue: #064a66;
+    // case-study color variables
+    $gray: #eee;
+    $blue: #43719c;
+    $dark-blue: #064a66;
 
-  // case study colors
-  color: #212121;
+    // case study colors
+    color: #212121;
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .blue,
-  .dark-blue {
-    color: $white-smoke;
-  }
+    .blue,
+    .dark-blue {
+        color: $white-smoke;
+    }
 
-  .blue {
-    background-color: $blue;
-  }
+    .blue {
+        background-color: $blue;
+    }
 
-  .dark-blue {
-    background-color: $dark-blue;
-  }
+    .dark-blue {
+        background-color: $dark-blue;
+    }
 
-  .case-breakdown-heading {
-    color: $dark-blue;
-  }
+    .case-breakdown-heading {
+        color: $dark-blue;
+    }
 
-  .case-referral-blockquote {
-    color: $blue;
-  }
+    .case-referral-blockquote {
+        color: $blue;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($white-smoke);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($white-smoke);
+    }
 }
 
 // Identity Automation
 .iconstituent {
-  // case-study color variables
-  $blue: #468de2;
-  $dark-blue: #2069bc;
-  $dark-gray: #454d61;
-  $gray: #858b9b;
-  $light-gray: #f0f0f1;
+    // case-study color variables
+    $blue: #468de2;
+    $dark-blue: #2069bc;
+    $dark-gray: #454d61;
+    $gray: #858b9b;
+    $light-gray: #f0f0f1;
 
-  // case study colors
-  color: $white-smoke;
+    // case study colors
+    color: $white-smoke;
 
-  .blue {
-    background-color: $blue;
-  }
+    .blue {
+        background-color: $blue;
+    }
 
-  .dark-blue {
-    background-color: $dark-blue;
-  }
+    .dark-blue {
+        background-color: $dark-blue;
+    }
 
-  .dark-gray {
-    background-color: $dark-gray;
-  }
+    .dark-gray {
+        background-color: $dark-gray;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .light-gray {
-    background-color: $light-gray;
-    color: $dark-gray;
-  }
+    .light-gray {
+        background-color: $light-gray;
+        color: $dark-gray;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($white-smoke);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($white-smoke);
+    }
 }
 
 // Identity Automation
 .idauto {
-  // case-study color variables
-  $red: #981b1e;
-  $gray: #eceff1;
-  $green: #789096;
-  $dark-gray: #37474f;
+    // case-study color variables
+    $red: #981b1e;
+    $gray: #eceff1;
+    $green: #789096;
+    $dark-gray: #37474f;
 
-  // case study colors
-  color: $dark-gray;
+    // case study colors
+    color: $dark-gray;
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .green {
-    background-color: $green;
-  }
+    .green {
+        background-color: $green;
+    }
 
-  .red,
-  .green,
-  .dark-gray {
-    color: $white-smoke;
-  }
+    .red,
+    .green,
+    .dark-gray {
+        color: $white-smoke;
+    }
 
-  .red {
-    background-color: $red;
-  }
+    .red {
+        background-color: $red;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($dark-gray);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($dark-gray);
+    }
 }
 
 // Independent Journal Review
 .ijr {
-  // case-study color variables
-  $yellow: #d7b161;
-  $dark-blue: #01334f;
-  $blue: #02669d;
-  $gray: #f2f2f2;
+    // case-study color variables
+    $yellow: #d7b161;
+    $dark-blue: #01334f;
+    $blue: #02669d;
+    $gray: #f2f2f2;
 
-  // case study colors
-  color: #212121;
+    // case study colors
+    color: #212121;
 
-  .yellow,
-  .dark-blue,
-  .blue {
-    color: $white-smoke;
-  }
+    .yellow,
+    .dark-blue,
+    .blue {
+        color: $white-smoke;
+    }
 
-  .yellow {
-    background-color: $yellow;
-  }
+    .yellow {
+        background-color: $yellow;
+    }
 
-  .dark-blue {
-    background-color: $dark-blue;
-  }
+    .dark-blue {
+        background-color: $dark-blue;
+    }
 
-  .blue {
-    background-color: $blue;
-  }
+    .blue {
+        background-color: $blue;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($yellow);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($yellow);
+    }
 }
 
 // Interfolio
 .interfolio {
-  // case-study color variables
-  $pink: #ec5f61;
-  $dark-blue: #2e3846;
-  $blue: #3d80ae;
-  $gray: #f2f2f2;
-  $dark-gray: #d7d9da;
+    // case-study color variables
+    $pink: #ec5f61;
+    $dark-blue: #2e3846;
+    $blue: #3d80ae;
+    $gray: #f2f2f2;
+    $dark-gray: #d7d9da;
 
-  // case study colors
-  color: #2e3846;
+    // case study colors
+    color: #2e3846;
 
-  .pink,
-  .dark-blue,
-  .blue {
-    color: $white-smoke;
-  }
+    .pink,
+    .dark-blue,
+    .blue {
+        color: $white-smoke;
+    }
 
-  .pink {
-    background-color: $pink;
-  }
+    .pink {
+        background-color: $pink;
+    }
 
-  .dark-blue {
-    background-color: $dark-blue;
-  }
+    .dark-blue {
+        background-color: $dark-blue;
+    }
 
-  .blue {
-    background-color: $blue;
-  }
+    .blue {
+        background-color: $blue;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .dark-gray {
-    background-color: $dark-gray;
-  }
+    .dark-gray {
+        background-color: $dark-gray;
+    }
 
-  .case-referral-blockquote {
-    color: $pink;
-  }
+    .case-referral-blockquote {
+        color: $pink;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($pink);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($pink);
+    }
 }
 
 // Livesafe
 .livesafe {
-  // case-study color variables
-  $light-blue: #03c9f6;
-  $blue: #027da9;
-  $dark-blue: #1d2b42;
-  $gray: #f3f6f8;
+    // case-study color variables
+    $light-blue: #03c9f6;
+    $blue: #027da9;
+    $dark-blue: #1d2b42;
+    $gray: #f3f6f8;
 
-  // case study colors
-  color: $dark-blue;
-
-  .dark-blue,
-  .blue,
-  .light-blue {
-    color: $white-smoke;
-  }
-
-  .dark-blue {
-    background-color: $dark-blue;
-  }
-
-  .blue {
-    background-color: $blue;
-  }
-
-  .light-blue {
-    background-color: $light-blue;
-  }
-
-  .case-breakdown-heading {
+    // case study colors
     color: $dark-blue;
-  }
 
-  .gray {
-    background-color: $gray;
-  }
+    .dark-blue,
+    .blue,
+    .light-blue {
+        color: $white-smoke;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($blue);
-  }
+    .dark-blue {
+        background-color: $dark-blue;
+    }
+
+    .blue {
+        background-color: $blue;
+    }
+
+    .light-blue {
+        background-color: $light-blue;
+    }
+
+    .case-breakdown-heading {
+        color: $dark-blue;
+    }
+
+    .gray {
+        background-color: $gray;
+    }
+
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($blue);
+    }
 }
 
 // Miller Heiman Group
 .mhg {
-  $blue: #004462;
-  $dark-blue: #022a3c;
-  $green: #00827c;
-  $dark-green: #175d58;
-  $offwhite: #f5f5f5;
-  $gray: #424143;
+    $blue: #004462;
+    $dark-blue: #022a3c;
+    $green: #00827c;
+    $dark-green: #175d58;
+    $offwhite: #f5f5f5;
+    $gray: #424143;
 
-  // case study colors
-  color: #222;
+    // case study colors
+    color: #222;
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .blue {
-    background-color: $blue;
-  }
+    .blue {
+        background-color: $blue;
+    }
 
-  .dark-blue {
-    background-color: $dark-blue;
-  }
+    .dark-blue {
+        background-color: $dark-blue;
+    }
 
-  .green {
-    background-color: $green;
-  }
+    .green {
+        background-color: $green;
+    }
 
-  .dark-green {
-    background-color: $dark-green;
-  }
+    .dark-green {
+        background-color: $dark-green;
+    }
 
-  .offwhite {
-    background-color: $offwhite;
-  }
+    .offwhite {
+        background-color: $offwhite;
+    }
 
-  .blue,
-  .dark-blue,
-  .green,
-  .dark-green,
-  .gray {
-    color: $white-smoke;
-  }
+    .blue,
+    .dark-blue,
+    .green,
+    .dark-green,
+    .gray {
+        color: $white-smoke;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($white-smoke);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($white-smoke);
+    }
 }
 
 // Recity
 .recity {
-  $violet: #4f42ff;
-  $blue: #2e358e;
-  $gray: #f0f0f0;
-  $orange: #f48e29;
+    $violet: #4f42ff;
+    $blue: #2e358e;
+    $gray: #f0f0f0;
+    $orange: #f48e29;
 
-  // case study colors
-  color: #424242;
+    // case study colors
+    color: #424242;
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .violet {
-    background-color: $violet;
-  }
+    .violet {
+        background-color: $violet;
+    }
 
-  .blue,
-  .orange {
-    color: $white-smoke;
-  }
+    .blue,
+    .orange {
+        color: $white-smoke;
+    }
 
-  .blue {
-    background-color: $blue;
-  }
+    .blue {
+        background-color: $blue;
+    }
 
-  .orange {
-    background-color: $orange;
-  }
+    .orange {
+        background-color: $orange;
+    }
 
-  .case-breakdown-heading {
-    color: $blue;
-  }
+    .case-breakdown-heading {
+        color: $blue;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($white-smoke);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($white-smoke);
+    }
 }
 
 // Responsum
 .responsum {
-  $gray: #7b8a9d;
-  $blue: #293b52;
-  $off-white: #f0f2f5;
-  $violet: #9895d3;
-  $pink: #e0557d;
-  $teal: #3bc1ad;
+    $gray: #7b8a9d;
+    $blue: #293b52;
+    $off-white: #f0f2f5;
+    $violet: #9895d3;
+    $pink: #e0557d;
+    $teal: #3bc1ad;
 
-  // case study colors
-  color: $blue;
+    // case study colors
+    color: $blue;
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .blue {
-    background-color: $blue;
-  }
+    .blue {
+        background-color: $blue;
+    }
 
-  .gray,
-  .blue {
-    color: $white-smoke;
-  }
+    .gray,
+    .blue {
+        color: $white-smoke;
+    }
 
-  .off-white {
-    background-color: $off-white;
-  }
+    .off-white {
+        background-color: $off-white;
+    }
 
-  .violet {
-    background-color: $violet;
-  }
+    .violet {
+        background-color: $violet;
+    }
 
-  .pink {
-    background-color: $pink;
-  }
+    .pink {
+        background-color: $pink;
+    }
 
-  .teal {
-    background-color: $teal;
-  }
+    .teal {
+        background-color: $teal;
+    }
 
-  .case-breakdown-heading {
-    color: $gray;
-  }
+    .case-breakdown-heading {
+        color: $gray;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($violet);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($violet);
+    }
 }
 
 // Rokt
 .rokt {
-  // case study color variables
-  $offwhite: #f6f5f5;
-  $black: #353638;
-  $pink: #b51e6d;
-  $light-pink: #d861a4;
+    // case study color variables
+    $offwhite: #f6f5f5;
+    $black: #353638;
+    $pink: #b51e6d;
+    $light-pink: #d861a4;
 
-  // case study colors
-  color: $black;
+    // case study colors
+    color: $black;
 
-  .offwhite {
-    background-color: $offwhite;
-  }
+    .offwhite {
+        background-color: $offwhite;
+    }
 
-  .black {
-    background-color: $black;
-  }
+    .black {
+        background-color: $black;
+    }
 
-  .pink {
-    background-color: $pink;
-  }
+    .pink {
+        background-color: $pink;
+    }
 
-  .light-pink {
-    background-color: $light-pink;
-  }
+    .light-pink {
+        background-color: $light-pink;
+    }
 
-  .pink,
-  .light-pink,
-  .black {
-    color: $white-smoke;
-  }
+    .pink,
+    .light-pink,
+    .black {
+        color: $white-smoke;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($white-smoke);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($white-smoke);
+    }
 }
 
 // Style Me Pretty
 .smp {
-  // case-study color variables
-  $pink: #f29182;
-  $offwhite: #fbf9f6;
-  $gray: #f7f4ee;
+    // case-study color variables
+    $pink: #f29182;
+    $offwhite: #fbf9f6;
+    $gray: #f7f4ee;
 
-  // case study colors
-  color: #221f1f;
+    // case study colors
+    color: #221f1f;
 
-  .pink {
-    background-color: $pink;
-    color: $white-smoke;
-  }
+    .pink {
+        background-color: $pink;
+        color: $white-smoke;
+    }
 
-  .offwhite {
-    background-color: $offwhite;
-  }
+    .offwhite {
+        background-color: $offwhite;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .fade-bottom {
-    box-shadow: inset 0 -135px 130px -55px rgba($offwhite, 0.9);
-  }
+    .fade-bottom {
+        box-shadow: inset 0 -135px 130px -55px rgba($offwhite, 0.9);
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote(#E4DBC5);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote(#e4dbc5);
+    }
 }
 
 // State of Obesity
 .sob {
-  // case-study color variables
-  $red: #961739;
-  $gray: #efefef;
-  $dark-gray: #33393d;
+    // case-study color variables
+    $red: #961739;
+    $gray: #efefef;
+    $dark-gray: #33393d;
 
-  // case study colors
-  .red,
-  .dark-gray {
-    color: $white-smoke;
-  }
+    // case study colors
+    .red,
+    .dark-gray {
+        color: $white-smoke;
+    }
 
-  .red {
-    background-color: $red;
-  }
+    .red {
+        background-color: $red;
+    }
 
-  .dark-gray {
-    background-color: $dark-gray;
-  }
+    .dark-gray {
+        background-color: $dark-gray;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .case-header-content {
-    color: $jaguar;
-  }
+    .case-header-content {
+        color: $jaguar;
+    }
 
-  .case-header-client-name {
-    color: #666;
-  }
+    .case-header-client-name {
+        color: #666;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($white-smoke);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($white-smoke);
+    }
 }
 
 // Snagajob
 .snagajob {
-  // case-study color variables
-  $orange: #f7842a;
-  $gray: #eee;
-  $dark-gray: #222;
+    // case-study color variables
+    $orange: #f7842a;
+    $gray: #eee;
+    $dark-gray: #222;
 
-  // case study colors
-  .color {
-    color: $dark-gray;
-  }
+    // case study colors
+    .color {
+        color: $dark-gray;
+    }
 
-  .orange,
-  .dark-gray {
-    color: $white-smoke;
-  }
+    .orange,
+    .dark-gray {
+        color: $white-smoke;
+    }
 
-  .orange {
-    background-color: $orange;
-  }
+    .orange {
+        background-color: $orange;
+    }
 
-  .dark-gray {
-    background-color: $dark-gray;
-  }
+    .dark-gray {
+        background-color: $dark-gray;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .case-breakdown-heading {
-    color: $dark-gray;
-  }
+    .case-breakdown-heading {
+        color: $dark-gray;
+    }
 }
 
 // Stretch
 .stretch {
-  // case-study color variables
-  $green: #1cccb6;
-  $blue: #22a8fa;
-  $dark-blue: #37474f;
-  $purple: #8870f7;
-  $teal: #00bdc1;
-  $red: #ff574e;
-  $black: #211f1c;
-  $light-black: #2b2b2b;
-  $dark-gray: #484848;
-  $gray: #eee;
-  $white: #fff;
+    // case-study color variables
+    $green: #1cccb6;
+    $blue: #22a8fa;
+    $dark-blue: #37474f;
+    $purple: #8870f7;
+    $teal: #00bdc1;
+    $red: #ff574e;
+    $black: #211f1c;
+    $light-black: #2b2b2b;
+    $dark-gray: #484848;
+    $gray: #eee;
+    $white: #fff;
 
-  // case study colors
-  color: $white;
+    // case study colors
+    color: $white;
 
-  .green {
-    background-color: $green;
-  }
+    .green {
+        background-color: $green;
+    }
 
-  .blue {
-    background-color: $blue;
-  }
+    .blue {
+        background-color: $blue;
+    }
 
-  .dark-blue {
-    background-color: $dark-blue;
-  }
+    .dark-blue {
+        background-color: $dark-blue;
+    }
 
-  .purple {
-    background-color: $purple;
-  }
+    .purple {
+        background-color: $purple;
+    }
 
-  .teal {
-    background-color: $teal;
-  }
+    .teal {
+        background-color: $teal;
+    }
 
-  .red {
-    background-color: $red;
-  }
+    .red {
+        background-color: $red;
+    }
 
-  .black {
-    background-color: $black;
-  }
+    .black {
+        background-color: $black;
+    }
 
-  .light-black {
-    background-color: $light-black;
-  }
+    .light-black {
+        background-color: $light-black;
+    }
 
-  .dark-gray {
-    background-color: $dark-gray;
-  }
+    .dark-gray {
+        background-color: $dark-gray;
+    }
 
-  .gray {
-    background-color: $gray;
-    color: $black;
-  }
+    .gray {
+        background-color: $gray;
+        color: $black;
+    }
 
-  .white {
-    background-color: $white;
-    color: $black;
-  }
+    .white {
+        background-color: $white;
+        color: $black;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($white);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($white);
+    }
 }
 
 // The Media Trust
 .tmt {
-  // case-study color variables
-  $blue: #12366a;
-  $gray: #eceff1;
+    // case-study color variables
+    $blue: #12366a;
+    $gray: #eceff1;
 
-  // case study colors
-  color: $blue;
+    // case study colors
+    color: $blue;
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .blue {
-    background-color: $blue;
-    color: $white-smoke;
-  }
+    .blue {
+        background-color: $blue;
+        color: $white-smoke;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($blue);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($blue);
+    }
 }
 
 // Unbox
 .unbox {
-  // case-study color variables
-  $green: #3db78e;
-  $purple: #5c5cbf;
-  $dark-blue: #34495e;
-  $gray: #f8f8f8;
+    // case-study color variables
+    $green: #3db78e;
+    $purple: #5c5cbf;
+    $dark-blue: #34495e;
+    $gray: #f8f8f8;
 
-  // case study colors
-  color: #212121;
+    // case study colors
+    color: #212121;
 
-  .green,
-  .purple,
-  .dark-blue {
-    color: $white-smoke;
-  }
+    .green,
+    .purple,
+    .dark-blue {
+        color: $white-smoke;
+    }
 
-  .green {
-    background-color: $green;
-  }
+    .green {
+        background-color: $green;
+    }
 
-  .purple {
-    background-color: $purple;
-  }
+    .purple {
+        background-color: $purple;
+    }
 
-  .dark-blue {
-    background-color: $dark-blue;
-  }
+    .dark-blue {
+        background-color: $dark-blue;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 }
 
 // Upfront
 .upfront {
-  // case-study color variables
-  $light-blue: #4fb8b5;
-  $blue: #3cb0bf;
-  $dark-blue: #2a3039;
-  $gray: #fff8f3;
+    // case-study color variables
+    $light-blue: #4fb8b5;
+    $blue: #3cb0bf;
+    $dark-blue: #2a3039;
+    $gray: #fff8f3;
 
-  // case study colors
-  .gradient,
-  .dark-blue {
-    color: $white-smoke;
-  }
+    // case study colors
+    .gradient,
+    .dark-blue {
+        color: $white-smoke;
+    }
 
-  .dark-blue {
-    background-color: $dark-blue;
-  }
+    .dark-blue {
+        background-color: $dark-blue;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .gradient {
-    background-image: linear-gradient(to right, $light-blue, $blue);
-  }
+    .gradient {
+        background-image: linear-gradient(to right, $light-blue, $blue);
+    }
 
-  .case-header-content {
-    color: $jaguar;
-  }
+    .case-header-content {
+        color: $jaguar;
+    }
 
-  .case-header-client-name {
-    color: #666;
-  }
+    .case-header-client-name {
+        color: #666;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($white-smoke);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($white-smoke);
+    }
 }
 
 // Upside
 .upside {
-  // case-study color variables
-  $violet: #775ab3;
-  $purple: #483369;
-  $dark-purple: #372143;
-  $yellow: #f7aa22;
-  $gray: #f7f7f7;
+    // case-study color variables
+    $violet: #775ab3;
+    $purple: #483369;
+    $dark-purple: #372143;
+    $yellow: #f7aa22;
+    $gray: #f7f7f7;
 
-  // case study colors
-  color: $purple;
+    // case study colors
+    color: $purple;
 
-  .violet {
-    background-color: $violet;
-  }
+    .violet {
+        background-color: $violet;
+    }
 
-  .dark-purple {
-    background-color: $dark-purple;
-  }
+    .dark-purple {
+        background-color: $dark-purple;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .purple,
-  .yellow {
-    color: $white-smoke;
-  }
+    .purple,
+    .yellow {
+        color: $white-smoke;
+    }
 
-  .purple {
-    background-color: $purple;
-  }
+    .purple {
+        background-color: $purple;
+    }
 
-  .yellow {
-    background-color: $yellow;
-  }
+    .yellow {
+        background-color: $yellow;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($yellow);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($yellow);
+    }
 }
 
 // Upturn & Equal Future
 .upturn {
-  // case-study color variables
-  $light-blue: #5bbcc9;
-  $blue: #50687d;
-  $dark-blue: #1b3e4c;
-  $light-gray: #f4f4f4;
-  $gray: #3e4446;
-  $dark-gray: #333;
-  $orange: #ff5722;
+    // case-study color variables
+    $light-blue: #5bbcc9;
+    $blue: #50687d;
+    $dark-blue: #1b3e4c;
+    $light-gray: #f4f4f4;
+    $gray: #3e4446;
+    $dark-gray: #333;
+    $orange: #ff5722;
 
-  // case study colors
-  color: #414141;
+    // case study colors
+    color: #414141;
 
-  .light-blue {
-    background-color: $light-blue;
-  }
+    .light-blue {
+        background-color: $light-blue;
+    }
 
-  .blue {
-    background-color: $blue;
-  }
+    .blue {
+        background-color: $blue;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .light-gray {
-    background-color: $light-gray;
-  }
+    .light-gray {
+        background-color: $light-gray;
+    }
 
-  .orange {
-    background-color: $orange;
-  }
+    .orange {
+        background-color: $orange;
+    }
 
-  .dark-blue,
-  .dark-gray {
-    color: $white-smoke;
-  }
+    .dark-blue,
+    .dark-gray {
+        color: $white-smoke;
+    }
 
-  .dark-blue {
-    background-color: $dark-blue;
-  }
+    .dark-blue {
+        background-color: $dark-blue;
+    }
 
-  .dark-gray {
-    background-color: $dark-gray;
-  }
+    .dark-gray {
+        background-color: $dark-gray;
+    }
 
-  .case-block-heading {
-    color: #536d79;
-  }
+    .case-block-heading {
+        color: #536d79;
+    }
 
-  .case-header-content {
-    color: $dark-blue;
-  }
+    .case-header-content {
+        color: $dark-blue;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($white-smoke);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($white-smoke);
+    }
 }
 
 // WeddingWire
 .weddingwire {
-  // case-study color variables
-  $blue: #19b5bc;
-  $dark-blue: #016064;
-  $gray: #eceff1;
-  $dark-gray: #333;
+    // case-study color variables
+    $blue: #19b5bc;
+    $dark-blue: #016064;
+    $gray: #eceff1;
+    $dark-gray: #333;
 
-  // case study colors
-  color: #455a64;
+    // case study colors
+    color: #455a64;
 
-  .blue {
-    background-color: $blue;
-  }
+    .blue {
+        background-color: $blue;
+    }
 
-  .gray {
-    background-color: $gray;
-  }
+    .gray {
+        background-color: $gray;
+    }
 
-  .blue,
-  .dark-blue {
-    color: $white-smoke;
-  }
+    .blue,
+    .dark-blue {
+        color: $white-smoke;
+    }
 
-  .dark-blue {
-    background-color: $dark-blue;
-  }
+    .dark-blue {
+        background-color: $dark-blue;
+    }
 
-  .case-header-client-name,
-  .case-header-type,
-  .case-referral-author {
-    color: $dark-blue;
-  }
+    .case-header-client-name,
+    .case-header-type,
+    .case-referral-author {
+        color: $dark-blue;
+    }
 
-  .case-breakdown-heading,
-  .case-referral-text {
-    color: $blue;
-  }
+    .case-breakdown-heading,
+    .case-referral-text {
+        color: $blue;
+    }
 
-  .case-breakdown-summary,
-  .case-breakdown-detail,
-  .case-breakdown-list {
-    color: #78909c;
-  }
+    .case-breakdown-summary,
+    .case-breakdown-detail,
+    .case-breakdown-list {
+        color: #78909c;
+    }
 
-  // quote icon color
-  .case-referral-quote-icon {
-    @include icon-quote($blue);
-  }
+    // quote icon color
+    .case-referral-quote-icon {
+        @include icon-quote($blue);
+    }
 }
