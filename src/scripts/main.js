@@ -12,8 +12,6 @@ $(document).ready(function() {
     videoPlay();
     navCurrent();
     introAnimate();
-    animateGCrit();
-    animateMhg();
     ludusFrame();
 
     // Repo Info
@@ -29,24 +27,6 @@ if ($('video').length) {
         }, 1000)
     );
 }
-
-// function pageFade() {
-//   const newLocation;
-//   $('body').addClass('fade-in');
-//
-//   $('.menu-logo, .menu-link').click(function() {
-//     event.preventDefault();
-//     newLocation = this.href;
-//     setTimeout(function() {
-//       $('body').toggleClass('fade-in fade-out', 800).promise().done(newpage);
-//
-//     })
-//   });
-//
-//   function newpage() {
-//     window.location = newLocation;
-//   }
-// }
 
 function initMobileNav() {
     $('.menu-mobile-toggle').click(function(e) {
@@ -378,35 +358,6 @@ function scrollReveal() {
         150
     );
 
-    // sr.reveal('.card img', {
-    //   duration   : 1000,
-    //   scale      : 1.05,
-    //   origin     : 'bottom',
-    //   distance   : '25%',
-    //   easing     : 'ease-out',
-    //   viewFactor : 0.5,
-    // }, 150);
-
-    // sr.reveal('.card-title', {
-    //   delay      : 300,
-    //   duration   : 500,
-    //   scale      : 1,
-    //   distance   : '20px',
-    //   origin     : 'bottom',
-    //   easing     : 'ease-out',
-    //   viewFactor : 0.5,
-    // }, 150);
-    //
-    // sr.reveal('.card-tagline', {
-    //   delay      : 150,
-    //   duration   : 500,
-    //   scale      : 1,
-    //   distance   : '20px',
-    //   origin     : 'bottom',
-    //   easing     : 'ease-out',
-    //   viewFactor : 0.5,
-    // }, 150);
-
     // General Reveals (works multiple times per page)
     sr.reveal('.inner-block-content', revealContent);
     sr.reveal('.case-exec-summary-text', reveal);
@@ -609,189 +560,6 @@ function introAnimate() {
             0.15,
             0
         );
-}
-
-function animateGCrit() {
-    if ($('.gcrit-image-break').length) {
-        let hasRun = false;
-        const tl = new TimelineMax({
-            delay: 0.5
-        });
-
-        function generalTimeline(tileNum) {
-            return new TimelineMax()
-                .to(
-                    `.gcrit-image-break .container > .lazy-ratio:nth-of-type(${tileNum}) .inner-block-image`,
-                    2,
-                    {
-                        autoAlpha: 1
-                    },
-                    0
-                )
-                .fromTo(
-                    `.gcrit-image-break .container > .lazy-ratio:nth-of-type(${tileNum}) .inner-block-image`,
-                    1.5,
-                    {
-                        scale: 0,
-                        y: '100%'
-                    },
-                    {
-                        scale: 1,
-                        y: '0%',
-                        ease: Power4.easeOut
-                    },
-                    0
-                )
-                .to(
-                    `.gcrit-image-break .container > .lazy-ratio:nth-of-type(${tileNum}) .inner-block-image`,
-                    1,
-                    {
-                        scale: 0.9,
-                        autoAlpha: 0.35,
-                        ease: Power1.easeIn
-                    },
-                    1
-                );
-        }
-
-        // Hover Timeline
-        function hoverTimeline() {
-            const tlHover = new TimelineMax();
-            const tileBox = '.gcrit-image-break .box.lazy-ratio';
-            const tile =
-                '.gcrit-image-break .box.lazy-ratio > .inner-block-image:nth-of-type(1)';
-            const tileHover =
-                '.gcrit-image-break .box.lazy-ratio > .inner-block-image:nth-of-type(2)';
-
-            return tlHover
-                .to(
-                    tile,
-                    2,
-                    {
-                        autoAlpha: 1
-                    },
-                    0
-                )
-                .fromTo(
-                    tileBox,
-                    1.5,
-                    {
-                        scale: 0,
-                        y: '100%'
-                    },
-                    {
-                        scale: 1,
-                        y: '4%',
-                        ease: Power4.easeOut
-                    },
-                    0
-                )
-                .fromTo(
-                    tileBox,
-                    1,
-                    {
-                        y: '4%'
-                    },
-                    {
-                        y: '0%',
-                        boxShadow:
-                            '0 0 0 1px rgba(0, 0, 0, 0.05), 0 10px 20px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.1)'
-                    },
-                    2
-                )
-                .to(
-                    tileHover,
-                    1,
-                    {
-                        autoAlpha: 1
-                    },
-                    2
-                );
-        }
-
-        new Waypoint.Inview({
-            element: $('.gcrit-image-break .inner-block-image'),
-            enter: function() {
-                if (!hasRun) {
-                    tl
-                        .add(generalTimeline(1), 0)
-                        .add(hoverTimeline(), 0.25)
-                        .add(generalTimeline(3), 0.5)
-                        .add(generalTimeline(4), 0.75);
-
-                    hasRun = true;
-                }
-            }
-        });
-    }
-}
-
-function animateMhg() {
-    if ($('.mhg').length) {
-        let hasRun = false;
-        const tl = new TimelineMax({
-            paused: true,
-            delay: 0.5
-        });
-
-        const graphTop = $('.graph-top');
-        const graphBottom = $('.graph-bottom');
-        const numTop = $('.num-top');
-        const numBottom = $('.num-bottom');
-
-        tl
-            .staggerFrom(
-                graphTop,
-                0.5,
-                {
-                    attr: {
-                        height: 0
-                    }
-                },
-                0.15
-            )
-            .staggerFrom(
-                graphBottom,
-                0.5,
-                {
-                    attr: {
-                        height: 0
-                    }
-                },
-                0.15,
-                0.5
-            )
-            .staggerFrom(
-                numTop,
-                1,
-                {
-                    y: 10,
-                    autoAlpha: 0
-                },
-                0.15,
-                0.5
-            )
-            .staggerFrom(
-                numBottom,
-                1,
-                {
-                    y: -10,
-                    autoAlpha: 0
-                },
-                0.15,
-                1
-            );
-
-        new Waypoint.Inview({
-            element: $('.mhg-graph'),
-            enter: function() {
-                if (!hasRun) {
-                    tl.play();
-                    hasRun = true;
-                }
-            }
-        });
-    }
 }
 
 // Builds Ludus iFrame on page based on url
