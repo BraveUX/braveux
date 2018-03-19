@@ -1,6 +1,6 @@
 {
     "plugins": ["stylelint-scss", "stylelint-suitcss", "stylelint-order"],
-    "ignoreFiles": ["dist/**", "src/fonts/**/*", "src/views/404.ejs"],
+    "ignoreFiles": ["dist/**", "src/fonts/**/*", "src/views/**/*"],
     "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
     "rules": {
         "order/order": ["custom-properties", "declarations"],
