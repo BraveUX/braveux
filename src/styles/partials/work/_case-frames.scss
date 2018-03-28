@@ -115,11 +115,15 @@
         background-color: #bdbdbd;
         border-radius: 5px 5px 0 0;
         content: '';
-        height: 15px;
+        height: 9px;
         left: 0;
         position: absolute;
         top: 1px;
         width: 100%;
+
+        @include media('>=sm') {
+            height: 15px;
+        }
 
         @include media('>=md') {
             border-radius: 10px 10px 0 0;
@@ -134,12 +138,18 @@
     &::after {
         color: #fff;
         content: ' \25CF'; // circle
-        font-size: 10px;
+        font-size: 7px;
         left: 7px;
         line-height: 0;
         position: absolute;
-        text-shadow: 10px 0 0, 20px 0 0; // duplicates circle
-        top: 8px;
+        text-shadow: 7px 0 0, 14px 0 0; // duplicates circle
+        top: 6px;
+
+        @include media('>=sm') {
+            font-size: 10px;
+            text-shadow: 10px 0 0, 20px 0 0;
+            top: 10px;
+        }
 
         @include media('>=md') {
             font-size: 15px;
@@ -156,7 +166,11 @@
             #fefefe calc(100% - 20px),
             rgba(#fefefe, 0) 15px
         ); // prevents bg peak on rounded corners
-        padding-top: 16px;
+        padding-top: 10px;
+
+        @include media('>=sm') {
+            padding-top: 16px;
+        }
 
         @include media('>=md') {
             padding-top: 21px;
