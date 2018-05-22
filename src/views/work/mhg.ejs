@@ -219,6 +219,67 @@
     </main>
 
     <%- include ../partials/_footer-scripts %>
+      <script>
+        let hasRun = false;
+        const tl = new TimelineMax({
+          paused: true,
+          delay: 0.5
+        });
+
+        const graphTop = $('.graph-top');
+        const graphBottom = $('.graph-bottom');
+        const numTop = $('.num-top');
+        const numBottom = $('.num-bottom');
+
+        tl
+          .staggerFrom(
+            graphTop,
+            0.5, {
+              attr: {
+                height: 0
+              }
+            },
+            0.1
+          )
+          .staggerFrom(
+            graphBottom,
+            0.5, {
+              attr: {
+                height: 0
+              }
+            },
+            0.1,
+            0.5
+          )
+          .staggerFrom(
+            numTop,
+            1, {
+              y: 10,
+              autoAlpha: 0
+            },
+            0.1,
+            0.1
+          )
+          .staggerFrom(
+            numBottom,
+            1, {
+              y: -10,
+              autoAlpha: 0
+            },
+            0.1,
+            0.8
+          );
+
+        new Waypoint.Inview({
+          element: $('.mhg-graph'),
+          enter: function () {
+            if (!hasRun) {
+              tl.play();
+              hasRun = true;
+            }
+          }
+        });
+      </script>
 
 </body>
 

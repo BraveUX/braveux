@@ -12,7 +12,7 @@
     height: 100vh;
     min-height: 100vh;
     overflow: hidden;
-    padding: $gridGap*2 0;
+    padding: $gridGap * 2 0;
     position: relative; // Overlay
     &.overlay {
         &::after {
@@ -161,11 +161,7 @@
         @include media('>=md') {
             background-position: top center; // svg logo
             &::before {
-                @include position(absolute,
-        0,
-        7.5%,
-        0,
-        62%);
+                @include position(absolute, 0, 7.5%, 0, 62%);
                 background: url('../images/work/homezen/header-art.svg') right
                     center/contain no-repeat;
                 content: '';
@@ -174,6 +170,18 @@
                 width: 30%;
                 z-index: 5;
             }
+        }
+    }
+    .hurdlr & {
+        background: url('../images/work/hurdlr/header.jpg') #333 45%
+            center/cover no-repeat;
+
+        br {
+            display: block;
+        }
+
+        @include media('>=md') {
+            background-position: 40% center;
         }
     }
     .iconstituent & {
@@ -264,10 +272,7 @@
         // svg stats
         @include media('>=md') {
             &::before {
-                @include position(absolute,
-                    0,
-                    5%,
-                    0);
+                @include position(absolute, 0, 5%, 0);
                 background: url('../images/work/rokt/header-stats.svg') right
                     center/contain no-repeat;
                 content: '';
@@ -291,11 +296,7 @@
         @include media('>=md') {
             // svg logo
             &::before {
-                @include position(absolute,
-        0,
-        7.5%,
-        0,
-        42.5%);
+                @include position(absolute, 0, 7.5%, 0, 42.5%);
                 background: url('../images/work/sob/header.svg') right
                     center/contain no-repeat;
                 content: '';
@@ -312,11 +313,7 @@
         @include media('>=md') {
             background-position: center left;
             &::before {
-                @include position(absolute,
-        0,
-        0,
-        0,
-        0);
+                @include position(absolute, 0, 0, 0, 0);
                 background: url('../images/work/stretch/wave-header.png')
                     center/100% 100% no-repeat;
                 content: '';
@@ -392,11 +389,7 @@
 
         @include media('>=md') {
             &::after {
-                @include position(absolute,
-        0,
-        0,
-        0,
-        null);
+                @include position(absolute, 0, 0, 0, null);
                 background: url('../images/work/upturn/upturn-header.svg') left
                     center/cover no-repeat;
                 content: ' ';
@@ -412,11 +405,7 @@
         @include media('>=md') {
             // svg logo
             &::before {
-                @include position(absolute,
-        0,
-        7.5%,
-        -2px,
-        42.5%);
+                @include position(absolute, 0, 7.5%, -2px, 42.5%);
                 background: url('../images/work/weddingwire/header.svg') right
                     center/contain no-repeat;
                 content: '';
@@ -435,11 +424,7 @@
     width: 100%; // Overlay
     &.overlay {
         &::after {
-            @include position(absolute,
-      0,
-      0,
-      0,
-      0);
+            @include position(absolute, 0, 0, 0, 0);
             background-color: $jaguar;
             content: ' ';
             height: 100%;
@@ -485,9 +470,7 @@
 }
 
 .case-header-client-name {
-    @include text('trade-gothic',
-  24,
-  600);
+    @include text('trade-gothic', 24, 600);
     letter-spacing: 3px;
     margin: 0;
     text-transform: uppercase;
@@ -498,10 +481,8 @@
 }
 
 .case-header-tagline {
-    @include text('source-sans-pro',
-  48,
-  300);
-    margin: $textGap*2 0 $textGap;
+    @include text('source-sans-pro', 48, 300);
+    margin: $textGap * 2 0 $textGap;
     br {
         display: none;
 
@@ -512,24 +493,18 @@
 }
 
 .case-header-type {
-    @include text('sentinel',
-  18,
-  600);
+    @include text('sentinel', 18, 600);
     margin: 0;
 }
 
 // EXECUTIVE SUMMARY
 .case-exec-summary-text {
-    @include text('sentinel',
-  24,
-  300);
+    @include text('sentinel', 24, 300);
     line-height: 1.4;
     margin: 0;
     max-width: 750px;
     &.lg {
-        @include text('source-sans-pro',
-    28,
-    200);
+        @include text('source-sans-pro', 28, 200);
     }
     br {
         display: none;
@@ -552,26 +527,20 @@
 }
 
 .case-breakdown-heading {
-    @include text('trade-gothic',
-  13,
-  600);
+    @include text('trade-gothic', 13, 600);
     letter-spacing: 2px;
     margin: 0 0 $textGap;
     text-transform: uppercase;
 }
 
 .case-breakdown-summary {
-    @include text('source-sans-pro',
-  28,
-  300);
-    margin: 0 0 $textGap*0.75;
+    @include text('source-sans-pro', 28, 300);
+    margin: 0 0 $textGap * 0.75;
 }
 
 .case-breakdown-detail,
 .case-breakdown-list-item {
-    @include text('sentinel',
-  15,
-  300);
+    @include text('sentinel', 15, 300);
     line-height: 1.9;
     margin: 0;
 }
@@ -594,15 +563,12 @@
     padding-top: $textGap;
 
     @include media('>=md') {
-        margin-top: $textGap*2;
+        margin-top: $textGap * 2;
     }
 }
 
 .case-breakdown-footnote-text {
-    @include text('sentinel',
-  10,
-  300,
-  $dark-gray);
+    @include text('sentinel', 10, 300, $dark-gray);
     font-style: italic;
     margin: 0;
 }

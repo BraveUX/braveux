@@ -45,35 +45,35 @@
 
 // BOX-SIZING - FONT-SIZING PRESETS
 html {
-  box-sizing: border-box;
-  font-size: 62.5%; // Scales 1 rem unit to 10px
+    box-sizing: border-box;
+    font-size: 62.5%; // Scales 1 rem unit to 10px
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 body {
-  background-color: $night-rider;
-  color: $jaguar;
-  font-size: 1.4rem; // = 14px default font size
-  margin: 0;
-  min-width: 250px;
+    background-color: $night-rider;
+    color: $jaguar;
+    font-size: 1.4rem; // = 14px default font size
+    margin: 0;
+    min-width: 250px;
 }
 
 // Accessibility focus outline
 button,
 a {
-  &:focus {
-    outline: 1px dotted $dark-gray;
-    outline-offset: 2px;
-  }
+    &:focus {
+        outline: 1px dotted $dark-gray;
+        outline-offset: 2px;
+    }
 
-  &::-moz-focus-inner {
-    border: 0;
-  }
+    &::-moz-focus-inner {
+        border: 0;
+    }
 }
 
 // Scroll Reveal Styles
@@ -82,17 +82,21 @@ a {
 .case-exec-summary-text,
 .case-referral-quote-icon,
 [class*='sr-'] {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 // Class applied for ratio-based image scaling
 .lazy-ratio {
-  background-color: transparent;
-  flex: 0 0 100%; // ensures that it always fills box when 50/50
-  height: 0;
-  position: relative;
+    background-color: transparent;
+    flex: 0 0 100%; // ensures that it always fills box when 50/50
+    height: 0;
+    position: relative;
 
-  &.full-height {
-    min-height: 100%;
-  }
+    &.full-height {
+        min-height: 100%;
+    }
+
+    &.min-height {
+        min-height: 35vh;
+    }
 }
