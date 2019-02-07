@@ -4,7 +4,8 @@
   "description": "Repo for the BraveUX website.",
   "author": "Eric Fuhrmann",
   "scripts": {
-    "start": "npm i"
+    "start": "npm i",
+    "dev": "gulp default"
   },
   "license": "ISC",
   "devDependencies": {
