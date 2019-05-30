@@ -4,6 +4,7 @@ const imageminJpegRecompress = require('imagemin-jpeg-recompress');
 const imageminPngquant = require('imagemin-pngquant');
 const browserSync = require('browser-sync');
 const plugins = require('gulp-load-plugins');
+const sitemap = require('gulp-sitemap');
 const $ = plugins();
 
 gulp.task('clean', () => {
@@ -12,6 +13,20 @@ gulp.task('clean', () => {
 
 gulp.task('deploy:ghPages', () => {
   return gulp.src('./dist/**/*').pipe($.ghPages());
+});
+
+// Sitemap
+gulp.task('sitemap', () => {
+  return gulp
+    .src('dist/**/*.html', {
+      read: false
+    })
+    .pipe(
+      sitemap({
+        siteUrl: 'https://www.braveux.com'
+      })
+    )
+    .pipe(gulp.dest('./dist'));
 });
 
 // Images
@@ -196,6 +211,7 @@ gulp.task(
     'scripts-stretch',
     'favicons',
     'guidebook',
+    'sitemap',
     'server'
   )
 );
@@ -225,7 +241,7 @@ gulp.task('watch', done => {
   gulp.watch('src/images/**/*', gulp.series('images', reload));
   gulp.watch('src/fonts/**/*', gulp.series('fonts', reload));
   gulp.watch('src/documents/**/*', gulp.series('documents', reload));
-  gulp.watch('src/views/**/*.ejs', gulp.series('ejs', reload));
+  gulp.watch('src/views/**/*.ejs', gulp.series(['ejs', 'sitemap'], reload));
   gulp.watch('src/styles/**/*.scss', gulp.series('sass', reload));
   gulp.watch(
     'src/scripts/*.js',

@@ -30,6 +30,7 @@
     "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.3",
     "gulp-sass": "^4.0.2",
+    "gulp-sitemap": "^6.2.0",
     "gulp-uglify": "^2.0.0",
     "imagemin-jpeg-recompress": "^5.1.0",
     "imagemin-pngquant": "^5.1.0",
