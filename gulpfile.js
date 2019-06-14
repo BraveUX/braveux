@@ -182,9 +182,14 @@ gulp.task('favicons', () => {
   return gulp.src('src/favicons/*').pipe(gulp.dest('./dist/'));
 });
 
+// Bravery
+gulp.task('bravery', () => {
+  return gulp.src('src/assets/**/*').pipe(gulp.dest('./dist/assets'));
+});
+
 // Guidebook
 gulp.task('guidebook', () => {
-  return gulp.src('src/guidebook/*').pipe(gulp.dest('./dist/guidebook'));
+  return gulp.src('src/guidebook/**/*').pipe(gulp.dest('./dist/guidebook'));
 });
 
 // Server files
@@ -210,6 +215,7 @@ gulp.task(
     'scripts-vivus',
     'scripts-stretch',
     'favicons',
+    'bravery',
     'guidebook',
     'sitemap',
     'server'
@@ -255,6 +261,7 @@ gulp.task('watch', done => {
     gulp.series('scripts-animations', reload)
   );
   gulp.watch('src/guidebook/**/*', gulp.series('guidebook', reload));
+  gulp.watch('src/assets/**/*', gulp.series('bravery', reload));
   gulp.watch('src/favicons/**/*', gulp.series('favicons', reload));
   gulp.watch(
     ['src/server/*', 'src/server/.htaccess'],
