@@ -46,5 +46,16 @@
     "include-media": "^1.4.6",
     "layzr.js": "^2.2.2",
     "normalize-scss": "^5.0.3"
+  },
+  "resolutions": {
+    "acorn": "^5.7.4",
+    "minimist": "^1.2.3",
+    "kind-of": "^6.0.3",
+    "set-value": "^2.0.1",
+    "mixin-deep": "^1.3.2",
+    "clean-css": "^4.1.11",
+    "js-yaml": "^3.13.1",
+    "lodash.template": "^4.5.0",
+    "eslint": "^4.18.2"
   }
 }
